@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>免费节点订阅一键复制</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap"
+    />
+    <link rel="stylesheet" href="hark.css" />
+    <link rel="stylesheet" href="hark-hero.css" />
+    <style>
+      .x-subs { list-style: none; margin: 0; padding: 0; }
+      .x-subs > li {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 16px;
+        row-gap: 6px;
+        align-items: center;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--stroke-secondary);
+      }
+      .x-subs > li:last-child { border-bottom: 0; }
+      .x-subs__name { grid-column: 1; margin: 0; font-weight: var(--weight-bold); font-size: var(--size-body); display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+      .x-subs__name .pill[hidden] { display: none; }
+      .x-subs__how { grid-column: 1; margin: 0; font-size: var(--size-meta); color: var(--text-secondary); }
+      .x-subs__url {
+        grid-column: 1 / -1;
+        display: block;
+        font-family: "Geist Mono", ui-monospace, monospace;
+        font-size: var(--size-caption);
+        color: var(--text-secondary);
+        overflow-wrap: anywhere;
+        word-break: break-all;
+        user-select: all;
+        -webkit-user-select: all;
+        -webkit-touch-callout: default;
+      }
+      .x-copy {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+        min-width: 88px;
+        min-height: var(--tap);
+        padding: 8px 18px;
+        border: 0;
+        border-radius: var(--r-s);
+        background: var(--fill-primary);
+        color: var(--text-primary-on);
+        font: var(--type-body-strong);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: opacity var(--dur-quick) ease;
+      }
+      .x-subs > li:has(.x-subs__how) > .x-copy { grid-row: 1 / span 2; }
+      .x-copy:active { opacity: 0.7; }
+      .x-copy.is-empty { background: var(--fill-tertiary); color: var(--text-secondary); }
+      .x-copy.is-done { background: var(--fill-system-green); color: var(--text-primary-on); }
+      .x-copy--wide { grid-column: auto; grid-row: auto; width: 100%; }
+      .x-msg { grid-column: 1 / -1; margin: 0; font-size: var(--size-meta); color: var(--fill-system-orange); }
+      .x-msg:empty { display: none; }
+      .x-all { display: grid; gap: 8px; margin-top: 12px; }
+      .x-all textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 10px;
+        border: 1px solid var(--stroke-primary);
+        border-radius: var(--r-s);
+        background: var(--fill-tertiary);
+        color: var(--text-primary);
+        font-family: "Geist Mono", ui-monospace, monospace;
+        font-size: 16px;
+      }
+      .x-all textarea[hidden] { display: none; }
+      #countFail[hidden] { display: none; }
+    </style>
+  </head>
+  <body>
+    <div class="page" id="top">
+      <header class="nav glass" data-auto></header>
+      <main class="main">
+        <section class="hero">
+          <div class="hero__copy">
+            <p class="hero__eyebrow">点「复制」→ 粘贴到 App 订阅导入</p>
+            <h1>免费节点订阅</h1>
+            <p class="hero__meta" id="updated">更新时间：读取中…</p>
+            <p class="hero__meta" id="countFail" hidden>节点数暂时无法读取</p>
+          </div>
+        </section>
+
+        <section class="section" id="region" data-nav="地区">
+          <div class="head">
+            <h2>按地区订阅</h2>
+            <p class="head__sub">小火箭 Shadowrocket / v2rayNG / v2rayN / NekoBox 通用，已按延迟从低到高排序。国内用一般香港、日本、新加坡最快。</p>
+          </div>
+          <ul class="x-subs" id="regionList">
+            <li data-count="region.hk"><p class="x-subs__name">香港 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/hk.txt</code></li>
+            <li data-count="region.tw"><p class="x-subs__name">台湾 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/tw.txt</code></li>
+            <li data-count="region.jp"><p class="x-subs__name">日本 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/jp.txt</code></li>
+            <li data-count="region.sg"><p class="x-subs__name">新加坡 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/sg.txt</code></li>
+            <li data-count="region.kr"><p class="x-subs__name">韩国 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/kr.txt</code></li>
+            <li data-count="region.us"><p class="x-subs__name">美国 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/us.txt</code></li>
+            <li data-count="region.eu"><p class="x-subs__name">欧洲 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/eu.txt</code></li>
+            <li data-count="region.other"><p class="x-subs__name">其他 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/other.txt</code></li>
+            <li data-count="merged" data-skip-all><p class="x-subs__name">全部（小火箭） <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/shadowrocket/sub.txt</code></li>
+          </ul>
+          <div class="x-all">
+            <button type="button" class="x-copy x-copy--wide" id="copyAll" data-label="复制全部地区链接">复制全部地区链接</button>
+            <p class="x-msg" id="allMsg"></p>
+            <textarea id="allText" readonly hidden aria-label="全部地区链接"></textarea>
+          </div>
+        </section>
+
+        <section class="section" id="ios" data-nav="iOS">
+          <div class="head"><h2>iOS 客户端</h2></div>
+          <ul class="x-subs">
+            <li data-count="merged"><p class="x-subs__name">Shadowrocket 小火箭 <span class="pill" hidden></span></p><p class="x-subs__how">右上角 + → 类型 Subscribe</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/shadowrocket/sub.txt</code></li>
+            <li data-count="ios.stash"><p class="x-subs__name">Stash <span class="pill" hidden></span></p><p class="x-subs__how">配置 → 从 URL 下载</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/stash/stash.yaml</code></li>
+            <li data-count="ios.stash"><p class="x-subs__name">Clash Mi <span class="pill" hidden></span></p><p class="x-subs__how">添加配置 → URL</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clashmi/clashmi.yaml</code></li>
+            <li data-count="ios.quantumultx"><p class="x-subs__name">Quantumult X 圈X <span class="pill" hidden></span></p><p class="x-subs__how">节点 → 引用 → 添加</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/quantumultx/qx.txt</code></li>
+            <li data-count="ios.loon"><p class="x-subs__name">Loon <span class="pill" hidden></span></p><p class="x-subs__how">节点 → 订阅节点 → 添加</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/loon/loon.list</code></li>
+            <li data-count="ios.surge"><p class="x-subs__name">Surge <span class="pill" hidden></span></p><p class="x-subs__how">从 URL 下载配置（不支持 vless，节点少）</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/surge/surge.conf</code></li>
+            <li data-count="ios.singbox"><p class="x-subs__name">sing-box / Karing / Hiddify <span class="pill" hidden></span></p><p class="x-subs__how">新建远程配置</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/singbox/singbox.json</code></li>
+          </ul>
+        </section>
+
+        <section class="section" id="android" data-nav="安卓/电脑">
+          <div class="head"><h2>安卓 / 电脑</h2></div>
+          <ul class="x-subs">
+            <li data-count="merged"><p class="x-subs__name">v2rayNG / v2rayN / NekoBox <span class="pill" hidden></span></p><p class="x-subs__how">订阅分组 → 添加 → 粘贴 → 更新订阅</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/all.txt</code></li>
+            <li data-count="ios.clash_alive"><p class="x-subs__name">Clash Verge / FlClash / Clash Meta <span class="pill" hidden></span></p><p class="x-subs__how">配置 → 新建 → URL</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/all.yaml</code></li>
+          </ul>
+        </section>
+
+        <section class="section" id="howto" data-nav="说明">
+          <div class="head">
+            <h2>四步用上</h2>
+            <p class="head__sub">每天北京时间 08:30 自动更新，订阅链接不变，在 App 里刷新订阅即可。</p>
+          </div>
+          <div class="steps">
+            <article class="step"><div class="step__intro"><p class="step__num">01</p></div><div><h3>复制链接</h3></div></article>
+            <article class="step"><div class="step__intro"><p class="step__num">02</p></div><div><h3>打开 App 添加订阅并粘贴</h3></div></article>
+            <article class="step"><div class="step__intro"><p class="step__num">03</p></div><div><h3>更新订阅</h3></div></article>
+            <article class="step"><div class="step__intro"><p class="step__num">04</p></div><div><h3>测速，选延迟最低的</h3><p>在 App 里做「连通性测试 / 按延迟排序」。</p></div></article>
+          </div>
+        </section>
+      </main>
+      <footer class="foot">
+        <p>注意：延迟排序来自海外服务器的 TCP 握手，仅供粗排，以 App 本机测试为准；Hysteria2/TUIC 节点无法预检，排在最后。免费公共节点可能记录流量，勿用于银行、支付等敏感账号。仓库：<a class="link" href="https://github.com/passionsu-su/free-nodes" target="_blank" rel="noopener">github.com/passionsu-su/free-nodes</a></p>
+        <nav aria-label="Back to sections" data-auto></nav>
+        <a class="badge" href="https://hark.com/" target="_blank" rel="noopener"><span class="hark-mark"></span><span>built by hark</span></a>
+      </footer>
+    </div>
+    <script src="hark.js"></script>
+    <script>
+      (function () {
+        function legacyCopy(text) {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          ta.setAttribute("readonly", "");
+          ta.style.cssText = "position:fixed;top:0;left:-9999px;opacity:0;font-size:16px;";
+          document.body.appendChild(ta);
+          var ok = false;
+          try {
+            ta.focus();
+            ta.select();
+            ta.setSelectionRange(0, text.length);
+            ok = document.execCommand("copy");
+          } catch (e) { ok = false; }
+          document.body.removeChild(ta);
+          return ok;
+        }
+        function copyText(text) {
+          return new Promise(function (resolve) {
+            var settled = false;
+            function done(v) { if (!settled) { settled = true; resolve(v); } }
+            function fallback() { if (!settled) done(legacyCopy(text)); }
+            try {
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                setTimeout(fallback, 700);
+                navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+                return;
+              }
+            } catch (e) {}
+            fallback();
+          });
+        }
+        function selectEl(el) {
+          try {
+            if (el.tagName === "TEXTAREA") { el.focus(); el.select(); el.setSelectionRange(0, el.value.length); return; }
+            var r = document.createRange();
+            r.selectNodeContents(el);
+            var s = window.getSelection();
+            s.removeAllRanges();
+            s.addRange(r);
+          } catch (e) {}
+        }
+        function flash(btn, msgEl, ok, target) {
+          clearTimeout(btn._t);
+          if (ok) {
+            msgEl.textContent = "";
+            btn.textContent = "已复制 ✓";
+            btn.classList.add("is-done");
+            btn._t = setTimeout(function () { btn.textContent = btn.dataset.label; btn.classList.remove("is-done"); }, 1600);
+          } else {
+            btn.textContent = btn.dataset.label;
+            selectEl(target);
+            msgEl.textContent = "请长按链接手动复制";
+          }
+        }
+
+        var items = Array.prototype.slice.call(document.querySelectorAll(".x-subs > li"));
+        items.forEach(function (li) {
+          var url = li.querySelector(".x-subs__url");
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "x-copy";
+          btn.dataset.label = "复制";
+          btn.textContent = "复制";
+          btn.setAttribute("aria-label", "复制 " + li.querySelector(".x-subs__name").firstChild.textContent.trim() + " 订阅链接");
+          var msg = document.createElement("p");
+          msg.className = "x-msg";
+          msg.setAttribute("aria-live", "polite");
+          li.insertBefore(btn, li.children[1]);
+          li.appendChild(msg);
+          btn.addEventListener("click", function () {
+            var text = url.textContent.trim();
+            selectEl(url);
+            btn.textContent = "复制中…";
+            copyText(text).then(function (ok) { flash(btn, msg, ok, url); });
+          });
+        });
+
+        var allBtn = document.getElementById("copyAll");
+        var allMsg = document.getElementById("allMsg");
+        var allText = document.getElementById("allText");
+        allBtn.addEventListener("click", function () {
+          var text = Array.prototype.map.call(document.querySelectorAll("#regionList > li:not([data-skip-all]) .x-subs__url"), function (c) { return c.textContent.trim(); }).join("\n");
+          copyText(text).then(function (ok) {
+            if (!ok) { allText.value = text; allText.hidden = false; }
+            flash(allBtn, allMsg, ok, allText);
+          });
+        });
+
+        function pick(obj, path) {
+          return path.split(".").reduce(function (o, k) { return o == null ? undefined : o[k]; }, obj);
+        }
+        var updated = document.getElementById("updated");
+        var fail = document.getElementById("countFail");
+        fetch("https://raw.githubusercontent.com/passionsu-su/free-nodes/main/report.json", { cache: "no-store" })
+          .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+          .then(function (data) {
+            updated.textContent = data.time ? "更新时间：" + data.time + "（北京时间）" : "更新时间：未知";
+            items.forEach(function (li) {
+              var n = pick(data, li.dataset.count);
+              var pill = li.querySelector(".pill");
+              if (typeof n !== "number") return;
+              pill.hidden = false;
+              if (n === 0) {
+                pill.textContent = "今日暂无";
+                li.querySelector(".x-copy").classList.add("is-empty");
+              } else {
+                pill.textContent = n + " 个节点";
+              }
+            });
+          })
+          .catch(function () {
+            updated.textContent = "更新时间：每天北京时间 08:30";
+            fail.hidden = false;
+          });
+      })();
+    </script>
+  </body>
+</html>
