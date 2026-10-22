@@ -2,6 +2,10 @@
 
 每日自动整理的公开免费节点订阅，按客户端分类。更新时间：2026-10-22 18:41（北京时间）
 
+## 一键复制订阅网页
+- GitHub Pages：https://passionsu-su.github.io/free-nodes/
+- Hark 页面：https://hark.site/s/547f5c1e-13fe-4f08-94e3-44f772b0cf44?hark_region=us
+
 ## iOS
 | 客户端 | 订阅/配置链接 | 节点 | 导入方式 |
 | --- | --- | --- | --- |
