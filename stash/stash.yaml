@@ -3,7 +3,6 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- {name: 🇨🇳_CN_中国, type: vmess, server: 112.132.215.108, port: 50002, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
 - name: 🇺🇸_US_美国->🇩🇪_DE_德国
   type: vless
   server: uiuxtestsdcv-development-r6dg9.lucity.app
@@ -18,9 +17,16 @@ proxies:
     headers: {Host: uiuxtestsdcv-development-r6dg9.lucity.app}
   skip-cert-verify: true
   udp: true
-- {name: 🇮🇹_IT_意大利, type: ss, server: 202.50.253.54, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
-- {name: 🇮🇹_IT_意大利_1, type: ss, server: 202.50.253.90, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
+- {name: 🇮🇹_IT_意大利, type: ss, server: 202.50.253.81, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
+- {name: 🇮🇹_IT_意大利_1, type: ss, server: 202.50.253.72, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
+- {name: 🇨🇳_CN_中国, type: vmess, server: 112.132.215.108, port: 50002, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: 🇮🇹_IT_意大利_2, type: ss, server: 202.50.253.54, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
 - {name: 🇯🇵_JP_日本, type: ss, server: 154.36.158.197, port: 8388, cipher: aes-256-gcm, password: BeaUf9c0AEWH40Pu, skip-cert-verify: true, udp: true}
+- {name: 🇮🇹_IT_意大利_3, type: ss, server: 202.50.253.45, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
+- {name: 🇮🇹_IT_意大利_4, type: ss, server: 202.50.253.90, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
+- {name: 🇮🇹_IT_意大利_5, type: ss, server: 202.50.253.18, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
+- {name: 🇮🇹_IT_意大利_6, type: ss, server: 202.50.253.63, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
+- {name: 🇮🇹_IT_意大利_7, type: ss, server: 202.50.253.99, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
 - name: 🇺🇸_US_美国
   type: vmess
   server: guanwang.awsno.com
@@ -36,9 +42,6 @@ proxies:
     path: /hls/cctv5phd.m3u8
     headers: {Host: guanwang.awsno.com}
   udp: true
-- {name: 🇮🇹_IT_意大利_2, type: ss, server: 202.50.253.45, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
-- {name: 🇮🇹_IT_意大利_3, type: ss, server: 202.50.253.99, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
-- {name: 🇮🇹_IT_意大利_4, type: ss, server: 202.50.253.18, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
 - alpn: [h3]
   auth-str: dongtaiwang.com
   down: 55 Mbps
@@ -64,20 +67,21 @@ proxies:
 - {name: 🇩🇪192088 | ⚡️Telegram = t.me/v..., password: H7mP2xY9kJ4nQ8wR5tF6vB3z, port: 443, server: 35.158.96.132, skip-cert-verify: true, sni: vpn-de-002.fastervpn.world, tls: false, type: hysteria2}
 - {name: '@KAFING_2', obfs: salamander, obfs-password: '@JavidnamanIran-Javid-SHAH-KingRezaPahlavi', password: b4bd0613-ff7c-4f2f-954d-185915e6ddad, port: 35000, server: 181.214.99.162, skip-cert-verify: true, sni: api.kermanshahi.org, tls: false, type: hysteria2}
 - {name: 🇺🇸139909 | ⚡️Telegram = t.me/S..., password: qQe1z5kU8kN6SlKnDt9Ru3Qp, port: 443, server: 54.213.89.22, skip-cert-verify: true, sni: vk.com, tls: false, type: hysteria2}
-- {name: vpnsal, password: 033dc6b532, port: 11592, server: 77.232.139.128, sni: srv-8718e6.frd21.ru, tls: false, type: hysteria2}
-- {name: 🛕97@oneclickvpnkeys, password: 099830134df5ac3a04a4b21d39b8c395, port: 50160, server: 163.192.14.135, skip-cert-verify: true, sni: vk.com, tls: false, type: hysteria2}
 - {name: '@V2rayng_mar_ket', obfs: salamander, obfs-password: 87d72c2949c0ca85bbda09459244e374, password: 35d26d53bc, port: 11592, server: 109.104.153.124, skip-cert-verify: false, sni: srv-0e5387.frd21.ru, tls: false, type: hysteria2}
 - {name: 🛸62@oneclickvpnkeys, password: 4c858cccff331e64c711a199a6cb256a, port: 443, server: clash2.deep-links.com, sni: clash2.deep-links.com, tls: false, type: hysteria2}
-- {down: '', fingerprint: '', name: 🇺🇸US_23|4.7MB/s, obfs: '', obfs-password: '', password: 4fUg3KH31LpMhko6o0Ka9Q, port: 36720, server: 198.46.146.118, skip-cert-verify: true, sni: bing.com, tls: false, type: hysteria2, up: ''}
+- {name: 🛸69@oneclickvpnkeys, password: 4fUg3KH31LpMhko6o0Ka9Q, port: 36720, server: 198.46.146.118, skip-cert-verify: true, sni: bing.com, tls: false, type: hysteria2}
 - {name: '@v2ray_phoenix', obfs: salamander, obfs-password: 588c76723192f87cfe6d6786816177cd2bd9773acdc545928d7d1d5e8338d4ce, password: 56ff50da-a238-4646-95ab-dd159634bd87, port: 17701, server: 37.9.4.112, skip-cert-verify: false, sni: ru03.arpanet-cdn.com, tls: false, type: hysteria2}
 - {name: '@Begoo_VPN ²⁹⁰', obfs: salamander, obfs-password: dzcb7hv6i2kx2zze, password: 5bcodmhjtyfyyrqh, port: 36758, server: 91.142.73.159, skip-cert-verify: true, sni: cdn77.dmtr.ru, tls: false, type: hysteria2}
+- {name: 🛸96@oneclickvpnkeys, obfs: salamander, obfs-password: a39ca173b57ac7021b08bf3e3de9f1f6, password: 5fa748137b6d822308eea4611f474ad5, port: 443, server: 155.117.19.17, skip-cert-verify: true, sni: www.bing.com, tls: false, type: hysteria2}
 - {name: Telegram 🆔@cnetvpn 🇷🇺, obfs: salamander, obfs-password: 09p333uviv2qal0y, password: 617z9r1mbzbm1t5z, port: 52000, server: giftcard.gisora.ir, skip-cert-verify: false, sni: giftcard.gisora.ir, tls: false, type: hysteria2}
 - {name: 'Telegram:@v2rayng3', obfs: salamander, obfs-password: uw9b2qq5rx, password: 6aab8efdf13945829ae3699c342be406, port: 443, server: 31.76.80.69, skip-cert-verify: false, sni: fiproxy1.lockdwn.com, tls: false, type: hysteria2}
 - {name: 🇫🇮@Azaranv2ray, obfs: salamander, obfs-password: 9VK3Nqd0bcXGPxcay9hRLY28HBtKo5, password: 77f73bd5-51bf-4143-8ebd-02f56ba376f4, port: 21000, server: 79.137.206.157, skip-cert-verify: false, sni: hy.kirian.su, tls: false, type: hysteria2}
 - {name: Telegram 🆔@Cnetvpn 🇺🇲, obfs: salamander, obfs-password: fuw2k1ddrouwxr3u, password: 8f0gvz5eul6omhq4, port: 52087, server: giftcard.gateway-stream.com, skip-cert-verify: false, sni: giftcard.gateway-stream.com, tls: false, type: hysteria2}
 - {name: Telegram 🆔@cnetvpn 🇩🇪, obfs: salamander, obfs-password: 6cmj1dymhm79hopl, password: 8z2e26xkqsa598s3, port: 52000, server: gift-catalog.aroonia.ir, skip-cert-verify: false, sni: gift-catalog.aroonia.ir, tls: false, type: hysteria2}
+- {name: 🛸100@oneclickvpnkeys, password: H7mP2xY9kJ4nQ8wR5tF6vB3z, port: 443, server: 160.187.100.109, skip-cert-verify: true, sni: vpn-tw-002.fastervpn.world, tls: false, type: hysteria2}
 - {name: '@v2ray_configs_pools 🌍 ⚡️', password: Hc9_NX924RE_Mn948rgrwiub_m93V84nll, port: 9443, server: 5.254.51.108, skip-cert-verify: false, sni: keyhop-voxility-at.dynuddns.com, tls: false, type: hysteria2}
 - {name: 🩵+@Azarakhsh_Proxy+🩷, obfs: salamander, obfs-password: KevinZakarian, password: KevinZakarian, port: 8443, server: 179.61.132.96, skip-cert-verify: true, sni: 179.61.132.96, tls: false, type: hysteria2}
+- {name: 🇮🇷198624 | ⚡️Telegram = t.me/S..., obfs: salamander, obfs-password: 3mVEvYnmg5a4U6_66TQgh1W8, password: L5h99fyPz7ER5yxTks4tjDjHQa5Sk96s, port: 443, server: ir1.wufpel.ir, skip-cert-verify: false, sni: b2ab2c3a2670d4b2.wufpel.ir, tls: false, type: hysteria2}
 - {name: '@meliproxyy', password: M8LP9DztTr3znqCkmf-r08CQLBLLFK1r, port: 7443, server: me17.msjia8844.site, sni: me17.msjia8844.site, tls: false, type: hysteria2}
 - {name: '@FarazV2ray', obfs: salamander, obfs-password: c1b4086fea89914496c7e10967a419216566, password: QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s, port: 443, server: 162.249.125.133, skip-cert-verify: false, sni: hy2-new.aspidnet.xyz, tls: false, type: hysteria2}
 - {name: Telegram@vpnjey, obfs: salamander, obfs-password: Telegram@vpnjey, password: Telegram-Vpnjey, port: 54759, server: 179.61.138.145, skip-cert-verify: true, tls: false, type: hysteria2}
@@ -140,8 +144,7 @@ proxies:
 - {name: '@fastkanfig کانال تلگرام', obfs: salamander, obfs-password: b6d1f3888ab1d90dd11aac1dce427b81, password: tnnls, port: 443, server: bwdf2fnt.xn--e1aatfr8bwa.online, skip-cert-verify: false, sni: bwdf2fnt.xn--e1aatfr8bwa.online, tls: false, type: hysteria2}
 - {name: Telegram 🆔@cnetvpn 🇸🇪, obfs: salamander, obfs-password: fuw2k1ddrouwxr3u, password: vz86jgszv4zszchv, port: 52062, server: giftcard.gateway-stream.com, skip-cert-verify: false, sni: giftcard.gateway-stream.com, tls: false, type: hysteria2}
 - {name: Telegram 🆔@cnetvpn 🇫🇮, obfs: salamander, obfs-password: fuw2k1ddrouwxr3u, password: xf2ak19a4uajprxg, port: 52090, server: giftcard.gateway-stream.com, skip-cert-verify: false, sni: giftcard.gateway-stream.com, tls: false, type: hysteria2}
-- encryption: none
-  name: 🇦🇪[www.v2nodes.com] vless-AE-1...
+- name: 🇦🇪[www.v2nodes.com] vless-AE-1...
   network: ws
   port: 14430
   server: 95.174.68.188
@@ -153,16 +156,6 @@ proxies:
     headers: {Host: 95.174.68.188}
     path: /vless
 - name: '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
-  network: ws
-  port: 22573
-  server: uae.unixzone.us
-  tls: false
-  type: vless
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-  ws-opts:
-    headers: {Host: uae.unixzone.us}
-    path: /
-- name: '🇦🇪[www.v2nodes.com] vless-AE-1... #2'
   network: ws
   port: 8443
   server: 147.78.0.186
@@ -178,15 +171,23 @@ proxies:
   port: 443
   server: 89.125.139.115
   servername: free.cndyw.ggff.net
-  tls: false
+  tls: true
   type: vless
   uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
   ws-opts:
     headers: {Host: free.cndyw.ggff.net}
-    path: pyip=bpb.yousef.isegaro.comfp=chromesecurity=tls
+    path: pyip=bpb.yousef.isegaro.comfp=chrome
+- name: 🇦🇲[www.v2nodes.com] vless-AM-1...
+  network: ws
+  port: 10004
+  server: 194.36.37.59
+  tls: false
+  type: vless
+  uuid: f7376394-cd54-11f1-bb6a-bff6d0326f6a
+  ws-opts: {path: /vpnjantit}
 - client-fingerprint: android
   encryption: none
-  name: '🇺🇦[www.v2nodes.com] vless-UA-1... #6'
+  name: '🇺🇦[www.v2nodes.com] vless-UA-1... #7'
   network: ws
   port: 443
   server: 213.111.148.137
@@ -198,7 +199,7 @@ proxies:
     headers: {Host: proxy-1cu.pages.dev}
     path: /
 - client-fingerprint: chrome
-  name: '🏳[www.v2nodes.com] vless- #1'
+  name: 🏳[www.v2nodes.com] vless-
   network: ws
   port: 443
   server: 155.103.71.142
@@ -233,7 +234,7 @@ proxies:
   tls: false
   type: vless
   uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  ws-opts: {path: '/cart/docs/www/proxyip=108.160.132.132?ed#Telegram---bored_vpn'}
+  ws-opts: {path: /cart/docs/www/proxyip}
 - name: 🇧🇾[www.v2nodes.com] vless-BY-1...
   network: ws
   port: 14430
@@ -254,40 +255,86 @@ proxies:
   ws-opts:
     headers: {Host: 95.128.71.79}
     path: /vless
-- {encryption: none, name: '🇨🇦[www.v2nodes.com] vless-CA-1...', network: tcp, port: 8080, server: 212.74.39.214, tls: false, type: vless, uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8}
-- name: 🇸🇬[www.v2nodes.com] vless-SG
-  port: 443
-  server: 43.174.193.1
-  tls: false
-  type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts: {path: /}
-- client-fingerprint: chrome
-  name: 🇯🇵[www.v2nodes.com] vless-JP
+- {name: '🇨🇦[www.v2nodes.com] vless-CA-1... #1', port: 8080, server: 212.74.39.214, tls: false, type: vless, uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8}
+- alpn: [http/1.1]
+  client-fingerprint: chrome
+  name: 🇸🇬[www.v2nodes.com] vless-SG
   network: ws
   port: 443
   server: 188.114.98.0
-  servername: tn1r.eu.cc
+  servername: lucasjow.us.ci
   tls: true
   type: vless
-  uuid: 22424ee2-6fe3-42ca-9749-6d4c5a8acc82
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
   ws-opts:
-    headers: {Host: tn1r.eu.cc}
-    path: /id-pusat
-- name: 🇭🇰[www.v2nodes.com] vless-HK
+    headers: {Host: lucasjow.us.ci}
+    path: ?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed
+- name: '🇸🇬[www.v2nodes.com] vless-SG #1'
+  network: ws
+  port: 8880
+  server: 199.181.197.40
+  tls: false
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers: {Host: vms.lifetime19.workers.dev}
+    path: /?ed=2560
+- encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG #2'
+  network: ws
+  port: 8443
+  server: 172.67.155.65
+  servername: lucasjow.us.ci
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  ws-opts:
+    headers: {Host: lucasjow.us.ci}
+    path: /Chanel0111Net
+- name: '🇸🇬[www.v2nodes.com] vless-SG #3'
+  network: ws
+  port: 8880
+  server: 66.235.200.30
+  tls: false
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers: {Host: vms.lifetime47.workers.dev}
+    path: /
+- name: '🇸🇬[www.v2nodes.com] vless-SG #4'
+  network: ws
+  port: 8080
+  server: www.gov.se
+  servername: www.gov.se
+  tls: false
+  type: vless
+  uuid: 989d58b8-d2ea-4d28-b5ff-0f3cd078f2cf
+  ws-opts:
+    headers: {Host: sdf23g-billowing-moon-348e.mzm468gc.workers.dev}
+    path: /
+- alpn: [http/1.1]
+  client-fingerprint: firefox
+  encryption: none
+  name: '🏳[www.v2nodes.com] vless- #2'
+  network: ws
+  port: 443
+  server: 8.6.112.242
+  servername: parsa-panel-dy55x.railway1385-2a46.workers.dev
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 64726966-0000-4000-8000-740000000000
+  ws-opts:
+    headers: {Host: parsa-panel-dy55x.railway1385-2a46.workers.dev}
+    path: /drift?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+- name: '🇸🇬[www.v2nodes.com] vless-SG #5'
   port: 443
   server: 104.21.91.244
   tls: false
   type: vless
   uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  ws-opts: {path: /Chanel0111Net}
-- name: '🇸🇬[www.v2nodes.com] vless-SG #5'
-  port: 8443
-  server: 172.67.155.65
-  tls: false
-  type: vless
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  ws-opts: {path: /cart/docs/www/proxyip}
+  ws-opts: {path: '/?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560'}
 - name: 🇨🇱[www.v2nodes.com] vless-CL-1...
   network: ws
   port: 443
@@ -310,32 +357,33 @@ proxies:
   ws-opts:
     headers: {Host: free.cndyw.ggff.net}
     path: pyip=bpb.yousef.isegaro.comfp=randomsecurity=tls
-- name: '🇨🇾[www.v2nodes.com] vless-CY-1... #1'
+- client-fingerprint: chrome
+  encryption: none
+  name: '🇨🇾[www.v2nodes.com] vless-CY-1... #1'
   network: ws
   port: 443
   server: 213.111.177.107
   servername: vlso5.1d.mom
-  tls: false
+  tls: true
   type: vless
   uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
   ws-opts:
     headers: {Host: vlso5.1d.mom}
-    path: /socks5=888:888@hkip.1d.mom:1080fp=chromesecurity=tls
-- {name: '🇩🇪[www.v2nodes.com] vless-DE-1...', port: 443, server: 45.144.30.86, tls: false, type: vless, uuid: 30572b57-f5ab-4eb8-82d4-a24d399b99f6}
+    path: /socks5=888:888@hkip.1d.mom:1080
+- {name: '🇩🇪[www.v2nodes.com] vless-DE-1... #2', port: 443, server: 45.144.30.86, tls: false, type: vless, uuid: 30572b57-f5ab-4eb8-82d4-a24d399b99f6}
 - client-fingerprint: chrome
-  name: '🇺🇸 美国 | USA #10'
+  name: '🇺🇸[www.v2nodes.com] vless-US-1... #2'
   network: ws
   port: 443
   server: wwww.qarvian.ir
   servername: firefox.com
   tls: true
   type: vless
-  udp: true
   uuid: 153900df-5824-4b55-98c4-418c5baea523
   ws-opts:
     headers: {Host: copy_az_channel_NUFiLTER_7i.global.ssl.fastly.net.}
     path: /
-- name: '🇩🇪[www.v2nodes.com] vless-DE-1... #2'
+- name: '🇩🇪[www.v2nodes.com] vless-DE-1... #4'
   port: 2087
   server: shortbig.ir
   tls: false
@@ -343,7 +391,7 @@ proxies:
   uuid: 31f185b6-e591-413b-ba72-88083a87feb2
   ws-opts: {path: /hokm}
 - encryption: none
-  name: '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
+  name: '🇩🇪[www.v2nodes.com] vless-DE-1... #5'
   network: ws
   port: 443
   server: 903.rtgpu.com
@@ -351,7 +399,7 @@ proxies:
   type: vless
   uuid: c6438331-a79b-4471-fd5e-42c2eeac29fa
   ws-opts: {path: /nmd2}
-- name: '🇩🇪[www.v2nodes.com] vless-DE-1... #4'
+- name: '🇩🇪[www.v2nodes.com] vless-DE-1... #6'
   network: ws
   port: 2051
   server: dl.hessabb.ir
@@ -362,7 +410,7 @@ proxies:
     headers: {Host: dl.hessabb.ir}
     path: /download
 - alpn: [http/1.1]
-  name: '🇩🇪[www.v2nodes.com] vless-DE-1... #6'
+  name: '🇩🇪[www.v2nodes.com] vless-DE-1... #8'
   network: ws
   port: 443
   server: shortbig.ir
@@ -374,7 +422,7 @@ proxies:
     headers: {Host: alman.5f2vvtqh5syot.info}
     path: /9d9fdbc18c834cffab4276811501fbae
 - encryption: none
-  name: '🇩🇪[www.v2nodes.com] vless-DE-1... #8'
+  name: '🇩🇪[www.v2nodes.com] vless-DE-1... #10'
   network: ws
   port: 443
   server: 146.75.59.186
@@ -386,8 +434,7 @@ proxies:
   ws-opts:
     headers: {Host: copy_az_channel_NUFiLTER_a1i.global.ssl.fastly.net.}
     path: /
-- encryption: none
-  name: '🏳[www.v2nodes.com] vless- #10'
+- name: '🇪🇸[www.v2nodes.com] vless-ES-4... #4'
   network: ws
   port: 443
   server: 31.57.190.89
@@ -397,20 +444,7 @@ proxies:
   uuid: d342d11e-d224-4463-b982-532309285094
   ws-opts:
     headers: {Host: ccc.010304.xyz}
-    path: /
-- encryption: none
-  name: 🇪🇸[www.v2nodes.com] vless-ES-2...
-  network: ws
-  port: 443
-  server: 31.57.190.15
-  servername: ccc.010304.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers: {Host: ccc.010304.xyz}
-    path: /fp
+    path: /fp=chromefp=chrome
 - name: 🇪🇸[www.v2nodes.com] vless-ES-4...
   network: ws
   port: 443
@@ -422,7 +456,22 @@ proxies:
   ws-opts:
     headers: {Host: cf3.schzyc.cc.cd}
     path: /proxyip=ProxyIP.CMLiussss.netfp=chrome
-- name: '🏳[www.v2nodes.com] vless- #14'
+- alpn: [http/1.1]
+  client-fingerprint: chrome
+  encryption: none
+  name: '🇫🇮[www.v2nodes.com] vless-FI-1... #2'
+  network: ws
+  port: 2096
+  server: 144.31.34.146
+  servername: fi1.merky.one
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
+  ws-opts:
+    headers: {Host: fi1.merky.one}
+    path: /mky-ws-4f19c8a7
+- name: '🇫🇮[www.v2nodes.com] vless-FI-1... #5'
   network: ws
   port: 14430
   server: 45.144.234.157
@@ -432,7 +481,7 @@ proxies:
   ws-opts:
     headers: {Host: 45.144.234.157}
     path: /vless
-- name: '🇫🇮[www.v2nodes.com] vless-FI-1... #5'
+- name: '🇫🇮[www.v2nodes.com] vless-FI-1... #14'
   network: ws
   port: 443
   server: 77.110.97.245
@@ -443,22 +492,9 @@ proxies:
   ws-opts:
     headers: {Host: ccc.010304.xyz}
     path: /fp=chromesecurity=tls
-- alpn: [http/1.1]
-  client-fingerprint: chrome
-  name: 🇫🇷[www.v2nodes.com] vless-FR-1...
-  network: ws
-  port: 8443
-  server: speedtest.org
-  servername: pbsjv.megalionzone-vexina.sbs
-  tls: true
-  type: vless
-  uuid: c3571d81-38bd-44a8-9b75-5af8a125fc42
-  ws-opts:
-    headers: {Host: pbsjv.megalionzone-vexina.sbs}
-    path: /bala
 - client-fingerprint: chrome
   encryption: none
-  name: '🇫🇷[www.v2nodes.com] vless-FR-1... #1'
+  name: 🇫🇷[www.v2nodes.com] vless-FR-1...
   network: ws
   port: 443
   server: redcloudport-bidarbash.sbs
@@ -470,8 +506,8 @@ proxies:
     headers: {Host: redcloudport-bidarbash.sbs}
     path: /zoodi
 - {name: '🇬🇧[www.v2nodes.com] vless-GB-1... #3', port: 10002, server: connect.hondamotor.site, tls: false, type: vless, uuid: c6362720-0931-4b91-b187-d8ecf3149734}
-- {name: '🇬🇧[www.v2nodes.com] vless-GB-1... #4', port: 1222, server: 23.81.36.148, tls: false, type: vless, uuid: 36c3dcc2-17b6-4478-b8a7-3978e6d5afe9}
-- {name: '🇬🇧[www.v2nodes.com] vless-GB-1... #6', port: 8443, server: node-uk.connectsuite.org, tls: true, type: vless, uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed}
+- {name: '🇬🇧[www.v2nodes.com] vless-GB-1... #5', port: 1222, server: 23.81.36.148, tls: false, type: vless, uuid: 36c3dcc2-17b6-4478-b8a7-3978e6d5afe9}
+- {client-fingerprint: chrome, encryption: none, name: '🇬🇧[www.v2nodes.com] vless-GB-1... #7', network: tcp, port: 8443, server: node-uk.connectsuite.org, skip-cert-verify: false, tls: true, type: vless, uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed}
 - name: 🇬🇷[www.v2nodes.com] vless-GR-3...
   network: ws
   port: 443
@@ -483,21 +519,9 @@ proxies:
   ws-opts:
     headers: {Host: free.cndyw.ggff.net}
     path: pyip=bpb.yousef.isegaro.comfp=random
-- client-fingerprint: qq
-  name: '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
-  network: ws
-  port: 443
-  server: cf.130519.xyz
-  servername: lucasjow.us.ci
-  tls: true
-  type: vless
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  ws-opts:
-    headers: {Host: lucasjow.us.ci}
-    path: /cart/docs/www/proxyip=108.160.132.132
-- {name: '🏳[www.v2nodes.com] vless- #20', port: 13779, server: 47.238.210.5, tls: false, type: vless, uuid: 928e6cce-8ced-4243-9a48-a6642edd09b0}
+- {name: '🇭🇰[www.v2nodes.com] vless-HK-1... #2', port: 13779, server: 47.238.210.5, tls: false, type: vless, uuid: 928e6cce-8ced-4243-9a48-a6642edd09b0}
 - client-fingerprint: chrome
-  name: '🏳[www.v2nodes.com] vless- #21'
+  name: '🏳[www.v2nodes.com] vless- #14'
   network: ws
   port: 8443
   server: 103.148.73.173
@@ -508,7 +532,7 @@ proxies:
   ws-opts:
     headers: {Host: ty986gfazs.cainiaohub.xyz}
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- name: '🇭🇰 香港 | HKG #1'
+- name: '🏳[www.v2nodes.com] vless- #15'
   network: ws
   port: 8443
   server: 103.180.20.176
@@ -530,8 +554,7 @@ proxies:
   ws-opts:
     headers: {Host: free.cndyw.ggff.net}
     path: pyip=bpb.yousef.isegaro.comfp=random
-- client-fingerprint: chrome
-  name: 🇮🇱[www.v2nodes.com] vless-IL-1...
+- name: 🇮🇱[www.v2nodes.com] vless-IL-1...
   network: ws
   port: 443
   server: 185.253.75.119
@@ -541,10 +564,19 @@ proxies:
   uuid: d342d11e-d224-4463-b982-532309285094
   ws-opts:
     headers: {Host: ccc.010304.xyz}
-    path: /
-- {name: '🇮🇳[www.v2nodes.com] vless-IN-1...', port: 443, server: 165.99.222.161, tls: false, type: vless, uuid: 30572b57-f5ab-4eb8-82d4-a24d399b99f6}
-- encryption: none
-  name: '🏳[www.v2nodes.com] vless- #23'
+    path: /fp=chrome
+- name: '🇮🇳[www.v2nodes.com] vless-IN-1... #1'
+  network: ws
+  port: 14430
+  server: 5.253.29.254
+  servername: 5.253.29.254
+  tls: false
+  type: vless
+  uuid: c7c27192-60a5-4ce1-b613-95270d82309d
+  ws-opts:
+    headers: {Host: 5.253.29.254}
+    path: /vless
+- name: '🇮🇳[www.v2nodes.com] vless-IN-1... #2'
   network: ws
   port: 14430
   server: 13.140.56.100
@@ -552,9 +584,9 @@ proxies:
   type: vless
   uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
   ws-opts: {path: /vless}
-- {name: '🇮🇳[www.v2nodes.com] vless-IN-1... #1', port: 40443, server: dorado.yokkastars.com, tls: false, type: vless, uuid: af5eac96-e478-488a-bc8c-45269d7e8847}
+- {name: '🇮🇹[www.v2nodes.com] vless-IT-1... #1', port: 10086, server: 204.216.216.23, tls: false, type: vless, uuid: 9f0285ee-20ca-4953-bcdb-86a920652923}
 - client-fingerprint: chrome
-  name: '🏳[www.v2nodes.com] vless- #25'
+  name: '🏳[www.v2nodes.com] vless- #18'
   network: ws
   port: 443
   server: kclx.eu.org
@@ -576,21 +608,7 @@ proxies:
   ws-opts:
     headers: {Host: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev}
     path: /@Marisa_kristifp=chrome
-- {name: '🇯🇵[www.v2nodes.com] vless-JP-1... #1', port: 35544, server: funagfrdfs.alixxplay.com, tls: false, type: vless, uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134}
-- client-fingerprint: chrome
-  encryption: none
-  name: '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
-  network: ws
-  port: 443
-  server: 104.16.10.185
-  servername: jp3.yohototo.top
-  tls: true
-  type: vless
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  ws-opts:
-    headers: {Host: jp3.yohototo.top}
-    path: /tyxyws
-- {name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4', port: 443, server: 137.220.221.179, tls: false, type: vless, uuid: a16a3336-c9ab-489f-9b85-c973f5e2cfa4}
+- {encryption: none, name: '🇯🇵[www.v2nodes.com] vless-JP-1... #2', network: tcp, port: 443, server: 137.220.221.179, tls: false, type: vless, uuid: a16a3336-c9ab-489f-9b85-c973f5e2cfa4}
 - name: 🇱🇰[www.v2nodes.com] vless-LK-7...
   network: ws
   port: 80
@@ -638,10 +656,23 @@ proxies:
   ws-opts:
     headers: {Host: ccc.010304.xyz}
     path: /
+- alpn: [http/1.1]
+  client-fingerprint: chrome
+  name: 🇳🇱[www.v2nodes.com] vless-NL-1...
+  network: ws
+  port: 443
+  server: n1.fazelino.site
+  servername: api.fazelino.site
+  tls: true
+  type: vless
+  uuid: dd688bb9-41d9-4eb7-b5eb-6175f612cdb6
+  ws-opts:
+    headers: {Host: api.fazelino.site}
+    path: /api/get
 - alpn: [h2]
   client-fingerprint: qq
   grpc-opts: {grpc-service-name: api.v1.StreamService}
-  name: 🇳🇱[www.v2nodes.com] vless-NL-1...
+  name: '🇳🇱[www.v2nodes.com] vless-NL-1... #1'
   network: grpc
   port: 8517
   server: 111.88.128.167
@@ -649,7 +680,7 @@ proxies:
   tls: true
   type: vless
   uuid: 92a4056a-38d6-49d0-8bd2-600e55af1e9f
-- name: '🇳🇱[www.v2nodes.com] vless-NL-1... #5'
+- name: '🇳🇱[www.v2nodes.com] vless-NL-1... #6'
   network: ws
   port: 443
   server: uk1-2.998998.best
@@ -660,21 +691,9 @@ proxies:
   ws-opts:
     headers: {Host: server13.9966338.xyz}
     path: /resiouhgggggggggg?ed=2560fp=chrome
-- client-fingerprint: chrome
-  encryption: none
-  grpc-opts: {grpc-service-name: framefeed}
-  name: 🇵🇱[www.v2nodes.com] vless-PL-1...
-  network: grpc
-  port: 443
-  server: 83.168.91.16
-  servername: pl-exit-02.10media.top
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 9cb8d71c-fe06-4402-a591-eaa1f173b890
-- {encryption: none, name: '🇷🇴[www.v2nodes.com] vless-RO-1...', network: tcp, port: 2052, server: edge10.cyrionflare.com, tls: false, type: vless, uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286}
-- {name: '🇵🇱[www.v2nodes.com] vless-PL-1... #2', port: 8443, server: 2.26.225.89, tls: true, type: vless, uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b}
-- name: '🇵🇱[www.v2nodes.com] vless-PL-1... #8'
+- {name: '🇷🇴[www.v2nodes.com] vless-RO-1...', port: 2052, server: edge10.cyrionflare.com, tls: false, type: vless, uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286}
+- {encryption: none, name: '🏳[www.v2nodes.com] vless- #21', network: tcp, port: 8443, server: 2.26.225.89, servername: pl.flen-vpn.xyz, tls: true, type: vless, uuid: 51a1fd52-fd88-4905-a976-35e44be28e4b}
+- name: '🇵🇱[www.v2nodes.com] vless-PL-1... #7'
   network: ws
   port: 443
   server: 157.22.128.7
@@ -686,7 +705,7 @@ proxies:
     headers: {Host: free.cndyw.ggff.net}
     path: pyip=bpb.yousef.isegaro.comfp=random
 - grpc-opts: {grpc-service-name: grpc-ru}
-  name: '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
+  name: 🇷🇺[www.v2nodes.com] vless-RU-1...
   network: grpc
   port: 443
   server: xsru1.ddnsfree.com
@@ -694,7 +713,7 @@ proxies:
   tls: true
   type: vless
   uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
-- name: '🏳[www.v2nodes.com] vless- #33'
+- name: '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
   network: ws
   port: 8443
   server: 194.87.143.165
@@ -714,16 +733,7 @@ proxies:
   ws-opts:
     headers: {Host: se-sto.862400.xyz}
     path: /announcement?ed=2048fp=random
-- encryption: none
-  name: '🇸🇪[www.v2nodes.com] vless-SE-1... #2'
-  network: ws
-  port: 14430
-  server: 5.178.109.174
-  tls: false
-  type: vless
-  uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
-  ws-opts: {path: /vless}
-- name: '🇸🇪[www.v2nodes.com] vless-SE-1... #3'
+- name: '🇸🇪[www.v2nodes.com] vless-SE-1... #2'
   network: ws
   port: 14430
   server: 193.188.21.253
@@ -734,7 +744,7 @@ proxies:
   ws-opts:
     headers: {Host: 193.188.21.253}
     path: /vless
-- name: '🇸🇪[www.v2nodes.com] vless-SE-1... #4'
+- name: '🇸🇪[www.v2nodes.com] vless-SE-1... #3'
   network: ws
   port: 2053
   server: 5.189.254.168
@@ -745,39 +755,17 @@ proxies:
   ws-opts:
     headers: {Host: cf3.schzyc.cc.cd}
     path: /proxyip=ProxyIP.CMLiussss.netfp=chrome
-- name: '🇸🇪[www.v2nodes.com] vless-SE-1... #5'
+- name: '🇸🇪[www.v2nodes.com] vless-SE-1... #4'
   port: 443
   server: 94.143.231.146
   tls: false
   type: vless
   uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
   ws-opts: {path: /merky-connect/de6/}
-- encryption: none
-  grpc-opts: {grpc-service-name: swedenfeed}
-  name: '🇸🇪[www.v2nodes.com] vless-SE-1... #6'
-  network: grpc
-  port: 443
-  server: edge-lab-b.10media.top
-  servername: edge-lab-b.10media.top
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 9cb8d71c-fe06-4402-a591-eaa1f173b890
-- name: 🇸🇬[www.v2nodes.com] vless-SG-1...
-  network: ws
-  port: 8443
-  server: 66.225.252.7
-  servername: speed.dulacloud.store
-  tls: true
-  type: vless
-  uuid: 7967bf59-57e3-4cde-9898-527b0fe60022
-  ws-opts:
-    headers: {Host: speed.dulacloud.store}
-    path: /dula?Telegram-WangCai2fp=chrome
-- {encryption: none, name: '🇸🇬[www.v2nodes.com] vless-SG-1... #5', network: tcp, port: 16263, server: 47.237.74.17, tls: false, type: vless, uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3}
+- {name: '🇸🇬[www.v2nodes.com] vless-SG-1... #5', port: 16263, server: 47.237.74.17, tls: false, type: vless, uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3}
 - client-fingerprint: chrome
   encryption: none
-  name: '🏳[www.v2nodes.com] vless- #35'
+  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
   network: ws
   port: 2096
   server: 139.162.27.96
@@ -789,73 +777,88 @@ proxies:
   ws-opts:
     headers: {Host: free-server.techsonic.dev}
     path: /free-server.techsonic.dev
-- {name: '🇸🇬[www.v2nodes.com] vless-SG-1... #8', port: 12512, server: 46.137.202.178, tls: false, type: vless, uuid: 2a6c617d-98e4-49c3-95ab-76f02fcf0150}
-- {name: '🇮🇳[www.v2nodes.com] vless-IN', port: 40443, server: 5.253.30.99, tls: false, type: vless, uuid: 511c1563-2cb6-4064-abc6-a59ee49818a8}
-- client-fingerprint: qq
-  name: '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
+- name: '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
+  network: ws
+  port: 8880
+  server: 103.133.1.30
+  tls: false
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers: {Host: vms.lifetime36.workers.dev}
+    path: /
+- {encryption: none, name: '🇸🇬[www.v2nodes.com] vless-SG-8...', port: 80, server: 104.21.227.134, tls: false, type: vless, uuid: 0991a0c4-0ee5-4213-af89-7ad589f853f3}
+- client-fingerprint: chrome
+  encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG-8... #1'
   network: ws
   port: 443
-  server: cf.877774.xyz
+  server: 172.66.47.10
   servername: lucasjow.us.ci
+  skip-cert-verify: false
   tls: true
   type: vless
   uuid: e6df2095-a73c-4043-8693-8d5a03686870
   ws-opts:
     headers: {Host: lucasjow.us.ci}
     path: /cart/docs/www/proxyip=108.160.132.132
-- {encryption: none, name: '🇸🇬[www.v2nodes.com] vless-SG-8...', port: 80, server: 104.21.227.134, tls: false, type: vless, uuid: 0991a0c4-0ee5-4213-af89-7ad589f853f3}
-- {name: '🇹🇭[www.v2nodes.com] vless-TH-1...', port: 21033, server: 154.21.203.106, tls: false, type: vless, uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134}
-- {name: '🇹🇼[www.v2nodes.com] vless-TW-1...', port: 24215, server: hinet1.2yly.com, tls: false, type: vless, uuid: 19d5a678-8396-4e3b-93da-ece618d0e83a}
-- client-fingerprint: chrome
-  name: '🇹🇼 🇨🇳 台湾 | TWN #3'
+- encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG-8... #2'
+  network: ws
+  port: 8880
+  server: 185.148.106.30
+  tls: false
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers: {Host: vms.lifetime54.workers.dev}
+    path: /
+- encryption: none
+  name: '🇹🇭[www.v2nodes.com] vless-TH-1... #1'
   network: ws
   port: 443
-  server: 60.248.219.54
+  server: 104.16.111.193
+  servername: v2ray.simspeedup.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 3c52e091-6714-4915-949f-2149fe69951b
+  ws-opts:
+    headers: {Host: v2ray.simspeedup.com}
+    path: /ws
+- {name: '🇹🇼[www.v2nodes.com] vless-TW-1...', port: 24215, server: hinet1.2yly.com, tls: false, type: vless, uuid: 19d5a678-8396-4e3b-93da-ece618d0e83a}
+- client-fingerprint: chrome
+  name: '🏳[www.v2nodes.com] vless- #28'
+  network: ws
+  port: 443
+  server: 59.125.69.23
   servername: ty986gfazs.cainiaohub.xyz
   tls: true
   type: vless
-  udp: true
-  uuid: 06e177f7-240d-4687-bd85-235505801a5e
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
   ws-opts:
     headers: {Host: ty986gfazs.cainiaohub.xyz}
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- encryption: mlkem768x25519plus.native.0rtt.ANymG3pbNTc9XneprZhNvxHRz5_PxHksy0egsbnZXFA
-  name: '🇺🇸[www.v2nodes.com] vless-US-1... #8'
-  network: tcp
-  port: 443
-  server: 194.113.74.166
-  tls: false
-  type: vless
-  uuid: 7d5cdbb1-9632-483a-9b50-27932cfa9390
-  ws-opts:
-    headers: {Host: play.google.com}
-- client-fingerprint: chrome
-  name: 🇻🇳[www.v2nodes.com] vless-VN-1...
-  network: ws
-  port: 2087
-  server: 172.67.168.158
-  servername: vn11vina.210z.dev
-  tls: true
-  type: vless
-  uuid: 1d0e8e53-6999-4752-ac21-c0c54ff5bc09
-  ws-opts:
-    headers: {Host: vn11vina.210z.dev}
-    path: /vlessvina
+- {name: '🇻🇳[www.v2nodes.com] vless-VN-1... #1', port: 51279, server: 154.21.203.106, tls: false, type: vless, uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134}
+- {cipher: chacha20-ietf-poly1305, name: '🇦🇱[www.v2nodes.com] ss-AL-1490...', password: nQeEoXC5Yl5PZnPLvKUpFTU9cyQcNG902zpibWkwGbo=, port: 43558, server: 130.49.189.158, type: ss}
+- {cipher: aes-256-gcm, name: '🇦🇹[www.v2nodes.com] ss-AT-1595...', password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, port: 19999, server: 82.110.60.9, type: ss}
+- {cipher: aes-256-gcm, name: '🏳[www.v2nodes.com] ss-', password: zDNVedRFPQexG9v, port: 445, server: 51.222.141.125, type: ss}
+- {cipher: aes-256-gcm, name: '🏳[www.v2nodes.com] ss- #1', password: cdBIDV42DCwnfIN, port: 8118, server: 51.79.85.185, type: ss}
 proxy-groups:
 - name: PROXY
   type: select
-  proxies: [AUTO, 🇨🇳_CN_中国, 🇺🇸_US_美国->🇩🇪_DE_德国, 🇮🇹_IT_意大利, 🇮🇹_IT_意大利_1, 🇯🇵_JP_日本, 🇺🇸_US_美国, 🇮🇹_IT_意大利_2, 🇮🇹_IT_意大利_3, 🇮🇹_IT_意大利_4, 'https://github.com/*********-*...', 'github.com/*********-******/**... #1', 🇩🇪192088 | ⚡️Telegram = t.me/v..., '@KAFING_2', 🇺🇸139909 | ⚡️Telegram = t.me/S..., vpnsal, 🛕97@oneclickvpnkeys, '@V2rayng_mar_ket', 🛸62@oneclickvpnkeys, 🇺🇸US_23|4.7MB/s, '@v2ray_phoenix', '@Begoo_VPN ²⁹⁰', Telegram 🆔@cnetvpn 🇷🇺, 'Telegram:@v2rayng3', 🇫🇮@Azaranv2ray, Telegram 🆔@Cnetvpn 🇺🇲, Telegram 🆔@cnetvpn 🇩🇪, '@v2ray_configs_pools 🌍 ⚡️', 🩵+@Azarakhsh_Proxy+🩷, '@meliproxyy', '@FarazV2ray', Telegram@vpnjey, 'Telegram@vpnjey #1', 'Telegram@vpnjey #2', 🛸64@oneclickvpnkeys, 'Channel : @Daily_Configs #1', 'Telegram@vpnjey #5', 'Telegram@vpnjey #6', 🇳🇱 - NL - @FreeOnlineVPN, '@KAFING_2 #2', 🛸75@oneclickvpnkeys, '@V2rayng_mar_ket #1', 🇨🇭192087 | ⚡️Telegram = t.me/v..., '@vmess_ir', 'Telegram 🆔@Cnetvpn 🇺🇲 #1', '@confiig_hub #1', 🇱🇻hysteria, Telegram 🆔@cnetvpn 🇳🇱, '@fastkanfig کانال تلگرام',
-    Telegram 🆔@cnetvpn 🇸🇪, Telegram 🆔@cnetvpn 🇫🇮, '🇦🇪[www.v2nodes.com] vless-AE-1...', '🇦🇪[www.v2nodes.com] vless-AE-1... #1', '🇦🇪[www.v2nodes.com] vless-AE-1... #2', '🇦🇱[www.v2nodes.com] vless-AL-1...', '🇺🇦[www.v2nodes.com] vless-UA-1... #6', '🏳[www.v2nodes.com] vless- #1', '🇸🇪[www.v2nodes.com] vless-SE-3...', '🇧🇷[www.v2nodes.com] vless-BR-1... #1', '🇸🇬[www.v2nodes.com] vless-SG-9... #1', '🇧🇾[www.v2nodes.com] vless-BY-1...', '🇧🇾[www.v2nodes.com] vless-BY-1... #1', '🇨🇦[www.v2nodes.com] vless-CA-1...', '🇸🇬[www.v2nodes.com] vless-SG', '🇯🇵[www.v2nodes.com] vless-JP', '🇭🇰[www.v2nodes.com] vless-HK', '🇸🇬[www.v2nodes.com] vless-SG #5', '🇨🇱[www.v2nodes.com] vless-CL-1...', '🇨🇾[www.v2nodes.com] vless-CY-1...', '🇨🇾[www.v2nodes.com] vless-CY-1... #1', '🇩🇪[www.v2nodes.com] vless-DE-1...', '🇺🇸 美国 | USA #10', '🇩🇪[www.v2nodes.com] vless-DE-1... #2', '🇩🇪[www.v2nodes.com] vless-DE-1... #3', '🇩🇪[www.v2nodes.com] vless-DE-1... #4', '🇩🇪[www.v2nodes.com] vless-DE-1... #6', '🇩🇪[www.v2nodes.com] vless-DE-1...
-      #8', '🏳[www.v2nodes.com] vless- #10', '🇪🇸[www.v2nodes.com] vless-ES-2...', '🇪🇸[www.v2nodes.com] vless-ES-4...', '🏳[www.v2nodes.com] vless- #14', '🇫🇮[www.v2nodes.com] vless-FI-1... #5', '🇫🇷[www.v2nodes.com] vless-FR-1...', '🇫🇷[www.v2nodes.com] vless-FR-1... #1', '🇬🇧[www.v2nodes.com] vless-GB-1... #3', '🇬🇧[www.v2nodes.com] vless-GB-1... #4', '🇬🇧[www.v2nodes.com] vless-GB-1... #6', '🇬🇷[www.v2nodes.com] vless-GR-3...', '🇭🇰[www.v2nodes.com] vless-HK-1... #1', '🏳[www.v2nodes.com] vless- #20', '🏳[www.v2nodes.com] vless- #21', '🇭🇰 香港 | HKG #1', '🇭🇺[www.v2nodes.com] vless-HU-6...', '🇮🇱[www.v2nodes.com] vless-IL-1...', '🇮🇳[www.v2nodes.com] vless-IN-1...', '🏳[www.v2nodes.com] vless- #23', '🇮🇳[www.v2nodes.com] vless-IN-1... #1', '🏳[www.v2nodes.com] vless- #25', '🇮🇹[www.v2nodes.com] vless-IT-2...', '🇯🇵[www.v2nodes.com] vless-JP-1... #1', '🇯🇵[www.v2nodes.com] vless-JP-1... #3', '🇯🇵[www.v2nodes.com] vless-JP-1... #4', '🇱🇰[www.v2nodes.com] vless-LK-7...', '🇲🇩[www.v2nodes.com] vless-MD-4...', '🇲🇽[www.v2nodes.com]
-      vless-MX-1... #2', '🇲🇾[www.v2nodes.com] vless-MY-5...', '🇳🇱[www.v2nodes.com] vless-NL-1...', '🇳🇱[www.v2nodes.com] vless-NL-1... #5', '🇵🇱[www.v2nodes.com] vless-PL-1...', '🇷🇴[www.v2nodes.com] vless-RO-1...', '🇵🇱[www.v2nodes.com] vless-PL-1... #2', '🇵🇱[www.v2nodes.com] vless-PL-1... #8', '🇷🇺[www.v2nodes.com] vless-RU-1... #1', '🏳[www.v2nodes.com] vless- #33', '🇸🇪[www.v2nodes.com] vless-SE-1...', '🇸🇪[www.v2nodes.com] vless-SE-1... #2', '🇸🇪[www.v2nodes.com] vless-SE-1... #3', '🇸🇪[www.v2nodes.com] vless-SE-1... #4', '🇸🇪[www.v2nodes.com] vless-SE-1... #5', '🇸🇪[www.v2nodes.com] vless-SE-1... #6', '🇸🇬[www.v2nodes.com] vless-SG-1...', '🇸🇬[www.v2nodes.com] vless-SG-1... #5', '🏳[www.v2nodes.com] vless- #35', '🇸🇬[www.v2nodes.com] vless-SG-1... #8', '🇮🇳[www.v2nodes.com] vless-IN', '🇸🇬[www.v2nodes.com] vless-SG-9... #2', '🇸🇬[www.v2nodes.com] vless-SG-8...', '🇹🇭[www.v2nodes.com] vless-TH-1...', '🇹🇼[www.v2nodes.com] vless-TW-1...', '🇹🇼 🇨🇳 台湾 | TWN #3', '🇺🇸[www.v2nodes.com] vless-US-1... #8', '🇻🇳[www.v2nodes.com]
-      vless-VN-1...']
+  proxies: [AUTO, 🇺🇸_US_美国->🇩🇪_DE_德国, 🇮🇹_IT_意大利, 🇮🇹_IT_意大利_1, 🇨🇳_CN_中国, 🇮🇹_IT_意大利_2, 🇯🇵_JP_日本, 🇮🇹_IT_意大利_3, 🇮🇹_IT_意大利_4, 🇮🇹_IT_意大利_5, 🇮🇹_IT_意大利_6, 🇮🇹_IT_意大利_7, 🇺🇸_US_美国, 'https://github.com/*********-*...', 'github.com/*********-******/**... #1', 🇩🇪192088 | ⚡️Telegram = t.me/v..., '@KAFING_2', 🇺🇸139909 | ⚡️Telegram = t.me/S..., '@V2rayng_mar_ket', 🛸62@oneclickvpnkeys, 🛸69@oneclickvpnkeys, '@v2ray_phoenix', '@Begoo_VPN ²⁹⁰', 🛸96@oneclickvpnkeys, Telegram 🆔@cnetvpn 🇷🇺, 'Telegram:@v2rayng3', 🇫🇮@Azaranv2ray, Telegram 🆔@Cnetvpn 🇺🇲, Telegram 🆔@cnetvpn 🇩🇪, 🛸100@oneclickvpnkeys, '@v2ray_configs_pools 🌍 ⚡️', 🩵+@Azarakhsh_Proxy+🩷, 🇮🇷198624 | ⚡️Telegram = t.me/S..., '@meliproxyy', '@FarazV2ray', Telegram@vpnjey, 'Telegram@vpnjey #1', 'Telegram@vpnjey #2', 🛸64@oneclickvpnkeys, 'Channel : @Daily_Configs #1', 'Telegram@vpnjey #5', 'Telegram@vpnjey #6', 🇳🇱 - NL - @FreeOnlineVPN, '@KAFING_2 #2', 🛸75@oneclickvpnkeys, '@V2rayng_mar_ket #1', 🇨🇭192087 | ⚡️Telegram = t.me/v..., '@vmess_ir', 'Telegram 🆔@Cnetvpn
+      🇺🇲 #1', '@confiig_hub #1', 🇱🇻hysteria, Telegram 🆔@cnetvpn 🇳🇱, '@fastkanfig کانال تلگرام', Telegram 🆔@cnetvpn 🇸🇪, Telegram 🆔@cnetvpn 🇫🇮, '🇦🇪[www.v2nodes.com] vless-AE-1...', '🇦🇪[www.v2nodes.com] vless-AE-1... #1', '🇦🇱[www.v2nodes.com] vless-AL-1...', '🇦🇲[www.v2nodes.com] vless-AM-1...', '🇺🇦[www.v2nodes.com] vless-UA-1... #7', '🏳[www.v2nodes.com] vless-', '🇸🇪[www.v2nodes.com] vless-SE-3...', '🇧🇷[www.v2nodes.com] vless-BR-1... #1', '🇸🇬[www.v2nodes.com] vless-SG-9... #1', '🇧🇾[www.v2nodes.com] vless-BY-1...', '🇧🇾[www.v2nodes.com] vless-BY-1... #1', '🇨🇦[www.v2nodes.com] vless-CA-1... #1', '🇸🇬[www.v2nodes.com] vless-SG', '🇸🇬[www.v2nodes.com] vless-SG #1', '🇸🇬[www.v2nodes.com] vless-SG #2', '🇸🇬[www.v2nodes.com] vless-SG #3', '🇸🇬[www.v2nodes.com] vless-SG #4', '🏳[www.v2nodes.com] vless- #2', '🇸🇬[www.v2nodes.com] vless-SG #5', '🇨🇱[www.v2nodes.com] vless-CL-1...', '🇨🇾[www.v2nodes.com] vless-CY-1...', '🇨🇾[www.v2nodes.com] vless-CY-1... #1', '🇩🇪[www.v2nodes.com] vless-DE-1... #2', '🇺🇸[www.v2nodes.com]
+      vless-US-1... #2', '🇩🇪[www.v2nodes.com] vless-DE-1... #4', '🇩🇪[www.v2nodes.com] vless-DE-1... #5', '🇩🇪[www.v2nodes.com] vless-DE-1... #6', '🇩🇪[www.v2nodes.com] vless-DE-1... #8', '🇩🇪[www.v2nodes.com] vless-DE-1... #10', '🇪🇸[www.v2nodes.com] vless-ES-4... #4', '🇪🇸[www.v2nodes.com] vless-ES-4...', '🇫🇮[www.v2nodes.com] vless-FI-1... #2', '🇫🇮[www.v2nodes.com] vless-FI-1... #5', '🇫🇮[www.v2nodes.com] vless-FI-1... #14', '🇫🇷[www.v2nodes.com] vless-FR-1...', '🇬🇧[www.v2nodes.com] vless-GB-1... #3', '🇬🇧[www.v2nodes.com] vless-GB-1... #5', '🇬🇧[www.v2nodes.com] vless-GB-1... #7', '🇬🇷[www.v2nodes.com] vless-GR-3...', '🇭🇰[www.v2nodes.com] vless-HK-1... #2', '🏳[www.v2nodes.com] vless- #14', '🏳[www.v2nodes.com] vless- #15', '🇭🇺[www.v2nodes.com] vless-HU-6...', '🇮🇱[www.v2nodes.com] vless-IL-1...', '🇮🇳[www.v2nodes.com] vless-IN-1... #1', '🇮🇳[www.v2nodes.com] vless-IN-1... #2', '🇮🇹[www.v2nodes.com] vless-IT-1... #1', '🏳[www.v2nodes.com] vless- #18', '🇮🇹[www.v2nodes.com] vless-IT-2...', '🇯🇵[www.v2nodes.com]
+      vless-JP-1... #2', '🇱🇰[www.v2nodes.com] vless-LK-7...', '🇲🇩[www.v2nodes.com] vless-MD-4...', '🇲🇽[www.v2nodes.com] vless-MX-1... #2', '🇲🇾[www.v2nodes.com] vless-MY-5...', '🇳🇱[www.v2nodes.com] vless-NL-1...', '🇳🇱[www.v2nodes.com] vless-NL-1... #1', '🇳🇱[www.v2nodes.com] vless-NL-1... #6', '🇷🇴[www.v2nodes.com] vless-RO-1...', '🏳[www.v2nodes.com] vless- #21', '🇵🇱[www.v2nodes.com] vless-PL-1... #7', '🇷🇺[www.v2nodes.com] vless-RU-1...', '🇷🇺[www.v2nodes.com] vless-RU-1... #1', '🇸🇪[www.v2nodes.com] vless-SE-1...', '🇸🇪[www.v2nodes.com] vless-SE-1... #2', '🇸🇪[www.v2nodes.com] vless-SE-1... #3', '🇸🇪[www.v2nodes.com] vless-SE-1... #4', '🇸🇬[www.v2nodes.com] vless-SG-1... #5', '🇸🇬[www.v2nodes.com] vless-SG-1... #6', '🇸🇬[www.v2nodes.com] vless-SG-9... #2', '🇸🇬[www.v2nodes.com] vless-SG-8...', '🇸🇬[www.v2nodes.com] vless-SG-8... #1', '🇸🇬[www.v2nodes.com] vless-SG-8... #2', '🇹🇭[www.v2nodes.com] vless-TH-1... #1', '🇹🇼[www.v2nodes.com] vless-TW-1...', '🏳[www.v2nodes.com] vless- #28', '🇻🇳[www.v2nodes.com]
+      vless-VN-1... #1', '🇦🇱[www.v2nodes.com] ss-AL-1490...', '🇦🇹[www.v2nodes.com] ss-AT-1595...', '🏳[www.v2nodes.com] ss-', '🏳[www.v2nodes.com] ss- #1']
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
-  proxies: [🇨🇳_CN_中国, 🇺🇸_US_美国->🇩🇪_DE_德国, 🇮🇹_IT_意大利, 🇮🇹_IT_意大利_1, 🇯🇵_JP_日本, 🇺🇸_US_美国, 🇮🇹_IT_意大利_2, 🇮🇹_IT_意大利_3, 🇮🇹_IT_意大利_4, 'https://github.com/*********-*...', 'github.com/*********-******/**... #1', 🇩🇪192088 | ⚡️Telegram = t.me/v..., '@KAFING_2', 🇺🇸139909 | ⚡️Telegram = t.me/S..., vpnsal, 🛕97@oneclickvpnkeys, '@V2rayng_mar_ket', 🛸62@oneclickvpnkeys, 🇺🇸US_23|4.7MB/s, '@v2ray_phoenix', '@Begoo_VPN ²⁹⁰', Telegram 🆔@cnetvpn 🇷🇺, 'Telegram:@v2rayng3', 🇫🇮@Azaranv2ray, Telegram 🆔@Cnetvpn 🇺🇲, Telegram 🆔@cnetvpn 🇩🇪, '@v2ray_configs_pools 🌍 ⚡️', 🩵+@Azarakhsh_Proxy+🩷, '@meliproxyy', '@FarazV2ray', Telegram@vpnjey, 'Telegram@vpnjey #1', 'Telegram@vpnjey #2', 🛸64@oneclickvpnkeys, 'Channel : @Daily_Configs #1', 'Telegram@vpnjey #5', 'Telegram@vpnjey #6', 🇳🇱 - NL - @FreeOnlineVPN, '@KAFING_2 #2', 🛸75@oneclickvpnkeys, '@V2rayng_mar_ket #1', 🇨🇭192087 | ⚡️Telegram = t.me/v..., '@vmess_ir', 'Telegram 🆔@Cnetvpn 🇺🇲 #1', '@confiig_hub #1', 🇱🇻hysteria, Telegram 🆔@cnetvpn 🇳🇱, '@fastkanfig کانال تلگرام', Telegram
-      🆔@cnetvpn 🇸🇪, Telegram 🆔@cnetvpn 🇫🇮, '🇦🇪[www.v2nodes.com] vless-AE-1...', '🇦🇪[www.v2nodes.com] vless-AE-1... #1', '🇦🇪[www.v2nodes.com] vless-AE-1... #2', '🇦🇱[www.v2nodes.com] vless-AL-1...', '🇺🇦[www.v2nodes.com] vless-UA-1... #6', '🏳[www.v2nodes.com] vless- #1', '🇸🇪[www.v2nodes.com] vless-SE-3...', '🇧🇷[www.v2nodes.com] vless-BR-1... #1', '🇸🇬[www.v2nodes.com] vless-SG-9... #1', '🇧🇾[www.v2nodes.com] vless-BY-1...', '🇧🇾[www.v2nodes.com] vless-BY-1... #1', '🇨🇦[www.v2nodes.com] vless-CA-1...', '🇸🇬[www.v2nodes.com] vless-SG', '🇯🇵[www.v2nodes.com] vless-JP', '🇭🇰[www.v2nodes.com] vless-HK', '🇸🇬[www.v2nodes.com] vless-SG #5', '🇨🇱[www.v2nodes.com] vless-CL-1...', '🇨🇾[www.v2nodes.com] vless-CY-1...', '🇨🇾[www.v2nodes.com] vless-CY-1... #1', '🇩🇪[www.v2nodes.com] vless-DE-1...', '🇺🇸 美国 | USA #10', '🇩🇪[www.v2nodes.com] vless-DE-1... #2', '🇩🇪[www.v2nodes.com] vless-DE-1... #3', '🇩🇪[www.v2nodes.com] vless-DE-1... #4', '🇩🇪[www.v2nodes.com] vless-DE-1... #6', '🇩🇪[www.v2nodes.com] vless-DE-1... #8', '🏳[www.v2nodes.com]
-      vless- #10', '🇪🇸[www.v2nodes.com] vless-ES-2...', '🇪🇸[www.v2nodes.com] vless-ES-4...', '🏳[www.v2nodes.com] vless- #14', '🇫🇮[www.v2nodes.com] vless-FI-1... #5', '🇫🇷[www.v2nodes.com] vless-FR-1...', '🇫🇷[www.v2nodes.com] vless-FR-1... #1', '🇬🇧[www.v2nodes.com] vless-GB-1... #3', '🇬🇧[www.v2nodes.com] vless-GB-1... #4', '🇬🇧[www.v2nodes.com] vless-GB-1... #6', '🇬🇷[www.v2nodes.com] vless-GR-3...', '🇭🇰[www.v2nodes.com] vless-HK-1... #1', '🏳[www.v2nodes.com] vless- #20', '🏳[www.v2nodes.com] vless- #21', '🇭🇰 香港 | HKG #1', '🇭🇺[www.v2nodes.com] vless-HU-6...', '🇮🇱[www.v2nodes.com] vless-IL-1...', '🇮🇳[www.v2nodes.com] vless-IN-1...', '🏳[www.v2nodes.com] vless- #23', '🇮🇳[www.v2nodes.com] vless-IN-1... #1', '🏳[www.v2nodes.com] vless- #25', '🇮🇹[www.v2nodes.com] vless-IT-2...', '🇯🇵[www.v2nodes.com] vless-JP-1... #1', '🇯🇵[www.v2nodes.com] vless-JP-1... #3', '🇯🇵[www.v2nodes.com] vless-JP-1... #4', '🇱🇰[www.v2nodes.com] vless-LK-7...', '🇲🇩[www.v2nodes.com] vless-MD-4...', '🇲🇽[www.v2nodes.com] vless-MX-1...
-      #2', '🇲🇾[www.v2nodes.com] vless-MY-5...', '🇳🇱[www.v2nodes.com] vless-NL-1...', '🇳🇱[www.v2nodes.com] vless-NL-1... #5', '🇵🇱[www.v2nodes.com] vless-PL-1...', '🇷🇴[www.v2nodes.com] vless-RO-1...', '🇵🇱[www.v2nodes.com] vless-PL-1... #2', '🇵🇱[www.v2nodes.com] vless-PL-1... #8', '🇷🇺[www.v2nodes.com] vless-RU-1... #1', '🏳[www.v2nodes.com] vless- #33', '🇸🇪[www.v2nodes.com] vless-SE-1...', '🇸🇪[www.v2nodes.com] vless-SE-1... #2', '🇸🇪[www.v2nodes.com] vless-SE-1... #3', '🇸🇪[www.v2nodes.com] vless-SE-1... #4', '🇸🇪[www.v2nodes.com] vless-SE-1... #5', '🇸🇪[www.v2nodes.com] vless-SE-1... #6', '🇸🇬[www.v2nodes.com] vless-SG-1...', '🇸🇬[www.v2nodes.com] vless-SG-1... #5', '🏳[www.v2nodes.com] vless- #35', '🇸🇬[www.v2nodes.com] vless-SG-1... #8', '🇮🇳[www.v2nodes.com] vless-IN', '🇸🇬[www.v2nodes.com] vless-SG-9... #2', '🇸🇬[www.v2nodes.com] vless-SG-8...', '🇹🇭[www.v2nodes.com] vless-TH-1...', '🇹🇼[www.v2nodes.com] vless-TW-1...', '🇹🇼 🇨🇳 台湾 | TWN #3', '🇺🇸[www.v2nodes.com] vless-US-1... #8', '🇻🇳[www.v2nodes.com]
-      vless-VN-1...']
+  proxies: [🇺🇸_US_美国->🇩🇪_DE_德国, 🇮🇹_IT_意大利, 🇮🇹_IT_意大利_1, 🇨🇳_CN_中国, 🇮🇹_IT_意大利_2, 🇯🇵_JP_日本, 🇮🇹_IT_意大利_3, 🇮🇹_IT_意大利_4, 🇮🇹_IT_意大利_5, 🇮🇹_IT_意大利_6, 🇮🇹_IT_意大利_7, 🇺🇸_US_美国, 'https://github.com/*********-*...', 'github.com/*********-******/**... #1', 🇩🇪192088 | ⚡️Telegram = t.me/v..., '@KAFING_2', 🇺🇸139909 | ⚡️Telegram = t.me/S..., '@V2rayng_mar_ket', 🛸62@oneclickvpnkeys, 🛸69@oneclickvpnkeys, '@v2ray_phoenix', '@Begoo_VPN ²⁹⁰', 🛸96@oneclickvpnkeys, Telegram 🆔@cnetvpn 🇷🇺, 'Telegram:@v2rayng3', 🇫🇮@Azaranv2ray, Telegram 🆔@Cnetvpn 🇺🇲, Telegram 🆔@cnetvpn 🇩🇪, 🛸100@oneclickvpnkeys, '@v2ray_configs_pools 🌍 ⚡️', 🩵+@Azarakhsh_Proxy+🩷, 🇮🇷198624 | ⚡️Telegram = t.me/S..., '@meliproxyy', '@FarazV2ray', Telegram@vpnjey, 'Telegram@vpnjey #1', 'Telegram@vpnjey #2', 🛸64@oneclickvpnkeys, 'Channel : @Daily_Configs #1', 'Telegram@vpnjey #5', 'Telegram@vpnjey #6', 🇳🇱 - NL - @FreeOnlineVPN, '@KAFING_2 #2', 🛸75@oneclickvpnkeys, '@V2rayng_mar_ket #1', 🇨🇭192087 | ⚡️Telegram = t.me/v..., '@vmess_ir', 'Telegram 🆔@Cnetvpn 🇺🇲
+      #1', '@confiig_hub #1', 🇱🇻hysteria, Telegram 🆔@cnetvpn 🇳🇱, '@fastkanfig کانال تلگرام', Telegram 🆔@cnetvpn 🇸🇪, Telegram 🆔@cnetvpn 🇫🇮, '🇦🇪[www.v2nodes.com] vless-AE-1...', '🇦🇪[www.v2nodes.com] vless-AE-1... #1', '🇦🇱[www.v2nodes.com] vless-AL-1...', '🇦🇲[www.v2nodes.com] vless-AM-1...', '🇺🇦[www.v2nodes.com] vless-UA-1... #7', '🏳[www.v2nodes.com] vless-', '🇸🇪[www.v2nodes.com] vless-SE-3...', '🇧🇷[www.v2nodes.com] vless-BR-1... #1', '🇸🇬[www.v2nodes.com] vless-SG-9... #1', '🇧🇾[www.v2nodes.com] vless-BY-1...', '🇧🇾[www.v2nodes.com] vless-BY-1... #1', '🇨🇦[www.v2nodes.com] vless-CA-1... #1', '🇸🇬[www.v2nodes.com] vless-SG', '🇸🇬[www.v2nodes.com] vless-SG #1', '🇸🇬[www.v2nodes.com] vless-SG #2', '🇸🇬[www.v2nodes.com] vless-SG #3', '🇸🇬[www.v2nodes.com] vless-SG #4', '🏳[www.v2nodes.com] vless- #2', '🇸🇬[www.v2nodes.com] vless-SG #5', '🇨🇱[www.v2nodes.com] vless-CL-1...', '🇨🇾[www.v2nodes.com] vless-CY-1...', '🇨🇾[www.v2nodes.com] vless-CY-1... #1', '🇩🇪[www.v2nodes.com] vless-DE-1... #2', '🇺🇸[www.v2nodes.com]
+      vless-US-1... #2', '🇩🇪[www.v2nodes.com] vless-DE-1... #4', '🇩🇪[www.v2nodes.com] vless-DE-1... #5', '🇩🇪[www.v2nodes.com] vless-DE-1... #6', '🇩🇪[www.v2nodes.com] vless-DE-1... #8', '🇩🇪[www.v2nodes.com] vless-DE-1... #10', '🇪🇸[www.v2nodes.com] vless-ES-4... #4', '🇪🇸[www.v2nodes.com] vless-ES-4...', '🇫🇮[www.v2nodes.com] vless-FI-1... #2', '🇫🇮[www.v2nodes.com] vless-FI-1... #5', '🇫🇮[www.v2nodes.com] vless-FI-1... #14', '🇫🇷[www.v2nodes.com] vless-FR-1...', '🇬🇧[www.v2nodes.com] vless-GB-1... #3', '🇬🇧[www.v2nodes.com] vless-GB-1... #5', '🇬🇧[www.v2nodes.com] vless-GB-1... #7', '🇬🇷[www.v2nodes.com] vless-GR-3...', '🇭🇰[www.v2nodes.com] vless-HK-1... #2', '🏳[www.v2nodes.com] vless- #14', '🏳[www.v2nodes.com] vless- #15', '🇭🇺[www.v2nodes.com] vless-HU-6...', '🇮🇱[www.v2nodes.com] vless-IL-1...', '🇮🇳[www.v2nodes.com] vless-IN-1... #1', '🇮🇳[www.v2nodes.com] vless-IN-1... #2', '🇮🇹[www.v2nodes.com] vless-IT-1... #1', '🏳[www.v2nodes.com] vless- #18', '🇮🇹[www.v2nodes.com] vless-IT-2...', '🇯🇵[www.v2nodes.com]
+      vless-JP-1... #2', '🇱🇰[www.v2nodes.com] vless-LK-7...', '🇲🇩[www.v2nodes.com] vless-MD-4...', '🇲🇽[www.v2nodes.com] vless-MX-1... #2', '🇲🇾[www.v2nodes.com] vless-MY-5...', '🇳🇱[www.v2nodes.com] vless-NL-1...', '🇳🇱[www.v2nodes.com] vless-NL-1... #1', '🇳🇱[www.v2nodes.com] vless-NL-1... #6', '🇷🇴[www.v2nodes.com] vless-RO-1...', '🏳[www.v2nodes.com] vless- #21', '🇵🇱[www.v2nodes.com] vless-PL-1... #7', '🇷🇺[www.v2nodes.com] vless-RU-1...', '🇷🇺[www.v2nodes.com] vless-RU-1... #1', '🇸🇪[www.v2nodes.com] vless-SE-1...', '🇸🇪[www.v2nodes.com] vless-SE-1... #2', '🇸🇪[www.v2nodes.com] vless-SE-1... #3', '🇸🇪[www.v2nodes.com] vless-SE-1... #4', '🇸🇬[www.v2nodes.com] vless-SG-1... #5', '🇸🇬[www.v2nodes.com] vless-SG-1... #6', '🇸🇬[www.v2nodes.com] vless-SG-9... #2', '🇸🇬[www.v2nodes.com] vless-SG-8...', '🇸🇬[www.v2nodes.com] vless-SG-8... #1', '🇸🇬[www.v2nodes.com] vless-SG-8... #2', '🇹🇭[www.v2nodes.com] vless-TH-1... #1', '🇹🇼[www.v2nodes.com] vless-TW-1...', '🏳[www.v2nodes.com] vless- #28', '🇻🇳[www.v2nodes.com]
+      vless-VN-1... #1', '🇦🇱[www.v2nodes.com] ss-AL-1490...', '🇦🇹[www.v2nodes.com] ss-AT-1595...', '🏳[www.v2nodes.com] ss-', '🏳[www.v2nodes.com] ss- #1']
 rules: ['IP-CIDR,192.168.0.0/16,DIRECT,no-resolve', 'IP-CIDR,10.0.0.0/8,DIRECT,no-resolve', 'IP-CIDR,172.16.0.0/12,DIRECT,no-resolve', 'IP-CIDR,127.0.0.0/8,DIRECT,no-resolve', 'MATCH,PROXY']
