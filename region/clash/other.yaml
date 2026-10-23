@@ -1,0 +1,356 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+- name: '🇧🇷[www.v2nodes.com] vless-BR-1... #1'
+  network: ws
+  port: 443
+  server: cf.090227.xyz
+  servername: ccc.010304.xyz
+  tls: false
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /fp=chromesecurity=tls
+- client-fingerprint: chrome
+  name: 🇻🇳[www.v2nodes.com] vless-VN-1...
+  network: ws
+  port: 2087
+  server: 172.67.168.158
+  servername: vn11vina.210z.dev
+  tls: true
+  type: vless
+  uuid: 1d0e8e53-6999-4752-ac21-c0c54ff5bc09
+  ws-opts:
+    headers:
+      Host: vn11vina.210z.dev
+    path: /vlessvina
+- client-fingerprint: chrome
+  name: '🏳[www.v2nodes.com] vless- #25'
+  network: ws
+  port: 443
+  server: kclx.eu.org
+  servername: kclx.eu.org
+  tls: true
+  type: vless
+  uuid: 0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b
+  ws-opts:
+    headers:
+      Host: kclx.eu.org
+    path: /154.16.10.34-8080
+- client-fingerprint: chrome
+  name: '🇲🇽[www.v2nodes.com] vless-MX-1... #2'
+  network: ws
+  port: 443
+  server: 131.196.253.141
+  servername: kclx.eu.org
+  tls: true
+  type: vless
+  uuid: 0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b
+  ws-opts:
+    headers:
+      Host: kclx.eu.org
+    path: /154.16.10.34-8080
+- encryption: none
+  name: '🏳[www.v2nodes.com] vless- #10'
+  network: ws
+  port: 443
+  server: 31.57.190.89
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+- client-fingerprint: chrome
+  name: '🏳[www.v2nodes.com] vless- #1'
+  network: ws
+  port: 443
+  server: 155.103.71.142
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /fp=chrome
+- grpc-opts:
+    grpc-service-name: grpc-ru
+  name: '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
+  network: grpc
+  port: 443
+  server: xsru1.ddnsfree.com
+  servername: xsru1.ddnsfree.com
+  tls: true
+  type: vless
+  uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
+- name: '🏳[www.v2nodes.com] vless- #33'
+  network: ws
+  port: 8443
+  server: 194.87.143.165
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: f9613819-d2fe-4b3a-a2e6-40c184c6854c
+  ws-opts:
+    path: /
+- client-fingerprint: chrome
+  name: 🇮🇱[www.v2nodes.com] vless-IL-1...
+  network: ws
+  port: 443
+  server: 185.253.75.119
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+- name: 🇦🇱[www.v2nodes.com] vless-AL-1...
+  network: ws
+  port: 443
+  server: 89.125.139.115
+  servername: free.cndyw.ggff.net
+  tls: false
+  type: vless
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=chromesecurity=tls
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇲🇾[www.v2nodes.com] vless-MY-5...
+  network: ws
+  port: 443
+  server: 216.173.67.59
+  servername: ccc.010304.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+- name: 🇨🇳_CN_中国
+  type: vmess
+  server: 112.132.215.108
+  port: 50002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇱[www.v2nodes.com] vless-CL-1...
+  network: ws
+  port: 443
+  server: 131.255.6.88
+  servername: free.cndyw.ggff.net
+  tls: false
+  type: vless
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=chromesecurity=tls
+- name: '🇮🇳[www.v2nodes.com] vless-IN-1... #1'
+  port: 40443
+  server: dorado.yokkastars.com
+  tls: false
+  type: vless
+  uuid: af5eac96-e478-488a-bc8c-45269d7e8847
+- name: 🇮🇳[www.v2nodes.com] vless-IN
+  port: 40443
+  server: 5.253.30.99
+  tls: false
+  type: vless
+  uuid: 511c1563-2cb6-4064-abc6-a59ee49818a8
+- encryption: none
+  name: '🏳[www.v2nodes.com] vless- #23'
+  network: ws
+  port: 14430
+  server: 13.140.56.100
+  tls: false
+  type: vless
+  uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
+  ws-opts:
+    path: /vless
+- name: '🇦🇪[www.v2nodes.com] vless-AE-1... #2'
+  network: ws
+  port: 8443
+  server: 147.78.0.186
+  servername: free.cndyw.ggff.net
+  tls: false
+  type: vless
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=randomsecurity=tls
+- name: 🇮🇳[www.v2nodes.com] vless-IN-1...
+  port: 443
+  server: 165.99.222.161
+  tls: false
+  type: vless
+  uuid: 30572b57-f5ab-4eb8-82d4-a24d399b99f6
+- name: 🇹🇭[www.v2nodes.com] vless-TH-1...
+  port: 21033
+  server: 154.21.203.106
+  tls: false
+  type: vless
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+- name: '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  network: ws
+  port: 22573
+  server: uae.unixzone.us
+  tls: false
+  type: vless
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  ws-opts:
+    headers:
+      Host: uae.unixzone.us
+    path: /
+- encryption: none
+  name: 🇦🇪[www.v2nodes.com] vless-AE-1...
+  network: ws
+  port: 14430
+  server: 95.174.68.188
+  servername: 95.174.68.188
+  tls: false
+  type: vless
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
+  ws-opts:
+    headers:
+      Host: 95.174.68.188
+    path: /vless
+- encryption: none
+  name: 🇨🇦[www.v2nodes.com] vless-CA-1...
+  network: tcp
+  port: 8080
+  server: 212.74.39.214
+  tls: false
+  type: vless
+  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
+- name: vpnsal
+  password: 033dc6b532
+  port: 11592
+  server: 77.232.139.128
+  sni: srv-8718e6.frd21.ru
+  tls: false
+  type: hysteria2
+- name: '@v2ray_phoenix'
+  obfs: salamander
+  obfs-password: 588c76723192f87cfe6d6786816177cd2bd9773acdc545928d7d1d5e8338d4ce
+  password: 56ff50da-a238-4646-95ab-dd159634bd87
+  port: 17701
+  server: 37.9.4.112
+  skip-cert-verify: false
+  sni: ru03.arpanet-cdn.com
+  tls: false
+  type: hysteria2
+- name: '@Begoo_VPN ²⁹⁰'
+  obfs: salamander
+  obfs-password: dzcb7hv6i2kx2zze
+  password: 5bcodmhjtyfyyrqh
+  port: 36758
+  server: 91.142.73.159
+  skip-cert-verify: true
+  sni: cdn77.dmtr.ru
+  tls: false
+  type: hysteria2
+- name: Telegram 🆔@cnetvpn 🇷🇺
+  obfs: salamander
+  obfs-password: 09p333uviv2qal0y
+  password: 617z9r1mbzbm1t5z
+  port: 52000
+  server: giftcard.gisora.ir
+  skip-cert-verify: false
+  sni: giftcard.gisora.ir
+  tls: false
+  type: hysteria2
+- name: '@meliproxyy'
+  password: M8LP9DztTr3znqCkmf-r08CQLBLLFK1r
+  port: 7443
+  server: me17.msjia8844.site
+  sni: me17.msjia8844.site
+  tls: false
+  type: hysteria2
+proxy-groups:
+- name: PROXY
+  type: select
+  proxies:
+  - AUTO
+  - '🇧🇷[www.v2nodes.com] vless-BR-1... #1'
+  - 🇻🇳[www.v2nodes.com] vless-VN-1...
+  - '🏳[www.v2nodes.com] vless- #25'
+  - '🇲🇽[www.v2nodes.com] vless-MX-1... #2'
+  - '🏳[www.v2nodes.com] vless- #10'
+  - '🏳[www.v2nodes.com] vless- #1'
+  - '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
+  - '🏳[www.v2nodes.com] vless- #33'
+  - 🇮🇱[www.v2nodes.com] vless-IL-1...
+  - 🇦🇱[www.v2nodes.com] vless-AL-1...
+  - 🇲🇾[www.v2nodes.com] vless-MY-5...
+  - 🇨🇳_CN_中国
+  - 🇨🇱[www.v2nodes.com] vless-CL-1...
+  - '🇮🇳[www.v2nodes.com] vless-IN-1... #1'
+  - 🇮🇳[www.v2nodes.com] vless-IN
+  - '🏳[www.v2nodes.com] vless- #23'
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #2'
+  - 🇮🇳[www.v2nodes.com] vless-IN-1...
+  - 🇹🇭[www.v2nodes.com] vless-TH-1...
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - 🇦🇪[www.v2nodes.com] vless-AE-1...
+  - 🇨🇦[www.v2nodes.com] vless-CA-1...
+  - vpnsal
+  - '@v2ray_phoenix'
+  - '@Begoo_VPN ²⁹⁰'
+  - Telegram 🆔@cnetvpn 🇷🇺
+  - '@meliproxyy'
+- name: AUTO
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies:
+  - '🇧🇷[www.v2nodes.com] vless-BR-1... #1'
+  - 🇻🇳[www.v2nodes.com] vless-VN-1...
+  - '🏳[www.v2nodes.com] vless- #25'
+  - '🇲🇽[www.v2nodes.com] vless-MX-1... #2'
+  - '🏳[www.v2nodes.com] vless- #10'
+  - '🏳[www.v2nodes.com] vless- #1'
+  - '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
+  - '🏳[www.v2nodes.com] vless- #33'
+  - 🇮🇱[www.v2nodes.com] vless-IL-1...
+  - 🇦🇱[www.v2nodes.com] vless-AL-1...
+  - 🇲🇾[www.v2nodes.com] vless-MY-5...
+  - 🇨🇳_CN_中国
+  - 🇨🇱[www.v2nodes.com] vless-CL-1...
+  - '🇮🇳[www.v2nodes.com] vless-IN-1... #1'
+  - 🇮🇳[www.v2nodes.com] vless-IN
+  - '🏳[www.v2nodes.com] vless- #23'
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #2'
+  - 🇮🇳[www.v2nodes.com] vless-IN-1...
+  - 🇹🇭[www.v2nodes.com] vless-TH-1...
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - 🇦🇪[www.v2nodes.com] vless-AE-1...
+  - 🇨🇦[www.v2nodes.com] vless-CA-1...
+  - vpnsal
+  - '@v2ray_phoenix'
+  - '@Begoo_VPN ²⁹⁰'
+  - Telegram 🆔@cnetvpn 🇷🇺
+  - '@meliproxyy'
+rules:
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- MATCH,PROXY
