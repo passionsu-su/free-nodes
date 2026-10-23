@@ -76,6 +76,37 @@
       }
       .x-all textarea[hidden] { display: none; }
       #countFail[hidden] { display: none; }
+      .x-src { display: grid; gap: 8px; margin-top: 24px; }
+      .x-seg {
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+        padding: 4px;
+        margin: 0;
+        border: 1px solid var(--stroke-secondary);
+        border-radius: var(--r-s);
+        background: var(--fill-tertiary);
+        max-width: 420px;
+        width: 100%;
+      }
+      .x-seg input { position: absolute; opacity: 0; pointer-events: none; }
+      .x-seg label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: var(--tap);
+        padding: 6px 12px;
+        border-radius: calc(var(--r-s) - 4px);
+        font: var(--type-label);
+        color: var(--text-secondary);
+        text-align: center;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: background var(--dur-quick) ease, color var(--dur-quick) ease;
+      }
+      .x-seg input:checked + label { background: var(--fill-primary); color: var(--text-primary-on); }
+      .x-seg input:focus-visible + label { outline: 2px solid var(--stroke-primary); outline-offset: 2px; }
+      .x-src .fineprint { margin: 0; }
     </style>
   </head>
   <body>
@@ -91,21 +122,29 @@
           </div>
         </section>
 
+        <div class="x-src">
+          <fieldset class="x-seg" role="radiogroup" aria-label="链接来源">
+            <input type="radio" name="src" id="srcMirror" value="mirror" checked /><label for="srcMirror">国内镜像（推荐）</label>
+            <input type="radio" name="src" id="srcRaw" value="raw" /><label for="srcRaw">GitHub 原始</label>
+          </fieldset>
+          <p class="fineprint">国内直连 GitHub 常被墙，导入报错就用镜像。</p>
+        </div>
+
         <section class="section" id="region" data-nav="地区">
           <div class="head">
             <h2>按地区订阅</h2>
             <p class="head__sub">小火箭 Shadowrocket / v2rayNG / v2rayN / NekoBox 通用，已按延迟从低到高排序。国内用一般香港、日本、新加坡最快。</p>
           </div>
           <ul class="x-subs" id="regionList">
-            <li data-count="region.hk"><p class="x-subs__name">香港 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/hk.txt</code></li>
-            <li data-count="region.tw"><p class="x-subs__name">台湾 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/tw.txt</code></li>
-            <li data-count="region.jp"><p class="x-subs__name">日本 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/jp.txt</code></li>
-            <li data-count="region.sg"><p class="x-subs__name">新加坡 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/sg.txt</code></li>
-            <li data-count="region.kr"><p class="x-subs__name">韩国 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/kr.txt</code></li>
-            <li data-count="region.us"><p class="x-subs__name">美国 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/us.txt</code></li>
-            <li data-count="region.eu"><p class="x-subs__name">欧洲 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/eu.txt</code></li>
-            <li data-count="region.other"><p class="x-subs__name">其他 <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/other.txt</code></li>
-            <li data-count="merged" data-skip-all><p class="x-subs__name">全部（小火箭） <span class="pill" hidden></span></p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/shadowrocket/sub.txt</code></li>
+            <li data-count="region.hk"><p class="x-subs__name">香港 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/hk.txt</code></li>
+            <li data-count="region.tw"><p class="x-subs__name">台湾 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/tw.txt</code></li>
+            <li data-count="region.jp"><p class="x-subs__name">日本 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/jp.txt</code></li>
+            <li data-count="region.sg"><p class="x-subs__name">新加坡 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/sg.txt</code></li>
+            <li data-count="region.kr"><p class="x-subs__name">韩国 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/kr.txt</code></li>
+            <li data-count="region.us"><p class="x-subs__name">美国 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/us.txt</code></li>
+            <li data-count="region.eu"><p class="x-subs__name">欧洲 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/eu.txt</code></li>
+            <li data-count="region.other"><p class="x-subs__name">其他 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/other.txt</code></li>
+            <li data-count="merged" data-skip-all><p class="x-subs__name">全部（小火箭） <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/shadowrocket/sub.txt</code></li>
           </ul>
           <div class="x-all">
             <button type="button" class="x-copy x-copy--wide" id="copyAll" data-label="复制全部地区链接">复制全部地区链接</button>
@@ -117,28 +156,28 @@
         <section class="section" id="ios" data-nav="iOS">
           <div class="head"><h2>iOS 客户端</h2></div>
           <ul class="x-subs">
-            <li data-count="merged"><p class="x-subs__name">Shadowrocket 小火箭 <span class="pill" hidden></span></p><p class="x-subs__how">右上角 + → 类型 Subscribe</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/shadowrocket/sub.txt</code></li>
-            <li data-count="ios.stash"><p class="x-subs__name">Stash <span class="pill" hidden></span></p><p class="x-subs__how">配置 → 从 URL 下载</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/stash/stash.yaml</code></li>
-            <li data-count="ios.stash"><p class="x-subs__name">Clash Mi <span class="pill" hidden></span></p><p class="x-subs__how">添加配置 → URL</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clashmi/clashmi.yaml</code></li>
-            <li data-count="ios.quantumultx"><p class="x-subs__name">Quantumult X 圈X <span class="pill" hidden></span></p><p class="x-subs__how">节点 → 引用 → 添加</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/quantumultx/qx.txt</code></li>
-            <li data-count="ios.loon"><p class="x-subs__name">Loon <span class="pill" hidden></span></p><p class="x-subs__how">节点 → 订阅节点 → 添加</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/loon/loon.list</code></li>
-            <li data-count="ios.surge"><p class="x-subs__name">Surge <span class="pill" hidden></span></p><p class="x-subs__how">从 URL 下载配置（不支持 vless，节点少）</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/surge/surge.conf</code></li>
-            <li data-count="ios.singbox"><p class="x-subs__name">sing-box / Karing / Hiddify <span class="pill" hidden></span></p><p class="x-subs__how">新建远程配置</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/singbox/singbox.json</code></li>
+            <li data-count="merged"><p class="x-subs__name">Shadowrocket 小火箭 <span class="pill" hidden></span></p><p class="x-subs__how">右上角 + → 类型 Subscribe</p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/shadowrocket/sub.txt</code></li>
+            <li data-count="ios.stash"><p class="x-subs__name">Stash <span class="pill" hidden></span></p><p class="x-subs__how">配置 → 从 URL 下载</p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/stash/stash.yaml</code></li>
+            <li data-count="ios.stash"><p class="x-subs__name">Clash Mi <span class="pill" hidden></span></p><p class="x-subs__how">添加配置 → URL</p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/clashmi/clashmi.yaml</code></li>
+            <li data-count="ios.quantumultx"><p class="x-subs__name">Quantumult X 圈X <span class="pill" hidden></span></p><p class="x-subs__how">节点 → 引用 → 添加</p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/quantumultx/qx.txt</code></li>
+            <li data-count="ios.loon"><p class="x-subs__name">Loon <span class="pill" hidden></span></p><p class="x-subs__how">节点 → 订阅节点 → 添加</p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/loon/loon.list</code></li>
+            <li data-count="ios.surge"><p class="x-subs__name">Surge <span class="pill" hidden></span></p><p class="x-subs__how">从 URL 下载配置（不支持 vless，节点少）</p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/surge/surge.conf</code></li>
+            <li data-count="ios.singbox"><p class="x-subs__name">sing-box / Karing / Hiddify <span class="pill" hidden></span></p><p class="x-subs__how">新建远程配置</p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/singbox/singbox.json</code></li>
           </ul>
         </section>
 
         <section class="section" id="android" data-nav="安卓/电脑">
           <div class="head"><h2>安卓 / 电脑</h2></div>
           <ul class="x-subs">
-            <li data-count="merged"><p class="x-subs__name">v2rayNG / v2rayN / NekoBox <span class="pill" hidden></span></p><p class="x-subs__how">订阅分组 → 添加 → 粘贴 → 更新订阅</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/all.txt</code></li>
-            <li data-count="ios.clash_alive"><p class="x-subs__name">Clash Verge / FlClash / Clash Meta <span class="pill" hidden></span></p><p class="x-subs__how">配置 → 新建 → URL</p><code class="x-subs__url">https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/all.yaml</code></li>
+            <li data-count="merged"><p class="x-subs__name">v2rayNG / v2rayN / NekoBox <span class="pill" hidden></span></p><p class="x-subs__how">订阅分组 → 添加 → 粘贴 → 更新订阅</p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/v2ray/all.txt</code></li>
+            <li data-count="ios.clash_alive"><p class="x-subs__name">Clash Verge / FlClash / Clash Meta <span class="pill" hidden></span></p><p class="x-subs__how">配置 → 新建 → URL</p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/clash/all.yaml</code></li>
           </ul>
         </section>
 
         <section class="section" id="howto" data-nav="说明">
           <div class="head">
             <h2>四步用上</h2>
-            <p class="head__sub">每天北京时间 08:30 自动更新，订阅链接不变，在 App 里刷新订阅即可。</p>
+            <p class="head__sub">每 8 小时自动更新（北京时间 00:30 / 08:30 / 16:30），订阅链接不变，在 App 里刷新订阅即可。</p>
           </div>
           <div class="steps">
             <article class="step"><div class="step__intro"><p class="step__num">01</p></div><div><h3>复制链接</h3></div></article>
@@ -212,6 +251,27 @@
           }
         }
 
+        var PREFIX = {
+          mirror: "https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/",
+          raw: "https://raw.githubusercontent.com/passionsu-su/free-nodes/main/"
+        };
+        var urlEls = Array.prototype.slice.call(document.querySelectorAll(".x-subs__url"));
+        urlEls.forEach(function (c) {
+          var t = c.textContent.trim();
+          c.dataset.path = t.replace(PREFIX.mirror, "").replace(PREFIX.raw, "");
+        });
+        function setSource(src) {
+          var p = PREFIX[src] || PREFIX.mirror;
+          urlEls.forEach(function (c) { c.textContent = p + c.dataset.path; });
+          var at = document.getElementById("allText");
+          if (at) { at.hidden = true; at.value = ""; }
+        }
+        Array.prototype.forEach.call(document.querySelectorAll('input[name="src"]'), function (r) {
+          r.addEventListener("change", function () { if (r.checked) setSource(r.value); });
+        });
+        document.getElementById("srcMirror").checked = true;
+        setSource("mirror");
+
         var items = Array.prototype.slice.call(document.querySelectorAll(".x-subs > li"));
         items.forEach(function (li) {
           var url = li.querySelector(".x-subs__url");
@@ -250,8 +310,11 @@
         }
         var updated = document.getElementById("updated");
         var fail = document.getElementById("countFail");
-        fetch("https://raw.githubusercontent.com/passionsu-su/free-nodes/main/report.json", { cache: "no-store" })
-          .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        function getReport(url) {
+          return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
+        }
+        getReport(PREFIX.mirror + "report.json")
+          .catch(function () { return getReport(PREFIX.raw + "report.json"); })
           .then(function (data) {
             updated.textContent = data.time ? "更新时间：" + data.time + "（北京时间）" : "更新时间：未知";
             items.forEach(function (li) {
@@ -268,7 +331,7 @@
             });
           })
           .catch(function () {
-            updated.textContent = "更新时间：每天北京时间 08:30";
+            updated.textContent = "更新时间：每 8 小时自动更新（北京时间 00:30 / 08:30 / 16:30）";
             fail.hidden = false;
           });
       })();
