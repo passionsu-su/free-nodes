@@ -77,36 +77,31 @@
       .x-all textarea[hidden] { display: none; }
       #countFail[hidden] { display: none; }
       .x-src { display: grid; gap: 8px; margin-top: 24px; }
-      .x-seg {
-        display: inline-grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4px;
-        padding: 4px;
-        margin: 0;
-        border: 1px solid var(--stroke-secondary);
-        border-radius: var(--r-s);
-        background: var(--fill-tertiary);
+      .x-src label { font: var(--type-label); color: var(--text-secondary); }
+      .x-select {
+        appearance: none;
+        -webkit-appearance: none;
         max-width: 420px;
         width: 100%;
-      }
-      .x-seg input { position: absolute; opacity: 0; pointer-events: none; }
-      .x-seg label {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         min-height: var(--tap);
-        padding: 6px 12px;
-        border-radius: calc(var(--r-s) - 4px);
-        font: var(--type-label);
-        color: var(--text-secondary);
-        text-align: center;
+        padding: 8px 40px 8px 14px;
+        border: 1px solid var(--stroke-primary);
+        border-radius: var(--r-s);
+        background-color: var(--fill-tertiary);
+        background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+        background-position: right 20px center, right 15px center;
+        background-size: 5px 5px, 5px 5px;
+        background-repeat: no-repeat;
+        color: var(--text-primary);
+        font: var(--type-body);
+        font-size: 16px;
         cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        transition: background var(--dur-quick) ease, color var(--dur-quick) ease;
       }
-      .x-seg input:checked + label { background: var(--fill-primary); color: var(--text-primary-on); }
-      .x-seg input:focus-visible + label { outline: 2px solid var(--stroke-primary); outline-offset: 2px; }
+      .x-select:focus-visible { outline: 2px solid var(--stroke-primary); outline-offset: 2px; }
       .x-src .fineprint { margin: 0; }
+      .x-group { margin: 32px 0 4px; font: var(--type-heading); }
+      .x-group:first-of-type { margin-top: 8px; }
+      .x-group + .fineprint { margin: 0 0 8px; }
     </style>
   </head>
   <body>
@@ -123,11 +118,16 @@
         </section>
 
         <div class="x-src">
-          <fieldset class="x-seg" role="radiogroup" aria-label="链接来源">
-            <input type="radio" name="src" id="srcMirror" value="mirror" checked /><label for="srcMirror">国内镜像（推荐）</label>
-            <input type="radio" name="src" id="srcRaw" value="raw" /><label for="srcRaw">GitHub 原始</label>
-          </fieldset>
-          <p class="fineprint">国内直连 GitHub 常被墙，导入报错就用镜像。</p>
+          <label for="srcPick">链接来源</label>
+          <select class="x-select" id="srcPick">
+            <option value="m1" selected>镜像1 jsDelivr</option>
+            <option value="m2">镜像2 Fastly</option>
+            <option value="m3">镜像3 testingcf</option>
+            <option value="m4">镜像4 ghfast</option>
+            <option value="m5">镜像5 gh-proxy</option>
+            <option value="raw">GitHub 原始</option>
+          </select>
+          <p class="fineprint">导入报错 EOF / 超时，就换一个镜像再复制。</p>
         </div>
 
         <section class="section" id="region" data-nav="地区">
@@ -135,6 +135,8 @@
             <h2>按地区订阅</h2>
             <p class="head__sub">小火箭 Shadowrocket / v2rayNG / v2rayN / NekoBox 通用，已按延迟从低到高排序。国内用一般香港、日本、新加坡最快。</p>
           </div>
+          <h3 class="x-group">小火箭 / v2rayNG（base64）</h3>
+          <p class="fineprint">Clash 系 App 不能用这些</p>
           <ul class="x-subs" id="regionList">
             <li data-count="region.hk"><p class="x-subs__name">香港 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/hk.txt</code></li>
             <li data-count="region.tw"><p class="x-subs__name">台湾 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/tw.txt</code></li>
@@ -147,9 +149,27 @@
             <li data-count="merged" data-skip-all><p class="x-subs__name">全部（小火箭） <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/shadowrocket/sub.txt</code></li>
           </ul>
           <div class="x-all">
-            <button type="button" class="x-copy x-copy--wide" id="copyAll" data-label="复制全部地区链接">复制全部地区链接</button>
-            <p class="x-msg" id="allMsg"></p>
-            <textarea id="allText" readonly hidden aria-label="全部地区链接"></textarea>
+            <button type="button" class="x-copy x-copy--wide x-copyall" data-list="regionList" data-label="复制全部地区链接">复制全部地区链接</button>
+            <p class="x-msg"></p>
+            <textarea readonly hidden aria-label="全部地区链接（base64）"></textarea>
+          </div>
+
+          <h3 class="x-group">FlClash / Clash Meta / Clash Verge / Stash（YAML）</h3>
+          <ul class="x-subs" id="clashList">
+            <li data-count="region_clash.hk"><p class="x-subs__name">香港 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/clash/hk.yaml</code></li>
+            <li data-count="region_clash.tw"><p class="x-subs__name">台湾 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/clash/tw.yaml</code></li>
+            <li data-count="region_clash.jp"><p class="x-subs__name">日本 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/clash/jp.yaml</code></li>
+            <li data-count="region_clash.sg"><p class="x-subs__name">新加坡 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/clash/sg.yaml</code></li>
+            <li data-count="region_clash.kr"><p class="x-subs__name">韩国 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/clash/kr.yaml</code></li>
+            <li data-count="region_clash.us"><p class="x-subs__name">美国 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/clash/us.yaml</code></li>
+            <li data-count="region_clash.eu"><p class="x-subs__name">欧洲 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/clash/eu.yaml</code></li>
+            <li data-count="region_clash.other"><p class="x-subs__name">其他 <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/region/clash/other.yaml</code></li>
+            <li data-count="ios.clash_alive" data-skip-all><p class="x-subs__name">全部（Clash） <span class="pill" hidden></span></p><code class="x-subs__url">https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/clash/all.yaml</code></li>
+          </ul>
+          <div class="x-all">
+            <button type="button" class="x-copy x-copy--wide x-copyall" data-list="clashList" data-label="复制全部 Clash 地区链接">复制全部 Clash 地区链接</button>
+            <p class="x-msg"></p>
+            <textarea readonly hidden aria-label="全部地区链接（Clash YAML）"></textarea>
           </div>
         </section>
 
@@ -251,26 +271,28 @@
           }
         }
 
+        var RAW = "https://raw.githubusercontent.com/passionsu-su/free-nodes/main/";
         var PREFIX = {
-          mirror: "https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/",
-          raw: "https://raw.githubusercontent.com/passionsu-su/free-nodes/main/"
+          m1: "https://cdn.jsdelivr.net/gh/passionsu-su/free-nodes@main/",
+          m2: "https://fastly.jsdelivr.net/gh/passionsu-su/free-nodes@main/",
+          m3: "https://testingcf.jsdelivr.net/gh/passionsu-su/free-nodes@main/",
+          m4: "https://ghfast.top/" + RAW,
+          m5: "https://gh-proxy.com/" + RAW,
+          raw: RAW
         };
         var urlEls = Array.prototype.slice.call(document.querySelectorAll(".x-subs__url"));
         urlEls.forEach(function (c) {
-          var t = c.textContent.trim();
-          c.dataset.path = t.replace(PREFIX.mirror, "").replace(PREFIX.raw, "");
+          c.dataset.path = c.textContent.trim().replace(PREFIX.m1, "");
         });
         function setSource(src) {
-          var p = PREFIX[src] || PREFIX.mirror;
+          var p = PREFIX[src] || PREFIX.m1;
           urlEls.forEach(function (c) { c.textContent = p + c.dataset.path; });
-          var at = document.getElementById("allText");
-          if (at) { at.hidden = true; at.value = ""; }
+          Array.prototype.forEach.call(document.querySelectorAll(".x-all textarea"), function (at) { at.hidden = true; at.value = ""; });
         }
-        Array.prototype.forEach.call(document.querySelectorAll('input[name="src"]'), function (r) {
-          r.addEventListener("change", function () { if (r.checked) setSource(r.value); });
-        });
-        document.getElementById("srcMirror").checked = true;
-        setSource("mirror");
+        var srcPick = document.getElementById("srcPick");
+        srcPick.addEventListener("change", function () { setSource(srcPick.value); });
+        srcPick.value = "m1";
+        setSource("m1");
 
         var items = Array.prototype.slice.call(document.querySelectorAll(".x-subs > li"));
         items.forEach(function (li) {
@@ -294,14 +316,16 @@
           });
         });
 
-        var allBtn = document.getElementById("copyAll");
-        var allMsg = document.getElementById("allMsg");
-        var allText = document.getElementById("allText");
-        allBtn.addEventListener("click", function () {
-          var text = Array.prototype.map.call(document.querySelectorAll("#regionList > li:not([data-skip-all]) .x-subs__url"), function (c) { return c.textContent.trim(); }).join("\n");
-          copyText(text).then(function (ok) {
-            if (!ok) { allText.value = text; allText.hidden = false; }
-            flash(allBtn, allMsg, ok, allText);
+        Array.prototype.forEach.call(document.querySelectorAll(".x-copyall"), function (allBtn) {
+          var box = allBtn.parentNode;
+          var allMsg = box.querySelector(".x-msg");
+          var allText = box.querySelector("textarea");
+          allBtn.addEventListener("click", function () {
+            var text = Array.prototype.map.call(document.querySelectorAll("#" + allBtn.dataset.list + " > li:not([data-skip-all]) .x-subs__url"), function (c) { return c.textContent.trim(); }).join("\n");
+            copyText(text).then(function (ok) {
+              if (!ok) { allText.value = text; allText.hidden = false; }
+              flash(allBtn, allMsg, ok, allText);
+            });
           });
         });
 
@@ -313,7 +337,8 @@
         function getReport(url) {
           return fetch(url, { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
         }
-        getReport(PREFIX.mirror + "report.json")
+        getReport(PREFIX.m1 + "report.json")
+          .catch(function () { return getReport(PREFIX.m2 + "report.json"); })
           .catch(function () { return getReport(PREFIX.raw + "report.json"); })
           .then(function (data) {
             updated.textContent = data.time ? "更新时间：" + data.time + "（北京时间）" : "更新时间：未知";
