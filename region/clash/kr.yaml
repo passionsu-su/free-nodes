@@ -2,12 +2,25 @@ mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
-proxies: []
+proxies:
+- name: 🇰🇷KR-218.237.185.234-0171 | 2.488MB
+  server: p141.panda001.net
+  port: 4652
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
-  - DIRECT
+  - AUTO
+  - 🇰🇷KR-218.237.185.234-0171 | 2.488MB
+- name: AUTO
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies:
+  - 🇰🇷KR-218.237.185.234-0171 | 2.488MB
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
