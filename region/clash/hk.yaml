@@ -3,41 +3,8 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇭🇰[www.v2nodes.com] vless-HK
-  port: 443
-  server: 104.21.91.244
-  tls: false
-  type: vless
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  ws-opts:
-    path: /Chanel0111Net
-- client-fingerprint: qq
-  name: '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
-  network: ws
-  port: 443
-  server: cf.130519.xyz
-  servername: lucasjow.us.ci
-  tls: true
-  type: vless
-  uuid: e6df2095-a73c-4043-8693-8d5a03686870
-  ws-opts:
-    headers:
-      Host: lucasjow.us.ci
-    path: /cart/docs/www/proxyip=108.160.132.132
-- name: '🇭🇰 香港 | HKG #1'
-  network: ws
-  port: 8443
-  server: 103.180.20.176
-  servername: tse1.mm.bing.net
-  tls: true
-  type: vless
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  ws-opts:
-    headers:
-      Host: tse1.mm.bing.net
-    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
 - client-fingerprint: chrome
-  name: '🏳[www.v2nodes.com] vless- #21'
+  name: '🏳[www.v2nodes.com] vless- #14'
   network: ws
   port: 8443
   server: 103.148.73.173
@@ -49,7 +16,19 @@ proxies:
     headers:
       Host: ty986gfazs.cainiaohub.xyz
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- name: '🏳[www.v2nodes.com] vless- #20'
+- name: '🏳[www.v2nodes.com] vless- #15'
+  network: ws
+  port: 8443
+  server: 103.180.20.176
+  servername: tse1.mm.bing.net
+  tls: true
+  type: vless
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  ws-opts:
+    headers:
+      Host: tse1.mm.bing.net
+    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+- name: '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
   port: 13779
   server: 47.238.210.5
   tls: false
@@ -70,22 +49,18 @@ proxy-groups:
   type: select
   proxies:
   - AUTO
-  - 🇭🇰[www.v2nodes.com] vless-HK
-  - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
-  - '🇭🇰 香港 | HKG #1'
-  - '🏳[www.v2nodes.com] vless- #21'
-  - '🏳[www.v2nodes.com] vless- #20'
+  - '🏳[www.v2nodes.com] vless- #14'
+  - '🏳[www.v2nodes.com] vless- #15'
+  - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
   - '@vmess_ir'
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇭🇰[www.v2nodes.com] vless-HK
-  - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
-  - '🇭🇰 香港 | HKG #1'
-  - '🏳[www.v2nodes.com] vless- #21'
-  - '🏳[www.v2nodes.com] vless- #20'
+  - '🏳[www.v2nodes.com] vless- #14'
+  - '🏳[www.v2nodes.com] vless- #15'
+  - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
   - '@vmess_ir'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
