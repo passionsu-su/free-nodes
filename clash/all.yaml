@@ -22,7 +22,6 @@ proxies:
 - {name: 🇨🇳_CN_中国, type: vmess, server: 112.132.215.108, port: 50002, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
 - {name: 🇮🇹_IT_意大利_2, type: ss, server: 202.50.253.54, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
 - {name: 🇯🇵_JP_日本, type: ss, server: 154.36.158.197, port: 8388, cipher: aes-256-gcm, password: BeaUf9c0AEWH40Pu, skip-cert-verify: true, udp: true}
-- {name: 🇨🇳_CN_中国->🇺🇸_US_美国, type: vless, server: us22.sofast.live, port: 58011, uuid: 0afc6426-606c-48e7-bd70-3c424a416842, tls: false, skip-cert-verify: true, udp: true}
 - {name: 🇮🇹_IT_意大利_3, type: ss, server: 202.50.253.45, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
 - {name: 🇮🇹_IT_意大利_4, type: ss, server: 202.50.253.90, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
 - {name: 🇮🇹_IT_意大利_5, type: ss, server: 202.50.253.18, port: 19999, cipher: aes-256-gcm, password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=, skip-cert-verify: true, udp: true}
@@ -43,16 +42,6 @@ proxies:
     path: /hls/cctv5phd.m3u8
     headers: {Host: guanwang.awsno.com}
   udp: true
-- {alterId: 0, cipher: auto, name: 防范境外势力渗透, network: tcp, port: 80, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888}
-- {alterId: 0, cipher: auto, name: '防范境外势力渗透 #1', network: tcp, port: 81, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888}
-- {alterId: 0, cipher: auto, name: '防范境外势力渗透 #2', network: tcp, port: 82, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888}
-- {alterId: 0, cipher: auto, name: '防范境外势力渗透 #3', network: tcp, port: 83, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888}
-- {alterId: 0, cipher: auto, name: '防范境外势力渗透 #4', network: tcp, port: 84, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888}
-- {alterId: 0, cipher: auto, name: '防范境外势力渗透 #5', network: tcp, port: 85, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888}
-- {alterId: 0, cipher: auto, name: '防范境外势力渗透 #6', network: tcp, port: 86, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888}
-- {alterId: 0, cipher: auto, name: '防范境外势力渗透 #7', network: tcp, port: 87, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888}
-- {alterId: 0, cipher: auto, name: '防范境外势力渗透 #8', network: tcp, port: 88, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888}
-- {alterId: 0, cipher: auto, name: '防范境外势力渗透 #9', network: tcp, port: 89, server: 127.0.0.53, tls: false, type: vmess, uuid: 88888888-8888-8888-8888-888888888888}
 - alpn: [h3]
   auth-str: dongtaiwang.com
   down: 55 Mbps
@@ -456,19 +445,6 @@ proxies:
   ws-opts:
     headers: {Host: ccc.010304.xyz}
     path: /fp=chromefp=chrome
-- encryption: none
-  name: '🇪🇸[www.v2nodes.com] vless-ES-2... #1'
-  network: ws
-  port: 443
-  server: 31.57.190.15
-  servername: ccc.010304.xyz
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers: {Host: ccc.010304.xyz}
-    path: /fp
 - name: 🇪🇸[www.v2nodes.com] vless-ES-4...
   network: ws
   port: 443
@@ -530,16 +506,6 @@ proxies:
     headers: {Host: redcloudport-bidarbash.sbs}
     path: /zoodi
 - {name: '🇬🇧[www.v2nodes.com] vless-GB-1... #3', port: 10002, server: connect.hondamotor.site, tls: false, type: vless, uuid: c6362720-0931-4b91-b187-d8ecf3149734}
-- name: '🇬🇧[www.v2nodes.com] vless-GB-1... #4'
-  network: ws
-  port: 46001
-  server: forwarded.frnhk.xyz
-  tls: false
-  type: vless
-  uuid: 235e318a-8bcb-4480-b256-7b65cc5d0b0a
-  ws-opts:
-    headers: {Host: forwarded.frnhk.xyz}
-    path: /uk1023
 - {name: '🇬🇧[www.v2nodes.com] vless-GB-1... #5', port: 1222, server: 23.81.36.148, tls: false, type: vless, uuid: 36c3dcc2-17b6-4478-b8a7-3978e6d5afe9}
 - {client-fingerprint: chrome, encryption: none, name: '🇬🇧[www.v2nodes.com] vless-GB-1... #7', network: tcp, port: 8443, server: node-uk.connectsuite.org, skip-cert-verify: false, tls: true, type: vless, uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed}
 - name: 🇬🇷[www.v2nodes.com] vless-GR-3...
@@ -553,15 +519,6 @@ proxies:
   ws-opts:
     headers: {Host: free.cndyw.ggff.net}
     path: pyip=bpb.yousef.isegaro.comfp=random
-- alpn: [h2, http/1.1]
-  client-fingerprint: chrome
-  name: '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
-  port: 11907
-  server: 195.58.144.56
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
 - {name: '🇭🇰[www.v2nodes.com] vless-HK-1... #2', port: 13779, server: 47.238.210.5, tls: false, type: vless, uuid: 928e6cce-8ced-4243-9a48-a6642edd09b0}
 - client-fingerprint: chrome
   name: '🏳[www.v2nodes.com] vless- #14'
@@ -651,7 +608,6 @@ proxies:
   ws-opts:
     headers: {Host: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev}
     path: /@Marisa_kristifp=chrome
-- {name: '🇯🇵[www.v2nodes.com] vless-JP-1...', port: 35544, server: funagfrdfs.alixxplay.com, tls: false, type: vless, uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134}
 - {encryption: none, name: '🇯🇵[www.v2nodes.com] vless-JP-1... #2', network: tcp, port: 443, server: 137.220.221.179, tls: false, type: vless, uuid: a16a3336-c9ab-489f-9b85-c973f5e2cfa4}
 - name: 🇱🇰[www.v2nodes.com] vless-LK-7...
   network: ws
@@ -686,16 +642,6 @@ proxies:
   ws-opts:
     headers: {Host: kclx.eu.org}
     path: /154.16.10.34-8080
-- name: 🇲🇾[www.v2nodes.com] vless-MY-1...
-  network: ws
-  port: 46003
-  server: forwarded.frnhk.xyz
-  tls: false
-  type: vless
-  uuid: 6006c9a2-c0a2-4cda-80f2-405b0d790fc8
-  ws-opts:
-    headers: {Host: forwarded.frnhk.xyz}
-    path: /my1023
 - client-fingerprint: chrome
   encryption: none
   name: 🇲🇾[www.v2nodes.com] vless-MY-5...
@@ -901,18 +847,18 @@ proxies:
 proxy-groups:
 - name: PROXY
   type: select
-  proxies: [AUTO, 🇺🇸_US_美国->🇩🇪_DE_德国, 🇮🇹_IT_意大利, 🇮🇹_IT_意大利_1, 🇨🇳_CN_中国, 🇮🇹_IT_意大利_2, 🇯🇵_JP_日本, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇮🇹_IT_意大利_3, 🇮🇹_IT_意大利_4, 🇮🇹_IT_意大利_5, 🇮🇹_IT_意大利_6, 🇮🇹_IT_意大利_7, 🇺🇸_US_美国, 防范境外势力渗透, '防范境外势力渗透 #1', '防范境外势力渗透 #2', '防范境外势力渗透 #3', '防范境外势力渗透 #4', '防范境外势力渗透 #5', '防范境外势力渗透 #6', '防范境外势力渗透 #7', '防范境外势力渗透 #8', '防范境外势力渗透 #9', 'https://github.com/*********-*...', 'github.com/*********-******/**... #1', 🇩🇪192088 | ⚡️Telegram = t.me/v..., '@KAFING_2', 🇺🇸139909 | ⚡️Telegram = t.me/S..., '@V2rayng_mar_ket', 🛸62@oneclickvpnkeys, 🛸69@oneclickvpnkeys, '@v2ray_phoenix', '@Begoo_VPN ²⁹⁰', 🛸96@oneclickvpnkeys, Telegram 🆔@cnetvpn 🇷🇺, 'Telegram:@v2rayng3', 🇫🇮@Azaranv2ray, Telegram 🆔@Cnetvpn 🇺🇲, Telegram 🆔@cnetvpn 🇩🇪, 🛸100@oneclickvpnkeys, '@v2ray_configs_pools 🌍 ⚡️', 🩵+@Azarakhsh_Proxy+🩷, 🇮🇷198624 | ⚡️Telegram = t.me/S..., '@meliproxyy', '@FarazV2ray', Telegram@vpnjey, 'Telegram@vpnjey #1', 'Telegram@vpnjey #2', 🛸64@oneclickvpnkeys, 'Channel : @Daily_Configs #1', 'Telegram@vpnjey #5', 'Telegram@vpnjey
-      #6', 🇳🇱 - NL - @FreeOnlineVPN, '@KAFING_2 #2', 🛸75@oneclickvpnkeys, '@V2rayng_mar_ket #1', 🇨🇭192087 | ⚡️Telegram = t.me/v..., '@vmess_ir', 'Telegram 🆔@Cnetvpn 🇺🇲 #1', '@confiig_hub #1', 🇱🇻hysteria, Telegram 🆔@cnetvpn 🇳🇱, '@fastkanfig کانال تلگرام', Telegram 🆔@cnetvpn 🇸🇪, Telegram 🆔@cnetvpn 🇫🇮, '🇦🇪[www.v2nodes.com] vless-AE-1...', '🇦🇪[www.v2nodes.com] vless-AE-1... #1', '🇦🇱[www.v2nodes.com] vless-AL-1...', '🇦🇲[www.v2nodes.com] vless-AM-1...', '🇺🇦[www.v2nodes.com] vless-UA-1... #7', '🏳[www.v2nodes.com] vless-', '🇸🇪[www.v2nodes.com] vless-SE-3...', '🇧🇷[www.v2nodes.com] vless-BR-1... #1', '🇸🇬[www.v2nodes.com] vless-SG-9... #1', '🇧🇾[www.v2nodes.com] vless-BY-1...', '🇧🇾[www.v2nodes.com] vless-BY-1... #1', '🇨🇦[www.v2nodes.com] vless-CA-1... #1', '🇸🇬[www.v2nodes.com] vless-SG', '🇸🇬[www.v2nodes.com] vless-SG #1', '🇸🇬[www.v2nodes.com] vless-SG #2', '🇸🇬[www.v2nodes.com] vless-SG #3', '🇸🇬[www.v2nodes.com] vless-SG #4', '🏳[www.v2nodes.com] vless- #2', '🇸🇬[www.v2nodes.com] vless-SG #5', '🇨🇱[www.v2nodes.com]
-      vless-CL-1...', '🇨🇾[www.v2nodes.com] vless-CY-1...', '🇨🇾[www.v2nodes.com] vless-CY-1... #1', '🇩🇪[www.v2nodes.com] vless-DE-1... #2', '🇺🇸[www.v2nodes.com] vless-US-1... #2', '🇩🇪[www.v2nodes.com] vless-DE-1... #4', '🇩🇪[www.v2nodes.com] vless-DE-1... #5', '🇩🇪[www.v2nodes.com] vless-DE-1... #6', '🇩🇪[www.v2nodes.com] vless-DE-1... #8', '🇩🇪[www.v2nodes.com] vless-DE-1... #10', '🇪🇸[www.v2nodes.com] vless-ES-4... #4', '🇪🇸[www.v2nodes.com] vless-ES-2... #1', '🇪🇸[www.v2nodes.com] vless-ES-4...', '🇫🇮[www.v2nodes.com] vless-FI-1... #2', '🇫🇮[www.v2nodes.com] vless-FI-1... #5', '🇫🇮[www.v2nodes.com] vless-FI-1... #14', '🇫🇷[www.v2nodes.com] vless-FR-1...', '🇬🇧[www.v2nodes.com] vless-GB-1... #3', '🇬🇧[www.v2nodes.com] vless-GB-1... #4', '🇬🇧[www.v2nodes.com] vless-GB-1... #5', '🇬🇧[www.v2nodes.com] vless-GB-1... #7', '🇬🇷[www.v2nodes.com] vless-GR-3...', '🇭🇰[www.v2nodes.com] vless-HK-1... #1', '🇭🇰[www.v2nodes.com] vless-HK-1... #2', '🏳[www.v2nodes.com] vless- #14', '🏳[www.v2nodes.com] vless- #15', '🇭🇺[www.v2nodes.com]
-      vless-HU-6...', '🇮🇱[www.v2nodes.com] vless-IL-1...', '🇮🇳[www.v2nodes.com] vless-IN-1... #1', '🇮🇳[www.v2nodes.com] vless-IN-1... #2', '🇮🇹[www.v2nodes.com] vless-IT-1... #1', '🏳[www.v2nodes.com] vless- #18', '🇮🇹[www.v2nodes.com] vless-IT-2...', '🇯🇵[www.v2nodes.com] vless-JP-1...', '🇯🇵[www.v2nodes.com] vless-JP-1... #2', '🇱🇰[www.v2nodes.com] vless-LK-7...', '🇲🇩[www.v2nodes.com] vless-MD-4...', '🇲🇽[www.v2nodes.com] vless-MX-1... #2', '🇲🇾[www.v2nodes.com] vless-MY-1...', '🇲🇾[www.v2nodes.com] vless-MY-5...', '🇳🇱[www.v2nodes.com] vless-NL-1...', '🇳🇱[www.v2nodes.com] vless-NL-1... #1', '🇳🇱[www.v2nodes.com] vless-NL-1... #6', '🇷🇴[www.v2nodes.com] vless-RO-1...', '🏳[www.v2nodes.com] vless- #21', '🇵🇱[www.v2nodes.com] vless-PL-1... #7', '🇷🇺[www.v2nodes.com] vless-RU-1...', '🇷🇺[www.v2nodes.com] vless-RU-1... #1', '🇸🇪[www.v2nodes.com] vless-SE-1...', '🇸🇪[www.v2nodes.com] vless-SE-1... #2', '🇸🇪[www.v2nodes.com] vless-SE-1... #3', '🇸🇪[www.v2nodes.com] vless-SE-1... #4', '🇸🇬[www.v2nodes.com] vless-SG-1...
-      #5', '🇸🇬[www.v2nodes.com] vless-SG-1... #6', '🇸🇬[www.v2nodes.com] vless-SG-9... #2', '🇸🇬[www.v2nodes.com] vless-SG-8...', '🇸🇬[www.v2nodes.com] vless-SG-8... #1', '🇸🇬[www.v2nodes.com] vless-SG-8... #2', '🇹🇭[www.v2nodes.com] vless-TH-1... #1', '🇹🇼[www.v2nodes.com] vless-TW-1...', '🏳[www.v2nodes.com] vless- #28', '🇻🇳[www.v2nodes.com] vless-VN-1... #1', '🇦🇱[www.v2nodes.com] ss-AL-1490...', '🇦🇹[www.v2nodes.com] ss-AT-1595...', '🏳[www.v2nodes.com] ss-', '🏳[www.v2nodes.com] ss- #1']
+  proxies: [AUTO, 🇺🇸_US_美国->🇩🇪_DE_德国, 🇮🇹_IT_意大利, 🇮🇹_IT_意大利_1, 🇨🇳_CN_中国, 🇮🇹_IT_意大利_2, 🇯🇵_JP_日本, 🇮🇹_IT_意大利_3, 🇮🇹_IT_意大利_4, 🇮🇹_IT_意大利_5, 🇮🇹_IT_意大利_6, 🇮🇹_IT_意大利_7, 🇺🇸_US_美国, 'https://github.com/*********-*...', 'github.com/*********-******/**... #1', 🇩🇪192088 | ⚡️Telegram = t.me/v..., '@KAFING_2', 🇺🇸139909 | ⚡️Telegram = t.me/S..., '@V2rayng_mar_ket', 🛸62@oneclickvpnkeys, 🛸69@oneclickvpnkeys, '@v2ray_phoenix', '@Begoo_VPN ²⁹⁰', 🛸96@oneclickvpnkeys, Telegram 🆔@cnetvpn 🇷🇺, 'Telegram:@v2rayng3', 🇫🇮@Azaranv2ray, Telegram 🆔@Cnetvpn 🇺🇲, Telegram 🆔@cnetvpn 🇩🇪, 🛸100@oneclickvpnkeys, '@v2ray_configs_pools 🌍 ⚡️', 🩵+@Azarakhsh_Proxy+🩷, 🇮🇷198624 | ⚡️Telegram = t.me/S..., '@meliproxyy', '@FarazV2ray', Telegram@vpnjey, 'Telegram@vpnjey #1', 'Telegram@vpnjey #2', 🛸64@oneclickvpnkeys, 'Channel : @Daily_Configs #1', 'Telegram@vpnjey #5', 'Telegram@vpnjey #6', 🇳🇱 - NL - @FreeOnlineVPN, '@KAFING_2 #2', 🛸75@oneclickvpnkeys, '@V2rayng_mar_ket #1', 🇨🇭192087 | ⚡️Telegram = t.me/v..., '@vmess_ir', 'Telegram 🆔@Cnetvpn
+      🇺🇲 #1', '@confiig_hub #1', 🇱🇻hysteria, Telegram 🆔@cnetvpn 🇳🇱, '@fastkanfig کانال تلگرام', Telegram 🆔@cnetvpn 🇸🇪, Telegram 🆔@cnetvpn 🇫🇮, '🇦🇪[www.v2nodes.com] vless-AE-1...', '🇦🇪[www.v2nodes.com] vless-AE-1... #1', '🇦🇱[www.v2nodes.com] vless-AL-1...', '🇦🇲[www.v2nodes.com] vless-AM-1...', '🇺🇦[www.v2nodes.com] vless-UA-1... #7', '🏳[www.v2nodes.com] vless-', '🇸🇪[www.v2nodes.com] vless-SE-3...', '🇧🇷[www.v2nodes.com] vless-BR-1... #1', '🇸🇬[www.v2nodes.com] vless-SG-9... #1', '🇧🇾[www.v2nodes.com] vless-BY-1...', '🇧🇾[www.v2nodes.com] vless-BY-1... #1', '🇨🇦[www.v2nodes.com] vless-CA-1... #1', '🇸🇬[www.v2nodes.com] vless-SG', '🇸🇬[www.v2nodes.com] vless-SG #1', '🇸🇬[www.v2nodes.com] vless-SG #2', '🇸🇬[www.v2nodes.com] vless-SG #3', '🇸🇬[www.v2nodes.com] vless-SG #4', '🏳[www.v2nodes.com] vless- #2', '🇸🇬[www.v2nodes.com] vless-SG #5', '🇨🇱[www.v2nodes.com] vless-CL-1...', '🇨🇾[www.v2nodes.com] vless-CY-1...', '🇨🇾[www.v2nodes.com] vless-CY-1... #1', '🇩🇪[www.v2nodes.com] vless-DE-1... #2', '🇺🇸[www.v2nodes.com]
+      vless-US-1... #2', '🇩🇪[www.v2nodes.com] vless-DE-1... #4', '🇩🇪[www.v2nodes.com] vless-DE-1... #5', '🇩🇪[www.v2nodes.com] vless-DE-1... #6', '🇩🇪[www.v2nodes.com] vless-DE-1... #8', '🇩🇪[www.v2nodes.com] vless-DE-1... #10', '🇪🇸[www.v2nodes.com] vless-ES-4... #4', '🇪🇸[www.v2nodes.com] vless-ES-4...', '🇫🇮[www.v2nodes.com] vless-FI-1... #2', '🇫🇮[www.v2nodes.com] vless-FI-1... #5', '🇫🇮[www.v2nodes.com] vless-FI-1... #14', '🇫🇷[www.v2nodes.com] vless-FR-1...', '🇬🇧[www.v2nodes.com] vless-GB-1... #3', '🇬🇧[www.v2nodes.com] vless-GB-1... #5', '🇬🇧[www.v2nodes.com] vless-GB-1... #7', '🇬🇷[www.v2nodes.com] vless-GR-3...', '🇭🇰[www.v2nodes.com] vless-HK-1... #2', '🏳[www.v2nodes.com] vless- #14', '🏳[www.v2nodes.com] vless- #15', '🇭🇺[www.v2nodes.com] vless-HU-6...', '🇮🇱[www.v2nodes.com] vless-IL-1...', '🇮🇳[www.v2nodes.com] vless-IN-1... #1', '🇮🇳[www.v2nodes.com] vless-IN-1... #2', '🇮🇹[www.v2nodes.com] vless-IT-1... #1', '🏳[www.v2nodes.com] vless- #18', '🇮🇹[www.v2nodes.com] vless-IT-2...', '🇯🇵[www.v2nodes.com]
+      vless-JP-1... #2', '🇱🇰[www.v2nodes.com] vless-LK-7...', '🇲🇩[www.v2nodes.com] vless-MD-4...', '🇲🇽[www.v2nodes.com] vless-MX-1... #2', '🇲🇾[www.v2nodes.com] vless-MY-5...', '🇳🇱[www.v2nodes.com] vless-NL-1...', '🇳🇱[www.v2nodes.com] vless-NL-1... #1', '🇳🇱[www.v2nodes.com] vless-NL-1... #6', '🇷🇴[www.v2nodes.com] vless-RO-1...', '🏳[www.v2nodes.com] vless- #21', '🇵🇱[www.v2nodes.com] vless-PL-1... #7', '🇷🇺[www.v2nodes.com] vless-RU-1...', '🇷🇺[www.v2nodes.com] vless-RU-1... #1', '🇸🇪[www.v2nodes.com] vless-SE-1...', '🇸🇪[www.v2nodes.com] vless-SE-1... #2', '🇸🇪[www.v2nodes.com] vless-SE-1... #3', '🇸🇪[www.v2nodes.com] vless-SE-1... #4', '🇸🇬[www.v2nodes.com] vless-SG-1... #5', '🇸🇬[www.v2nodes.com] vless-SG-1... #6', '🇸🇬[www.v2nodes.com] vless-SG-9... #2', '🇸🇬[www.v2nodes.com] vless-SG-8...', '🇸🇬[www.v2nodes.com] vless-SG-8... #1', '🇸🇬[www.v2nodes.com] vless-SG-8... #2', '🇹🇭[www.v2nodes.com] vless-TH-1... #1', '🇹🇼[www.v2nodes.com] vless-TW-1...', '🏳[www.v2nodes.com] vless- #28', '🇻🇳[www.v2nodes.com]
+      vless-VN-1... #1', '🇦🇱[www.v2nodes.com] ss-AL-1490...', '🇦🇹[www.v2nodes.com] ss-AT-1595...', '🏳[www.v2nodes.com] ss-', '🏳[www.v2nodes.com] ss- #1']
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
-  proxies: [🇺🇸_US_美国->🇩🇪_DE_德国, 🇮🇹_IT_意大利, 🇮🇹_IT_意大利_1, 🇨🇳_CN_中国, 🇮🇹_IT_意大利_2, 🇯🇵_JP_日本, 🇨🇳_CN_中国->🇺🇸_US_美国, 🇮🇹_IT_意大利_3, 🇮🇹_IT_意大利_4, 🇮🇹_IT_意大利_5, 🇮🇹_IT_意大利_6, 🇮🇹_IT_意大利_7, 🇺🇸_US_美国, 防范境外势力渗透, '防范境外势力渗透 #1', '防范境外势力渗透 #2', '防范境外势力渗透 #3', '防范境外势力渗透 #4', '防范境外势力渗透 #5', '防范境外势力渗透 #6', '防范境外势力渗透 #7', '防范境外势力渗透 #8', '防范境外势力渗透 #9', 'https://github.com/*********-*...', 'github.com/*********-******/**... #1', 🇩🇪192088 | ⚡️Telegram = t.me/v..., '@KAFING_2', 🇺🇸139909 | ⚡️Telegram = t.me/S..., '@V2rayng_mar_ket', 🛸62@oneclickvpnkeys, 🛸69@oneclickvpnkeys, '@v2ray_phoenix', '@Begoo_VPN ²⁹⁰', 🛸96@oneclickvpnkeys, Telegram 🆔@cnetvpn 🇷🇺, 'Telegram:@v2rayng3', 🇫🇮@Azaranv2ray, Telegram 🆔@Cnetvpn 🇺🇲, Telegram 🆔@cnetvpn 🇩🇪, 🛸100@oneclickvpnkeys, '@v2ray_configs_pools 🌍 ⚡️', 🩵+@Azarakhsh_Proxy+🩷, 🇮🇷198624 | ⚡️Telegram = t.me/S..., '@meliproxyy', '@FarazV2ray', Telegram@vpnjey, 'Telegram@vpnjey #1', 'Telegram@vpnjey #2', 🛸64@oneclickvpnkeys, 'Channel : @Daily_Configs #1', 'Telegram@vpnjey #5', 'Telegram@vpnjey
-      #6', 🇳🇱 - NL - @FreeOnlineVPN, '@KAFING_2 #2', 🛸75@oneclickvpnkeys, '@V2rayng_mar_ket #1', 🇨🇭192087 | ⚡️Telegram = t.me/v..., '@vmess_ir', 'Telegram 🆔@Cnetvpn 🇺🇲 #1', '@confiig_hub #1', 🇱🇻hysteria, Telegram 🆔@cnetvpn 🇳🇱, '@fastkanfig کانال تلگرام', Telegram 🆔@cnetvpn 🇸🇪, Telegram 🆔@cnetvpn 🇫🇮, '🇦🇪[www.v2nodes.com] vless-AE-1...', '🇦🇪[www.v2nodes.com] vless-AE-1... #1', '🇦🇱[www.v2nodes.com] vless-AL-1...', '🇦🇲[www.v2nodes.com] vless-AM-1...', '🇺🇦[www.v2nodes.com] vless-UA-1... #7', '🏳[www.v2nodes.com] vless-', '🇸🇪[www.v2nodes.com] vless-SE-3...', '🇧🇷[www.v2nodes.com] vless-BR-1... #1', '🇸🇬[www.v2nodes.com] vless-SG-9... #1', '🇧🇾[www.v2nodes.com] vless-BY-1...', '🇧🇾[www.v2nodes.com] vless-BY-1... #1', '🇨🇦[www.v2nodes.com] vless-CA-1... #1', '🇸🇬[www.v2nodes.com] vless-SG', '🇸🇬[www.v2nodes.com] vless-SG #1', '🇸🇬[www.v2nodes.com] vless-SG #2', '🇸🇬[www.v2nodes.com] vless-SG #3', '🇸🇬[www.v2nodes.com] vless-SG #4', '🏳[www.v2nodes.com] vless- #2', '🇸🇬[www.v2nodes.com] vless-SG #5', '🇨🇱[www.v2nodes.com]
-      vless-CL-1...', '🇨🇾[www.v2nodes.com] vless-CY-1...', '🇨🇾[www.v2nodes.com] vless-CY-1... #1', '🇩🇪[www.v2nodes.com] vless-DE-1... #2', '🇺🇸[www.v2nodes.com] vless-US-1... #2', '🇩🇪[www.v2nodes.com] vless-DE-1... #4', '🇩🇪[www.v2nodes.com] vless-DE-1... #5', '🇩🇪[www.v2nodes.com] vless-DE-1... #6', '🇩🇪[www.v2nodes.com] vless-DE-1... #8', '🇩🇪[www.v2nodes.com] vless-DE-1... #10', '🇪🇸[www.v2nodes.com] vless-ES-4... #4', '🇪🇸[www.v2nodes.com] vless-ES-2... #1', '🇪🇸[www.v2nodes.com] vless-ES-4...', '🇫🇮[www.v2nodes.com] vless-FI-1... #2', '🇫🇮[www.v2nodes.com] vless-FI-1... #5', '🇫🇮[www.v2nodes.com] vless-FI-1... #14', '🇫🇷[www.v2nodes.com] vless-FR-1...', '🇬🇧[www.v2nodes.com] vless-GB-1... #3', '🇬🇧[www.v2nodes.com] vless-GB-1... #4', '🇬🇧[www.v2nodes.com] vless-GB-1... #5', '🇬🇧[www.v2nodes.com] vless-GB-1... #7', '🇬🇷[www.v2nodes.com] vless-GR-3...', '🇭🇰[www.v2nodes.com] vless-HK-1... #1', '🇭🇰[www.v2nodes.com] vless-HK-1... #2', '🏳[www.v2nodes.com] vless- #14', '🏳[www.v2nodes.com] vless- #15', '🇭🇺[www.v2nodes.com]
-      vless-HU-6...', '🇮🇱[www.v2nodes.com] vless-IL-1...', '🇮🇳[www.v2nodes.com] vless-IN-1... #1', '🇮🇳[www.v2nodes.com] vless-IN-1... #2', '🇮🇹[www.v2nodes.com] vless-IT-1... #1', '🏳[www.v2nodes.com] vless- #18', '🇮🇹[www.v2nodes.com] vless-IT-2...', '🇯🇵[www.v2nodes.com] vless-JP-1...', '🇯🇵[www.v2nodes.com] vless-JP-1... #2', '🇱🇰[www.v2nodes.com] vless-LK-7...', '🇲🇩[www.v2nodes.com] vless-MD-4...', '🇲🇽[www.v2nodes.com] vless-MX-1... #2', '🇲🇾[www.v2nodes.com] vless-MY-1...', '🇲🇾[www.v2nodes.com] vless-MY-5...', '🇳🇱[www.v2nodes.com] vless-NL-1...', '🇳🇱[www.v2nodes.com] vless-NL-1... #1', '🇳🇱[www.v2nodes.com] vless-NL-1... #6', '🇷🇴[www.v2nodes.com] vless-RO-1...', '🏳[www.v2nodes.com] vless- #21', '🇵🇱[www.v2nodes.com] vless-PL-1... #7', '🇷🇺[www.v2nodes.com] vless-RU-1...', '🇷🇺[www.v2nodes.com] vless-RU-1... #1', '🇸🇪[www.v2nodes.com] vless-SE-1...', '🇸🇪[www.v2nodes.com] vless-SE-1... #2', '🇸🇪[www.v2nodes.com] vless-SE-1... #3', '🇸🇪[www.v2nodes.com] vless-SE-1... #4', '🇸🇬[www.v2nodes.com] vless-SG-1...
-      #5', '🇸🇬[www.v2nodes.com] vless-SG-1... #6', '🇸🇬[www.v2nodes.com] vless-SG-9... #2', '🇸🇬[www.v2nodes.com] vless-SG-8...', '🇸🇬[www.v2nodes.com] vless-SG-8... #1', '🇸🇬[www.v2nodes.com] vless-SG-8... #2', '🇹🇭[www.v2nodes.com] vless-TH-1... #1', '🇹🇼[www.v2nodes.com] vless-TW-1...', '🏳[www.v2nodes.com] vless- #28', '🇻🇳[www.v2nodes.com] vless-VN-1... #1', '🇦🇱[www.v2nodes.com] ss-AL-1490...', '🇦🇹[www.v2nodes.com] ss-AT-1595...', '🏳[www.v2nodes.com] ss-', '🏳[www.v2nodes.com] ss- #1']
+  proxies: [🇺🇸_US_美国->🇩🇪_DE_德国, 🇮🇹_IT_意大利, 🇮🇹_IT_意大利_1, 🇨🇳_CN_中国, 🇮🇹_IT_意大利_2, 🇯🇵_JP_日本, 🇮🇹_IT_意大利_3, 🇮🇹_IT_意大利_4, 🇮🇹_IT_意大利_5, 🇮🇹_IT_意大利_6, 🇮🇹_IT_意大利_7, 🇺🇸_US_美国, 'https://github.com/*********-*...', 'github.com/*********-******/**... #1', 🇩🇪192088 | ⚡️Telegram = t.me/v..., '@KAFING_2', 🇺🇸139909 | ⚡️Telegram = t.me/S..., '@V2rayng_mar_ket', 🛸62@oneclickvpnkeys, 🛸69@oneclickvpnkeys, '@v2ray_phoenix', '@Begoo_VPN ²⁹⁰', 🛸96@oneclickvpnkeys, Telegram 🆔@cnetvpn 🇷🇺, 'Telegram:@v2rayng3', 🇫🇮@Azaranv2ray, Telegram 🆔@Cnetvpn 🇺🇲, Telegram 🆔@cnetvpn 🇩🇪, 🛸100@oneclickvpnkeys, '@v2ray_configs_pools 🌍 ⚡️', 🩵+@Azarakhsh_Proxy+🩷, 🇮🇷198624 | ⚡️Telegram = t.me/S..., '@meliproxyy', '@FarazV2ray', Telegram@vpnjey, 'Telegram@vpnjey #1', 'Telegram@vpnjey #2', 🛸64@oneclickvpnkeys, 'Channel : @Daily_Configs #1', 'Telegram@vpnjey #5', 'Telegram@vpnjey #6', 🇳🇱 - NL - @FreeOnlineVPN, '@KAFING_2 #2', 🛸75@oneclickvpnkeys, '@V2rayng_mar_ket #1', 🇨🇭192087 | ⚡️Telegram = t.me/v..., '@vmess_ir', 'Telegram 🆔@Cnetvpn 🇺🇲
+      #1', '@confiig_hub #1', 🇱🇻hysteria, Telegram 🆔@cnetvpn 🇳🇱, '@fastkanfig کانال تلگرام', Telegram 🆔@cnetvpn 🇸🇪, Telegram 🆔@cnetvpn 🇫🇮, '🇦🇪[www.v2nodes.com] vless-AE-1...', '🇦🇪[www.v2nodes.com] vless-AE-1... #1', '🇦🇱[www.v2nodes.com] vless-AL-1...', '🇦🇲[www.v2nodes.com] vless-AM-1...', '🇺🇦[www.v2nodes.com] vless-UA-1... #7', '🏳[www.v2nodes.com] vless-', '🇸🇪[www.v2nodes.com] vless-SE-3...', '🇧🇷[www.v2nodes.com] vless-BR-1... #1', '🇸🇬[www.v2nodes.com] vless-SG-9... #1', '🇧🇾[www.v2nodes.com] vless-BY-1...', '🇧🇾[www.v2nodes.com] vless-BY-1... #1', '🇨🇦[www.v2nodes.com] vless-CA-1... #1', '🇸🇬[www.v2nodes.com] vless-SG', '🇸🇬[www.v2nodes.com] vless-SG #1', '🇸🇬[www.v2nodes.com] vless-SG #2', '🇸🇬[www.v2nodes.com] vless-SG #3', '🇸🇬[www.v2nodes.com] vless-SG #4', '🏳[www.v2nodes.com] vless- #2', '🇸🇬[www.v2nodes.com] vless-SG #5', '🇨🇱[www.v2nodes.com] vless-CL-1...', '🇨🇾[www.v2nodes.com] vless-CY-1...', '🇨🇾[www.v2nodes.com] vless-CY-1... #1', '🇩🇪[www.v2nodes.com] vless-DE-1... #2', '🇺🇸[www.v2nodes.com]
+      vless-US-1... #2', '🇩🇪[www.v2nodes.com] vless-DE-1... #4', '🇩🇪[www.v2nodes.com] vless-DE-1... #5', '🇩🇪[www.v2nodes.com] vless-DE-1... #6', '🇩🇪[www.v2nodes.com] vless-DE-1... #8', '🇩🇪[www.v2nodes.com] vless-DE-1... #10', '🇪🇸[www.v2nodes.com] vless-ES-4... #4', '🇪🇸[www.v2nodes.com] vless-ES-4...', '🇫🇮[www.v2nodes.com] vless-FI-1... #2', '🇫🇮[www.v2nodes.com] vless-FI-1... #5', '🇫🇮[www.v2nodes.com] vless-FI-1... #14', '🇫🇷[www.v2nodes.com] vless-FR-1...', '🇬🇧[www.v2nodes.com] vless-GB-1... #3', '🇬🇧[www.v2nodes.com] vless-GB-1... #5', '🇬🇧[www.v2nodes.com] vless-GB-1... #7', '🇬🇷[www.v2nodes.com] vless-GR-3...', '🇭🇰[www.v2nodes.com] vless-HK-1... #2', '🏳[www.v2nodes.com] vless- #14', '🏳[www.v2nodes.com] vless- #15', '🇭🇺[www.v2nodes.com] vless-HU-6...', '🇮🇱[www.v2nodes.com] vless-IL-1...', '🇮🇳[www.v2nodes.com] vless-IN-1... #1', '🇮🇳[www.v2nodes.com] vless-IN-1... #2', '🇮🇹[www.v2nodes.com] vless-IT-1... #1', '🏳[www.v2nodes.com] vless- #18', '🇮🇹[www.v2nodes.com] vless-IT-2...', '🇯🇵[www.v2nodes.com]
+      vless-JP-1... #2', '🇱🇰[www.v2nodes.com] vless-LK-7...', '🇲🇩[www.v2nodes.com] vless-MD-4...', '🇲🇽[www.v2nodes.com] vless-MX-1... #2', '🇲🇾[www.v2nodes.com] vless-MY-5...', '🇳🇱[www.v2nodes.com] vless-NL-1...', '🇳🇱[www.v2nodes.com] vless-NL-1... #1', '🇳🇱[www.v2nodes.com] vless-NL-1... #6', '🇷🇴[www.v2nodes.com] vless-RO-1...', '🏳[www.v2nodes.com] vless- #21', '🇵🇱[www.v2nodes.com] vless-PL-1... #7', '🇷🇺[www.v2nodes.com] vless-RU-1...', '🇷🇺[www.v2nodes.com] vless-RU-1... #1', '🇸🇪[www.v2nodes.com] vless-SE-1...', '🇸🇪[www.v2nodes.com] vless-SE-1... #2', '🇸🇪[www.v2nodes.com] vless-SE-1... #3', '🇸🇪[www.v2nodes.com] vless-SE-1... #4', '🇸🇬[www.v2nodes.com] vless-SG-1... #5', '🇸🇬[www.v2nodes.com] vless-SG-1... #6', '🇸🇬[www.v2nodes.com] vless-SG-9... #2', '🇸🇬[www.v2nodes.com] vless-SG-8...', '🇸🇬[www.v2nodes.com] vless-SG-8... #1', '🇸🇬[www.v2nodes.com] vless-SG-8... #2', '🇹🇭[www.v2nodes.com] vless-TH-1... #1', '🇹🇼[www.v2nodes.com] vless-TW-1...', '🏳[www.v2nodes.com] vless- #28', '🇻🇳[www.v2nodes.com]
+      vless-VN-1... #1', '🇦🇱[www.v2nodes.com] ss-AL-1490...', '🇦🇹[www.v2nodes.com] ss-AT-1595...', '🏳[www.v2nodes.com] ss-', '🏳[www.v2nodes.com] ss- #1']
 rules: ['IP-CIDR,192.168.0.0/16,DIRECT,no-resolve', 'IP-CIDR,10.0.0.0/8,DIRECT,no-resolve', 'IP-CIDR,172.16.0.0/12,DIRECT,no-resolve', 'IP-CIDR,127.0.0.0/8,DIRECT,no-resolve', 'MATCH,PROXY']
