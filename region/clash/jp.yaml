@@ -3,39 +3,6 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- client-fingerprint: chrome
-  encryption: none
-  name: '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
-  network: ws
-  port: 443
-  server: 104.16.10.185
-  servername: jp3.yohototo.top
-  tls: true
-  type: vless
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  ws-opts:
-    headers:
-      Host: jp3.yohototo.top
-    path: /tyxyws
-- client-fingerprint: chrome
-  name: 🇯🇵[www.v2nodes.com] vless-JP
-  network: ws
-  port: 443
-  server: 188.114.98.0
-  servername: tn1r.eu.cc
-  tls: true
-  type: vless
-  uuid: 22424ee2-6fe3-42ca-9749-6d4c5a8acc82
-  ws-opts:
-    headers:
-      Host: tn1r.eu.cc
-    path: /id-pusat
-- name: '🇯🇵[www.v2nodes.com] vless-JP-1... #1'
-  port: 35544
-  server: funagfrdfs.alixxplay.com
-  tls: false
-  type: vless
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
 - name: 🇯🇵_JP_日本
   type: ss
   server: 154.36.158.197
@@ -44,7 +11,9 @@ proxies:
   password: BeaUf9c0AEWH40Pu
   skip-cert-verify: true
   udp: true
-- name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+- encryption: none
+  name: '🇯🇵[www.v2nodes.com] vless-JP-1... #2'
+  network: tcp
   port: 443
   server: 137.220.221.179
   tls: false
@@ -55,21 +24,15 @@ proxy-groups:
   type: select
   proxies:
   - AUTO
-  - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
-  - 🇯🇵[www.v2nodes.com] vless-JP
-  - '🇯🇵[www.v2nodes.com] vless-JP-1... #1'
   - 🇯🇵_JP_日本
-  - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+  - '🇯🇵[www.v2nodes.com] vless-JP-1... #2'
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
-  - 🇯🇵[www.v2nodes.com] vless-JP
-  - '🇯🇵[www.v2nodes.com] vless-JP-1... #1'
   - 🇯🇵_JP_日本
-  - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+  - '🇯🇵[www.v2nodes.com] vless-JP-1... #2'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
