@@ -10,24 +10,30 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: '🇺🇸[www.v2nodes.com] trojan-US-... #2'
-  password: dba20dcb635e430fa4d3bfc303a149d2
-  port: 443
-  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
-  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
-  type: trojan
 - name: '🇺🇸[www.v2nodes.com] trojan-US-... #3'
   password: f0eb8c92ce8946aaba856569cff1a16b
   port: 443
   server: resources.findlocaljobnetworkandbuildcommunityconnections.com
   sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
   type: trojan
-- name: 🇺🇸US_2|1.1MB/s
+- name: '🇺🇸[www.v2nodes.com] trojan-US-... #2'
+  password: dba20dcb635e430fa4d3bfc303a149d2
   port: 443
-  server: 45.63.38.134
-  skip-cert-verify: true
-  tls: true
-  type: http
+  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  type: trojan
+- cipher: aes-256-gcm
+  name: '🏳[www.v2nodes.com] ss- #12'
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 95.215.201.18
+  type: ss
+- name: 🇺🇸US-173.244.56.9-0099 | 65.953MB
+  server: 173.244.56.9
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
 - name: 🛸75@oneclickvpnkeys
   password: bce6c821-200d-421f-bf3d-7159e5246ea0
   port: 33333
@@ -35,12 +41,20 @@ proxies:
   sni: hy2.123266.xyz
   tls: false
   type: hysteria2
-- cipher: aes-256-gcm
-  name: '🏳[www.v2nodes.com] ss- #12'
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 95.215.201.18
-  type: ss
+- client-fingerprint: chrome
+  name: '🇺🇸 美国 | USA #20'
+  network: ws
+  port: 443
+  server: www.5h.com
+  servername: youxuanku.kdns.fr
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4c0b7280-76bb-495c-9c8b-f05712ebf805
+  ws-opts:
+    headers:
+      Host: youxuanku.kdns.fr
+    path: /
 - name: 🛸96@oneclickvpnkeys
   obfs: salamander
   obfs-password: a39ca173b57ac7021b08bf3e3de9f1f6
@@ -51,22 +65,8 @@ proxies:
   sni: www.bing.com
   tls: false
   type: hysteria2
-- name: 🛸69@oneclickvpnkeys
-  password: 4fUg3KH31LpMhko6o0Ka9Q
-  port: 36720
-  server: 198.46.146.118
-  skip-cert-verify: true
-  sni: bing.com
-  tls: false
-  type: hysteria2
-- name: 🇺🇸US-156.146.38.167-0085 | 129.328MB
-  server: 156.146.38.167
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-156.146.38.170-0086 | 84.828MB
-  server: 156.146.38.170
+- name: 🇺🇸US-156.146.38.169-0078 | 98.05MB
+  server: 156.146.38.169
   port: 443
   type: ss
   cipher: aes-128-gcm
@@ -77,24 +77,42 @@ proxies:
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇺🇸US-156.146.38.169-0078 | 98.05MB
-  server: 156.146.38.169
+- name: 🇺🇸US-156.146.38.170-0086 | 84.828MB
+  server: 156.146.38.170
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇺🇸US-138.199.42.68-4947 | 83.182MB
-  server: 138.199.42.68
-  port: 8080
+- name: 🇺🇸US-156.146.38.167-0085 | 129.328MB
+  server: 156.146.38.167
+  port: 443
   type: ss
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
+  cipher: aes-128-gcm
+  password: shadowsocks
 - name: 🇺🇸US_1|3.0MB/s
   port: 443
   server: 167.88.60.242
   skip-cert-verify: true
   tls: true
   type: http
+- cipher: aes-256-gcm
+  name: '🇺🇸[www.v2nodes.com] ss-US-1603... #3'
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 185.215.132.18
+  type: ss
+- name: 🇺🇸US-173.244.56.6-0097 | 43.206MB
+  server: 173.244.56.6
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- cipher: aes-256-gcm
+  name: '🏳[www.v2nodes.com] ss- #16'
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 185.215.132.9
+  type: ss
 - http-opts:
     headers:
       Host:
@@ -110,24 +128,6 @@ proxies:
   type: vless
   udp: true
   uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- cipher: aes-256-gcm
-  name: '🏳[www.v2nodes.com] ss- #16'
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 185.215.132.9
-  type: ss
-- cipher: aes-256-gcm
-  name: '🇺🇸[www.v2nodes.com] ss-US-1603... #3'
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 185.215.132.18
-  type: ss
-- name: 🇺🇸US-173.244.56.6-0097 | 43.206MB
-  server: 173.244.56.6
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
 - name: US_speednode_0023
   port: 443
   server: 64.98.50.100
@@ -135,45 +135,14 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇺🇸US-37.19.198.244-0059 | 3.995MB
-  server: 37.19.198.244
-  port: 443
+- name: 🇺🇸US-138.199.42.68-4947 | 83.182MB
+  server: 138.199.42.68
+  port: 8080
   type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
 - name: 🇺🇸US-37.19.198.236-0046 | 3.477MB
   server: 37.19.198.236
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- cipher: aes-256-gcm
-  name: '🏳[www.v2nodes.com] ss- #13'
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 193.151.163.18
-  type: ss
-- name: 🇺🇸US-37.19.198.243-0040 | 3.482MB
-  server: 37.19.198.243
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US_3|1.1MB/s
-  password: None
-  port: 443
-  server: 193.239.236.134
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇺🇸US-37.19.198.160-0042 | 4.726MB
-  server: 37.19.198.160
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-173.244.56.9-0099 | 65.953MB
-  server: 173.244.56.9
   port: 443
   type: ss
   cipher: aes-128-gcm
@@ -191,6 +160,57 @@ proxies:
   client-fingerprint: chrome
   network: tcp
   udp: true
+- name: 🇺🇸US-37.19.198.160-0042 | 4.726MB
+  server: 37.19.198.160
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-37.19.198.244-0059 | 3.995MB
+  server: 37.19.198.244
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-37.19.198.243-0040 | 3.482MB
+  server: 37.19.198.243
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- cipher: aes-256-gcm
+  name: '🏳[www.v2nodes.com] ss- #13'
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 193.151.163.18
+  type: ss
+- name: 🇺🇸US_3|1.1MB/s
+  password: None
+  port: 443
+  server: 193.239.236.134
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🛸69@oneclickvpnkeys
+  password: 4fUg3KH31LpMhko6o0Ka9Q
+  port: 36720
+  server: 198.46.146.118
+  skip-cert-verify: true
+  sni: bing.com
+  tls: false
+  type: hysteria2
+- cipher: aes-256-gcm
+  name: '🇺🇸[www.v2nodes.com] ss-US-1603... #2'
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 185.230.230.18
+  type: ss
+- cipher: aes-256-gcm
+  name: '🏳[www.v2nodes.com] ss- #14'
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 45.86.51.18
+  type: ss
 - name: 🇺🇸_US_美国
   type: vmess
   server: guanwang.awsno.com
@@ -208,16 +228,10 @@ proxies:
       Host: guanwang.awsno.com
   udp: true
 - cipher: aes-256-gcm
-  name: '🇺🇸[www.v2nodes.com] ss-US-1603... #2'
+  name: 🇺🇸[www.v2nodes.com] ss-US-1603...
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
-  server: 185.230.230.18
-  type: ss
-- cipher: aes-256-gcm
-  name: '🏳[www.v2nodes.com] ss- #14'
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 45.86.51.18
+  server: 193.151.160.9
   type: ss
 - cipher: aes-256-gcm
   name: '🏳[www.v2nodes.com] ss- #15'
@@ -225,18 +239,12 @@ proxies:
   port: 19999
   server: 193.151.160.18
   type: ss
-- cipher: aes-256-gcm
-  name: 🇺🇸[www.v2nodes.com] ss-US-1603...
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 193.151.160.9
-  type: ss
-- name: 🇺🇸US-15.204.247.206-0167 | 2.576MB
-  server: 15.204.247.206
-  port: 4444
-  type: ss
-  cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
+- name: 🇺🇸US_2|1.1MB/s
+  port: 443
+  server: 45.63.38.134
+  skip-cert-verify: true
+  tls: true
+  type: http
 - name: 🇺🇸 美国 | USA 22
   server: 67.159.49.36
   port: 2091
@@ -251,101 +259,111 @@ proxies:
   client-fingerprint: chrome
   network: tcp
   udp: true
-- name: 🇺🇸_US_美国->🇩🇪_DE_德国
-  type: vless
-  server: uiuxtestsdcv-development-r6dg9.lucity.app
-  port: 443
-  uuid: 58b06206-cd53-23d6-279a-0f0dd259cb0a
+- alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  encryption: none
+  name: '🏳[www.v2nodes.com] vless- #2'
   network: ws
-  servername: uiuxtestsdcv-development-r6dg9.lucity.app
+  port: 443
+  server: 8.6.112.242
+  servername: parsa-panel-dy55x.railway1385-2a46.workers.dev
+  skip-cert-verify: false
   tls: true
-  client-fingerprint: chrome
+  type: vless
+  uuid: 64726966-0000-4000-8000-740000000000
   ws-opts:
-    path: /ws/58b06206-cd53-23d6-279a-0f0dd259cb0a
     headers:
-      Host: uiuxtestsdcv-development-r6dg9.lucity.app
-  skip-cert-verify: true
-  udp: true
+      Host: parsa-panel-dy55x.railway1385-2a46.workers.dev
+    path: /drift?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+- name: 🇺🇸US-15.204.247.206-0167 | 2.576MB
+  server: 15.204.247.206
+  port: 4444
+  type: ss
+  cipher: aes-256-gcm
+  password: pKEW8JPByTVTLtM
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - US_speednode_0024
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #2'
   - '🇺🇸[www.v2nodes.com] trojan-US-... #3'
-  - 🇺🇸US_2|1.1MB/s
-  - 🛸75@oneclickvpnkeys
+  - '🇺🇸[www.v2nodes.com] trojan-US-... #2'
   - '🏳[www.v2nodes.com] ss- #12'
+  - 🇺🇸US-173.244.56.9-0099 | 65.953MB
+  - 🛸75@oneclickvpnkeys
+  - '🇺🇸 美国 | USA #20'
   - 🛸96@oneclickvpnkeys
-  - 🛸69@oneclickvpnkeys
-  - 🇺🇸US-156.146.38.167-0085 | 129.328MB
-  - 🇺🇸US-156.146.38.170-0086 | 84.828MB
-  - 🇺🇸US-156.146.38.168-0088 | 121.841MB
   - 🇺🇸US-156.146.38.169-0078 | 98.05MB
-  - 🇺🇸US-138.199.42.68-4947 | 83.182MB
+  - 🇺🇸US-156.146.38.168-0088 | 121.841MB
+  - 🇺🇸US-156.146.38.170-0086 | 84.828MB
+  - 🇺🇸US-156.146.38.167-0085 | 129.328MB
   - 🇺🇸US_1|3.0MB/s
-  - '🇺🇸 美国 | USA #6'
-  - '🏳[www.v2nodes.com] ss- #16'
   - '🇺🇸[www.v2nodes.com] ss-US-1603... #3'
   - 🇺🇸US-173.244.56.6-0097 | 43.206MB
+  - '🏳[www.v2nodes.com] ss- #16'
+  - '🇺🇸 美国 | USA #6'
   - US_speednode_0023
-  - 🇺🇸US-37.19.198.244-0059 | 3.995MB
+  - 🇺🇸US-138.199.42.68-4947 | 83.182MB
   - 🇺🇸US-37.19.198.236-0046 | 3.477MB
-  - '🏳[www.v2nodes.com] ss- #13'
-  - 🇺🇸US-37.19.198.243-0040 | 3.482MB
-  - 🇺🇸US_3|1.1MB/s
-  - 🇺🇸US-37.19.198.160-0042 | 4.726MB
-  - 🇺🇸US-173.244.56.9-0099 | 65.953MB
   - 🇺🇸 美国 | USA 2
-  - 🇺🇸_US_美国
+  - 🇺🇸US-37.19.198.160-0042 | 4.726MB
+  - 🇺🇸US-37.19.198.244-0059 | 3.995MB
+  - 🇺🇸US-37.19.198.243-0040 | 3.482MB
+  - '🏳[www.v2nodes.com] ss- #13'
+  - 🇺🇸US_3|1.1MB/s
+  - 🛸69@oneclickvpnkeys
   - '🇺🇸[www.v2nodes.com] ss-US-1603... #2'
   - '🏳[www.v2nodes.com] ss- #14'
-  - '🏳[www.v2nodes.com] ss- #15'
+  - 🇺🇸_US_美国
   - 🇺🇸[www.v2nodes.com] ss-US-1603...
-  - 🇺🇸US-15.204.247.206-0167 | 2.576MB
+  - '🏳[www.v2nodes.com] ss- #15'
+  - 🇺🇸US_2|1.1MB/s
   - 🇺🇸 美国 | USA 22
-  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - '🏳[www.v2nodes.com] vless- #2'
+  - 🇺🇸US-15.204.247.206-0167 | 2.576MB
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - US_speednode_0024
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #2'
   - '🇺🇸[www.v2nodes.com] trojan-US-... #3'
-  - 🇺🇸US_2|1.1MB/s
-  - 🛸75@oneclickvpnkeys
+  - '🇺🇸[www.v2nodes.com] trojan-US-... #2'
   - '🏳[www.v2nodes.com] ss- #12'
+  - 🇺🇸US-173.244.56.9-0099 | 65.953MB
+  - 🛸75@oneclickvpnkeys
+  - '🇺🇸 美国 | USA #20'
   - 🛸96@oneclickvpnkeys
-  - 🛸69@oneclickvpnkeys
-  - 🇺🇸US-156.146.38.167-0085 | 129.328MB
-  - 🇺🇸US-156.146.38.170-0086 | 84.828MB
-  - 🇺🇸US-156.146.38.168-0088 | 121.841MB
   - 🇺🇸US-156.146.38.169-0078 | 98.05MB
-  - 🇺🇸US-138.199.42.68-4947 | 83.182MB
+  - 🇺🇸US-156.146.38.168-0088 | 121.841MB
+  - 🇺🇸US-156.146.38.170-0086 | 84.828MB
+  - 🇺🇸US-156.146.38.167-0085 | 129.328MB
   - 🇺🇸US_1|3.0MB/s
-  - '🇺🇸 美国 | USA #6'
-  - '🏳[www.v2nodes.com] ss- #16'
   - '🇺🇸[www.v2nodes.com] ss-US-1603... #3'
   - 🇺🇸US-173.244.56.6-0097 | 43.206MB
+  - '🏳[www.v2nodes.com] ss- #16'
+  - '🇺🇸 美国 | USA #6'
   - US_speednode_0023
-  - 🇺🇸US-37.19.198.244-0059 | 3.995MB
+  - 🇺🇸US-138.199.42.68-4947 | 83.182MB
   - 🇺🇸US-37.19.198.236-0046 | 3.477MB
-  - '🏳[www.v2nodes.com] ss- #13'
-  - 🇺🇸US-37.19.198.243-0040 | 3.482MB
-  - 🇺🇸US_3|1.1MB/s
-  - 🇺🇸US-37.19.198.160-0042 | 4.726MB
-  - 🇺🇸US-173.244.56.9-0099 | 65.953MB
   - 🇺🇸 美国 | USA 2
-  - 🇺🇸_US_美国
+  - 🇺🇸US-37.19.198.160-0042 | 4.726MB
+  - 🇺🇸US-37.19.198.244-0059 | 3.995MB
+  - 🇺🇸US-37.19.198.243-0040 | 3.482MB
+  - '🏳[www.v2nodes.com] ss- #13'
+  - 🇺🇸US_3|1.1MB/s
+  - 🛸69@oneclickvpnkeys
   - '🇺🇸[www.v2nodes.com] ss-US-1603... #2'
   - '🏳[www.v2nodes.com] ss- #14'
-  - '🏳[www.v2nodes.com] ss- #15'
+  - 🇺🇸_US_美国
   - 🇺🇸[www.v2nodes.com] ss-US-1603...
-  - 🇺🇸US-15.204.247.206-0167 | 2.576MB
+  - '🏳[www.v2nodes.com] ss- #15'
+  - 🇺🇸US_2|1.1MB/s
   - 🇺🇸 美国 | USA 22
-  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - '🏳[www.v2nodes.com] vless- #2'
+  - 🇺🇸US-15.204.247.206-0167 | 2.576MB
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
