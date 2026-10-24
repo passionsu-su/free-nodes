@@ -3,16 +3,28 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: '@vmess_ir'
-  obfs: salamander
-  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
-  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
-  port: 5010
-  server: nas.aizhzo.com
-  skip-cert-verify: false
-  sni: nas.aizhzo.com
-  tls: false
-  type: hysteria2
+- name: 🇭🇰 香港 | HKG
+  server: 213.152.165.203
+  port: 2091
+  type: vless
+  uuid: 76b6a658-ce80-4500-b24d-404c94639ac6
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1N6AW5YuEwBoYcZK5KuugDzBHsa0NKZMT8QI-EmyL0k
+    short-id: 08a4b1f473932632
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇭🇰 香港 | HKG 3
+  password: 0324fbc29561
+  port: 443
+  server: 654968169.df6h451rh.xin
+  skip-cert-verify: true
+  sni: images.ctfassets.net
+  type: anytls
+  udp: true
 - alpn:
   - ''
   alterId: '0'
@@ -33,6 +45,16 @@ proxies:
   udp: true
   uuid: e47b9f77-60e4-4738-8d53-772b6002e146
   xudp: true
+- name: '@vmess_ir'
+  obfs: salamander
+  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
+  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
+  port: 5010
+  server: nas.aizhzo.com
+  skip-cert-verify: false
+  sni: nas.aizhzo.com
+  tls: false
+  type: hysteria2
 - name: 🇭🇰[www.v2nodes.com] trojan-HK-...
   password: XuMweB2PWs
   port: 45464
@@ -44,16 +66,20 @@ proxy-groups:
   type: select
   proxies:
   - AUTO
-  - '@vmess_ir'
+  - 🇭🇰 香港 | HKG
+  - 🇭🇰 香港 | HKG 3
   - 🇭🇰HK_1|3.8MB/s
+  - '@vmess_ir'
   - 🇭🇰[www.v2nodes.com] trojan-HK-...
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - '@vmess_ir'
+  - 🇭🇰 香港 | HKG
+  - 🇭🇰 香港 | HKG 3
   - 🇭🇰HK_1|3.8MB/s
+  - '@vmess_ir'
   - 🇭🇰[www.v2nodes.com] trojan-HK-...
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
