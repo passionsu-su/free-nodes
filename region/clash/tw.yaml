@@ -3,6 +3,22 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
+- name: 🤩96@oneclickvpnkeys
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: 103.115.109.49
+  skip-cert-verify: true
+  sni: 'https:'
+  tls: false
+  type: hysteria2
+- name: 🤩98@oneclickvpnkeys
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: vpn-tw-002.fastervpn.world
+  skip-cert-verify: true
+  sni: 127.0.0.1
+  tls: false
+  type: hysteria2
 - name: 🛸100@oneclickvpnkeys
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   port: 443
@@ -12,11 +28,11 @@ proxies:
   tls: false
   type: hysteria2
 - name: 🇹🇼 🇨🇳 台湾 | TWN
-  password: 87c6ad7b-e450-44a8-8088-bc2234d43de1
-  port: 47531
-  server: svip.skycon808.com
+  password: 0324fbc29561
+  port: 443
+  server: 98416548.df6h451rh.xin
   skip-cert-verify: true
-  sni: tw15.swiftrelay.cc
+  sni: images.ctfassets.net
   type: anytls
   udp: true
 proxy-groups:
@@ -24,6 +40,8 @@ proxy-groups:
   type: select
   proxies:
   - AUTO
+  - 🤩96@oneclickvpnkeys
+  - 🤩98@oneclickvpnkeys
   - 🛸100@oneclickvpnkeys
   - 🇹🇼 🇨🇳 台湾 | TWN
 - name: AUTO
@@ -31,6 +49,8 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
+  - 🤩96@oneclickvpnkeys
+  - 🤩98@oneclickvpnkeys
   - 🛸100@oneclickvpnkeys
   - 🇹🇼 🇨🇳 台湾 | TWN
 rules:
