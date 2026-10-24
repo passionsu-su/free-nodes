@@ -3,11 +3,15 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- encryption: none
-  name: 🇸🇬SG_1|4.5MB/s
+- alpn:
+  - h3
+  - h2
+  client-fingerprint: chrome
+  encryption: none
+  name: 🇸🇬SG_2|3.1MB/s
   network: ws
   port: 443
-  server: 172.64.150.43
+  server: 172.64.154.211
   servername: snip.edgeoneai.cc.cd
   tls: true
   type: vless
@@ -16,13 +20,13 @@ proxies:
   ws-opts:
     headers:
       Host: snip.edgeoneai.cc.cd
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/36.0.1985.143 Safari/537.36
+      User-Agent: Mozilla/5.0 (Linux; Android 7.0; BLL-L22 Build/HUAWEIBLL-L22) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/55.0.2883.91 Mobile Safari/537.36
     path: /
   xudp: true
 - alpn:
   - http/1.1
-  name: 🇸🇬SG_4|2.6MB/s
+  name: 🇸🇬SG_3|4.2MB/s
   network: ws
   port: 443
   server: 104.18.36.29
@@ -38,15 +42,29 @@ proxies:
         like Gecko) Chrome/70.0.3538.67 Safari/537.36
     path: /?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NETfp=chrome
   xudp: true
+- encryption: none
+  name: 🇸🇬[www.v2nodes.com] vless-SG
+  network: ws
+  port: 443
+  server: 172.64.152.241
+  servername: ccc.010304.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
 - alpn:
   - h3
   - h2
   client-fingerprint: chrome
   encryption: none
-  name: 🇸🇬SG_6|2.3MB/s
+  name: 🇸🇬SG_6|4.3MB/s
   network: ws
   port: 443
-  server: 104.18.32.47
+  server: 172.64.150.28
   servername: snip.edgeoneai.cc.cd
   tls: true
   type: vless
@@ -55,86 +73,14 @@ proxies:
   ws-opts:
     headers:
       Host: snip.edgeoneai.cc.cd
-      User-Agent: Mozilla/5.0 (Linux; Android 6.0; CAM-L03 Build/HUAWEICAM-L03) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
+      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; vivo 1603 Build/MMB29M) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/58.0.3029.83 Mobile Safari/537.36
     path: /
   xudp: true
-- client-fingerprint: chrome
-  name: 🇸🇬SG_7|3.6MB/s
-  network: ws
-  port: 443
-  server: 104.18.38.125
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  type: vless
-  udp: true
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  ws-opts:
-    headers:
-      Host: snip.edgeoneai.cc.cd
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/60.0.3112.90 Safari/537.36
-    path: /
-  xudp: true
-- alpn:
-  - h3
-  - h2
-  client-fingerprint: chrome
-  encryption: none
-  name: 🇸🇬SG_2|4.6MB/s
-  network: ws
-  port: 443
-  server: 172.64.154.211
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  type: vless
-  udp: true
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  ws-opts:
-    headers:
-      Host: snip.edgeoneai.cc.cd
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/65.0.3325.162 Safari/537.36
-    path: /
-  xudp: true
-- client-fingerprint: chrome
-  name: 🇸🇬SG_3|4.0MB/s
-  network: ws
-  port: 443
-  server: 104.18.43.67
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  type: vless
-  udp: true
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  ws-opts:
-    headers:
-      Host: snip.edgeoneai.cc.cd
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/60.0.3112.90 Safari/537.36
-    path: /fp=chrome
-  xudp: true
-- client-fingerprint: chrome
-  name: 🇸🇬SG_8|4.2MB/s
-  network: ws
-  port: 443
-  server: 172.64.157.161
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  type: vless
-  udp: true
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  ws-opts:
-    headers:
-      Host: snip.edgeoneai.cc.cd
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/63.0.3239.84 Safari/537.36
-    path: /
-  xudp: true
-- name: '🇸🇬[www.v2nodes.com] vless-SG #5'
+- name: '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
   network: ws
   port: 8080
-  server: 172.64.150.43
+  server: 172.67.71.187
   servername: hhlfy.twiladaphne.ndjp.net
   tls: false
   type: vless
@@ -144,34 +90,39 @@ proxies:
       Host: hhlfy.twiladaphne.ndjp.net
     path: /sg-melbi
 - client-fingerprint: chrome
-  name: 🇸🇬[www.v2nodes.com] vless-SG
+  name: 🇸🇬SG_8|4.3MB/s
   network: ws
   port: 443
-  server: cf.877774.xyz
-  servername: ccc.010304.xyz
+  server: 104.18.43.114
+  servername: snip.edgeoneai.cc.cd
   tls: true
   type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
+  udp: true
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
   ws-opts:
     headers:
-      Host: ccc.010304.xyz
+      Host: snip.edgeoneai.cc.cd
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/53.0.2785.143 Safari/537.36
     path: /
-- name: '🇸🇬[www.v2nodes.com] vless-SG #4'
-  network: ws
+  xudp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇸🇬SG_2|2.3MB/s
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    host: 817aa69.default.nintendo.com:112719
+    mode: tls
+  port: 2377
+  server: 18.143.63.164
+  type: ss
+  udp: true
+- name: 🇸🇬SG-68.183.227.4-0128 | 24.72MB
+  server: 68.183.227.4
   port: 8080
-  server: www.gov.se
-  servername: www.gov.se
-  tls: false
-  type: vless
-  uuid: 989d58b8-d2ea-4d28-b5ff-0f3cd078f2cf
-  ws-opts:
-    headers:
-      Host: sdf23g-billowing-moon-348e.mzm468gc.workers.dev
-    path: /
-- name: 🇸🇬SG_5|1.8MB/s
-  port: 9090
-  server: 128.199.121.61
-  type: http
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
 - client-fingerprint: chrome
   encryption: none
   name: '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
@@ -187,9 +138,7 @@ proxies:
     headers:
       Host: free-server.techsonic.dev
     path: /free-server.techsonic.dev
-- encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #5'
-  network: tcp
+- name: '🇸🇬[www.v2nodes.com] vless-SG-1... #5'
   port: 16263
   server: 47.237.74.17
   tls: false
@@ -200,17 +149,14 @@ proxy-groups:
   type: select
   proxies:
   - AUTO
-  - 🇸🇬SG_1|4.5MB/s
-  - 🇸🇬SG_4|2.6MB/s
-  - 🇸🇬SG_6|2.3MB/s
-  - 🇸🇬SG_7|3.6MB/s
-  - 🇸🇬SG_2|4.6MB/s
-  - 🇸🇬SG_3|4.0MB/s
-  - 🇸🇬SG_8|4.2MB/s
-  - '🇸🇬[www.v2nodes.com] vless-SG #5'
+  - 🇸🇬SG_2|3.1MB/s
+  - 🇸🇬SG_3|4.2MB/s
   - 🇸🇬[www.v2nodes.com] vless-SG
-  - '🇸🇬[www.v2nodes.com] vless-SG #4'
-  - 🇸🇬SG_5|1.8MB/s
+  - 🇸🇬SG_6|4.3MB/s
+  - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
+  - 🇸🇬SG_8|4.3MB/s
+  - 🇸🇬SG_2|2.3MB/s
+  - 🇸🇬SG-68.183.227.4-0128 | 24.72MB
   - '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
   - '🇸🇬[www.v2nodes.com] vless-SG-1... #5'
 - name: AUTO
@@ -218,17 +164,14 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇸🇬SG_1|4.5MB/s
-  - 🇸🇬SG_4|2.6MB/s
-  - 🇸🇬SG_6|2.3MB/s
-  - 🇸🇬SG_7|3.6MB/s
-  - 🇸🇬SG_2|4.6MB/s
-  - 🇸🇬SG_3|4.0MB/s
-  - 🇸🇬SG_8|4.2MB/s
-  - '🇸🇬[www.v2nodes.com] vless-SG #5'
+  - 🇸🇬SG_2|3.1MB/s
+  - 🇸🇬SG_3|4.2MB/s
   - 🇸🇬[www.v2nodes.com] vless-SG
-  - '🇸🇬[www.v2nodes.com] vless-SG #4'
-  - 🇸🇬SG_5|1.8MB/s
+  - 🇸🇬SG_6|4.3MB/s
+  - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
+  - 🇸🇬SG_8|4.3MB/s
+  - 🇸🇬SG_2|2.3MB/s
+  - 🇸🇬SG-68.183.227.4-0128 | 24.72MB
   - '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
   - '🇸🇬[www.v2nodes.com] vless-SG-1... #5'
 rules:
