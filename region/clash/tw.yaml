@@ -11,18 +11,28 @@ proxies:
   sni: vpn-tw-002.fastervpn.world
   tls: false
   type: hysteria2
+- name: 🇹🇼 🇨🇳 台湾 | TWN
+  password: 87c6ad7b-e450-44a8-8088-bc2234d43de1
+  port: 47531
+  server: svip.skycon808.com
+  skip-cert-verify: true
+  sni: tw15.swiftrelay.cc
+  type: anytls
+  udp: true
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - 🛸100@oneclickvpnkeys
+  - 🇹🇼 🇨🇳 台湾 | TWN
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 🛸100@oneclickvpnkeys
+  - 🇹🇼 🇨🇳 台湾 | TWN
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
