@@ -9,12 +9,37 @@ proxies:
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
+- client-fingerprint: chrome
+  name: '🏳[www.v2nodes.com] vless- #9'
+  network: ws
+  port: 443
+  server: kclx.eu.org
+  servername: kclx.eu.org
+  tls: true
+  type: vless
+  uuid: 0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b
+  ws-opts:
+    headers:
+      Host: kclx.eu.org
+    path: /154.16.10.34-8080
+- cipher: aes-256-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1546...
+  password: Y6R9pAtvxxzmGC
+  port: 5601
+  server: 51.222.155.113
+  type: ss
 - name: 🇨🇦CA-137.184.174.93-0131 | 34.676MB
   server: 137.184.174.93
   port: 8080
   type: ss
   cipher: rc4-md5
   password: 14fFPrbezE3HDZzsMOr6
+- cipher: aes-256-gcm
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1558...
+  password: Y6R9pAtvxxzmGC
+  port: 5000
+  server: 51.222.200.165
+  type: ss
 - name: 🇷🇺 俄罗斯 | RUS 3
   server: 45.9.118.177
   port: 8443
@@ -27,11 +52,76 @@ proxies:
   servername: apple.com
   client-fingerprint: firefox
   network: tcp
+- name: 🇨🇳_CN_中国
+  type: vmess
+  server: 112.132.215.108
+  port: 50002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- client-fingerprint: chrome
+  name: '🇲🇽[www.v2nodes.com] vless-MX-1... #2'
+  network: ws
+  port: 443
+  server: 131.196.253.141
+  servername: kclx.eu.org
+  tls: true
+  type: vless
+  uuid: 0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b
+  ws-opts:
+    headers:
+      Host: kclx.eu.org
+    path: /154.16.10.34-8080
 - cipher: aes-256-gcm
-  name: 🇨🇦[www.v2nodes.com] ss-CA-1558...
-  password: Y6R9pAtvxxzmGC
-  port: 5000
-  server: 51.222.200.165
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1557...
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.222.136.236
+  type: ss
+- name: 🇨🇳_CN_中国_1
+  type: vmess
+  server: 120.48.133.162
+  port: 10086
+  uuid: a01e5d56-464f-45b9-b600-164db4700162
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  udp: true
+- name: 🇹🇷 土耳其 | TUR
+  server: 45.74.159.238
+  port: 443
+  type: vless
+  uuid: 7072eeba-94fd-4fb3-92f2-a4506dd84cd8
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: p7X0vRL9R-23Ey-MZZZj7FY0g87nQq0Jzc01DwuryRk
+    short-id: 7597c5df264bcc10
+  servername: trend.eidoslab.link
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
+- name: '🇹🇭[www.v2nodes.com] vless-TH-1... #1'
+  network: ws
+  port: 80
+  server: support.zoom.us.v2ray.simspeedup.com
+  tls: false
+  type: vless
+  uuid: 3c52e091-6714-4915-949f-2149fe69951b
+  ws-opts:
+    headers:
+      Host: support.zoom.us.v2ray.simspeedup.com
+    path: /ws
+- cipher: aes-256-gcm
+  name: '🇨🇦[www.v2nodes.com] ss-CA-1545... #1'
+  password: kDWvXYZoTBcGkC4
+  port: 8882
+  server: 51.79.49.116
   type: ss
 - client-fingerprint: chrome
   name: 🏳[www.v2nodes.com] vless-
@@ -46,19 +136,22 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp=chrome
-- name: 🇭🇷HR_1|1.8MB/s
-  password: None
-  port: 443
-  server: 154.47.29.161
+- name: '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
+  network: ws
+  port: 8443
+  server: 194.87.143.165
   skip-cert-verify: true
   tls: true
-  type: http
-- name: '🇨🇦[www.v2nodes.com] vless-CA-1... #2'
-  port: 8080
-  server: milo.rubinaz.xyz
+  type: vless
+  uuid: f9613819-d2fe-4b3a-a2e6-40c184c6854c
+  ws-opts:
+    path: /
+- name: 🇻🇳[www.v2nodes.com] vless-VN-1...
+  port: 2086
+  server: 150.95.109.109
   tls: false
   type: vless
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
+  uuid: b83faafc-cbb7-4655-99d4-2c4c39a49d1b
 - cipher: chacha20-ietf-poly1305
   name: '🏳[www.v2nodes.com] ss- #1'
   password: aduB9HGxQHjA2SBMRjkHX6
@@ -71,16 +164,12 @@ proxies:
   port: 16233
   server: 102.133.165.160
   type: ss
-- name: '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
-  network: ws
-  port: 8443
-  server: 194.87.143.165
-  skip-cert-verify: true
-  tls: true
+- name: '🇨🇦[www.v2nodes.com] vless-CA-1... #2'
+  port: 8080
+  server: milo.rubinaz.xyz
+  tls: false
   type: vless
-  uuid: f9613819-d2fe-4b3a-a2e6-40c184c6854c
-  ws-opts:
-    path: /
+  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
 - client-fingerprint: chrome
   encryption: none
   name: 🇲🇾[www.v2nodes.com] vless-MY-5...
@@ -113,43 +202,6 @@ proxies:
   tls: true
   type: vless
   uuid: c90395e6-2140-47ad-a54d-9b166729d3ef
-- name: 🇦🇪[www.v2nodes.com] vless-AE-1...
-  network: ws
-  port: 14430
-  server: 95.174.68.188
-  servername: 95.174.68.188
-  tls: false
-  type: vless
-  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
-  ws-opts:
-    headers:
-      Host: 95.174.68.188
-    path: /vless
-- client-fingerprint: chrome
-  name: '🇮🇱[www.v2nodes.com] vless-IL-1... #1'
-  network: ws
-  port: 443
-  server: 185.253.75.119
-  servername: ccc.010304.xyz
-  tls: true
-  type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-    path: /
-- name: 🇰🇿 哈萨克斯坦 | KAZ
-  server: 46.8.43.125
-  port: 443
-  type: vless
-  uuid: 846cedee-2a52-4a62-a0b9-11850ead6a8b
-  tls: true
-  reality-opts:
-    public-key: ER-T5En54-sn6IXy7jU8vQVcBbOiWvznnezf3qZ273w
-  servername: kz-central.v8x2b.lol
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
 - name: 🇦🇲[www.v2nodes.com] vless-AM-1...
   network: ws
   port: 10004
@@ -171,6 +223,43 @@ proxies:
     headers:
       Host: uae.unixzone.us
     path: /
+- name: 🇦🇪[www.v2nodes.com] vless-AE-1...
+  network: ws
+  port: 14430
+  server: 95.174.68.188
+  servername: 95.174.68.188
+  tls: false
+  type: vless
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
+  ws-opts:
+    headers:
+      Host: 95.174.68.188
+    path: /vless
+- name: 🇦🇱[www.v2nodes.com] vless-AL-1...
+  network: ws
+  port: 443
+  server: 89.125.139.115
+  servername: free.cndyw.ggff.net
+  tls: true
+  type: vless
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  ws-opts:
+    headers:
+      Host: free.cndyw.ggff.net
+    path: pyip=bpb.yousef.isegaro.comfp=chrome
+- client-fingerprint: chrome
+  name: '🇮🇱[www.v2nodes.com] vless-IL-1... #1'
+  network: ws
+  port: 443
+  server: 185.253.75.119
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
 - encryption: none
   name: 🇮🇳[www.v2nodes.com] vless-IN-1...
   network: ws
@@ -183,12 +272,52 @@ proxies:
     headers:
       Host: 13.140.56.100
     path: /vless
+- name: 🇰🇿 哈萨克斯坦 | KAZ
+  server: 46.8.43.125
+  port: 443
+  type: vless
+  uuid: 846cedee-2a52-4a62-a0b9-11850ead6a8b
+  tls: true
+  reality-opts:
+    public-key: ER-T5En54-sn6IXy7jU8vQVcBbOiWvznnezf3qZ273w
+  servername: kz-central.v8x2b.lol
+  client-fingerprint: firefox
+  network: tcp
+  udp: true
 - cipher: aes-256-gcm
-  name: 🇨🇦[www.v2nodes.com] ss-CA-1557...
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.222.136.236
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1538...
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.12.127
   type: ss
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇿🇦[www.v2nodes.com] vless-ZA
+  network: ws
+  port: 443
+  server: 139.84.242.103
+  servername: vlso5.1d.mom
+  tls: true
+  type: vless
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  ws-opts:
+    headers:
+      Host: vlso5.1d.mom
+    path: /socks5=888:888@hkip.1d.mom:1080
+- client-fingerprint: chrome
+  encryption: none
+  name: '🏳[www.v2nodes.com] vless- #13'
+  network: ws
+  port: 443
+  server: 38.180.38.137
+  servername: vlso5.1d.mom
+  tls: true
+  type: vless
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  ws-opts:
+    headers:
+      Host: vlso5.1d.mom
+    path: /socks5=888:888@hkip.1d.mom:1080
 - cipher: aes-256-gcm
   name: 🇨🇦[www.v2nodes.com] ss-CA-1559...
   password: zDNVedRFPQexG9v
@@ -196,10 +325,10 @@ proxies:
   server: 51.222.141.125
   type: ss
 - cipher: aes-256-gcm
-  name: '🇨🇦[www.v2nodes.com] ss-CA-1546... #1'
-  password: g5MeD6Ft3CWlJId
-  port: 5003
-  server: 51.222.155.32
+  name: 🇨🇦[www.v2nodes.com] ss-CA-1545...
+  password: cdBIDV42DCwnfIN
+  port: 8119
+  server: 51.79.64.198
   type: ss
 - cipher: chacha20-ietf-poly1305
   name: 🏳[www.v2nodes.com] ss-
@@ -208,42 +337,22 @@ proxies:
   server: 139.84.247.164
   type: ss
 - cipher: aes-256-gcm
-  name: 🇨🇦[www.v2nodes.com] ss-CA-1545...
-  password: cdBIDV42DCwnfIN
-  port: 8119
-  server: 51.79.64.198
-  type: ss
-- name: 🇹🇷 土耳其 | TUR
-  server: 45.74.159.238
-  port: 443
-  type: vless
-  uuid: 7072eeba-94fd-4fb3-92f2-a4506dd84cd8
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: p7X0vRL9R-23Ey-MZZZj7FY0g87nQq0Jzc01DwuryRk
-    short-id: 7597c5df264bcc10
-  servername: trend.eidoslab.link
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
-- cipher: aes-256-gcm
-  name: 🇨🇦[www.v2nodes.com] ss-CA-1546...
-  password: Y6R9pAtvxxzmGC
-  port: 5601
-  server: 51.222.155.113
-  type: ss
-- cipher: aes-256-gcm
-  name: '🇨🇦[www.v2nodes.com] ss-CA-1545... #1'
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 51.79.49.116
-  type: ss
-- cipher: aes-256-gcm
-  name: '🏳[www.v2nodes.com] ss- #3'
+  name: 🇹🇭[www.v2nodes.com] ss-TH-1591...
   password: sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c=
   port: 52351
-  server: 103.107.52.106
+  server: pphfree2.mvpnpvpn.de5.net
+  type: ss
+- cipher: aes-256-gcm
+  name: 🇮🇳[www.v2nodes.com] ss-IN-1561...
+  password: GEdoeeqLZtkJRgSa
+  port: 8388
+  server: 139.84.166.47
+  type: ss
+- cipher: aes-256-gcm
+  name: '🇨🇦[www.v2nodes.com] ss-CA-1559... #1'
+  password: cdBIDV42DCwnfIN
+  port: 8118
+  server: 51.79.85.185
   type: ss
 proxy-groups:
 - name: PROXY
@@ -251,66 +360,86 @@ proxy-groups:
   proxies:
   - AUTO
   - 🇨🇦CA-149.22.95.183-0094 | 115.575MB
+  - '🏳[www.v2nodes.com] vless- #9'
+  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
   - 🇨🇦CA-137.184.174.93-0131 | 34.676MB
-  - 🇷🇺 俄罗斯 | RUS 3
   - 🇨🇦[www.v2nodes.com] ss-CA-1558...
+  - 🇷🇺 俄罗斯 | RUS 3
+  - 🇨🇳_CN_中国
+  - '🇲🇽[www.v2nodes.com] vless-MX-1... #2'
+  - 🇨🇦[www.v2nodes.com] ss-CA-1557...
+  - 🇨🇳_CN_中国_1
+  - 🇹🇷 土耳其 | TUR
+  - '🇹🇭[www.v2nodes.com] vless-TH-1... #1'
+  - '🇨🇦[www.v2nodes.com] ss-CA-1545... #1'
   - 🏳[www.v2nodes.com] vless-
-  - 🇭🇷HR_1|1.8MB/s
-  - '🇨🇦[www.v2nodes.com] vless-CA-1... #2'
+  - '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
+  - 🇻🇳[www.v2nodes.com] vless-VN-1...
   - '🏳[www.v2nodes.com] ss- #1'
   - 🇿🇦[www.v2nodes.com] ss-ZA-1333...
-  - '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
+  - '🇨🇦[www.v2nodes.com] vless-CA-1... #2'
   - 🇲🇾[www.v2nodes.com] vless-MY-5...
   - IL_speednode_0011
   - 🇷🇺[www.v2nodes.com] vless-RU-1...
-  - 🇦🇪[www.v2nodes.com] vless-AE-1...
-  - '🇮🇱[www.v2nodes.com] vless-IL-1... #1'
-  - 🇰🇿 哈萨克斯坦 | KAZ
   - 🇦🇲[www.v2nodes.com] vless-AM-1...
   - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - 🇦🇪[www.v2nodes.com] vless-AE-1...
+  - 🇦🇱[www.v2nodes.com] vless-AL-1...
+  - '🇮🇱[www.v2nodes.com] vless-IL-1... #1'
   - 🇮🇳[www.v2nodes.com] vless-IN-1...
-  - 🇨🇦[www.v2nodes.com] ss-CA-1557...
+  - 🇰🇿 哈萨克斯坦 | KAZ
+  - 🇨🇦[www.v2nodes.com] ss-CA-1538...
+  - 🇿🇦[www.v2nodes.com] vless-ZA
+  - '🏳[www.v2nodes.com] vless- #13'
   - 🇨🇦[www.v2nodes.com] ss-CA-1559...
-  - '🇨🇦[www.v2nodes.com] ss-CA-1546... #1'
-  - 🏳[www.v2nodes.com] ss-
   - 🇨🇦[www.v2nodes.com] ss-CA-1545...
-  - 🇹🇷 土耳其 | TUR
-  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
-  - '🇨🇦[www.v2nodes.com] ss-CA-1545... #1'
-  - '🏳[www.v2nodes.com] ss- #3'
+  - 🏳[www.v2nodes.com] ss-
+  - 🇹🇭[www.v2nodes.com] ss-TH-1591...
+  - 🇮🇳[www.v2nodes.com] ss-IN-1561...
+  - '🇨🇦[www.v2nodes.com] ss-CA-1559... #1'
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 🇨🇦CA-149.22.95.183-0094 | 115.575MB
+  - '🏳[www.v2nodes.com] vless- #9'
+  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
   - 🇨🇦CA-137.184.174.93-0131 | 34.676MB
-  - 🇷🇺 俄罗斯 | RUS 3
   - 🇨🇦[www.v2nodes.com] ss-CA-1558...
+  - 🇷🇺 俄罗斯 | RUS 3
+  - 🇨🇳_CN_中国
+  - '🇲🇽[www.v2nodes.com] vless-MX-1... #2'
+  - 🇨🇦[www.v2nodes.com] ss-CA-1557...
+  - 🇨🇳_CN_中国_1
+  - 🇹🇷 土耳其 | TUR
+  - '🇹🇭[www.v2nodes.com] vless-TH-1... #1'
+  - '🇨🇦[www.v2nodes.com] ss-CA-1545... #1'
   - 🏳[www.v2nodes.com] vless-
-  - 🇭🇷HR_1|1.8MB/s
-  - '🇨🇦[www.v2nodes.com] vless-CA-1... #2'
+  - '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
+  - 🇻🇳[www.v2nodes.com] vless-VN-1...
   - '🏳[www.v2nodes.com] ss- #1'
   - 🇿🇦[www.v2nodes.com] ss-ZA-1333...
-  - '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
+  - '🇨🇦[www.v2nodes.com] vless-CA-1... #2'
   - 🇲🇾[www.v2nodes.com] vless-MY-5...
   - IL_speednode_0011
   - 🇷🇺[www.v2nodes.com] vless-RU-1...
-  - 🇦🇪[www.v2nodes.com] vless-AE-1...
-  - '🇮🇱[www.v2nodes.com] vless-IL-1... #1'
-  - 🇰🇿 哈萨克斯坦 | KAZ
   - 🇦🇲[www.v2nodes.com] vless-AM-1...
   - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
+  - 🇦🇪[www.v2nodes.com] vless-AE-1...
+  - 🇦🇱[www.v2nodes.com] vless-AL-1...
+  - '🇮🇱[www.v2nodes.com] vless-IL-1... #1'
   - 🇮🇳[www.v2nodes.com] vless-IN-1...
-  - 🇨🇦[www.v2nodes.com] ss-CA-1557...
+  - 🇰🇿 哈萨克斯坦 | KAZ
+  - 🇨🇦[www.v2nodes.com] ss-CA-1538...
+  - 🇿🇦[www.v2nodes.com] vless-ZA
+  - '🏳[www.v2nodes.com] vless- #13'
   - 🇨🇦[www.v2nodes.com] ss-CA-1559...
-  - '🇨🇦[www.v2nodes.com] ss-CA-1546... #1'
-  - 🏳[www.v2nodes.com] ss-
   - 🇨🇦[www.v2nodes.com] ss-CA-1545...
-  - 🇹🇷 土耳其 | TUR
-  - 🇨🇦[www.v2nodes.com] ss-CA-1546...
-  - '🇨🇦[www.v2nodes.com] ss-CA-1545... #1'
-  - '🏳[www.v2nodes.com] ss- #3'
+  - 🏳[www.v2nodes.com] ss-
+  - 🇹🇭[www.v2nodes.com] ss-TH-1591...
+  - 🇮🇳[www.v2nodes.com] ss-IN-1561...
+  - '🇨🇦[www.v2nodes.com] ss-CA-1559... #1'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
