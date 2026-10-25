@@ -3,6 +3,19 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
+- client-fingerprint: chrome
+  name: 🇯🇵[www.v2nodes.com] vless-JP
+  network: ws
+  port: 443
+  server: 188.114.98.0
+  servername: tn1r.eu.cc
+  tls: true
+  type: vless
+  uuid: 22424ee2-6fe3-42ca-9749-6d4c5a8acc82
+  ws-opts:
+    headers:
+      Host: tn1r.eu.cc
+    path: /id-pusat
 - cipher: aes-256-gcm
   name: 🇯🇵[www.v2nodes.com] ss-JP-1544...
   password: 3eOFeNssde7PYYMv
@@ -15,14 +28,14 @@ proxies:
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇯🇵JP-149.22.87.204-0100 | 29.389MB
-  server: 149.22.87.204
+- name: 🇯🇵JP-149.22.87.240-0097 | 28.203MB
+  server: 149.22.87.240
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇯🇵JP-149.22.87.240-0097 | 28.203MB
-  server: 149.22.87.240
+- name: 🇯🇵JP-149.22.87.204-0100 | 29.389MB
+  server: 149.22.87.204
   port: 443
   type: ss
   cipher: aes-128-gcm
@@ -46,28 +59,38 @@ proxies:
     headers:
       Host: jp3.yohototo.top
     path: /tyxyws
+- cipher: aes-256-gcm
+  name: 🇯🇵[www.v2nodes.com] ss-JP-1599...
+  password: BeaUf9c0AEWH40Pu
+  port: 8388
+  server: 154.36.158.197
+  type: ss
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
+  - 🇯🇵[www.v2nodes.com] vless-JP
   - 🇯🇵[www.v2nodes.com] ss-JP-1544...
   - 🇯🇵JP-149.22.87.241-0129 | 29.893MB
-  - 🇯🇵JP-149.22.87.204-0100 | 29.389MB
   - 🇯🇵JP-149.22.87.240-0097 | 28.203MB
+  - 🇯🇵JP-149.22.87.204-0100 | 29.389MB
   - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
   - '🇯🇵[www.v2nodes.com] vless-JP-1... #5'
+  - 🇯🇵[www.v2nodes.com] ss-JP-1599...
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
+  - 🇯🇵[www.v2nodes.com] vless-JP
   - 🇯🇵[www.v2nodes.com] ss-JP-1544...
   - 🇯🇵JP-149.22.87.241-0129 | 29.893MB
-  - 🇯🇵JP-149.22.87.204-0100 | 29.389MB
   - 🇯🇵JP-149.22.87.240-0097 | 28.203MB
+  - 🇯🇵JP-149.22.87.204-0100 | 29.389MB
   - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
   - '🇯🇵[www.v2nodes.com] vless-JP-1... #5'
+  - 🇯🇵[www.v2nodes.com] ss-JP-1599...
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
