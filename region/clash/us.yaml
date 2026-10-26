@@ -10,25 +10,31 @@ proxies:
   tls: true
   type: http
   udp: true
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: '🇺🇸 美国 | USA #1'
-  network: http
+- name: 🇺🇸US-216.106.186.33-0107 | 40.141MB
+  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
   port: 443
-  server: 34.220.149.187
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
+  type: trojan
+  password: f0eb8c92ce8946aaba856569cff1a16b
+  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
+  skip-cert-verify: false
+- name: 🇺🇸US-216.106.186.32-0106 | 46.401MB
+  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  port: 443
+  type: trojan
+  password: dba20dcb635e430fa4d3bfc303a149d2
+  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  skip-cert-verify: false
 - name: US_speednode_0050
   password: None
   port: 443
   server: 149.22.88.65
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: US_speednode_0057
+  port: 443
+  server: 45.63.38.134
   skip-cert-verify: true
   tls: true
   type: http
@@ -39,6 +45,12 @@ proxies:
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇺🇸US-173.244.56.6-0105 | 46.966MB
+  server: 173.244.56.6
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
 - name: US_speednode_0051
   port: 9002
   server: 138.199.35.214
@@ -46,12 +58,18 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇺🇸US-138.199.42.68-0082 | 60.144MB
-  server: 138.199.42.68
-  port: 8080
+- name: 🇺🇸US-156.146.38.168-0052 | 122.098MB
+  server: 156.146.38.168
+  port: 443
   type: ss
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-156.146.38.167-0058 | 118.534MB
+  server: 156.146.38.167
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
 - name: 🇺🇸US-156.146.38.170-0055 | 122.033MB
   server: 156.146.38.170
   port: 443
@@ -64,18 +82,18 @@ proxies:
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇺🇸US-156.146.38.167-0058 | 118.534MB
-  server: 156.146.38.167
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-156.146.38.168-0052 | 122.098MB
-  server: 156.146.38.168
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
+- encryption: none
+  name: '🏳[www.v2nodes.com] vless- #27'
+  network: ws
+  port: 8880
+  server: 63.141.128.30
+  tls: false
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime42.workers.dev
+    path: /
 - name: 🇺🇸US-23.158.72.131-0728 | 26.184MB
   server: us-23.hihu.net
   port: 80
@@ -97,12 +115,12 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇺🇸US-173.244.56.9-0104 | 66.199MB
-  server: 173.244.56.9
-  port: 443
+- name: 🇺🇸US-138.199.42.68-0082 | 60.144MB
+  server: 138.199.42.68
+  port: 8080
   type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
 - name: IN_speednode_0024
   port: 443
   server: 193.239.236.134
@@ -117,14 +135,20 @@ proxies:
   tls: true
   type: http
   udp: true
+- name: 🇺🇸US-37.19.198.160-0056 | 33.371MB
+  server: 37.19.198.160
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
 - name: 🇺🇸US-193.151.163.18-0049 | 102.432MB
   server: 193.151.163.18
   port: 19999
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US-37.19.198.160-0056 | 33.371MB
-  server: 37.19.198.160
+- name: 🇺🇸US-37.19.198.243-0054 | 31.094MB
+  server: 37.19.198.243
   port: 443
   type: ss
   cipher: aes-128-gcm
@@ -141,18 +165,19 @@ proxies:
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇺🇸US-37.19.198.243-0054 | 31.094MB
-  server: 37.19.198.243
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
 - cipher: aes-256-gcm
   name: '🇺🇸[www.v2nodes.com] ss-US-1603... #2'
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 185.230.230.18
   type: ss
+- name: US_speednode_0059
+  port: 443
+  server: 68.235.56.51
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
 - name: 🇺🇸US_1|2.2MB/s
   password: None
   port: 9443
@@ -176,31 +201,45 @@ proxies:
     headers:
       Host: guanwang.awsno.com
   udp: true
-- name: US_speednode_0059
-  port: 443
-  server: 68.235.56.51
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
 - name: 🇺🇸US-45.86.51.18-0047 | 152.401MB
   server: 45.86.51.18
   port: 19999
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: US_speednode_0056
+  port: 443
+  server: 12.202.180.118
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
 - name: 🇺🇸US-193.151.160.18-0051 | 110.342MB
   server: 193.151.160.18
   port: 19999
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US-173.244.56.6-0105 | 46.966MB
-  server: 173.244.56.6
+- name: 🇺🇸US-173.244.56.9-0104 | 66.199MB
+  server: 173.244.56.9
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
+- cipher: aes-256-gcm
+  name: 🇺🇸[www.v2nodes.com] ss-US-1603...
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 193.151.160.9
+  type: ss
+- name: US_speednode_0055
+  password: None
+  port: 9443
+  server: 198.44.138.27
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
 - auth: 64c05afc-ce81-4ba0-b697-afa04da1427e
   name: '🇺🇸 美国 | USA #5'
   password: 64c05afc-ce81-4ba0-b697-afa04da1427e
@@ -210,43 +249,6 @@ proxies:
   sni: bing.com
   tls: false
   type: hysteria2
-- name: US_speednode_0056
-  port: 443
-  server: 12.202.180.118
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: US_speednode_0055
-  password: None
-  port: 9443
-  server: 198.44.138.27
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: US_speednode_0057
-  port: 443
-  server: 45.63.38.134
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- auth: https://xship.best
-  name: 🇺🇸 美国 | USA 5
-  password: https://xship.best
-  port: 443
-  server: starlink-ft.251313.xyz
-  skip-cert-verify: true
-  sni: xship.top
-  type: hysteria2
-  udp: true
-- cipher: aes-256-gcm
-  name: 🇺🇸[www.v2nodes.com] ss-US-1603...
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 193.151.160.9
-  type: ss
 - cipher: aes-256-gcm
   name: '🇺🇸 美国 | USA #4'
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -261,95 +263,114 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇺🇸US-216.106.186.33-0107 | 40.141MB
-  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
+- name: 🇺🇸 美国 | USA 8
+  server: 45.144.221.169
   port: 443
-  type: trojan
-  password: f0eb8c92ce8946aaba856569cff1a16b
-  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
-  skip-cert-verify: false
+  type: vless
+  uuid: 30572b57-f5ab-4eb8-82d4-a24d399b99f6
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU
+  servername: arizona.eosapp.net
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- auth: https://xship.best
+  name: 🇺🇸 美国 | USA 5
+  password: https://xship.best
+  port: 443
+  server: starlink-ft.251313.xyz
+  skip-cert-verify: true
+  sni: xship.top
+  type: hysteria2
+  udp: true
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - US_speednode_0052
-  - '🇺🇸 美国 | USA #1'
+  - 🇺🇸US-216.106.186.33-0107 | 40.141MB
+  - 🇺🇸US-216.106.186.32-0106 | 46.401MB
   - US_speednode_0050
+  - US_speednode_0057
   - 🇺🇸US-95.215.201.18-0109 | 38.41MB
+  - 🇺🇸US-173.244.56.6-0105 | 46.966MB
   - US_speednode_0051
-  - 🇺🇸US-138.199.42.68-0082 | 60.144MB
+  - 🇺🇸US-156.146.38.168-0052 | 122.098MB
+  - 🇺🇸US-156.146.38.167-0058 | 118.534MB
   - 🇺🇸US-156.146.38.170-0055 | 122.033MB
   - 🇺🇸US-156.146.38.169-0053 | 121.076MB
-  - 🇺🇸US-156.146.38.167-0058 | 118.534MB
-  - 🇺🇸US-156.146.38.168-0052 | 122.098MB
+  - '🏳[www.v2nodes.com] vless- #27'
   - 🇺🇸US-23.158.72.131-0728 | 26.184MB
   - US_speednode_0053
-  - 🇺🇸US-173.244.56.9-0104 | 66.199MB
+  - 🇺🇸US-138.199.42.68-0082 | 60.144MB
   - IN_speednode_0024
   - US_speednode_0054
-  - 🇺🇸US-193.151.163.18-0049 | 102.432MB
   - 🇺🇸US-37.19.198.160-0056 | 33.371MB
+  - 🇺🇸US-193.151.163.18-0049 | 102.432MB
+  - 🇺🇸US-37.19.198.243-0054 | 31.094MB
   - 🇺🇸US-37.19.198.244-0057 | 30.468MB
   - 🇺🇸US-37.19.198.236-0059 | 38.583MB
-  - 🇺🇸US-37.19.198.243-0054 | 31.094MB
   - '🇺🇸[www.v2nodes.com] ss-US-1603... #2'
+  - US_speednode_0059
   - 🇺🇸US_1|2.2MB/s
   - 🇺🇸_US_美国
-  - US_speednode_0059
   - 🇺🇸US-45.86.51.18-0047 | 152.401MB
-  - 🇺🇸US-193.151.160.18-0051 | 110.342MB
-  - 🇺🇸US-173.244.56.6-0105 | 46.966MB
-  - '🇺🇸 美国 | USA #5'
   - US_speednode_0056
-  - US_speednode_0055
-  - US_speednode_0057
-  - 🇺🇸 美国 | USA 5
+  - 🇺🇸US-193.151.160.18-0051 | 110.342MB
+  - 🇺🇸US-173.244.56.9-0104 | 66.199MB
   - 🇺🇸[www.v2nodes.com] ss-US-1603...
+  - US_speednode_0055
+  - '🇺🇸 美国 | USA #5'
   - '🇺🇸 美国 | USA #4'
   - US_speednode_0058
-  - 🇺🇸US-216.106.186.33-0107 | 40.141MB
+  - 🇺🇸 美国 | USA 8
+  - 🇺🇸 美国 | USA 5
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - US_speednode_0052
-  - '🇺🇸 美国 | USA #1'
+  - 🇺🇸US-216.106.186.33-0107 | 40.141MB
+  - 🇺🇸US-216.106.186.32-0106 | 46.401MB
   - US_speednode_0050
+  - US_speednode_0057
   - 🇺🇸US-95.215.201.18-0109 | 38.41MB
+  - 🇺🇸US-173.244.56.6-0105 | 46.966MB
   - US_speednode_0051
-  - 🇺🇸US-138.199.42.68-0082 | 60.144MB
+  - 🇺🇸US-156.146.38.168-0052 | 122.098MB
+  - 🇺🇸US-156.146.38.167-0058 | 118.534MB
   - 🇺🇸US-156.146.38.170-0055 | 122.033MB
   - 🇺🇸US-156.146.38.169-0053 | 121.076MB
-  - 🇺🇸US-156.146.38.167-0058 | 118.534MB
-  - 🇺🇸US-156.146.38.168-0052 | 122.098MB
+  - '🏳[www.v2nodes.com] vless- #27'
   - 🇺🇸US-23.158.72.131-0728 | 26.184MB
   - US_speednode_0053
-  - 🇺🇸US-173.244.56.9-0104 | 66.199MB
+  - 🇺🇸US-138.199.42.68-0082 | 60.144MB
   - IN_speednode_0024
   - US_speednode_0054
-  - 🇺🇸US-193.151.163.18-0049 | 102.432MB
   - 🇺🇸US-37.19.198.160-0056 | 33.371MB
+  - 🇺🇸US-193.151.163.18-0049 | 102.432MB
+  - 🇺🇸US-37.19.198.243-0054 | 31.094MB
   - 🇺🇸US-37.19.198.244-0057 | 30.468MB
   - 🇺🇸US-37.19.198.236-0059 | 38.583MB
-  - 🇺🇸US-37.19.198.243-0054 | 31.094MB
   - '🇺🇸[www.v2nodes.com] ss-US-1603... #2'
+  - US_speednode_0059
   - 🇺🇸US_1|2.2MB/s
   - 🇺🇸_US_美国
-  - US_speednode_0059
   - 🇺🇸US-45.86.51.18-0047 | 152.401MB
-  - 🇺🇸US-193.151.160.18-0051 | 110.342MB
-  - 🇺🇸US-173.244.56.6-0105 | 46.966MB
-  - '🇺🇸 美国 | USA #5'
   - US_speednode_0056
-  - US_speednode_0055
-  - US_speednode_0057
-  - 🇺🇸 美国 | USA 5
+  - 🇺🇸US-193.151.160.18-0051 | 110.342MB
+  - 🇺🇸US-173.244.56.9-0104 | 66.199MB
   - 🇺🇸[www.v2nodes.com] ss-US-1603...
+  - US_speednode_0055
+  - '🇺🇸 美国 | USA #5'
   - '🇺🇸 美国 | USA #4'
   - US_speednode_0058
-  - 🇺🇸US-216.106.186.33-0107 | 40.141MB
+  - 🇺🇸 美国 | USA 8
+  - 🇺🇸 美国 | USA 5
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
