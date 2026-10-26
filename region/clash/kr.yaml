@@ -2,12 +2,34 @@ mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
-proxies: []
+proxies:
+- http-opts:
+    headers:
+      Host:
+      - play.googleapis.com
+    method: GET
+    path:
+    - /
+  name: '🇰🇷 韩国 | KOR #1'
+  network: http
+  port: 443
+  server: 13.125.179.47
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
-  - DIRECT
+  - AUTO
+  - '🇰🇷 韩国 | KOR #1'
+- name: AUTO
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies:
+  - '🇰🇷 韩国 | KOR #1'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
