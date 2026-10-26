@@ -3,6 +3,19 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
+- name: '🇸🇬 新加坡 | SGP #1'
+  network: ws
+  port: 8080
+  server: 104.18.35.86
+  servername: hhlfy.twiladaphne.ndjp.net
+  tls: false
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+    path: /sg-melbi
 - name: '🇸🇬[www.v2nodes.com] vless-SG #5'
   network: ws
   port: 2082
@@ -29,6 +42,20 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp=chrome
+- encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG #3'
+  network: ws
+  port: 443
+  server: 185.193.29.123
+  servername: notls.lukongtou.eu.org
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+  ws-opts:
+    headers:
+      Host: notls.lukongtou.eu.org
+    path: Telegram-WangCai2🇨🇳
 - client-fingerprint: chrome
   encryption: none
   name: '🇸🇬[www.v2nodes.com] vless-SG #2'
@@ -41,19 +68,18 @@ proxies:
   uuid: d342d11e-d224-4463-b982-532309285094
   ws-opts:
     path: /
-- name: '🇸🇬 新加坡 | SGP #1'
+- name: '🇸🇬[www.v2nodes.com] vless-SG #4'
   network: ws
-  port: 8080
-  server: 104.18.35.86
-  servername: hhlfy.twiladaphne.ndjp.net
+  port: 8880
+  server: 45.130.125.30
+  servername: vms.lifetime58.workers.dev
   tls: false
   type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   ws-opts:
     headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-    path: /sg-melbi
+      Host: vms.lifetime58.workers.dev
+    path: /
 - name: 🇸🇬 新加坡 | SGP 4
   network: ws
   password: '123456'
@@ -120,36 +146,48 @@ proxies:
   client-fingerprint: ios
   network: tcp
   udp: true
+- name: '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
+  port: 16263
+  server: 47.237.74.17
+  tls: false
+  type: vless
+  uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
+  - '🇸🇬 新加坡 | SGP #1'
   - '🇸🇬[www.v2nodes.com] vless-SG #5'
   - '🇸🇬[www.v2nodes.com] vless-SG #1'
+  - '🇸🇬[www.v2nodes.com] vless-SG #3'
   - '🇸🇬[www.v2nodes.com] vless-SG #2'
-  - '🇸🇬 新加坡 | SGP #1'
+  - '🇸🇬[www.v2nodes.com] vless-SG #4'
   - 🇸🇬 新加坡 | SGP 4
   - 🇸🇬 新加坡 | SGP 2_2
   - 🇸🇬SG_1|2.0MB/s
   - 🇸🇬SG-68.183.227.4-0149 | 21.827MB
   - '🇸🇬[www.v2nodes.com] vless-SG-1... #7'
   - 🇸🇬 新加坡 | SGP 2
+  - '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
+  - '🇸🇬 新加坡 | SGP #1'
   - '🇸🇬[www.v2nodes.com] vless-SG #5'
   - '🇸🇬[www.v2nodes.com] vless-SG #1'
+  - '🇸🇬[www.v2nodes.com] vless-SG #3'
   - '🇸🇬[www.v2nodes.com] vless-SG #2'
-  - '🇸🇬 新加坡 | SGP #1'
+  - '🇸🇬[www.v2nodes.com] vless-SG #4'
   - 🇸🇬 新加坡 | SGP 4
   - 🇸🇬 新加坡 | SGP 2_2
   - 🇸🇬SG_1|2.0MB/s
   - 🇸🇬SG-68.183.227.4-0149 | 21.827MB
   - '🇸🇬[www.v2nodes.com] vless-SG-1... #7'
   - 🇸🇬 新加坡 | SGP 2
+  - '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
