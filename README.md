@@ -96,9 +96,12 @@ raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
 | 客户端 | 链接 | 节点 |
 | --- | --- | --- |
 | Clash Verge / Clash Meta / FlClash | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/all.yaml | 260 |
+| ⭐ Clash Meta 完整配置（分流+去广告+DNS+自动更新节点） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta.yaml | 同 all.yaml |
 | v2rayNG / v2rayN / NekoBox | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/all.txt | 226 |
 | 明文链接 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/all_raw.txt | 226 |
 
 已过滤 fp=unsafe、内网/假节点；全部节点经 mihomo 内核真连接测试，只保留能用的（测试发起于海外服务器，不代表国内一定可连）。
+
+clash/meta.yaml 是固定的完整配置：节点通过 proxy-provider 每 6 小时自动拉取 clash/all.yaml，内含地区自动测速分组、AI/YouTube/Netflix/Telegram 等分流、多源去广告、Fake-IP + DoH 防泄漏 DNS、微信/QQ 直连。导入后在 App 里开启订阅自动更新即可。
 
 免费公共节点可能被记录流量，勿用于银行、支付等敏感账号。
