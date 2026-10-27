@@ -2,12 +2,42 @@ mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
-proxies: []
+proxies:
+- name: 🇰🇷KR-211.178.105.134-0191 | 0.412MB
+  server: 211.178.105.134
+  port: 6123
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- name: 🇰🇷KR-218.237.185.234-0288 | 0.22MB
+  server: p141.panda001.net
+  port: 4652
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- cipher: chacha20-ietf-poly1305
+  name: '🇰🇷 韩国 | KOR #2'
+  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
+  port: 8443
+  server: 52.78.45.69
+  type: ss
+  udp: true
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
-  - DIRECT
+  - AUTO
+  - 🇰🇷KR-211.178.105.134-0191 | 0.412MB
+  - 🇰🇷KR-218.237.185.234-0288 | 0.22MB
+  - '🇰🇷 韩国 | KOR #2'
+- name: AUTO
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  proxies:
+  - 🇰🇷KR-211.178.105.134-0191 | 0.412MB
+  - 🇰🇷KR-218.237.185.234-0288 | 0.22MB
+  - '🇰🇷 韩国 | KOR #2'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
