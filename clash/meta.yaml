@@ -1,4 +1,4 @@
-# Clash Meta / mihomo 完整配置 v1.0（2026-10-27）
+# Clash Meta / mihomo 完整配置 v1.1（2026-10-27，规则改走 jsDelivr 直连，去广告精简为合并版）
 # 节点：passionsu-su/free-nodes 每日免费节点（proxy-provider 自动更新）
 # 功能：DNS 防泄漏（Fake-IP + DoH）、去广告、分流、地区分组、微信/QQ 直连、嗅探
 # 适用：Clash Meta for Android（CMFA）、FlClash、Clash Verge Rev 等 mihomo 内核客户端
@@ -150,46 +150,41 @@ proxy-groups:
 
 # ---------------- 规则集 ----------------
 rule-anchor:
-  mrs: &mrs { type: http, behavior: domain, format: mrs, interval: 86400 }
-  ipmrs: &ipmrs { type: http, behavior: ipcidr, format: mrs, interval: 86400 }
+  mrs: &mrs { type: http, behavior: domain, format: mrs, interval: 86400, proxy: DIRECT }
+  ipmrs: &ipmrs { type: http, behavior: ipcidr, format: mrs, interval: 86400, proxy: DIRECT }
   cls: &cls { type: http, behavior: classical, format: text, interval: 86400 }
-  dom: &dom { type: http, behavior: domain, format: text, interval: 86400 }
 
 rule-providers:
-  # 去广告
+  # 去广告：ads.mrs = 217heidai + anti-AD + HaGeZi Pro + Loyalsoldier 合并去重（v2ray-adblock 每 12 小时构建）
+  adb-ads:          { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/passionsu-su/v2ray-adblock@geosite/ads.mrs", path: ./ruleset/adb-ads.mrs }
+  adb-awavenue:     { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash.mrs", path: ./ruleset/adb-awavenue.mrs }
   adb-sukka-nodrop: { <<: *cls, url: "https://ruleset.skk.moe/Clash/non_ip/reject-no-drop.txt", path: ./ruleset/adb-sukka-nodrop.txt }
   adb-sukka-drop:   { <<: *cls, url: "https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt", path: ./ruleset/adb-sukka-drop.txt }
   adb-sukka-nonip:  { <<: *cls, url: "https://ruleset.skk.moe/Clash/non_ip/reject.txt", path: ./ruleset/adb-sukka-nonip.txt }
-  adb-sukka-domain: { <<: *dom, url: "https://ruleset.skk.moe/Clash/domainset/reject.txt", path: ./ruleset/adb-sukka-domain.txt }
   adb-sukka-ip:     { <<: *cls, url: "https://ruleset.skk.moe/Clash/ip/reject.txt", path: ./ruleset/adb-sukka-ip.txt }
-  adb-adrules:      { <<: *mrs, url: "https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules-mihomo.mrs", path: ./ruleset/adb-adrules.mrs }
-  adb-awavenue:     { <<: *mrs, url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.mrs", path: ./ruleset/adb-awavenue.mrs }
-  adb-anti-ad:      { type: http, behavior: domain, format: yaml, interval: 86400, url: "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml", path: ./ruleset/adb-anti-ad.yaml }
-  adb-heidai-dns:   { <<: *mrs, url: "https://raw.githubusercontent.com/passionsu-su/v2ray-adblock/geosite/heidai-adblockdns.mrs", path: ./ruleset/adb-heidai-dns.mrs }
-  adb-hagezi-pro:   { <<: *mrs, url: "https://raw.githubusercontent.com/passionsu-su/v2ray-adblock/geosite/hagezi-pro.mrs", path: ./ruleset/adb-hagezi-pro.mrs }
   # 分流（MetaCubeX meta-rules-dat）
-  sp-private:   { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs", path: ./ruleset/sp-private.mrs }
-  sp-ai:        { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs", path: ./ruleset/sp-ai.mrs }
-  sp-youtube:   { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/youtube.mrs", path: ./ruleset/sp-youtube.mrs }
-  sp-netflix:   { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/netflix.mrs", path: ./ruleset/sp-netflix.mrs }
-  sp-tiktok:    { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs", path: ./ruleset/sp-tiktok.mrs }
-  sp-telegram:  { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/telegram.mrs", path: ./ruleset/sp-telegram.mrs }
-  sp-github:    { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/github.mrs", path: ./ruleset/sp-github.mrs }
-  sp-google:    { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/google.mrs", path: ./ruleset/sp-google.mrs }
-  sp-steam-cn:  { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/steam@cn.mrs", path: ./ruleset/sp-steam-cn.mrs }
-  sp-steam:     { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/steam.mrs", path: ./ruleset/sp-steam.mrs }
-  sp-ms-cn:     { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/microsoft@cn.mrs", path: ./ruleset/sp-ms-cn.mrs }
-  sp-microsoft: { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/microsoft.mrs", path: ./ruleset/sp-microsoft.mrs }
-  sp-apple-cn:  { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple-cn.mrs", path: ./ruleset/sp-apple-cn.mrs }
-  sp-apple:     { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple.mrs", path: ./ruleset/sp-apple.mrs }
-  sp-gfw:       { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs", path: ./ruleset/sp-gfw.mrs }
-  sp-cn:        { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs", path: ./ruleset/sp-cn.mrs }
-  sp-notcn:     { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs", path: ./ruleset/sp-notcn.mrs }
-  sp-ip-private:  { <<: *ipmrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/private.mrs", path: ./ruleset/sp-ip-private.mrs }
-  sp-ip-telegram: { <<: *ipmrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/telegram.mrs", path: ./ruleset/sp-ip-telegram.mrs }
-  sp-ip-netflix:  { <<: *ipmrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/netflix.mrs", path: ./ruleset/sp-ip-netflix.mrs }
-  sp-ip-google:   { <<: *ipmrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/google.mrs", path: ./ruleset/sp-ip-google.mrs }
-  sp-ip-cn:       { <<: *ipmrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/cn.mrs", path: ./ruleset/sp-ip-cn.mrs }
+  sp-private:   { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs", path: ./ruleset/sp-private.mrs }
+  sp-ai:        { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ai-!cn.mrs", path: ./ruleset/sp-ai.mrs }
+  sp-youtube:   { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.mrs", path: ./ruleset/sp-youtube.mrs }
+  sp-netflix:   { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.mrs", path: ./ruleset/sp-netflix.mrs }
+  sp-tiktok:    { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/tiktok.mrs", path: ./ruleset/sp-tiktok.mrs }
+  sp-telegram:  { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.mrs", path: ./ruleset/sp-telegram.mrs }
+  sp-github:    { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs", path: ./ruleset/sp-github.mrs }
+  sp-google:    { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.mrs", path: ./ruleset/sp-google.mrs }
+  sp-steam-cn:  { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam@cn.mrs", path: ./ruleset/sp-steam-cn.mrs }
+  sp-steam:     { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam.mrs", path: ./ruleset/sp-steam.mrs }
+  sp-ms-cn:     { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft@cn.mrs", path: ./ruleset/sp-ms-cn.mrs }
+  sp-microsoft: { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft.mrs", path: ./ruleset/sp-microsoft.mrs }
+  sp-apple-cn:  { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple-cn.mrs", path: ./ruleset/sp-apple-cn.mrs }
+  sp-apple:     { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple.mrs", path: ./ruleset/sp-apple.mrs }
+  sp-gfw:       { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs", path: ./ruleset/sp-gfw.mrs }
+  sp-cn:        { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs", path: ./ruleset/sp-cn.mrs }
+  sp-notcn:     { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.mrs", path: ./ruleset/sp-notcn.mrs }
+  sp-ip-private:  { <<: *ipmrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs", path: ./ruleset/sp-ip-private.mrs }
+  sp-ip-telegram: { <<: *ipmrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.mrs", path: ./ruleset/sp-ip-telegram.mrs }
+  sp-ip-netflix:  { <<: *ipmrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/netflix.mrs", path: ./ruleset/sp-ip-netflix.mrs }
+  sp-ip-google:   { <<: *ipmrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.mrs", path: ./ruleset/sp-ip-google.mrs }
+  sp-ip-cn:       { <<: *ipmrs, url: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.mrs", path: ./ruleset/sp-ip-cn.mrs }
 
 # ---------------- 规则（自上而下匹配） ----------------
 rules:
@@ -207,12 +202,8 @@ rules:
   - RULE-SET,adb-sukka-nodrop,🛑 广告拦截
   - RULE-SET,adb-sukka-drop,REJECT-DROP
   - RULE-SET,adb-sukka-nonip,🛑 广告拦截
-  - RULE-SET,adb-sukka-domain,🛑 广告拦截
-  - RULE-SET,adb-adrules,🛑 广告拦截
   - RULE-SET,adb-awavenue,🛑 广告拦截
-  - RULE-SET,adb-anti-ad,🛑 广告拦截
-  - RULE-SET,adb-heidai-dns,🛑 广告拦截
-  - RULE-SET,adb-hagezi-pro,🛑 广告拦截
+  - RULE-SET,adb-ads,🛑 广告拦截
   # 分流
   - RULE-SET,sp-private,DIRECT
   - RULE-SET,sp-ai,🤖 AI
