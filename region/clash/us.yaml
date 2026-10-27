@@ -10,67 +10,50 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇺🇸US-216.106.186.33-0120 | 38.15MB
-  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
-  port: 443
-  type: trojan
-  password: f0eb8c92ce8946aaba856569cff1a16b
-  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
-  skip-cert-verify: false
-- name: 🇺🇸US-216.106.186.32-0118 | 46.861MB
-  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
-  port: 443
-  type: trojan
-  password: dba20dcb635e430fa4d3bfc303a149d2
-  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
-  skip-cert-verify: false
-- name: 🇺🇸US-95.215.201.18-0124 | 41.442MB
+- name: 🇺🇸US-95.215.201.18-0136 | 45.108MB
   server: 95.215.201.18
   port: 19999
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US-173.244.56.6-0117 | 87.522MB
+- name: 🇺🇸US_2|2.2MB/s
+  port: 8443
+  server: 154.81.36.92
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇺🇸US-173.244.56.6-0084 | 57.529MB
   server: 173.244.56.6
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇺🇸US-156.146.38.169-0083 | 72.095MB
+- name: 🇺🇸US-173.244.56.9-0083 | 52.233MB
+  server: 173.244.56.9
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-156.146.38.169-0085 | 128.467MB
   server: 156.146.38.169
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇺🇸US-156.146.38.170-0082 | 68.959MB
+- name: 🇺🇸US-156.146.38.170-0086 | 127.899MB
   server: 156.146.38.170
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- http-opts:
-    headers:
-      Host:
-      - play.googleapis.com
-    method: GET
-    path:
-    - /
-  name: '🇺🇸 美国 | USA #7'
-  network: http
-  port: 443
-  server: 18.213.218.149
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- name: 🇺🇸US-156.146.38.167-0084 | 61.34MB
-  server: 156.146.38.167
+- name: 🇺🇸US-156.146.38.168-0089 | 204.865MB
+  server: 156.146.38.168
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇺🇸US-156.146.38.168-0081 | 63.389MB
-  server: 156.146.38.168
+- name: 🇺🇸US-156.146.38.167-0090 | 182.138MB
+  server: 156.146.38.167
   port: 443
   type: ss
   cipher: aes-128-gcm
@@ -90,75 +73,6 @@ proxies:
   type: vless
   udp: true
   uuid: 7060231d-b9ba-495f-a218-bf427940cf3e
-- name: US_speednode_0041
-  port: 443
-  server: 64.98.50.100
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US-173.244.56.9-0088 | 91.033MB
-  server: 173.244.56.9
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-37.19.198.160-0126 | 33.347MB
-  server: 37.19.198.160
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-37.19.198.243-0127 | 44.924MB
-  server: 37.19.198.243
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-37.19.198.236-0123 | 40.656MB
-  server: 37.19.198.236
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-37.19.198.244-0129 | 24.283MB
-  server: 37.19.198.244
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-23.158.72.131-0833 | 12.003MB
-  server: us-23.hihu.net
-  port: 80
-  type: vmess
-  uuid: 8a9aaa70-ced9-11f1-b934-205c6d5f5d78
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 172.66.0.251
-- name: 🇺🇸US-185.230.230.18-0078 | 66.312MB
-  server: 185.230.230.18
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US-45.86.51.18-0079 | 132.968MB
-  server: 45.86.51.18
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US-193.151.160.9-0080 | 99.015MB
-  server: 193.151.160.9
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
 - name: 🇺🇸_US_美国
   type: vmess
   server: guanwang.awsno.com
@@ -175,8 +89,90 @@ proxies:
     headers:
       Host: guanwang.awsno.com
   udp: true
-- name: 🇺🇸US-193.151.160.18-0085 | 91.32MB
+- name: 🇺🇸US-23.158.72.131-0176 | 5.947MB
+  server: us-23.hihu.net
+  port: 80
+  type: vmess
+  uuid: 8a9aaa70-ced9-11f1-b934-205c6d5f5d78
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 172.66.0.251
+- name: US_speednode_0041
+  port: 443
+  server: 64.98.50.100
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US-198.98.53.130-0209 | 0.202MB
+  server: 198.98.53.130
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: eDfN7SODQceIOmIAbtJJtK
+- name: US_speednode_0040
+  port: 443
+  server: 38.247.141.135
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US-37.19.198.236-0138 | 3.733MB
+  server: 37.19.198.236
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-37.19.198.160-0140 | 3.707MB
+  server: 37.19.198.160
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-37.19.198.244-0144 | 3.892MB
+  server: 37.19.198.244
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-193.151.163.18-0080 | 130.274MB
+  server: 193.151.163.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇺🇸US-37.19.198.243-0134 | 52.139MB
+  server: 37.19.198.243
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-185.230.230.18-0087 | 55.515MB
+  server: 185.230.230.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇺🇸US-45.86.51.18-0078 | 183.582MB
+  server: 45.86.51.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇺🇸US-193.151.160.18-0082 | 131.309MB
   server: 193.151.160.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇺🇸US-193.151.160.9-0081 | 152.301MB
+  server: 193.151.160.9
   port: 19999
   type: ss
   cipher: aes-256-gcm
@@ -189,21 +185,6 @@ proxies:
   tls: true
   type: http
   udp: true
-- client-fingerprint: firefox
-  name: AT_speednode_0002
-  network: ws
-  port: 8443
-  server: 152.53.31.46
-  servername: usa3.pad-sservice.lat
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2b0e5676-fb62-4bf0-9607-6e7818421e8e
-  ws-opts:
-    headers:
-      Host: usa3.pad-service.com
-    path: /U1SA
 - name: 🇱🇰[www.v2nodes.com] vless-LK-6...
   network: ws
   port: 80
@@ -216,84 +197,82 @@ proxies:
     headers:
       Host: free.sahanwickramasinghe.me
     path: /
-- name: 🇺🇸US-193.151.163.18-0086 | 115.575MB
-  server: 193.151.163.18
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US_2|2.2MB/s
-  port: 8443
-  server: 154.81.36.92
-  skip-cert-verify: true
+- client-fingerprint: firefox
+  name: '🇺🇸 美国 | USA #6'
+  network: tcp
+  port: 33069
+  server: 152.175.97.115
+  servername: us6.zestapp778.com
   tls: true
-  type: http
+  type: vless
+  udp: true
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  ws-opts:
+    path: /
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - US_speednode_0039
-  - 🇺🇸US-216.106.186.33-0120 | 38.15MB
-  - 🇺🇸US-216.106.186.32-0118 | 46.861MB
-  - 🇺🇸US-95.215.201.18-0124 | 41.442MB
-  - 🇺🇸US-173.244.56.6-0117 | 87.522MB
-  - 🇺🇸US-156.146.38.169-0083 | 72.095MB
-  - 🇺🇸US-156.146.38.170-0082 | 68.959MB
-  - '🇺🇸 美国 | USA #7'
-  - 🇺🇸US-156.146.38.167-0084 | 61.34MB
-  - 🇺🇸US-156.146.38.168-0081 | 63.389MB
-  - '🇺🇸 美国 | USA #2'
-  - US_speednode_0041
-  - 🇺🇸US-173.244.56.9-0088 | 91.033MB
-  - 🇺🇸US-37.19.198.160-0126 | 33.347MB
-  - 🇺🇸US-37.19.198.243-0127 | 44.924MB
-  - 🇺🇸US-37.19.198.236-0123 | 40.656MB
-  - 🇺🇸US-37.19.198.244-0129 | 24.283MB
-  - 🇺🇸US-23.158.72.131-0833 | 12.003MB
-  - 🇺🇸US-185.230.230.18-0078 | 66.312MB
-  - 🇺🇸US-45.86.51.18-0079 | 132.968MB
-  - 🇺🇸US-193.151.160.9-0080 | 99.015MB
-  - 🇺🇸_US_美国
-  - 🇺🇸US-193.151.160.18-0085 | 91.32MB
-  - 🇺🇸US_1|1.8MB/s
-  - AT_speednode_0002
-  - 🇱🇰[www.v2nodes.com] vless-LK-6...
-  - 🇺🇸US-193.151.163.18-0086 | 115.575MB
+  - 🇺🇸US-95.215.201.18-0136 | 45.108MB
   - 🇺🇸US_2|2.2MB/s
+  - 🇺🇸US-173.244.56.6-0084 | 57.529MB
+  - 🇺🇸US-173.244.56.9-0083 | 52.233MB
+  - 🇺🇸US-156.146.38.169-0085 | 128.467MB
+  - 🇺🇸US-156.146.38.170-0086 | 127.899MB
+  - 🇺🇸US-156.146.38.168-0089 | 204.865MB
+  - 🇺🇸US-156.146.38.167-0090 | 182.138MB
+  - '🇺🇸 美国 | USA #2'
+  - 🇺🇸_US_美国
+  - 🇺🇸US-23.158.72.131-0176 | 5.947MB
+  - US_speednode_0041
+  - 🇺🇸US-198.98.53.130-0209 | 0.202MB
+  - US_speednode_0040
+  - 🇺🇸US-37.19.198.236-0138 | 3.733MB
+  - 🇺🇸US-37.19.198.160-0140 | 3.707MB
+  - 🇺🇸US-37.19.198.244-0144 | 3.892MB
+  - 🇺🇸US-193.151.163.18-0080 | 130.274MB
+  - 🇺🇸US-37.19.198.243-0134 | 52.139MB
+  - 🇺🇸US-185.230.230.18-0087 | 55.515MB
+  - 🇺🇸US-45.86.51.18-0078 | 183.582MB
+  - 🇺🇸US-193.151.160.18-0082 | 131.309MB
+  - 🇺🇸US-193.151.160.9-0081 | 152.301MB
+  - 🇺🇸US_1|1.8MB/s
+  - 🇱🇰[www.v2nodes.com] vless-LK-6...
+  - '🇺🇸 美国 | USA #6'
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - US_speednode_0039
-  - 🇺🇸US-216.106.186.33-0120 | 38.15MB
-  - 🇺🇸US-216.106.186.32-0118 | 46.861MB
-  - 🇺🇸US-95.215.201.18-0124 | 41.442MB
-  - 🇺🇸US-173.244.56.6-0117 | 87.522MB
-  - 🇺🇸US-156.146.38.169-0083 | 72.095MB
-  - 🇺🇸US-156.146.38.170-0082 | 68.959MB
-  - '🇺🇸 美国 | USA #7'
-  - 🇺🇸US-156.146.38.167-0084 | 61.34MB
-  - 🇺🇸US-156.146.38.168-0081 | 63.389MB
-  - '🇺🇸 美国 | USA #2'
-  - US_speednode_0041
-  - 🇺🇸US-173.244.56.9-0088 | 91.033MB
-  - 🇺🇸US-37.19.198.160-0126 | 33.347MB
-  - 🇺🇸US-37.19.198.243-0127 | 44.924MB
-  - 🇺🇸US-37.19.198.236-0123 | 40.656MB
-  - 🇺🇸US-37.19.198.244-0129 | 24.283MB
-  - 🇺🇸US-23.158.72.131-0833 | 12.003MB
-  - 🇺🇸US-185.230.230.18-0078 | 66.312MB
-  - 🇺🇸US-45.86.51.18-0079 | 132.968MB
-  - 🇺🇸US-193.151.160.9-0080 | 99.015MB
-  - 🇺🇸_US_美国
-  - 🇺🇸US-193.151.160.18-0085 | 91.32MB
-  - 🇺🇸US_1|1.8MB/s
-  - AT_speednode_0002
-  - 🇱🇰[www.v2nodes.com] vless-LK-6...
-  - 🇺🇸US-193.151.163.18-0086 | 115.575MB
+  - 🇺🇸US-95.215.201.18-0136 | 45.108MB
   - 🇺🇸US_2|2.2MB/s
+  - 🇺🇸US-173.244.56.6-0084 | 57.529MB
+  - 🇺🇸US-173.244.56.9-0083 | 52.233MB
+  - 🇺🇸US-156.146.38.169-0085 | 128.467MB
+  - 🇺🇸US-156.146.38.170-0086 | 127.899MB
+  - 🇺🇸US-156.146.38.168-0089 | 204.865MB
+  - 🇺🇸US-156.146.38.167-0090 | 182.138MB
+  - '🇺🇸 美国 | USA #2'
+  - 🇺🇸_US_美国
+  - 🇺🇸US-23.158.72.131-0176 | 5.947MB
+  - US_speednode_0041
+  - 🇺🇸US-198.98.53.130-0209 | 0.202MB
+  - US_speednode_0040
+  - 🇺🇸US-37.19.198.236-0138 | 3.733MB
+  - 🇺🇸US-37.19.198.160-0140 | 3.707MB
+  - 🇺🇸US-37.19.198.244-0144 | 3.892MB
+  - 🇺🇸US-193.151.163.18-0080 | 130.274MB
+  - 🇺🇸US-37.19.198.243-0134 | 52.139MB
+  - 🇺🇸US-185.230.230.18-0087 | 55.515MB
+  - 🇺🇸US-45.86.51.18-0078 | 183.582MB
+  - 🇺🇸US-193.151.160.18-0082 | 131.309MB
+  - 🇺🇸US-193.151.160.9-0081 | 152.301MB
+  - 🇺🇸US_1|1.8MB/s
+  - 🇱🇰[www.v2nodes.com] vless-LK-6...
+  - '🇺🇸 美国 | USA #6'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
