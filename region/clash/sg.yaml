@@ -3,6 +3,33 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
+- encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
+  network: ws
+  port: 443
+  server: 188.114.97.6
+  servername: courses.mftplus.qzz.io
+  tls: true
+  type: vless
+  uuid: b9ede7a5-5b4b-4aee-ac37-2c307e587e47
+  ws-opts:
+    headers:
+      Host: courses.mftplus.qzz.io
+    path: /eyJqdW5rIjoidVkzQm1ROUg4dyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+- client-fingerprint: chrome
+  encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG #2'
+  network: ws
+  port: 443
+  server: 104.17.3.81
+  servername: nautica-cff.kloningstrife002.workers.dev
+  tls: true
+  type: vless
+  uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
+  ws-opts:
+    headers:
+      Host: nautica-cff.kloningstrife002.workers.dev
+    path: /138.2.74.219-28616
 - client-fingerprint: chrome
   encryption: none
   name: 🇸🇬[www.v2nodes.com] vless-SG
@@ -15,6 +42,42 @@ proxies:
   uuid: d342d11e-d224-4463-b982-532309285094
   ws-opts:
     path: /
+- name: 🇸🇬[www.v2nodes.com] vless-SG-9...
+  network: ws
+  port: 8880
+  server: 159.242.242.30
+  tls: false
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime58.workers.dev
+    path: /
+- encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG #1'
+  network: ws
+  port: 8880
+  server: 185.162.229.40
+  tls: false
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime61.workers.dev
+    path: /
+- client-fingerprint: chrome
+  name: 🇸🇬[www.v2nodes.com] vless-SG-8...
+  network: ws
+  port: 443
+  server: 172.67.152.148
+  servername: cf-socks.caoyuwu.eu.org
+  tls: true
+  type: vless
+  uuid: 9cdcbaf0-d244-4f37-b227-90166e43f5b5
+  ws-opts:
+    headers:
+      Host: cf-socks.caoyuwu.eu.org
+    path: /fp=chrome
 - name: 🇸🇬SG_1|2.4MB/s
   password: '1234'
   port: 2080
@@ -22,7 +85,7 @@ proxies:
   skip-cert-verify: true
   type: http
   username: '1234'
-- name: 🇸🇬SG-68.183.227.4-0137 | 23.323MB
+- name: 🇸🇬SG-68.183.227.4-0145 | 21.279MB
   server: 68.183.227.4
   port: 8080
   type: ss
@@ -43,24 +106,42 @@ proxies:
     headers:
       Host: free-server.techsonic.dev
     path: /free-server.techsonic.dev
+- name: '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
+  port: 16263
+  server: 47.237.74.17
+  tls: false
+  type: vless
+  uuid: c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
+  - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
+  - '🇸🇬[www.v2nodes.com] vless-SG #2'
   - 🇸🇬[www.v2nodes.com] vless-SG
+  - 🇸🇬[www.v2nodes.com] vless-SG-9...
+  - '🇸🇬[www.v2nodes.com] vless-SG #1'
+  - 🇸🇬[www.v2nodes.com] vless-SG-8...
   - 🇸🇬SG_1|2.4MB/s
-  - 🇸🇬SG-68.183.227.4-0137 | 23.323MB
+  - 🇸🇬SG-68.183.227.4-0145 | 21.279MB
   - '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
+  - '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
+  - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
+  - '🇸🇬[www.v2nodes.com] vless-SG #2'
   - 🇸🇬[www.v2nodes.com] vless-SG
+  - 🇸🇬[www.v2nodes.com] vless-SG-9...
+  - '🇸🇬[www.v2nodes.com] vless-SG #1'
+  - 🇸🇬[www.v2nodes.com] vless-SG-8...
   - 🇸🇬SG_1|2.4MB/s
-  - 🇸🇬SG-68.183.227.4-0137 | 23.323MB
+  - 🇸🇬SG-68.183.227.4-0145 | 21.279MB
   - '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
+  - '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
