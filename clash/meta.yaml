@@ -1,0 +1,299 @@
+# Clash Meta / mihomo 完整配置 v1.0（2026-10-27）
+# 节点：passionsu-su/free-nodes 每日免费节点（proxy-provider 自动更新）
+# 功能：DNS 防泄漏（Fake-IP + DoH）、去广告、分流、地区分组、微信/QQ 直连、嗅探
+# 适用：Clash Meta for Android（CMFA）、FlClash、Clash Verge Rev 等 mihomo 内核客户端
+# 订阅地址：https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta.yaml
+
+mixed-port: 7890
+allow-lan: false
+bind-address: "*"
+mode: rule
+log-level: warning
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: strict
+keep-alive-interval: 30
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# ---------------- 节点来源 ----------------
+anchors:
+  provider: &provider
+    type: http
+    interval: 21600           # 6 小时拉一次节点
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+      lazy: true
+    override:
+      skip-cert-verify: true
+      udp: true
+  test: &test
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 80
+    lazy: true
+    timeout: 3000
+  info: &info "(?i)剩余|流量|到期|过期|官网|套餐|重置|expire|traffic|reset"
+
+proxy-providers:
+  free:
+    <<: *provider
+    url: https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/all.yaml
+    path: ./proxies/free-nodes.yaml
+
+# ---------------- 策略组 ----------------
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies: [♻️ 自动选择, 🔯 故障转移, 🇭🇰 香港, 🇯🇵 日本, 🇸🇬 新加坡, 🇺🇸 美国, 🇪🇺 欧洲, 🌐 其他地区, DIRECT]
+    include-all-providers: true
+    exclude-filter: *info
+
+  - name: ♻️ 自动选择
+    type: url-test
+    <<: *test
+    include-all-providers: true
+    exclude-filter: *info
+
+  - name: 🔯 故障转移
+    type: fallback
+    <<: *test
+    proxies: [🇺🇸 美国, 🇪🇺 欧洲, 🇯🇵 日本, 🇸🇬 新加坡, 🇭🇰 香港, 🌐 其他地区]
+
+  - name: 🤖 AI
+    type: select
+    proxies: [🇺🇸 美国, 🇯🇵 日本, 🇸🇬 新加坡, 🇪🇺 欧洲, 🚀 节点选择]
+
+  - name: 📺 YouTube
+    type: select
+    proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港, 🇯🇵 日本, 🇸🇬 新加坡, 🇺🇸 美国, 🇪🇺 欧洲]
+
+  - name: 🎬 Netflix
+    type: select
+    proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港, 🇯🇵 日本, 🇸🇬 新加坡, 🇺🇸 美国, 🇪🇺 欧洲]
+
+  - name: 🎵 TikTok
+    type: select
+    proxies: [🇯🇵 日本, 🇸🇬 新加坡, 🇺🇸 美国, 🇪🇺 欧洲, 🚀 节点选择]
+
+  - name: ✈️ Telegram
+    type: select
+    proxies: [🚀 节点选择, ♻️ 自动选择, 🇸🇬 新加坡, 🇭🇰 香港, 🇺🇸 美国, 🇪🇺 欧洲]
+
+  - name: 🔍 Google
+    type: select
+    proxies: [🚀 节点选择, ♻️ 自动选择, 🇺🇸 美国, 🇯🇵 日本, 🇸🇬 新加坡, 🇭🇰 香港, 🇪🇺 欧洲]
+
+  - name: 🐱 GitHub
+    type: select
+    proxies: [🚀 节点选择, ♻️ 自动选择, DIRECT]
+
+  - name: Ⓜ️ 微软
+    type: select
+    proxies: [DIRECT, 🚀 节点选择]
+
+  - name: 🍎 苹果
+    type: select
+    proxies: [DIRECT, 🚀 节点选择]
+
+  - name: 🎮 Steam
+    type: select
+    proxies: [🚀 节点选择, DIRECT]
+
+  - name: 🎯 国内直连
+    type: select
+    proxies: [DIRECT, 🚀 节点选择]
+
+  - name: 🛑 广告拦截
+    type: select
+    proxies: [REJECT, DIRECT]
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies: [🚀 节点选择, DIRECT, ♻️ 自动选择]
+
+  # 地区组（自动测速选最快）
+  - name: 🇭🇰 香港
+    type: url-test
+    <<: *test
+    include-all-providers: true
+    filter: "(?i)^(🇭🇰|HK(\\b|_))|香港|Hong ?Kong"
+  - name: 🇯🇵 日本
+    type: url-test
+    <<: *test
+    include-all-providers: true
+    filter: "(?i)^(🇯🇵|JP(\\b|_))|日本|Japan|Tokyo"
+  - name: 🇸🇬 新加坡
+    type: url-test
+    <<: *test
+    include-all-providers: true
+    filter: "(?i)^(🇸🇬|SG(\\b|_))|新加坡|Singapore"
+  - name: 🇺🇸 美国
+    type: url-test
+    <<: *test
+    include-all-providers: true
+    filter: "(?i)^(🇺🇸|US(\\b|_))|美国|United States"
+  - name: 🇪🇺 欧洲
+    type: url-test
+    <<: *test
+    include-all-providers: true
+    filter: "(?i)^(🇬🇧|🇩🇪|🇫🇷|🇳🇱|🇮🇹|🇪🇸|🇵🇱|🇸🇪|🇫🇮|🇨🇭|🇦🇹|🇨🇿|🇮🇪|🇱🇻|🇱🇺|🇩🇰|🇧🇪|🇳🇴|🇵🇹|🇷🇴|🇭🇺|🇪🇪|🇱🇹|🇧🇬|🇬🇷|(GB|UK|DE|FR|NL|IT|ES|PL|SE|FI|CH|AT|CZ|IE|LV|LU|DK|BE|NO|PT|RO|HU|EE|LT|BG|GR)(\\b|_))"
+  - name: 🌐 其他地区
+    type: url-test
+    <<: *test
+    include-all-providers: true
+    exclude-filter: "(?i)^(🇭🇰|🇯🇵|🇸🇬|🇺🇸|🇨🇳|🇬🇧|🇩🇪|🇫🇷|🇳🇱|🇮🇹|🇪🇸|🇵🇱|🇸🇪|🇫🇮|🇨🇭|🇦🇹|🇨🇿|🇮🇪|🇱🇻|🇱🇺|🇩🇰|🇧🇪|🇳🇴|🇵🇹|🇷🇴|🇭🇺|🇪🇪|🇱🇹|🇧🇬|🇬🇷|(HK|JP|SG|US|CN|GB|UK|DE|FR|NL|IT|ES|PL|SE|FI|CH|AT|CZ|IE|LV|LU|DK|BE|NO|PT|RO|HU|EE|LT|BG|GR)(\\b|_))|剩余|流量|到期|官网"
+
+# ---------------- 规则集 ----------------
+rule-anchor:
+  mrs: &mrs { type: http, behavior: domain, format: mrs, interval: 86400 }
+  ipmrs: &ipmrs { type: http, behavior: ipcidr, format: mrs, interval: 86400 }
+  cls: &cls { type: http, behavior: classical, format: text, interval: 86400 }
+  dom: &dom { type: http, behavior: domain, format: text, interval: 86400 }
+
+rule-providers:
+  # 去广告
+  adb-sukka-nodrop: { <<: *cls, url: "https://ruleset.skk.moe/Clash/non_ip/reject-no-drop.txt", path: ./ruleset/adb-sukka-nodrop.txt }
+  adb-sukka-drop:   { <<: *cls, url: "https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt", path: ./ruleset/adb-sukka-drop.txt }
+  adb-sukka-nonip:  { <<: *cls, url: "https://ruleset.skk.moe/Clash/non_ip/reject.txt", path: ./ruleset/adb-sukka-nonip.txt }
+  adb-sukka-domain: { <<: *dom, url: "https://ruleset.skk.moe/Clash/domainset/reject.txt", path: ./ruleset/adb-sukka-domain.txt }
+  adb-sukka-ip:     { <<: *cls, url: "https://ruleset.skk.moe/Clash/ip/reject.txt", path: ./ruleset/adb-sukka-ip.txt }
+  adb-adrules:      { <<: *mrs, url: "https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules-mihomo.mrs", path: ./ruleset/adb-adrules.mrs }
+  adb-awavenue:     { <<: *mrs, url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.mrs", path: ./ruleset/adb-awavenue.mrs }
+  adb-anti-ad:      { type: http, behavior: domain, format: yaml, interval: 86400, url: "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml", path: ./ruleset/adb-anti-ad.yaml }
+  adb-heidai-dns:   { <<: *mrs, url: "https://raw.githubusercontent.com/passionsu-su/v2ray-adblock/geosite/heidai-adblockdns.mrs", path: ./ruleset/adb-heidai-dns.mrs }
+  adb-hagezi-pro:   { <<: *mrs, url: "https://raw.githubusercontent.com/passionsu-su/v2ray-adblock/geosite/hagezi-pro.mrs", path: ./ruleset/adb-hagezi-pro.mrs }
+  # 分流（MetaCubeX meta-rules-dat）
+  sp-private:   { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs", path: ./ruleset/sp-private.mrs }
+  sp-ai:        { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs", path: ./ruleset/sp-ai.mrs }
+  sp-youtube:   { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/youtube.mrs", path: ./ruleset/sp-youtube.mrs }
+  sp-netflix:   { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/netflix.mrs", path: ./ruleset/sp-netflix.mrs }
+  sp-tiktok:    { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs", path: ./ruleset/sp-tiktok.mrs }
+  sp-telegram:  { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/telegram.mrs", path: ./ruleset/sp-telegram.mrs }
+  sp-github:    { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/github.mrs", path: ./ruleset/sp-github.mrs }
+  sp-google:    { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/google.mrs", path: ./ruleset/sp-google.mrs }
+  sp-steam-cn:  { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/steam@cn.mrs", path: ./ruleset/sp-steam-cn.mrs }
+  sp-steam:     { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/steam.mrs", path: ./ruleset/sp-steam.mrs }
+  sp-ms-cn:     { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/microsoft@cn.mrs", path: ./ruleset/sp-ms-cn.mrs }
+  sp-microsoft: { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/microsoft.mrs", path: ./ruleset/sp-microsoft.mrs }
+  sp-apple-cn:  { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple-cn.mrs", path: ./ruleset/sp-apple-cn.mrs }
+  sp-apple:     { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple.mrs", path: ./ruleset/sp-apple.mrs }
+  sp-gfw:       { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs", path: ./ruleset/sp-gfw.mrs }
+  sp-cn:        { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs", path: ./ruleset/sp-cn.mrs }
+  sp-notcn:     { <<: *mrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs", path: ./ruleset/sp-notcn.mrs }
+  sp-ip-private:  { <<: *ipmrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/private.mrs", path: ./ruleset/sp-ip-private.mrs }
+  sp-ip-telegram: { <<: *ipmrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/telegram.mrs", path: ./ruleset/sp-ip-telegram.mrs }
+  sp-ip-netflix:  { <<: *ipmrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/netflix.mrs", path: ./ruleset/sp-ip-netflix.mrs }
+  sp-ip-google:   { <<: *ipmrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/google.mrs", path: ./ruleset/sp-ip-google.mrs }
+  sp-ip-cn:       { <<: *ipmrs, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/cn.mrs", path: ./ruleset/sp-ip-cn.mrs }
+
+# ---------------- 规则（自上而下匹配） ----------------
+rules:
+  # 微信 / QQ 直连（防「当前网络不可用」）
+  - PROCESS-NAME,com.tencent.mm,DIRECT
+  - PROCESS-NAME,com.tencent.mobileqq,DIRECT
+  - DOMAIN-SUFFIX,weixin.qq.com,DIRECT
+  - DOMAIN-SUFFIX,wechat.com,DIRECT
+  - DOMAIN-SUFFIX,weixinbridge.com,DIRECT
+  - DOMAIN-SUFFIX,qq.com,DIRECT
+  - DOMAIN-SUFFIX,qpic.cn,DIRECT
+  - DOMAIN-SUFFIX,qlogo.cn,DIRECT
+  - DOMAIN-SUFFIX,tencent-cloud.net,DIRECT
+  # 去广告
+  - RULE-SET,adb-sukka-nodrop,🛑 广告拦截
+  - RULE-SET,adb-sukka-drop,REJECT-DROP
+  - RULE-SET,adb-sukka-nonip,🛑 广告拦截
+  - RULE-SET,adb-sukka-domain,🛑 广告拦截
+  - RULE-SET,adb-adrules,🛑 广告拦截
+  - RULE-SET,adb-awavenue,🛑 广告拦截
+  - RULE-SET,adb-anti-ad,🛑 广告拦截
+  - RULE-SET,adb-heidai-dns,🛑 广告拦截
+  - RULE-SET,adb-hagezi-pro,🛑 广告拦截
+  # 分流
+  - RULE-SET,sp-private,DIRECT
+  - RULE-SET,sp-ai,🤖 AI
+  - RULE-SET,sp-youtube,📺 YouTube
+  - RULE-SET,sp-netflix,🎬 Netflix
+  - RULE-SET,sp-tiktok,🎵 TikTok
+  - RULE-SET,sp-telegram,✈️ Telegram
+  - RULE-SET,sp-github,🐱 GitHub
+  - RULE-SET,sp-google,🔍 Google
+  - RULE-SET,sp-steam-cn,DIRECT
+  - RULE-SET,sp-steam,🎮 Steam
+  - RULE-SET,sp-ms-cn,DIRECT
+  - RULE-SET,sp-microsoft,Ⓜ️ 微软
+  - RULE-SET,sp-apple-cn,DIRECT
+  - RULE-SET,sp-apple,🍎 苹果
+  - RULE-SET,sp-gfw,🚀 节点选择
+  - RULE-SET,sp-cn,🎯 国内直连
+  - RULE-SET,sp-notcn,🚀 节点选择
+  # IP 类（no-resolve 防 DNS 泄漏）
+  - RULE-SET,adb-sukka-ip,🛑 广告拦截,no-resolve
+  - RULE-SET,sp-ip-private,DIRECT,no-resolve
+  - RULE-SET,sp-ip-telegram,✈️ Telegram,no-resolve
+  - RULE-SET,sp-ip-netflix,🎬 Netflix,no-resolve
+  - RULE-SET,sp-ip-google,🔍 Google,no-resolve
+  - RULE-SET,sp-ip-cn,🎯 国内直连
+  - MATCH,🐟 漏网之鱼
+
+# ---------------- DNS ----------------
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - rule-set:sp-private
+    - "+.lan"
+    - "+.local"
+    - "+.localdomain"
+    - "+.home.arpa"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "time.*.com"
+    - "time.*.gov"
+    - "+.ntp.org"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "localhost.ptlogin2.qq.com"
+    - "+.push.apple.com"
+    - "+.weixin.qq.com"
+    - "+.wechat.com"
+    - "+.qq.com"
+    - "+.miwifi.com"
+    - "+.mi.com"
+    - "+.xiaomi.com"
+  use-hosts: true
+  respect-rules: false
+  default-nameserver: [223.5.5.5, 119.29.29.29]
+  proxy-server-nameserver: ["https://223.5.5.5/dns-query", "https://doh.pub/dns-query"]
+  nameserver: ["https://223.5.5.5/dns-query", "https://doh.pub/dns-query"]
+  nameserver-policy:
+    "rule-set:sp-cn,sp-private": ["https://223.5.5.5/dns-query", "https://doh.pub/dns-query"]
+    "rule-set:sp-gfw,sp-notcn": ["https://1.1.1.1/dns-query#🚀 节点选择", "https://8.8.8.8/dns-query#🚀 节点选择"]
+
+# ---------------- 嗅探 ----------------
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP: { ports: [80, 8081-8880], override-destination: true }
+    TLS: { ports: [443, 8443] }
+    QUIC: { ports: [443, 8443] }
+  skip-domain:
+    - "+.qq.com"
+    - "+.weixin.qq.com"
+    - "+.wechat.com"
+    - "+.qpic.cn"
+    - "+.push.apple.com"
+    - "Mijia Cloud"
+    - "+.mi.com"
+    - "+.xiaomi.com"
