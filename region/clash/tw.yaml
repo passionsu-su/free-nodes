@@ -3,10 +3,10 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇹🇼 🇨🇳 台湾 | TWN
+- name: 🇹🇼 🇨🇳 台湾 | TWN 2
   password: 0324fbc29561
   port: 443
-  server: 684616s4.df6h451rh.xin
+  server: er8u54dh.df6h451rh.xin
   skip-cert-verify: true
   sni: px.ads.linkedin.com
   type: anytls
@@ -24,10 +24,10 @@ proxies:
     headers:
       Host: ty986gfazs.cainiaohub.xyz
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- name: 🇹🇼 🇨🇳 台湾 | TWN 2
+- name: 🇹🇼 🇨🇳 台湾 | TWN
   password: 0324fbc29561
   port: 443
-  server: er8u54dh.df6h451rh.xin
+  server: 684616s4.df6h451rh.xin
   skip-cert-verify: true
   sni: px.ads.linkedin.com
   type: anytls
@@ -37,17 +37,17 @@ proxy-groups:
   type: select
   proxies:
   - AUTO
-  - 🇹🇼 🇨🇳 台湾 | TWN
-  - 🇹🇼[www.v2nodes.com] vless-TW-1...
   - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇹🇼[www.v2nodes.com] vless-TW-1...
+  - 🇹🇼 🇨🇳 台湾 | TWN
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇹🇼 🇨🇳 台湾 | TWN
-  - 🇹🇼[www.v2nodes.com] vless-TW-1...
   - 🇹🇼 🇨🇳 台湾 | TWN 2
+  - 🇹🇼[www.v2nodes.com] vless-TW-1...
+  - 🇹🇼 🇨🇳 台湾 | TWN
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
