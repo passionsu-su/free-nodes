@@ -3,32 +3,32 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- client-fingerprint: chrome
-  name: '🇸🇬[www.v2nodes.com] vless-SG #6'
+- encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG #5'
   network: ws
-  port: 443
-  server: 43.174.193.1
-  servername: ccc.010304.xyz
-  tls: true
-  type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-    path: /
-- name: 🇸🇬 新加坡 | SGP
-  server: 104.18.35.86
-  port: 8080
+  port: 2082
+  server: 172.64.150.28
+  servername: hhlfy.twiladaphne.ndjp.net
+  tls: false
   type: vless
   uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  tls: false
-  servername: hhlfy.twiladaphne.ndjp.net
-  network: ws
   ws-opts:
-    path: /sg-melbi
     headers:
       Host: hhlfy.twiladaphne.ndjp.net
-  udp: true
+    path: /fp
+- encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
+  network: ws
+  port: 8080
+  server: 104.18.35.86
+  servername: 'hhlfy.twiladaphne.ndjp.net '
+  tls: false
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+    path: /sg-melbi
 - client-fingerprint: chrome
   name: 🇸🇬[www.v2nodes.com] vless-SG
   network: ws
@@ -42,146 +42,43 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp=chrome
-- encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #11'
-  network: ws
-  port: 8880
-  server: 63.141.128.30
-  tls: false
-  type: vless
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: vms.lifetime42.workers.dev
-    path: /
-- encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG #5'
-  network: ws
-  port: 80
-  server: e33xr.qzz.io
-  tls: false
-  type: vless
-  uuid: e081da45-9fae-4687-9376-f9a6a0dbbe83
-  ws-opts:
-    headers:
-      Host: e33xr.qzz.io
-    path: /id-amz
-- encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG #3'
-  network: ws
-  port: 443
-  server: 185.193.29.123
-  servername: notls.lukongtou.eu.org
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
-  ws-opts:
-    headers:
-      Host: notls.lukongtou.eu.org
-    path: Telegram-WangCai2🇨🇳
-- alpn:
-  - http/1.1
-  encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG #1'
-  network: ws
-  port: 8443
-  server: 172.66.44.124
-  servername: stf839dvvyog9d2qa4-b8z6ahgn7b7qi.pages.dev
-  tls: true
-  type: vless
-  uuid: b2f2f9f2-1864-48ea-839b-22815faff1f1
-  ws-opts:
-    headers:
-      Host: stf839dvvyog9d2qa4-b8z6ahgn7b7qi.pages.dev
-    path: /9BozNyvQ8VdRvsYX?ed=2560
-- encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG #4'
-  network: ws
-  port: 8080
-  server: 104.18.26.94
-  servername: www.gov.se
-  tls: false
-  type: vless
-  uuid: 989d58b8-d2ea-4d28-b5ff-0f3cd078f2cf
-  ws-opts:
-    headers:
-      Host: sdf23g-billowing-moon-348e.mzm468gc.workers.dev
-    path: /
-- name: 🇸🇬[www.v2nodes.com] vless-SG-9...
-  network: ws
-  port: 8880
-  server: 159.242.242.30
-  tls: false
-  type: vless
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: vms.lifetime58.workers.dev
-    path: /
 - client-fingerprint: chrome
+  encryption: none
   name: '🇸🇬[www.v2nodes.com] vless-SG #2'
   network: ws
-  port: 2096
-  server: 104.18.47.140
-  servername: rainfall0705.cc.cd
+  port: 443
+  server: 104.17.154.123
+  servername: ccc.010304.xyz
   tls: true
   type: vless
-  uuid: 341832cc-ba98-425b-8225-b3db621a0da3
+  uuid: d342d11e-d224-4463-b982-532309285094
   ws-opts:
     headers:
-      Host: rainfall0705.cc.cd
+      Host: ccc.010304.xyz
     path: /
-- name: '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
-  network: ws
-  port: 8080
-  server: 172.64.150.43
-  tls: false
-  type: vless
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-    path: /sg-melbi
+- name: 🇸🇬SG_1|1.2MB/s
+  password: None
+  port: 9090
+  server: 167.99.74.174
+  type: http
 - encryption: none
-  name: 🇸🇬[www.v2nodes.com] vless-SG-8...
+  name: 🇸🇬[www.v2nodes.com] vless-SG-1...
   network: ws
-  port: 8880
-  server: chat.openai.com
+  port: 443
+  server: v2.drsachi.com
   tls: false
   type: vless
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: vms.lifetime29.workers.dev
-    path: /
-- cipher: aes-256-gcm
-  name: 🇸🇬[www.v2nodes.com] ss-SG-1559...
-  password: qpSevKaUXYQKvSjp
-  port: 8388
-  server: 139.180.220.175
-  type: ss
-- name: 🇸🇬SG-68.183.227.4-0174 | 23.094MB
-  server: 68.183.227.4
-  port: 8080
-  type: ss
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
-- encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
-  network: ws
-  port: 8880
-  server: 185.225.195.30
-  tls: false
-  type: vless
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: vms.lifetime18.workers.dev
-    path: /
+  uuid: 270c3fa5-0293-4d68-875c-6cdc3bdc5b84
+- name: 🇸🇬SG_2|1.6MB/s
+  port: 9443
+  server: 149.88.99.209
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
 - client-fingerprint: chrome
   encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #5'
+  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
   network: ws
   port: 2096
   server: 139.162.27.96
@@ -199,43 +96,27 @@ proxy-groups:
   type: select
   proxies:
   - AUTO
-  - '🇸🇬[www.v2nodes.com] vless-SG #6'
-  - 🇸🇬 新加坡 | SGP
-  - 🇸🇬[www.v2nodes.com] vless-SG
-  - '🇸🇬[www.v2nodes.com] vless-SG-1... #11'
   - '🇸🇬[www.v2nodes.com] vless-SG #5'
-  - '🇸🇬[www.v2nodes.com] vless-SG #3'
-  - '🇸🇬[www.v2nodes.com] vless-SG #1'
-  - '🇸🇬[www.v2nodes.com] vless-SG #4'
-  - 🇸🇬[www.v2nodes.com] vless-SG-9...
-  - '🇸🇬[www.v2nodes.com] vless-SG #2'
   - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
-  - 🇸🇬[www.v2nodes.com] vless-SG-8...
-  - 🇸🇬[www.v2nodes.com] ss-SG-1559...
-  - 🇸🇬SG-68.183.227.4-0174 | 23.094MB
-  - '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
-  - '🇸🇬[www.v2nodes.com] vless-SG-1... #5'
+  - 🇸🇬[www.v2nodes.com] vless-SG
+  - '🇸🇬[www.v2nodes.com] vless-SG #2'
+  - 🇸🇬SG_1|1.2MB/s
+  - 🇸🇬[www.v2nodes.com] vless-SG-1...
+  - 🇸🇬SG_2|1.6MB/s
+  - '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - '🇸🇬[www.v2nodes.com] vless-SG #6'
-  - 🇸🇬 新加坡 | SGP
-  - 🇸🇬[www.v2nodes.com] vless-SG
-  - '🇸🇬[www.v2nodes.com] vless-SG-1... #11'
   - '🇸🇬[www.v2nodes.com] vless-SG #5'
-  - '🇸🇬[www.v2nodes.com] vless-SG #3'
-  - '🇸🇬[www.v2nodes.com] vless-SG #1'
-  - '🇸🇬[www.v2nodes.com] vless-SG #4'
-  - 🇸🇬[www.v2nodes.com] vless-SG-9...
-  - '🇸🇬[www.v2nodes.com] vless-SG #2'
   - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
-  - 🇸🇬[www.v2nodes.com] vless-SG-8...
-  - 🇸🇬[www.v2nodes.com] ss-SG-1559...
-  - 🇸🇬SG-68.183.227.4-0174 | 23.094MB
-  - '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
-  - '🇸🇬[www.v2nodes.com] vless-SG-1... #5'
+  - 🇸🇬[www.v2nodes.com] vless-SG
+  - '🇸🇬[www.v2nodes.com] vless-SG #2'
+  - 🇸🇬SG_1|1.2MB/s
+  - 🇸🇬[www.v2nodes.com] vless-SG-1...
+  - 🇸🇬SG_2|1.6MB/s
+  - '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
