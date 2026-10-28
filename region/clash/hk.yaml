@@ -3,54 +3,53 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇭🇰HK_3|1.1MB/s
-  port: 3128
-  server: 43.161.254.16
-  skip-cert-verify: true
-  type: http
-- name: 🇭🇰 香港 | HKG 6
-  server: 654968169.df6h451rh.xin
-  port: 443
-  type: anytls
-  password: 0324fbc29561
-  udp: true
-  sni: images.ctfassets.net
-  skip-cert-verify: true
-- name: 🇭🇰 香港 | HKG 5
-  server: 47.244.120.197
-  port: 23026
-  type: vmess
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /arki
-    headers:
-      Host: 47.244.120.197
-  udp: true
 - name: 🇭🇰 香港 | HKG 4
-  server: 56481.df6h451rh.xin
-  port: 443
-  type: anytls
-  password: 0324fbc29561
-  udp: true
-  sni: images.ctfassets.net
-  skip-cert-verify: true
-- name: 🇭🇰HK_2|3.6MB/s
-  port: 31343
-  server: 120.232.204.58
-  skip-cert-verify: true
+  server: 213.152.180.104
+  port: 2091
+  type: vless
+  uuid: ce17d29c-3587-4d8c-b09d-e03437df8bbd
   tls: true
-  type: http
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1N6AW5YuEwBoYcZK5KuugDzBHsa0NKZMT8QI-EmyL0k
+    short-id: 08a4b1f473932632
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇭🇰 香港 | HKG 2
+  server: 213.152.165.198
+  port: 2091
+  type: vless
+  uuid: 6a26029d-5639-473a-9234-3e80d0633d7d
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 1N6AW5YuEwBoYcZK5KuugDzBHsa0NKZMT8QI-EmyL0k
+    short-id: 08a4b1f473932632
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- alpn:
+  - h2
+  - http/1.1
+  client-fingerprint: chrome
+  encryption: none
+  name: '🇭🇰[www.v2nodes.com] vless-HK-1... #4'
+  network: tcp
+  port: 11907
+  server: 195.58.144.56
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
 - alterId: 0
   cipher: auto
   name: '🇭🇰 香港 | HKG #3'
   network: ws
   port: 443
-  server: 47.243.194.125
+  server: 47.243.153.153
   skip-cert-verify: true
   tls: true
   type: vmess
@@ -58,45 +57,14 @@ proxies:
   uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   ws-opts:
     headers:
-      Host: nycqg19zkwacpm1b.v.3dns.vip
+      Host: i2psm3knof5qjjix.v.3dns.vip
     path: /ws-vmess
-- name: 🇭🇰 香港 | HKG 2
-  server: 8.217.254.88
-  port: 443
-  type: vmess
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: 2b9hwy8ocx7q74nm.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: 2b9hwy8ocx7q74nm.v.3dns.vip
-  udp: true
-- name: 🇭🇰 香港 | HKG 3
-  server: ex1ogt73nzpqkac2.v.3dns.vip
-  port: 443
-  type: vmess
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: ex1ogt73nzpqkac2.v.3dns.vip
-  udp: true
 - alterId: 0
   cipher: auto
-  name: '🇭🇰 香港 | HKG #4'
+  name: '🇭🇰 香港 | HKG #5'
   network: ws
   port: 443
-  server: 47.243.65.243
+  server: nycqg19zkwacpm1b.v.3dns.vip
   skip-cert-verify: true
   tls: true
   type: vmess
@@ -104,44 +72,28 @@ proxies:
   uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   ws-opts:
     headers:
-      Host: lcv8v9l7oyamxxfz.v.3dns.vip
+      Host: NYcQg19zkwaCPM1B.v.3dns.vip
     path: /ws-vmess
-- name: '🇭🇰[www.v2nodes.com] trojan-HK-... #1'
-  password: XuMweB2PWs
-  port: 45464
-  server: 2.27.109.179
-  sni: 2.27.109.179.sslip.io
-  type: trojan
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - 🇭🇰HK_3|1.1MB/s
-  - 🇭🇰 香港 | HKG 6
-  - 🇭🇰 香港 | HKG 5
   - 🇭🇰 香港 | HKG 4
-  - 🇭🇰HK_2|3.6MB/s
-  - '🇭🇰 香港 | HKG #3'
   - 🇭🇰 香港 | HKG 2
-  - 🇭🇰 香港 | HKG 3
-  - '🇭🇰 香港 | HKG #4'
-  - '🇭🇰[www.v2nodes.com] trojan-HK-... #1'
+  - '🇭🇰[www.v2nodes.com] vless-HK-1... #4'
+  - '🇭🇰 香港 | HKG #3'
+  - '🇭🇰 香港 | HKG #5'
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇭🇰HK_3|1.1MB/s
-  - 🇭🇰 香港 | HKG 6
-  - 🇭🇰 香港 | HKG 5
   - 🇭🇰 香港 | HKG 4
-  - 🇭🇰HK_2|3.6MB/s
-  - '🇭🇰 香港 | HKG #3'
   - 🇭🇰 香港 | HKG 2
-  - 🇭🇰 香港 | HKG 3
-  - '🇭🇰 香港 | HKG #4'
-  - '🇭🇰[www.v2nodes.com] trojan-HK-... #1'
+  - '🇭🇰[www.v2nodes.com] vless-HK-1... #4'
+  - '🇭🇰 香港 | HKG #3'
+  - '🇭🇰 香港 | HKG #5'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
