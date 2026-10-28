@@ -1,4 +1,4 @@
-# Clash Meta / mihomo 完整配置 v1.1（2026-10-27，规则改走 jsDelivr 直连，去广告精简为合并版）
+# Clash Meta / mihomo 完整配置 v1.2（2026-10-28，新增微信广告专项：朋友圈/公众号文章广告）
 # 节点：passionsu-su/free-nodes 每日免费节点（proxy-provider 自动更新）
 # 功能：DNS 防泄漏（Fake-IP + DoH）、去广告、分流、地区分组、微信/QQ 直连、嗅探
 # 适用：Clash Meta for Android（CMFA）、FlClash、Clash Verge Rev 等 mihomo 内核客户端
@@ -148,6 +148,22 @@ proxy-groups:
     include-all-providers: true
     exclude-filter: "(?i)^(🇭🇰|🇯🇵|🇸🇬|🇺🇸|🇨🇳|🇬🇧|🇩🇪|🇫🇷|🇳🇱|🇮🇹|🇪🇸|🇵🇱|🇸🇪|🇫🇮|🇨🇭|🇦🇹|🇨🇿|🇮🇪|🇱🇻|🇱🇺|🇩🇰|🇧🇪|🇳🇴|🇵🇹|🇷🇴|🇭🇺|🇪🇪|🇱🇹|🇧🇬|🇬🇷|(HK|JP|SG|US|CN|GB|UK|DE|FR|NL|IT|ES|PL|SE|FI|CH|AT|CZ|IE|LV|LU|DK|BE|NO|PT|RO|HU|EE|LT|BG|GR)(\\b|_))|剩余|流量|到期|官网"
 
+# 微信广告 DNS 层屏蔽（qq.com 走真实 IP，规则匹配不到时由这里兜底）
+hosts:
+  "wxsnsdy.wxs.qq.com": [0.0.0.0, "::"]
+  "wxsnsdythumb.wxs.qq.com": [0.0.0.0, "::"]
+  "wxsnsdyvip.wxs.qq.com": [0.0.0.0, "::"]
+  "wxsnsdy.tc.qq.com": [0.0.0.0, "::"]
+  "adsmind.gdtimg.com": [0.0.0.0, "::"]
+  "adsmind.apdcdn.tc.qq.com": [0.0.0.0, "::"]
+  "adsfile.qq.com": [0.0.0.0, "::"]
+  "ad.weixin.qq.com": [0.0.0.0, "::"]
+  "e.qq.com": [0.0.0.0, "::"]
+  "l.qq.com": [0.0.0.0, "::"]
+  "+.gdt.qq.com": [0.0.0.0, "::"]
+  "+.pgdt.gtimg.cn": [0.0.0.0, "::"]
+  "+.pgdt.gtimg.com": [0.0.0.0, "::"]
+
 # ---------------- 规则集 ----------------
 rule-anchor:
   mrs: &mrs { type: http, behavior: domain, format: mrs, interval: 86400, proxy: DIRECT }
@@ -155,6 +171,25 @@ rule-anchor:
   cls: &cls { type: http, behavior: classical, format: text, interval: 86400 }
 
 rule-providers:
+  # 微信广告专项（朋友圈、公众号文中/文末广告）
+  wechat-ads:
+    type: inline
+    behavior: classical
+    format: yaml
+    payload:
+      - DOMAIN,wxsnsdy.wxs.qq.com
+      - DOMAIN,wxsnsdythumb.wxs.qq.com
+      - DOMAIN,wxsnsdyvip.wxs.qq.com
+      - DOMAIN,wxsnsdy.tc.qq.com
+      - DOMAIN,adsmind.gdtimg.com
+      - DOMAIN,adsmind.apdcdn.tc.qq.com
+      - DOMAIN,adsfile.qq.com
+      - DOMAIN,ad.weixin.qq.com
+      - DOMAIN,e.qq.com
+      - DOMAIN,l.qq.com
+      - DOMAIN-SUFFIX,gdt.qq.com
+      - DOMAIN-SUFFIX,pgdt.gtimg.cn
+      - DOMAIN-SUFFIX,pgdt.gtimg.com
   # 去广告：ads.mrs = 217heidai + anti-AD + HaGeZi Pro + Loyalsoldier 合并去重（v2ray-adblock 每 12 小时构建）
   adb-ads:          { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/passionsu-su/v2ray-adblock@geosite/ads.mrs", path: ./ruleset/adb-ads.mrs }
   adb-awavenue:     { <<: *mrs, url: "https://testingcf.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash.mrs", path: ./ruleset/adb-awavenue.mrs }
@@ -188,6 +223,8 @@ rule-providers:
 
 # ---------------- 规则（自上而下匹配） ----------------
 rules:
+  # 微信广告专项：必须放在微信进程直连之前
+  - RULE-SET,wechat-ads,REJECT
   # 微信 / QQ 直连（防「当前网络不可用」）
   - PROCESS-NAME,com.tencent.mm,DIRECT
   - PROCESS-NAME,com.tencent.mobileqq,DIRECT
