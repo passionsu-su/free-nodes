@@ -3,39 +3,43 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇰🇷KR_2|4.9MB/s
-  port: 1080
-  server: 144.24.94.153
-  skip-cert-verify: true
-  type: http
-- cipher: aes-256-gcm
-  name: 🇰🇷[www.v2nodes.com] ss-KR-1185..._2
-  password: TEzjfAYq2IjtuoS
-  port: 6697
-  server: 141.164.45.187
+- name: 🇰🇷KR-211.178.105.134-0207 | 1.118MB
+  server: 211.178.105.134
+  port: 6123
   type: ss
-- cipher: aes-256-gcm
-  name: 🇰🇷[www.v2nodes.com] ss-KR-1185...
-  password: PCnnH6SQSnfoS27
-  port: 8091
-  server: 141.164.45.187
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- name: 🇰🇷[www.v2nodes.com] vless-KR-1...
+  network: ws
+  port: 25555
+  server: 152.69.226.63
+  tls: false
+  type: vless
+  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
+  ws-opts:
+    path: /
+- name: 🇰🇷KR-218.237.185.234-0209 | 1.225MB
+  server: p141.panda001.net
+  port: 4652
   type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - 🇰🇷KR_2|4.9MB/s
-  - 🇰🇷[www.v2nodes.com] ss-KR-1185..._2
-  - 🇰🇷[www.v2nodes.com] ss-KR-1185...
+  - 🇰🇷KR-211.178.105.134-0207 | 1.118MB
+  - 🇰🇷[www.v2nodes.com] vless-KR-1...
+  - 🇰🇷KR-218.237.185.234-0209 | 1.225MB
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇰🇷KR_2|4.9MB/s
-  - 🇰🇷[www.v2nodes.com] ss-KR-1185..._2
-  - 🇰🇷[www.v2nodes.com] ss-KR-1185...
+  - 🇰🇷KR-211.178.105.134-0207 | 1.118MB
+  - 🇰🇷[www.v2nodes.com] vless-KR-1...
+  - 🇰🇷KR-218.237.185.234-0209 | 1.225MB
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
