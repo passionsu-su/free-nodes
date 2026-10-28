@@ -3,73 +3,51 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇭🇰 香港 | HKG
-  password: 0324fbc29561
-  port: 443
-  server: 654968169.df6h451rh.xin
+- name: 🇭🇰HK_3|1.1MB/s
+  port: 3128
+  server: 43.161.254.16
   skip-cert-verify: true
-  sni: images.ctfassets.net
+  type: http
+- name: 🇭🇰 香港 | HKG 6
+  server: 654968169.df6h451rh.xin
+  port: 443
   type: anytls
+  password: 0324fbc29561
   udp: true
-- name: 🇭🇰HK-156.245.232.239-0280 | 0.014MB
-  server: 156.245.232.239
-  port: 35043
+  sni: images.ctfassets.net
+  skip-cert-verify: true
+- name: 🇭🇰 香港 | HKG 5
+  server: 47.244.120.197
+  port: 23026
   type: vmess
-  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-- name: ProxyPool | 🇭🇰 香港 | HKG
-  server: 47.243.65.243
-  port: 443
-  type: vmess
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  alterId: 0
-  cipher: auto
-  tls: true
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /ws-vmess
+    path: /arki
     headers:
-      Host: lcv8v9l7oyamxxfz.v.3dns.vip
+      Host: 47.244.120.197
   udp: true
-- name: 🇭🇰 香港 | HKG 3
-  password: 0324fbc29561
-  port: 443
+- name: 🇭🇰 香港 | HKG 4
   server: 56481.df6h451rh.xin
-  skip-cert-verify: true
-  sni: images.ctfassets.net
-  type: anytls
-  udp: true
-- name: '🇭🇰[www.v2nodes.com] trojan-HK-... #1'
-  password: XuMweB2PWs
-  port: 45464
-  server: 2.27.109.179
-  sni: 2.27.109.179.sslip.io
-  type: trojan
-- alterId: 0
-  cipher: auto
-  name: '🇭🇰 香港 | HKG #1'
-  network: ws
   port: 443
-  server: 47.243.153.153
+  type: anytls
+  password: 0324fbc29561
+  udp: true
+  sni: images.ctfassets.net
+  skip-cert-verify: true
+- name: 🇭🇰HK_2|3.6MB/s
+  port: 31343
+  server: 120.232.204.58
   skip-cert-verify: true
   tls: true
-  type: vmess
-  udp: true
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  ws-opts:
-    headers:
-      Host: i2psm3knof5qjjix.v.3dns.vip
-    path: /ws-vmess
+  type: http
 - alterId: 0
   cipher: auto
-  name: '🇭🇰 香港 | HKG #3_2'
+  name: '🇭🇰 香港 | HKG #3'
   network: ws
   port: 443
   server: 47.243.194.125
@@ -82,30 +60,88 @@ proxies:
     headers:
       Host: nycqg19zkwacpm1b.v.3dns.vip
     path: /ws-vmess
+- name: 🇭🇰 香港 | HKG 2
+  server: 8.217.254.88
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: 2b9hwy8ocx7q74nm.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 2b9hwy8ocx7q74nm.v.3dns.vip
+  udp: true
+- name: 🇭🇰 香港 | HKG 3
+  server: ex1ogt73nzpqkac2.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: ex1ogt73nzpqkac2.v.3dns.vip
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '🇭🇰 香港 | HKG #4'
+  network: ws
+  port: 443
+  server: 47.243.65.243
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  ws-opts:
+    headers:
+      Host: lcv8v9l7oyamxxfz.v.3dns.vip
+    path: /ws-vmess
+- name: '🇭🇰[www.v2nodes.com] trojan-HK-... #1'
+  password: XuMweB2PWs
+  port: 45464
+  server: 2.27.109.179
+  sni: 2.27.109.179.sslip.io
+  type: trojan
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - 🇭🇰 香港 | HKG
-  - 🇭🇰HK-156.245.232.239-0280 | 0.014MB
-  - ProxyPool | 🇭🇰 香港 | HKG
+  - 🇭🇰HK_3|1.1MB/s
+  - 🇭🇰 香港 | HKG 6
+  - 🇭🇰 香港 | HKG 5
+  - 🇭🇰 香港 | HKG 4
+  - 🇭🇰HK_2|3.6MB/s
+  - '🇭🇰 香港 | HKG #3'
+  - 🇭🇰 香港 | HKG 2
   - 🇭🇰 香港 | HKG 3
+  - '🇭🇰 香港 | HKG #4'
   - '🇭🇰[www.v2nodes.com] trojan-HK-... #1'
-  - '🇭🇰 香港 | HKG #1'
-  - '🇭🇰 香港 | HKG #3_2'
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇭🇰 香港 | HKG
-  - 🇭🇰HK-156.245.232.239-0280 | 0.014MB
-  - ProxyPool | 🇭🇰 香港 | HKG
+  - 🇭🇰HK_3|1.1MB/s
+  - 🇭🇰 香港 | HKG 6
+  - 🇭🇰 香港 | HKG 5
+  - 🇭🇰 香港 | HKG 4
+  - 🇭🇰HK_2|3.6MB/s
+  - '🇭🇰 香港 | HKG #3'
+  - 🇭🇰 香港 | HKG 2
   - 🇭🇰 香港 | HKG 3
+  - '🇭🇰 香港 | HKG #4'
   - '🇭🇰[www.v2nodes.com] trojan-HK-... #1'
-  - '🇭🇰 香港 | HKG #1'
-  - '🇭🇰 香港 | HKG #3_2'
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
