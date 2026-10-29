@@ -3,12 +3,19 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇰🇷KR-218.237.185.234-0243 | 2.294MB
-  server: p141.panda001.net
-  port: 4652
-  type: ss
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
+- name: 🇰🇷 韩国 | KOR
+  server: sg2-xr.zgrelay.com
+  port: 443
+  type: vless
+  uuid: E221699D-E705-4664-9162-A75A82AA3997
+  tls: true
+  servername: sg2-xr.zgrelay.com
+  network: ws
+  ws-opts:
+    path: /700gvl-kr3
+    headers:
+      Host: sg2-xr.zgrelay.com
+  udp: true
 - name: 🇰🇷[www.v2nodes.com] vless-KR-1...
   network: ws
   port: 25555
@@ -18,36 +25,20 @@ proxies:
   uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
   ws-opts:
     path: /
-- name: 🇰🇷KR-211.178.105.134-0246 | 2.828MB
-  server: 211.178.105.134
-  port: 6123
-  type: ss
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-- cipher: aes-256-gcm
-  name: 🇰🇷[www.v2nodes.com] ss-KR-1185...
-  password: TEzjfAYq2IjtuoS
-  port: 6697
-  server: 141.164.45.187
-  type: ss
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - 🇰🇷KR-218.237.185.234-0243 | 2.294MB
+  - 🇰🇷 韩国 | KOR
   - 🇰🇷[www.v2nodes.com] vless-KR-1...
-  - 🇰🇷KR-211.178.105.134-0246 | 2.828MB
-  - 🇰🇷[www.v2nodes.com] ss-KR-1185...
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇰🇷KR-218.237.185.234-0243 | 2.294MB
+  - 🇰🇷 韩国 | KOR
   - 🇰🇷[www.v2nodes.com] vless-KR-1...
-  - 🇰🇷KR-211.178.105.134-0246 | 2.828MB
-  - 🇰🇷[www.v2nodes.com] ss-KR-1185...
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
