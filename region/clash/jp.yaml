@@ -3,36 +3,64 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
+- client-fingerprint: chrome
+  name: 🇯🇵[www.v2nodes.com] vless-JP
+  network: ws
+  port: 443
+  server: 188.114.98.0
+  servername: tn1r.eu.cc
+  tls: true
+  type: vless
+  uuid: 22424ee2-6fe3-42ca-9749-6d4c5a8acc82
+  ws-opts:
+    headers:
+      Host: tn1r.eu.cc
+    path: /id-pusat
 - cipher: aes-256-gcm
   name: 🇯🇵[www.v2nodes.com] ss-JP-1544...
   password: 3eOFeNssde7PYYMv
   port: 80
   server: 84.247.155.196
   type: ss
-- name: 🇯🇵JP-149.22.87.241-0157 | 24.213MB
+- name: 🇯🇵JP-149.22.87.241-0193 | 27.671MB
   server: 149.22.87.241
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇯🇵JP-149.22.87.204-0155 | 23.879MB
+- encryption: none
+  name: '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
+  network: tcp
+  port: 47878
+  server: 152.69.195.67
+  servername: 152.69.195.67
+  tls: false
+  type: vless
+  uuid: eb8613e3-8393-4cff-a3ad-6501fd4adc63
+- name: 🇯🇵JP-149.22.87.204-0194 | 27.588MB
   server: 149.22.87.204
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇯🇵JP-149.22.87.240-0177 | 23.663MB
+- name: 🇯🇵JP-149.22.87.240-0195 | 27.602MB
   server: 149.22.87.240
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇯🇵JP-84.247.155.196-0191 | 2.341MB
+- name: 🇯🇵JP-84.247.155.196-0236 | 4.037MB
   server: 84.247.155.196
   port: 443
   type: ss
   cipher: aes-256-gcm
   password: 3eOFeNssde7PYYMv
+- name: 🇯🇵JP_1|1.2MB/s
+  port: 40583
+  server: 120.232.204.58
+  skip-cert-verify: true
+  tls: true
+  type: http
 - name: '🏳[www.v2nodes.com] vless- #19'
   port: 443
   server: 137.220.221.179
@@ -58,40 +86,38 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp=chrome
-- name: 🇯🇵JP_1|1.2MB/s
-  port: 40583
-  server: 120.232.204.58
-  skip-cert-verify: true
-  tls: true
-  type: http
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
+  - 🇯🇵[www.v2nodes.com] vless-JP
   - 🇯🇵[www.v2nodes.com] ss-JP-1544...
-  - 🇯🇵JP-149.22.87.241-0157 | 24.213MB
-  - 🇯🇵JP-149.22.87.204-0155 | 23.879MB
-  - 🇯🇵JP-149.22.87.240-0177 | 23.663MB
-  - 🇯🇵JP-84.247.155.196-0191 | 2.341MB
+  - 🇯🇵JP-149.22.87.241-0193 | 27.671MB
+  - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
+  - 🇯🇵JP-149.22.87.204-0194 | 27.588MB
+  - 🇯🇵JP-149.22.87.240-0195 | 27.602MB
+  - 🇯🇵JP-84.247.155.196-0236 | 4.037MB
+  - 🇯🇵JP_1|1.2MB/s
   - '🏳[www.v2nodes.com] vless- #19'
   - 🇯🇵[www.v2nodes.com] ss-JP-1599...
   - '🇯🇵[www.v2nodes.com] vless-JP-1... #2'
-  - 🇯🇵JP_1|1.2MB/s
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
+  - 🇯🇵[www.v2nodes.com] vless-JP
   - 🇯🇵[www.v2nodes.com] ss-JP-1544...
-  - 🇯🇵JP-149.22.87.241-0157 | 24.213MB
-  - 🇯🇵JP-149.22.87.204-0155 | 23.879MB
-  - 🇯🇵JP-149.22.87.240-0177 | 23.663MB
-  - 🇯🇵JP-84.247.155.196-0191 | 2.341MB
+  - 🇯🇵JP-149.22.87.241-0193 | 27.671MB
+  - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
+  - 🇯🇵JP-149.22.87.204-0194 | 27.588MB
+  - 🇯🇵JP-149.22.87.240-0195 | 27.602MB
+  - 🇯🇵JP-84.247.155.196-0236 | 4.037MB
+  - 🇯🇵JP_1|1.2MB/s
   - '🏳[www.v2nodes.com] vless- #19'
   - 🇯🇵[www.v2nodes.com] ss-JP-1599...
   - '🇯🇵[www.v2nodes.com] vless-JP-1... #2'
-  - 🇯🇵JP_1|1.2MB/s
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
