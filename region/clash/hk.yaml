@@ -21,6 +21,43 @@ proxies:
   skip-cert-verify: true
   type: vmess
   uuid: de4e0335-2a3b-4006-d746-c939fa85fdc3
+- name: 🇭🇰 香港 | HKG 8
+  server: 156.224.79.61
+  port: 9443
+  type: vless
+  uuid: 4a270d3e-27b4-497d-8c8c-28f1f54958d9
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
+    short-id: b390142456517acc
+  servername: www.amazon.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇭🇰 香港 | HKG 7
+  password: 0324fbc29561
+  port: 443
+  server: 56481.df6h451rh.xin
+  skip-cert-verify: true
+  sni: images.ctfassets.net
+  type: anytls
+  udp: true
+- name: 🇭🇰 香港 | HKG 10
+  server: euu1yAlfmcqvLJEx.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: d237ab38-1974-4b36-94a3-0665ce8587b9
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: euu1yAlfmcqvLJEx.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: euu1yAlfmcqvLJEx.v.3dns.vip
 - alpn:
   - ''
   alterId: 0
@@ -32,7 +69,7 @@ proxies:
     method: GET
     path:
     - /QQqun-737805443
-  name: '🇭🇰 香港 | HKG #3_2'
+  name: '🇭🇰 香港 | HKG #3'
   network: http
   port: 52080
   server: 47.242.81.94
@@ -41,23 +78,37 @@ proxies:
   type: vmess
   udp: true
   uuid: e47b9f77-60e4-4738-8d53-772b6002e146
-- alpn:
-  - ''
+- name: ProxyPool | 🇭🇰 香港 | HKG 7
+  server: lcv8v9l7oyamxxfz.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   alterId: 0
   cipher: auto
-  name: '🇭🇰 香港 | HKG #1'
-  network: ws
-  port: 443
-  server: 8.218.195.61
-  skip-cert-verify: true
   tls: true
-  type: vmess
-  udp: true
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  skip-cert-verify: true
+  network: ws
   ws-opts:
-    headers:
-      Host: EX1oGt73NzPQKAc2.v.3dns.vip
     path: /ws-vmess
+    headers:
+      Host: lcv8v9l7oyamxxfz.v.3dns.vip
+  udp: true
+- name: 🇭🇰 香港 | HKG 4
+  server: 8.217.254.88
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: 2b9hwy8ocx7q74nm.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 2b9hwy8ocx7q74nm.v.3dns.vip
+  udp: true
 - alterId: 0
   cipher: auto
   name: '🇭🇰 香港 | HKG #8'
@@ -75,7 +126,7 @@ proxies:
     path: /arki
 - alterId: 0
   cipher: auto
-  name: '🇭🇰 香港 | HKG #1_2'
+  name: '🇭🇰 香港 | HKG #1'
   network: ws
   port: 443
   server: vah4urdzl3jdx5r2.v.3dns.vip
@@ -88,12 +139,48 @@ proxies:
     headers:
       Host: vah4urdzl3jdx5r2.v.3dns.vip
     path: /ws-vmess
+- name: 🏳[www.v2nodes.com] trojan-
+  password: XuMweB2PWs
+  port: 45464
+  server: 2.27.109.179
+  sni: 2.27.109.179.sslip.io
+  type: trojan
+- name: 🇭🇰 香港 | HKG 9
+  server: 47.243.194.125
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: nycqg19zkwacpm1b.v.3dns.vip
+  udp: true
+- name: 🇭🇰 香港 | HKG 3
+  server: 47.244.120.197
+  port: 44867
+  type: vmess
+  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  alterId: 0
+  cipher: auto
+  tls: false
+  alpn:
+  - ''
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /arki
+  udp: true
 - alterId: 0
   cipher: auto
-  name: '🇭🇰 香港 | HKG #5'
+  name: '🇭🇰 香港 | HKG #7'
   network: ws
   port: 443
-  server: nycqg19zkwacpm1b.v.3dns.vip
+  server: qtkdr8jxe3wefxjm.v.3dns.vip
   skip-cert-verify: true
   tls: true
   type: vmess
@@ -101,20 +188,24 @@ proxies:
   uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   ws-opts:
     headers:
-      Host: NYcQg19zkwaCPM1B.v.3dns.vip
+      Host: qtkdr8jxe3wefxjm.v.3dns.vip
     path: /ws-vmess
-- name: 🇭🇰HK-156.245.232.239-0260 | 0.008MB
-  server: 156.245.232.239
-  port: 35043
+- name: 🇭🇰 香港 | HKG 5
+  server: 8.217.13.103
+  port: 443
   type: vmess
-  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: false
+  tls: true
+  skip-cert-verify: true
+  servername: qtkdr8jxe3wefxjm.v.3dns.vip
   network: ws
   ws-opts:
-    path: /
+    path: /ws-vmess
+    headers:
+      Host: qtkdr8jxe3wefxjm.v.3dns.vip
+  udp: true
 proxy-groups:
 - name: PROXY
   type: select
@@ -122,12 +213,19 @@ proxy-groups:
   - AUTO
   - 🇭🇰HK_3|1.5MB/s
   - 🇭🇰HK_2|1.1MB/s
-  - '🇭🇰 香港 | HKG #3_2'
-  - '🇭🇰 香港 | HKG #1'
+  - 🇭🇰 香港 | HKG 8
+  - 🇭🇰 香港 | HKG 7
+  - 🇭🇰 香港 | HKG 10
+  - '🇭🇰 香港 | HKG #3'
+  - ProxyPool | 🇭🇰 香港 | HKG 7
+  - 🇭🇰 香港 | HKG 4
   - '🇭🇰 香港 | HKG #8'
-  - '🇭🇰 香港 | HKG #1_2'
-  - '🇭🇰 香港 | HKG #5'
-  - 🇭🇰HK-156.245.232.239-0260 | 0.008MB
+  - '🇭🇰 香港 | HKG #1'
+  - 🏳[www.v2nodes.com] trojan-
+  - 🇭🇰 香港 | HKG 9
+  - 🇭🇰 香港 | HKG 3
+  - '🇭🇰 香港 | HKG #7'
+  - 🇭🇰 香港 | HKG 5
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -135,12 +233,19 @@ proxy-groups:
   proxies:
   - 🇭🇰HK_3|1.5MB/s
   - 🇭🇰HK_2|1.1MB/s
-  - '🇭🇰 香港 | HKG #3_2'
-  - '🇭🇰 香港 | HKG #1'
+  - 🇭🇰 香港 | HKG 8
+  - 🇭🇰 香港 | HKG 7
+  - 🇭🇰 香港 | HKG 10
+  - '🇭🇰 香港 | HKG #3'
+  - ProxyPool | 🇭🇰 香港 | HKG 7
+  - 🇭🇰 香港 | HKG 4
   - '🇭🇰 香港 | HKG #8'
-  - '🇭🇰 香港 | HKG #1_2'
-  - '🇭🇰 香港 | HKG #5'
-  - 🇭🇰HK-156.245.232.239-0260 | 0.008MB
+  - '🇭🇰 香港 | HKG #1'
+  - 🏳[www.v2nodes.com] trojan-
+  - 🇭🇰 香港 | HKG 9
+  - 🇭🇰 香港 | HKG 3
+  - '🇭🇰 香港 | HKG #7'
+  - 🇭🇰 香港 | HKG 5
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
