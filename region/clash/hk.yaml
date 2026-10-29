@@ -3,53 +3,52 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: 🇭🇰 香港 | HKG 4
-  server: 213.152.180.104
-  port: 2091
-  type: vless
-  uuid: ce17d29c-3587-4d8c-b09d-e03437df8bbd
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1N6AW5YuEwBoYcZK5KuugDzBHsa0NKZMT8QI-EmyL0k
-    short-id: 08a4b1f473932632
-  servername: www.apple.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-- name: 🇭🇰 香港 | HKG 2
-  server: 213.152.165.198
-  port: 2091
-  type: vless
-  uuid: 6a26029d-5639-473a-9234-3e80d0633d7d
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1N6AW5YuEwBoYcZK5KuugDzBHsa0NKZMT8QI-EmyL0k
-    short-id: 08a4b1f473932632
-  servername: www.apple.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-- alpn:
-  - h2
-  - http/1.1
-  client-fingerprint: chrome
-  encryption: none
-  name: '🇭🇰[www.v2nodes.com] vless-HK-1... #4'
-  network: tcp
-  port: 11907
-  server: 195.58.144.56
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
 - alterId: 0
   cipher: auto
-  name: '🇭🇰 香港 | HKG #3'
+  name: 🇭🇰HK_3|1.5MB/s
+  network: http
+  port: 8080
+  server: 206.237.11.17
+  skip-cert-verify: true
+  type: vmess
+  uuid: edcf3108-da2b-45c8-a852-a7e58dd55a43
+- alterId: 0
+  cipher: auto
+  name: 🇭🇰HK_2|1.1MB/s
+  network: http
+  port: 44441
+  server: 206.237.11.17
+  skip-cert-verify: true
+  type: vmess
+  uuid: de4e0335-2a3b-4006-d746-c939fa85fdc3
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - openai.com
+    method: GET
+    path:
+    - /QQqun-737805443
+  name: '🇭🇰 香港 | HKG #3_2'
+  network: http
+  port: 52080
+  server: 47.242.81.94
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: e47b9f77-60e4-4738-8d53-772b6002e146
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  name: '🇭🇰 香港 | HKG #1'
   network: ws
   port: 443
-  server: 47.243.153.153
+  server: 8.218.195.61
   skip-cert-verify: true
   tls: true
   type: vmess
@@ -57,7 +56,37 @@ proxies:
   uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   ws-opts:
     headers:
-      Host: i2psm3knof5qjjix.v.3dns.vip
+      Host: EX1oGt73NzPQKAc2.v.3dns.vip
+    path: /ws-vmess
+- alterId: 0
+  cipher: auto
+  name: '🇭🇰 香港 | HKG #8'
+  network: ws
+  port: 23026
+  server: 47.244.120.197
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  ws-opts:
+    headers:
+      Host: 47.244.120.197
+    path: /arki
+- alterId: 0
+  cipher: auto
+  name: '🇭🇰 香港 | HKG #1_2'
+  network: ws
+  port: 443
+  server: vah4urdzl3jdx5r2.v.3dns.vip
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  ws-opts:
+    headers:
+      Host: vah4urdzl3jdx5r2.v.3dns.vip
     path: /ws-vmess
 - alterId: 0
   cipher: auto
@@ -74,26 +103,44 @@ proxies:
     headers:
       Host: NYcQg19zkwaCPM1B.v.3dns.vip
     path: /ws-vmess
+- name: 🇭🇰HK-156.245.232.239-0260 | 0.008MB
+  server: 156.245.232.239
+  port: 35043
+  type: vmess
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - 🇭🇰 香港 | HKG 4
-  - 🇭🇰 香港 | HKG 2
-  - '🇭🇰[www.v2nodes.com] vless-HK-1... #4'
-  - '🇭🇰 香港 | HKG #3'
+  - 🇭🇰HK_3|1.5MB/s
+  - 🇭🇰HK_2|1.1MB/s
+  - '🇭🇰 香港 | HKG #3_2'
+  - '🇭🇰 香港 | HKG #1'
+  - '🇭🇰 香港 | HKG #8'
+  - '🇭🇰 香港 | HKG #1_2'
   - '🇭🇰 香港 | HKG #5'
+  - 🇭🇰HK-156.245.232.239-0260 | 0.008MB
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇭🇰 香港 | HKG 4
-  - 🇭🇰 香港 | HKG 2
-  - '🇭🇰[www.v2nodes.com] vless-HK-1... #4'
-  - '🇭🇰 香港 | HKG #3'
+  - 🇭🇰HK_3|1.5MB/s
+  - 🇭🇰HK_2|1.1MB/s
+  - '🇭🇰 香港 | HKG #3_2'
+  - '🇭🇰 香港 | HKG #1'
+  - '🇭🇰 香港 | HKG #8'
+  - '🇭🇰 香港 | HKG #1_2'
   - '🇭🇰 香港 | HKG #5'
+  - 🇭🇰HK-156.245.232.239-0260 | 0.008MB
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
