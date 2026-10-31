@@ -1,6 +1,12 @@
 name: Collect and test free nodes
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "requirements.txt"
+      - ".github/workflows/update.yml"
   schedule:
     - cron: "11 */8 * * *"
   workflow_dispatch:
