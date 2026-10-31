@@ -91,16 +91,22 @@ def request_json(url):
     req=urllib.request.Request(url,headers=UA)
     with urllib.request.urlopen(req,timeout=8) as r: return json.loads(r.read())
 def test_nodes(nodes):
-    cfg={"mixed-port":17890,"allow-lan":False,"mode":"rule","log-level":"error","external-controller":"127.0.0.1:9090","secret":"","proxies":nodes}
+    cfg={"mixed-port":17890,"allow-lan":False,"mode":"rule","log-level":"info","external-controller":"127.0.0.1:9090","secret":"","proxies":nodes,"proxy-groups":[{"name":"TEST","type":"select","proxies":[p["name"] for p in nodes]}],"rules":["MATCH,TEST"]}
     (ROOT/"mihomo-test.yaml").write_text(yaml.safe_dump(cfg,allow_unicode=True,sort_keys=False),encoding="utf-8")
     binary=ROOT/"mihomo"
     if not binary.exists(): raise RuntimeError("mihomo binary missing")
-    proc=subprocess.Popen([str(binary),"-d",str(ROOT/"mihomo-data"),"-f",str(ROOT/"mihomo-test.yaml")],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+    log_path=ROOT/"mihomo-test.log"
+    log_file=log_path.open("w",encoding="utf-8")
+    proc=subprocess.Popen([str(binary),"-d",str(ROOT/"mihomo-data"),"-f",str(ROOT/"mihomo-test.yaml")],stdout=log_file,stderr=subprocess.STDOUT)
     try:
         for _ in range(30):
             try: request_json("http://127.0.0.1:9090/version"); break
-            except Exception: time.sleep(1)
-        else: raise RuntimeError("mihomo external controller did not start")
+            except Exception:
+                if proc.poll() is not None:
+                    log_file.flush()
+                    raise RuntimeError("mihomo exited during startup: "+log_path.read_text(encoding="utf-8",errors="replace")[-5000:])
+                time.sleep(1)
+        else: raise RuntimeError("mihomo external controller did not start: "+log_path.read_text(encoding="utf-8",errors="replace")[-5000:])
         def one(p):
             url="http://127.0.0.1:9090/proxies/"+urllib.parse.quote(p["name"],safe="")+"/delay?url="+urllib.parse.quote("https://www.gstatic.com/generate_204",safe="")+"&timeout=6000"
             try:
@@ -118,6 +124,7 @@ def test_nodes(nodes):
         proc.terminate()
         try: proc.wait(timeout=8)
         except subprocess.TimeoutExpired: proc.kill()
+        log_file.close()
 def region_of(p):
     s=str(p.get("name","")).lower()
     for code,terms in REGIONS.items():
