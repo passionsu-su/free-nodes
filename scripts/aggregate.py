@@ -46,7 +46,7 @@ def parse_uri(line):
             host=u.hostname; port=u.port
             if scheme=="vless":
                 p={"name":name,"type":"vless","server":host,"port":port,"uuid":urllib.parse.unquote(u.username or ""),"encryption":"none"}
-                if q.get("security") in ("tls","reality"): p.update(tls=True,servername=q.get("sni"),"skip-cert-verify":True)
+                if q.get("security") in ("tls","reality"): p.update({"tls":True,"servername":q.get("sni"),"skip-cert-verify":True})
                 if q.get("security")=="reality": p["reality-opts"]={"public-key":q.get("pbk",""),"short-id":q.get("sid","")}
                 if q.get("flow"): p["flow"]=q["flow"]
             elif scheme=="trojan": p={"name":name,"type":"trojan","server":host,"port":port,"password":urllib.parse.unquote(u.username or ""),"sni":q.get("sni"),"tls":True,"skip-cert-verify":q.get("allowInsecure")=="1"}
