@@ -157,7 +157,12 @@ def uri(p):
     return None
 def build_yaml(nodes):
     names=[p["name"] for p in nodes]
-    groups=[{"name":"AUTO","type":"url-test","url":"https://www.gstatic.com/generate_204","interval":300,"tolerance":100,"proxies":names},{"name":"PROXY","type":"select","proxies":["AUTO"]+names}]
+    if names:
+        groups=[{"name":"AUTO","type":"url-test","url":"https://www.gstatic.com/generate_204","interval":300,"tolerance":100,"proxies":names},{"name":"PROXY","type":"select","proxies":["AUTO"]+names}]
+    else:
+        # Empty regional feeds remain valid importable configs instead of
+        # creating url-test/select groups with no usable members.
+        groups=[{"name":"AUTO","type":"select","proxies":["DIRECT"]},{"name":"PROXY","type":"select","proxies":["DIRECT"]}]
     return {"mixed-port":7890,"allow-lan":False,"mode":"rule","log-level":"info","ipv6":False,"proxies":nodes,"proxy-groups":groups,"rules":["GEOIP,CN,DIRECT","MATCH,PROXY"]}
 def write_yaml(path,obj):
     path.parent.mkdir(parents=True,exist_ok=True); path.write_text(yaml.safe_dump(obj,allow_unicode=True,sort_keys=False),encoding="utf-8")
@@ -177,6 +182,18 @@ def main():
     if not merged: raise RuntimeError("all upstream sources failed or returned no valid nodes; keeping previous feeds")
     # Cap concurrent test load while retaining source diversity.
     merged=merged[:1600]
+    # Mihomo requires unique proxy names even when endpoints are different.
+    # Some upstream lists reuse a display name for several servers.
+    used_names=set()
+    for p in merged:
+        base=str(p.get("name") or p["server"])
+        candidate=base
+        suffix=2
+        while candidate in used_names:
+            candidate=f"{base} ({suffix})"
+            suffix+=1
+        p["name"]=candidate
+        used_names.add(candidate)
     passed=test_nodes(merged)
     nodes=[]
     for p,delay in passed:
