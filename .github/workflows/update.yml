@@ -60,6 +60,8 @@ jobs:
           fi
           chmod +x "$binary"
           cd "$(dirname "$binary")"
+          # This workflow converts a generated local feed; allow that input explicitly.
+          printf 'api_mode=false\n' > pref.ini
           echo "=== binary dependencies ==="
           ldd "$binary" || true
           : > "$log"
