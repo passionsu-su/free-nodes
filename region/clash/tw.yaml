@@ -4,15 +4,22 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 810ms'
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  skip-cert-verify: false
-  sni: twmoon1-cdn-route.couldflare-cdn.com
-  tls: true
-  type: http
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
+- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 537ms'
+  server: ench-snet-app.w-ctrip.cn
+  port: 22003
+  type: trojan
+  password: b17e9b52db9623bd6c16eea3d7adb5b3
+  sni: cm.g.doubleclick.net
+  skip-cert-verify: true
+  udp: true
+- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 675ms'
+  server: ench-snet-app.w-ctrip.cn
+  port: 45502
+  type: trojan
+  password: b17e9b52db9623bd6c16eea3d7adb5b3
+  sni: cm.g.doubleclick.net
+  skip-cert-verify: true
+  udp: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -20,12 +27,14 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 810ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 537ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 675ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 810ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 537ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 675ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
