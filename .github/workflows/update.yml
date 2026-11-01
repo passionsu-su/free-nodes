@@ -40,59 +40,6 @@ jobs:
           ./mihomo -v
       - name: Collect, deduplicate and real-test nodes
         run: python scripts/aggregate.py
-      - name: Download and start subconverter
-        shell: bash
-        run: |
-          set -Eeuo pipefail
-          workdir=/tmp/subconverter
-          log=/tmp/subconverter.log
-          mkdir -p "$workdir"
-          curl --retry 3 --retry-all-errors --retry-delay 2 -fL https://github.com/tindy2013/subconverter/releases/download/v0.9.0/subconverter_linux64.tar.gz -o /tmp/subconverter.tar.gz
-          echo "=== archive contents ==="
-          tar -tzf /tmp/subconverter.tar.gz | sed -n '1,80p'
-          tar -xzf /tmp/subconverter.tar.gz -C "$workdir"
-          echo "=== extracted files ==="
-          find "$workdir" -maxdepth 3 -type f -printf '%M %p\n' | sort | sed -n '1,100p'
-          binary="$(find "$workdir" -maxdepth 3 -type f -name subconverter -print -quit)"
-          if [[ -z "$binary" ]]; then
-            echo "ERROR: subconverter executable not found in release archive" >&2
-            exit 1
-          fi
-          chmod +x "$binary"
-          cd "$(dirname "$binary")"
-          # This workflow converts a generated local feed; allow that input explicitly.
-          printf 'api_mode=false\n' > pref.ini
-          echo "=== binary dependencies ==="
-          ldd "$binary" || true
-          : > "$log"
-          "$binary" >"$log" 2>&1 &
-          pid=$!
-          echo "Started subconverter PID=$pid"
-          ready=0
-          for i in $(seq 1 60); do
-            if curl --connect-timeout 2 --max-time 4 -fsS http://127.0.0.1:25500/version -o /tmp/subconverter-version.txt; then
-              ready=1
-              break
-            fi
-            if ! kill -0 "$pid" 2>/dev/null; then
-              echo "ERROR: subconverter process exited during startup (iteration $i)" >&2
-              break
-            fi
-            sleep 1
-          done
-          if [[ "$ready" -ne 1 ]]; then
-            echo "ERROR: subconverter health check failed; process state:" >&2
-            ps -fp "$pid" || true
-            echo "=== subconverter startup log ===" >&2
-            cat "$log" >&2 || true
-            echo "=== listening sockets ===" >&2
-            (ss -lntp || true) >&2
-            exit 1
-          fi
-          echo "=== subconverter version endpoint ==="
-          cat /tmp/subconverter-version.txt
-          echo
-          echo "Subconverter is healthy on 127.0.0.1:25500"
       - name: Convert to client subscription formats
         run: python scripts/convert.py
       - name: Commit only changed feeds
@@ -101,7 +48,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add clash/all.yaml v2ray/all.txt region/clash region/*.txt shadowrocket/sub.txt surge/surge.conf quantumultx/qx.txt loon/loon.list singbox/singbox.json stash/stash.yaml clashmi/clashmi.yaml clash/cfw.yaml clash/cfw-nodes.yaml report.json README.md
+          git add clash/all.yaml v2ray/all.txt region/clash region/*.txt shadowrocket/sub.txt surge/surge.conf surge/proxies.list quantumultx/qx.txt loon/loon.list singbox/singbox.json stash/stash.yaml clashmi/clashmi.yaml clash/cfw.yaml clash/cfw-nodes.yaml report.json README.md
           if git diff --cached --quiet; then
             echo "No changes; keeping current publication."
             exit 0
