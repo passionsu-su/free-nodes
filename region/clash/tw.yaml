@@ -4,7 +4,7 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 537ms'
+- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 564ms'
   server: ench-snet-app.w-ctrip.cn
   port: 22003
   type: trojan
@@ -12,7 +12,23 @@ proxies:
   sni: cm.g.doubleclick.net
   skip-cert-verify: true
   udp: true
-- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 675ms'
+- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 3 | 565ms'
+  server: ench-snet-app.w-ctrip.cn
+  port: 54815
+  type: trojan
+  password: b17e9b52db9623bd6c16eea3d7adb5b3
+  sni: cm.g.doubleclick.net
+  skip-cert-verify: true
+  udp: true
+- name: '[NoMoreWalls] 🇹🇼 🇨🇳 台湾 | TWN #1 | 690ms'
+  password: b17e9b52db9623bd6c16eea3d7adb5b3
+  port: 45503
+  server: ench-snet-app.w-ctrip.cn
+  skip-cert-verify: true
+  sni: cm.g.doubleclick.net
+  type: trojan
+  udp: true
+- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 691ms'
   server: ench-snet-app.w-ctrip.cn
   port: 45502
   type: trojan
@@ -27,14 +43,18 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 537ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 675ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 564ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 3 | 565ms'
+  - '[NoMoreWalls] 🇹🇼 🇨🇳 台湾 | TWN #1 | 690ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 691ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 537ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 675ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 564ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 3 | 565ms'
+  - '[NoMoreWalls] 🇹🇼 🇨🇳 台湾 | TWN #1 | 690ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 691ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
