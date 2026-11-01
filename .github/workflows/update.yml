@@ -43,18 +43,54 @@ jobs:
       - name: Download and start subconverter
         shell: bash
         run: |
-          set -euo pipefail
-          mkdir -p /tmp/subconverter
-          curl -fL https://github.com/tindy2013/subconverter/releases/download/v0.9.0/subconverter_linux64.tar.gz -o /tmp/subconverter.tar.gz
-          tar -xzf /tmp/subconverter.tar.gz -C /tmp/subconverter
-          cd /tmp/subconverter
-          chmod +x subconverter
-          nohup ./subconverter >/tmp/subconverter.log 2>&1 &
-          for i in $(seq 1 30); do
-            if curl -fsS http://127.0.0.1:25500/version >/dev/null; then break; fi
+          set -Eeuo pipefail
+          workdir=/tmp/subconverter
+          log=/tmp/subconverter.log
+          mkdir -p "$workdir"
+          curl --retry 3 --retry-all-errors --retry-delay 2 -fL https://github.com/tindy2013/subconverter/releases/download/v0.9.0/subconverter_linux64.tar.gz -o /tmp/subconverter.tar.gz
+          echo "=== archive contents ==="
+          tar -tzf /tmp/subconverter.tar.gz | head -80
+          tar -xzf /tmp/subconverter.tar.gz -C "$workdir"
+          echo "=== extracted files ==="
+          find "$workdir" -maxdepth 3 -type f -printf '%M %p\n' | sort | head -100
+          binary="$(find "$workdir" -maxdepth 3 -type f -name subconverter -print -quit)"
+          if [[ -z "$binary" ]]; then
+            echo "ERROR: subconverter executable not found in release archive" >&2
+            exit 1
+          fi
+          chmod +x "$binary"
+          cd "$(dirname "$binary")"
+          echo "=== binary dependencies ==="
+          ldd "$binary" || true
+          : > "$log"
+          "$binary" >"$log" 2>&1 &
+          pid=$!
+          echo "Started subconverter PID=$pid"
+          ready=0
+          for i in $(seq 1 60); do
+            if curl --connect-timeout 2 --max-time 4 -fsS http://127.0.0.1:25500/version -o /tmp/subconverter-version.txt; then
+              ready=1
+              break
+            fi
+            if ! kill -0 "$pid" 2>/dev/null; then
+              echo "ERROR: subconverter process exited during startup (iteration $i)" >&2
+              break
+            fi
             sleep 1
           done
-          curl -fsS http://127.0.0.1:25500/version
+          if [[ "$ready" -ne 1 ]]; then
+            echo "ERROR: subconverter health check failed; process state:" >&2
+            ps -fp "$pid" || true
+            echo "=== subconverter startup log ===" >&2
+            cat "$log" >&2 || true
+            echo "=== listening sockets ===" >&2
+            (ss -lntp || true) >&2
+            exit 1
+          fi
+          echo "=== subconverter version endpoint ==="
+          cat /tmp/subconverter-version.txt
+          echo
+          echo "Subconverter is healthy on 127.0.0.1:25500"
       - name: Convert to client subscription formats
         run: python scripts/convert.py
       - name: Commit only changed feeds
