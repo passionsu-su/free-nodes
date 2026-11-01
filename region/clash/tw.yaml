@@ -4,7 +4,7 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 756ms'
+- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 810ms'
   password: exaxgqkKkd0TAMrCxeonWg==
   port: 1443
   server: twmoon1-cdn-route.couldflare-cdn.com
@@ -13,19 +13,6 @@ proxies:
   tls: true
   type: http
   username: mrwdfNTD8M79LCukCieldrqZWqs=
-- name: '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 816ms'
-  type: vless
-  server: n04.jinggai.online
-  port: 8443
-  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
-  encryption: none
-  tls: true
-  servername: n04.jinggai.online
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /nvl-n04-ws/e0577fe8fd7c8823
-    headers: {}
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -33,14 +20,12 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 756ms'
-  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 816ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 810ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 756ms'
-  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 816ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 810ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
