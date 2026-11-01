@@ -2,15 +2,45 @@ mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
-proxies: []
+ipv6: false
+proxies:
+- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 756ms'
+  password: exaxgqkKkd0TAMrCxeonWg==
+  port: 1443
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  skip-cert-verify: false
+  sni: twmoon1-cdn-route.couldflare-cdn.com
+  tls: true
+  type: http
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+- name: '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 816ms'
+  type: vless
+  server: n04.jinggai.online
+  port: 8443
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
+  encryption: none
+  tls: true
+  servername: n04.jinggai.online
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /nvl-n04-ws/e0577fe8fd7c8823
+    headers: {}
 proxy-groups:
+- name: AUTO
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  proxies:
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 756ms'
+  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 816ms'
 - name: PROXY
   type: select
   proxies:
-  - DIRECT
+  - AUTO
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 756ms'
+  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 816ms'
 rules:
-- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- GEOIP,CN,DIRECT
 - MATCH,PROXY

@@ -2,9 +2,43 @@ mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
+ipv6: false
 proxies:
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - openai.com
+    method: GET
+    path:
+    - /QQqun-737805443
+  name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 454ms'
+  network: http
+  port: 52080
+  server: 47.242.81.94
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: e47b9f77-60e4-4738-8d53-772b6002e146
+- name: '[ermaozi] 🇭🇰 香港 | HKG 2 | 594ms'
+  server: 47.244.120.197
+  port: 36703
+  type: vmess
+  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /arki
+  udp: true
 - client-fingerprint: chrome
-  name: 🇭🇰[www.v2nodes.com] vless-HK-1...
+  name: '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... | 607ms'
   network: ws
   port: 1443
   server: 38.76.180.144
@@ -16,9 +50,82 @@ proxies:
     headers:
       Host: 38.76.180.144
     path: /vless-ws
+- name: '[ermaozi] ProxyPool | 🇭🇰 香港 | HKG 3 | 681ms'
+  server: 0e05f970-tki800-traezq-1t5n1.hk2.hyhuawei.com
+  port: 443
+  type: vless
+  uuid: ea800f9e-ca6c-11ef-8e74-f23c913c8d2b
+  tls: true
+  reality-opts:
+    public-key: c9DdggKaJGSH7FN3JgGbi9ZvsUqOGGpIr7BhzTWeTCo
+  servername: download.windowsupdate.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: '[ermaozi] 🇭🇰 香港 | HKG 6 | 738ms'
+  server: 8.217.254.88
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: 2b9hwy8ocx7q74nm.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 2b9hwy8ocx7q74nm.v.3dns.vip
+  udp: true
 - alterId: 0
   cipher: auto
-  name: 🇭🇰HK_1|1.3MB/s
+  name: '[ermaozi] 🇭🇰 香港 | HKG #2 | 739ms'
+  network: ws
+  port: 443
+  server: 8.217.186.60
+  servername: euu1yalfmcqvljex.v.3dns.vip
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: d237ab38-1974-4b36-94a3-0665ce8587b9
+  ws-opts:
+    headers:
+      Host: euu1yalfmcqvljex.v.3dns.vip
+    path: /ws-vmess
+- type: vless
+  name: '[free18] 🇭🇰香港 02 | 754ms'
+  server: 140.225.208.140
+  port: 2083
+  uuid: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
+  udp: true
+  tls: true
+  servername: speedtestmark.com
+  sni: speedtestmark.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /vless-ws
+    headers:
+      Host: speedtestmark.com
+- name: '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK (2) | 761ms'
+  type: vmess
+  server: rhhierkwrf6fhs2h.v.3dns.vip
+  port: 443
+  uuid: 78b3f149-f037-465d-b2fb-11adb6f73ff8
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: rhhierkwrf6fhs2h.v.3dns.vip
+  ws-opts:
+    path: /ws-vmess
+    headers: {}
+- alterId: 0
+  cipher: auto
+  name: '[ermaozi] 🇭🇰HK_1|1.3MB/s | 780ms'
   network: ws
   port: 53617
   server: az-1.linkaa.xyz
@@ -33,143 +140,280 @@ proxies:
       Host: az-1.linkaa.xyz
     path: /game/resources
   xudp: true
+- name: '[freeSub] D🔴🇭🇰hos[🎬📺🎭🎪]_dokng.com_de4eaa15 | 864ms'
+  port: 443
+  server: fan.240104.xyz
+  skip-cert-verify: true
+  sni: fan.240104.xyz
+  tls: true
+  type: http
+- client-fingerprint: chrome
+  name: '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #1 | 919ms'
+  network: ws
+  port: 443
+  server: px2.5ibtc.cn
+  servername: px2.5ibtc.cn
+  tls: true
+  type: vless
+  uuid: 326227e2-f2d1-4f43-8715-9da854f5f4c0
+  ws-opts:
+    headers:
+      Host: px2.5ibtc.cn
+    path: /326227e2-f2d1-4f43-8715-9da854f5f4c0
 - alpn:
   - h2
   - http/1.1
   client-fingerprint: chrome
-  name: '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
+  name: '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #2 | 944ms'
   port: 11907
   server: 195.58.144.56
   skip-cert-verify: false
   tls: true
   type: vless
   uuid: 07cb07b9-0c4d-46c1-a15a-b147511b6b07
-- alterId: 0
-  cipher: auto
-  name: '🇭🇰 香港 | HKG #4'
-  network: ws
-  port: 443
-  server: euu1yalfmcqvljex.v.3dns.vip
-  servername: euu1yalfmcqvljex.v.3dns.vip
-  skip-cert-verify: true
-  tls: true
+- name: '[Eternity] 🇭🇰HK-156.245.232.239-0212 | 0.0MB | 1232ms'
+  server: 156.245.232.239
+  port: 35043
   type: vmess
-  udp: true
-  uuid: d237ab38-1974-4b36-94a3-0665ce8587b9
-  ws-opts:
-    headers:
-      Host: euu1yalfmcqvljex.v.3dns.vip
-    path: /ws-vmess
-- alterId: 0
-  cipher: auto
-  name: '🇭🇰 香港 | HKG #2'
-  network: ws
-  port: 443
-  server: i2psm3knof5qjjix.v.3dns.vip
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  udp: true
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  ws-opts:
-    headers:
-      Host: i2psm3knof5qjjix.v.3dns.vip
-    path: /ws-vmess
-- alpn:
-  - ''
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
   alterId: 0
   cipher: auto
-  http-opts:
-    headers:
-      Host:
-      - openai.com
-    method: GET
-    path:
-    - /QQqun-737805443
-  name: '🇭🇰 香港 | HKG #1'
-  network: http
-  port: 52080
-  server: 47.242.81.94
-  skip-cert-verify: true
   tls: false
-  type: vmess
-  udp: true
-  uuid: e47b9f77-60e4-4738-8d53-772b6002e146
-- alterId: 0
-  cipher: auto
-  name: '🇭🇰 香港 | HKG #3'
+  skip-cert-verify: false
   network: ws
-  port: 23026
-  server: 47.244.120.197
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
   ws-opts:
-    headers:
-      Host: 47.244.120.197
-    path: /arki
-- name: 🇭🇰 香港 | HKG
-  network: ws
-  password: humanity
+    path: /
+- name: '[ermaozi] 🇭🇰 香港 | HKG 5 | 1244ms'
+  server: a736eb68-tmb1c0-tpkh0c-1r7od.hk2.hyhuawei.com
   port: 443
-  server: 95.182.95.144
-  skip-cert-verify: true
-  sni: www.cordweave.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: www.cordweave.com
-    path: /assignment
-- alterId: 0
-  cipher: auto
-  name: '🇭🇰 香港 | HKG #2_2'
-  network: ws
-  port: 443
-  server: 8.217.186.60
-  servername: euu1yalfmcqvljex.v.3dns.vip
-  skip-cert-verify: true
+  type: vless
+  uuid: 6d56436c-150d-11f0-b0c8-f23c913c8d2b
   tls: true
-  type: vmess
+  reality-opts:
+    public-key: c9DdggKaJGSH7FN3JgGbi9ZvsUqOGGpIr7BhzTWeTCo
+  servername: download.windowsupdate.com
+  client-fingerprint: firefox
+  network: tcp
+- name: '[zhuhaiuk] HK - zhuhai.uk | 1263ms'
+  type: socks5
+  server: 47.242.19.215
+  port: 8899
+  username: admin
+  password: admin
+- name: '[ermaozi] 🇭🇰HK_2|4.1MB/s | 1458ms'
+  port: 1080
+  server: 34.150.120.78
+  type: socks5
+- type: trojan
+  name: '[free18] 香港 (4) | 1522ms'
+  server: 45.196.235.64
+  port: 443
+  password: humanity
   udp: true
-  uuid: d237ab38-1974-4b36-94a3-0665ce8587b9
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
   ws-opts:
-    headers:
-      Host: euu1yalfmcqvljex.v.3dns.vip
+    path: /assignment
+- type: trojan
+  name: '[free18] 香港 | 1524ms'
+  server: 103.69.128.221
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- type: trojan
+  name: '[free18] 🇭🇰香港 08 | 1673ms'
+  server: 95.182.95.144
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- type: trojan
+  name: '[free18] 香港 (3) | 1717ms'
+  server: 103.219.195.65
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- type: trojan
+  name: '[free18] 🇭🇰香港 06 | 1728ms'
+  server: 207.57.123.112
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- type: trojan
+  name: '[free18] 🇭🇰香港 05 | 1767ms'
+  server: 207.57.132.189
+  port: 8443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: '[freeSub] C🟠🇭🇰hos[🎬📺🎭📦]_dokng.com_61f9ad56 | 1880ms'
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: 81vXBnunsk7q3T5oHv7iuCiUibGLj9GS4jjJL00zRUE
+    short-id: 83f8ac7c565fac80
+  server: hk2.huahua.wiki
+  servername: www.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 07fff28d-1ae9-493e-926e-8bf941c53782
+- name: '[ermaozi] 🇭🇰 香港 | HKG | 2006ms'
+  server: 47.76.57.83
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
     path: /ws-vmess
+    headers:
+      Host: vah4urdzl3jdx5r2.v.3dns.vip
+  udp: true
+- type: trojan
+  name: '[free18] 香港 (2) | 2114ms'
+  server: 47.57.181.17
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- type: trojan
+  name: '[free18] 🇭🇰香港 09 | 2226ms'
+  server: 68.64.180.218
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- name: '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 4401ms'
+  type: vmess
+  server: az-1.linkaa.xyz
+  port: 53617
+  uuid: 6E571484-4166-4699-8F58-B34A1823691F
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /game/resources
+    headers:
+      Host: az-1.linkaa.xyz
 proxy-groups:
+- name: AUTO
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  proxies:
+  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 454ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 594ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... | 607ms'
+  - '[ermaozi] ProxyPool | 🇭🇰 香港 | HKG 3 | 681ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 6 | 738ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 739ms'
+  - '[free18] 🇭🇰香港 02 | 754ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK (2) | 761ms'
+  - '[ermaozi] 🇭🇰HK_1|1.3MB/s | 780ms'
+  - '[freeSub] D🔴🇭🇰hos[🎬📺🎭🎪]_dokng.com_de4eaa15 | 864ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #1 | 919ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #2 | 944ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0212 | 0.0MB | 1232ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 5 | 1244ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1263ms'
+  - '[ermaozi] 🇭🇰HK_2|4.1MB/s | 1458ms'
+  - '[free18] 香港 (4) | 1522ms'
+  - '[free18] 香港 | 1524ms'
+  - '[free18] 🇭🇰香港 08 | 1673ms'
+  - '[free18] 香港 (3) | 1717ms'
+  - '[free18] 🇭🇰香港 06 | 1728ms'
+  - '[free18] 🇭🇰香港 05 | 1767ms'
+  - '[freeSub] C🟠🇭🇰hos[🎬📺🎭📦]_dokng.com_61f9ad56 | 1880ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG | 2006ms'
+  - '[free18] 香港 (2) | 2114ms'
+  - '[free18] 🇭🇰香港 09 | 2226ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 4401ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - 🇭🇰[www.v2nodes.com] vless-HK-1...
-  - 🇭🇰HK_1|1.3MB/s
-  - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
-  - '🇭🇰 香港 | HKG #4'
-  - '🇭🇰 香港 | HKG #2'
-  - '🇭🇰 香港 | HKG #1'
-  - '🇭🇰 香港 | HKG #3'
-  - 🇭🇰 香港 | HKG
-  - '🇭🇰 香港 | HKG #2_2'
-- name: AUTO
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  proxies:
-  - 🇭🇰[www.v2nodes.com] vless-HK-1...
-  - 🇭🇰HK_1|1.3MB/s
-  - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
-  - '🇭🇰 香港 | HKG #4'
-  - '🇭🇰 香港 | HKG #2'
-  - '🇭🇰 香港 | HKG #1'
-  - '🇭🇰 香港 | HKG #3'
-  - 🇭🇰 香港 | HKG
-  - '🇭🇰 香港 | HKG #2_2'
+  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 454ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 594ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... | 607ms'
+  - '[ermaozi] ProxyPool | 🇭🇰 香港 | HKG 3 | 681ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 6 | 738ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 739ms'
+  - '[free18] 🇭🇰香港 02 | 754ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK (2) | 761ms'
+  - '[ermaozi] 🇭🇰HK_1|1.3MB/s | 780ms'
+  - '[freeSub] D🔴🇭🇰hos[🎬📺🎭🎪]_dokng.com_de4eaa15 | 864ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #1 | 919ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #2 | 944ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0212 | 0.0MB | 1232ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 5 | 1244ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1263ms'
+  - '[ermaozi] 🇭🇰HK_2|4.1MB/s | 1458ms'
+  - '[free18] 香港 (4) | 1522ms'
+  - '[free18] 香港 | 1524ms'
+  - '[free18] 🇭🇰香港 08 | 1673ms'
+  - '[free18] 香港 (3) | 1717ms'
+  - '[free18] 🇭🇰香港 06 | 1728ms'
+  - '[free18] 🇭🇰香港 05 | 1767ms'
+  - '[freeSub] C🟠🇭🇰hos[🎬📺🎭📦]_dokng.com_61f9ad56 | 1880ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG | 2006ms'
+  - '[free18] 香港 (2) | 2114ms'
+  - '[free18] 🇭🇰香港 09 | 2226ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 4401ms'
 rules:
-- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- GEOIP,CN,DIRECT
 - MATCH,PROXY

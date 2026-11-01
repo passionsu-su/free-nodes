@@ -2,38 +2,12 @@ mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
+ipv6: false
 proxies:
-- encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG #3'
+- name: '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-8... #1 | 60ms'
   network: ws
   port: 443
-  server: 104.18.45.38
-  servername: ccc.010304.xyz
-  tls: true
-  type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560
-- client-fingerprint: chrome
-  encryption: none
-  name: 🇸🇬[www.v2nodes.com] vless-SG
-  network: ws
-  port: 443
-  server: 172.64.152.241
-  servername: ccc.010304.xyz
-  tls: true
-  type: vless
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-    path: /fp=chrome
-- name: 🇸🇬[www.v2nodes.com] vless-SG-8...
-  network: ws
-  port: 443
-  server: 43.174.193.1
+  server: 104.26.4.2
   servername: ccc.010304.xyz
   skip-cert-verify: false
   tls: true
@@ -42,9 +16,114 @@ proxies:
   ws-opts:
     headers:
       Host: ccc.010304.xyz
-    path: /fp=chrome
+    path: /fp=chromefp=chrome
+- client-fingerprint: unsafe
+  encryption: none
+  name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG | 71ms'
+  network: ws
+  port: 443
+  server: 172.66.1.36
+  servername: ccc.010304.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
 - encryption: none
-  name: 🇸🇬[www.v2nodes.com] vless-SG-9...
+  name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-9... #1 | 71ms'
+  network: ws
+  port: 2082
+  server: 104.18.0.181
+  servername: 'hhlfy.twiladaphne.ndjp.net '
+  tls: false
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+    path: /fp
+- client-fingerprint: chrome
+  name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-8... | 71ms'
+  network: ws
+  port: 443
+  server: 104.26.4.2
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+- name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG #1 | 75ms'
+  network: ws
+  port: 443
+  server: 88.216.69.253
+  servername: ccc.010304.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /fp=chromefp=unsafe
+- client-fingerprint: chrome
+  name: '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-9... #2 | 78ms'
+  network: ws
+  port: 443
+  server: 104.26.4.2
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /fp=chrome
+- name: '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-9... #1 | 80ms'
+  network: ws
+  port: 8080
+  server: 188.114.97.6
+  tls: false
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+    path: /sg-melbi
+- client-fingerprint: chrome
+  encryption: none
+  name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-9... #2 | 81ms'
+  network: ws
+  port: 443
+  server: 172.66.0.162
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+- client-fingerprint: chrome
+  name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-1... #10 | 83ms'
+  network: ws
+  port: 443
+  server: 104.20.17.210
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+- encryption: none
+  name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-9... | 83ms'
   network: ws
   port: 8080
   server: 172.67.75.172
@@ -55,33 +134,20 @@ proxies:
     headers:
       Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
     path: /
-- name: '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
-  network: ws
-  port: 8080
-  server: 104.18.0.181
-  tls: false
+- name: '[ermaozi] 🇸🇬 新加坡 | SGP | 97ms'
+  server: 104.18.35.86
+  port: 2082
   type: vless
   uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  tls: false
+  servername: hhlfy.twiladaphne.ndjp.net
+  network: ws
   ws-opts:
+    path: /fp
     headers:
       Host: hhlfy.twiladaphne.ndjp.net
-    path: /
-- alpn:
-  - http/1.1
-  name: '🇸🇬[www.v2nodes.com] vless-SG #1'
-  network: ws
-  port: 443
-  server: 188.114.96.9
-  servername: IdB8ONMVbntuYT5t7t6cEJfw8vLrb.paGEs.DeV
-  skip-cert-verify: false
-  tls: true
-  type: vless
-  uuid: 2e305ebe-f6e6-4689-b32f-cd04ab5ff541
-  ws-opts:
-    headers:
-      Host: idb8onmvbntuyt5t7t6cejfw8vlrb.pages.dev
-    path: /vl/9yvcoLdzdOXLUYfH7r5gwJhu1CHrjfp=chrome
-- name: '🇸🇬[www.v2nodes.com] vless-SG #2'
+  udp: true
+- name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG #2 | 176ms'
   network: ws
   port: 8880
   server: 135.84.72.30
@@ -93,56 +159,198 @@ proxies:
       Host: vms.lifetime06.workers.dev
     path: /
 - client-fingerprint: chrome
-  encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
+  name: '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-1... #10 | 401ms'
   network: ws
-  port: 8443
-  server: 190.93.245.187
-  servername: WQa3MIOjjR8fYOzhiui--sU3-uCG1Gdx.pAgEs.dEv
+  port: 443
+  server: cf.877774.xyz
+  servername: ccc.010304.xyz
   tls: true
   type: vless
-  uuid: b2853d19-fada-44dc-8d44-967d1af122e0
+  uuid: d342d11e-d224-4463-b982-532309285094
   ws-opts:
     headers:
-      Host: wqa3miojjr8fyozhiui--su3-ucg1gdx.pages.dev
-    path: /eyJqdW5rIjoiZTA0TGg3eENkIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19
-- name: 🇸🇬SG_1|1.8MB/s
-  password: '1234'
-  port: 2080
-  server: 47.129.174.248
+      Host: ccc.010304.xyz
+    path: /
+- name: '[ermaozi] 🇸🇬SG_2|1.1MB/s | 649ms'
+  password: None
+  port: 9090
+  server: 104.248.151.93
   skip-cert-verify: true
   type: http
-  username: '1234'
-- client-fingerprint: chrome
-  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
+- name: '[Eternity] 🇸🇬SG-68.183.227.4-0160 | 6.634MB | 649ms'
+  server: 68.183.227.4
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+- name: '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_0f714f96 | 650ms'
+  password: null
+  port: 9090
+  server: 167.99.74.174
+  type: http
+  username: null
+- client-fingerprint: firefox
+  name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-1... #1 | 651ms'
   network: tcp
   port: 443
-  server: sg003.zestapp778.com
+  server: 45.77.40.28
+  servername: sg003.zestapp778.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+- name: '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_47836c39 | 651ms'
+  port: 9090
+  server: 128.199.121.61
+  type: http
+- name: '[roosterkid] 🇸🇬[openproxylist.com] vless-SG (2) | 652ms'
+  type: vless
+  server: 45.77.40.28
+  port: 443
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  encryption: none
+  tls: true
+  servername: sg003.zestapp778.com
+  skip-cert-verify: true
+- client-fingerprint: firefox
+  name: '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-1... #1 | 653ms'
+  network: tcp
+  port: 443
+  server: 45.77.40.28
   servername: sg003.zestapp778.com
   tls: true
   type: vless
   uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-- encryption: none
-  name: '🏳[www.v2nodes.com] vless- #14'
+- name: '[AutoMerge] 🇸🇬[www.v2nodes.com] trojan-SG-... | 655ms'
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 149.28.130.108
+  sni: searchcreativejobsandshowcaseyourartistictalents.com
+  type: trojan
+- name: '[roosterkid] 🇸🇬[openproxylist.com] trojan-SG | 655ms'
+  type: trojan
+  server: 149.28.130.108
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: searchcreativejobsandshowcaseyourartistictalents.com
+  tls: true
+  skip-cert-verify: false
+- name: '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_7b001401 | 659ms'
+  password: '1234'
+  port: 2080
+  server: 54.255.133.243
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+- name: '[freeSub] C🟠🇸🇬hos[🎬📺🎪]_dokng.com_17fbfe15 | 659ms'
+  password: '1234'
+  port: 2080
+  server: 54.151.160.36
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+- name: '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_e68b3244 | 660ms'
+  password: '1234'
+  port: 2080
+  server: 52.221.234.145
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+- name: '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_049361e7 | 662ms'
+  port: 9090
+  server: 167.172.76.176
+  type: http
+- name: '[freeSub] D🔴🇸🇬hos[🤖✨🎞️✈️]_dokng.com_ec84b940 | 666ms'
+  password: null
+  port: 9090
+  server: 104.248.151.93
+  type: http
+  username: null
+- name: '[freeSub] A🟢🇸🇬res[🎬🤖📺🎭]_dokng.com_8bd7e92d | 813ms'
+  port: 9443
+  server: 149.88.99.209
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[ermaozi] 🇸🇬SG_1|1.3MB/s | 820ms'
+  password: None
+  port: 9443
+  server: 152.233.9.239
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_82281b65 | 820ms'
+  password: null
+  port: 9443
+  server: 152.233.9.239
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[AutoMerge] 🇸🇬SG_1|2.1MB/s | 834ms'
+  port: 443
+  server: 156.146.56.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_b2f7ca67 | 836ms'
+  password: null
+  port: 443
+  server: 156.146.56.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_52724db1 | 974ms'
+  password: '8888'
+  port: 1080
+  server: 47.236.168.243
+  skip-cert-verify: true
+  type: socks5
+  username: '8888'
+- client-fingerprint: chrome
+  encryption: none
+  name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-8... #1 | 1007ms'
   network: ws
-  port: 2096
-  server: 139.162.27.96
-  servername: free-server.techsonic.dev
+  port: 443
+  server: 216.173.67.59
+  servername: ccc.010304.xyz
   skip-cert-verify: false
   tls: true
   type: vless
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  uuid: d342d11e-d224-4463-b982-532309285094
   ws-opts:
     headers:
-      Host: free-server.techsonic.dev
-    path: /free-server.techsonic.dev
+      Host: ccc.010304.xyz
+    path: /
+- name: '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_eb9f8b3d | 1384ms'
+  password: None
+  port: 443
+  server: 154.26.139.24
+  skip-cert-verify: true
+  tls: true
+  type: http
 - cipher: aes-256-gcm
-  name: 🇸🇬[www.v2nodes.com] ss-SG-1559...
+  name: '[ermaozi] 🇸🇬[www.v2nodes.com] ss-SG-1559... | 1540ms'
   password: qpSevKaUXYQKvSjp
   port: 8388
   server: 139.180.220.175
   type: ss
-- name: 🇸🇬 新加坡 | SGP 2
+- type: trojan
+  name: '[free18] 🇸🇬新加坡 01 | 1784ms'
+  server: 168.144.41.69
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- name: '[ermaozi] 🇸🇬 新加坡 | SGP 2 | 1785ms'
   network: ws
   password: humanity
   port: 443
@@ -155,55 +363,183 @@ proxies:
     headers:
       Host: www.cordweave.com
     path: /assignment
-- client-fingerprint: chrome
-  name: 🇸🇬[www.v2nodes.com] vless-SG-1...
-  port: 56984
-  server: sg1.zestapp778.com
-  servername: sg1.zestapp778.com
+- type: trojan
+  name: '[free18] 🇸🇬新加坡 03 | 1795ms'
+  server: 128.199.128.117
+  port: 443
+  password: humanity
+  udp: true
   tls: true
-  type: vless
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- type: trojan
+  name: '[free18] 🇸🇬新加坡 02 | 1799ms'
+  server: 172.104.185.40
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- type: trojan
+  name: '[free18] 新加坡 (2) | 1811ms'
+  server: 157.245.159.88
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- type: trojan
+  name: '[free18] 🇸🇬新加坡 05 | 1822ms'
+  server: 165.22.102.89
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- type: trojan
+  name: '[free18] 🇸🇬新加坡 04 | 2205ms'
+  server: 209.97.165.213
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
+- type: trojan
+  name: '[free18] 新加坡 | 2222ms'
+  server: 178.93.160.132
+  port: 443
+  password: humanity
+  udp: true
+  tls: true
+  servername: www.cordweave.com
+  sni: www.cordweave.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /assignment
 proxy-groups:
+- name: AUTO
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
+  proxies:
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-8... #1 | 60ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG | 71ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-9... #1 | 71ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-8... | 71ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG #1 | 75ms'
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-9... #2 | 78ms'
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-9... #1 | 80ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-9... #2 | 81ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-1... #10 | 83ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-9... | 83ms'
+  - '[ermaozi] 🇸🇬 新加坡 | SGP | 97ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG #2 | 176ms'
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-1... #10 | 401ms'
+  - '[ermaozi] 🇸🇬SG_2|1.1MB/s | 649ms'
+  - '[Eternity] 🇸🇬SG-68.183.227.4-0160 | 6.634MB | 649ms'
+  - '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_0f714f96 | 650ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-1... #1 | 651ms'
+  - '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_47836c39 | 651ms'
+  - '[roosterkid] 🇸🇬[openproxylist.com] vless-SG (2) | 652ms'
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-1... #1 | 653ms'
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] trojan-SG-... | 655ms'
+  - '[roosterkid] 🇸🇬[openproxylist.com] trojan-SG | 655ms'
+  - '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_7b001401 | 659ms'
+  - '[freeSub] C🟠🇸🇬hos[🎬📺🎪]_dokng.com_17fbfe15 | 659ms'
+  - '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_e68b3244 | 660ms'
+  - '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_049361e7 | 662ms'
+  - '[freeSub] D🔴🇸🇬hos[🤖✨🎞️✈️]_dokng.com_ec84b940 | 666ms'
+  - '[freeSub] A🟢🇸🇬res[🎬🤖📺🎭]_dokng.com_8bd7e92d | 813ms'
+  - '[ermaozi] 🇸🇬SG_1|1.3MB/s | 820ms'
+  - '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_82281b65 | 820ms'
+  - '[AutoMerge] 🇸🇬SG_1|2.1MB/s | 834ms'
+  - '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_b2f7ca67 | 836ms'
+  - '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_52724db1 | 974ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-8... #1 | 1007ms'
+  - '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_eb9f8b3d | 1384ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] ss-SG-1559... | 1540ms'
+  - '[free18] 🇸🇬新加坡 01 | 1784ms'
+  - '[ermaozi] 🇸🇬 新加坡 | SGP 2 | 1785ms'
+  - '[free18] 🇸🇬新加坡 03 | 1795ms'
+  - '[free18] 🇸🇬新加坡 02 | 1799ms'
+  - '[free18] 新加坡 (2) | 1811ms'
+  - '[free18] 🇸🇬新加坡 05 | 1822ms'
+  - '[free18] 🇸🇬新加坡 04 | 2205ms'
+  - '[free18] 新加坡 | 2222ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '🇸🇬[www.v2nodes.com] vless-SG #3'
-  - 🇸🇬[www.v2nodes.com] vless-SG
-  - 🇸🇬[www.v2nodes.com] vless-SG-8...
-  - 🇸🇬[www.v2nodes.com] vless-SG-9...
-  - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
-  - '🇸🇬[www.v2nodes.com] vless-SG #1'
-  - '🇸🇬[www.v2nodes.com] vless-SG #2'
-  - '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
-  - 🇸🇬SG_1|1.8MB/s
-  - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
-  - '🏳[www.v2nodes.com] vless- #14'
-  - 🇸🇬[www.v2nodes.com] ss-SG-1559...
-  - 🇸🇬 新加坡 | SGP 2
-  - 🇸🇬[www.v2nodes.com] vless-SG-1...
-- name: AUTO
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  proxies:
-  - '🇸🇬[www.v2nodes.com] vless-SG #3'
-  - 🇸🇬[www.v2nodes.com] vless-SG
-  - 🇸🇬[www.v2nodes.com] vless-SG-8...
-  - 🇸🇬[www.v2nodes.com] vless-SG-9...
-  - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
-  - '🇸🇬[www.v2nodes.com] vless-SG #1'
-  - '🇸🇬[www.v2nodes.com] vless-SG #2'
-  - '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
-  - 🇸🇬SG_1|1.8MB/s
-  - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
-  - '🏳[www.v2nodes.com] vless- #14'
-  - 🇸🇬[www.v2nodes.com] ss-SG-1559...
-  - 🇸🇬 新加坡 | SGP 2
-  - 🇸🇬[www.v2nodes.com] vless-SG-1...
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-8... #1 | 60ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG | 71ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-9... #1 | 71ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-8... | 71ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG #1 | 75ms'
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-9... #2 | 78ms'
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-9... #1 | 80ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-9... #2 | 81ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-1... #10 | 83ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-9... | 83ms'
+  - '[ermaozi] 🇸🇬 新加坡 | SGP | 97ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG #2 | 176ms'
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-1... #10 | 401ms'
+  - '[ermaozi] 🇸🇬SG_2|1.1MB/s | 649ms'
+  - '[Eternity] 🇸🇬SG-68.183.227.4-0160 | 6.634MB | 649ms'
+  - '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_0f714f96 | 650ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-1... #1 | 651ms'
+  - '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_47836c39 | 651ms'
+  - '[roosterkid] 🇸🇬[openproxylist.com] vless-SG (2) | 652ms'
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] vless-SG-1... #1 | 653ms'
+  - '[AutoMerge] 🇸🇬[www.v2nodes.com] trojan-SG-... | 655ms'
+  - '[roosterkid] 🇸🇬[openproxylist.com] trojan-SG | 655ms'
+  - '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_7b001401 | 659ms'
+  - '[freeSub] C🟠🇸🇬hos[🎬📺🎪]_dokng.com_17fbfe15 | 659ms'
+  - '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_e68b3244 | 660ms'
+  - '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_049361e7 | 662ms'
+  - '[freeSub] D🔴🇸🇬hos[🤖✨🎞️✈️]_dokng.com_ec84b940 | 666ms'
+  - '[freeSub] A🟢🇸🇬res[🎬🤖📺🎭]_dokng.com_8bd7e92d | 813ms'
+  - '[ermaozi] 🇸🇬SG_1|1.3MB/s | 820ms'
+  - '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_82281b65 | 820ms'
+  - '[AutoMerge] 🇸🇬SG_1|2.1MB/s | 834ms'
+  - '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_b2f7ca67 | 836ms'
+  - '[freeSub] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_52724db1 | 974ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG-8... #1 | 1007ms'
+  - '[freeSub] D🔴🇸🇬hos[🎬🤖📺🎭]_dokng.com_eb9f8b3d | 1384ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] ss-SG-1559... | 1540ms'
+  - '[free18] 🇸🇬新加坡 01 | 1784ms'
+  - '[ermaozi] 🇸🇬 新加坡 | SGP 2 | 1785ms'
+  - '[free18] 🇸🇬新加坡 03 | 1795ms'
+  - '[free18] 🇸🇬新加坡 02 | 1799ms'
+  - '[free18] 新加坡 (2) | 1811ms'
+  - '[free18] 🇸🇬新加坡 05 | 1822ms'
+  - '[free18] 🇸🇬新加坡 04 | 2205ms'
+  - '[free18] 新加坡 | 2222ms'
 rules:
-- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- GEOIP,CN,DIRECT
 - MATCH,PROXY
