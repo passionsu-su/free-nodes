@@ -3,12 +3,11 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- client-fingerprint: chrome
-  encryption: none
-  name: '🇸🇬[www.v2nodes.com] vless-SG #1'
+- encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG #3'
   network: ws
   port: 443
-  server: 172.66.0.162
+  server: 104.18.45.38
   servername: ccc.010304.xyz
   tls: true
   type: vless
@@ -16,25 +15,13 @@ proxies:
   ws-opts:
     headers:
       Host: ccc.010304.xyz
-    path: /
-- name: 🇸🇬 新加坡 | SGP 2
-  server: 104.18.35.86
-  port: 2082
-  type: vless
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  tls: false
-  servername: hhlfy.twiladaphne.ndjp.net
-  network: ws
-  ws-opts:
-    path: /fp
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-  udp: true
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560
 - client-fingerprint: chrome
-  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #7'
+  encryption: none
+  name: 🇸🇬[www.v2nodes.com] vless-SG
   network: ws
   port: 443
-  server: 104.18.40.100
+  server: 172.64.152.241
   servername: ccc.010304.xyz
   tls: true
   type: vless
@@ -42,13 +29,11 @@ proxies:
   ws-opts:
     headers:
       Host: ccc.010304.xyz
-    path: /
-- client-fingerprint: chrome
-  encryption: none
-  name: 🇸🇬[www.v2nodes.com] vless-SG-9...
+    path: /fp=chrome
+- name: 🇸🇬[www.v2nodes.com] vless-SG-8...
   network: ws
   port: 443
-  server: 104.26.4.2
+  server: 43.174.193.1
   servername: ccc.010304.xyz
   skip-cert-verify: false
   tls: true
@@ -58,14 +43,87 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp=chrome
-- name: 🇸🇬SG-68.183.227.4-0205 | 23.677MB
-  server: 68.183.227.4
-  port: 8080
-  type: ss
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
 - encryption: none
-  name: '🏳[www.v2nodes.com] vless- #48'
+  name: 🇸🇬[www.v2nodes.com] vless-SG-9...
+  network: ws
+  port: 8080
+  server: 172.67.75.172
+  tls: false
+  type: vless
+  uuid: 3e06b1db-2efb-446e-ba2d-68850dfd2f9d
+  ws-opts:
+    headers:
+      Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
+    path: /
+- name: '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
+  network: ws
+  port: 8080
+  server: 104.18.0.181
+  tls: false
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+    path: /
+- alpn:
+  - http/1.1
+  name: '🇸🇬[www.v2nodes.com] vless-SG #1'
+  network: ws
+  port: 443
+  server: 188.114.96.9
+  servername: IdB8ONMVbntuYT5t7t6cEJfw8vLrb.paGEs.DeV
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 2e305ebe-f6e6-4689-b32f-cd04ab5ff541
+  ws-opts:
+    headers:
+      Host: idb8onmvbntuyt5t7t6cejfw8vlrb.pages.dev
+    path: /vl/9yvcoLdzdOXLUYfH7r5gwJhu1CHrjfp=chrome
+- name: '🇸🇬[www.v2nodes.com] vless-SG #2'
+  network: ws
+  port: 8880
+  server: 135.84.72.30
+  tls: false
+  type: vless
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime06.workers.dev
+    path: /
+- client-fingerprint: chrome
+  encryption: none
+  name: '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
+  network: ws
+  port: 8443
+  server: 190.93.245.187
+  servername: WQa3MIOjjR8fYOzhiui--sU3-uCG1Gdx.pAgEs.dEv
+  tls: true
+  type: vless
+  uuid: b2853d19-fada-44dc-8d44-967d1af122e0
+  ws-opts:
+    headers:
+      Host: wqa3miojjr8fyozhiui--su3-ucg1gdx.pages.dev
+    path: /eyJqdW5rIjoiZTA0TGg3eENkIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19
+- name: 🇸🇬SG_1|1.8MB/s
+  password: '1234'
+  port: 2080
+  server: 47.129.174.248
+  skip-cert-verify: true
+  type: http
+  username: '1234'
+- client-fingerprint: chrome
+  name: '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
+  network: tcp
+  port: 443
+  server: sg003.zestapp778.com
+  servername: sg003.zestapp778.com
+  tls: true
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+- encryption: none
+  name: '🏳[www.v2nodes.com] vless- #14'
   network: ws
   port: 2096
   server: 139.162.27.96
@@ -78,43 +136,71 @@ proxies:
     headers:
       Host: free-server.techsonic.dev
     path: /free-server.techsonic.dev
-- name: 🇸🇬 新加坡 | SGP 3
-  server: 164.37.224.228
-  port: 25445
-  type: vless
-  uuid: 5a519754-a673-4462-83f6-5eb25d2af141
-  tls: true
-  reality-opts:
-    public-key: wkpC2kKl2gNMM6uOP-K1__k70YUKS8c5t7aFW_PF7UM
-    short-id: e891838a8cb32dbf
-  servername: www.cloudflare.com
-  client-fingerprint: firefox
-  network: tcp
+- cipher: aes-256-gcm
+  name: 🇸🇬[www.v2nodes.com] ss-SG-1559...
+  password: qpSevKaUXYQKvSjp
+  port: 8388
+  server: 139.180.220.175
+  type: ss
+- name: 🇸🇬 新加坡 | SGP 2
+  network: ws
+  password: humanity
+  port: 443
+  server: 194.114.138.162
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
   udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- client-fingerprint: chrome
+  name: 🇸🇬[www.v2nodes.com] vless-SG-1...
+  port: 56984
+  server: sg1.zestapp778.com
+  servername: sg1.zestapp778.com
+  tls: true
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '🇸🇬[www.v2nodes.com] vless-SG #1'
-  - 🇸🇬 新加坡 | SGP 2
-  - '🇸🇬[www.v2nodes.com] vless-SG-1... #7'
+  - '🇸🇬[www.v2nodes.com] vless-SG #3'
+  - 🇸🇬[www.v2nodes.com] vless-SG
+  - 🇸🇬[www.v2nodes.com] vless-SG-8...
   - 🇸🇬[www.v2nodes.com] vless-SG-9...
-  - 🇸🇬SG-68.183.227.4-0205 | 23.677MB
-  - '🏳[www.v2nodes.com] vless- #48'
-  - 🇸🇬 新加坡 | SGP 3
+  - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
+  - '🇸🇬[www.v2nodes.com] vless-SG #1'
+  - '🇸🇬[www.v2nodes.com] vless-SG #2'
+  - '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
+  - 🇸🇬SG_1|1.8MB/s
+  - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
+  - '🏳[www.v2nodes.com] vless- #14'
+  - 🇸🇬[www.v2nodes.com] ss-SG-1559...
+  - 🇸🇬 新加坡 | SGP 2
+  - 🇸🇬[www.v2nodes.com] vless-SG-1...
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - '🇸🇬[www.v2nodes.com] vless-SG #1'
-  - 🇸🇬 新加坡 | SGP 2
-  - '🇸🇬[www.v2nodes.com] vless-SG-1... #7'
+  - '🇸🇬[www.v2nodes.com] vless-SG #3'
+  - 🇸🇬[www.v2nodes.com] vless-SG
+  - 🇸🇬[www.v2nodes.com] vless-SG-8...
   - 🇸🇬[www.v2nodes.com] vless-SG-9...
-  - 🇸🇬SG-68.183.227.4-0205 | 23.677MB
-  - '🏳[www.v2nodes.com] vless- #48'
-  - 🇸🇬 新加坡 | SGP 3
+  - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
+  - '🇸🇬[www.v2nodes.com] vless-SG #1'
+  - '🇸🇬[www.v2nodes.com] vless-SG #2'
+  - '🇸🇬[www.v2nodes.com] vless-SG-9... #2'
+  - 🇸🇬SG_1|1.8MB/s
+  - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
+  - '🏳[www.v2nodes.com] vless- #14'
+  - 🇸🇬[www.v2nodes.com] ss-SG-1559...
+  - 🇸🇬 新加坡 | SGP 2
+  - 🇸🇬[www.v2nodes.com] vless-SG-1...
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
