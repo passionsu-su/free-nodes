@@ -49,10 +49,10 @@ jobs:
           mkdir -p "$workdir"
           curl --retry 3 --retry-all-errors --retry-delay 2 -fL https://github.com/tindy2013/subconverter/releases/download/v0.9.0/subconverter_linux64.tar.gz -o /tmp/subconverter.tar.gz
           echo "=== archive contents ==="
-          tar -tzf /tmp/subconverter.tar.gz | head -80
+          tar -tzf /tmp/subconverter.tar.gz | sed -n '1,80p'
           tar -xzf /tmp/subconverter.tar.gz -C "$workdir"
           echo "=== extracted files ==="
-          find "$workdir" -maxdepth 3 -type f -printf '%M %p\n' | sort | head -100
+          find "$workdir" -maxdepth 3 -type f -printf '%M %p\n' | sort | sed -n '1,100p'
           binary="$(find "$workdir" -maxdepth 3 -type f -name subconverter -print -quit)"
           if [[ -z "$binary" ]]; then
             echo "ERROR: subconverter executable not found in release archive" >&2
