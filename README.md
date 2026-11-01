@@ -1,6 +1,6 @@
 # free-nodes
 
-每日自动整理的公开免费节点订阅，按客户端分类。更新时间：2026-10-29 16:29（北京时间）
+每日自动整理的公开免费节点订阅，按客户端分类。更新时间：2026-11-01 08:30（北京时间）
 
 ## 客户端下载（官方地址）
 GitHub Releases 在国内打不开时，可在链接前加 `https://ghfast.top/` 下载。iOS 应用需非中国大陆区 Apple ID。
@@ -39,7 +39,7 @@ GitHub Releases 在国内打不开时，可在链接前加 `https://ghfast.top/`
 | v2rayN | base64 | [GitHub Releases](https://github.com/2dust/v2rayN/releases) |
 | Hiddify | 全部格式 | [GitHub Releases](https://github.com/hiddify/hiddify-app/releases) |
 
-价格以 App Store 实际显示为准（美区，2026-10-29 查询）。
+价格以 App Store 实际显示为准（美区，2026-11-01 查询）。
 
 ## 国内导入失败？用镜像
 raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
@@ -55,54 +55,54 @@ raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
 ## iOS
 | 客户端 | 订阅/配置链接 | 节点 | 导入方式 |
 | --- | --- | --- | --- |
-| Shadowrocket 小火箭 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/shadowrocket/sub.txt | 212 | 右上角 + → 类型 Subscribe |
-| Surge | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/surge/surge.conf | 130 | 配置 → 从 URL 下载配置（仅 vmess/trojan/ss/hy2，Surge 不支持 vless） |
-| Surge（仅节点） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/surge/proxies.list | 130 | 策略组 policy-path 引用 |
-| Quantumult X 圈X | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/quantumultx/qx.txt | 175 | 节点 → 引用(订阅) → 添加 |
-| Stash | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/stash/stash.yaml | 270 | 配置 → 从 URL 下载 |
-| Clash Mi | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clashmi/clashmi.yaml | 273 | 添加配置 → URL |
-| Loon | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/loon/loon.list | 179 | 节点 → 订阅节点 → 添加 |
-| sing-box(SFI) / Karing / Hiddify | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/singbox/singbox.json | 192 | 新建远程配置 |
+| Shadowrocket 小火箭 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/shadowrocket/sub.txt | 139 | 右上角 + → 类型 Subscribe |
+| Surge | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/surge/surge.conf | 186 | 配置 → 从 URL 下载配置（仅 vmess/trojan/ss/hy2，Surge 不支持 vless） |
+| Surge（仅节点） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/surge/proxies.list | 186 | 策略组 policy-path 引用 |
+| Quantumult X 圈X | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/quantumultx/qx.txt | 250 | 节点 → 引用(订阅) → 添加 |
+| Stash | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/stash/stash.yaml | 285 | 配置 → 从 URL 下载 |
+| Clash Mi | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clashmi/clashmi.yaml | 285 | 添加配置 → URL |
+| Loon | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/loon/loon.list | 251 | 节点 → 订阅节点 → 添加 |
+| sing-box(SFI) / Karing / Hiddify | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/singbox/singbox.json | 256 | 新建远程配置 |
 
 ## 按地区订阅（小火箭 / v2rayNG / v2rayN / NekoBox 通用，已按延迟从低到高排序）
 | 地区 | 链接 | 节点 |
 | --- | --- | --- |
-| 香港 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/hk.txt | 23 |
+| 香港 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/hk.txt | 7 |
 | 台湾 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/tw.txt | 0 |
-| 日本 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/jp.txt | 5 |
-| 新加坡 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/sg.txt | 9 |
-| 韩国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/kr.txt | 3 |
-| 美国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/us.txt | 44 |
-| 欧洲 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/eu.txt | 95 |
-| 其他 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/other.txt | 33 |
+| 日本 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/jp.txt | 1 |
+| 新加坡 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/sg.txt | 3 |
+| 韩国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/kr.txt | 2 |
+| 美国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/us.txt | 48 |
+| 欧洲 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/eu.txt | 55 |
+| 其他 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/other.txt | 23 |
 
 每次推送前，所有节点都用 FlClash/Clash Verge 同款 mihomo 内核做真连接测试（经节点访问 generate_204），不通的直接删掉，按真实延迟排序（含 Hysteria2/TUIC）。测试发起于海外服务器，国内线路被墙的节点仍可能超时，导入后再在 App 里测一次。
 
 ## 按地区订阅（FlClash / Clash Verge / Clash Meta / Stash / Clash Mi，YAML）
 | 地区 | 链接 | 节点 |
 | --- | --- | --- |
-| 香港 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/hk.yaml | 15 |
-| 台湾 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/tw.yaml | 3 |
-| 日本 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/jp.yaml | 7 |
-| 新加坡 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/sg.yaml | 7 |
+| 香港 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/hk.yaml | 9 |
+| 台湾 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/tw.yaml | 0 |
+| 日本 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/jp.yaml | 8 |
+| 新加坡 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/sg.yaml | 14 |
 | 韩国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/kr.yaml | 2 |
-| 美国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/us.yaml | 46 |
-| 欧洲 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/eu.yaml | 157 |
-| 其他 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/other.yaml | 36 |
+| 美国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/us.yaml | 42 |
+| 欧洲 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/eu.yaml | 175 |
+| 其他 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/other.yaml | 35 |
 
 注意：上面 region/*.txt 是 base64 格式，只能用于小火箭 / v2rayNG；Clash 系 App 请用 region/clash/*.yaml。
 
 ## 安卓 / 桌面
 | 客户端 | 链接 | 节点 |
 | --- | --- | --- |
-| Clash Verge / Clash Meta / FlClash | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/all.yaml | 273 |
+| Clash Verge / Clash Meta / FlClash | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/all.yaml | 285 |
 | ⭐ Clash Meta 完整配置（分流+去广告+DNS+自动更新节点） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta.yaml | 同 all.yaml |
 | ⭐ 旧版 Clash for Windows 0.20.x 完整配置（Premium 内核） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/cfw.yaml | 仅 ss/vmess/trojan/http |
 | ⭐ Shadowrocket 完整配置（iOS，导入为配置文件） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/shadowrocket/meta.conf | Shadowrocket |
 | ⭐ Surge 完整配置（iOS/Mac） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/surge/meta.conf | Surge 5 |
 | v2rayNG 自定义路由（去广告+分流，配合 v2ray/all.txt 订阅） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/routing.json | v2rayNG |
-| v2rayNG / v2rayN / NekoBox | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/all.txt | 212 |
-| 明文链接 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/all_raw.txt | 212 |
+| v2rayNG / v2rayN / NekoBox | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/all.txt | 139 |
+| 明文链接 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/all_raw.txt | 139 |
 
 已过滤 fp=unsafe、内网/假节点；全部节点经 mihomo 内核真连接测试，只保留能用的（测试发起于海外服务器，不代表国内一定可连）。
 
