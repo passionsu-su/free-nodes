@@ -10,197 +10,130 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇺🇸US_3|1.0MB/s
-  password: None
+- name: 🇺🇸US-216.106.186.32-0116 | 115.749MB
+  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
   port: 443
-  server: 149.22.88.65
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇺🇸US-216.106.186.33-0310 | 109.042MB
+  type: trojan
+  password: dba20dcb635e430fa4d3bfc303a149d2
+  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  skip-cert-verify: false
+- name: 🇺🇸US-216.106.186.33-0113 | 164.884MB
   server: resources.findlocaljobnetworkandbuildcommunityconnections.com
   port: 443
   type: trojan
   password: f0eb8c92ce8946aaba856569cff1a16b
   sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
   skip-cert-verify: false
-- name: 🇺🇸US-173.244.56.9-0170 | 78.05MB
-  server: 173.244.56.9
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: '🇺🇸[www.v2nodes.com] trojan-US-... #9'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 66.163.114.114
-  skip-cert-verify: true
-  sni: learn.findconnectwithemployersandbuildprofessionalnetwork.com
-  type: trojan
-- name: '🇺🇸[www.v2nodes.com] trojan-US-... #8'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 66.163.114.132
-  skip-cert-verify: true
-  sni: courses.findconnectwithemployersandbuildprofessionalnetwork.com
-  type: trojan
-- name: 🇺🇸US-173.244.56.6-0145 | 25.733MB
-  server: 173.244.56.6
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- auth: 46647da9-d4b4-407f-bea6-ad0b1abc561f
-  name: '🇺🇸 美国 | USA #2'
-  password: 46647da9-d4b4-407f-bea6-ad0b1abc561f
-  port: 2053
-  server: 192.236.226.182
-  skip-cert-verify: true
-  sni: 192.236.226.182
+- name: '🇺🇸[www.v2nodes.com] vless-US-1... #6'
+  network: tcp
+  port: 57259
+  server: 169.128.83.4
   tls: false
-  type: hysteria2
-- name: '🇺🇸[www.v2nodes.com] trojan-US-... #7'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  type: vless
+  uuid: a1962f23-f8f8-412d-f2ce-3361e7b72889
+- name: '🇺🇸 美国 | USA #1'
+  network: ws
+  port: 8080
+  server: 104.18.35.86
+  servername: hhlfy.twiladaphne.ndjp.net
+  tls: false
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+    path: /sg-melbi
+- client-fingerprint: chrome
+  name: '🇺🇸 美国 | USA #6'
+  network: ws
   port: 443
-  server: 66.163.114.166
-  skip-cert-verify: true
-  sni: blog.findconnectwithemployersandbuildprofessionalnetwork.com
-  type: trojan
-- name: 🇺🇸US-95.215.201.18-0139 | 43.952MB
+  server: 104.20.61.103
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+- name: 🇺🇸US-95.215.201.18-0089 | 76.025MB
   server: 95.215.201.18
   port: 19999
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US-156.146.38.170-0144 | 65.972MB
-  server: 156.146.38.170
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-156.146.38.168-0162 | 86.09MB
-  server: 156.146.38.168
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-156.146.38.169-0142 | 73.538MB
-  server: 156.146.38.169
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-23.158.72.131-0948 | 31.952MB
-  server: 23.158.72.131
-  port: 80
-  type: vmess
-  uuid: 8a9aaa70-ced9-11f1-b934-205c6d5f5d78
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 172.66.0.251
-- name: 🇺🇸US-156.146.38.167-0138 | 53.811MB
+- name: 🇺🇸US-156.146.38.167-0183 | 116.918MB
   server: 156.146.38.167
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇺🇸US-23.158.72.131-0228 | 36.496MB
-  server: us-23.hihu.net
-  port: 80
-  type: vmess
-  uuid: 8a9aaa70-ced9-11f1-b934-205c6d5f5d78
-  alterId: 0
-  cipher: auto
-  tls: false
+- name: 🇺🇸US-156.146.38.168-0187 | 132.36MB
+  server: 156.146.38.168
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-156.146.38.170-0185 | 115.691MB
+  server: 156.146.38.170
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-156.146.38.169-0184 | 94.334MB
+  server: 156.146.38.169
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸US-173.244.56.9-0126 | 131.011MB
+  server: 173.244.56.9
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '🇺🇸[www.v2nodes.com] trojan-US-... #5'
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 66.163.112.13
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 172.66.0.251
-- name: 🇺🇸US-193.151.163.18-0143 | 223.238MB
+  sni: blog.unlockyourfuturefindyourperfectcareer.com
+  type: trojan
+- name: 🇺🇸US-193.151.163.18-0085 | 186.993MB
   server: 193.151.163.18
   port: 19999
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US-37.19.198.236-5563 | 99.569MB
-  server: 37.19.198.236
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-37.19.198.243-0245 | 108.025MB
-  server: 37.19.198.243
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-37.19.198.244-0244 | 102.116MB
-  server: 37.19.198.244
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇺🇸US-37.19.198.160-0246 | 90.926MB
-  server: 37.19.198.160
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
 - name: '🇺🇸[www.v2nodes.com] trojan-US-... #10'
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   port: 443
-  server: 216.152.156.212
-  skip-cert-verify: true
-  sni: courses.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  server: 216.152.155.176
+  sni: blog.nextjobopportunityandclaimyouridealrole.com
   type: trojan
-- name: '🇺🇸[www.v2nodes.com] trojan-US-... #4'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
+- name: 🇺🇸US-216.152.156.42-0095 | 78.74MB
   server: 216.152.156.42
-  skip-cert-verify: true
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   sni: blog.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  type: trojan
-- name: 🇺🇸US-216.152.156.65-0189 | 72.365MB
-  server: 216.152.156.65
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
   skip-cert-verify: false
-- name: '🇺🇸[www.v2nodes.com] trojan-US-... #5_2'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 216.152.156.81
-  skip-cert-verify: true
-  sni: www.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  type: trojan
-- name: 🇺🇸US-216.152.155.54-0148 | 40.037MB
-  server: 216.152.155.54
+- name: 🇺🇸US-216.152.155.23-0091 | 87.193MB
+  server: 216.152.155.23
   port: 443
   type: trojan
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.nextjobopportunityandclaimyouridealrole.com
+  sni: courses.nextjobopportunityandclaimyouridealrole.com
   skip-cert-verify: false
-- name: 🇺🇸US-193.151.160.9-0140 | 221.529MB
-  server: 193.151.160.9
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US-193.151.160.18-0141 | 180.999MB
-  server: 193.151.160.18
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇺🇸US-216.152.156.212-0233 | 120.446MB
+  server: 216.152.156.212
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  skip-cert-verify: false
 - name: US_speednode_0040
   port: 443
   server: 38.247.141.135
@@ -208,89 +141,90 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇺🇸US-185.230.230.18-0137 | 98.635MB
-  server: 185.230.230.18
+- name: 🇺🇸US-216.152.155.158-0097 | 107.573MB
+  server: 216.152.155.158
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.nextjobopportunityandclaimyouridealrole.com
+  skip-cert-verify: false
+- name: 🇺🇸US-193.151.160.9-0086 | 192.274MB
+  server: 193.151.160.9
   port: 19999
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US-216.152.155.176-0165 | 47.052MB
-  server: 216.152.155.176
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: false
-- client-fingerprint: chrome
-  encryption: none
-  name: ❓Other_1|2.6MB/s
-  network: tcp
-  port: 18580
-  server: us007.zestapp778.com
-  servername: us007.zestapp778.com
-  tls: true
-  type: vless
-  udp: true
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  xudp: true
-- name: 🇺🇸US-45.86.51.18-0136 | 280.944MB
+- name: 🇺🇸US-45.86.51.18-0112 | 201.653MB
   server: 45.86.51.18
   port: 19999
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US_4|1.1MB/s
-  password: None
-  port: 443
-  server: 12.202.180.118
-  skip-cert-verify: true
+- name: 🇺🇸US-193.151.160.18-0088 | 191.32MB
+  server: 193.151.160.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- client-fingerprint: chrome
+  name: '🇺🇸[www.v2nodes.com] vless-US-1... #7'
+  port: 18580
+  server: us007.zestapp778.com
+  servername: us007.zestapp778.com
   tls: true
-  type: http
-- name: 🇺🇸US_5|1.4MB/s
-  password: None
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+- name: 🇺🇸US-185.230.230.18-0087 | 195.027MB
+  server: 185.230.230.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇺🇸_US_美国
+  type: vmess
+  server: guanwang.awsno.com
   port: 443
-  server: 68.235.56.51
-  skip-cert-verify: true
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
   tls: true
-  type: http
-- name: 🇺🇸US_1|1.6MB/s
-  password: None
-  port: 9443
-  server: 198.44.138.27
   skip-cert-verify: true
-  tls: true
-  type: http
-- name: '🇺🇸[www.v2nodes.com] trojan-US-... #5'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 66.163.122.7
-  skip-cert-verify: true
-  sni: www.searchnationwidecareerchangehelperandguidancetoday.com
-  type: trojan
-- name: 🇺🇸US-66.163.122.81-0237 | 25.517MB
-  server: 66.163.122.81
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.searchnationwidecareerchangehelperandguidancetoday.com
-  skip-cert-verify: false
-- name: 🇺🇸US_2|1.8MB/s
-  password: None
-  port: 443
-  server: 198.44.135.27
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇺🇸US_6|1.3MB/s|K001-260618
-  port: 443
-  server: 149.34.248.65
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
+  servername: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
   udp: true
+- client-fingerprint: chrome
+  encryption: none
+  name: '🇺🇸[www.v2nodes.com] vless-US-1... #2'
+  network: ws
+  port: 2053
+  server: fast.145779.xyz
+  servername: fast.145779.xyz
+  tls: true
+  type: vless
+  uuid: c83f15bf-1817-4ec8-a19f-6393d226434c
+  ws-opts:
+    headers:
+      Host: fast.145779.xyz
+    path: /ws-tesla
+- name: '🇺🇸[www.v2nodes.com] trojan-US-... #7'
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 66.163.122.113
+  sni: api.searchnationwidecareerchangehelperandguidancetoday.com
+  type: trojan
+- name: 🇺🇸US-216.152.155.54-0110 | 88.022MB
+  server: 216.152.155.54
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.nextjobopportunityandclaimyouridealrole.com
+  skip-cert-verify: false
 - encryption: none
-  name: '🏳[www.v2nodes.com] vless- #33'
+  name: '🏳[www.v2nodes.com] vless- #9'
   network: ws
   port: 8080
   server: support.zoom.us
@@ -301,164 +235,254 @@ proxies:
     headers:
       Host: Free.nadun.store
     path: /
-- name: 🇺🇸202161 | ⚡️Telegram = t.me/S...
-  password: 329e13e4-ee7c-4802-ac72-5fcab79c2402
-  port: 443
-  server: 217.60.72.225
-  sni: forshynewh.duckdns.org
-  tls: false
-  type: hysteria2
-- name: 🇺🇸 美国 | USA 6
-  server: 104.19.12.94
-  port: 443
-  type: vless
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  tls: true
-  servername: jp3.yohototo.top
-  client-fingerprint: chrome
+- name: 🇱🇰[www.v2nodes.com] vless-LK-6...
   network: ws
+  port: 8080
+  server: 170.114.45.6
+  tls: false
+  type: vless
+  uuid: 990bf436-f1b9-4e7f-857d-14378acc4ae5
   ws-opts:
-    path: /tyxyws
     headers:
-      Host: jp3.yohototo.top
-  udp: true
-- name: '🇺🇸[www.v2nodes.com] trojan-US-... #11'
-  network: tcp
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+      Host: free.nadun.store
+    path: /
+- name: 🇺🇸 美国 | USA 4
+  network: ws
+  password: humanity
   port: 443
-  server: 216.152.155.23
-  skip-cert-verify: false
-  sni: courses.nextjobopportunityandclaimyouridealrole.com
+  server: 104.17.28.254
+  skip-cert-verify: true
+  sni: www.cordweave.com
   type: trojan
-- name: 🇺🇸 美国 | USA 7
-  server: 156.229.160.98
-  port: 9443
-  type: vless
-  uuid: 4a270d3e-27b4-497d-8c8c-28f1f54958d9
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4
-    short-id: b390142456517acc
-  servername: www.amazon.com
-  client-fingerprint: chrome
-  network: tcp
   udp: true
-- name: 🇺🇸 美国 | USA 2
-  server: 79.182.39.57
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: 🇺🇸 美国 | USA 11
+  network: ws
+  password: humanity
   port: 443
-  type: vless
-  uuid: 5a519754-a673-4462-83f6-5eb25d2af141
-  tls: true
-  reality-opts:
-    public-key: 5KZVzOFqMgdL47--JzLlg5HmPlAYp-cmQsXxkTXngS0
-    short-id: 8d50d3a4df71468c
-  servername: f36f5ft.us4.h1clayd.click
-  client-fingerprint: firefox
-  network: tcp
+  server: 104.16.144.215
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
   udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: 🇺🇸 美国 | USA 2
+  network: ws
+  password: humanity
+  port: 443
+  server: 162.159.128.253
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: 🇺🇸 美国 | USA 13
+  network: ws
+  password: humanity
+  port: 443
+  server: 104.19.229.21
+  skip-cert-verify: true
+  sni: www.calmlunch.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.calmlunch.com
+    path: /assignment
+- name: 🇺🇸 美国 | USA 10
+  network: ws
+  password: humanity
+  port: 443
+  server: 104.16.251.219
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: 🇺🇸 美国 | USA 12
+  network: ws
+  password: humanity
+  port: 443
+  server: 104.26.3.162
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: 🇺🇸 美国 | USA 7
+  network: ws
+  password: humanity
+  port: 443
+  server: 104.17.17.238
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: 🇺🇸 美国 | USA 8
+  network: ws
+  password: humanity
+  port: 443
+  server: 104.17.145.43
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: 🇺🇸 美国 | USA 3
+  network: ws
+  password: humanity
+  port: 443
+  server: 104.17.159.71
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: 🇺🇸 美国 | USA 5
+  network: ws
+  password: humanity
+  port: 443
+  server: 104.16.65.1
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
+- name: 🇺🇸 美国 | USA 5_2
+  network: ws
+  password: humanity
+  port: 443
+  server: 179.255.136.143
+  skip-cert-verify: true
+  sni: www.cordweave.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: www.cordweave.com
+    path: /assignment
 proxy-groups:
 - name: PROXY
   type: select
   proxies:
   - AUTO
   - US_speednode_0039
-  - 🇺🇸US_3|1.0MB/s
-  - 🇺🇸US-216.106.186.33-0310 | 109.042MB
-  - 🇺🇸US-173.244.56.9-0170 | 78.05MB
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #9'
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #8'
-  - 🇺🇸US-173.244.56.6-0145 | 25.733MB
-  - '🇺🇸 美国 | USA #2'
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #7'
-  - 🇺🇸US-95.215.201.18-0139 | 43.952MB
-  - 🇺🇸US-156.146.38.170-0144 | 65.972MB
-  - 🇺🇸US-156.146.38.168-0162 | 86.09MB
-  - 🇺🇸US-156.146.38.169-0142 | 73.538MB
-  - 🇺🇸US-23.158.72.131-0948 | 31.952MB
-  - 🇺🇸US-156.146.38.167-0138 | 53.811MB
-  - 🇺🇸US-23.158.72.131-0228 | 36.496MB
-  - 🇺🇸US-193.151.163.18-0143 | 223.238MB
-  - 🇺🇸US-37.19.198.236-5563 | 99.569MB
-  - 🇺🇸US-37.19.198.243-0245 | 108.025MB
-  - 🇺🇸US-37.19.198.244-0244 | 102.116MB
-  - 🇺🇸US-37.19.198.160-0246 | 90.926MB
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #10'
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #4'
-  - 🇺🇸US-216.152.156.65-0189 | 72.365MB
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #5_2'
-  - 🇺🇸US-216.152.155.54-0148 | 40.037MB
-  - 🇺🇸US-193.151.160.9-0140 | 221.529MB
-  - 🇺🇸US-193.151.160.18-0141 | 180.999MB
-  - US_speednode_0040
-  - 🇺🇸US-185.230.230.18-0137 | 98.635MB
-  - 🇺🇸US-216.152.155.176-0165 | 47.052MB
-  - ❓Other_1|2.6MB/s
-  - 🇺🇸US-45.86.51.18-0136 | 280.944MB
-  - 🇺🇸US_4|1.1MB/s
-  - 🇺🇸US_5|1.4MB/s
-  - 🇺🇸US_1|1.6MB/s
+  - 🇺🇸US-216.106.186.32-0116 | 115.749MB
+  - 🇺🇸US-216.106.186.33-0113 | 164.884MB
+  - '🇺🇸[www.v2nodes.com] vless-US-1... #6'
+  - '🇺🇸 美国 | USA #1'
+  - '🇺🇸 美国 | USA #6'
+  - 🇺🇸US-95.215.201.18-0089 | 76.025MB
+  - 🇺🇸US-156.146.38.167-0183 | 116.918MB
+  - 🇺🇸US-156.146.38.168-0187 | 132.36MB
+  - 🇺🇸US-156.146.38.170-0185 | 115.691MB
+  - 🇺🇸US-156.146.38.169-0184 | 94.334MB
+  - 🇺🇸US-173.244.56.9-0126 | 131.011MB
   - '🇺🇸[www.v2nodes.com] trojan-US-... #5'
-  - 🇺🇸US-66.163.122.81-0237 | 25.517MB
-  - 🇺🇸US_2|1.8MB/s
-  - 🇺🇸US_6|1.3MB/s|K001-260618
-  - '🏳[www.v2nodes.com] vless- #33'
-  - 🇺🇸202161 | ⚡️Telegram = t.me/S...
-  - 🇺🇸 美国 | USA 6
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #11'
-  - 🇺🇸 美国 | USA 7
+  - 🇺🇸US-193.151.163.18-0085 | 186.993MB
+  - '🇺🇸[www.v2nodes.com] trojan-US-... #10'
+  - 🇺🇸US-216.152.156.42-0095 | 78.74MB
+  - 🇺🇸US-216.152.155.23-0091 | 87.193MB
+  - 🇺🇸US-216.152.156.212-0233 | 120.446MB
+  - US_speednode_0040
+  - 🇺🇸US-216.152.155.158-0097 | 107.573MB
+  - 🇺🇸US-193.151.160.9-0086 | 192.274MB
+  - 🇺🇸US-45.86.51.18-0112 | 201.653MB
+  - 🇺🇸US-193.151.160.18-0088 | 191.32MB
+  - '🇺🇸[www.v2nodes.com] vless-US-1... #7'
+  - 🇺🇸US-185.230.230.18-0087 | 195.027MB
+  - 🇺🇸_US_美国
+  - '🇺🇸[www.v2nodes.com] vless-US-1... #2'
+  - '🇺🇸[www.v2nodes.com] trojan-US-... #7'
+  - 🇺🇸US-216.152.155.54-0110 | 88.022MB
+  - '🏳[www.v2nodes.com] vless- #9'
+  - 🇱🇰[www.v2nodes.com] vless-LK-6...
+  - 🇺🇸 美国 | USA 4
+  - 🇺🇸 美国 | USA 11
   - 🇺🇸 美国 | USA 2
+  - 🇺🇸 美国 | USA 13
+  - 🇺🇸 美国 | USA 10
+  - 🇺🇸 美国 | USA 12
+  - 🇺🇸 美国 | USA 7
+  - 🇺🇸 美国 | USA 8
+  - 🇺🇸 美国 | USA 3
+  - 🇺🇸 美国 | USA 5
+  - 🇺🇸 美国 | USA 5_2
 - name: AUTO
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - US_speednode_0039
-  - 🇺🇸US_3|1.0MB/s
-  - 🇺🇸US-216.106.186.33-0310 | 109.042MB
-  - 🇺🇸US-173.244.56.9-0170 | 78.05MB
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #9'
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #8'
-  - 🇺🇸US-173.244.56.6-0145 | 25.733MB
-  - '🇺🇸 美国 | USA #2'
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #7'
-  - 🇺🇸US-95.215.201.18-0139 | 43.952MB
-  - 🇺🇸US-156.146.38.170-0144 | 65.972MB
-  - 🇺🇸US-156.146.38.168-0162 | 86.09MB
-  - 🇺🇸US-156.146.38.169-0142 | 73.538MB
-  - 🇺🇸US-23.158.72.131-0948 | 31.952MB
-  - 🇺🇸US-156.146.38.167-0138 | 53.811MB
-  - 🇺🇸US-23.158.72.131-0228 | 36.496MB
-  - 🇺🇸US-193.151.163.18-0143 | 223.238MB
-  - 🇺🇸US-37.19.198.236-5563 | 99.569MB
-  - 🇺🇸US-37.19.198.243-0245 | 108.025MB
-  - 🇺🇸US-37.19.198.244-0244 | 102.116MB
-  - 🇺🇸US-37.19.198.160-0246 | 90.926MB
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #10'
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #4'
-  - 🇺🇸US-216.152.156.65-0189 | 72.365MB
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #5_2'
-  - 🇺🇸US-216.152.155.54-0148 | 40.037MB
-  - 🇺🇸US-193.151.160.9-0140 | 221.529MB
-  - 🇺🇸US-193.151.160.18-0141 | 180.999MB
-  - US_speednode_0040
-  - 🇺🇸US-185.230.230.18-0137 | 98.635MB
-  - 🇺🇸US-216.152.155.176-0165 | 47.052MB
-  - ❓Other_1|2.6MB/s
-  - 🇺🇸US-45.86.51.18-0136 | 280.944MB
-  - 🇺🇸US_4|1.1MB/s
-  - 🇺🇸US_5|1.4MB/s
-  - 🇺🇸US_1|1.6MB/s
+  - 🇺🇸US-216.106.186.32-0116 | 115.749MB
+  - 🇺🇸US-216.106.186.33-0113 | 164.884MB
+  - '🇺🇸[www.v2nodes.com] vless-US-1... #6'
+  - '🇺🇸 美国 | USA #1'
+  - '🇺🇸 美国 | USA #6'
+  - 🇺🇸US-95.215.201.18-0089 | 76.025MB
+  - 🇺🇸US-156.146.38.167-0183 | 116.918MB
+  - 🇺🇸US-156.146.38.168-0187 | 132.36MB
+  - 🇺🇸US-156.146.38.170-0185 | 115.691MB
+  - 🇺🇸US-156.146.38.169-0184 | 94.334MB
+  - 🇺🇸US-173.244.56.9-0126 | 131.011MB
   - '🇺🇸[www.v2nodes.com] trojan-US-... #5'
-  - 🇺🇸US-66.163.122.81-0237 | 25.517MB
-  - 🇺🇸US_2|1.8MB/s
-  - 🇺🇸US_6|1.3MB/s|K001-260618
-  - '🏳[www.v2nodes.com] vless- #33'
-  - 🇺🇸202161 | ⚡️Telegram = t.me/S...
-  - 🇺🇸 美国 | USA 6
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #11'
-  - 🇺🇸 美国 | USA 7
+  - 🇺🇸US-193.151.163.18-0085 | 186.993MB
+  - '🇺🇸[www.v2nodes.com] trojan-US-... #10'
+  - 🇺🇸US-216.152.156.42-0095 | 78.74MB
+  - 🇺🇸US-216.152.155.23-0091 | 87.193MB
+  - 🇺🇸US-216.152.156.212-0233 | 120.446MB
+  - US_speednode_0040
+  - 🇺🇸US-216.152.155.158-0097 | 107.573MB
+  - 🇺🇸US-193.151.160.9-0086 | 192.274MB
+  - 🇺🇸US-45.86.51.18-0112 | 201.653MB
+  - 🇺🇸US-193.151.160.18-0088 | 191.32MB
+  - '🇺🇸[www.v2nodes.com] vless-US-1... #7'
+  - 🇺🇸US-185.230.230.18-0087 | 195.027MB
+  - 🇺🇸_US_美国
+  - '🇺🇸[www.v2nodes.com] vless-US-1... #2'
+  - '🇺🇸[www.v2nodes.com] trojan-US-... #7'
+  - 🇺🇸US-216.152.155.54-0110 | 88.022MB
+  - '🏳[www.v2nodes.com] vless- #9'
+  - 🇱🇰[www.v2nodes.com] vless-LK-6...
+  - 🇺🇸 美国 | USA 4
+  - 🇺🇸 美国 | USA 11
   - 🇺🇸 美国 | USA 2
+  - 🇺🇸 美国 | USA 13
+  - 🇺🇸 美国 | USA 10
+  - 🇺🇸 美国 | USA 12
+  - 🇺🇸 美国 | USA 7
+  - 🇺🇸 美国 | USA 8
+  - 🇺🇸 美国 | USA 3
+  - 🇺🇸 美国 | USA 5
+  - 🇺🇸 美国 | USA 5_2
 rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
