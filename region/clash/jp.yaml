@@ -4,7 +4,7 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #5 | 37ms'
+- name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #6 | 273ms'
   network: ws
   port: 443
   server: 104.21.221.158
@@ -17,122 +17,91 @@ proxies:
     headers:
       Host: ccc.010304.xyz
     path: /fp=unsafefp=unsafe
-- client-fingerprint: chrome
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-4... | 148ms'
-  network: ws
+- cipher: aes-128-gcm
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-5141... | 323ms'
+  password: shadowsocks
   port: 443
-  server: kclx.eu.org
-  servername: kclx.eu.org
-  tls: true
-  type: vless
-  uuid: 0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b
-  ws-opts:
-    headers:
-      Host: kclx.eu.org
-    path: /154.16.10.34-8080
-- name: '[Eternity] 🇯🇵JP-149.22.87.241-0149 | 35.835MB | 478ms'
+  server: 149.22.87.204
+  type: ss
+- name: '[Eternity] 🇯🇵JP-149.22.87.241-0142 | 21.628MB | 324ms'
   server: 149.22.87.241
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: '[Eternity] 🇯🇵JP-149.22.87.240-0148 | 34.174MB | 479ms'
-  server: 149.22.87.240
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
+- cipher: aes-128-gcm
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1291... | 325ms'
   password: shadowsocks
-- alterId: '1'
-  cipher: auto
-  name: '[freeSub] C🟠🇯🇵hos[🎬🤖📺🎭]_dokng.com_c606d57e | 559ms'
-  network: tcp
-  port: 449
-  server: g06.jp04-1d-vm0.entry.fr0528.art
-  skip-cert-verify: false
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 9c955dfc-c1d6-3de3-8230-deac3bd9c1a2
-  xudp: true
+  port: 443
+  server: 149.22.87.240
+  type: ss
 - cipher: aes-256-gcm
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 633ms'
+  name: '[AutoMerge] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 445ms'
   password: 3eOFeNssde7PYYMv
   port: 443
   server: 84.247.155.196
   type: ss
-- name: '[zhuhaiuk] JP - zhuhai.uk | 649ms'
-  type: vless
-  server: jp.huahua.wiki
+- name: '[zhuhaiuk] JP - zhuhai.uk 03 | 553ms'
+  type: http
+  server: fan.587475.xyz
   port: 443
-  uuid: ef857676-6b00-4c1b-8d98-712dd355230a
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.apple.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: dr63-MwSmvcVljij8PHNZasukHgBv0mHk-QKa7i4yyo
-    short-id: bff486649d0ae69e
-- type: vless
-  name: '[free18] 🇯🇵_日本 | 731ms'
-  server: jp.huahua.wiki
+- name: '[zhuhaiuk] JP - zhuhai.uk 02 | 557ms'
+  type: http
+  server: fan.571589.xyz
   port: 443
-  uuid: ef857676-6b00-4c1b-8d98-712dd355230a
-  flow: xtls-rprx-vision
-  udp: true
+  username: 'null'
+  password: 'null'
   tls: true
-  servername: www.apple.com
-  sni: www.apple.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: dr63-MwSmvcVljij8PHNZasukHgBv0mHk-QKa7i4yyo
-    short-id: bff486649d0ae69e
-- name: '[Eternity] 🇯🇵JP-84.247.155.196-0201 | 0.261MB | 734ms'
-  server: 84.247.155.196
-  port: 80
-  type: ss
-  cipher: aes-256-gcm
-  password: 3eOFeNssde7PYYMv
-- name: '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_043d44ac | 817ms'
-  password: ''
+  sni: fan.571589.xyz
+- name: '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_9efa9595 | 566ms'
+  password: null
   port: 443
   server: fan.571589.xyz
-  skip-cert-verify: true
-  sni: fan.571589.xyz
+  skip-cert-verify: false
   tls: true
   type: http
+  username: null
+- name: '[zhuhaiuk] JP - zhuhai.uk | 594ms'
+  type: http
+  server: fan.587475.xyz
+  port: 443
+  tls: true
+  sni: fan.587475.xyz
+- name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #3 | 805ms'
+  port: 443
+  server: 137.220.221.179
+  tls: false
+  type: vless
+  uuid: a16a3336-c9ab-489f-9b85-c973f5e2cfa4
+- name: '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_8b89618a | 1031ms'
+  password: null
+  port: 10808
+  server: 101.36.104.239
+  type: socks5
   udp: true
-  username: ''
-- name: '[ermaozi] 🇯🇵 日本 | JPN #1 | 990ms'
-  password: b17e9b52db9623bd6c16eea3d7adb5b3
-  port: 18295
-  server: ench-snet-app.w-ctrip.cn
+  username: null
+- name: '[freeSub] C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_0f5692d8 | 1296ms'
+  password: null
+  port: 40583
+  server: 120.232.204.58
   skip-cert-verify: true
-  sni: cm.g.doubleclick.net
-  type: trojan
-- name: '[ermaozi] 🇯🇵 日本 | JPN #2 | 992ms'
-  password: b17e9b52db9623bd6c16eea3d7adb5b3
-  port: 24914
-  server: ench-snet-app.w-ctrip.cn
-  skip-cert-verify: true
-  sni: cm.g.doubleclick.net
-  type: trojan
-- name: '[ermaozi] ProxyPool | 🇯🇵 日本 | JPN 2 | 1004ms'
-  server: ench-snet-app.w-ctrip.cn
-  port: 18295
-  type: trojan
-  password: b17e9b52db9623bd6c16eea3d7adb5b3
-  sni: cm.g.doubleclick.net
-  skip-cert-verify: true
-  udp: true
-- encryption: none
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 1115ms'
+  tls: true
+  type: http
+  username: null
+- cipher: aes-256-gcm
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 1475ms'
+  password: 3eOFeNssde7PYYMv
+  port: 80
+  server: 84.247.155.196
+  type: ss
+- client-fingerprint: chrome
+  encryption: none
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 2141ms'
   network: ws
   port: 443
-  server: 172.67.156.147
+  server: 104.18.42.98
   servername: jp3.yohototo.top
-  skip-cert-verify: false
   tls: true
   type: vless
   uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
@@ -141,32 +110,11 @@ proxies:
       Host: jp3.yohototo.top
     path: /tyxyws
 - cipher: aes-256-gcm
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 1252ms'
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 2737ms'
   password: BeaUf9c0AEWH40Pu
   port: 8388
   server: 154.36.158.197
   type: ss
-- name: '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_8b89618a | 1674ms'
-  password: null
-  port: 10808
-  server: 101.36.104.239
-  type: socks5
-  udp: true
-  username: null
-- name: '[freeSub] C🟠🇯🇵hos[🎬🎭🎪✨]_dokng.com_97ae08e4 | 2303ms'
-  port: 40583
-  server: 120.232.204.58
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[ermaozi] 🇯🇵JP_1|2.7MB/s | 2487ms'
-  password: 'null'
-  port: 40583
-  server: 120.232.204.58
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -174,46 +122,40 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #5 | 37ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-4... | 148ms'
-  - '[Eternity] 🇯🇵JP-149.22.87.241-0149 | 35.835MB | 478ms'
-  - '[Eternity] 🇯🇵JP-149.22.87.240-0148 | 34.174MB | 479ms'
-  - '[freeSub] C🟠🇯🇵hos[🎬🤖📺🎭]_dokng.com_c606d57e | 559ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 633ms'
-  - '[zhuhaiuk] JP - zhuhai.uk | 649ms'
-  - '[free18] 🇯🇵_日本 | 731ms'
-  - '[Eternity] 🇯🇵JP-84.247.155.196-0201 | 0.261MB | 734ms'
-  - '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_043d44ac | 817ms'
-  - '[ermaozi] 🇯🇵 日本 | JPN #1 | 990ms'
-  - '[ermaozi] 🇯🇵 日本 | JPN #2 | 992ms'
-  - '[ermaozi] ProxyPool | 🇯🇵 日本 | JPN 2 | 1004ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 1115ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 1252ms'
-  - '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_8b89618a | 1674ms'
-  - '[freeSub] C🟠🇯🇵hos[🎬🎭🎪✨]_dokng.com_97ae08e4 | 2303ms'
-  - '[ermaozi] 🇯🇵JP_1|2.7MB/s | 2487ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #6 | 273ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-5141... | 323ms'
+  - '[Eternity] 🇯🇵JP-149.22.87.241-0142 | 21.628MB | 324ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1291... | 325ms'
+  - '[AutoMerge] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 445ms'
+  - '[zhuhaiuk] JP - zhuhai.uk 03 | 553ms'
+  - '[zhuhaiuk] JP - zhuhai.uk 02 | 557ms'
+  - '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_9efa9595 | 566ms'
+  - '[zhuhaiuk] JP - zhuhai.uk | 594ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #3 | 805ms'
+  - '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_8b89618a | 1031ms'
+  - '[freeSub] C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_0f5692d8 | 1296ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 1475ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 2141ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 2737ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #5 | 37ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-4... | 148ms'
-  - '[Eternity] 🇯🇵JP-149.22.87.241-0149 | 35.835MB | 478ms'
-  - '[Eternity] 🇯🇵JP-149.22.87.240-0148 | 34.174MB | 479ms'
-  - '[freeSub] C🟠🇯🇵hos[🎬🤖📺🎭]_dokng.com_c606d57e | 559ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 633ms'
-  - '[zhuhaiuk] JP - zhuhai.uk | 649ms'
-  - '[free18] 🇯🇵_日本 | 731ms'
-  - '[Eternity] 🇯🇵JP-84.247.155.196-0201 | 0.261MB | 734ms'
-  - '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_043d44ac | 817ms'
-  - '[ermaozi] 🇯🇵 日本 | JPN #1 | 990ms'
-  - '[ermaozi] 🇯🇵 日本 | JPN #2 | 992ms'
-  - '[ermaozi] ProxyPool | 🇯🇵 日本 | JPN 2 | 1004ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 1115ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 1252ms'
-  - '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_8b89618a | 1674ms'
-  - '[freeSub] C🟠🇯🇵hos[🎬🎭🎪✨]_dokng.com_97ae08e4 | 2303ms'
-  - '[ermaozi] 🇯🇵JP_1|2.7MB/s | 2487ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #6 | 273ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-5141... | 323ms'
+  - '[Eternity] 🇯🇵JP-149.22.87.241-0142 | 21.628MB | 324ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1291... | 325ms'
+  - '[AutoMerge] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 445ms'
+  - '[zhuhaiuk] JP - zhuhai.uk 03 | 553ms'
+  - '[zhuhaiuk] JP - zhuhai.uk 02 | 557ms'
+  - '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_9efa9595 | 566ms'
+  - '[zhuhaiuk] JP - zhuhai.uk | 594ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #3 | 805ms'
+  - '[freeSub] D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_8b89618a | 1031ms'
+  - '[freeSub] C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_0f5692d8 | 1296ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 1475ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 2141ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 2737ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
