@@ -4,23 +4,23 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 564ms'
-  server: ench-snet-app.w-ctrip.cn
-  port: 22003
+- name: '[roosterkid] 🇹🇼[openproxylist.com] trojan-TW (2) | 771ms'
   type: trojan
+  server: ench-snet-app.w-ctrip.cn
+  port: 47786
   password: b17e9b52db9623bd6c16eea3d7adb5b3
   sni: cm.g.doubleclick.net
+  tls: true
   skip-cert-verify: true
-  udp: true
-- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 3 | 565ms'
-  server: ench-snet-app.w-ctrip.cn
-  port: 54815
+- name: '[roosterkid] 🇹🇼[openproxylist.com] trojan-TW | 877ms'
   type: trojan
+  server: ench-snet-app.w-ctrip.cn
+  port: 45503
   password: b17e9b52db9623bd6c16eea3d7adb5b3
   sni: cm.g.doubleclick.net
+  tls: true
   skip-cert-verify: true
-  udp: true
-- name: '[NoMoreWalls] 🇹🇼 🇨🇳 台湾 | TWN #1 | 690ms'
+- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 901ms'
   password: b17e9b52db9623bd6c16eea3d7adb5b3
   port: 45503
   server: ench-snet-app.w-ctrip.cn
@@ -28,14 +28,13 @@ proxies:
   sni: cm.g.doubleclick.net
   type: trojan
   udp: true
-- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 691ms'
-  server: ench-snet-app.w-ctrip.cn
-  port: 45502
-  type: trojan
-  password: b17e9b52db9623bd6c16eea3d7adb5b3
-  sni: cm.g.doubleclick.net
-  skip-cert-verify: true
-  udp: true
+- name: '[zhuhaiuk] TW - zhuhai.uk | 1037ms'
+  type: http
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  port: 1443
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
+  tls: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -43,18 +42,18 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 564ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 3 | 565ms'
-  - '[NoMoreWalls] 🇹🇼 🇨🇳 台湾 | TWN #1 | 690ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 691ms'
+  - '[roosterkid] 🇹🇼[openproxylist.com] trojan-TW (2) | 771ms'
+  - '[roosterkid] 🇹🇼[openproxylist.com] trojan-TW | 877ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 901ms'
+  - '[zhuhaiuk] TW - zhuhai.uk | 1037ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 564ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 3 | 565ms'
-  - '[NoMoreWalls] 🇹🇼 🇨🇳 台湾 | TWN #1 | 690ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 691ms'
+  - '[roosterkid] 🇹🇼[openproxylist.com] trojan-TW (2) | 771ms'
+  - '[roosterkid] 🇹🇼[openproxylist.com] trojan-TW | 877ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 901ms'
+  - '[zhuhaiuk] TW - zhuhai.uk | 1037ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
