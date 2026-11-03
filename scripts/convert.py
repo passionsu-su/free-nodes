@@ -97,7 +97,36 @@ sb = {'log': {'level': 'warn'},
       'route': {'rules': [{'action': 'sniff'}, {'protocol': 'dns', 'action': 'hijack-dns'}, {'ip_is_private': True, 'outbound': 'direct'}],
                 'final': 'PROXY', 'auto_detect_interface': True, 'default_domain_resolver': 'local'}}
 shutil.copyfile(f'{OUT}/v2ray/all.txt', f'{OUT}/shadowrocket/sub.txt')
-for d in ('stash/stash.yaml', 'clashmi/clashmi.yaml', 'clash/cfw.yaml', 'clash/cfw-nodes.yaml'): shutil.copyfile(f'{OUT}/clash/all.yaml', f'{OUT}/{d}')
+for d in ('stash/stash.yaml', 'clashmi/clashmi.yaml'): shutil.copyfile(f'{OUT}/clash/all.yaml', f'{OUT}/{d}')
+
+# 旧版 Clash for Windows 0.20.x（Clash Premium 内核）只认 http/socks5/ss/ssr/vmess/trojan，
+# 不认 hysteria2/vless/tuic/reality 等 Meta 专有协议，混入会导致整份配置加载失败。
+CFW_DROP = {'client-fingerprint', 'reality-opts', 'flow', 'xudp', 'packet-encoding', 'global-padding',
+            'authenticated-length', 'smux', 'dialer-proxy', 'ip-version', 'tfo', 'mptcp'}
+def cfw_ok(p):
+    t = p.get('type')
+    if t not in ('http', 'socks5', 'ss', 'ssr', 'vmess', 'trojan'): return False
+    if p.get('reality-opts') or p.get('flow'): return False
+    if t == 'ss' and (str(p.get('cipher', '')).startswith('2022') or p.get('plugin') not in (None, 'obfs', 'v2ray-plugin')): return False
+    if t == 'vmess' and p.get('network') not in (None, 'tcp', 'ws', 'http', 'h2', 'grpc'): return False
+    if t == 'trojan' and p.get('network') not in (None, 'tcp', 'ws', 'grpc'): return False
+    return True
+full = yaml.safe_load(open(f'{OUT}/clash/all.yaml', encoding='utf-8'))
+cps = [{k: v for k, v in p.items() if k not in CFW_DROP} for p in full.get('proxies', []) if cfw_ok(p)]
+if not cps: raise SystemExit('clash/cfw.yaml: no convertible nodes')
+names = {p['name'] for p in cps}
+groups = []
+for g in full.get('proxy-groups', []):
+    g = dict(g); g['proxies'] = [x for x in g.get('proxies', []) if x in names or x in ('AUTO', 'PROXY', 'DIRECT', 'REJECT')]
+    groups.append(g)
+cfw = {k: v for k, v in full.items() if k not in ('proxies', 'proxy-groups')}
+cfw['proxies'] = cps; cfw['proxy-groups'] = groups
+cfw = {k: cfw[k] for k in list(full.keys()) if k in cfw}
+bad = [p['name'] for p in cps if p['type'] not in ('http', 'socks5', 'ss', 'ssr', 'vmess', 'trojan')]
+assert not bad, bad
+for d in ('clash/cfw.yaml', 'clash/cfw-nodes.yaml'):
+    yaml.safe_dump(cfw, open(f'{OUT}/{d}', 'w', encoding='utf-8'), allow_unicode=True, sort_keys=False)
+print(f'PASS clash/cfw.yaml: {len(cps)} nodes (Premium-compatible only)')
 for f, n in (('surge/surge.conf', len(surge)), ('quantumultx/qx.txt', len(qx)), ('loon/loon.list', len(loon)), ('singbox/singbox.json', len(ob))):
     if n == 0: raise SystemExit(f'{f}: no convertible nodes')
     print(f'PASS {f}: {n} nodes')
