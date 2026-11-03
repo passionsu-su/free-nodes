@@ -4,41 +4,36 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_aba567e8 | 49ms'
+- name: '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_aba567e8 | 113ms'
   port: 443
   server: 172.64.69.89
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_0618cdac | 56ms'
+- name: '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_0618cdac | 147ms'
   password: None
   port: 443
   server: 172.64.68.89
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[roosterkid] 🇰🇷[openproxylist.com] ss-KR | 519ms'
+- cipher: aes-256-gcm
+  name: '[NoMoreWalls] 🇰🇷[www.v2nodes.com] ss-KR-1185... | 651ms'
+  password: Y6R9pAtvxxzmGC
+  port: 5001
+  server: 141.164.45.187
   type: ss
-  server: 43.202.1.87
-  port: 8443
-  cipher: chacha20-ietf-poly1305
-  password: 7e68e32f-8015-4f37-9082-70e8b0b58043
-- name: '[Eternity] 🇰🇷KR-211.178.105.134-0197 | 0.06MB | 589ms'
-  server: 211.178.105.134
-  port: 6123
-  type: ss
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 633ms'
+- name: '[NoMoreWalls] 🇰🇷[www.v2nodes.com] vless-KR-1... | 755ms'
   network: ws
   port: 25555
   server: 152.69.226.63
+  servername: 152.69.226.63
   tls: false
   type: vless
   uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
   ws-opts:
     path: /
-- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 638ms'
+- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 762ms'
   type: vless
   server: 152.69.226.63
   port: 25555
@@ -48,42 +43,43 @@ proxies:
   ws-opts:
     path: /
     headers: {}
-- name: '[Eternity] 🇰🇷KR-141.164.45.187-0225 | 0.0MB | 699ms'
-  server: 141.164.45.187
-  port: 6679
-  type: ss
-  cipher: aes-256-gcm
-  password: TEzjfAYq2IjtuoS
-- name: '[Eternity] 🇰🇷KR-218.237.185.234-0221 | 0.467MB | 762ms'
+- name: '[ermaozi] 🇰🇷205310 | ⚡️Telegram = t.me/S... | 767ms'
+  password: 1671a252e2a97dc2bda4e515475931da
+  port: 50160
+  server: 132.226.226.189
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: false
+  type: hysteria2
+- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 771ms'
+  network: ws
+  port: 25555
+  server: 152.69.226.63
+  tls: false
+  type: vless
+  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
+  ws-opts:
+    path: /
+- name: '[ermaozi] 🇰🇷205309 | ⚡️Telegram = t.me/S... | 779ms'
+  password: maintell
+  port: 2053
+  server: 152.70.237.123
+  skip-cert-verify: true
+  sni: bing.com
+  tls: false
+  type: hysteria2
+- name: '[Eternity] 🇰🇷KR-218.237.185.234-0291 | 4.139MB | 1016ms'
   server: p141.panda001.net
   port: 4652
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: '[Eternity] 🇰🇷KR-141.164.45.187-0217 | 2.671MB | 1092ms'
-  server: 141.164.45.187
-  port: 7001
+- name: '[Eternity] 🇰🇷KR-211.178.105.134-0305 | 6.691MB | 3027ms'
+  server: 211.178.105.134
+  port: 6123
   type: ss
-  cipher: aes-256-gcm
-  password: RexnBgU7EV5ADxG
-- cipher: aes-256-gcm
-  name: '[ermaozi] 🇰🇷[www.v2nodes.com] ss-KR-1185... | 2040ms'
-  password: Y6R9pAtvxxzmGC
-  port: 8888
-  server: 141.164.45.187
-  type: ss
-- name: '[zhuhaiuk] KR - zhuhai.uk 02 | 2510ms'
-  type: socks5
-  server: 121.169.46.116
-  port: 1090
-  username: T2clM0QlM0Q6
-  password: T2clM0QlM0Q6
-- name: '[zhuhaiuk] KR - zhuhai.uk | 5349ms'
-  type: socks5
-  server: 121.169.46.116
-  port: 1090
-  username: Og%3D%3D
-  password: Og%3D%3D
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -91,34 +87,30 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_aba567e8 | 49ms'
-  - '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_0618cdac | 56ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] ss-KR | 519ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0197 | 0.06MB | 589ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 633ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 638ms'
-  - '[Eternity] 🇰🇷KR-141.164.45.187-0225 | 0.0MB | 699ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0221 | 0.467MB | 762ms'
-  - '[Eternity] 🇰🇷KR-141.164.45.187-0217 | 2.671MB | 1092ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] ss-KR-1185... | 2040ms'
-  - '[zhuhaiuk] KR - zhuhai.uk 02 | 2510ms'
-  - '[zhuhaiuk] KR - zhuhai.uk | 5349ms'
+  - '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_aba567e8 | 113ms'
+  - '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_0618cdac | 147ms'
+  - '[NoMoreWalls] 🇰🇷[www.v2nodes.com] ss-KR-1185... | 651ms'
+  - '[NoMoreWalls] 🇰🇷[www.v2nodes.com] vless-KR-1... | 755ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 762ms'
+  - '[ermaozi] 🇰🇷205310 | ⚡️Telegram = t.me/S... | 767ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 771ms'
+  - '[ermaozi] 🇰🇷205309 | ⚡️Telegram = t.me/S... | 779ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0291 | 4.139MB | 1016ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0305 | 6.691MB | 3027ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_aba567e8 | 49ms'
-  - '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_0618cdac | 56ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] ss-KR | 519ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0197 | 0.06MB | 589ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 633ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 638ms'
-  - '[Eternity] 🇰🇷KR-141.164.45.187-0225 | 0.0MB | 699ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0221 | 0.467MB | 762ms'
-  - '[Eternity] 🇰🇷KR-141.164.45.187-0217 | 2.671MB | 1092ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] ss-KR-1185... | 2040ms'
-  - '[zhuhaiuk] KR - zhuhai.uk 02 | 2510ms'
-  - '[zhuhaiuk] KR - zhuhai.uk | 5349ms'
+  - '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_aba567e8 | 113ms'
+  - '[freeSub] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_0618cdac | 147ms'
+  - '[NoMoreWalls] 🇰🇷[www.v2nodes.com] ss-KR-1185... | 651ms'
+  - '[NoMoreWalls] 🇰🇷[www.v2nodes.com] vless-KR-1... | 755ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 762ms'
+  - '[ermaozi] 🇰🇷205310 | ⚡️Telegram = t.me/S... | 767ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 771ms'
+  - '[ermaozi] 🇰🇷205309 | ⚡️Telegram = t.me/S... | 779ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0291 | 4.139MB | 1016ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0305 | 6.691MB | 3027ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
