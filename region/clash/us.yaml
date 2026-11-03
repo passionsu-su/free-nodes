@@ -4,133 +4,77 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[Eternity] 🇺🇸US-156.146.38.167-0145 | 0.37MB | 40ms'
-  server: 156.146.38.167
+- type: trojan
+  name: '[free18] 🇺🇸_美国 (16) (2) | 27ms'
+  server: 167.88.61.198
   port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: '[Eternity] 🇺🇸US-156.146.38.168-0141 | 0.242MB | 40ms'
-  server: 156.146.38.168
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: '[Eternity] 🇺🇸US-156.146.38.169-0139 | 0.0MB | 43ms'
-  server: 156.146.38.169
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: '[Eternity] 🇺🇸US-156.146.38.170-0143 | 0.199MB | 52ms'
-  server: 156.146.38.170
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78231d9b | 82ms'
-  port: 443
-  server: 23.133.176.14
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: cdn.browseseniorrolesandenhanceyourcareertoday.com
+  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
   skip-cert-verify: true
+- type: trojan
+  name: '[free18] 🇺🇸_美国 (13) (2) | 30ms'
+  server: 167.88.61.198
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: cdn.browseseniorrolesandenhanceyourcareertoday.com
+  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+- name: '[ermaozi] 🇺🇸[www.v2nodes.com] trojan-US-... #1 | 31ms'
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 167.88.61.198
+  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
+  type: trojan
+- name: '[Eternity] 🇺🇸US-167.88.61.52-0147 | 0.0MB | 33ms'
+  server: 167.88.61.52
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.browseseniorrolesandenhanceyourcareertoday.com
+  skip-cert-verify: false
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_412dd6e0 | 37ms'
+  port: 443
+  server: zebpay.site
+  sni: zebpay.site
   tls: true
   type: http
-- name: '[roosterkid] 🇺🇸[openproxylist.com] ss-US (2) | 85ms'
-  type: ss
-  server: 185.215.132.9
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: '[Eternity] 🇺🇸US-95.215.201.18-0163 | 42.933MB | 89ms'
-  server: 95.215.201.18
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: '[ermaozi] 🇺🇸 美国 | USA 12 | 95ms'
-  server: 104.18.35.86
-  port: 8080
-  type: vless
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  tls: false
-  servername: hhlfy.twiladaphne.ndjp.net
-  network: ws
-  ws-opts:
-    path: /sg-melbi
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-  udp: true
-- name: '[roosterkid] 🇺🇸[openproxylist.com] ss-US | 101ms'
-  type: ss
-  server: 185.215.132.18
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: '[Pawdroid] 美国+CloudFlare节点 (3) | 108ms'
-  type: vless
-  server: 104.21.94.161
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5e03a401 | 44ms'
+  password: None
   port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  encryption: none
+  server: tzoa.fun
+  skip-cert-verify: false
   tls: true
-  servername: ccc.010304.xyz
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: ccc.010304.xyz
-- name: '[Eternity] 🇺🇸US-193.151.160.18-0162 | 140.642MB | 116ms'
-  server: 193.151.160.18
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: '[Eternity] 🇺🇸US-66.163.112.13-0212 | 73.584MB | 118ms'
-  server: 66.163.112.13
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8adba40b | 46ms'
+  password: 'null'
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.unlockyourfuturefindyourperfectcareer.com
+  server: zebpay.site
+  tls: true
+  type: http
+  username: 'null'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78f4a4fd | 47ms'
+  password: None
+  port: 443
+  server: zebpay.site
   skip-cert-verify: false
-- name: '[Eternity] 🇺🇸US-216.152.156.65-0197 | 84.922MB | 121ms'
-  server: 216.152.156.65
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1668ea55 | 48ms'
+  password: 'null'
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  skip-cert-verify: false
-- name: '[Eternity] 🇺🇸US-193.151.160.9-0137 | 175.111MB | 123ms'
-  server: 193.151.160.9
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: '[Eternity] 🇺🇸US-173.244.56.9-0203 | 122.227MB | 125ms'
-  server: 173.244.56.9
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: '[Eternity] 🇺🇸US-216.152.156.81-0182 | 130.642MB | 131ms'
-  server: 216.152.156.81
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  skip-cert-verify: false
-- name: '[Eternity] 🇺🇸US-37.19.198.160-0144 | 52.685MB | 133ms'
-  server: 37.19.198.160
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: '[Eternity] 🇺🇸US-173.244.56.6-0201 | 105.514MB | 135ms'
-  server: 173.244.56.6
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: '[roosterkid] 🇺🇸[openproxylist.com] vless-US | 135ms'
+  server: tzoa.fun
+  tls: true
+  type: http
+  username: 'null'
+- name: '[roosterkid] 🇺🇸[openproxylist.com] vless-US (3) | 50ms'
   type: vless
   server: us3.shtil.io
   port: 443
@@ -139,670 +83,8 @@ proxies:
   tls: true
   servername: us3.shtil.io
   skip-cert-verify: true
-- name: '[Eternity] 🇺🇸US-66.163.112.121-0250 | 76.0MB | 136ms'
-  server: 66.163.112.121
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.unlockyourfuturefindyourperfectcareer.com
-  skip-cert-verify: false
-- alterId: 0
-  cipher: auto
-  name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_0df8f765 | 137ms'
-  network: none
-  port: 47116
-  server: 43.173.67.42
-  tls: false
-  type: vmess
-  uuid: fc3347e2-007d-4cad-fe28-3d80672c3ccc
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3ec254da | 142ms'
-  port: 9002
-  server: 138.199.35.218
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: '[Eternity] 🇺🇸US-66.163.114.166-0217 | 25.289MB | 143ms'
-  server: 66.163.114.166
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: false
-- name: '[Eternity] 🇺🇸US-193.151.163.18-0135 | 163.026MB | 144ms'
-  server: 193.151.163.18
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: '[Eternity] 🇺🇸US-37.19.198.243-0140 | 60.888MB | 144ms'
-  server: 37.19.198.243
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
 - type: vless
-  name: '[free18] 🇺🇸_美国 (27) (2) | 145ms'
-  server: 45.77.121.70
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  udp: true
-  tls: true
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  sni: xy1ej.stream-node-us.danfeng.qzz.io
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e1d0dc28 | 146ms'
-  password: None
-  port: 9002
-  server: 138.199.35.208
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ab091b79 | 146ms'
-  password: ''
-  port: 9002
-  server: 138.199.35.201
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_596fc241 | 146ms'
-  password: None
-  port: 9002
-  server: 138.199.35.202
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fc4a550 | 148ms'
-  port: 9002
-  server: 138.199.35.210
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_4dbb3d73 | 148ms'
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1e63795f | 149ms'
-  password: 'null'
-  port: 9002
-  server: 138.199.35.206
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-- name: '[Eternity] 🇺🇸US-216.152.156.42-0198 | 104.75MB | 149ms'
-  server: 216.152.156.42
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.healthcarejobshubenhancemedicalprofessionalskillstoday.com
-  skip-cert-verify: false
-- name: '[Eternity] 🇺🇸US-198.98.53.130-0290 | 0.053MB | 149ms'
-  server: 198.98.53.130
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: eDfN7SODQceIOmIAbtJJtK
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0cd2d06a | 150ms'
-  port: 9002
-  server: 138.199.35.195
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_bf297661 | 150ms'
-  password: null
-  port: 9002
-  server: 138.199.35.217
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[Eternity] 🇺🇸US-66.163.114.114-0215 | 23.953MB | 151ms'
-  server: 66.163.114.114
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: false
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c52cc78 | 152ms'
-  port: 9002
-  server: 138.199.35.209
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_74d3e768 | 153ms'
-  password: ''
-  port: 9002
-  server: 138.199.35.212
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: '[Eternity] 🇺🇸US-138.199.42.68-6035 | 71.317MB | 153ms'
-  server: 138.199.42.68
-  port: 8080
-  type: ss
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
-- name: '[Pawdroid] 美国+CloudFlare节点 | 154ms'
-  type: vless
-  server: 104.26.13.54
-  port: 8080
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  encryption: none
-  network: ws
-  ws-opts:
-    path: /sg-melbi
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c66af7d3 | 156ms'
-  password: null
-  port: 9002
-  server: 138.199.35.213
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_91e30e8f | 157ms'
-  password: 'null'
-  port: 9002
-  server: 138.199.35.211
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-- name: '[Eternity] 🇺🇸US-45.86.51.18-0195 | 198.03MB | 158ms'
-  server: 45.86.51.18
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e487e5ba | 159ms'
-  password: None
-  port: 9002
-  server: 138.199.35.205
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[Eternity] 🇺🇸US-66.163.114.132-0226 | 25.656MB | 161ms'
-  server: 66.163.114.132
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: false
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e3414a29 | 163ms'
-  password: 'null'
-  port: 9002
-  server: 138.199.35.216
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_51f1276e | 163ms'
-  password: ''
-  port: 9002
-  server: 138.199.35.199
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: ''
-- name: '[Eternity] 🇺🇸US-169.197.140.218-1980 | 131.757MB | 163ms'
-  server: 169.197.140.218
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.discoverfreshgraduatejobsstartyourprofessionaljourney.com
-  skip-cert-verify: false
-- name: '[Eternity] 🇺🇸US-216.152.155.23-0148 | 87.258MB | 163ms'
-  server: 216.152.155.23
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: false
-- name: '[Eternity] 🇺🇸US-185.230.230.18-0213 | 194.863MB | 164ms'
-  server: 185.230.230.18
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: '[Eternity] 🇺🇸US-216.152.155.158-0179 | 108.227MB | 164ms'
-  server: 216.152.155.158
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: resources.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: false
-- name: '[Eternity] 🇺🇸US-37.19.198.244-0142 | 58.459MB | 165ms'
-  server: 37.19.198.244
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fb17d17 | 166ms'
-  password: None
-  port: 9002
-  server: 138.199.35.214
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[ermaozi] 🇺🇸 美国 | USA 18 | 167ms'
-  server: 104.17.0.3
-  port: 443
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_681dd14a | 167ms'
-  port: 9002
-  server: 138.199.35.219
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0f8d1baa | 168ms'
-  password: None
-  port: 9002
-  server: 138.199.35.197
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_be3627b8 | 170ms'
-  password: 'null'
-  port: 9002
-  server: 138.199.35.200
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a88e970f | 171ms'
-  password: gs4BXwT6SW
-  port: 10988
-  server: 154.26.192.123
-  tls: false
-  type: http
-  username: fQ67Dpe5dU
-- name: '[Eternity] 🇺🇸US-216.152.155.54-0168 | 102.026MB | 172ms'
-  server: 216.152.155.54
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: false
-- cipher: chacha20-ietf-poly1305
-  name: '[ermaozi] 🇺🇸[www.v2nodes.com] ss-US-1612... | 173ms'
-  password: DZRy4Q3QH0jUGfKFl2jDCZ
-  port: 28960
-  server: 138.197.89.234
-  type: ss
-- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (5) | 180ms'
-  type: trojan
-  server: 216.152.155.54
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.nextjobopportunityandclaimyouridealrole.com
-  tls: true
-  skip-cert-verify: false
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_fb61d702 | 181ms'
-  password: null
-  port: 9002
-  server: 138.199.35.204
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 13 | 182ms'
-  server: 104.19.0.5
-  port: 443
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_96845fbf | 187ms'
-  password: None
-  port: 443
-  server: 198.44.135.27
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_c63c7573 | 188ms'
-  password: null
-  port: 443
-  server: 198.44.135.27
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3a4fb783 | 192ms'
-  port: 7615
-  server: 47.90.206.169
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[Eternity] 🇺🇸US-216.152.155.176-0152 | 97.145MB | 194ms'
-  server: 216.152.155.176
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.nextjobopportunityandclaimyouridealrole.com
-  skip-cert-verify: false
-- name: '[Eternity] 🇺🇸US-167.88.61.198-0146 | 116.918MB | 195ms'
-  server: 167.88.61.198
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: false
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cfdbfd42 | 196ms'
-  port: 443
-  server: 193.239.236.134
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_137ef924 | 197ms'
-  password: null
-  port: 443
-  server: 148.135.10.80
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[ermaozi] 🇺🇸[www.v2nodes.com] trojan-US-... #1 | 198ms'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 167.88.61.198
-  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
-  type: trojan
-- type: trojan
-  name: '[free18] 🇺🇸_美国 (13) (2) | 198ms'
-  server: 167.88.61.198
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: cdn.browseseniorrolesandenhanceyourcareertoday.com
-  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-- type: trojan
-  name: '[free18] 🇺🇸_美国 (16) (2) | 199ms'
-  server: 167.88.61.198
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: cdn.browseseniorrolesandenhanceyourcareertoday.com
-  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: true
-- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (2) | 200ms'
-  type: trojan
-  server: 167.88.61.198
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
-  tls: true
-  skip-cert-verify: false
-- type: vless
-  name: '[free18] 🇺🇸_美国 (22) | 202ms'
-  server: 188.255.157.136
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  udp: true
-  tls: true
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  sni: xy1ej.stream-node-us.danfeng.qzz.io
-  skip-cert-verify: true
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7976bf9 | 206ms'
-  password: null
-  port: 9443
-  server: 149.88.21.140
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (6) | 208ms'
-  type: trojan
-  server: 216.152.155.131
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.nextjobopportunityandclaimyouridealrole.com
-  tls: true
-  skip-cert-verify: false
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9d54351f | 209ms'
-  password: null
-  port: 443
-  server: 149.88.21.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b2688550 | 210ms'
-  password: None
-  port: 9443
-  server: 149.88.21.140
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b1448db8 | 214ms'
-  port: 443
-  server: 216.107.139.82
-  skip-cert-verify: true
-  sni: 991cc80f13caf81d3426ddebb2da7f49-92ff472ddc24e5b7.apache-iv.com
-  tls: true
-  type: http
-- name: '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 10 | 215ms'
-  server: 179.255.141.59
-  port: 443
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
-- name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_f7924ec8 | 216ms'
-  port: 443
-  server: 68.235.56.51
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_37a111a9 | 216ms'
-  port: 443
-  server: 66.64.100.66
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[Eternity] 🇺🇸US-167.88.61.52-0147 | 124.461MB | 216ms'
-  server: 167.88.61.52
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: false
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_407650e3 | 217ms'
-  password: ''
-  port: 443
-  server: 149.88.21.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: '[ermaozi] 🇺🇸 美国 | USA 11 | 225ms'
-  network: ws
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  port: 443
-  server: 179.255.102.237
-  skip-cert-verify: true
-  sni: api.85s.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: api.85s.me
-    path: /
-- name: '[ermaozi] 🇺🇸 美国 | USA 10 | 227ms'
-  network: ws
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  port: 443
-  server: 179.253.225.34
-  skip-cert-verify: true
-  sni: api.85s.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: api.85s.me
-    path: /
-- alterId: 0
-  cipher: auto
-  http-opts:
-    method: GET
-    path:
-    - /QQqun-737805443
-  name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_e4e61e5b | 233ms'
-  network: http
-  port: 52080
-  server: 23.95.165.21
-  tls: false
-  type: vmess
-  uuid: 296ce89e-03c8-40ed-aca1-736005884460
-- type: vless
-  name: '[free18] 🇺🇸_美国 (20) | 234ms'
-  server: 188.255.157.136
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  udp: true
-  tls: true
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  sni: xy1ej.stream-node-us.danfeng.qzz.io
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 5 | 236ms'
-  server: 179.253.239.20
-  port: 443
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
-- name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_838e9798 | 242ms'
-  password: None
-  port: 8443
-  server: 18.206.28.143
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[ermaozi] 🇺🇸 美国 | USA 16 | 246ms'
-  server: 198.2.251.107
-  port: 45197
-  type: vless
-  uuid: 9d979dd1-1760-4c76-8881-b05a09b4d795
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: LqXTJ-JXo1CgjUQT8trI3OEhY2qOr1YAin2YLuLZFx0
-  servername: www.amazon.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-- name: '[Eternity] 🇺🇸US-170.101.101.67-0155 | 79.497MB | 253ms'
-  server: 170.101.101.67
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.explorecreativejobsandenhanceyourcareerportfolio.com
-  skip-cert-verify: false
-- name: '[Eternity] 🇺🇸US-170.101.101.53-0157 | 79.388MB | 255ms'
-  server: 170.101.101.53
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.explorecreativejobsandenhanceyourcareerportfolio.com
-  skip-cert-verify: false
-- name: '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 3 | 258ms'
-  server: 179.253.231.22
-  port: 443
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
-- name: '[ermaozi] 🇺🇸 美国 | USA 20 | 262ms'
-  server: 179.255.103.84
-  port: 443
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
-- type: vless
-  name: '[free18] 🇺🇸_美国 (29) (2) | 263ms'
+  name: '[free18] 🇺🇸_美国 (29) (2) | 60ms'
   server: 64.23.153.167
   port: 443
   uuid: 26524cce-d514-4014-a426-365fb266a14d
@@ -819,47 +101,32 @@ proxies:
     path: /danfeng?ed=2560
     headers:
       Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c09c3f93 | 268ms'
-  password: e4b72b531a2d10900519
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c266a32b | 61ms'
+  password: null
   port: 443
-  server: 162.243.146.243
-  sni: a2f392f3.acsnet.co
+  server: tzoa.fun
+  skip-cert-verify: false
   tls: true
   type: http
-  username: testuser1
-- name: '[ermaozi] 🇺🇸 美国 | USA 9 | 270ms'
-  server: 64.186.224.154
-  port: 10962
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
-- name: '[ermaozi] 🇺🇸 美国 | USA 14 | 272ms'
-  network: ws
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7569cc30 | 69ms'
+  password: null
   port: 443
-  server: 193.163.19.232
+  server: jewelscollecti.icu
   skip-cert-verify: true
-  sni: api.85s.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: api.85s.me
-    path: /
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_412dd6e0 | 272ms'
-  port: 443
-  server: zebpay.site
-  sni: zebpay.site
   tls: true
   type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3eea6840 | 276ms'
+  username: null
+- alterId: 0
+  cipher: auto
+  name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_0df8f765 | 70ms'
+  network: none
+  port: 47116
+  server: 43.173.67.42
+  tls: false
+  type: vmess
+  uuid: fc3347e2-007d-4cad-fe28-3d80672c3ccc
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3eea6840 | 70ms'
   port: 443
   server: fullmanfirm.icu
   skip-cert-verify: true
@@ -867,100 +134,7 @@ proxies:
   tls: true
   type: http
 - type: vless
-  name: '[free18] 🇺🇸_美国 (26) (2) | 277ms'
-  server: 162.243.148.170
-  port: 443
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  udp: true
-  tls: true
-  servername: t5pmr.mail-node.gfw.kdns.fr
-  sni: t5pmr.mail-node.gfw.kdns.fr
-  skip-cert-verify: true
-  alpn:
-  - http/1.1
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /danfeng?ed=2560
-    headers:
-      Host: t5pmr.mail-node.gfw.kdns.fr
-- name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_3c84b2dc | 278ms'
-  password: null
-  port: 9443
-  server: 154.47.25.78
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] B🟡🇺🇸biz[🎬🤖📺🎭]_dokng.com_1519a3a0 | 279ms'
-  port: 443
-  server: 12.202.180.10
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8adba40b | 280ms'
-  password: 'null'
-  port: 443
-  server: zebpay.site
-  tls: true
-  type: http
-  username: 'null'
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a8e49557 | 289ms'
-  port: 8443
-  server: 35.84.133.236
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[Eternity] 🇺🇸US-216.106.186.33-0209 | 98.092MB | 290ms'
-  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
-  port: 443
-  type: trojan
-  password: f0eb8c92ce8946aaba856569cff1a16b
-  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
-  skip-cert-verify: false
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8c949f1d | 293ms'
-  password: null
-  port: 8443
-  server: 54.190.176.228
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[ermaozi] 🇺🇸 美国 | USA 19 | 294ms'
-  server: 179.253.231.141
-  port: 443
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7108edb3 | 294ms'
-  port: 443
-  server: 207.5.30.9
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[Eternity] 🇺🇸US-216.106.186.32-0204 | 82.091MB | 294ms'
-  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
-  port: 443
-  type: trojan
-  password: dba20dcb635e430fa4d3bfc303a149d2
-  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
-  skip-cert-verify: false
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1668ea55 | 298ms'
-  password: 'null'
-  port: 443
-  server: tzoa.fun
-  tls: true
-  type: http
-  username: 'null'
-- type: vless
-  name: '[free18] 🇺🇸_美国 (28) (2) | 298ms'
+  name: '[free18] 🇺🇸_美国 (28) (2) | 71ms'
   server: 47.254.125.171
   port: 9002
   uuid: 26524cce-d514-4014-a426-365fb266a14d
@@ -977,63 +151,7 @@ proxies:
     path: /danfeng?ed=2560
     headers:
       Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_59f060e6 | 306ms'
-  password: None
-  port: 443
-  server: berniesbodybla.fun
-  skip-cert-verify: false
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cd3eedf9 | 306ms'
-  password: None
-  port: 8443
-  server: 44.248.167.117
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_19f240f6 | 309ms'
-  password: None
-  port: 443
-  server: fullmanfirm.icu
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_da509960 | 310ms'
-  password: null
-  port: 443
-  server: voteshirleysew.club
-  skip-cert-verify: false
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5e03a401 | 312ms'
-  password: None
-  port: 443
-  server: tzoa.fun
-  skip-cert-verify: false
-  tls: true
-  type: http
-  username: null
-- alpn:
-  - http/1.1
-  client-fingerprint: chrome
-  name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_83f4433c | 312ms'
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: adheres-scruple.quick-cdn.net
-  servername: adheres-scruple.quick-cdn.net
-  tls: true
-  type: vless
-  udp: true
-  uuid: 5f3b1a7b-ed44-4f24-af65-8583c8d2664b
-  ws-opts:
-    headers:
-      Host: adheres-scruple.quick-cdn.net
-    path: /ws
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ea973846 | 314ms'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ea973846 | 72ms'
   password: None
   port: 443
   server: goedkoopgeluid.icu
@@ -1041,7 +159,58 @@ proxies:
   tls: true
   type: http
   username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_db89f7a0 | 314ms'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c52cc78 | 73ms'
+  port: 9002
+  server: 138.199.35.209
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f5a5e73c | 73ms'
+  password: None
+  port: 443
+  server: purposebydesig.club
+  skip-cert-verify: false
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_596fc241 | 73ms'
+  password: None
+  port: 9002
+  server: 138.199.35.202
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[Eternity] 🇺🇸US-95.215.201.18-0163 | 83.063MB | 73ms'
+  server: 95.215.201.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_da509960 | 74ms'
+  password: null
+  port: 443
+  server: voteshirleysew.club
+  skip-cert-verify: false
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ccc98c47 | 74ms'
+  port: 9002
+  server: 138.199.35.220
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_681dd14a | 74ms'
+  port: 9002
+  server: 138.199.35.219
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_db89f7a0 | 75ms'
   password: sni="goedkoopgeluid.icu"
   port: 443
   server: goedkoopgeluid.icu
@@ -1050,28 +219,23 @@ proxies:
   tls: true
   type: http
   username: None
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3f6db8c8 | 317ms'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e487e5ba | 76ms'
   password: None
-  port: 8443
-  server: 44.229.69.166
+  port: 9002
+  server: 138.199.35.205
   skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8081d77b | 320ms'
-  port: 443
-  server: 192.227.176.234
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f5a5e73c | 323ms'
-  password: None
-  port: 443
-  server: purposebydesig.club
-  skip-cert-verify: false
   tls: true
   type: http
   username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f51f6e12 | 324ms'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_fb61d702 | 78ms'
+  password: null
+  port: 9002
+  server: 138.199.35.204
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f51f6e12 | 79ms'
   password: None
   port: 443
   server: jgwynphotoarts.pro
@@ -1079,30 +243,64 @@ proxies:
   tls: true
   type: http
   username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_63e28654 | 324ms'
-  password: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_59f060e6 | 79ms'
+  password: None
   port: 443
-  server: purecambogiasl.live
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c4c4168 | 325ms'
-  password: 'null'
-  port: 443
-  server: purecambogiasl.live
-  tls: true
-  type: http
-  username: 'null'
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_85c4b9fa | 327ms'
-  password: null
-  port: 443
-  server: crosscards.site
+  server: berniesbodybla.fun
   skip-cert-verify: false
   tls: true
   type: http
   username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c886aaa1 | 327ms'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3ec254da | 79ms'
+  port: 9002
+  server: 138.199.35.218
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c66af7d3 | 79ms'
+  password: null
+  port: 9002
+  server: 138.199.35.213
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- client-fingerprint: firefox
+  name: '[ermaozi] 🇺🇸[www.v2nodes.com] vless-US-1... #2 | 80ms'
+  port: 443
+  server: us3.shtil.io
+  servername: us3.shtil.io
+  tls: true
+  type: vless
+  uuid: 86a83d11-d751-4b60-aa4e-1dca5cff7028
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fb17d17 | 80ms'
+  password: None
+  port: 9002
+  server: 138.199.35.214
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- type: vless
+  name: '[free18] 🇺🇸_美国 (27) (2) | 80ms'
+  server: 45.77.121.70
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  udp: true
+  tls: true
+  servername: xy1ej.stream-node-us.danfeng.qzz.io
+  sni: xy1ej.stream-node-us.danfeng.qzz.io
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: xy1ej.stream-node-us.danfeng.qzz.io
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c886aaa1 | 81ms'
   password: 'null'
   port: 443
   server: crosscards.site
@@ -1110,16 +308,227 @@ proxies:
   tls: true
   type: http
   username: 'null'
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7569cc30 | 331ms'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1e63795f | 82ms'
+  password: 'null'
+  port: 9002
+  server: 138.199.35.206
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_bf297661 | 83ms'
   password: null
-  port: 443
-  server: jewelscollecti.icu
+  port: 9002
+  server: 138.199.35.217
   skip-cert-verify: true
   tls: true
   type: http
   username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fc4a550 | 83ms'
+  port: 9002
+  server: 138.199.35.210
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c4c4168 | 84ms'
+  password: 'null'
+  port: 443
+  server: purecambogiasl.live
+  tls: true
+  type: http
+  username: 'null'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_85c4b9fa | 85ms'
+  password: null
+  port: 443
+  server: crosscards.site
+  skip-cert-verify: false
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_74d3e768 | 85ms'
+  password: ''
+  port: 9002
+  server: 138.199.35.212
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_51f1276e | 85ms'
+  password: ''
+  port: 9002
+  server: 138.199.35.199
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: ''
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ab091b79 | 85ms'
+  password: ''
+  port: 9002
+  server: 138.199.35.201
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: '[NoMoreWalls] 🇺🇸 美国 | USA 6 | 86ms'
+  network: ws
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  port: 443
+  server: 104.18.0.1
+  skip-cert-verify: true
+  sni: api.85s.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: api.85s.me
+    path: /
+- name: '[NoMoreWalls] 🇺🇸 美国 | USA 10 | 86ms'
+  network: ws
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  port: 443
+  server: 104.18.0.3
+  skip-cert-verify: true
+  sni: api.85s.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: api.85s.me
+    path: /
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1fb07b97 | 86ms'
+  password: null
+  port: 443
+  server: kimberlymilano.icu
+  skip-cert-verify: false
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e3414a29 | 87ms'
+  password: 'null'
+  port: 9002
+  server: 138.199.35.216
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_685ed25b | 87ms'
+  password: None
+  port: 443
+  server: kimberlymilano.icu
+  skip-cert-verify: false
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e1d0dc28 | 87ms'
+  password: None
+  port: 9002
+  server: 138.199.35.208
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_63e28654 | 88ms'
+  password: null
+  port: 443
+  server: purecambogiasl.live
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_d26d6d1c | 89ms'
+  password: ''
+  port: 443
+  server: purposebydesig.club
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: ''
+- name: '[ermaozi] 🇺🇸 美国 | USA 3 | 90ms'
+  network: ws
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  port: 443
+  server: 45.139.193.156
+  skip-cert-verify: true
+  sni: api.85s.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: api.85s.me
+    path: /
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5457ab1c | 90ms'
+  password: 'null'
+  port: 443
+  server: voteshirleysew.club
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0cd2d06a | 90ms'
+  port: 9002
+  server: 138.199.35.195
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_91e30e8f | 90ms'
+  password: 'null'
+  port: 9002
+  server: 138.199.35.211
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c09c3f93 | 91ms'
+  password: e4b72b531a2d10900519
+  port: 443
+  server: 162.243.146.243
+  sni: a2f392f3.acsnet.co
+  tls: true
+  type: http
+  username: testuser1
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2bfac1f6 | 93ms'
+  password: ''
+  port: 443
+  server: purecambogiasl.live
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: ''
 - type: vless
-  name: '[free18] 🇺🇸_美国 (30) (2) | 335ms'
+  name: '[free18] 🇺🇸_美国 (25) (2) | 94ms'
+  server: 69.8.129.152
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  udp: true
+  tls: true
+  servername: t5pmr.mail-node.gfw.kdns.fr
+  sni: t5pmr.mail-node.gfw.kdns.fr
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: t5pmr.mail-node.gfw.kdns.fr
+- name: '[Pawdroid] 美国+CloudFlare节点 | 94ms'
+  type: vless
+  server: 172.67.68.157
+  port: 8080
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  encryption: none
+  network: ws
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+- type: vless
+  name: '[free18] 🇺🇸_美国 (30) (2) | 96ms'
   server: 128.121.31.249
   port: 587
   uuid: 26524cce-d514-4014-a426-365fb266a14d
@@ -1136,11 +545,139 @@ proxies:
     path: /danfeng?ed=2560
     headers:
       Host: xy1ej.stream-node-us.danfeng.qzz.io
-- name: '[ermaozi] 🇺🇸 美国 | USA 3 | 336ms'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_be3627b8 | 98ms'
+  password: 'null'
+  port: 9002
+  server: 138.199.35.200
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+- name: '[Eternity] 🇺🇸US-216.106.186.32-0204 | 0.0MB | 98ms'
+  server: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  port: 443
+  type: trojan
+  password: dba20dcb635e430fa4d3bfc303a149d2
+  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
+  skip-cert-verify: false
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_4dbb3d73 | 99ms'
+  port: 443
+  server: 129.153.93.183
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a88e970f | 103ms'
+  password: gs4BXwT6SW
+  port: 10988
+  server: 154.26.192.123
+  tls: false
+  type: http
+  username: fQ67Dpe5dU
+- name: '[Eternity] 🇺🇸US-173.244.56.9-0203 | 125.745MB | 105ms'
+  server: 173.244.56.9
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0b3b46c7 | 106ms'
+  password: 'null'
+  port: 443
+  server: carolinafreigh.fun
+  tls: true
+  type: http
+  username: 'null'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9c9060c4 | 108ms'
+  port: 443
+  server: mmgr.club
+  skip-cert-verify: true
+  sni: mmgr.club
+  tls: true
+  type: http
+- name: '[Eternity] 🇺🇸US-173.244.56.6-0201 | 78.288MB | 108ms'
+  server: 173.244.56.6
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_02944bfd | 109ms'
+  password: 'null'
+  port: 443
+  server: jewelscollecti.icu
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_137ef924 | 111ms'
+  password: null
+  port: 443
+  server: 148.135.10.80
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[ermaozi] 🇺🇸 美国 | USA 9 | 112ms'
+  server: 64.186.224.154
+  port: 10962
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- name: '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 3 | 113ms'
+  server: 179.253.231.22
+  port: 443
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- cipher: 2022-blake3-aes-128-gcm
+  name: '[freeSub] C🟠🇺🇸hos[🎭📦]_dokng.com_17598770 | 113ms'
+  password: YTE1ZWU4ZTEyZjc3YmEzZA==:NjRjZGI3OTgtZWUyMS00OA==
+  plugin: gost-plugin
+  plugin-opts:
+    host: ccus3.7777792.xyz
+    mode: websocket
+    mux: true
+    path: /api/v1/stream
+    tls: false
+  port: 80
+  server: 104.18.6.131
+  type: ss
+  udp: true
+  udp-over-tcp: true
+  udp-over-tcp-version: 2
+- type: vless
+  name: '[free18] 🇺🇸_美国 (22) | 113ms'
+  server: 188.255.157.136
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  udp: true
+  tls: true
+  servername: xy1ej.stream-node-us.danfeng.qzz.io
+  sni: xy1ej.stream-node-us.danfeng.qzz.io
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: xy1ej.stream-node-us.danfeng.qzz.io
+- name: '[ermaozi] 🇺🇸 美国 | USA 7 | 115ms'
   network: ws
   password: 8deb189a-3aed-4865-843b-b72dae954c46
   port: 443
-  server: 45.139.193.156
+  server: 179.255.136.237
   skip-cert-verify: true
   sni: api.85s.me
   type: trojan
@@ -1149,58 +686,107 @@ proxies:
     headers:
       Host: api.85s.me
     path: /
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1fb07b97 | 337ms'
-  password: null
+- name: '[ermaozi] 🇺🇸 美国 | USA 10 | 117ms'
+  network: ws
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
   port: 443
-  server: kimberlymilano.icu
-  skip-cert-verify: false
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0b3b46c7 | 342ms'
-  password: 'null'
-  port: 443
-  server: carolinafreigh.fun
-  tls: true
-  type: http
-  username: 'null'
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_685ed25b | 349ms'
-  password: None
-  port: 443
-  server: kimberlymilano.icu
-  skip-cert-verify: false
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_568e6b70 | 353ms'
-  password: None
-  port: 443
-  server: efr-marktplatz.club
-  skip-cert-verify: false
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2bfac1f6 | 356ms'
-  password: ''
-  port: 443
-  server: purecambogiasl.live
+  server: 179.253.225.34
   skip-cert-verify: true
-  tls: true
-  type: http
-  username: ''
-- name: '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_0d6b970a | 356ms'
+  sni: api.85s.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: api.85s.me
+    path: /
+- name: '[ermaozi] 🇺🇸 美国 | USA 2 | 118ms'
+  network: ws
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
   port: 443
-  server: 24.225.10.211
+  server: 179.253.255.7
   skip-cert-verify: true
+  sni: api.85s.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: api.85s.me
+    path: /
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (3) | 119ms'
+  type: trojan
+  server: 66.163.112.121
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.unlockyourfuturefindyourperfectcareer.com
   tls: true
-  type: http
-- name: '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_216b1767 | 357ms'
-  port: 8090
-  server: 50.76.211.251
+  skip-cert-verify: false
+- name: '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 5 | 120ms'
+  server: 179.253.239.20
+  port: 443
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- name: '[Eternity] 🇺🇸US-66.163.112.121-0250 | 65.803MB | 120ms'
+  server: 66.163.112.121
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.unlockyourfuturefindyourperfectcareer.com
+  skip-cert-verify: false
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (4) | 120ms'
+  type: trojan
+  server: 66.163.112.13
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.unlockyourfuturefindyourperfectcareer.com
   tls: true
-  type: http
-- name: '[ermaozi] 🇺🇸 美国 | USA 13 | 359ms'
+  skip-cert-verify: false
+- alterId: 0
+  cipher: auto
+  http-opts:
+    method: GET
+    path:
+    - /QQqun-737805443
+  name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_e4e61e5b | 121ms'
+  network: http
+  port: 52080
+  server: 23.95.165.21
+  tls: false
+  type: vmess
+  uuid: 296ce89e-03c8-40ed-aca1-736005884460
+- type: vless
+  name: '[free18] 🇺🇸_美国 (20) | 121ms'
+  server: 188.255.157.136
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  udp: true
+  tls: true
+  servername: xy1ej.stream-node-us.danfeng.qzz.io
+  sni: xy1ej.stream-node-us.danfeng.qzz.io
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: xy1ej.stream-node-us.danfeng.qzz.io
+- name: '[Eternity] 🇺🇸US-66.163.112.13-0212 | 65.766MB | 121ms'
+  server: 66.163.112.13
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.unlockyourfuturefindyourperfectcareer.com
+  skip-cert-verify: false
+- name: '[ermaozi] 🇺🇸 美国 | USA 13 | 124ms'
   network: ws
   password: 8deb189a-3aed-4865-843b-b72dae954c46
   port: 443
@@ -1213,71 +799,29 @@ proxies:
     headers:
       Host: api.85s.me
     path: /
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78f4a4fd | 367ms'
-  password: None
+- name: '[Eternity] 🇺🇸US-156.146.38.168-0141 | 2.594MB | 125ms'
+  server: 156.146.38.168
   port: 443
-  server: zebpay.site
-  skip-cert-verify: false
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1a32323d | 368ms'
-  password: null
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '[Eternity] 🇺🇸US-156.146.38.167-0145 | 2.678MB | 127ms'
+  server: 156.146.38.167
   port: 443
-  server: 162.244.227.36
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_6d16d882 | 372ms'
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '[Eternity] 🇺🇸US-156.146.38.170-0143 | 0.0MB | 128ms'
+  server: 156.146.38.170
   port: 443
-  server: 71.43.26.234
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5457ab1c | 376ms'
-  password: 'null'
-  port: 443
-  server: voteshirleysew.club
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_31e9a196 | 376ms'
-  port: 443
-  server: goedkoopgeluid.icu
-  skip-cert-verify: true
-  sni: goedkoopgeluid.icu
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ccc98c47 | 376ms'
-  port: 9002
-  server: 138.199.35.220
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c266a32b | 390ms'
-  password: null
-  port: 443
-  server: tzoa.fun
-  skip-cert-verify: false
-  tls: true
-  type: http
-  username: null
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_d26d6d1c | 397ms'
-  password: ''
-  port: 443
-  server: purposebydesig.club
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: ''
-- name: '[ermaozi] 🇺🇸 美国 | USA 15 | 403ms'
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '[ermaozi] 🇺🇸 美国 | USA 8 | 129ms'
   network: ws
   password: 8deb189a-3aed-4865-843b-b72dae954c46
-  port: 443
-  server: 179.255.141.28
+  port: 8443
+  server: 179.253.226.191
   skip-cert-verify: true
   sni: api.85s.me
   type: trojan
@@ -1286,8 +830,196 @@ proxies:
     headers:
       Host: api.85s.me
     path: /
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a8e49557 | 132ms'
+  port: 8443
+  server: 35.84.133.236
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[ermaozi] 🇺🇸 美国 | USA 12 | 134ms'
+  server: 104.18.35.86
+  port: 8080
+  type: vless
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  tls: false
+  servername: hhlfy.twiladaphne.ndjp.net
+  network: ws
+  ws-opts:
+    path: /sg-melbi
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8c949f1d | 136ms'
+  password: null
+  port: 8443
+  server: 54.190.176.228
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[Eternity] 🇺🇸US-156.146.38.169-0139 | 2.83MB | 136ms'
+  server: 156.146.38.169
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '[Eternity] 🇺🇸US-216.106.186.33-0209 | 39.19MB | 146ms'
+  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
+  port: 443
+  type: trojan
+  password: f0eb8c92ce8946aaba856569cff1a16b
+  sni: resources.findlocaljobnetworkandbuildcommunityconnections.com
+  skip-cert-verify: false
+- name: '[ermaozi] 🇺🇸 美国 | USA 11 | 149ms'
+  network: ws
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  port: 443
+  server: 179.255.102.237
+  skip-cert-verify: true
+  sni: api.85s.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: api.85s.me
+    path: /
+- name: '[Eternity] 🇺🇸US-66.163.114.114-0215 | 16.896MB | 155ms'
+  server: 66.163.114.114
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.findconnectwithemployersandbuildprofessionalnetwork.com
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-66.163.114.132-0226 | 0.0MB | 157ms'
+  server: 66.163.114.132
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.findconnectwithemployersandbuildprofessionalnetwork.com
+  skip-cert-verify: false
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (6) | 157ms'
+  type: trojan
+  server: 66.163.114.166
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.findconnectwithemployersandbuildprofessionalnetwork.com
+  tls: true
+  skip-cert-verify: false
+- name: '[ermaozi] 🇺🇸 美国 | USA 16 | 158ms'
+  server: 198.2.251.107
+  port: 45197
+  type: vless
+  uuid: 9d979dd1-1760-4c76-8881-b05a09b4d795
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: LqXTJ-JXo1CgjUQT8trI3OEhY2qOr1YAin2YLuLZFx0
+  servername: www.amazon.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- client-fingerprint: chrome
+  name: '[NoMoreWalls] 🇺🇸 美国 | USA #9 | 159ms'
+  network: ws
+  port: 443
+  server: 172.67.151.38
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560
+- name: '[Eternity] 🇺🇸US-66.163.114.166-0217 | 19.989MB | 159ms'
+  server: 66.163.114.166
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.findconnectwithemployersandbuildprofessionalnetwork.com
+  skip-cert-verify: false
+- name: '[ermaozi] 🇺🇸 美国 | USA 18 | 161ms'
+  server: 104.17.0.3
+  port: 443
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[📺🎭]_dokng.com_24a6e4b9 | 166ms'
+  password: test123
+  port: 1080
+  server: 104.168.249.36
+  type: socks5
+  username: test123
+- name: '[freeSub] D🔴🇺🇸hos[🎬📺🎭🎪]_dokng.com_d2a48a59 | 166ms'
+  password: null
+  port: 443
+  server: fan.596189.xyz
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[ermaozi] 🇺🇸 美国 | USA 20 | 170ms'
+  server: 179.255.103.84
+  port: 443
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- name: '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 13 | 174ms'
+  server: 104.19.0.5
+  port: 443
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_568e6b70 | 175ms'
+  password: None
+  port: 443
+  server: efr-marktplatz.club
+  skip-cert-verify: false
+  tls: true
+  type: http
+  username: null
+- type: vless
+  name: '[free18] 🇺🇸_美国 (26) (2) | 187ms'
+  server: 162.243.148.170
+  port: 443
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  udp: true
+  tls: true
+  servername: t5pmr.mail-node.gfw.kdns.fr
+  sni: t5pmr.mail-node.gfw.kdns.fr
+  skip-cert-verify: true
+  alpn:
+  - http/1.1
+  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: t5pmr.mail-node.gfw.kdns.fr
 - type: vmess
-  name: '[ermaozi] 🇺🇸 机场推荐:dafei.de 美国 10_IPV4 | 410ms'
+  name: '[ermaozi] 🇺🇸 机场推荐:dafei.de 美国 10_IPV4 | 191ms'
   server: www.shopify.com
   port: 443
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
@@ -1302,40 +1034,672 @@ proxies:
     path: /hls/cctv5phd.m3u8
     headers:
       Host: guanwang.awsno.com
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7ab87bf | 449ms'
+- name: '[NoMoreWalls] 🇺🇸 美国 | USA 14 | 201ms'
+  network: ws
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  port: 443
+  server: 104.17.0.8
+  skip-cert-verify: true
+  sni: api.85s.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: api.85s.me
+    path: /
+- name: '[Eternity] 🇺🇸US-37.19.198.244-0142 | 2.61MB | 203ms'
+  server: 37.19.198.244
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '[Eternity] 🇺🇸US-138.199.42.68-6035 | 76.075MB | 208ms'
+  server: 138.199.42.68
+  port: 8080
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+- name: '[Eternity] 🇺🇸US-37.19.198.236-0138 | 2.141MB | 208ms'
+  server: 37.19.198.236
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '[Eternity] 🇺🇸US-193.151.160.9-0137 | 144.145MB | 214ms'
+  server: 193.151.160.9
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: '[Eternity] 🇺🇸US-198.98.53.130-0290 | 0.09MB | 214ms'
+  server: 198.98.53.130
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: eDfN7SODQceIOmIAbtJJtK
+- name: '[Eternity] 🇺🇸US-193.151.160.18-0162 | 115.23MB | 216ms'
+  server: 193.151.160.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: '[Eternity] 🇺🇸US-193.151.163.18-0135 | 159.764MB | 219ms'
+  server: 193.151.163.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: '[Eternity] 🇺🇸US-37.19.198.243-0140 | 2.304MB | 219ms'
+  server: 37.19.198.243
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '[Eternity] 🇺🇸US-37.19.198.160-0144 | 2.516MB | 220ms'
+  server: 37.19.198.160
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78231d9b | 222ms'
+  port: 443
+  server: 23.133.176.14
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b5553483 | 225ms'
+  port: 443
+  server: 38.247.141.135
+  skip-cert-verify: true
+  tls: true
+  type: http
+- cipher: chacha20-ietf-poly1305
+  name: '[ermaozi] 🇺🇸[www.v2nodes.com] ss-US-1612... | 230ms'
+  password: DZRy4Q3QH0jUGfKFl2jDCZ
+  port: 28960
+  server: 138.197.89.234
+  type: ss
+- name: '[Eternity] 🇺🇸US-45.86.51.18-0195 | 171.861MB | 244ms'
+  server: 45.86.51.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_132c014b | 245ms'
+  port: 8443
+  server: 45.145.73.240
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[Eternity] 🇺🇸US-185.230.230.18-0213 | 193.56MB | 246ms'
+  server: 185.230.230.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_3c84b2dc | 252ms'
+  password: null
+  port: 9443
+  server: 154.47.25.78
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cfdbfd42 | 252ms'
+  port: 443
+  server: 193.239.236.134
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[Eternity] 🇺🇸US-216.152.155.54-0168 | 0.0MB | 252ms'
+  server: 216.152.155.54
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.nextjobopportunityandclaimyouridealrole.com
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-216.152.155.23-0148 | 103.764MB | 255ms'
+  server: 216.152.155.23
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.nextjobopportunityandclaimyouridealrole.com
+  skip-cert-verify: false
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (8) | 255ms'
+  type: trojan
+  server: 216.152.155.23
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.nextjobopportunityandclaimyouridealrole.com
+  tls: true
+  skip-cert-verify: false
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (10) | 255ms'
+  type: trojan
+  server: 66.163.114.132
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.findconnectwithemployersandbuildprofessionalnetwork.com
+  tls: true
+  skip-cert-verify: false
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (12) | 255ms'
+  type: trojan
+  server: 216.152.155.54
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.nextjobopportunityandclaimyouridealrole.com
+  tls: true
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-216.152.155.158-0179 | 82.033MB | 259ms'
+  server: 216.152.155.158
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.nextjobopportunityandclaimyouridealrole.com
+  skip-cert-verify: false
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (7) | 259ms'
+  type: trojan
+  server: 216.152.155.176
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.nextjobopportunityandclaimyouridealrole.com
+  tls: true
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-216.152.155.176-0152 | 84.55MB | 261ms'
+  server: 216.152.155.176
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.nextjobopportunityandclaimyouridealrole.com
+  skip-cert-verify: false
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_19f240f6 | 271ms'
+  password: None
+  port: 443
+  server: fullmanfirm.icu
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[roosterkid] 🇺🇸[openproxylist.com] vless-US (7) | 271ms'
+  type: vless
+  server: us007.zestapp778.com
+  port: 18580
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  encryption: none
+  tls: true
+  servername: us007.zestapp778.com
+  skip-cert-verify: true
+- name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_f7924ec8 | 272ms'
+  port: 443
+  server: 68.235.56.51
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[Eternity] 🇺🇸US-216.152.156.81-0182 | 68.531MB | 275ms'
+  server: 216.152.156.81
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  skip-cert-verify: false
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ad9b8b65 | 276ms'
+  port: 443
+  server: 68.235.56.59
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] B🟡🇺🇸biz[🎬🤖📺🎭]_dokng.com_1519a3a0 | 278ms'
+  port: 443
+  server: 12.202.180.10
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (5) | 284ms'
+  type: trojan
+  server: 216.152.156.65
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  tls: true
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-169.197.140.218-1980 | 93.875MB | 285ms'
+  server: 169.197.140.218
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.discoverfreshgraduatejobsstartyourprofessionaljourney.com
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-216.152.156.42-0198 | 49.784MB | 286ms'
+  server: 216.152.156.42
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-170.101.101.53-0157 | 79.826MB | 288ms'
+  server: 170.101.101.53
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.explorecreativejobsandenhanceyourcareerportfolio.com
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-170.101.101.19-0150 | 91.465MB | 293ms'
+  server: 170.101.101.19
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.explorecreativejobsandenhanceyourcareerportfolio.com
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-170.101.101.67-0155 | 79.361MB | 293ms'
+  server: 170.101.101.67
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: courses.explorecreativejobsandenhanceyourcareerportfolio.com
+  skip-cert-verify: false
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (13) | 295ms'
+  type: trojan
+  server: 216.152.156.81
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: www.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  tls: true
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-216.152.156.65-0197 | 53.242MB | 296ms'
+  server: 216.152.156.65
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: learn.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  skip-cert-verify: false
+- name: '[freeSub] A🟢🇺🇸res[🎬📺🎭🎪]_dokng.com_40d7a1a3 | 297ms'
+  port: 443
+  server: 96.5.129.85
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (11) | 309ms'
+  type: trojan
+  server: 216.152.156.42
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.healthcarejobshubenhancemedicalprofessionalskillstoday.com
+  tls: true
+  skip-cert-verify: false
+- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (9) | 323ms'
+  type: trojan
+  server: 216.152.155.158
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: resources.nextjobopportunityandclaimyouridealrole.com
+  tls: true
+  skip-cert-verify: false
+- name: '[Eternity] 🇺🇸US-167.88.61.198-0146 | 0.0MB | 331ms'
+  server: 167.88.61.198
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
+  skip-cert-verify: false
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_407650e3 | 339ms'
+  password: ''
+  port: 443
+  server: 149.88.21.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7976bf9 | 342ms'
+  password: null
+  port: 9443
+  server: 149.88.21.140
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b2688550 | 343ms'
+  password: None
+  port: 9443
+  server: 149.88.21.140
+  skip-cert-verify: true
+  tls: true
+  type: http
+- cipher: 2022-blake3-aes-128-gcm
+  name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_76440e56 | 344ms'
+  password: YTE1ZWU4ZTEyZjc3YmEzZA==:ZjQ4NzExMzUtMGYzNy00NA==
+  plugin: gost-plugin
+  plugin-opts:
+    host: one.local
+    mode: websocket
+    mux: true
+    path: /ws
+    tls: false
+  port: 20090
+  server: 172.96.161.152
+  type: ss
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_96845fbf | 347ms'
+  password: None
+  port: 443
+  server: 198.44.135.27
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9d54351f | 347ms'
+  password: null
+  port: 443
+  server: 149.88.21.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b1448db8 | 348ms'
+  port: 443
+  server: 216.107.139.82
+  skip-cert-verify: true
+  sni: 991cc80f13caf81d3426ddebb2da7f49-92ff472ddc24e5b7.apache-iv.com
+  tls: true
+  type: http
+- name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_c63c7573 | 353ms'
+  password: null
+  port: 443
+  server: 198.44.135.27
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_0d6b970a | 360ms'
+  port: 443
+  server: 24.225.10.211
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_b3a8f765 | 367ms'
+  port: 443
+  server: 162.217.114.50
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[roosterkid] 🇺🇸[openproxylist.com] vless-US | 375ms'
+  type: vless
+  server: 199.232.78.160
+  port: 443
+  uuid: afed9510-8648-49c6-9fbd-c2d4d8bdd417
+  encryption: none
+  tls: true
+  servername: community.fastly.steamstatic.com
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: copy_az_channel_NUFiLTER_10i.global.ssl.fastly.net.
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9bac9bc8 | 408ms'
+  port: 8443
+  server: 45.145.72.122
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8081d77b | 410ms'
+  port: 443
+  server: 192.227.176.234
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_838e9798 | 417ms'
+  password: None
+  port: 8443
+  server: 18.206.28.143
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_625225eb | 464ms'
+  password: None
+  port: 38182
+  server: 69.55.49.177
+  type: socks5
+  udp: true
+- name: '[roosterkid] 🇺🇸[openproxylist.com] vless-US (5) | 472ms'
+  type: vless
+  server: fast.145779.xyz
+  port: 2053
+  uuid: e3149c82-00f6-4227-b2c0-b78f1dd81279
+  encryption: none
+  tls: true
+  servername: fast.145779.xyz
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws-tesla
+    headers:
+      Host: fast.145779.xyz
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7108edb3 | 498ms'
+  port: 443
+  server: 207.5.30.9
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_6d16d882 | 503ms'
+  port: 443
+  server: 71.43.26.234
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_31e9a196 | 523ms'
+  port: 443
+  server: goedkoopgeluid.icu
+  skip-cert-verify: true
+  sni: goedkoopgeluid.icu
+  tls: true
+  type: http
+- name: '[freeSub] D🔴🇺🇸hos[🤖✨🎞️✈️]_dokng.com_340f87cf | 603ms'
+  port: 44499
+  server: 45.61.188.134
+  type: socks5
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a886daec | 630ms'
+  password: null
+  port: 8090
+  server: 24.142.229.178
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1a32323d | 645ms'
+  password: null
+  port: 443
+  server: 162.244.227.36
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🤖📺🎭🎪]_dokng.com_d34ddad2 | 649ms'
+  password: null
+  port: 8090
+  server: 173.42.49.102
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7ab87bf | 661ms'
   password: None
   port: 8090
   server: 184.188.139.2
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[freeSub] D🔴🇺🇸hos[🤖✨🎞️✈️]_dokng.com_340f87cf | 476ms'
-  port: 44499
-  server: 45.61.188.134
-  type: socks5
-- name: '[freeSub] A🟢🇺🇸res[🎬📺🎭🎪]_dokng.com_40d7a1a3 | 486ms'
-  port: 443
-  server: 96.5.129.85
+- name: '[roosterkid] 🇺🇸[openproxylist.com] vmess-US | 673ms'
+  type: vmess
+  server: 43.130.35.53
+  port: 10087
+  uuid: 8e93b009-f1af-448a-b8ef-b110849a35f0
+  alterId: 0
+  cipher: auto
+  network: tcp
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3a4fb783 | 715ms'
+  port: 7615
+  server: 47.90.206.169
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_02944bfd | 505ms'
+- name: '[ermaozi] 🇺🇸 美国 | USA 21 | 821ms'
+  server: 179.253.238.240
+  port: 443
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- name: '[freeSub] A🟢🇺🇸res[📺🎭🎪]_dokng.com_3c0ca42a | 823ms'
+  port: 8090
+  server: 98.101.229.212
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_97eba0f1 | 837ms'
+  password: ''
+  port: 443
+  server: 149.34.248.65
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- client-fingerprint: chrome
+  encryption: none
+  flow: xtls-rprx-vision
+  http-opts:
+    headers: {}
+    path:
+    - /
+  name: '[freeSub] C🟠🇺🇸hos[🎪🔍]_dokng.com_61477874 | 861ms'
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: 6lZ5dkQN2sH9tYca374W4N1n9eCanD_F2FfghcksKSo
+    short-id: ''
+  server: finlandlanzarotte.live
+  servername: finlandlanzarotte.live
+  tls: true
+  type: vless
+  udp: true
+  uuid: 50a87e21-f0e2-4b53-a787-91adfe748f63
+  xudp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_37a111a9 | 892ms'
+  port: 443
+  server: 66.64.100.66
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[ermaozi] 🇺🇸 美国 | USA 15 | 946ms'
+  network: ws
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  port: 443
+  server: 179.255.141.28
+  skip-cert-verify: true
+  sni: api.85s.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: api.85s.me
+    path: /
+- type: hysteria2
+  name: '[ermaozi] 🇺🇸_US_美国->🇫🇮_FI_芬兰_IPV4 | 950ms'
+  server: fl3.nexfile.net
+  port: 4444
+  password: a35c508f-4d5d-4531-842e-6e9d43c762c0
+  tls: true
+  servername: fl3.nexfile.net
+  sni: fl3.nexfile.net
+  skip-cert-verify: true
+- name: '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_216b1767 | 950ms'
+  port: 8090
+  server: 50.76.211.251
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0f8d1baa | 1140ms'
+  password: None
+  port: 9002
+  server: 138.199.35.197
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cd3eedf9 | 1301ms'
+  password: None
+  port: 8443
+  server: 44.248.167.117
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[ermaozi] 🇺🇸 美国 | USA 6 | 1357ms'
+  server: 179.255.99.7
+  port: 8443
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- name: '[ermaozi] 🇺🇸 美国 | USA | 1464ms'
+  server: 201.51.4.89
+  port: 443
+  type: vless
+  uuid: 7ad63b26-bf70-4872-8fab-ebaf73a1e19d
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: LEziyH-E4k9hehGRJkVi1FadVObB_NZJy8U7oUCVWXU
+    short-id: b9120cd53ffd7bba
+  servername: cache-89.topp-con.xyz
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: '[NoMoreWalls] 🇺🇸 美国 | USA 12 | 1502ms'
+  network: ws
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  port: 443
+  server: 179.253.255.184
+  skip-cert-verify: true
+  sni: api.85s.me
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: api.85s.me
+    path: /
+- name: '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 15 | 1549ms'
+  server: 47.75.104.211
+  port: 443
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos_dokng.com_8300cd41 | 1649ms'
   password: 'null'
-  port: 443
-  server: jewelscollecti.icu
-  skip-cert-verify: true
-  tls: true
-  type: http
+  port: 9050
+  server: 45.61.129.165
+  type: socks5
   username: 'null'
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9c9060c4 | 535ms'
-  port: 443
-  server: mmgr.club
-  skip-cert-verify: true
-  sni: mmgr.club
-  tls: true
-  type: http
 - type: vless
-  name: '[free18] 🇺🇸_美国 (47) | 539ms'
+  name: '[free18] 🇺🇸_美国 (47) | 1654ms'
   server: 146.75.57.238
   port: 443
   uuid: 31edfa90-bc81-4534-9066-322dbf52dcef
@@ -1350,171 +1714,6 @@ proxies:
     path: /
     headers:
       Host: azadi-gk-nasim.global.ssl.fastly.net
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9bac9bc8 | 576ms'
-  port: 8443
-  server: 45.145.72.122
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[📺🎭]_dokng.com_24a6e4b9 | 583ms'
-  password: test123
-  port: 1080
-  server: 104.168.249.36
-  type: socks5
-  username: test123
-- name: '[freeSub] A🟢🇺🇸res[📺🎭🎪]_dokng.com_3c0ca42a | 642ms'
-  port: 8090
-  server: 98.101.229.212
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_60cdf76d | 648ms'
-  port: 443
-  server: 38.28.193.1
-  skip-cert-verify: true
-  sni: 38.28.193.1
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_97eba0f1 | 673ms'
-  password: ''
-  port: 443
-  server: 149.34.248.65
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: '[ermaozi] 🇺🇸 美国 | USA 2 | 695ms'
-  network: ws
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  port: 443
-  server: 179.253.255.7
-  skip-cert-verify: true
-  sni: api.85s.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: api.85s.me
-    path: /
-- name: '[Eternity] 🇺🇸US-15.204.247.206-0273 | 5.129MB | 805ms'
-  server: 15.204.247.206
-  port: 4444
-  type: ss
-  cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ad9b8b65 | 833ms'
-  port: 443
-  server: 68.235.56.59
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[🤖📺🎭🎪]_dokng.com_d34ddad2 | 882ms'
-  password: null
-  port: 8090
-  server: 173.42.49.102
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- client-fingerprint: chrome
-  encryption: none
-  flow: xtls-rprx-vision
-  http-opts:
-    headers: {}
-    path:
-    - /
-  name: '[freeSub] C🟠🇺🇸hos[🎪🔍]_dokng.com_61477874 | 977ms'
-  network: tcp
-  port: 443
-  reality-opts:
-    public-key: 6lZ5dkQN2sH9tYca374W4N1n9eCanD_F2FfghcksKSo
-    short-id: ''
-  server: finlandlanzarotte.live
-  servername: finlandlanzarotte.live
-  tls: true
-  type: vless
-  udp: true
-  uuid: 50a87e21-f0e2-4b53-a787-91adfe748f63
-  xudp: true
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_625225eb | 1208ms'
-  password: None
-  port: 38182
-  server: 69.55.49.177
-  type: socks5
-  udp: true
-- name: '[ermaozi] 🇺🇸 美国 | USA | 1406ms'
-  server: 201.51.4.89
-  port: 443
-  type: vless
-  uuid: 7ad63b26-bf70-4872-8fab-ebaf73a1e19d
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: LEziyH-E4k9hehGRJkVi1FadVObB_NZJy8U7oUCVWXU
-    short-id: b9120cd53ffd7bba
-  servername: cache-89.topp-con.xyz
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-- name: '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 15 | 1684ms'
-  server: 47.75.104.211
-  port: 443
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
-- name: '[ermaozi] 🇺🇸 美国 | USA 6 | 1766ms'
-  server: 179.255.99.7
-  port: 8443
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
-- name: '[freeSub] D🔴🇺🇸hos_dokng.com_8300cd41 | 1873ms'
-  password: 'null'
-  port: 9050
-  server: 45.61.129.165
-  type: socks5
-  username: 'null'
-- name: '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_b3a8f765 | 2167ms'
-  port: 443
-  server: 162.217.114.50
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[freeSub] D🔴🇺🇸hos[📺🎭]_dokng.com_abbf18c2 | 2289ms'
-  port: 443
-  server: 20.42.108.114
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[ermaozi] 🇺🇸 美国 | USA 21 | 2633ms'
-  server: 179.253.238.240
-  port: 443
-  type: trojan
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  sni: api.85s.me
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: api.85s.me
-  udp: true
 - client-fingerprint: firefox
   encryption: none
   flow: xtls-rprx-vision
@@ -1522,7 +1721,7 @@ proxies:
     headers: {}
     path:
     - /
-  name: '[freeSub] D🔴🇺🇸hos_dokng.com_5bacbae1 | 2709ms'
+  name: '[freeSub] D🔴🇺🇸hos_dokng.com_5bacbae1 | 2189ms'
   network: tcp
   port: 443
   reality-opts:
@@ -1535,17 +1734,44 @@ proxies:
   udp: true
   uuid: 7ad63b26-bf70-4872-8fab-ebaf73a1e19d
   xudp: true
-- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_132c014b | 2977ms'
-  port: 8443
-  server: 45.145.73.240
+- name: '[ermaozi] 🇺🇸 美国 | USA 19 | 2456ms'
+  server: 179.253.231.141
+  port: 443
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
   skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- name: '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 10 | 2773ms'
+  server: 179.255.141.59
+  port: 443
+  type: trojan
+  password: 8deb189a-3aed-4865-843b-b72dae954c46
+  sni: api.85s.me
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: api.85s.me
+  udp: true
+- name: '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_60cdf76d | 3584ms'
+  port: 443
+  server: 38.28.193.1
+  skip-cert-verify: true
+  sni: 38.28.193.1
   tls: true
   type: http
-- name: '[ermaozi] 🇺🇸 美国 | USA 7 | 3278ms'
+- name: '[ermaozi] 🇺🇸 美国 | USA 14 | 4702ms'
   network: ws
   password: 8deb189a-3aed-4865-843b-b72dae954c46
   port: 443
-  server: 179.255.136.237
+  server: 193.163.19.232
   skip-cert-verify: true
   sni: api.85s.me
   type: trojan
@@ -1554,68 +1780,6 @@ proxies:
     headers:
       Host: api.85s.me
     path: /
-- name: '[Eternity] 🇺🇸US-170.101.101.19-0150 | 99.999MB | 3301ms'
-  server: 170.101.101.19
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.explorecreativejobsandenhanceyourcareerportfolio.com
-  skip-cert-verify: false
-- name: '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (4) | 3738ms'
-  type: trojan
-  server: 66.163.122.25
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.searchnationwidecareerchangehelperandguidancetoday.com
-  tls: true
-  skip-cert-verify: true
-- name: '[ermaozi] 🇺🇸 美国 | USA 5 | 3865ms'
-  network: ws
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  port: 443
-  server: 179.255.115.161
-  skip-cert-verify: true
-  sni: api.85s.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: api.85s.me
-    path: /
-- name: '[Eternity] 🇺🇸US-66.163.122.7-0219 | 0.0MB | 4029ms'
-  server: 66.163.122.7
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.searchnationwidecareerchangehelperandguidancetoday.com
-  skip-cert-verify: false
-- alpn:
-  - 'http/1.1
-
-    '
-  client-fingerprint: firefox
-  name: '[ermaozi] 🇺🇸 美国 | USA #6 | 4254ms'
-  network: ws
-  port: 443
-  server: 143.246.62.134
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  tls: true
-  type: vless
-  udp: true
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  ws-opts:
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-    path: /danfeng?ed=2560
-- type: hysteria2
-  name: '[ermaozi] 🇺🇸_US_美国->🇫🇮_FI_芬兰_IPV4 | 4721ms'
-  server: fl3.nexfile.net
-  port: 4444
-  password: a35c508f-4d5d-4531-842e-6e9d43c762c0
-  tls: true
-  servername: fl3.nexfile.net
-  sni: fl3.nexfile.net
-  skip-cert-verify: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -1623,380 +1787,410 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[Eternity] 🇺🇸US-156.146.38.167-0145 | 0.37MB | 40ms'
-  - '[Eternity] 🇺🇸US-156.146.38.168-0141 | 0.242MB | 40ms'
-  - '[Eternity] 🇺🇸US-156.146.38.169-0139 | 0.0MB | 43ms'
-  - '[Eternity] 🇺🇸US-156.146.38.170-0143 | 0.199MB | 52ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78231d9b | 82ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] ss-US (2) | 85ms'
-  - '[Eternity] 🇺🇸US-95.215.201.18-0163 | 42.933MB | 89ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 12 | 95ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] ss-US | 101ms'
-  - '[Pawdroid] 美国+CloudFlare节点 (3) | 108ms'
-  - '[Eternity] 🇺🇸US-193.151.160.18-0162 | 140.642MB | 116ms'
-  - '[Eternity] 🇺🇸US-66.163.112.13-0212 | 73.584MB | 118ms'
-  - '[Eternity] 🇺🇸US-216.152.156.65-0197 | 84.922MB | 121ms'
-  - '[Eternity] 🇺🇸US-193.151.160.9-0137 | 175.111MB | 123ms'
-  - '[Eternity] 🇺🇸US-173.244.56.9-0203 | 122.227MB | 125ms'
-  - '[Eternity] 🇺🇸US-216.152.156.81-0182 | 130.642MB | 131ms'
-  - '[Eternity] 🇺🇸US-37.19.198.160-0144 | 52.685MB | 133ms'
-  - '[Eternity] 🇺🇸US-173.244.56.6-0201 | 105.514MB | 135ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] vless-US | 135ms'
-  - '[Eternity] 🇺🇸US-66.163.112.121-0250 | 76.0MB | 136ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_0df8f765 | 137ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3ec254da | 142ms'
-  - '[Eternity] 🇺🇸US-66.163.114.166-0217 | 25.289MB | 143ms'
-  - '[Eternity] 🇺🇸US-193.151.163.18-0135 | 163.026MB | 144ms'
-  - '[Eternity] 🇺🇸US-37.19.198.243-0140 | 60.888MB | 144ms'
-  - '[free18] 🇺🇸_美国 (27) (2) | 145ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e1d0dc28 | 146ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ab091b79 | 146ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_596fc241 | 146ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fc4a550 | 148ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_4dbb3d73 | 148ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1e63795f | 149ms'
-  - '[Eternity] 🇺🇸US-216.152.156.42-0198 | 104.75MB | 149ms'
-  - '[Eternity] 🇺🇸US-198.98.53.130-0290 | 0.053MB | 149ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0cd2d06a | 150ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_bf297661 | 150ms'
-  - '[Eternity] 🇺🇸US-66.163.114.114-0215 | 23.953MB | 151ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c52cc78 | 152ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_74d3e768 | 153ms'
-  - '[Eternity] 🇺🇸US-138.199.42.68-6035 | 71.317MB | 153ms'
-  - '[Pawdroid] 美国+CloudFlare节点 | 154ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c66af7d3 | 156ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_91e30e8f | 157ms'
-  - '[Eternity] 🇺🇸US-45.86.51.18-0195 | 198.03MB | 158ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e487e5ba | 159ms'
-  - '[Eternity] 🇺🇸US-66.163.114.132-0226 | 25.656MB | 161ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e3414a29 | 163ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_51f1276e | 163ms'
-  - '[Eternity] 🇺🇸US-169.197.140.218-1980 | 131.757MB | 163ms'
-  - '[Eternity] 🇺🇸US-216.152.155.23-0148 | 87.258MB | 163ms'
-  - '[Eternity] 🇺🇸US-185.230.230.18-0213 | 194.863MB | 164ms'
-  - '[Eternity] 🇺🇸US-216.152.155.158-0179 | 108.227MB | 164ms'
-  - '[Eternity] 🇺🇸US-37.19.198.244-0142 | 58.459MB | 165ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fb17d17 | 166ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 18 | 167ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_681dd14a | 167ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0f8d1baa | 168ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_be3627b8 | 170ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a88e970f | 171ms'
-  - '[Eternity] 🇺🇸US-216.152.155.54-0168 | 102.026MB | 172ms'
-  - '[ermaozi] 🇺🇸[www.v2nodes.com] ss-US-1612... | 173ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (5) | 180ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_fb61d702 | 181ms'
-  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 13 | 182ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_96845fbf | 187ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_c63c7573 | 188ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3a4fb783 | 192ms'
-  - '[Eternity] 🇺🇸US-216.152.155.176-0152 | 97.145MB | 194ms'
-  - '[Eternity] 🇺🇸US-167.88.61.198-0146 | 116.918MB | 195ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cfdbfd42 | 196ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_137ef924 | 197ms'
-  - '[ermaozi] 🇺🇸[www.v2nodes.com] trojan-US-... #1 | 198ms'
-  - '[free18] 🇺🇸_美国 (13) (2) | 198ms'
-  - '[free18] 🇺🇸_美国 (16) (2) | 199ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (2) | 200ms'
-  - '[free18] 🇺🇸_美国 (22) | 202ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7976bf9 | 206ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (6) | 208ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9d54351f | 209ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b2688550 | 210ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b1448db8 | 214ms'
-  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 10 | 215ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_f7924ec8 | 216ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_37a111a9 | 216ms'
-  - '[Eternity] 🇺🇸US-167.88.61.52-0147 | 124.461MB | 216ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_407650e3 | 217ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 11 | 225ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 10 | 227ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_e4e61e5b | 233ms'
-  - '[free18] 🇺🇸_美国 (20) | 234ms'
-  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 5 | 236ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_838e9798 | 242ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 16 | 246ms'
-  - '[Eternity] 🇺🇸US-170.101.101.67-0155 | 79.497MB | 253ms'
-  - '[Eternity] 🇺🇸US-170.101.101.53-0157 | 79.388MB | 255ms'
-  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 3 | 258ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 20 | 262ms'
-  - '[free18] 🇺🇸_美国 (29) (2) | 263ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c09c3f93 | 268ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 9 | 270ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 14 | 272ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_412dd6e0 | 272ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3eea6840 | 276ms'
-  - '[free18] 🇺🇸_美国 (26) (2) | 277ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_3c84b2dc | 278ms'
-  - '[freeSub] B🟡🇺🇸biz[🎬🤖📺🎭]_dokng.com_1519a3a0 | 279ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8adba40b | 280ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a8e49557 | 289ms'
-  - '[Eternity] 🇺🇸US-216.106.186.33-0209 | 98.092MB | 290ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8c949f1d | 293ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 19 | 294ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7108edb3 | 294ms'
-  - '[Eternity] 🇺🇸US-216.106.186.32-0204 | 82.091MB | 294ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1668ea55 | 298ms'
-  - '[free18] 🇺🇸_美国 (28) (2) | 298ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_59f060e6 | 306ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cd3eedf9 | 306ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_19f240f6 | 309ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_da509960 | 310ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5e03a401 | 312ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_83f4433c | 312ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ea973846 | 314ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_db89f7a0 | 314ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3f6db8c8 | 317ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8081d77b | 320ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f5a5e73c | 323ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f51f6e12 | 324ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_63e28654 | 324ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c4c4168 | 325ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_85c4b9fa | 327ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c886aaa1 | 327ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7569cc30 | 331ms'
-  - '[free18] 🇺🇸_美国 (30) (2) | 335ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 3 | 336ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1fb07b97 | 337ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0b3b46c7 | 342ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_685ed25b | 349ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_568e6b70 | 353ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2bfac1f6 | 356ms'
-  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_0d6b970a | 356ms'
-  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_216b1767 | 357ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 13 | 359ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78f4a4fd | 367ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1a32323d | 368ms'
-  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_6d16d882 | 372ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5457ab1c | 376ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_31e9a196 | 376ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ccc98c47 | 376ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c266a32b | 390ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_d26d6d1c | 397ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 15 | 403ms'
-  - '[ermaozi] 🇺🇸 机场推荐:dafei.de 美国 10_IPV4 | 410ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7ab87bf | 449ms'
-  - '[freeSub] D🔴🇺🇸hos[🤖✨🎞️✈️]_dokng.com_340f87cf | 476ms'
-  - '[freeSub] A🟢🇺🇸res[🎬📺🎭🎪]_dokng.com_40d7a1a3 | 486ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_02944bfd | 505ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9c9060c4 | 535ms'
-  - '[free18] 🇺🇸_美国 (47) | 539ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9bac9bc8 | 576ms'
-  - '[freeSub] D🔴🇺🇸hos[📺🎭]_dokng.com_24a6e4b9 | 583ms'
-  - '[freeSub] A🟢🇺🇸res[📺🎭🎪]_dokng.com_3c0ca42a | 642ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_60cdf76d | 648ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_97eba0f1 | 673ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 2 | 695ms'
-  - '[Eternity] 🇺🇸US-15.204.247.206-0273 | 5.129MB | 805ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ad9b8b65 | 833ms'
-  - '[freeSub] D🔴🇺🇸hos[🤖📺🎭🎪]_dokng.com_d34ddad2 | 882ms'
-  - '[freeSub] C🟠🇺🇸hos[🎪🔍]_dokng.com_61477874 | 977ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_625225eb | 1208ms'
-  - '[ermaozi] 🇺🇸 美国 | USA | 1406ms'
-  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 15 | 1684ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 6 | 1766ms'
-  - '[freeSub] D🔴🇺🇸hos_dokng.com_8300cd41 | 1873ms'
-  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_b3a8f765 | 2167ms'
-  - '[freeSub] D🔴🇺🇸hos[📺🎭]_dokng.com_abbf18c2 | 2289ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 21 | 2633ms'
-  - '[freeSub] D🔴🇺🇸hos_dokng.com_5bacbae1 | 2709ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_132c014b | 2977ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 7 | 3278ms'
-  - '[Eternity] 🇺🇸US-170.101.101.19-0150 | 99.999MB | 3301ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (4) | 3738ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 5 | 3865ms'
-  - '[Eternity] 🇺🇸US-66.163.122.7-0219 | 0.0MB | 4029ms'
-  - '[ermaozi] 🇺🇸 美国 | USA #6 | 4254ms'
-  - '[ermaozi] 🇺🇸_US_美国->🇫🇮_FI_芬兰_IPV4 | 4721ms'
+  - '[free18] 🇺🇸_美国 (16) (2) | 27ms'
+  - '[free18] 🇺🇸_美国 (13) (2) | 30ms'
+  - '[ermaozi] 🇺🇸[www.v2nodes.com] trojan-US-... #1 | 31ms'
+  - '[Eternity] 🇺🇸US-167.88.61.52-0147 | 0.0MB | 33ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_412dd6e0 | 37ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5e03a401 | 44ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8adba40b | 46ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78f4a4fd | 47ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1668ea55 | 48ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] vless-US (3) | 50ms'
+  - '[free18] 🇺🇸_美国 (29) (2) | 60ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c266a32b | 61ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7569cc30 | 69ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_0df8f765 | 70ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3eea6840 | 70ms'
+  - '[free18] 🇺🇸_美国 (28) (2) | 71ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ea973846 | 72ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c52cc78 | 73ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f5a5e73c | 73ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_596fc241 | 73ms'
+  - '[Eternity] 🇺🇸US-95.215.201.18-0163 | 83.063MB | 73ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_da509960 | 74ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ccc98c47 | 74ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_681dd14a | 74ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_db89f7a0 | 75ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e487e5ba | 76ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_fb61d702 | 78ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f51f6e12 | 79ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_59f060e6 | 79ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3ec254da | 79ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c66af7d3 | 79ms'
+  - '[ermaozi] 🇺🇸[www.v2nodes.com] vless-US-1... #2 | 80ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fb17d17 | 80ms'
+  - '[free18] 🇺🇸_美国 (27) (2) | 80ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c886aaa1 | 81ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1e63795f | 82ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_bf297661 | 83ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fc4a550 | 83ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c4c4168 | 84ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_85c4b9fa | 85ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_74d3e768 | 85ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_51f1276e | 85ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ab091b79 | 85ms'
+  - '[NoMoreWalls] 🇺🇸 美国 | USA 6 | 86ms'
+  - '[NoMoreWalls] 🇺🇸 美国 | USA 10 | 86ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1fb07b97 | 86ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e3414a29 | 87ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_685ed25b | 87ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e1d0dc28 | 87ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_63e28654 | 88ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_d26d6d1c | 89ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 3 | 90ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5457ab1c | 90ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0cd2d06a | 90ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_91e30e8f | 90ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c09c3f93 | 91ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2bfac1f6 | 93ms'
+  - '[free18] 🇺🇸_美国 (25) (2) | 94ms'
+  - '[Pawdroid] 美国+CloudFlare节点 | 94ms'
+  - '[free18] 🇺🇸_美国 (30) (2) | 96ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_be3627b8 | 98ms'
+  - '[Eternity] 🇺🇸US-216.106.186.32-0204 | 0.0MB | 98ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_4dbb3d73 | 99ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a88e970f | 103ms'
+  - '[Eternity] 🇺🇸US-173.244.56.9-0203 | 125.745MB | 105ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0b3b46c7 | 106ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9c9060c4 | 108ms'
+  - '[Eternity] 🇺🇸US-173.244.56.6-0201 | 78.288MB | 108ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_02944bfd | 109ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_137ef924 | 111ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 9 | 112ms'
+  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 3 | 113ms'
+  - '[freeSub] C🟠🇺🇸hos[🎭📦]_dokng.com_17598770 | 113ms'
+  - '[free18] 🇺🇸_美国 (22) | 113ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 7 | 115ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 10 | 117ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 2 | 118ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (3) | 119ms'
+  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 5 | 120ms'
+  - '[Eternity] 🇺🇸US-66.163.112.121-0250 | 65.803MB | 120ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (4) | 120ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_e4e61e5b | 121ms'
+  - '[free18] 🇺🇸_美国 (20) | 121ms'
+  - '[Eternity] 🇺🇸US-66.163.112.13-0212 | 65.766MB | 121ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 13 | 124ms'
+  - '[Eternity] 🇺🇸US-156.146.38.168-0141 | 2.594MB | 125ms'
+  - '[Eternity] 🇺🇸US-156.146.38.167-0145 | 2.678MB | 127ms'
+  - '[Eternity] 🇺🇸US-156.146.38.170-0143 | 0.0MB | 128ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 8 | 129ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a8e49557 | 132ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 12 | 134ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8c949f1d | 136ms'
+  - '[Eternity] 🇺🇸US-156.146.38.169-0139 | 2.83MB | 136ms'
+  - '[Eternity] 🇺🇸US-216.106.186.33-0209 | 39.19MB | 146ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 11 | 149ms'
+  - '[Eternity] 🇺🇸US-66.163.114.114-0215 | 16.896MB | 155ms'
+  - '[Eternity] 🇺🇸US-66.163.114.132-0226 | 0.0MB | 157ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (6) | 157ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 16 | 158ms'
+  - '[NoMoreWalls] 🇺🇸 美国 | USA #9 | 159ms'
+  - '[Eternity] 🇺🇸US-66.163.114.166-0217 | 19.989MB | 159ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 18 | 161ms'
+  - '[freeSub] D🔴🇺🇸hos[📺🎭]_dokng.com_24a6e4b9 | 166ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬📺🎭🎪]_dokng.com_d2a48a59 | 166ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 20 | 170ms'
+  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 13 | 174ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_568e6b70 | 175ms'
+  - '[free18] 🇺🇸_美国 (26) (2) | 187ms'
+  - '[ermaozi] 🇺🇸 机场推荐:dafei.de 美国 10_IPV4 | 191ms'
+  - '[NoMoreWalls] 🇺🇸 美国 | USA 14 | 201ms'
+  - '[Eternity] 🇺🇸US-37.19.198.244-0142 | 2.61MB | 203ms'
+  - '[Eternity] 🇺🇸US-138.199.42.68-6035 | 76.075MB | 208ms'
+  - '[Eternity] 🇺🇸US-37.19.198.236-0138 | 2.141MB | 208ms'
+  - '[Eternity] 🇺🇸US-193.151.160.9-0137 | 144.145MB | 214ms'
+  - '[Eternity] 🇺🇸US-198.98.53.130-0290 | 0.09MB | 214ms'
+  - '[Eternity] 🇺🇸US-193.151.160.18-0162 | 115.23MB | 216ms'
+  - '[Eternity] 🇺🇸US-193.151.163.18-0135 | 159.764MB | 219ms'
+  - '[Eternity] 🇺🇸US-37.19.198.243-0140 | 2.304MB | 219ms'
+  - '[Eternity] 🇺🇸US-37.19.198.160-0144 | 2.516MB | 220ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78231d9b | 222ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b5553483 | 225ms'
+  - '[ermaozi] 🇺🇸[www.v2nodes.com] ss-US-1612... | 230ms'
+  - '[Eternity] 🇺🇸US-45.86.51.18-0195 | 171.861MB | 244ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_132c014b | 245ms'
+  - '[Eternity] 🇺🇸US-185.230.230.18-0213 | 193.56MB | 246ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_3c84b2dc | 252ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cfdbfd42 | 252ms'
+  - '[Eternity] 🇺🇸US-216.152.155.54-0168 | 0.0MB | 252ms'
+  - '[Eternity] 🇺🇸US-216.152.155.23-0148 | 103.764MB | 255ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (8) | 255ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (10) | 255ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (12) | 255ms'
+  - '[Eternity] 🇺🇸US-216.152.155.158-0179 | 82.033MB | 259ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (7) | 259ms'
+  - '[Eternity] 🇺🇸US-216.152.155.176-0152 | 84.55MB | 261ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_19f240f6 | 271ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] vless-US (7) | 271ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_f7924ec8 | 272ms'
+  - '[Eternity] 🇺🇸US-216.152.156.81-0182 | 68.531MB | 275ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ad9b8b65 | 276ms'
+  - '[freeSub] B🟡🇺🇸biz[🎬🤖📺🎭]_dokng.com_1519a3a0 | 278ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (5) | 284ms'
+  - '[Eternity] 🇺🇸US-169.197.140.218-1980 | 93.875MB | 285ms'
+  - '[Eternity] 🇺🇸US-216.152.156.42-0198 | 49.784MB | 286ms'
+  - '[Eternity] 🇺🇸US-170.101.101.53-0157 | 79.826MB | 288ms'
+  - '[Eternity] 🇺🇸US-170.101.101.19-0150 | 91.465MB | 293ms'
+  - '[Eternity] 🇺🇸US-170.101.101.67-0155 | 79.361MB | 293ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (13) | 295ms'
+  - '[Eternity] 🇺🇸US-216.152.156.65-0197 | 53.242MB | 296ms'
+  - '[freeSub] A🟢🇺🇸res[🎬📺🎭🎪]_dokng.com_40d7a1a3 | 297ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (11) | 309ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (9) | 323ms'
+  - '[Eternity] 🇺🇸US-167.88.61.198-0146 | 0.0MB | 331ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_407650e3 | 339ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7976bf9 | 342ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b2688550 | 343ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_76440e56 | 344ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_96845fbf | 347ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9d54351f | 347ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b1448db8 | 348ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_c63c7573 | 353ms'
+  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_0d6b970a | 360ms'
+  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_b3a8f765 | 367ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] vless-US | 375ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9bac9bc8 | 408ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8081d77b | 410ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_838e9798 | 417ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_625225eb | 464ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] vless-US (5) | 472ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7108edb3 | 498ms'
+  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_6d16d882 | 503ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_31e9a196 | 523ms'
+  - '[freeSub] D🔴🇺🇸hos[🤖✨🎞️✈️]_dokng.com_340f87cf | 603ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a886daec | 630ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1a32323d | 645ms'
+  - '[freeSub] D🔴🇺🇸hos[🤖📺🎭🎪]_dokng.com_d34ddad2 | 649ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7ab87bf | 661ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] vmess-US | 673ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3a4fb783 | 715ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 21 | 821ms'
+  - '[freeSub] A🟢🇺🇸res[📺🎭🎪]_dokng.com_3c0ca42a | 823ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_97eba0f1 | 837ms'
+  - '[freeSub] C🟠🇺🇸hos[🎪🔍]_dokng.com_61477874 | 861ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_37a111a9 | 892ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 15 | 946ms'
+  - '[ermaozi] 🇺🇸_US_美国->🇫🇮_FI_芬兰_IPV4 | 950ms'
+  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_216b1767 | 950ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0f8d1baa | 1140ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cd3eedf9 | 1301ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 6 | 1357ms'
+  - '[ermaozi] 🇺🇸 美国 | USA | 1464ms'
+  - '[NoMoreWalls] 🇺🇸 美国 | USA 12 | 1502ms'
+  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 15 | 1549ms'
+  - '[freeSub] D🔴🇺🇸hos_dokng.com_8300cd41 | 1649ms'
+  - '[free18] 🇺🇸_美国 (47) | 1654ms'
+  - '[freeSub] D🔴🇺🇸hos_dokng.com_5bacbae1 | 2189ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 19 | 2456ms'
+  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 10 | 2773ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_60cdf76d | 3584ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 14 | 4702ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[Eternity] 🇺🇸US-156.146.38.167-0145 | 0.37MB | 40ms'
-  - '[Eternity] 🇺🇸US-156.146.38.168-0141 | 0.242MB | 40ms'
-  - '[Eternity] 🇺🇸US-156.146.38.169-0139 | 0.0MB | 43ms'
-  - '[Eternity] 🇺🇸US-156.146.38.170-0143 | 0.199MB | 52ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78231d9b | 82ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] ss-US (2) | 85ms'
-  - '[Eternity] 🇺🇸US-95.215.201.18-0163 | 42.933MB | 89ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 12 | 95ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] ss-US | 101ms'
-  - '[Pawdroid] 美国+CloudFlare节点 (3) | 108ms'
-  - '[Eternity] 🇺🇸US-193.151.160.18-0162 | 140.642MB | 116ms'
-  - '[Eternity] 🇺🇸US-66.163.112.13-0212 | 73.584MB | 118ms'
-  - '[Eternity] 🇺🇸US-216.152.156.65-0197 | 84.922MB | 121ms'
-  - '[Eternity] 🇺🇸US-193.151.160.9-0137 | 175.111MB | 123ms'
-  - '[Eternity] 🇺🇸US-173.244.56.9-0203 | 122.227MB | 125ms'
-  - '[Eternity] 🇺🇸US-216.152.156.81-0182 | 130.642MB | 131ms'
-  - '[Eternity] 🇺🇸US-37.19.198.160-0144 | 52.685MB | 133ms'
-  - '[Eternity] 🇺🇸US-173.244.56.6-0201 | 105.514MB | 135ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] vless-US | 135ms'
-  - '[Eternity] 🇺🇸US-66.163.112.121-0250 | 76.0MB | 136ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_0df8f765 | 137ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3ec254da | 142ms'
-  - '[Eternity] 🇺🇸US-66.163.114.166-0217 | 25.289MB | 143ms'
-  - '[Eternity] 🇺🇸US-193.151.163.18-0135 | 163.026MB | 144ms'
-  - '[Eternity] 🇺🇸US-37.19.198.243-0140 | 60.888MB | 144ms'
-  - '[free18] 🇺🇸_美国 (27) (2) | 145ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e1d0dc28 | 146ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ab091b79 | 146ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_596fc241 | 146ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fc4a550 | 148ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_4dbb3d73 | 148ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1e63795f | 149ms'
-  - '[Eternity] 🇺🇸US-216.152.156.42-0198 | 104.75MB | 149ms'
-  - '[Eternity] 🇺🇸US-198.98.53.130-0290 | 0.053MB | 149ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0cd2d06a | 150ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_bf297661 | 150ms'
-  - '[Eternity] 🇺🇸US-66.163.114.114-0215 | 23.953MB | 151ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c52cc78 | 152ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_74d3e768 | 153ms'
-  - '[Eternity] 🇺🇸US-138.199.42.68-6035 | 71.317MB | 153ms'
-  - '[Pawdroid] 美国+CloudFlare节点 | 154ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c66af7d3 | 156ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_91e30e8f | 157ms'
-  - '[Eternity] 🇺🇸US-45.86.51.18-0195 | 198.03MB | 158ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e487e5ba | 159ms'
-  - '[Eternity] 🇺🇸US-66.163.114.132-0226 | 25.656MB | 161ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e3414a29 | 163ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_51f1276e | 163ms'
-  - '[Eternity] 🇺🇸US-169.197.140.218-1980 | 131.757MB | 163ms'
-  - '[Eternity] 🇺🇸US-216.152.155.23-0148 | 87.258MB | 163ms'
-  - '[Eternity] 🇺🇸US-185.230.230.18-0213 | 194.863MB | 164ms'
-  - '[Eternity] 🇺🇸US-216.152.155.158-0179 | 108.227MB | 164ms'
-  - '[Eternity] 🇺🇸US-37.19.198.244-0142 | 58.459MB | 165ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fb17d17 | 166ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 18 | 167ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_681dd14a | 167ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0f8d1baa | 168ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_be3627b8 | 170ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a88e970f | 171ms'
-  - '[Eternity] 🇺🇸US-216.152.155.54-0168 | 102.026MB | 172ms'
-  - '[ermaozi] 🇺🇸[www.v2nodes.com] ss-US-1612... | 173ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (5) | 180ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_fb61d702 | 181ms'
-  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 13 | 182ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_96845fbf | 187ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_c63c7573 | 188ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3a4fb783 | 192ms'
-  - '[Eternity] 🇺🇸US-216.152.155.176-0152 | 97.145MB | 194ms'
-  - '[Eternity] 🇺🇸US-167.88.61.198-0146 | 116.918MB | 195ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cfdbfd42 | 196ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_137ef924 | 197ms'
-  - '[ermaozi] 🇺🇸[www.v2nodes.com] trojan-US-... #1 | 198ms'
-  - '[free18] 🇺🇸_美国 (13) (2) | 198ms'
-  - '[free18] 🇺🇸_美国 (16) (2) | 199ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (2) | 200ms'
-  - '[free18] 🇺🇸_美国 (22) | 202ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7976bf9 | 206ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (6) | 208ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9d54351f | 209ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b2688550 | 210ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b1448db8 | 214ms'
-  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 10 | 215ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_f7924ec8 | 216ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_37a111a9 | 216ms'
-  - '[Eternity] 🇺🇸US-167.88.61.52-0147 | 124.461MB | 216ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_407650e3 | 217ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 11 | 225ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 10 | 227ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_e4e61e5b | 233ms'
-  - '[free18] 🇺🇸_美国 (20) | 234ms'
-  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 5 | 236ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_838e9798 | 242ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 16 | 246ms'
-  - '[Eternity] 🇺🇸US-170.101.101.67-0155 | 79.497MB | 253ms'
-  - '[Eternity] 🇺🇸US-170.101.101.53-0157 | 79.388MB | 255ms'
-  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 3 | 258ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 20 | 262ms'
-  - '[free18] 🇺🇸_美国 (29) (2) | 263ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c09c3f93 | 268ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 9 | 270ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 14 | 272ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_412dd6e0 | 272ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3eea6840 | 276ms'
-  - '[free18] 🇺🇸_美国 (26) (2) | 277ms'
-  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_3c84b2dc | 278ms'
-  - '[freeSub] B🟡🇺🇸biz[🎬🤖📺🎭]_dokng.com_1519a3a0 | 279ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8adba40b | 280ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a8e49557 | 289ms'
-  - '[Eternity] 🇺🇸US-216.106.186.33-0209 | 98.092MB | 290ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8c949f1d | 293ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 19 | 294ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7108edb3 | 294ms'
-  - '[Eternity] 🇺🇸US-216.106.186.32-0204 | 82.091MB | 294ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1668ea55 | 298ms'
-  - '[free18] 🇺🇸_美国 (28) (2) | 298ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_59f060e6 | 306ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cd3eedf9 | 306ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_19f240f6 | 309ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_da509960 | 310ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5e03a401 | 312ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_83f4433c | 312ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ea973846 | 314ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_db89f7a0 | 314ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3f6db8c8 | 317ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8081d77b | 320ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f5a5e73c | 323ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f51f6e12 | 324ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_63e28654 | 324ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c4c4168 | 325ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_85c4b9fa | 327ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c886aaa1 | 327ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7569cc30 | 331ms'
-  - '[free18] 🇺🇸_美国 (30) (2) | 335ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 3 | 336ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1fb07b97 | 337ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0b3b46c7 | 342ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_685ed25b | 349ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_568e6b70 | 353ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2bfac1f6 | 356ms'
-  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_0d6b970a | 356ms'
-  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_216b1767 | 357ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 13 | 359ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78f4a4fd | 367ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1a32323d | 368ms'
-  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_6d16d882 | 372ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5457ab1c | 376ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_31e9a196 | 376ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ccc98c47 | 376ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c266a32b | 390ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_d26d6d1c | 397ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 15 | 403ms'
-  - '[ermaozi] 🇺🇸 机场推荐:dafei.de 美国 10_IPV4 | 410ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7ab87bf | 449ms'
-  - '[freeSub] D🔴🇺🇸hos[🤖✨🎞️✈️]_dokng.com_340f87cf | 476ms'
-  - '[freeSub] A🟢🇺🇸res[🎬📺🎭🎪]_dokng.com_40d7a1a3 | 486ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_02944bfd | 505ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9c9060c4 | 535ms'
-  - '[free18] 🇺🇸_美国 (47) | 539ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9bac9bc8 | 576ms'
-  - '[freeSub] D🔴🇺🇸hos[📺🎭]_dokng.com_24a6e4b9 | 583ms'
-  - '[freeSub] A🟢🇺🇸res[📺🎭🎪]_dokng.com_3c0ca42a | 642ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_60cdf76d | 648ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_97eba0f1 | 673ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 2 | 695ms'
-  - '[Eternity] 🇺🇸US-15.204.247.206-0273 | 5.129MB | 805ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ad9b8b65 | 833ms'
-  - '[freeSub] D🔴🇺🇸hos[🤖📺🎭🎪]_dokng.com_d34ddad2 | 882ms'
-  - '[freeSub] C🟠🇺🇸hos[🎪🔍]_dokng.com_61477874 | 977ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_625225eb | 1208ms'
-  - '[ermaozi] 🇺🇸 美国 | USA | 1406ms'
-  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 15 | 1684ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 6 | 1766ms'
-  - '[freeSub] D🔴🇺🇸hos_dokng.com_8300cd41 | 1873ms'
-  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_b3a8f765 | 2167ms'
-  - '[freeSub] D🔴🇺🇸hos[📺🎭]_dokng.com_abbf18c2 | 2289ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 21 | 2633ms'
-  - '[freeSub] D🔴🇺🇸hos_dokng.com_5bacbae1 | 2709ms'
-  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_132c014b | 2977ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 7 | 3278ms'
-  - '[Eternity] 🇺🇸US-170.101.101.19-0150 | 99.999MB | 3301ms'
-  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (4) | 3738ms'
-  - '[ermaozi] 🇺🇸 美国 | USA 5 | 3865ms'
-  - '[Eternity] 🇺🇸US-66.163.122.7-0219 | 0.0MB | 4029ms'
-  - '[ermaozi] 🇺🇸 美国 | USA #6 | 4254ms'
-  - '[ermaozi] 🇺🇸_US_美国->🇫🇮_FI_芬兰_IPV4 | 4721ms'
+  - '[free18] 🇺🇸_美国 (16) (2) | 27ms'
+  - '[free18] 🇺🇸_美国 (13) (2) | 30ms'
+  - '[ermaozi] 🇺🇸[www.v2nodes.com] trojan-US-... #1 | 31ms'
+  - '[Eternity] 🇺🇸US-167.88.61.52-0147 | 0.0MB | 33ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_412dd6e0 | 37ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5e03a401 | 44ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8adba40b | 46ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78f4a4fd | 47ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1668ea55 | 48ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] vless-US (3) | 50ms'
+  - '[free18] 🇺🇸_美国 (29) (2) | 60ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c266a32b | 61ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7569cc30 | 69ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_0df8f765 | 70ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3eea6840 | 70ms'
+  - '[free18] 🇺🇸_美国 (28) (2) | 71ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ea973846 | 72ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c52cc78 | 73ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f5a5e73c | 73ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_596fc241 | 73ms'
+  - '[Eternity] 🇺🇸US-95.215.201.18-0163 | 83.063MB | 73ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_da509960 | 74ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ccc98c47 | 74ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_681dd14a | 74ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_db89f7a0 | 75ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e487e5ba | 76ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_fb61d702 | 78ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_f51f6e12 | 79ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_59f060e6 | 79ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3ec254da | 79ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c66af7d3 | 79ms'
+  - '[ermaozi] 🇺🇸[www.v2nodes.com] vless-US-1... #2 | 80ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fb17d17 | 80ms'
+  - '[free18] 🇺🇸_美国 (27) (2) | 80ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c886aaa1 | 81ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1e63795f | 82ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_bf297661 | 83ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2fc4a550 | 83ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7c4c4168 | 84ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_85c4b9fa | 85ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_74d3e768 | 85ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_51f1276e | 85ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ab091b79 | 85ms'
+  - '[NoMoreWalls] 🇺🇸 美国 | USA 6 | 86ms'
+  - '[NoMoreWalls] 🇺🇸 美国 | USA 10 | 86ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1fb07b97 | 86ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e3414a29 | 87ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_685ed25b | 87ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e1d0dc28 | 87ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_63e28654 | 88ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_d26d6d1c | 89ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 3 | 90ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_5457ab1c | 90ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0cd2d06a | 90ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_91e30e8f | 90ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_c09c3f93 | 91ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_2bfac1f6 | 93ms'
+  - '[free18] 🇺🇸_美国 (25) (2) | 94ms'
+  - '[Pawdroid] 美国+CloudFlare节点 | 94ms'
+  - '[free18] 🇺🇸_美国 (30) (2) | 96ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_be3627b8 | 98ms'
+  - '[Eternity] 🇺🇸US-216.106.186.32-0204 | 0.0MB | 98ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_4dbb3d73 | 99ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a88e970f | 103ms'
+  - '[Eternity] 🇺🇸US-173.244.56.9-0203 | 125.745MB | 105ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0b3b46c7 | 106ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9c9060c4 | 108ms'
+  - '[Eternity] 🇺🇸US-173.244.56.6-0201 | 78.288MB | 108ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_02944bfd | 109ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_137ef924 | 111ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 9 | 112ms'
+  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 3 | 113ms'
+  - '[freeSub] C🟠🇺🇸hos[🎭📦]_dokng.com_17598770 | 113ms'
+  - '[free18] 🇺🇸_美国 (22) | 113ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 7 | 115ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 10 | 117ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 2 | 118ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (3) | 119ms'
+  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 5 | 120ms'
+  - '[Eternity] 🇺🇸US-66.163.112.121-0250 | 65.803MB | 120ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (4) | 120ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_e4e61e5b | 121ms'
+  - '[free18] 🇺🇸_美国 (20) | 121ms'
+  - '[Eternity] 🇺🇸US-66.163.112.13-0212 | 65.766MB | 121ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 13 | 124ms'
+  - '[Eternity] 🇺🇸US-156.146.38.168-0141 | 2.594MB | 125ms'
+  - '[Eternity] 🇺🇸US-156.146.38.167-0145 | 2.678MB | 127ms'
+  - '[Eternity] 🇺🇸US-156.146.38.170-0143 | 0.0MB | 128ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 8 | 129ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a8e49557 | 132ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 12 | 134ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8c949f1d | 136ms'
+  - '[Eternity] 🇺🇸US-156.146.38.169-0139 | 2.83MB | 136ms'
+  - '[Eternity] 🇺🇸US-216.106.186.33-0209 | 39.19MB | 146ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 11 | 149ms'
+  - '[Eternity] 🇺🇸US-66.163.114.114-0215 | 16.896MB | 155ms'
+  - '[Eternity] 🇺🇸US-66.163.114.132-0226 | 0.0MB | 157ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (6) | 157ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 16 | 158ms'
+  - '[NoMoreWalls] 🇺🇸 美国 | USA #9 | 159ms'
+  - '[Eternity] 🇺🇸US-66.163.114.166-0217 | 19.989MB | 159ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 18 | 161ms'
+  - '[freeSub] D🔴🇺🇸hos[📺🎭]_dokng.com_24a6e4b9 | 166ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬📺🎭🎪]_dokng.com_d2a48a59 | 166ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 20 | 170ms'
+  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 13 | 174ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_568e6b70 | 175ms'
+  - '[free18] 🇺🇸_美国 (26) (2) | 187ms'
+  - '[ermaozi] 🇺🇸 机场推荐:dafei.de 美国 10_IPV4 | 191ms'
+  - '[NoMoreWalls] 🇺🇸 美国 | USA 14 | 201ms'
+  - '[Eternity] 🇺🇸US-37.19.198.244-0142 | 2.61MB | 203ms'
+  - '[Eternity] 🇺🇸US-138.199.42.68-6035 | 76.075MB | 208ms'
+  - '[Eternity] 🇺🇸US-37.19.198.236-0138 | 2.141MB | 208ms'
+  - '[Eternity] 🇺🇸US-193.151.160.9-0137 | 144.145MB | 214ms'
+  - '[Eternity] 🇺🇸US-198.98.53.130-0290 | 0.09MB | 214ms'
+  - '[Eternity] 🇺🇸US-193.151.160.18-0162 | 115.23MB | 216ms'
+  - '[Eternity] 🇺🇸US-193.151.163.18-0135 | 159.764MB | 219ms'
+  - '[Eternity] 🇺🇸US-37.19.198.243-0140 | 2.304MB | 219ms'
+  - '[Eternity] 🇺🇸US-37.19.198.160-0144 | 2.516MB | 220ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_78231d9b | 222ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b5553483 | 225ms'
+  - '[ermaozi] 🇺🇸[www.v2nodes.com] ss-US-1612... | 230ms'
+  - '[Eternity] 🇺🇸US-45.86.51.18-0195 | 171.861MB | 244ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_132c014b | 245ms'
+  - '[Eternity] 🇺🇸US-185.230.230.18-0213 | 193.56MB | 246ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_3c84b2dc | 252ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cfdbfd42 | 252ms'
+  - '[Eternity] 🇺🇸US-216.152.155.54-0168 | 0.0MB | 252ms'
+  - '[Eternity] 🇺🇸US-216.152.155.23-0148 | 103.764MB | 255ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (8) | 255ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (10) | 255ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (12) | 255ms'
+  - '[Eternity] 🇺🇸US-216.152.155.158-0179 | 82.033MB | 259ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (7) | 259ms'
+  - '[Eternity] 🇺🇸US-216.152.155.176-0152 | 84.55MB | 261ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_19f240f6 | 271ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] vless-US (7) | 271ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_f7924ec8 | 272ms'
+  - '[Eternity] 🇺🇸US-216.152.156.81-0182 | 68.531MB | 275ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_ad9b8b65 | 276ms'
+  - '[freeSub] B🟡🇺🇸biz[🎬🤖📺🎭]_dokng.com_1519a3a0 | 278ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (5) | 284ms'
+  - '[Eternity] 🇺🇸US-169.197.140.218-1980 | 93.875MB | 285ms'
+  - '[Eternity] 🇺🇸US-216.152.156.42-0198 | 49.784MB | 286ms'
+  - '[Eternity] 🇺🇸US-170.101.101.53-0157 | 79.826MB | 288ms'
+  - '[Eternity] 🇺🇸US-170.101.101.19-0150 | 91.465MB | 293ms'
+  - '[Eternity] 🇺🇸US-170.101.101.67-0155 | 79.361MB | 293ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (13) | 295ms'
+  - '[Eternity] 🇺🇸US-216.152.156.65-0197 | 53.242MB | 296ms'
+  - '[freeSub] A🟢🇺🇸res[🎬📺🎭🎪]_dokng.com_40d7a1a3 | 297ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (11) | 309ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] trojan-US (9) | 323ms'
+  - '[Eternity] 🇺🇸US-167.88.61.198-0146 | 0.0MB | 331ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_407650e3 | 339ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7976bf9 | 342ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b2688550 | 343ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_76440e56 | 344ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_96845fbf | 347ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9d54351f | 347ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_b1448db8 | 348ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_c63c7573 | 353ms'
+  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_0d6b970a | 360ms'
+  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_b3a8f765 | 367ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] vless-US | 375ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_9bac9bc8 | 408ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_8081d77b | 410ms'
+  - '[freeSub] C🟠🇺🇸hos[🎬🤖📺🎭]_dokng.com_838e9798 | 417ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_625225eb | 464ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] vless-US (5) | 472ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_7108edb3 | 498ms'
+  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_6d16d882 | 503ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_31e9a196 | 523ms'
+  - '[freeSub] D🔴🇺🇸hos[🤖✨🎞️✈️]_dokng.com_340f87cf | 603ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a886daec | 630ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_1a32323d | 645ms'
+  - '[freeSub] D🔴🇺🇸hos[🤖📺🎭🎪]_dokng.com_d34ddad2 | 649ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_a7ab87bf | 661ms'
+  - '[roosterkid] 🇺🇸[openproxylist.com] vmess-US | 673ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3a4fb783 | 715ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 21 | 821ms'
+  - '[freeSub] A🟢🇺🇸res[📺🎭🎪]_dokng.com_3c0ca42a | 823ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_97eba0f1 | 837ms'
+  - '[freeSub] C🟠🇺🇸hos[🎪🔍]_dokng.com_61477874 | 861ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_37a111a9 | 892ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 15 | 946ms'
+  - '[ermaozi] 🇺🇸_US_美国->🇫🇮_FI_芬兰_IPV4 | 950ms'
+  - '[freeSub] A🟢🇺🇸res[🎬🤖📺🎭]_dokng.com_216b1767 | 950ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_0f8d1baa | 1140ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cd3eedf9 | 1301ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 6 | 1357ms'
+  - '[ermaozi] 🇺🇸 美国 | USA | 1464ms'
+  - '[NoMoreWalls] 🇺🇸 美国 | USA 12 | 1502ms'
+  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 15 | 1549ms'
+  - '[freeSub] D🔴🇺🇸hos_dokng.com_8300cd41 | 1649ms'
+  - '[free18] 🇺🇸_美国 (47) | 1654ms'
+  - '[freeSub] D🔴🇺🇸hos_dokng.com_5bacbae1 | 2189ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 19 | 2456ms'
+  - '[ermaozi] ProxyPool | 🇺🇸 美国 | USA 10 | 2773ms'
+  - '[freeSub] D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_60cdf76d | 3584ms'
+  - '[ermaozi] 🇺🇸 美国 | USA 14 | 4702ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
