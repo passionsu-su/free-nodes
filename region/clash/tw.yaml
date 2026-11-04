@@ -4,15 +4,7 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[ermaozi] 🇹🇼205308 | ⚡️Telegram = t.me/S... | 563ms'
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  port: 443
-  server: 160.187.100.109
-  skip-cert-verify: true
-  sni: 160.187.100.109
-  tls: false
-  type: hysteria2
-- name: '[zhuhaiuk] TW - zhuhai.uk | 730ms'
+- name: '[zhuhaiuk] TW - zhuhai.uk | 1343ms'
   type: http
   server: twmoon1-cdn-route.couldflare-cdn.com
   port: 1443
@@ -20,7 +12,7 @@ proxies:
   password: exaxgqkKkd0TAMrCxeonWg==
   tls: true
   sni: twmoon1-cdn-route.couldflare-cdn.com
-- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 802ms'
+- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1359ms'
   password: exaxgqkKkd0TAMrCxeonWg==
   port: 1443
   server: twmoon1-cdn-route.couldflare-cdn.com
@@ -29,33 +21,6 @@ proxies:
   tls: true
   type: http
   username: mrwdfNTD8M79LCukCieldrqZWqs=
-- client-fingerprint: chrome
-  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_6377d8cd | 2047ms'
-  network: ws
-  port: 443
-  server: 59.125.69.23
-  servername: ty986gfazs.cainiaohub.xyz
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  ws-opts:
-    headers:
-      Host: ty986gfazs.cainiaohub.xyz
-    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 2505ms'
-  network: ws
-  password: 8deb189a-3aed-4865-843b-b72dae954c46
-  port: 8443
-  server: 83.147.15.84
-  skip-cert-verify: true
-  sni: api.85s.me
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: api.85s.me
-    path: /
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -63,20 +28,14 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] 🇹🇼205308 | ⚡️Telegram = t.me/S... | 563ms'
-  - '[zhuhaiuk] TW - zhuhai.uk | 730ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 802ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_6377d8cd | 2047ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 2505ms'
+  - '[zhuhaiuk] TW - zhuhai.uk | 1343ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1359ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] 🇹🇼205308 | ⚡️Telegram = t.me/S... | 563ms'
-  - '[zhuhaiuk] TW - zhuhai.uk | 730ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 802ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_6377d8cd | 2047ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 2505ms'
+  - '[zhuhaiuk] TW - zhuhai.uk | 1343ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1359ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
