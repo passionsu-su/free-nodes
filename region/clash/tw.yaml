@@ -6,7 +6,7 @@ ipv6: false
 proxies:
 - grpc-opts:
     grpc-service-name: db
-  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 555ms'
+  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 785ms'
   network: grpc
   password: 0a9f1f5a397bd427
   port: 443
@@ -14,7 +14,7 @@ proxies:
   skip-cert-verify: true
   sni: TG.freecodes
   type: trojan
-- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 738ms'
+- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1038ms'
   password: exaxgqkKkd0TAMrCxeonWg==
   port: 1443
   server: twmoon1-cdn-route.couldflare-cdn.com
@@ -23,29 +23,21 @@ proxies:
   tls: true
   type: http
   username: mrwdfNTD8M79LCukCieldrqZWqs=
-- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN #1 | 882ms'
-  password: eRlY6dXnQ4QUzVOQi6YDfZWq
-  port: 10000
-  server: 18.141.210.28
-  skip-cert-verify: true
-  sni: sg-transit-3.nebulacloud.win
-  tls: false
-  type: hysteria2
-- alpn:
-  - h3
-  auth: eRlY6dXnQ4QUzVOQi6YDfZWq
-  down: 200
-  name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 904ms'
-  password: eRlY6dXnQ4QUzVOQi6YDfZWq
-  port: 10000
-  server: 18.141.210.28
-  skip-cert-verify: true
-  sni: sg-transit-3.nebulacloud.win
-  type: hysteria2
-  udp: true
-  up: 100
 - client-fingerprint: chrome
-  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 5139ms'
+  name: '[NoMoreWalls] 🇹🇼[www.v2nodes.com] vless-TW-1... | 1211ms'
+  network: ws
+  port: 8443
+  server: n04.jinggai.online
+  servername: n04.jinggai.online
+  tls: true
+  type: vless
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
+  ws-opts:
+    headers:
+      Host: n04.jinggai.online
+    path: /nvl-n04-ws/e0577fe8fd7c8823
+- client-fingerprint: chrome
+  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 1428ms'
   network: ws
   port: 443
   server: 60.248.219.53
@@ -65,20 +57,18 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 555ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 738ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN #1 | 882ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 904ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 5139ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 785ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1038ms'
+  - '[NoMoreWalls] 🇹🇼[www.v2nodes.com] vless-TW-1... | 1211ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 1428ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 555ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 738ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN #1 | 882ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 904ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 5139ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 785ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1038ms'
+  - '[NoMoreWalls] 🇹🇼[www.v2nodes.com] vless-TW-1... | 1211ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 1428ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
