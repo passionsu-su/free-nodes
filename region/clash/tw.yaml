@@ -4,8 +4,27 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
+- grpc-opts:
+    grpc-service-name: db
+  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 816ms'
+  network: grpc
+  password: 0a9f1f5a397bd427
+  port: 443
+  server: 125.227.86.46
+  skip-cert-verify: true
+  sni: TG.freecodes
+  type: trojan
+- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1063ms'
+  password: exaxgqkKkd0TAMrCxeonWg==
+  port: 1443
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  skip-cert-verify: false
+  sni: twmoon1-cdn-route.couldflare-cdn.com
+  tls: true
+  type: http
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
 - client-fingerprint: chrome
-  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 787ms'
+  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 3652ms'
   network: ws
   port: 443
   server: 60.248.219.53
@@ -18,39 +37,6 @@ proxies:
     headers:
       Host: ty986gfazs.cainiaohub.xyz
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 818ms'
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  skip-cert-verify: false
-  sni: twmoon1-cdn-route.couldflare-cdn.com
-  tls: true
-  type: http
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-- grpc-opts:
-    grpc-service-name: db
-  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 2400ms'
-  network: grpc
-  password: 0a9f1f5a397bd427
-  port: 443
-  server: 125.227.86.46
-  skip-cert-verify: true
-  sni: TG.freecodes
-  type: trojan
-- type: vless
-  name: '[free18] 🇹🇼_台湾 | 3983ms'
-  server: 83.147.13.74
-  port: 8443
-  uuid: eb8c97f7-a154-4442-91b0-54c0d055ad0b
-  udp: true
-  tls: true
-  servername: github.githubassets.com
-  sni: github.githubassets.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 4g6gX0ueJap7pY_iTDx23h6bzo3KIOTcFzP1Uacn0QA
-    short-id: 4ad2e4e660550e43
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -58,18 +44,16 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 787ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 818ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 2400ms'
-  - '[free18] 🇹🇼_台湾 | 3983ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 816ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1063ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 3652ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 787ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 818ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 2400ms'
-  - '[free18] 🇹🇼_台湾 | 3983ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850 | 816ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1063ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 3652ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
