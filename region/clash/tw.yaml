@@ -4,7 +4,21 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 775ms'
+- client-fingerprint: chrome
+  name: '[NoMoreWalls] 🇹🇼 🇨🇳 台湾 | TWN #1 | 700ms'
+  network: ws
+  port: 443
+  server: 85.237.207.141
+  servername: mhoX6Xz96zGe3qv5HISuFj9B.paGeS.DEV
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4d945644-69ab-47e0-98b3-d43a6313135d
+  ws-opts:
+    headers:
+      Host: mhoX6Xz96zGe3qv5HISuFj9B.paGeS.DEV
+    path: /vl/SaXqikbSPA3ImtmZKAFin?ed=2560
+- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 952ms'
   password: exaxgqkKkd0TAMrCxeonWg==
   port: 1443
   server: twmoon1-cdn-route.couldflare-cdn.com
@@ -13,11 +27,10 @@ proxies:
   tls: true
   type: http
   username: mrwdfNTD8M79LCukCieldrqZWqs=
-- client-fingerprint: chrome
-  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 2386ms'
+- name: '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 3115ms'
   network: ws
   port: 443
-  server: 60.248.219.53
+  server: 60.248.219.78
   servername: ty986gfazs.cainiaohub.xyz
   skip-cert-verify: true
   tls: true
@@ -27,10 +40,11 @@ proxies:
     headers:
       Host: ty986gfazs.cainiaohub.xyz
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- name: '[NoMoreWalls] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 2954ms'
+- client-fingerprint: chrome
+  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 3527ms'
   network: ws
   port: 443
-  server: 60.248.219.78
+  server: 60.248.219.53
   servername: ty986gfazs.cainiaohub.xyz
   skip-cert-verify: true
   tls: true
@@ -47,16 +61,18 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 775ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 2386ms'
-  - '[NoMoreWalls] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 2954ms'
+  - '[NoMoreWalls] 🇹🇼 🇨🇳 台湾 | TWN #1 | 700ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 952ms'
+  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 3115ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 3527ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 775ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 2386ms'
-  - '[NoMoreWalls] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 2954ms'
+  - '[NoMoreWalls] 🇹🇼 🇨🇳 台湾 | TWN #1 | 700ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 952ms'
+  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 3115ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 3527ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
