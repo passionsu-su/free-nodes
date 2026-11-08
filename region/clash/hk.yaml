@@ -4,7 +4,7 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[ermaozi] Channel id: @ConfigV2RayNG 🇭🇰 | 678ms'
+- name: '[ermaozi] Channel id: @ConfigV2RayNG 🇭🇰 | 587ms'
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -14,66 +14,13 @@ proxies:
   sni: nas.aizhzo.com
   tls: false
   type: hysteria2
-- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 926ms'
-  type: http
-  server: fan.240104.xyz
-  port: 443
-  username: 'null'
-  password: 'null'
-  tls: true
-  skip-cert-verify: true
-- name: '[freeSub] D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab | 961ms'
+- name: '[freeSub] D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab | 587ms'
   port: 443
   server: 43.155.62.157
   type: http
-- name: '[freeSub] D🔴🇭🇰hos[🎬📺🎭🎪]_dokng.com_de4eaa15 | 976ms'
-  port: 443
-  server: fan.240104.xyz
-  skip-cert-verify: true
-  sni: fan.240104.xyz
-  tls: true
-  type: http
-- name: '[freeSub] C🟠🇭🇰hos[📺🔍]_dokng.com_099454ad | 992ms'
-  password: '111'
-  port: 11211
-  server: 47.243.173.50
-  skip-cert-verify: true
-  type: socks5
-  username: '111'
-- name: '[zhuhaiuk] HK - zhuhai.uk | 1021ms'
-  type: http
-  server: 119.28.24.235
-  port: 3128
-  tls: true
-  sni: 119.28.24.235
-  skip-cert-verify: true
-- name: '[freeSub] C🟠🇭🇰hos_dokng.com_db363b3a | 2467ms'
-  password: admin
-  port: 8899
-  server: 47.242.19.215
-  skip-cert-verify: true
-  type: socks5
-  username: admin
-- type: trojan
-  name: '[free18] 🇭🇰_香港 (5) | 2566ms'
-  server: sclass-c1.catcat321.com
-  port: 20086
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  udp: true
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: false
-- name: '[ermaozi] 🇭🇰HK_1|1.2MB/s | 2713ms'
-  password: None
-  port: 31343
-  server: 120.232.204.58
-  skip-cert-verify: true
-  tls: true
-  type: http
 - alterId: 0
   cipher: auto
-  name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 2921ms'
+  name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 684ms'
   network: ws
   port: 36703
   server: 47.244.120.197
@@ -84,18 +31,80 @@ proxies:
   uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
   ws-opts:
     path: /arki
-- type: trojan
-  name: '[free18] 🇭🇰_香港 (3) | 3642ms'
-  server: sclass-00.catcat321.com
-  port: 20123
-  password: d9064589-74af-432a-9390-5d8a9da281bf
+- name: '[ermaozi] 🇭🇰 香港 | HKG 2 | 716ms'
+  server: 47.244.120.197
+  port: 44867
+  type: vmess
+  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  alterId: 0
+  cipher: auto
+  tls: false
+  alpn:
+  - ''
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /arki
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: '[ermaozi] 🇭🇰 香港 | HKG #5 | 717ms'
+  network: ws
+  port: 23026
+  server: 47.244.120.197
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  ws-opts:
+    headers:
+      Host: 47.244.120.197
+    path: /arki
+- type: vless
+  name: '[free18] 🇭🇰_香港 (2) | 786ms'
+  server: 152.175.6.229
+  port: 31884
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
   udp: true
   tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
+  servername: hk010.zestapp778.com
+  sni: hk010.zestapp778.com
   skip-cert-verify: false
+  client-fingerprint: chrome
+- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 828ms'
+  type: http
+  server: fan.240104.xyz
+  port: 443
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+- name: '[freeSub] D🔴🇭🇰hos[🎬📺🎭🎪]_dokng.com_de4eaa15 | 862ms'
+  port: 443
+  server: fan.240104.xyz
+  skip-cert-verify: true
+  sni: fan.240104.xyz
+  tls: true
+  type: http
+- name: '[ermaozi] 🇭🇰HK_1|1.2MB/s | 1088ms'
+  password: None
+  port: 31343
+  server: 120.232.204.58
+  skip-cert-verify: true
+  tls: true
+  type: http
+- auth: b0917015b656b3dd2286b5633af0c5c1
+  name: '[NoMoreWalls] 🇭🇰 香港 | HKG #1 | 1268ms'
+  password: b0917015b656b3dd2286b5633af0c5c1
+  port: 50160
+  server: 31.57.248.176
+  skip-cert-verify: true
+  sni: www.bing.com%23%e9%a6%83%e5%9a%9f%e9%a6%83%e5%9a%a2%7chk%7c%40wxgqlfx%7c147
+  tls: false
+  type: hysteria2
 - type: trojan
-  name: '[free18] 🇭🇰_香港 (4) | 4671ms'
+  name: '[free18] 🇭🇰_香港 (4) | 2097ms'
   server: sclass-c1.catcat321.com
   port: 20086
   password: d9064589-74af-432a-9390-5d8a9da281bf
@@ -105,6 +114,54 @@ proxies:
   sni: hk.catxstar.com
   skip-cert-verify: false
   client-fingerprint: chrome
+- type: trojan
+  name: '[free18] 🇭🇰_香港 (5) | 2129ms'
+  server: sclass-c1.catcat321.com
+  port: 20086
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  udp: true
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: false
+- type: trojan
+  name: '[free18] 🇭🇰_香港 (3) | 2365ms'
+  server: sclass-00.catcat321.com
+  port: 20123
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  udp: true
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: false
+- name: '[zhuhaiuk] HK - zhuhai.uk | 2465ms'
+  type: socks5
+  server: 47.242.19.215
+  port: 8899
+  username: admin
+  password: admin
+- client-fingerprint: firefox
+  encryption: none
+  name: '[NoMoreWalls] 🇭🇰[www.v2nodes.com] vless-HK-1... #1 | 2555ms'
+  network: tcp
+  port: 31884
+  server: 152.175.6.229
+  servername: hk010.zestapp778.com
+  tls: true
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+- name: '[Eternity] 🇭🇰HK-156.245.232.239-5915 | 0.014MB | 4705ms'
+  server: 156.245.232.239
+  port: 35043
+  type: vmess
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -112,34 +169,42 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] Channel id: @ConfigV2RayNG 🇭🇰 | 678ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 926ms'
-  - '[freeSub] D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab | 961ms'
-  - '[freeSub] D🔴🇭🇰hos[🎬📺🎭🎪]_dokng.com_de4eaa15 | 976ms'
-  - '[freeSub] C🟠🇭🇰hos[📺🔍]_dokng.com_099454ad | 992ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1021ms'
-  - '[freeSub] C🟠🇭🇰hos_dokng.com_db363b3a | 2467ms'
-  - '[free18] 🇭🇰_香港 (5) | 2566ms'
-  - '[ermaozi] 🇭🇰HK_1|1.2MB/s | 2713ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 2921ms'
-  - '[free18] 🇭🇰_香港 (3) | 3642ms'
-  - '[free18] 🇭🇰_香港 (4) | 4671ms'
+  - '[ermaozi] Channel id: @ConfigV2RayNG 🇭🇰 | 587ms'
+  - '[freeSub] D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab | 587ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 684ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 716ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #5 | 717ms'
+  - '[free18] 🇭🇰_香港 (2) | 786ms'
+  - '[zhuhaiuk] HK - zhuhai.uk 02 | 828ms'
+  - '[freeSub] D🔴🇭🇰hos[🎬📺🎭🎪]_dokng.com_de4eaa15 | 862ms'
+  - '[ermaozi] 🇭🇰HK_1|1.2MB/s | 1088ms'
+  - '[NoMoreWalls] 🇭🇰 香港 | HKG #1 | 1268ms'
+  - '[free18] 🇭🇰_香港 (4) | 2097ms'
+  - '[free18] 🇭🇰_香港 (5) | 2129ms'
+  - '[free18] 🇭🇰_香港 (3) | 2365ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 2465ms'
+  - '[NoMoreWalls] 🇭🇰[www.v2nodes.com] vless-HK-1... #1 | 2555ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-5915 | 0.014MB | 4705ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] Channel id: @ConfigV2RayNG 🇭🇰 | 678ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 926ms'
-  - '[freeSub] D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab | 961ms'
-  - '[freeSub] D🔴🇭🇰hos[🎬📺🎭🎪]_dokng.com_de4eaa15 | 976ms'
-  - '[freeSub] C🟠🇭🇰hos[📺🔍]_dokng.com_099454ad | 992ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1021ms'
-  - '[freeSub] C🟠🇭🇰hos_dokng.com_db363b3a | 2467ms'
-  - '[free18] 🇭🇰_香港 (5) | 2566ms'
-  - '[ermaozi] 🇭🇰HK_1|1.2MB/s | 2713ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 2921ms'
-  - '[free18] 🇭🇰_香港 (3) | 3642ms'
-  - '[free18] 🇭🇰_香港 (4) | 4671ms'
+  - '[ermaozi] Channel id: @ConfigV2RayNG 🇭🇰 | 587ms'
+  - '[freeSub] D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab | 587ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 684ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 716ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #5 | 717ms'
+  - '[free18] 🇭🇰_香港 (2) | 786ms'
+  - '[zhuhaiuk] HK - zhuhai.uk 02 | 828ms'
+  - '[freeSub] D🔴🇭🇰hos[🎬📺🎭🎪]_dokng.com_de4eaa15 | 862ms'
+  - '[ermaozi] 🇭🇰HK_1|1.2MB/s | 1088ms'
+  - '[NoMoreWalls] 🇭🇰 香港 | HKG #1 | 1268ms'
+  - '[free18] 🇭🇰_香港 (4) | 2097ms'
+  - '[free18] 🇭🇰_香港 (5) | 2129ms'
+  - '[free18] 🇭🇰_香港 (3) | 2365ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 2465ms'
+  - '[NoMoreWalls] 🇭🇰[www.v2nodes.com] vless-HK-1... #1 | 2555ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-5915 | 0.014MB | 4705ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY

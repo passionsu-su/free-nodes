@@ -4,8 +4,17 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
+- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 735ms'
+  password: exaxgqkKkd0TAMrCxeonWg==
+  port: 1443
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  skip-cert-verify: false
+  sni: twmoon1-cdn-route.couldflare-cdn.com
+  tls: true
+  type: http
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
 - client-fingerprint: chrome
-  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 2273ms'
+  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 1533ms'
   network: ws
   port: 443
   server: 60.248.219.53
@@ -18,7 +27,7 @@ proxies:
     headers:
       Host: ty986gfazs.cainiaohub.xyz
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- name: '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 2534ms'
+- name: '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 2888ms'
   network: ws
   port: 443
   server: 60.248.219.78
@@ -38,14 +47,16 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 2273ms'
-  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 2534ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 735ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 1533ms'
+  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 2888ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 2273ms'
-  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 2534ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 735ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 1533ms'
+  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 2888ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
