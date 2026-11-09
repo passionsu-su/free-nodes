@@ -4,17 +4,8 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1030ms'
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  skip-cert-verify: false
-  sni: twmoon1-cdn-route.couldflare-cdn.com
-  tls: true
-  type: http
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
 - client-fingerprint: chrome
-  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 3734ms'
+  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 1016ms'
   network: ws
   port: 443
   server: 60.248.219.53
@@ -34,14 +25,12 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1030ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 3734ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 1016ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 1030ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 3734ms'
+  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 1016ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
