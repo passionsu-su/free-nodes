@@ -4,50 +4,30 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[ermaozi] 🇹🇼TW_1|3.5MB/s | 1009ms'
+- cipher: 2022-blake3-aes-128-gcm
+  name: '[NoMoreWalls] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 583ms'
+  password: b7I6g7l7fJhBaMInJ+zkzw==
+  port: 14514
+  server: amasoid.ddns.net
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: '[freeSub] 🇨🇳台湾 原生IP 4.33MB/s 182 linuxdo@onimaii [61859b18f887] | 597ms'
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    host: 88a027c.dl.microsoft.lu:14333
+    mode: tls
+  port: 2377
+  server: 118.163.198.43
+  type: ss
+  x-toolall-mihomo: true
+- name: '[freeSub] 🇨🇳台湾 原生IP 0.11MB/s 509 linuxdo@onimaii [842d17517f87] | 1056ms'
   password: exaxgqkKkd0TAMrCxeonWg==
   port: 1443
   server: twmoon1-cdn-route.couldflare-cdn.com
   tls: true
   type: http
-  udp: true
   username: mrwdfNTD8M79LCukCieldrqZWqs=
-- name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 4269ms'
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  skip-cert-verify: false
-  sni: twmoon1-cdn-route.couldflare-cdn.com
-  tls: true
-  type: http
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-- client-fingerprint: chrome
-  name: '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 4317ms'
-  network: ws
-  port: 443
-  server: 60.248.219.53
-  servername: ty986gfazs.cainiaohub.xyz
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  ws-opts:
-    headers:
-      Host: ty986gfazs.cainiaohub.xyz
-    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- type: vless
-  name: '[free18] 🇹🇼_台湾 (2) | 5109ms'
-  server: 60.248.219.78
-  port: 443
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  udp: true
-  tls: true
-  servername: ty986gfazs.cainiaohub.xyz
-  sni: ty986gfazs.cainiaohub.xyz
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -55,18 +35,16 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] 🇹🇼TW_1|3.5MB/s | 1009ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 4269ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 4317ms'
-  - '[free18] 🇹🇼_台湾 (2) | 5109ms'
+  - '[NoMoreWalls] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 583ms'
+  - '[freeSub] 🇨🇳台湾 原生IP 4.33MB/s 182 linuxdo@onimaii [61859b18f887] | 597ms'
+  - '[freeSub] 🇨🇳台湾 原生IP 0.11MB/s 509 linuxdo@onimaii [842d17517f87] | 1056ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] 🇹🇼TW_1|3.5MB/s | 1009ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_65a5452e | 4269ms'
-  - '[freeSub] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7 | 4317ms'
-  - '[free18] 🇹🇼_台湾 (2) | 5109ms'
+  - '[NoMoreWalls] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 583ms'
+  - '[freeSub] 🇨🇳台湾 原生IP 4.33MB/s 182 linuxdo@onimaii [61859b18f887] | 597ms'
+  - '[freeSub] 🇨🇳台湾 原生IP 0.11MB/s 509 linuxdo@onimaii [842d17517f87] | 1056ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
