@@ -5,28 +5,26 @@ log-level: info
 ipv6: false
 proxies:
 - cipher: 2022-blake3-aes-128-gcm
-  name: '[ermaozi] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 423ms'
+  name: '[ermaozi] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 596ms'
   password: b7I6g7l7fJhBaMInJ+zkzw==
   port: 14514
   server: amasoid.ddns.net
   type: ss
-- name: '[freeSub] twmoon1-cdn-route.couldflare-cdn.com [842d17517f87] | 733ms'
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
+- name: '[zhuhaiuk] TW - zhuhai.uk | 1171ms'
+  type: vless
+  server: 60.248.219.53
+  port: 443
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
   tls: true
-  type: http
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-- name: '[ermaozi] 🇹🇼TW_1|2.5MB/s | 792ms'
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  skip-cert-verify: false
-  sni: twmoon1-cdn-route.couldflare-cdn.com
-  tls: true
-  type: http
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-- name: '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 1413ms'
+  servername: ty986gfazs.cainiaohub.xyz
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+    headers:
+      Host: ty986gfazs.cainiaohub.xyz
+- name: '[NoMoreWalls] 🇹🇼[www.v2nodes.com] vless-TW-1... #3 | 1534ms'
   network: ws
   port: 443
   server: 60.248.219.78
@@ -39,6 +37,23 @@ proxies:
     headers:
       Host: ty986gfazs.cainiaohub.xyz
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+- name: '[freeSub] 🇨🇳台湾 原生IP 0.19MB/s 390 linuxdo@onimaii [842d17517f87] | 1571ms'
+  password: exaxgqkKkd0TAMrCxeonWg==
+  port: 1443
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  tls: true
+  type: http
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+- name: '[freeSub] 🇹🇼TW_24|492KB/s [333e4bb8a14f] | 1811ms'
+  password: exaxgqkKkd0TAMrCxeonWg==
+  port: 1443
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  sni: twmoon1-cdn-route.couldflare-cdn.com
+  tls: true
+  type: http
+  udp: true
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  x-toolall-mihomo: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -46,18 +61,20 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 423ms'
-  - '[freeSub] twmoon1-cdn-route.couldflare-cdn.com [842d17517f87] | 733ms'
-  - '[ermaozi] 🇹🇼TW_1|2.5MB/s | 792ms'
-  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 1413ms'
+  - '[ermaozi] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 596ms'
+  - '[zhuhaiuk] TW - zhuhai.uk | 1171ms'
+  - '[NoMoreWalls] 🇹🇼[www.v2nodes.com] vless-TW-1... #3 | 1534ms'
+  - '[freeSub] 🇨🇳台湾 原生IP 0.19MB/s 390 linuxdo@onimaii [842d17517f87] | 1571ms'
+  - '[freeSub] 🇹🇼TW_24|492KB/s [333e4bb8a14f] | 1811ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 423ms'
-  - '[freeSub] twmoon1-cdn-route.couldflare-cdn.com [842d17517f87] | 733ms'
-  - '[ermaozi] 🇹🇼TW_1|2.5MB/s | 792ms'
-  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 1413ms'
+  - '[ermaozi] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 596ms'
+  - '[zhuhaiuk] TW - zhuhai.uk | 1171ms'
+  - '[NoMoreWalls] 🇹🇼[www.v2nodes.com] vless-TW-1... #3 | 1534ms'
+  - '[freeSub] 🇨🇳台湾 原生IP 0.19MB/s 390 linuxdo@onimaii [842d17517f87] | 1571ms'
+  - '[freeSub] 🇹🇼TW_24|492KB/s [333e4bb8a14f] | 1811ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
