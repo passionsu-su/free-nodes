@@ -4,33 +4,34 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[roosterkid] 🇯🇵[openproxylist.com] vmess-JP | 450ms'
-  type: vmess
-  server: 141.11.139.102
-  port: 32515
-  uuid: 081dbf5a-d8b6-40c8-96f8-3c4ca9f50442
-  alterId: 0
-  cipher: auto
-  network: tcp
-- auth: abedf59203ff9523
-  name: '[ermaozi] 🇯🇵 日本 | JPN | 660ms'
-  obfs: salamander
-  obfs-password: ce8a8b39835f0ce5340cf548892e8e71
-  password: abedf59203ff9523
-  port: 17826
-  ports: 17826,20000-40000
-  server: 138.2.37.59
-  skip-cert-verify: true
-  sni: www.bing.com
-  type: hysteria2
-- cipher: aes-256-gcm
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 685ms'
-  password: 3eOFeNssde7PYYMv
-  port: 80
-  server: 84.247.155.196
+- name: '[Eternity] 🇯🇵JP-168.138.205.100-5840 | 3.099MB | 334ms'
+  server: 168.138.205.100
+  port: 53758
   type: ss
+  cipher: aes-128-gcm
+  password: Bwlqh7GcFB
 - client-fingerprint: chrome
-  name: '[NoMoreWalls] 🇯🇵[www.v2nodes.com] vless-JP-1... #7 | 688ms'
+  encryption: none
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 416ms'
+  network: ws
+  port: 443
+  server: 104.18.42.98
+  servername: jp3.yohototo.top
+  tls: true
+  type: vless
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
+- name: '[Eternity] 🇯🇵JP-84.247.155.196-0221 | 0.588MB | 496ms'
+  server: 84.247.155.196
+  port: 80
+  type: ss
+  cipher: aes-256-gcm
+  password: 3eOFeNssde7PYYMv
+- client-fingerprint: chrome
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #7 | 569ms'
   network: ws
   port: 443
   server: 46.250.248.210
@@ -42,7 +43,30 @@ proxies:
     headers:
       Host: fs.qicai99.com
     path: /
-- name: '[freeSub] 🇯🇵JP_6|2.4MB/s [0f4839b899b0] | 741ms'
+- name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #6 | 608ms'
+  network: ws
+  port: 443
+  server: 46.250.254.187
+  servername: fs.qicai99.com
+  tls: true
+  type: vless
+  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
+  ws-opts:
+    headers:
+      Host: fs.qicai99.com
+    path: /fp=chrome
+- name: '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 651ms'
+  port: 443
+  server: fan.571589.xyz
+  tls: true
+  type: http
+- cipher: aes-256-gcm
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 788ms'
+  password: 3eOFeNssde7PYYMv
+  port: 443
+  server: 84.247.155.196
+  type: ss
+- name: '[freeSub] 🇯🇵JP_6|2.4MB/s [0f4839b899b0] | 879ms'
   password: ''
   port: 443
   server: fan.571589.xyz
@@ -53,30 +77,15 @@ proxies:
   udp: true
   username: ''
   x-toolall-mihomo: true
-- cipher: aes-256-gcm
-  name: '[NoMoreWalls] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 780ms'
-  password: 3eOFeNssde7PYYMv
+- name: '[zhuhaiuk] JP - zhuhai.uk 02 | 1038ms'
+  type: http
+  server: jpgmo102-cdn-route.couldflare-cdn.com
   port: 443
-  server: 84.247.155.196
-  type: ss
-- type: vless
-  name: '[free18] 🇯🇵_日本 (3) | 878ms'
-  server: 45.153.245.181
-  port: 443
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  udp: true
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
   tls: true
-  servername: jp3.yohototo.top
-  sni: jp3.yohototo.top
-  skip-cert-verify: true
-  client-fingerprint: unsafe
-  network: ws
-  ws-opts:
-    path: /tyxyws
-    headers:
-      Host: jp3.yohototo.top
 - type: vless
-  name: '[free18] 🇯🇵_日本 (6) | 1156ms'
+  name: '[free18] 🇯🇵_日本 (6) | 1239ms'
   server: 103.201.131.202
   port: 2053
   uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
@@ -91,71 +100,28 @@ proxies:
     path: /tyxyws
     headers:
       Host: jp3.yohototo.top
-- name: '[zhuhaiuk] JP - zhuhai.uk | 1340ms'
+- name: '[zhuhaiuk] JP - zhuhai.uk | 1742ms'
   type: http
-  server: jpgmo102-cdn-route.couldflare-cdn.com
+  server: fan.587475.xyz
   port: 443
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-  password: exaxgqkKkd0TAMrCxeonWg==
   tls: true
-  sni: jpgmo102-cdn-route.couldflare-cdn.com
-- client-fingerprint: chrome
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #8 | 1359ms'
-  network: ws
+  sni: fan.587475.xyz
+- type: vless
+  name: '[free18] 🇯🇵_日本 (3) | 4902ms'
+  server: 45.153.245.181
   port: 443
-  server: 46.250.254.187
-  servername: fs.qicai99.com
-  tls: true
-  type: vless
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /
-- name: '[NoMoreWalls] 🇯🇵[www.v2nodes.com] vless-JP-1... #5 | 1411ms'
-  network: tcp
-  port: 47878
-  server: 152.69.195.67
-  servername: 152.69.195.67
-  tls: false
-  type: vless
-  uuid: eb8613e3-8393-4cff-a3ad-6501fd4adc63
-- name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 1711ms'
-  network: ws
-  port: 443
-  server: 46.250.254.187
-  servername: fs.qicai99.com
-  tls: true
-  type: vless
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /fp=chrome
-- cipher: aes-256-gcm
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 2099ms'
-  password: BeaUf9c0AEWH40Pu
-  port: 8388
-  server: 154.36.158.197
-  type: ss
-- name: '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 3980ms'
-  port: 443
-  server: fan.571589.xyz
-  tls: true
-  type: http
-- type: vmess
-  name: '[free18] 🇯🇵_日本 (8) | 4533ms'
-  server: 168.138.43.75
-  port: 80
-  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
-  cipher: auto
-  alterId: 0
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
   udp: true
-  tls: false
+  tls: true
+  servername: jp3.yohototo.top
+  sni: jp3.yohototo.top
   skip-cert-verify: true
+  client-fingerprint: unsafe
   network: ws
   ws-opts:
-    path: /cctv13.m3u8
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -163,40 +129,34 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[roosterkid] 🇯🇵[openproxylist.com] vmess-JP | 450ms'
-  - '[ermaozi] 🇯🇵 日本 | JPN | 660ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 685ms'
-  - '[NoMoreWalls] 🇯🇵[www.v2nodes.com] vless-JP-1... #7 | 688ms'
-  - '[freeSub] 🇯🇵JP_6|2.4MB/s [0f4839b899b0] | 741ms'
-  - '[NoMoreWalls] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 780ms'
-  - '[free18] 🇯🇵_日本 (3) | 878ms'
-  - '[free18] 🇯🇵_日本 (6) | 1156ms'
-  - '[zhuhaiuk] JP - zhuhai.uk | 1340ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #8 | 1359ms'
-  - '[NoMoreWalls] 🇯🇵[www.v2nodes.com] vless-JP-1... #5 | 1411ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 1711ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 2099ms'
-  - '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 3980ms'
-  - '[free18] 🇯🇵_日本 (8) | 4533ms'
+  - '[Eternity] 🇯🇵JP-168.138.205.100-5840 | 3.099MB | 334ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 416ms'
+  - '[Eternity] 🇯🇵JP-84.247.155.196-0221 | 0.588MB | 496ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #7 | 569ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #6 | 608ms'
+  - '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 651ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 788ms'
+  - '[freeSub] 🇯🇵JP_6|2.4MB/s [0f4839b899b0] | 879ms'
+  - '[zhuhaiuk] JP - zhuhai.uk 02 | 1038ms'
+  - '[free18] 🇯🇵_日本 (6) | 1239ms'
+  - '[zhuhaiuk] JP - zhuhai.uk | 1742ms'
+  - '[free18] 🇯🇵_日本 (3) | 4902ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[roosterkid] 🇯🇵[openproxylist.com] vmess-JP | 450ms'
-  - '[ermaozi] 🇯🇵 日本 | JPN | 660ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 685ms'
-  - '[NoMoreWalls] 🇯🇵[www.v2nodes.com] vless-JP-1... #7 | 688ms'
-  - '[freeSub] 🇯🇵JP_6|2.4MB/s [0f4839b899b0] | 741ms'
-  - '[NoMoreWalls] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 780ms'
-  - '[free18] 🇯🇵_日本 (3) | 878ms'
-  - '[free18] 🇯🇵_日本 (6) | 1156ms'
-  - '[zhuhaiuk] JP - zhuhai.uk | 1340ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #8 | 1359ms'
-  - '[NoMoreWalls] 🇯🇵[www.v2nodes.com] vless-JP-1... #5 | 1411ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 1711ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 2099ms'
-  - '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 3980ms'
-  - '[free18] 🇯🇵_日本 (8) | 4533ms'
+  - '[Eternity] 🇯🇵JP-168.138.205.100-5840 | 3.099MB | 334ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #2 | 416ms'
+  - '[Eternity] 🇯🇵JP-84.247.155.196-0221 | 0.588MB | 496ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #7 | 569ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #6 | 608ms'
+  - '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 651ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 788ms'
+  - '[freeSub] 🇯🇵JP_6|2.4MB/s [0f4839b899b0] | 879ms'
+  - '[zhuhaiuk] JP - zhuhai.uk 02 | 1038ms'
+  - '[free18] 🇯🇵_日本 (6) | 1239ms'
+  - '[zhuhaiuk] JP - zhuhai.uk | 1742ms'
+  - '[free18] 🇯🇵_日本 (3) | 4902ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY

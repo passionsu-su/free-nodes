@@ -4,14 +4,13 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[freeSub] 🇨🇳台湾 原生IP 0.13MB/s 620 linuxdo@onimaii [842d17517f87] | 790ms'
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  tls: true
-  type: http
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-- name: '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #3 | 2521ms'
+- cipher: 2022-blake3-aes-128-gcm
+  name: '[ermaozi] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 411ms'
+  password: b7I6g7l7fJhBaMInJ+zkzw==
+  port: 14514
+  server: amasoid.ddns.net
+  type: ss
+- name: '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 5718ms'
   network: ws
   port: 443
   server: 60.248.219.78
@@ -24,19 +23,6 @@ proxies:
     headers:
       Host: ty986gfazs.cainiaohub.xyz
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 4806ms'
-  server: 83.147.13.74
-  port: 8443
-  type: vless
-  uuid: eb8c97f7-a154-4442-91b0-54c0d055ad0b
-  tls: true
-  reality-opts:
-    public-key: 4g6gX0ueJap7pY_iTDx23h6bzo3KIOTcFzP1Uacn0QA
-    short-id: 4ad2e4e660550e43
-  servername: github.githubassets.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -44,16 +30,14 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] 🇨🇳台湾 原生IP 0.13MB/s 620 linuxdo@onimaii [842d17517f87] | 790ms'
-  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #3 | 2521ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 4806ms'
+  - '[ermaozi] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 411ms'
+  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 5718ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] 🇨🇳台湾 原生IP 0.13MB/s 620 linuxdo@onimaii [842d17517f87] | 790ms'
-  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #3 | 2521ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 4806ms'
+  - '[ermaozi] 🇹🇼[www.v2nodes.com] ss-TW-1620... | 411ms'
+  - '[ermaozi] 🇹🇼[www.v2nodes.com] vless-TW-1... #1 | 5718ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
