@@ -4,17 +4,52 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- type: vmess
-  name: '[free18] 🇭🇰_香港 (6) | 131ms'
-  server: 206.237.11.17
-  port: 50376
-  uuid: 9091fd64-7e8e-4b7a-8ae7-84474f234926
-  cipher: auto
-  alterId: 0
+- type: vless
+  name: '[free18] 🇭🇰_香港 (7) | 825ms'
+  server: mcjhfxdmythkjhf.jiedddym.com
+  port: 443
+  uuid: dee59b19-a32f-4d35-b1ee-3708e7d06efc
+  flow: xtls-rprx-vision
   udp: true
-  tls: false
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  sni: fastcdn.hoyoverse.com
   skip-cert-verify: true
-- name: '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #3 | 780ms'
+  client-fingerprint: ios
+  reality-opts:
+    public-key: ZSNTZRVEfrru9RbHllWH69jcrQ4Wyl4OLkX0XyumhgY
+    short-id: 6fab47177bac5a9f
+- type: vless
+  name: '[free18] 🇭🇰_香港 (8) | 875ms'
+  server: qdffwhbmdnlm.jiedddym.com
+  port: 443
+  uuid: dee59b19-a32f-4d35-b1ee-3708e7d06efc
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  sni: fastcdn.hoyoverse.com
+  skip-cert-verify: true
+  client-fingerprint: ios
+  reality-opts:
+    public-key: zmYJUGiXDt8rwrLqR_F5dLg6XhSeQjRCsXeHaVtA_G0
+    short-id: 168dfea9039fab
+- type: vless
+  name: '[free18] 🇭🇰_香港 (13) | 877ms'
+  server: wylldnlmch.jiedddym.com
+  port: 443
+  uuid: dee59b19-a32f-4d35-b1ee-3708e7d06efc
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  sni: fastcdn.hoyoverse.com
+  skip-cert-verify: true
+  client-fingerprint: ios
+  reality-opts:
+    public-key: OmUiIEW7EXw5mmYBf1Ei7tXbC3fAYYzx9KzDr2Sudm0
+    short-id: e2e01b5602eb3f
+- name: '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #2 | 1048ms'
   network: ws
   port: 443
   server: 23.156.153.40
@@ -26,69 +61,42 @@ proxies:
     headers:
       Host: fs.qicai99.com
     path: /fp=chrome
-- name: '[ermaozi] 🇭🇰HK_1|1.2MB/s | 874ms'
-  port: 8443
-  server: 38.76.140.254
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[zhuhaiuk] HK - zhuhai.uk | 894ms'
-  type: http
-  server: fan.240104.xyz
-  port: 443
-  username: 'null'
-  password: 'null'
-  tls: true
-  sni: fan.240104.xyz
-- name: '[freeSub] 🇭🇰香港 广播IP 5.10MB/s 495 linuxdo@onimaii [f050c4a18ddc] | 908ms'
-  password: pLBgZ2mOWDopvTI6CUWu5ZkI
-  port: 31003
-  server: 2.26.204.46
-  type: socks5
-  username: socks
 - client-fingerprint: chrome
-  name: '[freeSub] VIP3-🇭🇰香港|HK1|admin@优选 [e08d5e449276] | 916ms'
+  name: '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #4 | 1065ms'
   network: ws
   port: 443
-  server: hk1t.wawojk.dpdns.org
-  servername: hk1t.wawojk.dpdns.org
+  server: 23.156.153.40
+  servername: fs.qicai99.com
   tls: true
   type: vless
-  uuid: 5d967efa-702c-4cde-9e79-29386c8012e5
+  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
   ws-opts:
     headers:
-      Host: hk1t.wawojk.dpdns.org
-    path: /hk1-ws-1f8915c8964a
-  x-toolall-mihomo: true
-- name: '[freeSub] 🇭🇰HK_3|118KB/s|R002-260618 [dabbadb69986] | 979ms'
+      Host: fs.qicai99.com
+    path: /
+- name: '[freeSub] 🇭🇰香港 原生IP 0.24MB/s 534 linuxdo@onimaii [5ff4aac0e7d1] | 1115ms'
   password: 'null'
   port: 443
   server: fan.240104.xyz
   sni: fan.240104.xyz
-  sub_tag: R002-260618
   tls: true
   type: http
-  udp: true
   username: 'null'
-  x-toolall-mihomo: true
-- type: trojan
-  name: '[free18] 🇭🇰_香港 (9) | 1582ms'
-  server: sclass-c1.catcat321.com
-  port: 20086
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  udp: true
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
+- name: '[freeSub] HK - zhuhai.uk 03 [757fb53364e66118] [6624eea7ab38] | 1115ms'
+  port: 443
+  server: 202.85.53.25
   skip-cert-verify: true
-- name: '[Eternity] 🇭🇰HK-16.106.7.232-0269 | 0.033MB | 1723ms'
-  server: sclass-c1.catcat321.com
-  port: 20086
+  tls: true
+  type: http
+- name: '[Pawdroid] 香港+葵兴数据中心 | 1123ms'
   type: trojan
-  password: d9064589-74af-432a-9390-5d8a9da281bf
+  server: sclass-b1.catcat321.com
+  port: 20027
+  password: d7563108-615c-4338-a7bd-77f359869a4a
   sni: hk.catxstar.com
-  skip-cert-verify: false
-- name: '[Eternity] 🇭🇰HK-156.245.232.239-5893 | 0.015MB | 2557ms'
+  tls: true
+  skip-cert-verify: true
+- name: '[Eternity] 🇭🇰HK-156.245.232.239-5893 | 0.003MB | 1196ms'
   server: 156.245.232.239
   port: 35043
   type: vmess
@@ -100,7 +108,7 @@ proxies:
   network: ws
   ws-opts:
     path: /
-- name: '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #6 | 4291ms'
+- name: '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #6 | 1241ms'
   network: ws
   port: 443
   server: 68.64.182.205
@@ -112,29 +120,214 @@ proxies:
     headers:
       Host: fs.qicai99.com
     path: /fp=chrome
-- type: vmess
-  name: '[free18] 🇭🇰_香港 (14) | 4506ms'
-  server: 156.245.232.239
-  port: 35043
-  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-  cipher: auto
-  alterId: 0
+- name: '[ermaozi] 🇭🇰HK_1|1.1MB/s | 1244ms'
+  password: pLBgZ2mOWDopvTI6CUWu5ZkI
+  port: 31003
+  server: 2.26.204.46
+  type: socks5
+  username: socks
+- type: vless
+  name: '[free18] 🇭🇰_香港 (9) | 1247ms'
+  server: rdclzxhxdnbqjcrzqdj.jiedddym.com
+  port: 29912
+  uuid: dee59b19-a32f-4d35-b1ee-3708e7d06efc
+  flow: xtls-rprx-vision
   udp: true
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  sni: fastcdn.hoyoverse.com
+  skip-cert-verify: true
+  client-fingerprint: ios
+  reality-opts:
+    public-key: rKuLCKX4zOnJ7gBDro8XnZynvnef3uOb2dx5q53_-34
+    short-id: e44c096bc30aa2bc
+- type: vless
+  name: '[free18] 🇭🇰_香港 (15) | 1478ms'
+  server: rdclzxhxdnbqjcrzqdj.jiedddym.com
+  port: 24602
+  uuid: dee59b19-a32f-4d35-b1ee-3708e7d06efc
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  sni: fastcdn.hoyoverse.com
+  skip-cert-verify: true
+  client-fingerprint: ios
+  reality-opts:
+    public-key: 7ZoIIHoMoH_hhPIOQcHC9hwYc7S_m5caK-rpDXmhY2g
+    short-id: d0dc35bffc929a
+- type: vless
+  name: '[free18] 🇭🇰_香港 (11) | 1516ms'
+  server: rdclzxhxdnbqjcrzqdj.jiedddym.com
+  port: 58475
+  uuid: dee59b19-a32f-4d35-b1ee-3708e7d06efc
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  sni: fastcdn.hoyoverse.com
+  skip-cert-verify: true
+  client-fingerprint: ios
+  reality-opts:
+    public-key: LhSYpu-xIL_xCYBc9D_dVldm4Mto7rq-ZUk5O_d7uTY
+    short-id: 1b494b33ce630d
+- type: vless
+  name: '[free18] 🇭🇰_香港 (16) | 1530ms'
+  server: rdclzxhxdnbqjcrzqdj.jiedddym.com
+  port: 48606
+  uuid: dee59b19-a32f-4d35-b1ee-3708e7d06efc
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  sni: fastcdn.hoyoverse.com
+  skip-cert-verify: true
+  client-fingerprint: ios
+  reality-opts:
+    public-key: 7zJHKYqVaw2u6BYRA3E4zXJy4bn2uAhD7XeaWvOgiT0
+    short-id: e5b53356316d2a93
+- type: vless
+  name: '[free18] 🇭🇰_香港 (14) | 1641ms'
+  server: rdclzxhxdnbqjcrzqdj.jiedddym.com
+  port: 52327
+  uuid: dee59b19-a32f-4d35-b1ee-3708e7d06efc
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  sni: fastcdn.hoyoverse.com
+  skip-cert-verify: true
+  client-fingerprint: ios
+  reality-opts:
+    public-key: u0WwIXUBWDFSZ1Yk1lLG8WPgaZzmbykn-LOKKeWgyAw
+    short-id: 991dc78a1a220c8a
+- type: vless
+  name: '[free18] 🇭🇰_香港 (10) | 2104ms'
+  server: rdclzxhxdnbqjcrzqdj.jiedddym.com
+  port: 60097
+  uuid: dee59b19-a32f-4d35-b1ee-3708e7d06efc
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  sni: fastcdn.hoyoverse.com
+  skip-cert-verify: true
+  client-fingerprint: ios
+  reality-opts:
+    public-key: tsO-ccRfdkrbtcvTR84cctYHbS59OcdVDvtjuIKWfxU
+    short-id: 321a9a91eb
+- name: '[ermaozi] 🇭🇰 香港 | HKG | 2186ms'
+  server: 47.244.120.197
+  port: 44867
+  type: vmess
+  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  alterId: 0
+  cipher: auto
   tls: false
+  alpn:
+  - ''
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /
+    path: /arki
+  udp: true
+- type: vless
+  name: '[free18] 🇭🇰_香港 (32) | 2223ms'
+  server: 216.23.93.27
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  udp: true
+  tls: true
+  servername: jp3.yohototo.top
+  sni: jp3.yohototo.top
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  network: ws
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
 - type: trojan
-  name: '[free18] 🇭🇰_香港 (10) | 4685ms'
+  name: '[free18] 🇭🇰_香港 (4) | 2396ms'
   server: sclass-00.catcat321.com
-  port: 20123
+  port: 20103
   password: d9064589-74af-432a-9390-5d8a9da281bf
   udp: true
   tls: true
   servername: hk.catxstar.com
   sni: hk.catxstar.com
   skip-cert-verify: true
+- name: '[NoMoreWalls] 🇭🇰HK_1|1.9MB/s | 2525ms'
+  port: 8443
+  server: 38.76.140.254
+  skip-cert-verify: true
+  tls: true
+  type: http
+- type: vless
+  name: '[free18] 🇭🇰_香港 (33) | 2967ms'
+  server: 103.219.195.65
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  udp: true
+  tls: true
+  servername: jp3.yohototo.top
+  sni: jp3.yohototo.top
+  skip-cert-verify: true
+  client-fingerprint: unsafe
+  network: ws
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+- type: vless
+  name: '[free18] 🇭🇰_香港 (5) | 2988ms'
+  server: rdclzxhxdnbqjcrzqdj.jiedddym.com
+  port: 20903
+  uuid: dee59b19-a32f-4d35-b1ee-3708e7d06efc
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  sni: fastcdn.hoyoverse.com
+  skip-cert-verify: true
+  client-fingerprint: ios
+  reality-opts:
+    public-key: Cp7TKdme39Ef-MAmZxJJthMbX8YHC2PdDgwnnUAEimQ
+    short-id: 34a4fa87a3ae811a
+- type: trojan
+  name: '[free18] 🇭🇰_香港 (3) | 3107ms'
+  server: sclass-c1.catcat321.com
+  port: 20086
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  udp: true
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: true
+- name: '[Eternity] 🇭🇰HK-16.106.7.232-0513 | 0.027MB | 3548ms'
+  server: sclass-00.catcat321.com
+  port: 20123
+  type: trojan
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  sni: hk.catxstar.com
+  skip-cert-verify: false
+- type: trojan
+  name: '[free18] 🇭🇰_香港 (2) | 5251ms'
+  server: sclass-c1.catcat321.com
+  port: 20086
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  udp: true
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+- cipher: aes-256-gcm
+  name: '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... #1 | 5784ms'
+  password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
+  port: 8388
+  server: 209.248.57.105
+  type: ss
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -142,36 +335,64 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[free18] 🇭🇰_香港 (6) | 131ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #3 | 780ms'
-  - '[ermaozi] 🇭🇰HK_1|1.2MB/s | 874ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 894ms'
-  - '[freeSub] 🇭🇰香港 广播IP 5.10MB/s 495 linuxdo@onimaii [f050c4a18ddc] | 908ms'
-  - '[freeSub] VIP3-🇭🇰香港|HK1|admin@优选 [e08d5e449276] | 916ms'
-  - '[freeSub] 🇭🇰HK_3|118KB/s|R002-260618 [dabbadb69986] | 979ms'
-  - '[free18] 🇭🇰_香港 (9) | 1582ms'
-  - '[Eternity] 🇭🇰HK-16.106.7.232-0269 | 0.033MB | 1723ms'
-  - '[Eternity] 🇭🇰HK-156.245.232.239-5893 | 0.015MB | 2557ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #6 | 4291ms'
-  - '[free18] 🇭🇰_香港 (14) | 4506ms'
-  - '[free18] 🇭🇰_香港 (10) | 4685ms'
+  - '[free18] 🇭🇰_香港 (7) | 825ms'
+  - '[free18] 🇭🇰_香港 (8) | 875ms'
+  - '[free18] 🇭🇰_香港 (13) | 877ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #2 | 1048ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #4 | 1065ms'
+  - '[freeSub] 🇭🇰香港 原生IP 0.24MB/s 534 linuxdo@onimaii [5ff4aac0e7d1] | 1115ms'
+  - '[freeSub] HK - zhuhai.uk 03 [757fb53364e66118] [6624eea7ab38] | 1115ms'
+  - '[Pawdroid] 香港+葵兴数据中心 | 1123ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-5893 | 0.003MB | 1196ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #6 | 1241ms'
+  - '[ermaozi] 🇭🇰HK_1|1.1MB/s | 1244ms'
+  - '[free18] 🇭🇰_香港 (9) | 1247ms'
+  - '[free18] 🇭🇰_香港 (15) | 1478ms'
+  - '[free18] 🇭🇰_香港 (11) | 1516ms'
+  - '[free18] 🇭🇰_香港 (16) | 1530ms'
+  - '[free18] 🇭🇰_香港 (14) | 1641ms'
+  - '[free18] 🇭🇰_香港 (10) | 2104ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG | 2186ms'
+  - '[free18] 🇭🇰_香港 (32) | 2223ms'
+  - '[free18] 🇭🇰_香港 (4) | 2396ms'
+  - '[NoMoreWalls] 🇭🇰HK_1|1.9MB/s | 2525ms'
+  - '[free18] 🇭🇰_香港 (33) | 2967ms'
+  - '[free18] 🇭🇰_香港 (5) | 2988ms'
+  - '[free18] 🇭🇰_香港 (3) | 3107ms'
+  - '[Eternity] 🇭🇰HK-16.106.7.232-0513 | 0.027MB | 3548ms'
+  - '[free18] 🇭🇰_香港 (2) | 5251ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... #1 | 5784ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[free18] 🇭🇰_香港 (6) | 131ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #3 | 780ms'
-  - '[ermaozi] 🇭🇰HK_1|1.2MB/s | 874ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 894ms'
-  - '[freeSub] 🇭🇰香港 广播IP 5.10MB/s 495 linuxdo@onimaii [f050c4a18ddc] | 908ms'
-  - '[freeSub] VIP3-🇭🇰香港|HK1|admin@优选 [e08d5e449276] | 916ms'
-  - '[freeSub] 🇭🇰HK_3|118KB/s|R002-260618 [dabbadb69986] | 979ms'
-  - '[free18] 🇭🇰_香港 (9) | 1582ms'
-  - '[Eternity] 🇭🇰HK-16.106.7.232-0269 | 0.033MB | 1723ms'
-  - '[Eternity] 🇭🇰HK-156.245.232.239-5893 | 0.015MB | 2557ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #6 | 4291ms'
-  - '[free18] 🇭🇰_香港 (14) | 4506ms'
-  - '[free18] 🇭🇰_香港 (10) | 4685ms'
+  - '[free18] 🇭🇰_香港 (7) | 825ms'
+  - '[free18] 🇭🇰_香港 (8) | 875ms'
+  - '[free18] 🇭🇰_香港 (13) | 877ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #2 | 1048ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #4 | 1065ms'
+  - '[freeSub] 🇭🇰香港 原生IP 0.24MB/s 534 linuxdo@onimaii [5ff4aac0e7d1] | 1115ms'
+  - '[freeSub] HK - zhuhai.uk 03 [757fb53364e66118] [6624eea7ab38] | 1115ms'
+  - '[Pawdroid] 香港+葵兴数据中心 | 1123ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-5893 | 0.003MB | 1196ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] vless-HK-1... #6 | 1241ms'
+  - '[ermaozi] 🇭🇰HK_1|1.1MB/s | 1244ms'
+  - '[free18] 🇭🇰_香港 (9) | 1247ms'
+  - '[free18] 🇭🇰_香港 (15) | 1478ms'
+  - '[free18] 🇭🇰_香港 (11) | 1516ms'
+  - '[free18] 🇭🇰_香港 (16) | 1530ms'
+  - '[free18] 🇭🇰_香港 (14) | 1641ms'
+  - '[free18] 🇭🇰_香港 (10) | 2104ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG | 2186ms'
+  - '[free18] 🇭🇰_香港 (32) | 2223ms'
+  - '[free18] 🇭🇰_香港 (4) | 2396ms'
+  - '[NoMoreWalls] 🇭🇰HK_1|1.9MB/s | 2525ms'
+  - '[free18] 🇭🇰_香港 (33) | 2967ms'
+  - '[free18] 🇭🇰_香港 (5) | 2988ms'
+  - '[free18] 🇭🇰_香港 (3) | 3107ms'
+  - '[Eternity] 🇭🇰HK-16.106.7.232-0513 | 0.027MB | 3548ms'
+  - '[free18] 🇭🇰_香港 (2) | 5251ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... #1 | 5784ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
