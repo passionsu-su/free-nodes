@@ -4,36 +4,41 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- type: vmess
-  name: '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 456ms'
-  server: 172.64.145.93
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 834ms'
+- name: '[Eternity] 🇰🇷KR-211.178.105.134-0206 | 0.239MB | 676ms'
+  server: 211.178.105.134
+  port: 6123
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- name: '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 794ms'
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   port: 443
   server: 158.247.253.243
   skip-cert-verify: true
   sni: connectgraduateswithjobopeningsandgrowprofessionally.com
   type: trojan
-- name: '[Eternity] 🇰🇷KR-158.247.253.243-0152 | 38.371MB | 834ms'
+- name: '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 794ms'
+  type: trojan
+  server: 158.247.253.243
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: connectgraduateswithjobopeningsandgrowprofessionally.com
+  tls: true
+  skip-cert-verify: true
+- name: '[Eternity] 🇰🇷KR-158.247.253.243-0154 | 39.077MB | 798ms'
   server: 158.247.253.243
   port: 443
   type: trojan
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   sni: connectgraduateswithjobopeningsandgrowprofessionally.com
   skip-cert-verify: false
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 889ms'
+- name: '[Eternity] 🇰🇷KR-218.237.185.234-0205 | 0.743MB | 859ms'
+  server: p141.panda001.net
+  port: 4652
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 869ms'
   network: ws
   port: 25555
   server: 152.69.226.63
@@ -42,56 +47,25 @@ proxies:
   uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
   ws-opts:
     path: /
-- client-fingerprint: chrome
-  name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-3... #4 | 1085ms'
-  network: ws
-  port: 8443
-  server: 64.110.79.66
-  servername: fs.qicai99.com
-  tls: true
-  type: vless
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /
-- name: '[freeSub] KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9] | 1091ms'
+- cipher: chacha20-ietf-poly1305
+  name: '[NoMoreWalls] 🇰🇷[www.v2nodes.com] ss-KR-1126... | 937ms'
+  password: '12242'
+  port: 10099
+  server: 115.161.136.145
+  type: ss
+- name: '[freeSub] KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9] | 1087ms'
   port: 443
   server: 152.69.230.221
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[Eternity] 🇰🇷KR-211.178.105.134-0210 | 5.762MB | 1114ms'
-  server: 211.178.105.134
-  port: 6123
-  type: ss
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-- name: '[freeSub] KR - zhuhai.uk 02 [cff68be43cde1f27] [7228d4701ee6] | 1128ms'
+- name: '[freeSub] KR - zhuhai.uk 02 [cff68be43cde1f27] [7228d4701ee6] | 1097ms'
   port: 443
   server: 152.69.230.221
   skip-cert-verify: true
   sni: 152.69.230.221
   tls: true
   type: http
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-3... #2 | 1136ms'
-  network: ws
-  port: 8443
-  server: 64.110.79.66
-  servername: fs.qicai99.com
-  tls: true
-  type: vless
-  uuid: 99c5b713-dedf-4a10-8070-916ff3f49b0e
-  ws-opts:
-    headers:
-      Host: fs.qicai99.com
-    path: /fp=chrome
-- name: '[Eternity] 🇰🇷KR-218.237.185.234-0225 | 5.833MB | 2273ms'
-  server: p141.panda001.net
-  port: 4652
-  type: ss
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -99,30 +73,28 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 456ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 834ms'
-  - '[Eternity] 🇰🇷KR-158.247.253.243-0152 | 38.371MB | 834ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 889ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-3... #4 | 1085ms'
-  - '[freeSub] KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9] | 1091ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0210 | 5.762MB | 1114ms'
-  - '[freeSub] KR - zhuhai.uk 02 [cff68be43cde1f27] [7228d4701ee6] | 1128ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-3... #2 | 1136ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0225 | 5.833MB | 2273ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0206 | 0.239MB | 676ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 794ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 794ms'
+  - '[Eternity] 🇰🇷KR-158.247.253.243-0154 | 39.077MB | 798ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0205 | 0.743MB | 859ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 869ms'
+  - '[NoMoreWalls] 🇰🇷[www.v2nodes.com] ss-KR-1126... | 937ms'
+  - '[freeSub] KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9] | 1087ms'
+  - '[freeSub] KR - zhuhai.uk 02 [cff68be43cde1f27] [7228d4701ee6] | 1097ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 456ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 834ms'
-  - '[Eternity] 🇰🇷KR-158.247.253.243-0152 | 38.371MB | 834ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 889ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-3... #4 | 1085ms'
-  - '[freeSub] KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9] | 1091ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0210 | 5.762MB | 1114ms'
-  - '[freeSub] KR - zhuhai.uk 02 [cff68be43cde1f27] [7228d4701ee6] | 1128ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-3... #2 | 1136ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0225 | 5.833MB | 2273ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0206 | 0.239MB | 676ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 794ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 794ms'
+  - '[Eternity] 🇰🇷KR-158.247.253.243-0154 | 39.077MB | 798ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0205 | 0.743MB | 859ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 869ms'
+  - '[NoMoreWalls] 🇰🇷[www.v2nodes.com] ss-KR-1126... | 937ms'
+  - '[freeSub] KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9] | 1087ms'
+  - '[freeSub] KR - zhuhai.uk 02 [cff68be43cde1f27] [7228d4701ee6] | 1097ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
