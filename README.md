@@ -101,6 +101,7 @@ raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
 | --- | --- | --- |
 | Clash Verge / Clash Meta / FlClash | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/all.yaml | 285 |
 | ⭐ Clash Meta 完整配置（分流+去广告+DNS+自动更新节点） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta.yaml | 同 all.yaml |
+| ⚡ Clash Meta 提速版（无去广告，IPv6+嗅探+负载均衡） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta-speed.yaml | 同 all.yaml |
 | ⭐ 旧版 Clash for Windows 0.20.x 完整配置（Premium 内核） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/cfw.yaml | 仅 ss/vmess/trojan/http |
 | ⭐ Shadowrocket 完整配置（iOS，导入为配置文件） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/shadowrocket/meta.conf | Shadowrocket |
 | ⭐ Surge 完整配置（iOS/Mac） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/surge/meta.conf | Surge 5 |
