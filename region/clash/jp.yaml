@@ -4,75 +4,224 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[Eternity] 🇯🇵JP-168.138.205.100-0221 | 1.456MB | 469ms'
-  server: 168.138.205.100
-  port: 53758
-  type: ss
-  cipher: aes-128-gcm
-  password: Bwlqh7GcFB
-- name: '[Eternity] 🇯🇵JP-168.138.205.100-5406 | 1.219MB | 489ms'
-  server: jpa.123069.xyz
-  port: 53758
-  type: ss
-  cipher: aes-128-gcm
-  password: Bwlqh7GcFB
-- name: '[Eternity] 🇯🇵JP-84.247.155.196-0209 | 0.163MB | 623ms'
+- type: vless
+  name: '[free18] 🇯🇵_日本 | 468ms'
+  server: 43.130.234.128
+  port: 443
+  uuid: a2d4ddd8-4d3f-49f5-b78b-bdb3eebab9a6
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.microsoft.com
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: DLYP4CSy4Ey15aYSzcYdwfW4XIuiw3_DuKunNLEDgS4
+- name: '[Eternity] 🇯🇵JP-84.247.155.196-0209 | 0.163MB | 474ms'
   server: 84.247.155.196
   port: 80
   type: ss
   cipher: aes-256-gcm
   password: 3eOFeNssde7PYYMv
 - cipher: aes-256-gcm
-  name: '[NoMoreWalls] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 648ms'
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 636ms'
   password: BeaUf9c0AEWH40Pu
   port: 8388
   server: 154.36.158.197
   type: ss
-- cipher: aes-256-gcm
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 658ms'
-  password: 3eOFeNssde7PYYMv
-  port: 443
-  server: 84.247.155.196
-  type: ss
-- name: '[freeSub] 🇯🇵日本 原生IP 5.54MB/s 517 linuxdo@onimaii [f0de605f39f6] | 816ms'
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: '[freeSub] 🇯🇵_JP_日本_IPV4 [dcd2d5271c75387e] [7e338b95fae3] | 645ms'
+  port: 43149
+  reality-opts:
+    public-key: cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE
+    short-id: 15aa0ad4
+  server: zfapi.zalolink.com
+  servername: psstatic.cdn.bcebos.com
+  skip-cert-verify: false
+  sni: psstatic.cdn.bcebos.com
+  tls: true
+  type: vless
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  x-toolall-mihomo: true
+- type: vless
+  name: '[free18] 🇯🇵_日本 (2) | 662ms'
+  server: zfapi.zalolink.com
+  port: 43149
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: psstatic.cdn.bcebos.com
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE
+    short-id: 15aa0ad4
+- name: '[AutoMerge] 🇯🇵JP_2|1.0MB/s | 666ms'
   password: exaxgqkKkd0TAMrCxeonWg==
   port: 443
   server: jpgmo102-cdn-route.couldflare-cdn.com
   tls: true
   type: http
   username: mrwdfNTD8M79LCukCieldrqZWqs=
-- name: '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 824ms'
-  port: 443
-  server: fan.571589.xyz
-  tls: true
-  type: http
-- name: '[zhuhaiuk] JP - zhuhai.uk | 980ms'
+- name: '[zhuhaiuk] JP - zhuhai.uk 02 | 691ms'
+  type: socks5
+  server: 103.248.150.238
+  port: 42000
+  username: tB4vN7qP
+  password: J5rM2xL9
+- name: '[zhuhaiuk] JP - zhuhai.uk | 700ms'
   type: socks5
   server: 103.248.150.50
   port: 42000
   username: paZFN3JA
   password: EGJDy5Kg
-- name: '[zhuhaiuk] JP - zhuhai.uk 02 | 984ms'
-  type: socks5
-  server: 103.248.150.166
+- name: '[NoMoreWalls] 🇯🇵JP_1|4.2MB/s | 702ms'
+  password: EGJDy5Kg
   port: 42000
-  username: x0dM1dTw
-  password: ZWCdC3C1
+  server: 103.248.150.50
+  skip-cert-verify: true
+  type: socks5
+  username: paZFN3JA
 - cipher: aes-256-gcm
-  name: '[ermaozi] 🇯🇵 日本 | JPN #2 | 1390ms'
-  password: BeaUf9c0AEWH40Pu
-  port: 8388
-  server: 154.36.158.197
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 716ms'
+  password: 3eOFeNssde7PYYMv
+  port: 443
+  server: 84.247.155.196
   type: ss
+- type: vless
+  name: '[free18] 🇯🇵_日本 (3) | 732ms'
+  server: zfapi.zalolink.com
+  port: 43149
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  flow: xtls-rprx-vision
   udp: true
-- name: '[roosterkid] 🇯🇵[openproxylist.com] vmess-JP | 4184ms'
-  type: vmess
-  server: 141.11.139.102
-  port: 32515
-  uuid: 081dbf5a-d8b6-40c8-96f8-3c4ca9f50442
-  alterId: 0
-  cipher: auto
+  tls: true
+  servername: psstatic.cdn.bcebos.com
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE
+    short-id: 15aa0ad4
+- name: '[freeSub] 🇯🇵JP_6|2.4MB/s [0f4839b899b0] | 765ms'
+  password: ''
+  port: 443
+  server: fan.571589.xyz
+  skip-cert-verify: true
+  sni: fan.571589.xyz
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- name: '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 855ms'
+  port: 443
+  server: fan.571589.xyz
+  tls: true
+  type: http
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: '[freeSub] 🇯🇵_JP_日本_IPV4 [934f1b5a892d] | 977ms'
+  port: 43149
+  reality-opts:
+    public-key: cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE
+    short-id: 15aa0ad4
+  server: zfapi.zalolink.com
+  servername: psstatic.cdn.bcebos.com
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  x-toolall-mihomo: true
+- type: vless
+  name: '[ermaozi] 🇯🇵_JP_日本_IPV4 | 1075ms'
+  server: zfapi.zalolink.com
+  port: 43149
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  flow: xtls-rprx-vision
+  tls: true
+  servername: psstatic.cdn.bcebos.com
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE
+    short-id: 15aa0ad4
+- type: vless
+  name: '[free18] 🇯🇵_日本 (4) | 1170ms'
+  server: zfapi.zalolink.com
+  port: 54528
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.apple.com
+  sni: www.apple.com
+  skip-cert-verify: true
+  client-fingerprint: ios
+  reality-opts:
+    public-key: 7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo
+    short-id: 54cca3c1c1c7
+- name: '[Eternity] 🇯🇵JP-168.138.205.100-5406 | 1.219MB | 1417ms'
+  server: jpa.123069.xyz
+  port: 53758
+  type: ss
+  cipher: aes-128-gcm
+  password: Bwlqh7GcFB
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: '[freeSub] 🇯🇵 日本 | JPN 2 [7dcaf407e3bf3303] [2a41bc690a55] | 1691ms'
   network: tcp
+  port: 43149
+  reality-opts:
+    public-key: cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE
+    short-id: 15aa0ad4
+  server: zfapi.zalolink.com
+  servername: psstatic.cdn.bcebos.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  x-toolall-mihomo: true
+- name: '[Eternity] 🇯🇵JP-168.138.205.100-0221 | 1.456MB | 2346ms'
+  server: 168.138.205.100
+  port: 53758
+  type: ss
+  cipher: aes-128-gcm
+  password: Bwlqh7GcFB
+- client-fingerprint: unsafe
+  encryption: none
+  name: '[NoMoreWalls] 🇯🇵[www.v2nodes.com] vless-JP-1... #3 | 2868ms'
+  network: ws
+  port: 443
+  server: 155.103.116.110
+  servername: jp3.yohototo.top
+  tls: true
+  type: vless
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
+- client-fingerprint: firefox
+  encryption: none
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #3 | 2894ms'
+  network: ws
+  port: 443
+  server: 104.21.70.228
+  servername: jp3.yohototo.top
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -80,32 +229,52 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[Eternity] 🇯🇵JP-168.138.205.100-0221 | 1.456MB | 469ms'
-  - '[Eternity] 🇯🇵JP-168.138.205.100-5406 | 1.219MB | 489ms'
-  - '[Eternity] 🇯🇵JP-84.247.155.196-0209 | 0.163MB | 623ms'
-  - '[NoMoreWalls] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 648ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 658ms'
-  - '[freeSub] 🇯🇵日本 原生IP 5.54MB/s 517 linuxdo@onimaii [f0de605f39f6] | 816ms'
-  - '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 824ms'
-  - '[zhuhaiuk] JP - zhuhai.uk | 980ms'
-  - '[zhuhaiuk] JP - zhuhai.uk 02 | 984ms'
-  - '[ermaozi] 🇯🇵 日本 | JPN #2 | 1390ms'
-  - '[roosterkid] 🇯🇵[openproxylist.com] vmess-JP | 4184ms'
+  - '[free18] 🇯🇵_日本 | 468ms'
+  - '[Eternity] 🇯🇵JP-84.247.155.196-0209 | 0.163MB | 474ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 636ms'
+  - '[freeSub] 🇯🇵_JP_日本_IPV4 [dcd2d5271c75387e] [7e338b95fae3] | 645ms'
+  - '[free18] 🇯🇵_日本 (2) | 662ms'
+  - '[AutoMerge] 🇯🇵JP_2|1.0MB/s | 666ms'
+  - '[zhuhaiuk] JP - zhuhai.uk 02 | 691ms'
+  - '[zhuhaiuk] JP - zhuhai.uk | 700ms'
+  - '[NoMoreWalls] 🇯🇵JP_1|4.2MB/s | 702ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 716ms'
+  - '[free18] 🇯🇵_日本 (3) | 732ms'
+  - '[freeSub] 🇯🇵JP_6|2.4MB/s [0f4839b899b0] | 765ms'
+  - '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 855ms'
+  - '[freeSub] 🇯🇵_JP_日本_IPV4 [934f1b5a892d] | 977ms'
+  - '[ermaozi] 🇯🇵_JP_日本_IPV4 | 1075ms'
+  - '[free18] 🇯🇵_日本 (4) | 1170ms'
+  - '[Eternity] 🇯🇵JP-168.138.205.100-5406 | 1.219MB | 1417ms'
+  - '[freeSub] 🇯🇵 日本 | JPN 2 [7dcaf407e3bf3303] [2a41bc690a55] | 1691ms'
+  - '[Eternity] 🇯🇵JP-168.138.205.100-0221 | 1.456MB | 2346ms'
+  - '[NoMoreWalls] 🇯🇵[www.v2nodes.com] vless-JP-1... #3 | 2868ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #3 | 2894ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[Eternity] 🇯🇵JP-168.138.205.100-0221 | 1.456MB | 469ms'
-  - '[Eternity] 🇯🇵JP-168.138.205.100-5406 | 1.219MB | 489ms'
-  - '[Eternity] 🇯🇵JP-84.247.155.196-0209 | 0.163MB | 623ms'
-  - '[NoMoreWalls] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 648ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 658ms'
-  - '[freeSub] 🇯🇵日本 原生IP 5.54MB/s 517 linuxdo@onimaii [f0de605f39f6] | 816ms'
-  - '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 824ms'
-  - '[zhuhaiuk] JP - zhuhai.uk | 980ms'
-  - '[zhuhaiuk] JP - zhuhai.uk 02 | 984ms'
-  - '[ermaozi] 🇯🇵 日本 | JPN #2 | 1390ms'
-  - '[roosterkid] 🇯🇵[openproxylist.com] vmess-JP | 4184ms'
+  - '[free18] 🇯🇵_日本 | 468ms'
+  - '[Eternity] 🇯🇵JP-84.247.155.196-0209 | 0.163MB | 474ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1599... | 636ms'
+  - '[freeSub] 🇯🇵_JP_日本_IPV4 [dcd2d5271c75387e] [7e338b95fae3] | 645ms'
+  - '[free18] 🇯🇵_日本 (2) | 662ms'
+  - '[AutoMerge] 🇯🇵JP_2|1.0MB/s | 666ms'
+  - '[zhuhaiuk] JP - zhuhai.uk 02 | 691ms'
+  - '[zhuhaiuk] JP - zhuhai.uk | 700ms'
+  - '[NoMoreWalls] 🇯🇵JP_1|4.2MB/s | 702ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 716ms'
+  - '[free18] 🇯🇵_日本 (3) | 732ms'
+  - '[freeSub] 🇯🇵JP_6|2.4MB/s [0f4839b899b0] | 765ms'
+  - '[freeSub] 🇯🇵日本 原生IP 0.23MB/s 058 linuxdo@onimaii [9d3ee5abd072] | 855ms'
+  - '[freeSub] 🇯🇵_JP_日本_IPV4 [934f1b5a892d] | 977ms'
+  - '[ermaozi] 🇯🇵_JP_日本_IPV4 | 1075ms'
+  - '[free18] 🇯🇵_日本 (4) | 1170ms'
+  - '[Eternity] 🇯🇵JP-168.138.205.100-5406 | 1.219MB | 1417ms'
+  - '[freeSub] 🇯🇵 日本 | JPN 2 [7dcaf407e3bf3303] [2a41bc690a55] | 1691ms'
+  - '[Eternity] 🇯🇵JP-168.138.205.100-0221 | 1.456MB | 2346ms'
+  - '[NoMoreWalls] 🇯🇵[www.v2nodes.com] vless-JP-1... #3 | 2868ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... #3 | 2894ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY

@@ -4,36 +4,6 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- type: vmess
-  name: '[free18] 🇭🇰_香港 (34) | 822ms'
-  server: 47.244.120.197
-  port: 23026
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  servername: 47.244.120.197
-  sni: 47.244.120.197
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /arki
-    headers:
-      Host: 47.244.120.197
-- name: '[ermaozi] 🇭🇰HK_1|1.9MB/s | 1063ms'
-  port: 8443
-  server: 38.76.140.254
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 1082ms'
-  type: http
-  server: fan.240104.xyz
-  port: 443
-  tls: true
-  sni: fan.240104.xyz
-  skip-cert-verify: true
 - alpn:
   - ''
   alterId: 0
@@ -45,7 +15,7 @@ proxies:
     method: GET
     path:
     - /QQqun-737805443
-  name: '[ermaozi] 🇭🇰 香港 | HKG #5 | 1086ms'
+  name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 499ms'
   network: http
   port: 52080
   server: 47.242.81.94
@@ -54,58 +24,60 @@ proxies:
   type: vmess
   udp: true
   uuid: e47b9f77-60e4-4738-8d53-772b6002e146
-- alpn:
-  - ''
-  alterId: 0
-  cipher: auto
-  name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 1095ms'
-  network: ws
-  port: 36703
-  server: 47.244.120.197
+- name: '[NoMoreWalls] 🇭🇰HK_2|1.3MB/s | 639ms'
+  port: 3128
+  server: 119.12.161.248
   skip-cert-verify: true
-  tls: false
-  type: vmess
+  type: http
+- name: '[ermaozi] 🇭🇰 香港 | HKG | 662ms'
+  server: 8.217.1.203
+  port: 8443
+  type: vless
+  uuid: 8b17beac-b143-447d-aa68-14cbb121a602
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 74P0QFvaK6B13rHsxR_t0lqRlg4YLuORD4VaHr5Jd38
+    short-id: 0bf55f64
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
   udp: true
-  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
-  ws-opts:
-    path: /arki
-- name: '[Pawdroid] 香港+葵兴数据中心 (2) | 1104ms'
-  type: trojan
-  server: sclass-b1.catcat321.com
-  port: 20028
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  sni: hk.catxstar.com
-  tls: true
-  skip-cert-verify: true
-- name: '[zhuhaiuk] HK - zhuhai.uk | 1109ms'
+- name: '[zhuhaiuk] HK - zhuhai.uk | 785ms'
   type: http
-  server: 151.242.183.28
-  port: 443
+  server: 119.28.24.235
+  port: 3128
   tls: true
+  sni: 119.28.24.235
   skip-cert-verify: true
-- name: '[Pawdroid] 香港+葵兴数据中心 | 1110ms'
-  type: trojan
-  server: sclass-b1.catcat321.com
-  port: 20027
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  sni: hk.catxstar.com
-  tls: true
-  skip-cert-verify: false
-- name: '[freeSub] HK - zhuhai.uk 03 [757fb53364e66118] [6624eea7ab38] | 1118ms'
+- name: '[freeSub] 🇭🇰HK_47|175KB/s|R002-260618 [76f77bed8475] | 790ms'
   port: 443
-  server: 202.85.53.25
+  server: fan.240104.xyz
   skip-cert-verify: true
+  sni: fan.240104.xyz
+  sub_tag: R002-260618
   tls: true
   type: http
-- name: '[Pawdroid] 香港+葵兴数据中心 (3) | 1125ms'
-  type: trojan
-  server: sclass-b1.catcat321.com
-  port: 20028
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  sni: hk.catxstar.com
+  udp: true
+  x-toolall-mihomo: true
+- name: '[freeSub] 🇭🇰HK_32|176KB/s|R002-260618 [dabbadb69986] | 815ms'
+  password: 'null'
+  port: 443
+  server: fan.240104.xyz
+  sni: fan.240104.xyz
+  sub_tag: R002-260618
   tls: true
-  skip-cert-verify: false
-- name: '[freeSub] 🇭🇰香港 原生IP 0.24MB/s 534 linuxdo@onimaii [5ff4aac0e7d1] | 1134ms'
+  type: http
+  udp: true
+  username: 'null'
+  x-toolall-mihomo: true
+- name: '[freeSub] 🇭🇰HK_1|1.9MB/s [bc33be128d2e7b14] [dc22a08c23af] | 840ms'
+  port: 8443
+  server: 38.76.140.254
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: '[freeSub] 🇭🇰香港 原生IP 0.22MB/s 477 linuxdo@onimaii [5ff4aac0e7d1] | 842ms'
   password: 'null'
   port: 443
   server: fan.240104.xyz
@@ -113,8 +85,68 @@ proxies:
   tls: true
   type: http
   username: 'null'
+- name: '[freeSub] 🇭🇰HK_83|650KB/s [d82b6f515b7b] | 849ms'
+  password: ''
+  port: 8443
+  server: 38.76.140.254
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- name: '[Pawdroid] 香港+葵兴数据中心 | 957ms'
+  type: trojan
+  server: sclass-b1.catcat321.com
+  port: 20028
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  sni: hk.catxstar.com
+  tls: true
+  skip-cert-verify: false
+- name: '[AutoMerge] 🇭🇰HK_1|2.1MB/s | 967ms'
+  password: pLBgZ2mOWDopvTI6CUWu5ZkI
+  port: 31003
+  server: 2.26.204.46
+  type: socks5
+  username: socks
+- name: '[Eternity] 🇭🇰HK-16.106.7.232-0252 | 0.022MB | 1525ms'
+  server: sclass-00.catcat321.com
+  port: 20123
+  type: trojan
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  sni: hk.catxstar.com
+  skip-cert-verify: false
 - type: trojan
-  name: '[free18] 🇭🇰_香港 (2) | 1587ms'
+  name: '[free18] 🇭🇰_香港 (4) | 2518ms'
+  server: sclass-c1.catcat321.com
+  port: 20086
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  udp: true
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: true
+- name: '[Pawdroid] 香港+葵兴数据中心 (2) | 2813ms'
+  type: trojan
+  server: sclass-b1.catcat321.com
+  port: 20027
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  sni: hk.catxstar.com
+  tls: true
+  skip-cert-verify: false
+- client-fingerprint: chrome
+  name: '[freeSub] 香港+葵兴数据中心 [7c47cb523f7b] | 3870ms'
+  network: tcp
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  port: 20028
+  server: sclass-b1.catcat321.com
+  servername: hk.catxstar.com
+  skip-cert-verify: true
+  tls: true
+  type: trojan
+  x-toolall-mihomo: true
+- type: trojan
+  name: '[free18] 🇭🇰_香港 (3) | 5575ms'
   server: sclass-c1.catcat321.com
   port: 20086
   password: d9064589-74af-432a-9390-5d8a9da281bf
@@ -125,27 +157,7 @@ proxies:
   skip-cert-verify: true
   client-fingerprint: chrome
 - type: trojan
-  name: '[free18] 🇭🇰_香港 (3) | 1766ms'
-  server: sclass-c1.catcat321.com
-  port: 20086
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  udp: true
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-- type: trojan
-  name: '[free18] 🇭🇰_香港 (4) | 2349ms'
-  server: sclass-00.catcat321.com
-  port: 20103
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  udp: true
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-- type: trojan
-  name: '[free18] 🇭🇰_香港 | 2410ms'
+  name: '[free18] 🇭🇰_香港 (2) | 5819ms'
   server: sclass-00.catcat321.com
   port: 20123
   password: d9064589-74af-432a-9390-5d8a9da281bf
@@ -154,49 +166,6 @@ proxies:
   servername: hk.catxstar.com
   sni: hk.catxstar.com
   skip-cert-verify: true
-- cipher: aes-256-gcm
-  name: '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... #1 | 3368ms'
-  password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
-  port: 8388
-  server: 209.248.57.105
-  type: ss
-- name: '[Eternity] 🇭🇰HK-16.106.7.232-0252 | 0.022MB | 3468ms'
-  server: sclass-00.catcat321.com
-  port: 20123
-  type: trojan
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  sni: hk.catxstar.com
-  skip-cert-verify: false
-- alpn:
-  - ''
-  alterId: 0
-  cipher: auto
-  name: '[ermaozi] 🇭🇰 香港 | HKG #2 | 3541ms'
-  network: ws
-  port: 44867
-  server: 47.244.120.197
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  ws-opts:
-    path: /arki
-- alpn:
-  - ''
-  alterId: 0
-  cipher: auto
-  name: '[ermaozi] 🇭🇰 香港 | HKG #4 | 5909ms'
-  network: ws
-  port: 23026
-  server: 47.244.120.197
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  ws-opts:
-    path: /arki
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -204,48 +173,44 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[free18] 🇭🇰_香港 (34) | 822ms'
-  - '[ermaozi] 🇭🇰HK_1|1.9MB/s | 1063ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1082ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #5 | 1086ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 1095ms'
-  - '[Pawdroid] 香港+葵兴数据中心 (2) | 1104ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1109ms'
-  - '[Pawdroid] 香港+葵兴数据中心 | 1110ms'
-  - '[freeSub] HK - zhuhai.uk 03 [757fb53364e66118] [6624eea7ab38] | 1118ms'
-  - '[Pawdroid] 香港+葵兴数据中心 (3) | 1125ms'
-  - '[freeSub] 🇭🇰香港 原生IP 0.24MB/s 534 linuxdo@onimaii [5ff4aac0e7d1] | 1134ms'
-  - '[free18] 🇭🇰_香港 (2) | 1587ms'
-  - '[free18] 🇭🇰_香港 (3) | 1766ms'
-  - '[free18] 🇭🇰_香港 (4) | 2349ms'
-  - '[free18] 🇭🇰_香港 | 2410ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... #1 | 3368ms'
-  - '[Eternity] 🇭🇰HK-16.106.7.232-0252 | 0.022MB | 3468ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 3541ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #4 | 5909ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 499ms'
+  - '[NoMoreWalls] 🇭🇰HK_2|1.3MB/s | 639ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG | 662ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 785ms'
+  - '[freeSub] 🇭🇰HK_47|175KB/s|R002-260618 [76f77bed8475] | 790ms'
+  - '[freeSub] 🇭🇰HK_32|176KB/s|R002-260618 [dabbadb69986] | 815ms'
+  - '[freeSub] 🇭🇰HK_1|1.9MB/s [bc33be128d2e7b14] [dc22a08c23af] | 840ms'
+  - '[freeSub] 🇭🇰香港 原生IP 0.22MB/s 477 linuxdo@onimaii [5ff4aac0e7d1] | 842ms'
+  - '[freeSub] 🇭🇰HK_83|650KB/s [d82b6f515b7b] | 849ms'
+  - '[Pawdroid] 香港+葵兴数据中心 | 957ms'
+  - '[AutoMerge] 🇭🇰HK_1|2.1MB/s | 967ms'
+  - '[Eternity] 🇭🇰HK-16.106.7.232-0252 | 0.022MB | 1525ms'
+  - '[free18] 🇭🇰_香港 (4) | 2518ms'
+  - '[Pawdroid] 香港+葵兴数据中心 (2) | 2813ms'
+  - '[freeSub] 香港+葵兴数据中心 [7c47cb523f7b] | 3870ms'
+  - '[free18] 🇭🇰_香港 (3) | 5575ms'
+  - '[free18] 🇭🇰_香港 (2) | 5819ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[free18] 🇭🇰_香港 (34) | 822ms'
-  - '[ermaozi] 🇭🇰HK_1|1.9MB/s | 1063ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1082ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #5 | 1086ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 1095ms'
-  - '[Pawdroid] 香港+葵兴数据中心 (2) | 1104ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1109ms'
-  - '[Pawdroid] 香港+葵兴数据中心 | 1110ms'
-  - '[freeSub] HK - zhuhai.uk 03 [757fb53364e66118] [6624eea7ab38] | 1118ms'
-  - '[Pawdroid] 香港+葵兴数据中心 (3) | 1125ms'
-  - '[freeSub] 🇭🇰香港 原生IP 0.24MB/s 534 linuxdo@onimaii [5ff4aac0e7d1] | 1134ms'
-  - '[free18] 🇭🇰_香港 (2) | 1587ms'
-  - '[free18] 🇭🇰_香港 (3) | 1766ms'
-  - '[free18] 🇭🇰_香港 (4) | 2349ms'
-  - '[free18] 🇭🇰_香港 | 2410ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... #1 | 3368ms'
-  - '[Eternity] 🇭🇰HK-16.106.7.232-0252 | 0.022MB | 3468ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 3541ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #4 | 5909ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 499ms'
+  - '[NoMoreWalls] 🇭🇰HK_2|1.3MB/s | 639ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG | 662ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 785ms'
+  - '[freeSub] 🇭🇰HK_47|175KB/s|R002-260618 [76f77bed8475] | 790ms'
+  - '[freeSub] 🇭🇰HK_32|176KB/s|R002-260618 [dabbadb69986] | 815ms'
+  - '[freeSub] 🇭🇰HK_1|1.9MB/s [bc33be128d2e7b14] [dc22a08c23af] | 840ms'
+  - '[freeSub] 🇭🇰香港 原生IP 0.22MB/s 477 linuxdo@onimaii [5ff4aac0e7d1] | 842ms'
+  - '[freeSub] 🇭🇰HK_83|650KB/s [d82b6f515b7b] | 849ms'
+  - '[Pawdroid] 香港+葵兴数据中心 | 957ms'
+  - '[AutoMerge] 🇭🇰HK_1|2.1MB/s | 967ms'
+  - '[Eternity] 🇭🇰HK-16.106.7.232-0252 | 0.022MB | 1525ms'
+  - '[free18] 🇭🇰_香港 (4) | 2518ms'
+  - '[Pawdroid] 香港+葵兴数据中心 (2) | 2813ms'
+  - '[freeSub] 香港+葵兴数据中心 [7c47cb523f7b] | 3870ms'
+  - '[free18] 🇭🇰_香港 (3) | 5575ms'
+  - '[free18] 🇭🇰_香港 (2) | 5819ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
