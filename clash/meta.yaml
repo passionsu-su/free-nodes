@@ -73,7 +73,8 @@ proxy-groups:
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 300
+    interval: 120
+    max-failed-times: 3
     tolerance: 80
     lazy: true
     timeout: 3000
@@ -83,7 +84,8 @@ proxy-groups:
   - name: 🔯 故障转移
     type: fallback
     url: https://www.gstatic.com/generate_204
-    interval: 300
+    interval: 120
+    max-failed-times: 3
     tolerance: 80
     lazy: true
     timeout: 3000
@@ -205,7 +207,8 @@ proxy-groups:
   - name: 🇭🇰 香港
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 300
+    interval: 120
+    max-failed-times: 3
     tolerance: 80
     lazy: true
     timeout: 3000
@@ -215,7 +218,8 @@ proxy-groups:
   - name: 🇯🇵 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 300
+    interval: 120
+    max-failed-times: 3
     tolerance: 80
     lazy: true
     timeout: 3000
@@ -225,7 +229,8 @@ proxy-groups:
   - name: 🇸🇬 新加坡
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 300
+    interval: 120
+    max-failed-times: 3
     tolerance: 80
     lazy: true
     timeout: 3000
@@ -235,7 +240,8 @@ proxy-groups:
   - name: 🇺🇸 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 300
+    interval: 120
+    max-failed-times: 3
     tolerance: 80
     lazy: true
     timeout: 3000
@@ -245,7 +251,8 @@ proxy-groups:
   - name: 🇪🇺 欧洲
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 300
+    interval: 120
+    max-failed-times: 3
     tolerance: 80
     lazy: true
     timeout: 3000
@@ -255,7 +262,8 @@ proxy-groups:
   - name: 🌐 其他地区
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 300
+    interval: 120
+    max-failed-times: 3
     tolerance: 80
     lazy: true
     timeout: 3000
