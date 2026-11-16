@@ -80,6 +80,11 @@ def valid(p):
     except Exception: return False
     if not 1<=port<=65535 or any(p.get(k) in (None,"") for k in required[t]): return False
     p["port"]=port
+    ro=p.get("reality-opts")
+    if ro is not None:
+        if not isinstance(ro,dict) or not ro.get("public-key"): return False
+        sid=str(ro.get("short-id") or "")
+        if sid and not (len(sid)<=16 and len(sid)%2==0 and re.fullmatch(r"[0-9a-fA-F]+",sid)): return False
     try: ipaddress.ip_address(str(p["server"]).strip("[]"))
     except ValueError:
         if not re.fullmatch(r"[a-zA-Z0-9.-]{1,253}",str(p["server"])): return False
@@ -91,6 +96,19 @@ def request_json(url):
     req=urllib.request.Request(url,headers=UA)
     with urllib.request.urlopen(req,timeout=8) as r: return json.loads(r.read())
 def test_nodes(nodes):
+    # One malformed upstream node makes mihomo refuse the whole config.
+    # Drop the proxy it names and retry instead of failing the run.
+    for attempt in range(40):
+        try: return _test_nodes(nodes)
+        except RuntimeError as e:
+            m=re.search(r"Parse config error: proxy (\d+)",str(e))
+            if not m: raise
+            i=int(m.group(1))
+            if not 0<=i<len(nodes): raise
+            print(f"dropping proxy {i} rejected by mihomo: {nodes[i].get('name')} -> {str(e).splitlines()[-1][-160:]}")
+            nodes=nodes[:i]+nodes[i+1:]
+    raise RuntimeError("too many proxies rejected by mihomo")
+def _test_nodes(nodes):
     cfg={"mixed-port":17890,"allow-lan":False,"mode":"rule","log-level":"info","external-controller":"127.0.0.1:9090","secret":"","proxies":nodes,"proxy-groups":[{"name":"TEST","type":"select","proxies":[p["name"] for p in nodes]}],"rules":["MATCH,TEST"]}
     (ROOT/"mihomo-test.yaml").write_text(yaml.safe_dump(cfg,allow_unicode=True,sort_keys=False),encoding="utf-8")
     binary=ROOT/"mihomo"

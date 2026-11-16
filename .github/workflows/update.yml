@@ -31,10 +31,20 @@ jobs:
         run: python -m pip install --disable-pip-version-check PyYAML
       - name: Download mihomo
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          url="$(curl -fsSL https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | python -c 'import json,sys; a=json.load(sys.stdin)["assets"]; print(next(x["browser_download_url"] for x in a if "linux-amd64-compatible" in x["name"] and x["name"].endswith(".gz")))' )"
-          curl -fL "$url" -o mihomo.gz
+          url=""
+          for attempt in 1 2 3; do
+            url="$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | python -c 'import json,sys; a=json.load(sys.stdin)["assets"]; print(next(x["browser_download_url"] for x in a if "linux-amd64-compatible" in x["name"] and x["name"].endswith(".gz")))' )" && break || true
+            sleep $((attempt * 5))
+          done
+          if [ -z "$url" ]; then
+            echo "GitHub API unavailable; falling back to pinned mihomo v1.19.34" >&2
+            url="https://github.com/MetaCubeX/mihomo/releases/download/v1.19.34/mihomo-linux-amd64-compatible-v1.19.34.gz"
+          fi
+          curl -fL --retry 3 "$url" -o mihomo.gz
           gzip -df mihomo.gz
           chmod +x mihomo
           ./mihomo -v
