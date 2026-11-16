@@ -3,16 +3,45 @@ allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
-proxies: []
+proxies:
+- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 844ms'
+  server: 114.37.105.51
+  port: 443
+  type: vless
+  uuid: 8197b9b9-8945-460f-99c9-325ef8a8a7c3
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 3OEqq4MiCKoUP5yKBOmZsjuwg4i8A1fb8WrEDOFQek8
+    short-id: 2c14765d0b
+  servername: tw1.gofizzin.com
+  client-fingerprint: edge
+  network: tcp
+  udp: true
+- name: '[ermaozi] 🇹🇼TW_1|1.1MB/s | 1024ms'
+  password: exaxgqkKkd0TAMrCxeonWg==
+  port: 1443
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  skip-cert-verify: false
+  sni: twmoon1-cdn-route.couldflare-cdn.com
+  tls: true
+  type: http
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
 proxy-groups:
 - name: AUTO
-  type: select
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
   proxies:
-  - DIRECT
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 844ms'
+  - '[ermaozi] 🇹🇼TW_1|1.1MB/s | 1024ms'
 - name: PROXY
   type: select
   proxies:
-  - DIRECT
+  - AUTO
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 844ms'
+  - '[ermaozi] 🇹🇼TW_1|1.1MB/s | 1024ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY

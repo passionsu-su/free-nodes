@@ -4,19 +4,23 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- cipher: aes-256-gcm
-  name: '[NoMoreWalls] 🇭🇰[www.v2nodes.com] ss-HK-1621... #1 | 190ms'
-  password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
-  port: 8388
-  server: 209.248.57.105
-  type: ss
-- name: '[NoMoreWalls] 🇭🇰HK_1|3.4MB/s | 1061ms'
-  port: 8443
-  server: 38.76.140.254
-  skip-cert-verify: true
+- name: '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 845ms'
+  type: trojan
+  server: 47.242.93.89
+  port: 12012
+  password: '12012'
+  sni: ali-hk.b-gfw.cfd
   tls: true
-  type: http
-- name: '[freeSub] 🇭🇰HK_81|629KB/s [d82b6f515b7b] | 1062ms'
+  skip-cert-verify: true
+- name: '[ermaozi] 🇭🇰 香港 | HKG 2 | 883ms'
+  server: 47.242.93.89
+  port: 12012
+  type: trojan
+  password: 12012
+  sni: ali-hk.b-gfw.cfd
+  skip-cert-verify: true
+  udp: true
+- name: '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1057ms'
   password: ''
   port: 8443
   server: 38.76.140.254
@@ -26,23 +30,13 @@ proxies:
   udp: true
   username: ''
   x-toolall-mihomo: true
-- name: '[freeSub] 🇭🇰HK_41|173KB/s|R002-260618 [76f77bed8475] | 1085ms'
-  port: 443
-  server: fan.240104.xyz
-  skip-cert-verify: true
-  sni: fan.240104.xyz
-  sub_tag: R002-260618
-  tls: true
+- name: '[zhuhaiuk] HK - zhuhai.uk | 1096ms'
   type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: '[AutoMerge] 🇭🇰HK_3|1.7MB/s | 1260ms'
-  password: pLBgZ2mOWDopvTI6CUWu5ZkI
-  port: 31003
-  server: 2.26.204.46
-  type: socks5
-  username: socks
-- name: '[freeSub] 🇭🇰HK_77|175KB/s|R002-260618 [dabbadb69986] | 1320ms'
+  server: 119.28.24.235
+  port: 3128
+  tls: true
+  skip-cert-verify: true
+- name: '[freeSub] D🔴🇭🇰hos[🧩🎵🎮✈️]_dokng.com_dabbadb6 | 1160ms'
   password: 'null'
   port: 443
   server: fan.240104.xyz
@@ -53,15 +47,65 @@ proxies:
   udp: true
   username: 'null'
   x-toolall-mihomo: true
-- name: '[zhuhaiuk] HK - zhuhai.uk | 1366ms'
-  type: http
-  server: 209.33.167.96
-  port: 8443
-  tls: true
-  sni: 209.33.167.96
+- name: '[freeSub] D🔴🇭🇰hos[🧩🎵🎮✈️]_dokng.com_76f77bed | 1175ms'
+  port: 443
+  server: fan.240104.xyz
   skip-cert-verify: true
+  sni: fan.240104.xyz
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 1359ms'
+  type: vmess
+  server: 156.245.232.239
+  port: 35043
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: www.pubgmobile.com
+- name: '[Eternity] 🇭🇰HK-156.245.232.239-0317 | 0.015MB | 1746ms'
+  server: 156.245.232.239
+  port: 35043
+  type: vmess
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+- name: '[freeSub] C🟠🇭🇰hos_dokng.com_ea9b4f4c | 1886ms'
+  password: admin
+  port: 8899
+  server: 47.242.19.215
+  type: socks5
+  username: admin
+- cipher: aes-256-gcm
+  name: '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 2024ms'
+  password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
+  port: 8388
+  server: 209.248.57.105
+  type: ss
 - type: trojan
-  name: '[free18] 🇭🇰_香港 | 3901ms'
+  name: '[free18] 🇭🇰_香港 (3) | 2442ms'
+  server: sclass-c1.catcat321.com
+  port: 20086
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  udp: true
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+- type: trojan
+  name: '[free18] 🇭🇰_香港 | 2858ms'
   server: sclass-00.catcat321.com
   port: 20123
   password: d9064589-74af-432a-9390-5d8a9da281bf
@@ -70,13 +114,25 @@ proxies:
   servername: hk.catxstar.com
   sni: hk.catxstar.com
   skip-cert-verify: false
-- name: '[Pawdroid] 香港+葵兴数据中心 | 4125ms'
-  type: trojan
-  server: sclass-01.catcat321.com
-  port: 20103
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  sni: hk.catxstar.com
+- type: trojan
+  name: '[free18] 🇭🇰_香港 (2) | 3606ms'
+  server: sclass-c1.catcat321.com
+  port: 20086
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  udp: true
   tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: false
+- type: trojan
+  name: '[free18] 🇭🇰_香港 (4) | 4657ms'
+  server: sclass-00.catcat321.com
+  port: 20103
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  udp: true
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
   skip-cert-verify: false
 proxy-groups:
 - name: AUTO
@@ -85,28 +141,38 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[NoMoreWalls] 🇭🇰[www.v2nodes.com] ss-HK-1621... #1 | 190ms'
-  - '[NoMoreWalls] 🇭🇰HK_1|3.4MB/s | 1061ms'
-  - '[freeSub] 🇭🇰HK_81|629KB/s [d82b6f515b7b] | 1062ms'
-  - '[freeSub] 🇭🇰HK_41|173KB/s|R002-260618 [76f77bed8475] | 1085ms'
-  - '[AutoMerge] 🇭🇰HK_3|1.7MB/s | 1260ms'
-  - '[freeSub] 🇭🇰HK_77|175KB/s|R002-260618 [dabbadb69986] | 1320ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1366ms'
-  - '[free18] 🇭🇰_香港 | 3901ms'
-  - '[Pawdroid] 香港+葵兴数据中心 | 4125ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 845ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 883ms'
+  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1057ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1096ms'
+  - '[freeSub] D🔴🇭🇰hos[🧩🎵🎮✈️]_dokng.com_dabbadb6 | 1160ms'
+  - '[freeSub] D🔴🇭🇰hos[🧩🎵🎮✈️]_dokng.com_76f77bed | 1175ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 1359ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0317 | 0.015MB | 1746ms'
+  - '[freeSub] C🟠🇭🇰hos_dokng.com_ea9b4f4c | 1886ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 2024ms'
+  - '[free18] 🇭🇰_香港 (3) | 2442ms'
+  - '[free18] 🇭🇰_香港 | 2858ms'
+  - '[free18] 🇭🇰_香港 (2) | 3606ms'
+  - '[free18] 🇭🇰_香港 (4) | 4657ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[NoMoreWalls] 🇭🇰[www.v2nodes.com] ss-HK-1621... #1 | 190ms'
-  - '[NoMoreWalls] 🇭🇰HK_1|3.4MB/s | 1061ms'
-  - '[freeSub] 🇭🇰HK_81|629KB/s [d82b6f515b7b] | 1062ms'
-  - '[freeSub] 🇭🇰HK_41|173KB/s|R002-260618 [76f77bed8475] | 1085ms'
-  - '[AutoMerge] 🇭🇰HK_3|1.7MB/s | 1260ms'
-  - '[freeSub] 🇭🇰HK_77|175KB/s|R002-260618 [dabbadb69986] | 1320ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1366ms'
-  - '[free18] 🇭🇰_香港 | 3901ms'
-  - '[Pawdroid] 香港+葵兴数据中心 | 4125ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 845ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 883ms'
+  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1057ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1096ms'
+  - '[freeSub] D🔴🇭🇰hos[🧩🎵🎮✈️]_dokng.com_dabbadb6 | 1160ms'
+  - '[freeSub] D🔴🇭🇰hos[🧩🎵🎮✈️]_dokng.com_76f77bed | 1175ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 1359ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0317 | 0.015MB | 1746ms'
+  - '[freeSub] C🟠🇭🇰hos_dokng.com_ea9b4f4c | 1886ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 2024ms'
+  - '[free18] 🇭🇰_香港 (3) | 2442ms'
+  - '[free18] 🇭🇰_香港 | 2858ms'
+  - '[free18] 🇭🇰_香港 (2) | 3606ms'
+  - '[free18] 🇭🇰_香港 (4) | 4657ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
