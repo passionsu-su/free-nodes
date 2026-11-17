@@ -4,161 +4,100 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[NoMoreWalls] 🇭🇰[www.v2nodes.com] trojan-HK-... | 637ms'
-  password: '12012'
-  port: 12012
-  server: 47.242.93.89
-  skip-cert-verify: true
-  sni: ali-hk.b-gfw.cfd
-  type: trojan
-- name: '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 645ms'
-  type: trojan
-  server: 47.242.93.89
-  port: 12012
-  password: '12012'
-  sni: ali-hk.b-gfw.cfd
-  tls: true
-  skip-cert-verify: true
-- alpn:
-  - ''
-  alterId: 0
-  cipher: auto
-  name: '[NoMoreWalls] 🇭🇰 香港 | HKG #2 | 652ms'
-  network: ws
-  port: 44867
-  server: 47.244.120.197
-  skip-cert-verify: true
-  tls: false
+- name: '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 99ms'
   type: vmess
-  udp: true
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  ws-opts:
-    path: /arki
-- name: '[NoMoreWalls] 🇭🇰216973 | ⚡️Telegram = t.me/L... | 692ms'
-  obfs: salamander
-  obfs-password: 9veAh9pTbrAfDwM1fIYI
-  password: hAUdd15a7YGHUSgiPOUz
-  port: 443
-  server: 43.103.2.53
-  skip-cert-verify: true
-  tls: false
-  type: hysteria2
-- type: vmess
-  name: '[free18] 🇭🇰_香港 (24) | 717ms'
-  server: 47.244.120.197
-  port: 23026
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  cipher: auto
+  server: 206.237.11.17
+  port: 50376
+  uuid: 9091fd64-7e8e-4b7a-8ae7-84474f234926
   alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /arki
-- name: '[zhuhaiuk] HK - zhuhai.uk | 914ms'
-  type: http
-  server: 119.28.24.235
-  port: 3128
-  tls: true
-  sni: 119.28.24.235
-  skip-cert-verify: true
-- type: vmess
-  name: '[free18] 🇭🇰_香港 (11) | 1001ms'
-  server: dog-us.kunlun01dns.com
-  port: 21012
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
   cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- type: vmess
-  name: '[free18] 🇭🇰_香港 (22) | 1082ms'
-  server: 47.244.120.197
-  port: 36703
-  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /arki
-- name: '[ermaozi] 🇭🇰 香港 | HKG | 1134ms'
-  server: 8.217.1.203
-  port: 8443
-  type: vless
-  uuid: 8b17beac-b143-447d-aa68-14cbb121a602
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 74P0QFvaK6B13rHsxR_t0lqRlg4YLuORD4VaHr5Jd38
-    short-id: 0bf55f64
-  servername: www.apple.com
-  client-fingerprint: chrome
   network: tcp
-  udp: true
 - type: vmess
-  name: '[free18] 🇭🇰_香港 (23) | 1184ms'
-  server: 47.244.120.197
-  port: 44867
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  name: '[free18] 🇭🇰_香港 (10) | 104ms'
+  server: 206.237.11.17
+  port: 50376
+  uuid: 9091fd64-7e8e-4b7a-8ae7-84474f234926
   cipher: auto
   alterId: 0
   udp: true
   tls: false
   skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /arki?ed=2048
-- name: '[ermaozi] 🇭🇰 香港 | HKG 3 | 1202ms'
-  server: 31.57.248.176
-  port: 50160
-  type: hysteria2
-  password: b0917015b656b3dd2286b5633af0c5c1
-  auth: b0917015b656b3dd2286b5633af0c5c1
-  sni: www.bing.com%23%e9%a6%83%e5%9a%9f%e9%a6%83%e5%9a%a2%7chk%7c%40wxgqlfx%7c147
-  skip-cert-verify: true
-- name: '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 1280ms'
+- name: '[ermaozi] 🇭🇰 香港 | HKG | 530ms'
+  server: 47.242.81.94
+  port: 52080
   type: vmess
-  server: 47.244.120.197
-  port: 44867
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /arki
-    headers: {}
-- name: '[ermaozi] 🇭🇰 香港 | HKG 2 | 1327ms'
-  server: 47.244.120.197
-  port: 23026
-  type: vmess
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  uuid: e47b9f77-60e4-4738-8d53-772b6002e146
   alterId: 0
   cipher: auto
   tls: false
+  alpn:
+  - ''
   skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /arki
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /QQqun-737805443
     headers:
-      Host: 47.244.120.197
+      Host:
+      - openai.com
   udp: true
-- type: trojan
-  name: '[free18] 🇭🇰_香港 (3) | 1480ms'
-  server: sclass-00.catcat321.com
-  port: 20123
-  password: d9064589-74af-432a-9390-5d8a9da281bf
+- type: vmess
+  name: '[free18] 🇭🇰_香港 (9) | 620ms'
+  server: zfd-boardv2.kunlun01dns.com
+  port: 16317
+  uuid: 0802ac03-7973-39ef-a019-ba02de6c01e1
+  cipher: auto
+  alterId: 0
   udp: true
+  tls: false
+  skip-cert-verify: true
+- name: '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 683ms'
+  password: '12012'
+  port: 12012
+  server: 47.242.93.89
+  skip-cert-verify: true
+  sni: ali-hk.b-gfw.cfd
+  type: trojan
+- name: '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 701ms'
+  type: trojan
+  server: 47.242.93.89
+  port: 12012
+  password: '12012'
+  sni: ali-hk.b-gfw.cfd
   tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
+  skip-cert-verify: true
+- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 925ms'
+  type: http
+  server: 202.85.53.25
+  port: 443
+  tls: true
+  skip-cert-verify: true
+- alterId: 0
+  cipher: auto
+  name: '[AutoMerge] 🇭🇰 香港 | HKG #2 | 950ms'
+  network: ws
+  port: 443
+  server: prozac-celebrities-inclusion-parallel.trycloudflare.com
+  servername: prozac-celebrities-inclusion-parallel.trycloudflare.com
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea
+  ws-opts:
+    headers:
+      Host: prozac-celebrities-inclusion-parallel.trycloudflare.com
+    path: /2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm
+- name: '[zhuhaiuk] HK - zhuhai.uk | 957ms'
+  type: http
+  server: fan.240104.xyz
+  port: 443
+  tls: true
+  sni: fan.240104.xyz
   skip-cert-verify: true
 - type: vmess
-  name: '[free18] 🇭🇰_香港 (25) | 1611ms'
+  name: '[free18] 🇭🇰_香港 (25) | 2179ms'
   server: 156.245.232.239
   port: 35043
   uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
@@ -170,51 +109,56 @@ proxies:
   network: ws
   ws-opts:
     path: /
-- name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 2299ms'
-  password: '12012'
-  port: 12012
-  server: 47.242.93.89
-  skip-cert-verify: true
-  sni: ali-hk.b-gfw.cfd
-  type: trojan
+- type: vmess
+  name: '[free18] 🇭🇰_香港 (23) | 2313ms'
+  server: 47.244.120.197
+  port: 44867
+  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  cipher: auto
+  alterId: 0
   udp: true
-- name: '[Eternity] 🇭🇰HK-16.106.7.232-0314 | 0.056MB | 2349ms'
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /arki?ed=2048
+- name: '[Pawdroid] 香港+葵兴数据中心 | 2630ms'
+  type: trojan
+  server: sclass-01.catcat321.com
+  port: 20103
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  sni: hk.catxstar.com
+  tls: true
+  skip-cert-verify: false
+- name: '[Eternity] 🇭🇰HK-16.106.7.232-0261 | 0.02MB | 2711ms'
   server: sclass-c1.catcat321.com
   port: 20086
   type: trojan
   password: d9064589-74af-432a-9390-5d8a9da281bf
   sni: hk.catxstar.com
   skip-cert-verify: false
-- auth: b0917015b656b3dd2286b5633af0c5c1
-  name: '[AutoMerge] 🇭🇰 香港 | HKG #3 | 3047ms'
-  password: b0917015b656b3dd2286b5633af0c5c1
-  port: 50160
-  server: 31.57.248.176
+- type: trojan
+  name: '[free18] 🇭🇰_香港 | 3643ms'
+  server: sclass-c1.catcat321.com
+  port: 20086
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  udp: true
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
   skip-cert-verify: true
-  sni: www.bing.com%23%e9%a6%83%e5%9a%9f%e9%a6%83%e5%9a%a2%7chk%7c%40wxgqlfx%7c147
+- name: '[Eternity] 🇭🇰HK-156.245.232.239-0266 | 0.012MB | 5173ms'
+  server: 156.245.232.239
+  port: 35043
+  type: vmess
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  alterId: 0
+  cipher: auto
   tls: false
-  type: hysteria2
-- type: trojan
-  name: '[free18] 🇭🇰_香港 | 5815ms'
-  server: sclass-c1.catcat321.com
-  port: 20086
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  udp: true
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-- type: trojan
-  name: '[free18] 🇭🇰_香港 (2) | 5851ms'
-  server: sclass-c1.catcat321.com
-  port: 20086
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  udp: true
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -222,50 +166,40 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[NoMoreWalls] 🇭🇰[www.v2nodes.com] trojan-HK-... | 637ms'
-  - '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 645ms'
-  - '[NoMoreWalls] 🇭🇰 香港 | HKG #2 | 652ms'
-  - '[NoMoreWalls] 🇭🇰216973 | ⚡️Telegram = t.me/L... | 692ms'
-  - '[free18] 🇭🇰_香港 (24) | 717ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 914ms'
-  - '[free18] 🇭🇰_香港 (11) | 1001ms'
-  - '[free18] 🇭🇰_香港 (22) | 1082ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG | 1134ms'
-  - '[free18] 🇭🇰_香港 (23) | 1184ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG 3 | 1202ms'
-  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 1280ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 1327ms'
-  - '[free18] 🇭🇰_香港 (3) | 1480ms'
-  - '[free18] 🇭🇰_香港 (25) | 1611ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 2299ms'
-  - '[Eternity] 🇭🇰HK-16.106.7.232-0314 | 0.056MB | 2349ms'
-  - '[AutoMerge] 🇭🇰 香港 | HKG #3 | 3047ms'
-  - '[free18] 🇭🇰_香港 | 5815ms'
-  - '[free18] 🇭🇰_香港 (2) | 5851ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 99ms'
+  - '[free18] 🇭🇰_香港 (10) | 104ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG | 530ms'
+  - '[free18] 🇭🇰_香港 (9) | 620ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 683ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 701ms'
+  - '[zhuhaiuk] HK - zhuhai.uk 02 | 925ms'
+  - '[AutoMerge] 🇭🇰 香港 | HKG #2 | 950ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 957ms'
+  - '[free18] 🇭🇰_香港 (25) | 2179ms'
+  - '[free18] 🇭🇰_香港 (23) | 2313ms'
+  - '[Pawdroid] 香港+葵兴数据中心 | 2630ms'
+  - '[Eternity] 🇭🇰HK-16.106.7.232-0261 | 0.02MB | 2711ms'
+  - '[free18] 🇭🇰_香港 | 3643ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0266 | 0.012MB | 5173ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[NoMoreWalls] 🇭🇰[www.v2nodes.com] trojan-HK-... | 637ms'
-  - '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 645ms'
-  - '[NoMoreWalls] 🇭🇰 香港 | HKG #2 | 652ms'
-  - '[NoMoreWalls] 🇭🇰216973 | ⚡️Telegram = t.me/L... | 692ms'
-  - '[free18] 🇭🇰_香港 (24) | 717ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 914ms'
-  - '[free18] 🇭🇰_香港 (11) | 1001ms'
-  - '[free18] 🇭🇰_香港 (22) | 1082ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG | 1134ms'
-  - '[free18] 🇭🇰_香港 (23) | 1184ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG 3 | 1202ms'
-  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 1280ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 1327ms'
-  - '[free18] 🇭🇰_香港 (3) | 1480ms'
-  - '[free18] 🇭🇰_香港 (25) | 1611ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 2299ms'
-  - '[Eternity] 🇭🇰HK-16.106.7.232-0314 | 0.056MB | 2349ms'
-  - '[AutoMerge] 🇭🇰 香港 | HKG #3 | 3047ms'
-  - '[free18] 🇭🇰_香港 | 5815ms'
-  - '[free18] 🇭🇰_香港 (2) | 5851ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 99ms'
+  - '[free18] 🇭🇰_香港 (10) | 104ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG | 530ms'
+  - '[free18] 🇭🇰_香港 (9) | 620ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 683ms'
+  - '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 701ms'
+  - '[zhuhaiuk] HK - zhuhai.uk 02 | 925ms'
+  - '[AutoMerge] 🇭🇰 香港 | HKG #2 | 950ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 957ms'
+  - '[free18] 🇭🇰_香港 (25) | 2179ms'
+  - '[free18] 🇭🇰_香港 (23) | 2313ms'
+  - '[Pawdroid] 香港+葵兴数据中心 | 2630ms'
+  - '[Eternity] 🇭🇰HK-16.106.7.232-0261 | 0.02MB | 2711ms'
+  - '[free18] 🇭🇰_香港 | 3643ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0266 | 0.012MB | 5173ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
