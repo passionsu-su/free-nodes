@@ -5,17 +5,7 @@ log-level: info
 ipv6: false
 proxies:
 - type: vmess
-  name: '[free18] 🇰🇷_韩国 (4) | 462ms'
-  server: 146.56.112.110
-  port: 8888
-  uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-- type: vmess
-  name: '[free18] 🇰🇷_韩国 | 516ms'
+  name: '[free18] 🇰🇷_韩国 | 672ms'
   server: 129.154.61.196
   port: 800
   uuid: a915b1d6-cf28-4dc8-e4b4-e09c48c37ec0
@@ -24,13 +14,46 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: false
-- name: '[Eternity] 🇰🇷KR-211.178.105.134-0199 | 5.821MB | 553ms'
+- type: vmess
+  name: '[free18] 🇰🇷_韩国 (4) | 677ms'
+  server: 146.56.112.110
+  port: 8888
+  uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: '[roosterkid] 🇰🇷[openproxylist.com] vmess-KR | 689ms'
+  type: vmess
+  server: 129.154.61.196
+  port: 800
+  uuid: a915b1d6-cf28-4dc8-e4b4-e09c48c37ec0
+  alterId: 0
+  cipher: auto
+  network: tcp
+- type: vmess
+  name: '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 710ms'
+  server: 172.64.145.93
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- name: '[Eternity] 🇰🇷KR-211.178.105.134-0185 | 0.03MB | 733ms'
   server: 211.178.105.134
   port: 6123
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 677ms'
+- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 871ms'
   type: vless
   server: 152.69.226.63
   port: 25555
@@ -40,22 +63,8 @@ proxies:
   ws-opts:
     path: /
     headers: {}
-- name: '[Eternity] 🇰🇷KR-158.247.253.243-0124 | 51.295MB | 710ms'
-  server: 158.247.253.243
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: connectgraduateswithjobopeningsandgrowprofessionally.com
-  skip-cert-verify: false
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 721ms'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 158.247.253.243
-  skip-cert-verify: true
-  sni: connectgraduateswithjobopeningsandgrowprofessionally.com
-  type: trojan
 - type: trojan
-  name: '[free18] 🇰🇷_韩国 (3) | 728ms'
+  name: '[free18] 🇰🇷_韩国 (3) | 878ms'
   server: 158.247.253.243
   port: 443
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
@@ -64,7 +73,7 @@ proxies:
   servername: connectgraduateswithjobopeningsandgrowprofessionally.com
   sni: connectgraduateswithjobopeningsandgrowprofessionally.com
   skip-cert-verify: false
-- name: '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 745ms'
+- name: '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 882ms'
   type: trojan
   server: 158.247.253.243
   port: 443
@@ -72,8 +81,36 @@ proxies:
   sni: connectgraduateswithjobopeningsandgrowprofessionally.com
   tls: true
   skip-cert-verify: true
+- name: '[Eternity] 🇰🇷KR-158.247.253.243-0116 | 30.186MB | 896ms'
+  server: 158.247.253.243
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: connectgraduateswithjobopeningsandgrowprofessionally.com
+  skip-cert-verify: false
+- cipher: chacha20-ietf-poly1305
+  name: '[ermaozi] 🇰🇷[www.v2nodes.com] ss-KR-1126... | 1032ms'
+  password: '12242'
+  port: 10099
+  server: 115.161.136.145
+  type: ss
+- name: '[Eternity] 🇰🇷KR-218.237.185.234-0180 | 0.053MB | 1166ms'
+  server: p141.panda001.net
+  port: 4652
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- name: '[zhuhaiuk] KR - zhuhai.uk | 1184ms'
+  type: socks5
+  server: 121.169.46.116
+  port: 1090
+- name: '[zhuhaiuk] KR - zhuhai.uk 02 | 1259ms'
+  type: socks5
+  server: 121.169.46.116
+  port: 1090
+  username: VDJjbE0wUWxNMFE2Og%3D%3D
 - type: vmess
-  name: '[free18] 🇰🇷_韩国 (5) | 833ms'
+  name: '[free18] 🇰🇷_韩国 (5) | 2001ms'
   server: 132.145.80.230
   port: 80
   uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
@@ -85,30 +122,6 @@ proxies:
   network: ws
   ws-opts:
     path: /cctv13.m3u8
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 981ms'
-  network: ws
-  port: 25555
-  server: 152.69.226.63
-  tls: false
-  type: vless
-  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
-  ws-opts:
-    path: /
-- name: '[zhuhaiuk] KR - zhuhai.uk | 1014ms'
-  type: socks5
-  server: 121.169.46.116
-  port: 1090
-  username: VkRKamJFMHdVV3hOTUZFMk9nPT06
-- name: '[Eternity] 🇰🇷KR-218.237.185.234-0198 | 7.8MB | 1190ms'
-  server: p141.panda001.net
-  port: 4652
-  type: ss
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-- name: '[zhuhaiuk] KR - zhuhai.uk 02 | 2145ms'
-  type: socks5
-  server: 121.169.46.116
-  port: 1090
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -116,36 +129,38 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[free18] 🇰🇷_韩国 (4) | 462ms'
-  - '[free18] 🇰🇷_韩国 | 516ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0199 | 5.821MB | 553ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 677ms'
-  - '[Eternity] 🇰🇷KR-158.247.253.243-0124 | 51.295MB | 710ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 721ms'
-  - '[free18] 🇰🇷_韩国 (3) | 728ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 745ms'
-  - '[free18] 🇰🇷_韩国 (5) | 833ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 981ms'
-  - '[zhuhaiuk] KR - zhuhai.uk | 1014ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0198 | 7.8MB | 1190ms'
-  - '[zhuhaiuk] KR - zhuhai.uk 02 | 2145ms'
+  - '[free18] 🇰🇷_韩国 | 672ms'
+  - '[free18] 🇰🇷_韩国 (4) | 677ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vmess-KR | 689ms'
+  - '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 710ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0185 | 0.03MB | 733ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 871ms'
+  - '[free18] 🇰🇷_韩国 (3) | 878ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 882ms'
+  - '[Eternity] 🇰🇷KR-158.247.253.243-0116 | 30.186MB | 896ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] ss-KR-1126... | 1032ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0180 | 0.053MB | 1166ms'
+  - '[zhuhaiuk] KR - zhuhai.uk | 1184ms'
+  - '[zhuhaiuk] KR - zhuhai.uk 02 | 1259ms'
+  - '[free18] 🇰🇷_韩国 (5) | 2001ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[free18] 🇰🇷_韩国 (4) | 462ms'
-  - '[free18] 🇰🇷_韩国 | 516ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0199 | 5.821MB | 553ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 677ms'
-  - '[Eternity] 🇰🇷KR-158.247.253.243-0124 | 51.295MB | 710ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 721ms'
-  - '[free18] 🇰🇷_韩国 (3) | 728ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 745ms'
-  - '[free18] 🇰🇷_韩国 (5) | 833ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 981ms'
-  - '[zhuhaiuk] KR - zhuhai.uk | 1014ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0198 | 7.8MB | 1190ms'
-  - '[zhuhaiuk] KR - zhuhai.uk 02 | 2145ms'
+  - '[free18] 🇰🇷_韩国 | 672ms'
+  - '[free18] 🇰🇷_韩国 (4) | 677ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vmess-KR | 689ms'
+  - '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 710ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0185 | 0.03MB | 733ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 871ms'
+  - '[free18] 🇰🇷_韩国 (3) | 878ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 882ms'
+  - '[Eternity] 🇰🇷KR-158.247.253.243-0116 | 30.186MB | 896ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] ss-KR-1126... | 1032ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0180 | 0.053MB | 1166ms'
+  - '[zhuhaiuk] KR - zhuhai.uk | 1184ms'
+  - '[zhuhaiuk] KR - zhuhai.uk 02 | 1259ms'
+  - '[free18] 🇰🇷_韩国 (5) | 2001ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
