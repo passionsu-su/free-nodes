@@ -20,6 +20,16 @@ SOURCES=[
  ("roosterkid","https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt","share"),
 ]
 REGIONS={"hk":["香港","hong kong","🇭🇰","HK"],"tw":["台湾","taiwan","🇹🇼","TW"],"jp":["日本","japan","🇯🇵","JP"],"sg":["新加坡","singapore","🇸🇬","SG"],"kr":["韩国","south korea","🇰🇷","KR"],"us":["美国","united states","🇺🇸","USA","US-"],"eu":["英国","德国","法国","荷兰","欧洲","🇬🇧","🇩🇪","🇫🇷","🇳🇱","🇪🇺","UK","GB-","DE-","FR-","NL-"]}
+# A tested node slower than this is unusable in practice; drop it instead of
+# publishing a 5-6s entry at the bottom of the list.
+MAX_DELAY_MS = 4000
+GSTASTIC_TEST_URL = "https://www.gstatic.com/generate_204"
+# Second-round target hosted in mainland China (Huawei connectivity check).
+# The runner is overseas, so this measures node -> China, not user -> node;
+# it is still a strictly better China proxy than runner -> node -> Google.
+# Override with env CN_TEST_URL; if the target is unreachable the China
+# round is skipped and the run continues with the gstatic results only.
+CN_TEST_URL = os.environ.get("CN_TEST_URL", "https://connectivitycheck.platform.hicloud.com/generate_204")
 def fetch(url):
     req=urllib.request.Request(url,headers=UA)
     with urllib.request.urlopen(req,timeout=35) as r: return r.read().decode("utf-8","replace")
@@ -78,15 +88,27 @@ def valid(p):
     if t not in required or not p.get("server"): return False
     try: port=int(p["port"])
     except Exception: return False
-    if not 1<=port<=65535 or any(p.get(k) in (None,"") for k in required[t]): return False
+    if not 1<=port<=65535: return False
     p["port"]=port
+    # Upstream lists sometimes serialise a missing credential as the literal
+    # string "null" (notably http proxies). Treat it as absent.
+    for k in ("username","password"):
+        if p.get(k)=="null": p[k]=None
+    if any(p.get(k) in (None,"") for k in required[t]): return False
     ro=p.get("reality-opts")
     if ro is not None:
         if not isinstance(ro,dict) or not ro.get("public-key"): return False
         sid=str(ro.get("short-id") or "")
         if sid and not (len(sid)<=16 and len(sid)%2==0 and re.fullmatch(r"[0-9a-fA-F]+",sid)): return False
-    try: ipaddress.ip_address(str(p["server"]).strip("[]"))
+    # Reject non-routable targets. Upstream lists now inject loopback fakes
+    # (e.g. server 127.0.0.53, name "防范境外势力渗透"); a public proxy
+    # server must have a globally routable IP.
+    try:
+        ip=ipaddress.ip_address(str(p["server"]).strip("[]"))
+        if not ip.is_global: return False
     except ValueError:
+        host=str(p["server"]).lower()
+        if host in ("localhost",) or host.endswith((".local",".internal",".lan",".home",".invalid")): return False
         if not re.fullmatch(r"[a-zA-Z0-9.-]{1,253}",str(p["server"])): return False
     return True
 def key(p):
@@ -99,7 +121,7 @@ def test_nodes(nodes):
     # One malformed upstream node makes mihomo refuse the whole config.
     # Drop the proxy it names and retry instead of failing the run.
     for attempt in range(40):
-        try: return _test_nodes(nodes)
+        try: return _delay_test(nodes, GSTASTIC_TEST_URL, 6000)
         except RuntimeError as e:
             m=re.search(r"Parse config error: proxy (\d+)",str(e))
             if not m: raise
@@ -108,7 +130,29 @@ def test_nodes(nodes):
             print(f"dropping proxy {i} rejected by mihomo: {nodes[i].get('name')} -> {str(e).splitlines()[-1][-160:]}")
             nodes=nodes[:i]+nodes[i+1:]
     raise RuntimeError("too many proxies rejected by mihomo")
-def _test_nodes(nodes):
+def test_china(nodes):
+    """Second-round delay test against a China-hosted target, for nodes that
+    already passed the gstatic test. Best-effort: any failure skips the
+    China round and the run continues with the gstatic results only."""
+    if not nodes: return []
+    try: return _delay_test(nodes, CN_TEST_URL, 6000)
+    except Exception as e:
+        print(f"[china-test] skipped: {e}")
+        return []
+def filter_tested(passed):
+    """passed: [(proxy, delay_ms)] delay-sorted. Drop the unusable slow tail,
+    then collapse duplicate endpoints: the same server:port:type often appears
+    under several names/credentials from different upstreams; keep the
+    fastest-tested entry only. Returns (kept, dropped_slow, dropped_dup)."""
+    slow=sum(1 for _,d in passed if d>MAX_DELAY_MS)
+    kept=[(p,d) for p,d in passed if d<=MAX_DELAY_MS]
+    best={}
+    for p,d in kept:  # already delay-sorted: first hit per endpoint is fastest
+        k=(str(p["server"]).lower(),int(p["port"]),str(p["type"]).lower())
+        if k not in best: best[k]=(p,d)
+    dup=len(kept)-len(best)
+    return sorted(best.values(),key=lambda x:x[1]),slow,dup
+def _delay_test(nodes, url, timeout_ms):
     cfg={"mixed-port":17890,"allow-lan":False,"mode":"rule","log-level":"info","external-controller":"127.0.0.1:9090","secret":"","proxies":nodes,"proxy-groups":[{"name":"TEST","type":"select","proxies":[p["name"] for p in nodes]}],"rules":["MATCH,TEST"]}
     (ROOT/"mihomo-test.yaml").write_text(yaml.safe_dump(cfg,allow_unicode=True,sort_keys=False),encoding="utf-8")
     binary=ROOT/"mihomo"
@@ -126,10 +170,10 @@ def _test_nodes(nodes):
                 time.sleep(1)
         else: raise RuntimeError("mihomo external controller did not start: "+log_path.read_text(encoding="utf-8",errors="replace")[-5000:])
         def one(p):
-            url="http://127.0.0.1:9090/proxies/"+urllib.parse.quote(p["name"],safe="")+"/delay?url="+urllib.parse.quote("https://www.gstatic.com/generate_204",safe="")+"&timeout=6000"
+            u="http://127.0.0.1:9090/proxies/"+urllib.parse.quote(p["name"],safe="")+"/delay?url="+urllib.parse.quote(url,safe="")+"&timeout="+str(timeout_ms)
             try:
-                d=request_json(url).get("delay",0)
-                return (p,int(d)) if 0<int(d)<=6000 else None
+                d=request_json(u).get("delay",0)
+                return (p,int(d)) if 0<int(d)<=timeout_ms else None
             except Exception: return None
         passed=[]
         with concurrent.futures.ThreadPoolExecutor(max_workers=24) as pool:
@@ -184,19 +228,58 @@ def build_yaml(nodes):
     return {"mixed-port":7890,"allow-lan":False,"mode":"rule","log-level":"info","ipv6":False,"proxies":nodes,"proxy-groups":groups,"rules":["GEOIP,CN,DIRECT","MATCH,PROXY"]}
 def write_yaml(path,obj):
     path.parent.mkdir(parents=True,exist_ok=True); path.write_text(yaml.safe_dump(obj,allow_unicode=True,sort_keys=False),encoding="utf-8")
+def refresh_readme(now, candidates, alive, v2ray_n, region_stats, txt_counts, cn_stats, note=""):
+    """Keep README numbers honest: the AUTO-STATUS line, the update time and
+    the region tables are regenerated from this run's real outputs every time.
+    Marker blocks that do not exist yet are left alone."""
+    readme=ROOT/"README.md"; text=readme.read_text(encoding="utf-8")
+    cn_line=""
+    if cn_stats.get("alive"):
+        cn_line=f"国内优选（到中国目标复测） **{cn_stats['alive']}**，中位延迟 **{cn_stats.get('median_ms')}ms**。"
+    elif cn_stats.get("stale"):
+        cn_line="国内优选本次复测未完成，沿用上一版。"
+    block=(f"<!-- AUTO-STATUS -->\n自动更新于 **{now}（北京时间）**；候选 **{candidates}**，mihomo 真连接测试通过 **{alive}**，v2ray 分享链接 **{v2ray_n}**。{cn_line}"
+           f"每 8 小时运行一次；测试出口为 GitHub Actions 海外 Runner，国内连通性可能不同。{note}\n<!-- /AUTO-STATUS -->")
+    marker="<!-- AUTO-STATUS -->"
+    if marker in text: text=re.sub(r"<!-- AUTO-STATUS -->.*?<!-- /AUTO-STATUS -->",block,text,flags=re.S)
+    else: text=text.replace("# free-nodes","# free-nodes\n\n"+block,1)
+    text=re.sub(r"更新时间：.*?（北京时间）",f"更新时间：{now}（北京时间）",text,count=1)
+    base="https://raw.githubusercontent.com/passionsu-su/free-nodes/main/"
+    names={"hk":"香港","tw":"台湾","jp":"日本","sg":"新加坡","kr":"韩国","us":"美国","eu":"欧洲","other":"其他"}
+    for kind,counts,path_tmpl in (("txt",txt_counts,"region/{code}.txt"),("clash",region_stats,"region/clash/{code}.yaml")):
+        m=f"<!-- REGION-{kind.upper()} -->"
+        if m not in text: continue
+        rows=[f"| {names[c]} | {base}{path_tmpl.format(code=c)} | {counts.get(c,0)} |" for c in ["hk","tw","jp","sg","kr","us","eu","other"]]
+        table=f"{m}\n| 地区 | 链接 | 节点 |\n| --- | --- | --- |\n"+"\n".join(rows)+f"\n<!-- /REGION-{kind.upper()} -->"
+        text=re.sub(rf"{m}.*?<!-- /REGION-{kind.upper()} -->",table,text,flags=re.S)
+    m="<!-- CN-FEED -->"
+    if m in text:
+        if cn_stats.get("alive"):
+            body=(f"{m}\n## 国内优选（按到中国大陆目标的实测延迟排序）\n\n| 格式 | 链接 | 节点 |\n| --- | --- | --- |\n"
+                  f"| Clash YAML | {base}clash/cn.yaml | {cn_stats['alive']} |\n| base64 | {base}v2ray/cn.txt | {cn_stats.get('v2ray',0)} |\n\n"
+                  "节点先经过 mihomo 真连接测试，再对中国大陆境内目标（connectivitycheck.platform.hicloud.com/generate_204）复测并按延迟排序。"
+                  "注意：测试仍发起于海外 Runner，测的是“节点→中国”这一段，不是“你→节点”；人在国内时优先用这个文件，导入后仍建议在 App 里再测一次。\n<!-- /CN-FEED -->")
+        else:
+            body=(f"{m}\n## 国内优选（按到中国大陆目标的实测延迟排序）\n\n本次复测未完成（中国目标不可达或复测失败），沿用上一版 clash/cn.yaml（如有）；下次运行成功后自动恢复。\n<!-- /CN-FEED -->")
+        text=re.sub(r"<!-- CN-FEED -->.*?<!-- /CN-FEED -->",body,text,flags=re.S)
+    readme.write_text(text,encoding="utf-8")
 def main():
     merged=[]; seen=set(); stats={}
     for tag,url,kind in SOURCES:
         try: raw=fetch(url); candidates=parse_source(raw,kind)
-        except Exception as e: print(f"[{tag}] fetch failed: {e}"); stats[tag]={"count":0,"error":str(e)[:180]}; continue
-        n=0
+        except Exception as e: print(f"[{tag}] fetch failed: {e}"); stats[tag]={"parsed":0,"count":0,"error":str(e)[:180]}; continue
+        parsed=0; n=0
         for p in candidates:
             if not valid(p): continue
+            parsed+=1
             p=dict(p); p["name"]=f"[{tag}] "+str(p.get("name") or p["server"])
             k=key(p)
             if k in seen: continue
             seen.add(k); merged.append(p); n+=1
-        stats[tag]={"count":n,"error":None}; print(f"[{tag}] {n} unique candidates")
+        # "parsed" = valid nodes this source offered; "count" = newly added
+        # after cross-source dedup. A meta-aggregator can legitimately show
+        # parsed>0 but count=0 when its content duplicates earlier sources.
+        stats[tag]={"parsed":parsed,"count":n,"error":None}; print(f"[{tag}] {parsed} valid, {n} new")
     if not merged: raise RuntimeError("all upstream sources failed or returned no valid nodes; keeping previous feeds")
     # Cap concurrent test load while retaining source diversity.
     merged=merged[:1600]
@@ -213,6 +296,8 @@ def main():
         p["name"]=candidate
         used_names.add(candidate)
     passed=test_nodes(merged)
+    passed,dropped_slow,dropped_dup=filter_tested(passed)
+    print(f"[filter] dropped {dropped_slow} nodes slower than {MAX_DELAY_MS}ms, {dropped_dup} duplicate endpoints")
     nodes=[]
     for p,delay in passed:
         p=dict(p); p["name"]=p["name"]+" | "+str(delay)+"ms"; nodes.append(p)
@@ -221,21 +306,32 @@ def main():
     links=[uri(p) for p in nodes]; links=[x for x in links if x]
     (ROOT/"v2ray/all.txt").parent.mkdir(parents=True,exist_ok=True)
     (ROOT/"v2ray/all.txt").write_text(base64.b64encode("\n".join(links).encode()).decode(),encoding="utf-8")
-    region_stats={}
+    region_stats={}; txt_counts={}
     for code in ["hk","tw","jp","sg","kr","us","eu","other"]:
         subset=[p for p in nodes if region_of(p)==code]
         region_stats[code]=len(subset)
         write_yaml(ROOT/f"region/clash/{code}.yaml",build_yaml(subset))
         lines=[uri(p) for p in subset]; lines=[x for x in lines if x]
+        txt_counts[code]=len(lines)
         (ROOT/f"region/{code}.txt").write_text(base64.b64encode("\n".join(lines).encode()).decode(),encoding="utf-8")
+    # Second-round China test: re-measure survivors against a China-hosted
+    # target and publish a combined low-latency-for-China feed, sorted by
+    # that measurement. If the round fails, keep the previous cn feed.
+    cn_passed=test_china(nodes)
+    cn_nodes=[]; cn_links=[]
+    if cn_passed:
+        cn_nodes=[dict(p) for p,_ in cn_passed]
+        cn_links=[x for x in (uri(p) for p in cn_nodes) if x]
+        write_yaml(ROOT/"clash/cn.yaml",build_yaml(cn_nodes))
+        (ROOT/"v2ray/cn.txt").write_text(base64.b64encode("\n".join(cn_links).encode()).decode(),encoding="utf-8")
+        cn_stats={"alive":len(cn_nodes),"v2ray":len(cn_links),"median_ms":sorted(d for _,d in cn_passed)[len(cn_passed)//2],"test":CN_TEST_URL}
+        print(f"[china-test] {len(cn_nodes)} nodes reached the China target (median {cn_stats['median_ms']}ms)")
+    else:
+        cn_stats={"alive":0,"v2ray":0,"median_ms":None,"test":CN_TEST_URL,"stale":True}
+        print("[china-test] no China results; keeping previous cn feed if present")
     now=datetime.now(BJT).strftime("%Y-%m-%d %H:%M")
-    report={"time":now,"sources":stats,"candidates":len(merged),"tested":len(merged),"alive":len(nodes),"v2ray":len(links),"region":region_stats,"test":"mihomo API / gstatic generate_204"}
+    report={"time":now,"sources":stats,"candidates":len(merged),"tested":len(merged),"alive":len(nodes),"v2ray":len(links),"dropped_slow":dropped_slow,"dropped_dup":dropped_dup,"region":region_stats,"cn":cn_stats,"test":"mihomo API / gstatic generate_204"}
     (ROOT/"report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    readme=ROOT/"README.md"; text=readme.read_text(encoding="utf-8")
-    marker="<!-- AUTO-STATUS -->"
-    block=f"<!-- AUTO-STATUS -->\n自动更新于 **{now}（北京时间）**；候选 **{len(merged)}**，mihomo 真连接测试通过 **{len(nodes)}**，v2ray 分享链接 **{len(links)}**。每 8 小时运行一次；测试出口为 GitHub Actions 海外 Runner，国内连通性可能不同。\n<!-- /AUTO-STATUS -->"
-    if marker in text: text=re.sub(r"<!-- AUTO-STATUS -->.*?<!-- /AUTO-STATUS -->",block,text,flags=re.S)
-    else: text=text.replace("# free-nodes","# free-nodes\n\n"+block,1)
-    readme.write_text(text,encoding="utf-8")
+    refresh_readme(now, len(merged), len(nodes), len(links), region_stats, txt_counts, cn_stats)
     print(f"PASS: {len(nodes)}/{len(merged)} nodes passed mihomo real connection test")
 if __name__=="__main__": main()
