@@ -88,75 +88,11 @@ proxies:
   type: http
   server: fan.571589.xyz
   port: 443
-  username: 'null'
-  password: 'null'
+  username: null
+  password: null
   tls: true
   sni: fan.571589.xyz
   skip-cert-verify: true
-- name: '[freeSub] D🔴🇯🇵hos[🤖💬🔮🧩]_dokng.com_9d3ee5ab | 2569ms'
-  port: 443
-  server: fan.571589.xyz
-  tls: true
-  type: http
-- type: vmess
-  name: '[free18] 🇯🇵_日本 (20) | 3843ms'
-  server: 168.138.43.75
-  port: 80
-  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  servername: 168.138.43.75
-  sni: 168.138.43.75
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /cctv13.m3u8
-    headers:
-      Host: 168.138.43.75
-- name: '[ermaozi] 🇯🇵218802 | ⚡️Telegram = t.me/L... | 4943ms'
-  password: oracle_hy2_pass_2026
-  port: 8443
-  server: 129.225.181.46
-  skip-cert-verify: true
-  sni: bing.com
-  tls: false
-  type: hysteria2
-- client-fingerprint: chrome
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... | 5268ms'
-  network: ws
-  port: 443
-  server: 104.16.10.9
-  servername: jp3.yohototo.top
-  tls: true
-  type: vless
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  ws-opts:
-    headers:
-      Host: jp3.yohototo.top
-    path: /tyxyws
-- type: vmess
-  name: '[free18] 🇯🇵_日本 (2) | 5487ms'
-  server: 64.176.34.102
-  port: 46130
-  uuid: 477350b2-7536-4f38-ee21-020efdde2d1d
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-- name: '[freeSub] D🔴🇯🇵hos[🤖💬🔮🧩]_dokng.com_0f4839b8 | 5851ms'
-  password: ''
-  port: 443
-  server: fan.571589.xyz
-  skip-cert-verify: true
-  sni: fan.571589.xyz
-  tls: true
-  type: http
-  udp: true
-  username: ''
-  x-toolall-mihomo: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -175,12 +111,6 @@ proxy-groups:
   - '[Eternity] 🇯🇵JP-168.138.205.100-0197 | 1.145MB | 1524ms'
   - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 1583ms'
   - '[zhuhaiuk] JP - zhuhai.uk | 1810ms'
-  - '[freeSub] D🔴🇯🇵hos[🤖💬🔮🧩]_dokng.com_9d3ee5ab | 2569ms'
-  - '[free18] 🇯🇵_日本 (20) | 3843ms'
-  - '[ermaozi] 🇯🇵218802 | ⚡️Telegram = t.me/L... | 4943ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... | 5268ms'
-  - '[free18] 🇯🇵_日本 (2) | 5487ms'
-  - '[freeSub] D🔴🇯🇵hos[🤖💬🔮🧩]_dokng.com_0f4839b8 | 5851ms'
 - name: PROXY
   type: select
   proxies:
@@ -196,12 +126,6 @@ proxy-groups:
   - '[Eternity] 🇯🇵JP-168.138.205.100-0197 | 1.145MB | 1524ms'
   - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1544... | 1583ms'
   - '[zhuhaiuk] JP - zhuhai.uk | 1810ms'
-  - '[freeSub] D🔴🇯🇵hos[🤖💬🔮🧩]_dokng.com_9d3ee5ab | 2569ms'
-  - '[free18] 🇯🇵_日本 (20) | 3843ms'
-  - '[ermaozi] 🇯🇵218802 | ⚡️Telegram = t.me/L... | 4943ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] vless-JP-1... | 5268ms'
-  - '[free18] 🇯🇵_日本 (2) | 5487ms'
-  - '[freeSub] D🔴🇯🇵hos[🤖💬🔮🧩]_dokng.com_0f4839b8 | 5851ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
