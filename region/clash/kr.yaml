@@ -42,46 +42,12 @@ proxies:
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   sni: connectgraduateswithjobopeningsandgrowprofessionally.com
   skip-cert-verify: false
-- name: '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 803ms'
-  type: trojan
-  server: 158.247.253.243
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: connectgraduateswithjobopeningsandgrowprofessionally.com
-  tls: true
-  skip-cert-verify: true
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 818ms'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 158.247.253.243
-  skip-cert-verify: true
-  sni: connectgraduateswithjobopeningsandgrowprofessionally.com
-  type: trojan
-- type: trojan
-  name: '[free18] 🇰🇷_韩国 (3) | 824ms'
-  server: 158.247.253.243
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  udp: true
-  tls: true
-  servername: connectgraduateswithjobopeningsandgrowprofessionally.com
-  sni: connectgraduateswithjobopeningsandgrowprofessionally.com
-  skip-cert-verify: false
 - name: '[Eternity] 🇰🇷KR-218.237.185.234-0180 | 10.98MB | 890ms'
   server: p141.panda001.net
   port: 4652
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 950ms'
-  network: ws
-  port: 25555
-  server: 152.69.226.63
-  tls: false
-  type: vless
-  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
-  ws-opts:
-    path: /
 - name: '[zhuhaiuk] KR - zhuhai.uk 02 | 1574ms'
   type: socks5
   server: 121.169.46.116
@@ -97,11 +63,7 @@ proxy-groups:
   - '[free18] 🇰🇷_韩国 (2) | 672ms'
   - '[Eternity] 🇰🇷KR-211.178.105.134-0185 | 10.206MB | 745ms'
   - '[Eternity] 🇰🇷KR-158.247.253.243-0116 | 38.48MB | 800ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 803ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 818ms'
-  - '[free18] 🇰🇷_韩国 (3) | 824ms'
   - '[Eternity] 🇰🇷KR-218.237.185.234-0180 | 10.98MB | 890ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 950ms'
   - '[zhuhaiuk] KR - zhuhai.uk 02 | 1574ms'
 - name: PROXY
   type: select
@@ -111,11 +73,7 @@ proxy-groups:
   - '[free18] 🇰🇷_韩国 (2) | 672ms'
   - '[Eternity] 🇰🇷KR-211.178.105.134-0185 | 10.206MB | 745ms'
   - '[Eternity] 🇰🇷KR-158.247.253.243-0116 | 38.48MB | 800ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] trojan-KR | 803ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 818ms'
-  - '[free18] 🇰🇷_韩国 (3) | 824ms'
   - '[Eternity] 🇰🇷KR-218.237.185.234-0180 | 10.98MB | 890ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 950ms'
   - '[zhuhaiuk] KR - zhuhai.uk 02 | 1574ms'
 rules:
 - GEOIP,CN,DIRECT
