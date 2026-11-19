@@ -58,7 +58,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add clash/all.yaml v2ray/all.txt region/clash region/*.txt shadowrocket/sub.txt surge/surge.conf surge/proxies.list quantumultx/qx.txt loon/loon.list singbox/singbox.json stash/stash.yaml clashmi/clashmi.yaml clash/cfw.yaml clash/cfw-nodes.yaml report.json README.md
+          git add clash/all.yaml clash/cn.yaml v2ray/all.txt v2ray/cn.txt region/clash region/*.txt shadowrocket/sub.txt surge/surge.conf surge/proxies.list quantumultx/qx.txt loon/loon.list singbox/singbox.json stash/stash.yaml clashmi/clashmi.yaml clash/cfw.yaml clash/cfw-nodes.yaml report.json README.md
           if git diff --cached --quiet; then
             echo "No changes; keeping current publication."
             exit 0
