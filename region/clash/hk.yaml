@@ -5,7 +5,7 @@ log-level: info
 ipv6: false
 proxies:
 - type: vmess
-  name: '[free18] 🇭🇰_香港 (4) | 176ms'
+  name: '[free18] 🇭🇰_香港 (4) | 150ms'
   server: 206.237.11.17
   port: 50376
   uuid: 9091fd64-7e8e-4b7a-8ae7-84474f234926
@@ -14,31 +14,7 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: false
-- name: '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 726ms'
-  type: trojan
-  server: 47.242.93.89
-  port: 12012
-  password: '12012'
-  sni: ali-hk.b-gfw.cfd
-  tls: true
-  skip-cert-verify: true
-- name: '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 730ms'
-  obfs: salamander
-  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
-  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
-  port: 5010
-  server: 152.32.254.68
-  skip-cert-verify: false
-  sni: nas.aizhzo.com
-  tls: false
-  type: hysteria2
-- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 1080ms'
-  type: http
-  server: 38.76.140.254
-  port: 8443
-  tls: true
-  skip-cert-verify: true
-- name: '[ermaozi] 🇭🇰 香港 | HKG 2 | 1414ms'
+- name: '[ermaozi] 🇭🇰 香港 | HKG 2 | 741ms'
   server: 8.217.1.203
   port: 8443
   type: vless
@@ -52,10 +28,58 @@ proxies:
   client-fingerprint: chrome
   network: tcp
   udp: true
-- type: trojan
-  name: '[free18] 🇭🇰_香港 (2) (2) | 3035ms'
-  server: sclass-00.catcat321.com
+- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 957ms'
+  type: http
+  server: 38.76.140.254
+  port: 8443
+  tls: true
+  skip-cert-verify: true
+- name: '[roosterkid] 🏳[openproxylist.com] vmess- (2) | 1361ms'
+  type: vmess
+  server: 47.244.120.197
+  port: 36703
+  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /arki
+    headers: {}
+- type: vmess
+  name: '[free18] 电报群：t.me/vvkj11 | 1814ms'
+  server: 47.244.120.197
+  port: 44867
+  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /arki
+- name: '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 2566ms'
+  obfs: salamander
+  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
+  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
+  port: 5010
+  server: 152.32.254.68
+  skip-cert-verify: false
+  sni: nas.aizhzo.com
+  tls: false
+  type: hysteria2
+- name: '[ermaozi] 🇳🇬 尼日利亚 | NGA #1 | 2706ms'
+  password: d9064589-74af-432a-9390-5d8a9da281bf
   port: 20103
+  server: sclass-00.catcat321.com
+  skip-cert-verify: true
+  sni: hk.catxstar.com
+  type: trojan
+  udp: true
+- type: trojan
+  name: '[free18] 🇭🇰_香港 (7) | 3679ms'
+  server: sclass-00.catcat321.com
+  port: 20123
   password: d9064589-74af-432a-9390-5d8a9da281bf
   udp: true
   tls: true
@@ -69,22 +93,26 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[free18] 🇭🇰_香港 (4) | 176ms'
-  - '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 726ms'
-  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 730ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1080ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 1414ms'
-  - '[free18] 🇭🇰_香港 (2) (2) | 3035ms'
+  - '[free18] 🇭🇰_香港 (4) | 150ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 741ms'
+  - '[zhuhaiuk] HK - zhuhai.uk 02 | 957ms'
+  - '[roosterkid] 🏳[openproxylist.com] vmess- (2) | 1361ms'
+  - '[free18] 电报群：t.me/vvkj11 | 1814ms'
+  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 2566ms'
+  - '[ermaozi] 🇳🇬 尼日利亚 | NGA #1 | 2706ms'
+  - '[free18] 🇭🇰_香港 (7) | 3679ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[free18] 🇭🇰_香港 (4) | 176ms'
-  - '[roosterkid] 🇭🇰[openproxylist.com] trojan-HK | 726ms'
-  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 730ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1080ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 1414ms'
-  - '[free18] 🇭🇰_香港 (2) (2) | 3035ms'
+  - '[free18] 🇭🇰_香港 (4) | 150ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 741ms'
+  - '[zhuhaiuk] HK - zhuhai.uk 02 | 957ms'
+  - '[roosterkid] 🏳[openproxylist.com] vmess- (2) | 1361ms'
+  - '[free18] 电报群：t.me/vvkj11 | 1814ms'
+  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 2566ms'
+  - '[ermaozi] 🇳🇬 尼日利亚 | NGA #1 | 2706ms'
+  - '[free18] 🇭🇰_香港 (7) | 3679ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY

@@ -4,7 +4,7 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[zhuhaiuk] TW - zhuhai.uk | 878ms'
+- name: '[zhuhaiuk] TW - zhuhai.uk | 1244ms'
   type: http
   server: 114.33.6.158
   port: 443
@@ -12,7 +12,22 @@ proxies:
   sni: 114.33.6.158
   skip-cert-verify: true
 - type: vless
-  name: '[free18] 🇹🇼_台湾 (4) | 1558ms'
+  name: '[free18] 🇹🇼_台湾 (2) (2) | 2196ms'
+  server: free.fugui.lol
+  port: 51283
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: swdist.apple.com
+  sni: swdist.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
+    short-id: fa514b83
+- type: vless
+  name: '[free18] 🇹🇼_台湾 (4) | 3876ms'
   server: free.fugui.lol
   port: 19482
   uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
@@ -26,20 +41,6 @@ proxies:
   reality-opts:
     public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
     short-id: fa514b83
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_f56c2037 | 2756ms'
-  network: tcp
-  port: 51283
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-  server: free.fugui.lol
-  servername: swdist.apple.com
-  tls: true
-  type: vless
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  x-toolall-mihomo: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -47,16 +48,16 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[zhuhaiuk] TW - zhuhai.uk | 878ms'
-  - '[free18] 🇹🇼_台湾 (4) | 1558ms'
-  - '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_f56c2037 | 2756ms'
+  - '[zhuhaiuk] TW - zhuhai.uk | 1244ms'
+  - '[free18] 🇹🇼_台湾 (2) (2) | 2196ms'
+  - '[free18] 🇹🇼_台湾 (4) | 3876ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[zhuhaiuk] TW - zhuhai.uk | 878ms'
-  - '[free18] 🇹🇼_台湾 (4) | 1558ms'
-  - '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_f56c2037 | 2756ms'
+  - '[zhuhaiuk] TW - zhuhai.uk | 1244ms'
+  - '[free18] 🇹🇼_台湾 (2) (2) | 2196ms'
+  - '[free18] 🇹🇼_台湾 (4) | 3876ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
