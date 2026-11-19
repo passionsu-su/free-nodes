@@ -4,50 +4,17 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- type: trojan
-  name: '[free18] 🇹🇼_台湾 | 1059ms'
-  server: 34.80.15.95
+- name: '[zhuhaiuk] TW - zhuhai.uk | 866ms'
+  type: http
+  server: 114.33.6.158
   port: 443
-  password: '123456'
-  udp: true
   tls: true
-  servername: tw.ctt25.uk
-  sni: tw.ctt25.uk
-  skip-cert-verify: false
+  sni: 114.33.6.158
+  skip-cert-verify: true
 - type: vless
-  name: '[free18] 🇹🇼_台湾 (2) | 1370ms'
+  name: '[free18] 🇹🇼_台湾 (4) | 3693ms'
   server: free.fugui.lol
-  port: 47396
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-- type: vless
-  name: '[free18] 🇹🇼_台湾 (2) (2) | 1557ms'
-  server: free.fugui.lol
-  port: 51283
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-- type: vless
-  name: '[free18] 🇹🇼_台湾 (5) | 2115ms'
-  server: free.fugui.lol
-  port: 62015
+  port: 19482
   uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
   flow: xtls-rprx-vision
   udp: true
@@ -66,18 +33,14 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[free18] 🇹🇼_台湾 | 1059ms'
-  - '[free18] 🇹🇼_台湾 (2) | 1370ms'
-  - '[free18] 🇹🇼_台湾 (2) (2) | 1557ms'
-  - '[free18] 🇹🇼_台湾 (5) | 2115ms'
+  - '[zhuhaiuk] TW - zhuhai.uk | 866ms'
+  - '[free18] 🇹🇼_台湾 (4) | 3693ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[free18] 🇹🇼_台湾 | 1059ms'
-  - '[free18] 🇹🇼_台湾 (2) | 1370ms'
-  - '[free18] 🇹🇼_台湾 (2) (2) | 1557ms'
-  - '[free18] 🇹🇼_台湾 (5) | 2115ms'
+  - '[zhuhaiuk] TW - zhuhai.uk | 866ms'
+  - '[free18] 🇹🇼_台湾 (4) | 3693ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY

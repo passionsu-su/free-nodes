@@ -4,41 +4,54 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- type: vmess
-  name: '[free18] 🇭🇰_香港 (4) | 186ms'
-  server: 206.237.11.17
-  port: 50376
-  uuid: 9091fd64-7e8e-4b7a-8ae7-84474f234926
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-- name: '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 830ms'
-  password: '12012'
-  port: 12012
-  server: 47.242.93.89
-  skip-cert-verify: true
-  sni: ali-hk.b-gfw.cfd
-  type: trojan
-- name: '[zhuhaiuk] HK - zhuhai.uk | 1030ms'
-  type: socks5
-  server: 123.58.219.171
-  port: 10808
 - cipher: aes-256-gcm
-  name: '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 2965ms'
+  name: '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 446ms'
   password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
   port: 8388
   server: 209.248.57.105
   type: ss
-- name: '[Pawdroid] 香港+Amazon数据中心 | 3731ms'
-  type: trojan
-  server: sclass-00.catcat321.com
-  port: 20123
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  sni: hk.catxstar.com
+- name: '[zhuhaiuk] HK - zhuhai.uk | 1012ms'
+  type: http
+  server: fan.240104.xyz
+  port: 443
+  tls: true
+  sni: fan.240104.xyz
+  skip-cert-verify: true
+- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 1081ms'
+  type: http
+  server: 38.76.140.254
+  port: 8443
   tls: true
   skip-cert-verify: true
+- name: '[ermaozi] 🇭🇰 香港 | HKG 2 | 1733ms'
+  server: 8.217.1.203
+  port: 8443
+  type: vless
+  uuid: 8b17beac-b143-447d-aa68-14cbb121a602
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 74P0QFvaK6B13rHsxR_t0lqRlg4YLuORD4VaHr5Jd38
+    short-id: 0bf55f64
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 3779ms'
+  network: ws
+  port: 36703
+  server: 47.244.120.197
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
+  ws-opts:
+    path: /arki
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -46,20 +59,20 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[free18] 🇭🇰_香港 (4) | 186ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 830ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1030ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 2965ms'
-  - '[Pawdroid] 香港+Amazon数据中心 | 3731ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 446ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1012ms'
+  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1081ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 1733ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 3779ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[free18] 🇭🇰_香港 (4) | 186ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 830ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1030ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 2965ms'
-  - '[Pawdroid] 香港+Amazon数据中心 | 3731ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 446ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1012ms'
+  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1081ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 1733ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 3779ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
