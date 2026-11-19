@@ -30,20 +30,6 @@ proxies:
     public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
     short-id: fa514b83
 - type: vless
-  name: '[ermaozi] 🇹🇼_TW_台湾_IPV4 | 1521ms'
-  server: free.fugui.lol
-  port: 47396
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-- type: vless
   name: '[free18] 🇹🇼_台湾 (2) (2) | 1557ms'
   server: free.fugui.lol
   port: 51283
@@ -55,21 +41,6 @@ proxies:
   sni: swdist.apple.com
   skip-cert-verify: false
   client-fingerprint: chrome
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-- type: vless
-  name: '[free18] 🇹🇼_台湾 (3) | 2022ms'
-  server: free.fugui.lol
-  port: 51283
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: ios
   reality-opts:
     public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
     short-id: fa514b83
@@ -97,9 +68,7 @@ proxy-groups:
   proxies:
   - '[free18] 🇹🇼_台湾 | 1059ms'
   - '[free18] 🇹🇼_台湾 (2) | 1370ms'
-  - '[ermaozi] 🇹🇼_TW_台湾_IPV4 | 1521ms'
   - '[free18] 🇹🇼_台湾 (2) (2) | 1557ms'
-  - '[free18] 🇹🇼_台湾 (3) | 2022ms'
   - '[free18] 🇹🇼_台湾 (5) | 2115ms'
 - name: PROXY
   type: select
@@ -107,9 +76,7 @@ proxy-groups:
   - AUTO
   - '[free18] 🇹🇼_台湾 | 1059ms'
   - '[free18] 🇹🇼_台湾 (2) | 1370ms'
-  - '[ermaozi] 🇹🇼_TW_台湾_IPV4 | 1521ms'
   - '[free18] 🇹🇼_台湾 (2) (2) | 1557ms'
-  - '[free18] 🇹🇼_台湾 (3) | 2022ms'
   - '[free18] 🇹🇼_台湾 (5) | 2115ms'
 rules:
 - GEOIP,CN,DIRECT
