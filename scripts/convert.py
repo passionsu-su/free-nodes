@@ -96,6 +96,9 @@ sb = {'log': {'level': 'warn'},
                    [{'type': 'direct', 'tag': 'direct'}],
       'route': {'rules': [{'action': 'sniff'}, {'protocol': 'dns', 'action': 'hijack-dns'}, {'ip_is_private': True, 'outbound': 'direct'}],
                 'final': 'PROXY', 'auto_detect_interface': True, 'default_domain_resolver': 'local'}}
+# NOTE (2026-11-19 fix): the sing-box dict was built but never written to disk,
+# so singbox/singbox.json went stale while the log still claimed PASS.
+json.dump(sb, open(f'{OUT}/singbox/singbox.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 shutil.copyfile(f'{OUT}/v2ray/all.txt', f'{OUT}/shadowrocket/sub.txt')
 for d in ('stash/stash.yaml', 'clashmi/clashmi.yaml'): shutil.copyfile(f'{OUT}/clash/all.yaml', f'{OUT}/{d}')
 
@@ -130,3 +133,33 @@ print(f'PASS clash/cfw.yaml: {len(cps)} nodes (Premium-compatible only)')
 for f, n in (('surge/surge.conf', len(surge)), ('quantumultx/qx.txt', len(qx)), ('loon/loon.list', len(loon)), ('singbox/singbox.json', len(ob))):
     if n == 0: raise SystemExit(f'{f}: no convertible nodes')
     print(f'PASS {f}: {n} nodes')
+
+# ---- README client counts (the tables otherwise go stale) ----
+import base64 as _b64
+def _b64_count(path):
+    try:
+        return len([l for l in _b64.b64decode(open(path, encoding='utf-8').read()).decode(errors='replace').splitlines() if '://' in l])
+    except Exception:
+        return None
+_counts = {
+    'shadowrocket/sub.txt': _b64_count(f'{OUT}/shadowrocket/sub.txt'),
+    'surge/surge.conf': len(surge),
+    'surge/proxies.list': len(surge),
+    'quantumultx/qx.txt': len(qx),
+    'stash/stash.yaml': len(P),
+    'clashmi/clashmi.yaml': len(P),
+    'loon/loon.list': len(loon),
+    'singbox/singbox.json': len(ob),
+    'v2ray/all.txt': _b64_count(f'{OUT}/v2ray/all.txt'),
+    'clash/all.yaml': len(P),
+}
+_text = open(f'{OUT}/README.md', encoding='utf-8').read()
+_lines = _text.split('\n')
+for frag, n in _counts.items():
+    if n is None: continue
+    for i, line in enumerate(_lines):
+        if frag in line and re.search(r'\| \d+ \|', line):
+            _lines[i] = re.sub(r'\| \d+ \|', f'| {n} |', line, count=1)
+            break
+open(f'{OUT}/README.md', 'w', encoding='utf-8').write('\n'.join(_lines))
+print('README client counts refreshed')
