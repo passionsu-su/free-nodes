@@ -10,6 +10,13 @@ proxies:
   port: 8388
   server: 209.248.57.105
   type: ss
+- name: '[ermaozi] 🏳[www.v2nodes.com] trojan- #7 | 723ms'
+  password: '12012'
+  port: 12012
+  server: 47.242.93.89
+  skip-cert-verify: true
+  sni: ali-hk.b-gfw.cfd
+  type: trojan
 - name: '[zhuhaiuk] HK - zhuhai.uk | 1012ms'
   type: http
   server: fan.240104.xyz
@@ -23,6 +30,16 @@ proxies:
   port: 8443
   tls: true
   skip-cert-verify: true
+- name: '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 1103ms'
+  obfs: salamander
+  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
+  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
+  port: 5010
+  server: 152.32.254.68
+  skip-cert-verify: false
+  sni: nas.aizhzo.com
+  tls: false
+  type: hysteria2
 - name: '[ermaozi] 🇭🇰 香港 | HKG 2 | 1733ms'
   server: 8.217.1.203
   port: 8443
@@ -60,8 +77,10 @@ proxy-groups:
   tolerance: 100
   proxies:
   - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 446ms'
+  - '[ermaozi] 🏳[www.v2nodes.com] trojan- #7 | 723ms'
   - '[zhuhaiuk] HK - zhuhai.uk | 1012ms'
   - '[zhuhaiuk] HK - zhuhai.uk 02 | 1081ms'
+  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 1103ms'
   - '[ermaozi] 🇭🇰 香港 | HKG 2 | 1733ms'
   - '[ermaozi] 🇭🇰 香港 | HKG #1 | 3779ms'
 - name: PROXY
@@ -69,8 +88,10 @@ proxy-groups:
   proxies:
   - AUTO
   - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 446ms'
+  - '[ermaozi] 🏳[www.v2nodes.com] trojan- #7 | 723ms'
   - '[zhuhaiuk] HK - zhuhai.uk | 1012ms'
   - '[zhuhaiuk] HK - zhuhai.uk 02 | 1081ms'
+  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 1103ms'
   - '[ermaozi] 🇭🇰 香港 | HKG 2 | 1733ms'
   - '[ermaozi] 🇭🇰 香港 | HKG #1 | 3779ms'
 rules:

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Collect public proxy subscriptions, validate them with mihomo, and publish stable feeds."""
-import base64, concurrent.futures, ipaddress, json, os, re, subprocess, time, urllib.parse, urllib.request
+import base64, concurrent.futures, ipaddress, json, os, re, socket, subprocess, time, urllib.parse, urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 import yaml
@@ -19,7 +19,32 @@ SOURCES=[
  ("Pawdroid","https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub","share"),
  ("roosterkid","https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt","share"),
 ]
-REGIONS={"hk":["香港","hong kong","🇭🇰","HK"],"tw":["台湾","taiwan","🇹🇼","TW"],"jp":["日本","japan","🇯🇵","JP"],"sg":["新加坡","singapore","🇸🇬","SG"],"kr":["韩国","south korea","🇰🇷","KR"],"us":["美国","united states","🇺🇸","USA","US-"],"eu":["英国","德国","法国","荷兰","欧洲","🇬🇧","🇩🇪","🇫🇷","🇳🇱","🇪🇺","UK","GB-","DE-","FR-","NL-"]}
+# Name-keyword terms (substring match): full country names in Chinese and
+# English plus flags. Short ISO codes are NOT here: they are matched on
+# token boundaries in REGION_CODES below, so "zhuhai.uk" is not UK,
+# "Kronecker" is not KR and "trojan" is not TR.
+REGIONS={"hk":["香港","hong kong","🇭🇰"],"tw":["台湾","taiwan","🇹🇼"],"jp":["日本","japan","🇯🇵"],"sg":["新加坡","singapore","🇸🇬"],"kr":["韩国","south korea","🇰🇷"],"us":["美国","united states","🇺🇸"],"eu":["英国","德国","法国","荷兰","欧洲","europe","🇬🇧","🇩🇪","🇫🇷","🇳🇱","🇪🇺","意大利","italy","🇮🇹","西班牙","spain","🇪🇸","瑞典","sweden","🇸🇪","芬兰","finland","🇫🇮","瑞士","switzerland","🇨🇭","奥地利","austria","🇦🇹","比利时","belgium","🇧🇪","希腊","greece","🇬🇷","挪威","norway","🇳🇴","波兰","poland","🇵🇱","捷克","czechia","czech","🇨🇿","爱沙尼亚","estonia","🇪🇪","拉脱维亚","latvia","🇱🇻","立陶宛","lithuania","🇱🇹","爱尔兰","ireland","🇮🇪","葡萄牙","portugal","🇵🇹","丹麦","denmark","🇩🇰","匈牙利","hungary","🇭🇺","罗马尼亚","romania","🇷🇴","乌克兰","ukraine","🇺🇦","白俄罗斯","belarus","🇧🇾","阿尔巴尼亚","albania","🇦🇱","克罗地亚","croatia","🇭🇷","斯洛文尼亚","slovenia","🇸🇮","斯洛伐克","slovakia","🇸🇰","冰岛","iceland","🇮🇸","卢森堡","luxembourg","🇱🇺","马耳他","malta","🇲🇹","摩尔多瓦","moldova","🇲🇩","俄罗斯","russia","🇷🇺","土耳其","turkey","🇹🇷","netherlands","holland"]}
+# ISO 3166-1 codes (alpha-2 and alpha-3) matched on token boundaries: a
+# code must not touch a letter or a dot on either side. Digits and
+# separators (- _ space brackets emoji CJK) may sit next to it, so
+# "US_9", "NL_speednode", "DE-1", "USA 5", "NLD 4" all match, while
+# "zhuhai.uk", "Kronecker", "music" and "USAGE" do not.
+REGION_CODES={"hk":("HK","HKG"),"tw":("TW","TWN"),"jp":("JP","JPN"),"sg":("SG","SGP"),"kr":("KR","KOR"),"us":("US","USA"),"eu":("GB","UK","DE","FR","NL","IT","ES","SE","FI","CH","AT","BE","GR","NO","PL","CZ","EE","LV","LT","IE","PT","DK","HU","RO","UA","BY","AL","HR","SI","SK","IS","LU","MT","MD","RU","TR","EU","GBR","DEU","FRA","NLD","ITA","ESP","SWE","FIN","CHE","AUT","BEL","GRC","NOR","POL","CZE","EST","LVA","LTU","IRL","PRT","DNK","HUN","ROU","UKR","BLR","ALB","HRV","SVN","SVK","ISL","LUX","MLT","MDA","RUS","TUR")}
+_CODE_RES={c:re.compile(r"(?<![A-Za-z.])"+c.lower()+r"(?![A-Za-z.])") for codes in REGION_CODES.values() for c in codes}
+# European country codes (ISO alpha-2). RU/TR count as Europe here, matching
+# the 2026-11-19 GeoIP verification's convention.
+EU_COUNTRY_CODES=frozenset("GB DE FR NL IT ES SE FI CH AT BE GR NO PL CZ EE LV LT IE PT DK HU RO UA BY AL HR SI SK IS LU MT MD RU TR".split())
+# Cloudflare anycast ranges: ip-api returns the registration country
+# (Canada) for these, not where the node serves from; prefer the name.
+ANYCAST_NETS=(ipaddress.ip_network("104.16.0.0/13"),ipaddress.ip_network("172.64.0.0/13"))
+# Networks is_global() misses on some Python versions (multicast is
+# "global" on 3.12; 198.18.0.0/15 is rejected by is_global on 3.12 but
+# the explicit entry guards other versions).
+NON_GLOBAL_NETS=(ipaddress.ip_network("198.18.0.0/15"),)
+# GeoIP batch lookup (ip-api.com free tier: 45 req/min, no key needed).
+GEOIP_BATCH_URL="http://ip-api.com/batch"
+GEOIP_BATCH_SIZE=100
+GEOIP_BATCH_SLEEP_S=2
 # A tested node slower than this is unusable in practice; drop it instead of
 # publishing a 5-6s entry at the bottom of the list.
 MAX_DELAY_MS = 4000
@@ -102,10 +127,14 @@ def valid(p):
         if sid and not (len(sid)<=16 and len(sid)%2==0 and re.fullmatch(r"[0-9a-fA-F]+",sid)): return False
     # Reject non-routable targets. Upstream lists now inject loopback fakes
     # (e.g. server 127.0.0.53, name "防范境外势力渗透"); a public proxy
-    # server must have a globally routable IP.
+    # server must have a globally routable IP. Note is_global() is True
+    # for multicast on Python 3.12, and 198.18.0.0/15 (benchmarking) is
+    # only rejected by it on some versions, so both are blocked explicitly.
     try:
         ip=ipaddress.ip_address(str(p["server"]).strip("[]"))
+        if ip.is_multicast: return False
         if not ip.is_global: return False
+        if ip.version==4 and any(ip in n for n in NON_GLOBAL_NETS): return False
     except ValueError:
         host=str(p["server"]).lower()
         if host in ("localhost",) or host.endswith((".local",".internal",".lan",".home",".invalid")): return False
@@ -187,11 +216,92 @@ def _delay_test(nodes, url, timeout_ms):
         try: proc.wait(timeout=8)
         except subprocess.TimeoutExpired: proc.kill()
         log_file.close()
-def region_of(p):
+def region_for_country(cc):
+    cc=(cc or "").upper()
+    if cc in ("HK","TW","JP","SG","KR","US"): return cc.lower()
+    if cc in EU_COUNTRY_CODES: return "eu"
+    return "other"
+def region_of_name(p):
+    """Name-keyword classifier (fallback only). ISO codes match on token
+    boundaries; full names and flags match as substrings."""
     s=str(p.get("name","")).lower()
+    for code,codes in REGION_CODES.items():
+        if any(_CODE_RES[c].search(s) for c in codes): return code
     for code,terms in REGIONS.items():
         if any(t.lower() in s for t in terms): return code
     return "other"
+def _in_nets(ip_str,nets):
+    try:
+        ip=ipaddress.ip_address(ip_str)
+        return any(ip.version==n.version and ip in n for n in nets)
+    except ValueError:
+        return False
+def _resolve_one(server):
+    try: return str(ipaddress.ip_address(str(server).strip("[]")))
+    except ValueError: pass
+    try:
+        infos=socket.getaddrinfo(str(server),None,proto=socket.IPPROTO_TCP)
+        if infos: return infos[0][4][0]
+    except Exception: return None
+    return None
+def resolve_servers(servers):
+    """Resolve server strings to IPs (literal IPs pass through). Bounded:
+    the whole batch gets 90s; anything still unresolved becomes None."""
+    out={}
+    if not servers: return out
+    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as pool:
+        futs={pool.submit(_resolve_one,s):s for s in servers}
+        try: concurrent.futures.wait(futs,timeout=90)
+        except Exception: pass
+        for f,s in futs.items():
+            try: out[s]=f.result(timeout=0) if f.done() else None
+            except Exception: out[s]=None
+    return out
+def geoip_lookup(ips):
+    """Batch country lookup via ip-api.com (free tier, 45 req/min, no key).
+    Never raises: on any failure returns what was collected so far
+    (possibly {}) and the caller falls back to name classification."""
+    out={}
+    uniq=[]
+    for ip in ips:
+        if ip and ip not in uniq: uniq.append(ip)
+    for i in range(0,len(uniq),GEOIP_BATCH_SIZE):
+        batch=uniq[i:i+GEOIP_BATCH_SIZE]
+        try:
+            body=json.dumps([{"query":ip,"fields":"status,countryCode,query"} for ip in batch]).encode()
+            req=urllib.request.Request(GEOIP_BATCH_URL,data=body,headers={"Content-Type":"application/json","User-Agent":"free-nodes-geoip/1.0"})
+            with urllib.request.urlopen(req,timeout=15) as r: rows=json.loads(r.read())
+            for row in rows:
+                if isinstance(row,dict) and row.get("status")=="success" and row.get("countryCode") and row.get("query"):
+                    out[row["query"]]=row["countryCode"]
+        except Exception as e:
+            print(f"[geoip] batch {i//GEOIP_BATCH_SIZE+1} failed: {e}")
+            break
+        if i+GEOIP_BATCH_SIZE<len(uniq): time.sleep(GEOIP_BATCH_SLEEP_S)
+    return out
+def classify_geoip(nodes):
+    """GeoIP-first region map {server_ip: region} for the given nodes.
+    Returns (geoip_map, resolved_map, stats). Anycast IPs and
+    unresolvable/unlocatable servers are left out so region_of() falls
+    back to the name classifier for those nodes."""
+    servers={str(p["server"]) for p in nodes if p.get("server")}
+    resolved=resolve_servers(sorted(servers))
+    ips=sorted({ip for ip in resolved.values() if ip})
+    anycast={ip for ip in ips if _in_nets(ip,ANYCAST_NETS)}
+    to_query=[ip for ip in ips if ip not in anycast]
+    cc_by_ip=geoip_lookup(to_query)
+    geoip={ip: region_for_country(cc) for ip,cc in cc_by_ip.items()}
+    stats={"enabled":True,"servers":len(servers),"resolved":sum(1 for v in resolved.values() if v),"ips_queried":len(to_query),"located":len(cc_by_ip),"anycast_skipped":len(anycast),"unresolved_servers":sum(1 for v in resolved.values() if not v)}
+    return geoip,resolved,stats
+def region_of(p,geoip=None,resolved=None):
+    """Region for a node. GeoIP-first when a {ip: region} map is given
+    (resolved maps server->ip, computed once per run); otherwise the
+    name-keyword classifier. region_of(p) with no map is name-only."""
+    if geoip is not None:
+        srv=str(p.get("server") or "")
+        ip=(resolved.get(srv) if resolved is not None else _resolve_one(srv)) if srv else None
+        if ip and ip in geoip: return geoip[ip]
+    return region_of_name(p)
 def uri(p):
     t=p["type"]; host=p["server"]; port=p["port"]; name=urllib.parse.quote(p["name"],safe="")
     q=lambda x: urllib.parse.quote(str(x),safe="")
@@ -302,18 +412,44 @@ def main():
     for p,delay in passed:
         p=dict(p); p["name"]=p["name"]+" | "+str(delay)+"ms"; nodes.append(p)
     if not nodes: raise RuntimeError("mihomo connection test returned zero working nodes; keeping previous feeds")
+    # GeoIP-first region classification. Best-effort: any failure here
+    # (API down, DNS trouble) falls back to name keywords for every node
+    # and the run continues; region data must never block publishing.
+    geoip_map={}; resolved={}; geoip_stats={"enabled":False}
+    try:
+        geoip_map,resolved,geoip_stats=classify_geoip(nodes)
+    except Exception as e:
+        print(f"[geoip] disabled: {e}")
     write_yaml(ROOT/"clash/all.yaml",build_yaml(nodes))
     links=[uri(p) for p in nodes]; links=[x for x in links if x]
     (ROOT/"v2ray/all.txt").parent.mkdir(parents=True,exist_ok=True)
     (ROOT/"v2ray/all.txt").write_text(base64.b64encode("\n".join(links).encode()).decode(),encoding="utf-8")
     region_stats={}; txt_counts={}
     for code in ["hk","tw","jp","sg","kr","us","eu","other"]:
-        subset=[p for p in nodes if region_of(p)==code]
+        subset=[p for p in nodes if region_of(p,geoip_map,resolved)==code]
         region_stats[code]=len(subset)
         write_yaml(ROOT/f"region/clash/{code}.yaml",build_yaml(subset))
         lines=[uri(p) for p in subset]; lines=[x for x in lines if x]
         txt_counts[code]=len(lines)
         (ROOT/f"region/{code}.txt").write_text(base64.b64encode("\n".join(lines).encode()).decode(),encoding="utf-8")
+    # How much did GeoIP actually change? Compare each node's GeoIP region
+    # with what the name alone would have said; the differences are logged
+    # for the Actions log so mislabelled upstream names stay visible.
+    matched=mismatched=fallback=0; mismatch_lines=[]
+    for p in nodes:
+        name_r=region_of_name(p)
+        ip=resolved.get(str(p.get("server") or ""))
+        if ip and ip in geoip_map:
+            if geoip_map[ip]==name_r: matched+=1
+            else:
+                mismatched+=1
+                mismatch_lines.append(f"{ip} | {p['name']} | name={name_r} -> geo={geoip_map[ip]}")
+        else: fallback+=1
+    geoip_stats.update({"geoip_classified":matched+mismatched,"name_fallback":fallback,"matched":matched,"mismatched":mismatched,"mismatch_sample":mismatch_lines[:10]})
+    if mismatch_lines:
+        print(f"[geoip] {mismatched} nodes where GeoIP disagrees with the name (GeoIP wins):")
+        for line in mismatch_lines: print(f"[geoip]   {line}")
+    print(f"[geoip] classified {matched+mismatched} by GeoIP ({matched} agree with name), {fallback} by name fallback")
     # Second-round China test: re-measure survivors against a China-hosted
     # target and publish a combined low-latency-for-China feed, sorted by
     # that measurement. If the round fails, keep the previous cn feed.
@@ -330,7 +466,7 @@ def main():
         cn_stats={"alive":0,"v2ray":0,"median_ms":None,"test":CN_TEST_URL,"stale":True}
         print("[china-test] no China results; keeping previous cn feed if present")
     now=datetime.now(BJT).strftime("%Y-%m-%d %H:%M")
-    report={"time":now,"sources":stats,"candidates":len(merged),"tested":len(merged),"alive":len(nodes),"v2ray":len(links),"dropped_slow":dropped_slow,"dropped_dup":dropped_dup,"region":region_stats,"cn":cn_stats,"test":"mihomo API / gstatic generate_204"}
+    report={"time":now,"sources":stats,"candidates":len(merged),"tested":len(merged),"alive":len(nodes),"v2ray":len(links),"dropped_slow":dropped_slow,"dropped_dup":dropped_dup,"region":region_stats,"geoip":geoip_stats,"cn":cn_stats,"test":"mihomo API / gstatic generate_204"}
     (ROOT/"report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     refresh_readme(now, len(merged), len(nodes), len(links), region_stats, txt_counts, cn_stats)
     print(f"PASS: {len(nodes)}/{len(merged)} nodes passed mihomo real connection test")

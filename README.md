@@ -1,10 +1,10 @@
 # free-nodes
 
 <!-- AUTO-STATUS -->
-自动更新于 **2026-11-20 00:10（北京时间）**；候选 **922**，mihomo 真连接测试通过 **408**，v2ray 分享链接 **336**。国内优选（到中国目标复测） **362**，中位延迟 **1029ms**。每 8 小时运行一次；测试出口为 GitHub Actions 海外 Runner，国内连通性可能不同。
+自动更新于 **2026-11-20 00:17（北京时间）**；候选 **922**，mihomo 真连接测试通过 **408**，v2ray 分享链接 **336**。国内优选（到中国目标复测） **362**，中位延迟 **1029ms**。每 8 小时运行一次；测试出口为 GitHub Actions 海外 Runner，国内连通性可能不同。（本地按第二轮规则重分地区，未重新实测）
 <!-- /AUTO-STATUS -->
 
-每日自动整理的公开免费节点订阅，按客户端分类。更新时间：2026-11-20 00:10（北京时间）
+每日自动整理的公开免费节点订阅，按客户端分类。更新时间：2026-11-20 00:17（北京时间）
 
 ## 客户端下载（官方地址）
 GitHub Releases 在国内打不开时，可在链接前加 `https://ghfast.top/` 下载。iOS 应用需非中国大陆区 Apple ID。
@@ -72,14 +72,14 @@ raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
 <!-- REGION-TXT -->
 | 地区 | 链接 | 节点 |
 | --- | --- | --- |
-| 香港 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/hk.txt | 3 |
+| 香港 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/hk.txt | 5 |
 | 台湾 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/tw.txt | 1 |
 | 日本 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/jp.txt | 8 |
-| 新加坡 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/sg.txt | 16 |
+| 新加坡 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/sg.txt | 17 |
 | 韩国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/kr.txt | 5 |
-| 美国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/us.txt | 82 |
-| 欧洲 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/eu.txt | 110 |
-| 其他 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/other.txt | 111 |
+| 美国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/us.txt | 86 |
+| 欧洲 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/eu.txt | 180 |
+| 其他 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/other.txt | 34 |
 <!-- /REGION-TXT -->
 
 每次推送前，所有节点都用 FlClash/Clash Verge 同款 mihomo 内核做真连接测试（经节点访问 generate_204），不通的直接删掉，按真实延迟排序（含 Hysteria2/TUIC）。测试发起于海外服务器，国内线路被墙的节点仍可能超时，导入后再在 App 里测一次。
@@ -99,14 +99,14 @@ raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
 <!-- REGION-CLASH -->
 | 地区 | 链接 | 节点 |
 | --- | --- | --- |
-| 香港 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/hk.yaml | 5 |
+| 香港 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/hk.yaml | 7 |
 | 台湾 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/tw.yaml | 2 |
-| 日本 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/jp.yaml | 10 |
-| 新加坡 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/sg.yaml | 20 |
+| 日本 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/jp.yaml | 9 |
+| 新加坡 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/sg.yaml | 21 |
 | 韩国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/kr.yaml | 6 |
-| 美国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/us.yaml | 91 |
-| 欧洲 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/eu.yaml | 136 |
-| 其他 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/other.yaml | 138 |
+| 美国 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/us.yaml | 104 |
+| 欧洲 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/eu.yaml | 211 |
+| 其他 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/region/clash/other.yaml | 48 |
 <!-- /REGION-CLASH -->
 
 注意：上面 region/*.txt 是 base64 格式，只能用于小火箭 / v2rayNG；Clash 系 App 请用 region/clash/*.yaml。
