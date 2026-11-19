@@ -4,16 +4,8 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 187ms'
-  type: vmess
-  server: 206.237.11.17
-  port: 50376
-  uuid: 9091fd64-7e8e-4b7a-8ae7-84474f234926
-  alterId: 0
-  cipher: auto
-  network: tcp
 - type: vmess
-  name: '[free18] 🇭🇰_香港 (8) | 207ms'
+  name: '[free18] 🇭🇰_香港 (4) | 186ms'
   server: 206.237.11.17
   port: 50376
   uuid: 9091fd64-7e8e-4b7a-8ae7-84474f234926
@@ -22,61 +14,69 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: false
-- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 1080ms'
-  type: http
-  server: 38.76.140.254
-  port: 8443
+- name: '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 830ms'
+  password: '12012'
+  port: 12012
+  server: 47.242.93.89
+  skip-cert-verify: true
+  sni: ali-hk.b-gfw.cfd
+  type: trojan
+- name: '[zhuhaiuk] HK - zhuhai.uk | 1030ms'
+  type: socks5
+  server: 123.58.219.171
+  port: 10808
+- name: '[ermaozi] 🇭🇰 香港 | HKG | 2140ms'
+  server: free.fugui.lol
+  port: 47396
+  type: vless
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
+    short-id: fa514b83
+  servername: swdist.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- cipher: aes-256-gcm
+  name: '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 2965ms'
+  password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
+  port: 8388
+  server: 209.248.57.105
+  type: ss
+- name: '[Pawdroid] 香港+Amazon数据中心 | 3731ms'
+  type: trojan
+  server: sclass-00.catcat321.com
+  port: 20123
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  sni: hk.catxstar.com
   tls: true
   skip-cert-verify: true
-- name: '[zhuhaiuk] HK - zhuhai.uk | 1213ms'
-  type: http
-  server: 202.85.53.25
-  port: 443
+- type: trojan
+  name: '[free18] 🇭🇰_香港 (7) | 3828ms'
+  server: sclass-00.catcat321.com
+  port: 20123
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  udp: true
   tls: true
-  skip-cert-verify: true
-- type: vmess
-  name: '[free18] 🇭🇰_香港 (11) | 1661ms'
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: false
+- name: '[Eternity] 🇭🇰HK-156.245.232.239-0236 | 0.009MB | 4336ms'
   server: 156.245.232.239
   port: 35043
+  type: vmess
   uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-  cipher: auto
   alterId: 0
-  udp: true
+  cipher: auto
   tls: false
   skip-cert-verify: false
   network: ws
   ws-opts:
     path: /
 - type: trojan
-  name: '[free18] 🇭🇰_香港 (2) | 1918ms'
-  server: sclass-c1.catcat321.com
-  port: 20086
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  udp: true
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-- name: '[Eternity] 🇭🇰HK-95.40.108.216-0228 | 0.015MB | 2839ms'
-  server: sclass-00.catcat321.com
-  port: 20123
-  type: trojan
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  sni: hk.catxstar.com
-  skip-cert-verify: false
-- type: trojan
-  name: '[free18] 🇭🇰_香港 | 2989ms'
-  server: sclass-00.catcat321.com
-  port: 20123
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  udp: true
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: false
-- type: trojan
-  name: '[free18] 🇭🇰_香港 (3) | 3947ms'
+  name: '[free18] 🇭🇰_香港 (2) (2) | 4825ms'
   server: sclass-00.catcat321.com
   port: 20103
   password: d9064589-74af-432a-9390-5d8a9da281bf
@@ -92,28 +92,28 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 187ms'
-  - '[free18] 🇭🇰_香港 (8) | 207ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1080ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1213ms'
-  - '[free18] 🇭🇰_香港 (11) | 1661ms'
-  - '[free18] 🇭🇰_香港 (2) | 1918ms'
-  - '[Eternity] 🇭🇰HK-95.40.108.216-0228 | 0.015MB | 2839ms'
-  - '[free18] 🇭🇰_香港 | 2989ms'
-  - '[free18] 🇭🇰_香港 (3) | 3947ms'
+  - '[free18] 🇭🇰_香港 (4) | 186ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 830ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1030ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG | 2140ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 2965ms'
+  - '[Pawdroid] 香港+Amazon数据中心 | 3731ms'
+  - '[free18] 🇭🇰_香港 (7) | 3828ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0236 | 0.009MB | 4336ms'
+  - '[free18] 🇭🇰_香港 (2) (2) | 4825ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK | 187ms'
-  - '[free18] 🇭🇰_香港 (8) | 207ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1080ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1213ms'
-  - '[free18] 🇭🇰_香港 (11) | 1661ms'
-  - '[free18] 🇭🇰_香港 (2) | 1918ms'
-  - '[Eternity] 🇭🇰HK-95.40.108.216-0228 | 0.015MB | 2839ms'
-  - '[free18] 🇭🇰_香港 | 2989ms'
-  - '[free18] 🇭🇰_香港 (3) | 3947ms'
+  - '[free18] 🇭🇰_香港 (4) | 186ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 830ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1030ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG | 2140ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 2965ms'
+  - '[Pawdroid] 香港+Amazon数据中心 | 3731ms'
+  - '[free18] 🇭🇰_香港 (7) | 3828ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0236 | 0.009MB | 4336ms'
+  - '[free18] 🇭🇰_香港 (2) (2) | 4825ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
