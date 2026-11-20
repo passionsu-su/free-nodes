@@ -4,60 +4,38 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- type: vmess
-  name: '[free18] 🇭🇰_香港 (3) | 629ms'
-  server: zfd-hkv2.kunlun01dns.com
-  port: 16113
-  uuid: 0802ac03-7973-39ef-a019-ba02de6c01e1
-  cipher: auto
-  alterId: 0
+- type: ss
+  name: '[free18] 🇺🇸_美国 (95) | 331ms'
+  server: 209.248.57.105
+  port: 8388
+  password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
+  cipher: aes-256-gcm
   udp: true
   tls: false
   skip-cert-verify: false
-- type: vmess
-  name: '[free18] 🇭🇰_香港 | 762ms'
-  server: zfd-hkv2.kunlun01dns.com
-  port: 16116
-  uuid: 0802ac03-7973-39ef-a019-ba02de6c01e1
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-- name: '[NoMoreWalls] 🔵92@oneclickvpnkeys | 1015ms'
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  port: 443
-  server: vpn-hk-004.fastervpn.world
+- name: '[ermaozi] 🇭🇰 香港 | HKG #3 | 772ms'
+  password: '12012'
+  port: 12012
+  server: 47.242.93.89
   skip-cert-verify: true
-  sni: vpn-hk-004.fastervpn.world
-  tls: false
-  type: hysteria2
-- alpn:
-  - ''
-  alterId: 0
-  cipher: auto
-  name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 1224ms'
-  network: ws
-  port: 23026
-  server: 47.244.120.197
-  skip-cert-verify: true
-  tls: false
-  type: vmess
+  sni: ali-hk.b-gfw.cfd
+  type: trojan
   udp: true
-  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
-  ws-opts:
-    path: /arki
-- name: '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 1258ms'
-  obfs: salamander
-  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
-  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
-  port: 5010
-  server: 152.32.254.68
-  skip-cert-verify: false
-  sni: nas.aizhzo.com
-  tls: false
-  type: hysteria2
-- name: '[NoMoreWalls] 🔵93@oneclickvpnkeys | 1471ms'
+- name: '[ermaozi] 🇭🇰 香港 | HKG 2 | 820ms'
+  server: 8.217.1.203
+  port: 8443
+  type: vless
+  uuid: 8b17beac-b143-447d-aa68-14cbb121a602
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 74P0QFvaK6B13rHsxR_t0lqRlg4YLuORD4VaHr5Jd38
+    short-id: 0bf55f64
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: '[ermaozi] 🔵93@oneclickvpnkeys | 930ms'
   obfs: salamander
   obfs-password: c8827ab99e316c5bd414e21afa915ddf
   password: 8294f130408299df8cab08c80bf6f819
@@ -67,8 +45,26 @@ proxies:
   sni: www.bing.com
   tls: false
   type: hysteria2
+- name: '[ermaozi] 🔵92@oneclickvpnkeys | 1252ms'
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: vpn-hk-004.fastervpn.world
+  skip-cert-verify: true
+  sni: vpn-hk-004.fastervpn.world
+  tls: false
+  type: hysteria2
+- name: '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 1866ms'
+  obfs: salamander
+  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
+  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
+  port: 5010
+  server: 152.32.254.68
+  skip-cert-verify: false
+  sni: nas.aizhzo.com
+  tls: false
+  type: hysteria2
 - type: vmess
-  name: '[free18] 🇭🇰_香港 (2) | 2714ms'
+  name: '[free18] 🇭🇰_香港 (2) | 3359ms'
   server: 47.244.120.197
   port: 44867
   uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
@@ -84,18 +80,6 @@ proxies:
     path: /arki
     headers:
       Host: 47.244.120.197
-- name: '[Eternity] 🇭🇰HK-156.245.232.239-0239 | 0.007MB | 3724ms'
-  server: 156.245.232.239
-  port: 35043
-  type: vmess
-  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -103,26 +87,24 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[free18] 🇭🇰_香港 (3) | 629ms'
-  - '[free18] 🇭🇰_香港 | 762ms'
-  - '[NoMoreWalls] 🔵92@oneclickvpnkeys | 1015ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 1224ms'
-  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 1258ms'
-  - '[NoMoreWalls] 🔵93@oneclickvpnkeys | 1471ms'
-  - '[free18] 🇭🇰_香港 (2) | 2714ms'
-  - '[Eternity] 🇭🇰HK-156.245.232.239-0239 | 0.007MB | 3724ms'
+  - '[free18] 🇺🇸_美国 (95) | 331ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #3 | 772ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 820ms'
+  - '[ermaozi] 🔵93@oneclickvpnkeys | 930ms'
+  - '[ermaozi] 🔵92@oneclickvpnkeys | 1252ms'
+  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 1866ms'
+  - '[free18] 🇭🇰_香港 (2) | 3359ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[free18] 🇭🇰_香港 (3) | 629ms'
-  - '[free18] 🇭🇰_香港 | 762ms'
-  - '[NoMoreWalls] 🔵92@oneclickvpnkeys | 1015ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 1224ms'
-  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 1258ms'
-  - '[NoMoreWalls] 🔵93@oneclickvpnkeys | 1471ms'
-  - '[free18] 🇭🇰_香港 (2) | 2714ms'
-  - '[Eternity] 🇭🇰HK-156.245.232.239-0239 | 0.007MB | 3724ms'
+  - '[free18] 🇺🇸_美国 (95) | 331ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #3 | 772ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 2 | 820ms'
+  - '[ermaozi] 🔵93@oneclickvpnkeys | 930ms'
+  - '[ermaozi] 🔵92@oneclickvpnkeys | 1252ms'
+  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 1866ms'
+  - '[free18] 🇭🇰_香港 (2) | 3359ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
