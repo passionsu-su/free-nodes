@@ -4,15 +4,8 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[zhuhaiuk] TW - zhuhai.uk | 1244ms'
-  type: http
-  server: 114.33.6.158
-  port: 443
-  tls: true
-  sni: 114.33.6.158
-  skip-cert-verify: true
 - type: vless
-  name: '[free18] 🇹🇼_台湾 (2) (2) | 2196ms'
+  name: '[free18] 🇹🇼_台湾 (3) | 1267ms'
   server: free.fugui.lol
   port: 51283
   uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
@@ -27,9 +20,9 @@ proxies:
     public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
     short-id: fa514b83
 - type: vless
-  name: '[free18] 🇹🇼_台湾 (4) | 3876ms'
+  name: '[free18] 🇹🇼_台湾 | 3123ms'
   server: free.fugui.lol
-  port: 19482
+  port: 47396
   uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
   flow: xtls-rprx-vision
   udp: true
@@ -37,7 +30,7 @@ proxies:
   servername: swdist.apple.com
   sni: swdist.apple.com
   skip-cert-verify: false
-  client-fingerprint: ios
+  client-fingerprint: chrome
   reality-opts:
     public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
     short-id: fa514b83
@@ -48,16 +41,14 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[zhuhaiuk] TW - zhuhai.uk | 1244ms'
-  - '[free18] 🇹🇼_台湾 (2) (2) | 2196ms'
-  - '[free18] 🇹🇼_台湾 (4) | 3876ms'
+  - '[free18] 🇹🇼_台湾 (3) | 1267ms'
+  - '[free18] 🇹🇼_台湾 | 3123ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[zhuhaiuk] TW - zhuhai.uk | 1244ms'
-  - '[free18] 🇹🇼_台湾 (2) (2) | 2196ms'
-  - '[free18] 🇹🇼_台湾 (4) | 3876ms'
+  - '[free18] 🇹🇼_台湾 (3) | 1267ms'
+  - '[free18] 🇹🇼_台湾 | 3123ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
