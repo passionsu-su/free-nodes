@@ -1,6 +1,6 @@
 # ============================================================
-# Clash Meta / Mihomo 完整配置 v1.3
-# 更新日期：2026-10-28
+# Clash Meta / Mihomo 完整配置 v1.4
+# 更新日期：2026-11-21
 # 适用：FlClash / CMFA / Clash Verge Rev
 #
 # 功能：
@@ -44,8 +44,10 @@ proxy-providers:
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
-      interval: 600
-      lazy: true
+      interval: 300
+      lazy: false
+      timeout: 2000
+      expected-status: 204
     override:
       udp: true
 
@@ -73,22 +75,24 @@ proxy-groups:
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 120
-    max-failed-times: 3
-    tolerance: 80
-    lazy: true
-    timeout: 3000
+    interval: 300
+    max-failed-times: 2
+    tolerance: 50
+    lazy: false
+    timeout: 2000
+    expected-status: 204
     include-all-providers: true
     exclude-filter: *info
 
   - name: 🔯 故障转移
     type: fallback
     url: https://www.gstatic.com/generate_204
-    interval: 120
-    max-failed-times: 3
-    tolerance: 80
-    lazy: true
-    timeout: 3000
+    interval: 300
+    max-failed-times: 2
+    tolerance: 50
+    lazy: false
+    timeout: 2000
+    expected-status: 204
     proxies:
       - 🇺🇸 美国
       - 🇪🇺 欧洲
@@ -207,66 +211,72 @@ proxy-groups:
   - name: 🇭🇰 香港
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 120
-    max-failed-times: 3
-    tolerance: 80
-    lazy: true
-    timeout: 3000
+    interval: 300
+    max-failed-times: 2
+    tolerance: 50
+    lazy: false
+    timeout: 2000
+    expected-status: 204
     include-all-providers: true
     filter: "(?i)^(🇭🇰|HK(\\b|_))|香港|Hong ?Kong"
 
   - name: 🇯🇵 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 120
-    max-failed-times: 3
-    tolerance: 80
-    lazy: true
-    timeout: 3000
+    interval: 300
+    max-failed-times: 2
+    tolerance: 50
+    lazy: false
+    timeout: 2000
+    expected-status: 204
     include-all-providers: true
     filter: "(?i)^(🇯🇵|JP(\\b|_))|日本|Japan|Tokyo"
 
   - name: 🇸🇬 新加坡
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 120
-    max-failed-times: 3
-    tolerance: 80
-    lazy: true
-    timeout: 3000
+    interval: 300
+    max-failed-times: 2
+    tolerance: 50
+    lazy: false
+    timeout: 2000
+    expected-status: 204
     include-all-providers: true
     filter: "(?i)^(🇸🇬|SG(\\b|_))|新加坡|Singapore"
 
   - name: 🇺🇸 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 120
-    max-failed-times: 3
-    tolerance: 80
-    lazy: true
-    timeout: 3000
+    interval: 300
+    max-failed-times: 2
+    tolerance: 50
+    lazy: false
+    timeout: 2000
+    expected-status: 204
     include-all-providers: true
     filter: "(?i)^(🇺🇸|US(\\b|_))|美国|United States"
 
   - name: 🇪🇺 欧洲
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 120
-    max-failed-times: 3
-    tolerance: 80
-    lazy: true
-    timeout: 3000
+    interval: 300
+    max-failed-times: 2
+    tolerance: 50
+    lazy: false
+    timeout: 2000
+    expected-status: 204
     include-all-providers: true
     filter: "(?i)^(🇬🇧|🇩🇪|🇫🇷|🇳🇱|🇮🇹|🇪🇸|🇵🇱|🇸🇪|🇫🇮|🇨🇭|🇦🇹|🇨🇿|🇮🇪|🇱🇻|🇱🇺|🇩🇰|🇧🇪|🇳🇴|🇵🇹|🇷🇴|🇭🇺|🇪🇪|🇱🇹|🇧🇬|🇬🇷|(GB|UK|DE|FR|NL|IT|ES|PL|SE|FI|CH|AT|CZ|IE|LV|LU|DK|BE|NO|PT|RO|HU|EE|LT|BG|GR)(\\b|_))"
 
   - name: 🌐 其他地区
     type: url-test
     url: https://www.gstatic.com/generate_204
-    interval: 120
-    max-failed-times: 3
-    tolerance: 80
-    lazy: true
-    timeout: 3000
+    interval: 300
+    max-failed-times: 2
+    tolerance: 50
+    lazy: false
+    timeout: 2000
+    expected-status: 204
     include-all-providers: true
     exclude-filter: "(?i)^(🇭🇰|🇯🇵|🇸🇬|🇺🇸|🇨🇳|🇬🇧|🇩🇪|🇫🇷|🇳🇱|🇮🇹|🇪🇸|🇵🇱|🇸🇪|🇫🇮|🇨🇭|🇦🇹|🇨🇿|🇮🇪|🇱🇻|🇱🇺|🇩🇰|🇧🇪|🇳🇴|🇵🇹|🇷🇴|🇭🇺|🇪🇪|🇱🇹|🇧🇬|🇬🇷|(HK|JP|SG|US|CN|GB|UK|DE|FR|NL|IT|ES|PL|SE|FI|CH|AT|CZ|IE|LV|LU|DK|BE|NO|PT|RO|HU|EE|LT|BG|GR)(\\b|_))|剩余|流量|到期|官网"
 
