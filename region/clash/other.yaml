@@ -4,114 +4,235 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[roosterkid] 🇨🇦[openproxylist.com] vless-CA | 58ms'
-  type: vless
-  server: 172.64.154.113
-  port: 8443
-  uuid: 53bbdad4-2f4e-45db-8df4-fa491a6a7227
-  encryption: none
+- type: trojan
+  name: '[free18] 🇨🇦_加拿大 (15) | 115ms'
+  server: 216.152.147.85
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
   tls: true
-  servername: freeceshi6.frii.site
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /proxyip=ProxyIP.JP.CMLiussss.netfp=chrome
-    headers:
-      Host: freeceshi6.frii.site
-- type: ss
-  name: '[free18] 🇨🇦_加拿大 (9) | 107ms'
-  server: 54.39.96.233
+  servername: cdn.connectingpeoplewithgreatjobs.com
+  sni: cdn.connectingpeoplewithgreatjobs.com
+  skip-cert-verify: false
+- name: '[Eternity] 🇨🇦CA-137.184.174.93-0130 | 39.701MB | 118ms'
+  server: 137.184.174.93
   port: 8080
-  password: 2cvhpvdg4x7mvbps
-  cipher: chacha20-ietf-poly1305
+  type: ss
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+- type: ss
+  name: '[free18] 🇨🇦_加拿大 (4) | 120ms'
+  server: 184.107.106.78
+  port: 8388
+  password: itzvpn@321
+  cipher: aes-256-gcm
   udp: true
   tls: false
   skip-cert-verify: false
-- cipher: aes-256-gcm
-  name: '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1538... | 113ms'
-  password: zDNVedRFPQexG9v
-  port: 445
+- type: ss
+  name: '[free18] 🇨🇦_加拿大 (2) | 124ms'
+  server: 184.107.106.77
+  port: 8388
+  password: itzvpn@321
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: '[Eternity] 🇨🇦CA-216.152.147.93-0156 | 0.0MB | 128ms'
+  server: 216.152.147.93
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: connectingpeoplewithgreatjobs.com
+  skip-cert-verify: false
+- type: ss
+  name: '[free18] 🇨🇦_加拿大 (7) | 133ms'
+  server: 51.79.85.185
+  port: 8118
+  password: cdBIDV42DCwnfIN
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: trojan
+  name: '[free18] 🇨🇦_加拿大 (20) | 138ms'
+  server: 216.152.147.201
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: resources.connectingpeoplewithgreatjobs.com
+  sni: resources.connectingpeoplewithgreatjobs.com
+  skip-cert-verify: false
+- type: ss
+  name: '[free18] 🇨🇦_加拿大 (5) | 150ms'
+  server: 158.51.121.221
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: vmess
+  name: '[free18] 🇨🇦_加拿大 (13) | 151ms'
+  server: 23.162.200.198
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: '[free18] 🇨🇦_加拿大 (6) | 159ms'
   server: 51.222.12.127
-  type: ss
-- type: ss
-  name: '[free18] 🇨🇦_加拿大 (4) | 113ms'
-  server: 15.235.121.109
-  port: 8080
-  password: 575hiopq2h28yao6
-  cipher: chacha20-ietf-poly1305
+  port: 445
+  password: zDNVedRFPQexG9v
+  cipher: aes-256-gcm
   udp: true
   tls: false
   skip-cert-verify: false
+- type: trojan
+  name: '[free18] 🇨🇦_加拿大 (18) | 168ms'
+  server: 216.152.147.79
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: blog.connectingpeoplewithgreatjobs.com
+  sni: blog.connectingpeoplewithgreatjobs.com
+  skip-cert-verify: false
+- type: trojan
+  name: '[free18] 🇨🇦_加拿大 (12) | 169ms'
+  server: 216.152.147.74
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: api.connectingpeoplewithgreatjobs.com
+  sni: api.connectingpeoplewithgreatjobs.com
+  skip-cert-verify: false
 - cipher: aes-256-gcm
-  name: '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1559... | 148ms'
-  password: zDNVedRFPQexG9v
-  port: 445
-  server: 51.222.141.125
-  type: ss
-- cipher: aes-256-gcm
-  name: '[ermaozi] 🏳[www.v2nodes.com] ss- #1 | 194ms'
+  name: '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1545... | 171ms'
   password: kDWvXYZoTBcGkC4
   port: 8882
-  server: 51.222.136.236
+  server: 51.79.49.116
   type: ss
-- name: '[ermaozi] 🇨🇦CA_1|1.9MB/s | 198ms'
+- type: trojan
+  name: '[free18] 🇨🇦_加拿大 (19) | 171ms'
+  server: 216.152.147.89
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: www.connectingpeoplewithgreatjobs.com
+  sni: www.connectingpeoplewithgreatjobs.com
+  skip-cert-verify: false
+- type: trojan
+  name: '[free18] 🇨🇦_加拿大 (16) | 172ms'
+  server: 216.152.147.48
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: courses.connectingpeoplewithgreatjobs.com
+  sni: courses.connectingpeoplewithgreatjobs.com
+  skip-cert-verify: false
+- cipher: aes-256-gcm
+  name: '[ermaozi] 🏳[www.v2nodes.com] ss- | 173ms'
+  password: Y6R9pAtvxxzmGC
+  port: 5000
+  server: 51.222.200.165
+  type: ss
+- type: ss
+  name: '[free18] 🇨🇦_加拿大 (3) | 183ms'
+  server: 134.195.198.163
+  port: 443
+  password: PmCqK98WqhSC
+  cipher: chacha20-ietf-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: '[freeSub] D🔴🇨🇦hos[🤖💬🧩🎭]_dokng.com_2017146a | 190ms'
   port: 9443
   server: 149.88.98.81
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[Eternity] 🇨🇦CA-149.22.95.183-0144 | 79.909MB | 215ms'
+- name: '[freeSub] D🔴🇨🇦hos[🤖💬🔮🧩]_dokng.com_8a105a38 | 203ms'
+  port: 9443
+  server: 198.44.142.27
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: '[Eternity] 🇨🇦CA-149.22.95.183-0132 | 10.512MB | 204ms'
   server: 149.22.95.183
   port: 443
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- cipher: aes-256-gcm
-  name: '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1559... #1 | 233ms'
-  password: cdBIDV42DCwnfIN
-  port: 8118
-  server: 51.79.85.185
-  type: ss
+- name: '[NoMoreWalls] 🏳[www.v2nodes.com] vless- #10 | 205ms'
+  network: ws
+  port: 8443
+  server: 172.64.154.113
+  servername: freeceshi6.frii.site
+  tls: true
+  type: vless
+  uuid: 53bbdad4-2f4e-45db-8df4-fa491a6a7227
+  ws-opts:
+    headers:
+      Host: freeceshi6.frii.site
+    path: /proxyip=ProxyIP.JP.CMLiussss.netfp=chrome
 - type: ss
-  name: '[free18] 🇨🇦_加拿大 (7) | 245ms'
-  server: 15.235.57.6
-  port: 8080
-  password: kxhnt5jtykd328cg
-  cipher: chacha20-ietf-poly1305
+  name: '[free18] 🇨🇦_加拿大 (10) | 213ms'
+  server: 51.222.141.125
+  port: 445
+  password: zDNVedRFPQexG9v
+  cipher: aes-256-gcm
   udp: true
   tls: false
   skip-cert-verify: false
-- name: '[freeSub] A🟢🇲🇽res_dokng.com_1aa34d5e | 364ms'
+- name: '[freeSub] A🟢🇲🇽res_dokng.com_24835ec5 | 265ms'
+  password: lcFa8dTH
+  port: 62000
+  server: 94.194.165.96
+  type: socks5
+  username: QyVdo5ks
+- name: '[freeSub] A🟢🇲🇽res[📺🐙🔍]_dokng.com_6938d0ba | 272ms'
+  password: KsPAxZGn
+  port: 42000
+  server: 94.194.166.52
+  type: socks5
+  username: userLRgK
+- name: '[freeSub] A🟢🇲🇽res[📺]_dokng.com_9b6eb0d6 | 293ms'
   password: 2j7CCZQb
   port: 62000
   server: 94.194.164.203
+  sub_tag: R002-260618
   type: socks5
-  username: rVkkraqT
-- name: '[Eternity] CL-64.176.7.205-0093 | 75.9MB | 418ms'
-  server: 64.176.7.205
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: advanceyouremploymentskillsandcareerdevelopmenthub.com
-  skip-cert-verify: false
-- type: trojan
-  name: '[free18] 🇨🇱_智利 | 430ms'
-  server: leviko-cl7123.shopingggg.ir
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   udp: true
-  tls: true
-  servername: advanceyouremploymentskillsandcareerdevelopmenthub.com
-  sni: advanceyouremploymentskillsandcareerdevelopmenthub.com
-  skip-cert-verify: false
-- name: '[freeSub] C🟠🇲🇽hos_dokng.com_12126395 | 432ms'
+  username: rVkkraqT
+  x-toolall-mihomo: true
+- name: '[freeSub] C🟠🇲🇽hos_dokng.com_8d9836d8 | 304ms'
   password: sZnD8GTz
   port: 42000
-  server: 144.225.47.106
+  server: 144.225.47.158
   type: socks5
   username: DJy1T0dt
+- name: '[freeSub] C🟠🇨🇦hos[🤖💬🔮🎮]_dokng.com_1a96ab61 | 319ms'
+  port: 443
+  server: 142.44.210.129
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
 - type: vmess
-  name: '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 447ms'
+  name: '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 379ms'
   server: 172.64.145.93
   port: 443
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
@@ -125,48 +246,148 @@ proxies:
     path: /hls/cctv5phd.m3u8
     headers:
       Host: guanwang.awsno.com
-- name: '[freeSub] C🟠🇲🇽hos[🔍]_dokng.com_aff11c5d | 469ms'
+- name: '[NoMoreWalls] 🇲🇽MX_1|1.3MB/s | 403ms'
+  password: DJy1T0dt
+  port: 42000
+  server: 144.225.47.8
+  skip-cert-verify: true
+  type: socks5
+  username: Tek2x6av
+- name: '[freeSub] A🟢🇲🇽res[🤖]_dokng.com_bac8156d | 404ms'
+  password: VvUAFi2E
+  port: 62000
+  server: 72.57.228.30
+  type: socks5
+  username: UBXich0K
+- type: trojan
+  name: '[free18] 🇨🇱_智利 | 525ms'
+  server: 64.176.7.205
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: advanceyouremploymentskillsandcareerdevelopmenthub.com
+  sni: advanceyouremploymentskillsandcareerdevelopmenthub.com
+  skip-cert-verify: false
+- name: '[freeSub] C🟠🇲🇽hos_dokng.com_fc2a02cd | 556ms'
+  password: sZnD8GTz
+  port: 42000
+  server: 144.225.47.106
+  sub_tag: R002-260618
+  type: socks5
+  udp: true
+  username: DJy1T0dt
+  x-toolall-mihomo: true
+- type: ss
+  name: '[free18] 🇮🇱_以色列 | 590ms'
+  server: 206.245.128.123
+  port: 18443
+  password: dmJDtsxs41dBer8X+7idvkvMQHqJuwRb
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: '[freeSub] C🟠🇲🇽hos_dokng.com_d123f47b | 621ms'
   password: sZnD8GTz
   port: 42000
   server: 144.225.47.68
+  sub_tag: R002-260618
   type: socks5
+  udp: true
   username: DJy1T0dt
-- alterId: 0
-  cipher: auto
-  client-fingerprint: chrome
-  name: '[freeSub] U⚪🏳️ukn_dokng.com_18866abf | 495ms'
-  network: ws
-  port: 443
-  server: www.shopify.com
-  servername: guanwang.awsno.com
-  tls: true
-  type: vmess
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  ws-opts:
-    headers:
-      Host: guanwang.awsno.com
-    path: /hls/cctv5phd.m3u8
   x-toolall-mihomo: true
-- name: '[Eternity] BR-216.238.104.154-0097 | 57.86MB | 681ms'
-  server: 216.238.104.154
+- name: '[freeSub] D🔴🇪🇨hos[🤖💬📺🎵]_dokng.com_41643452 | 626ms'
+  password: ''
+  port: 9443
+  server: 38.165.231.71
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- name: '[freeSub] C🟠🇲🇽hos_dokng.com_a749b37b | 685ms'
+  password: DJy1T0dt
+  port: 42000
+  server: 144.225.47.161
+  type: socks5
+  username: Tek2x6av
+- name: '[freeSub] D🔴🇷🇸hos[🤖💬🔮🧩]_dokng.com_c7a848d0 | 731ms'
+  password: None
   port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: findtemporaryworkandfreelancerprojectsonlineplatform.com
-  skip-cert-verify: false
-- name: '[ermaozi] 🇧🇬BG_1|2.2MB/s | 706ms'
+  server: 146.70.221.18
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- name: '[NoMoreWalls] 🇧🇬BG_1|1.7MB/s | 741ms'
   port: 9443
   server: 169.150.237.1
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[ermaozi] 🇦🇺[www.v2nodes.com] trojan-AU-... | 806ms'
+- type: vless
+  name: '[free18] 🇸🇨_塞舌尔 (18) | 743ms'
+  server: 196.196.148.177
+  port: 443
+  uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: 4935e4t.de25.h1clayd.click
+  sni: 4935e4t.de25.h1clayd.click
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw
+    short-id: 6976d670818644cc
+- name: '[freeSub] C🟠🇧🇬hos[🤖💬🎮🐙]_dokng.com_23f515ea | 744ms'
+  port: 443
+  server: 109.204.88.17
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: '[freeSub] D🔴🇷🇸hos[🤖💬🔮🧩]_dokng.com_f625fada | 750ms'
+  port: 443
+  server: 146.70.221.34
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: '[freeSub] A🟢🇮🇱res[🤖💬🔮🧩]_dokng.com_fbd6fbce | 779ms'
+  port: 443
+  server: 62.90.77.30
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: '[ermaozi] 🇦🇺[www.v2nodes.com] trojan-AU-... | 788ms'
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   port: 443
   server: 45.63.30.142
   sni: connectwithemployerstohireyouridealteam.com
   type: trojan
-- name: '[ermaozi] 🔵100@oneclickvpnkeys | 831ms'
+- name: '[freeSub] D🔴🇧🇷hos[🤖💬🎵🎞️]_dokng.com_a2ec98c4 | 798ms'
+  port: 443
+  server: 134.65.17.77
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: '[ermaozi] 🔵100@oneclickvpnkeys | 801ms'
   password: linlin-2026
   port: 36712
   server: 13.55.52.44
@@ -174,38 +395,79 @@ proxies:
   sni: 13.55.52.44
   tls: false
   type: hysteria2
-- type: ss
-  name: '[free18] 🇿🇦_南非 | 832ms'
-  server: 102.37.156.224
+- name: '[freeSub] D🔴🇲🇰hos[🤖💬🔮🧩]_dokng.com_ec874314 | 845ms'
   port: 443
-  password: aduB9HGxQHjA2SBMRjkHX6
-  cipher: chacha20-ietf-poly1305
+  server: 185.225.28.50
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
   udp: true
-  tls: false
-  skip-cert-verify: false
+  x-toolall-mihomo: true
+- name: '[freeSub] A+🟢🇨🇾mob[🤖📺]_dokng.com_99fcd799 | 861ms'
+  password: None
+  port: 443
+  server: 213.207.130.34
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
 - cipher: chacha20-ietf-poly1305
-  name: '[ermaozi] 🏳[www.v2nodes.com] ss- #18 | 862ms'
+  name: '[ermaozi] 🏳[www.v2nodes.com] ss- #12 | 893ms'
+  password: aduB9HGxQHjA2SBMRjkHX6
+  port: 443
+  server: 102.37.156.224
+  type: ss
+- name: '[freeSub] A🟢🇧🇷res[📺]_dokng.com_936e7dd6 | 931ms'
+  password: 0mvrt5jb
+  port: 62000
+  server: 191.7.129.133
+  type: socks5
+  username: uwrgfkwg
+- cipher: chacha20-ietf-poly1305
+  name: '[ermaozi] 🏳[www.v2nodes.com] ss- #13 | 935ms'
   password: Xsy8Ox4yOV3xLlpxtjzs3X
   port: 16233
   server: 102.133.165.160
   type: ss
-- type: vless
-  name: '[free18] 🇳🇱_荷兰 (54) | 884ms'
-  server: 94.183.164.176
+- name: '[freeSub] D🔴🇭🇰hos[🎵🎮✈️🐙]_dokng.com_dabbadb6 | 981ms'
+  password: null
   port: 443
-  uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
-  udp: true
+  server: fan.240104.xyz
+  sni: fan.240104.xyz
+  sub_tag: R002-260618
   tls: true
-  servername: optim.tildacdn.pub
-  sni: optim.tildacdn.pub
+  type: http
+  udp: true
+  username: null
+  x-toolall-mihomo: true
+- name: '[Eternity] 🇮🇳IN-152.67.8.205-5772 | 0.07MB | 1029ms'
+  server: 152.67.8.205
+  port: 80
+  type: vmess
+  uuid: 9db4c708-aef8-4359-821b-38e47990be0d
+  alterId: 0
+  cipher: auto
+  tls: false
   skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: _KeOS5u_irk1547CMVB3RdwQzz1SzrQZk-IV-btF7TU
-  network: grpc
-  grpc-opts:
-    grpc-service-name: ebl
-- name: '[ermaozi] 🇦🇪[www.v2nodes.com] vless-AE-1... | 899ms'
+  servername: 🇮🇳IN-152.67.8.205-5772 | 0.07MB
+  network: ws
+  ws-opts:
+    path: /
+- name: '[freeSub] D🔴🇬🇪hos[🤖💬🔮📺]_dokng.com_7d1fc213 | 1033ms'
+  password: None
+  port: 443
+  server: 195.54.178.210
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: '[ermaozi] 🇦🇪[www.v2nodes.com] vless-AE-1... | 1060ms'
   network: ws
   port: 14430
   server: 95.174.68.188
@@ -217,164 +479,302 @@ proxies:
     headers:
       Host: 95.174.68.188
     path: /vless
-- name: '[ermaozi] 🇨🇦[www.v2nodes.com] trojan-CA-... #4 | 904ms'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 216.152.147.93
-  sni: connectingpeoplewithgreatjobs.com
-  type: trojan
-- name: '[ermaozi] 🇭🇰 香港 | HKG | 1018ms'
-  server: 31.59.169.225
-  port: 443
-  type: hysteria2
-  password: ca60984f-b1f0-4073-bd33-4c75168f749a
-  auth: ca60984f-b1f0-4073-bd33-4c75168f749a
-  sni: ge-beer-1.fantoff.online
-  skip-cert-verify: true
-- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 1077ms'
+- name: '[zhuhaiuk] ID - zhuhai.uk | 1116ms'
   type: http
-  server: fan.240104.xyz
+  server: 178.248.73.58
   port: 443
   tls: true
-  sni: fan.240104.xyz
   skip-cert-verify: true
-- name: '[roosterkid] 🇻🇳[openproxylist.com] vless-VN | 1098ms'
+- name: '[freeSub] D🔴🇮🇩hos[🤖💬🔮📺]_dokng.com_33704a70 | 1118ms'
+  port: 443
+  server: 103.86.116.118
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- type: trojan
+  name: '[free18] 🇿🇦_南非 (2) | 1139ms'
+  server: 139.84.231.142
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: explorecareerpathsandunlockprofessionalsuccesstoday.com
+  sni: explorecareerpathsandunlockprofessionalsuccesstoday.com
+  skip-cert-verify: false
+- name: '[ermaozi] 🇮🇳[www.v2nodes.com] vless-IN-1... | 1145ms'
+  network: ws
+  port: 14430
+  server: 13.140.56.100
+  tls: false
   type: vless
-  server: 150.95.109.109
-  port: 2086
-  uuid: b83faafc-cbb7-4655-99d4-2c4c39a49d1b
-  encryption: none
-- name: '[roosterkid] 🏳[openproxylist.com] vmess- | 1183ms'
-  type: vmess
-  server: 23.162.200.198
+  uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
+  ws-opts:
+    headers:
+      Host: 13.140.56.100
+    path: /vless
+- type: trojan
+  name: '[free18] 🇨🇦_加拿大 (14) | 1200ms'
+  server: 216.152.147.152
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  udp: true
+  tls: true
+  servername: learn.connectingpeoplewithgreatjobs.com
+  sni: learn.connectingpeoplewithgreatjobs.com
+  skip-cert-verify: false
+- type: vmess
+  name: '[free18] 🇨🇦_加拿大 (17) | 1244ms'
+  server: 134.195.196.211
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
   cipher: auto
-  network: tcp
-- type: ss
-  name: '[free18] 🇨🇦_加拿大 (8) | 1232ms'
-  server: 198.100.154.175
-  port: 8080
-  password: 3h3hb2gptqz6suyt
-  cipher: chacha20-ietf-poly1305
+  alterId: 0
   udp: true
   tls: false
   skip-cert-verify: false
-- name: '[ermaozi] 🇻🇳VN_1|2.8MB/s | 1399ms'
+- name: '[freeSub] D🔴🇻🇳hos[🤖💬🔮🎵]_dokng.com_c355101a | 1272ms'
+  password: ''
+  port: 8443
+  server: 14.225.71.128
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- name: '[freeSub] D🔴🇻🇳hos[🤖💬🔮📺]_dokng.com_99423bae | 1294ms'
   port: 443
   server: 14.225.71.128
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[freeSub] D🔴🇵🇭hos_dokng.com_19b515e6 | 1402ms'
-  password: s6a1j38q
-  port: 42000
-  server: 103.18.230.88
-  type: socks5
-  username: uv4oakg5
-- name: '[zhuhaiuk] TH - zhuhai.uk | 1420ms'
-  type: socks5
-  server: 87.81.70.254
-  port: 42000
-  username: user2523
-  password: Ksnervw2
-- name: '[zhuhaiuk] TH - zhuhai.uk 02 | 1438ms'
-  type: socks5
-  server: 109.66.136.35
+- name: '[freeSub] A🟢🇮🇩res_dokng.com_9bb962cb | 1310ms'
+  password: RRWtX6XP
   port: 62000
-  username: r3ZzP8WW
+  server: 203.84.138.59
+  sub_tag: R002-260618
+  type: socks5
+  udp: true
+  username: 9tcjLp2W
+  x-toolall-mihomo: true
+- name: '[freeSub] C🟠🇹🇭hos_dokng.com_5acf8d13 | 1338ms'
+  password: KT5hiU8o
+  port: 42000
+  server: 104.234.70.82
+  type: socks5
+  username: rnt2L4XO
+- name: '[freeSub] A🟢🇹🇭res[💬]_dokng.com_7fc717e7 | 1341ms'
+  password: mpbK00Pl
+  port: 42000
+  server: 192.204.15.135
+  sub_tag: R002-260618
+  type: socks5
+  udp: true
+  username: X3s3JteD
+  x-toolall-mihomo: true
+- name: '[freeSub] A🟢🇹🇭res[💬✈️🐙]_dokng.com_72bd5c3a | 1344ms'
+  password: mpbK00Pl
+  port: 42000
+  server: 192.204.15.192
+  type: socks5
+  username: X3s3JteD
+- name: '[freeSub] A🟢🇹🇭res_dokng.com_3740a210 | 1345ms'
   password: zdnivBaI
-- name: '[freeSub] A🟢🇹🇭res_dokng.com_021435aa | 1445ms'
+  port: 62000
+  server: 109.66.136.194
+  type: socks5
+  username: r3ZzP8WW
+- name: '[NoMoreWalls] 🇹🇭TH_3|1.7MB/s | 1381ms'
   password: YlRoWvE0dL_cUqS94wPeKnA4
   port: 62000
-  server: 87.84.49.245
+  server: 87.84.49.206
+  skip-cert-verify: true
   type: socks5
   username: ks878449260d
-- name: '[freeSub] A🟢🇹🇭res[🤖🔮🎮🐙]_dokng.com_8be67b1a | 1485ms'
-  password: YlRoWvE0dL_cUqS94wPeKnA4
+- name: '[zhuhaiuk] TH - zhuhai.uk 02 | 1382ms'
+  type: socks5
+  server: 45.201.39.74
   port: 62000
-  server: 87.84.49.140
+  username: y2stTQnf
+  password: wj2sNvDu
+- name: '[freeSub] A🟢🇹🇭res_dokng.com_738424ea | 1386ms'
+  password: zdnivBaI
+  port: 62000
+  server: 109.66.136.42
+  sub_tag: R002-260618
   type: socks5
-  username: ks878449260d
-- name: '[ermaozi] 🇹🇭TH_1|2.0MB/s | 1501ms'
+  udp: true
+  username: r3ZzP8WW
+  x-toolall-mihomo: true
+- name: '[freeSub] A🟢🇹🇭res_dokng.com_a8a9e262 | 1390ms'
   password: VAwyJQX0iKMJiyCw5UVK9wGH
   port: 42000
   server: 103.14.164.30
   type: socks5
   username: route164JIa2CBPxfy
-- name: '[freeSub] A🟢🇹🇭res_dokng.com_441fecdf | 1513ms'
+- name: '[freeSub] A🟢🇹🇭res_dokng.com_1225b21e | 1397ms'
+  password: 1pB7HV6u
+  port: 42000
+  server: 151.246.109.158
+  sub_tag: R002-260618
+  type: socks5
+  udp: true
+  username: AJ3d9gJw
+  x-toolall-mihomo: true
+- name: '[NoMoreWalls] 🇹🇭TH_1|1.1MB/s | 1398ms'
+  password: YlRoWvE0dL_cUqS94wPeKnA4
+  port: 62000
+  server: 87.84.49.140
+  type: socks5
+  username: ks878449260d
+- name: '[freeSub] A🟢🇹🇭res_dokng.com_441fecdf | 1399ms'
   password: fAgE2jqK
   port: 42000
   server: 151.246.108.69
   type: socks5
   username: h87527jJ
-- name: '[freeSub] A🟢🇹🇭res[🔮🎮🐙🔍]_dokng.com_c58cd50f | 1528ms'
+- name: '[NoMoreWalls] 🇹🇭TH_2|1.6MB/s | 1403ms'
+  password: YlRoWvE0dL_cUqS94wPeKnA4
+  port: 62000
+  server: 87.84.49.245
+  type: socks5
+  username: ks878449260d
+- name: '[freeSub] A🟢🇹🇭res_dokng.com_c58cd50f | 1410ms'
   password: VAwyJQX0iKMJiyCw5UVK9wGH
   port: 42000
   server: 103.14.164.202
   type: socks5
   username: route164JIa2CBPxfy
-- name: '[freeSub] A🟢🇹🇭res[🎮✈️]_dokng.com_bf81894b | 1530ms'
+- name: '[freeSub] A🟢🇹🇭res[💬🔮🎵🐙]_dokng.com_da6cca38 | 1413ms'
   password: 1pB7HV6u
   port: 42000
-  server: 151.246.109.158
+  server: 151.246.109.86
   type: socks5
   username: AJ3d9gJw
+- name: '[Eternity] BR-216.238.104.154-0092 | 21.388MB | 1443ms'
+  server: 216.238.104.154
+  port: 443
+  type: trojan
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: findtemporaryworkandfreelancerprojectsonlineplatform.com
+  skip-cert-verify: false
+- name: '[freeSub] A🟢🇻🇳res[💬📺]_dokng.com_8b68a714 | 1488ms'
+  password: jHsK2gqs
+  port: 62000
+  server: 103.184.113.236
+  type: socks5
+  username: qT46DZLv
+- name: '[freeSub] D🔴🇵🇭hos[💬]_dokng.com_19b515e6 | 1511ms'
+  password: s6a1j38q
+  port: 42000
+  server: 103.18.230.88
+  type: socks5
+  username: uv4oakg5
+- name: '[freeSub] A🟢🇻🇳res_dokng.com_c5c61858 | 1525ms'
+  password: jHsK2gqs
+  port: 62000
+  server: 103.184.113.190
+  sub_tag: R002-260618
+  type: socks5
+  udp: true
+  username: qT46DZLv
+  x-toolall-mihomo: true
+- name: '[zhuhaiuk] VN - zhuhai.uk | 1528ms'
+  type: socks5
+  server: 103.184.113.84
+  port: 62000
+  username: qT46DZLv
+  password: jHsK2gqs
+- name: '[freeSub] A🟢🇮🇩res_dokng.com_5f6d4e46 | 1554ms'
+  password: 4j4q5adbni
+  port: 62000
+  server: 198.87.103.5
+  type: socks5
+  username: u_f7c7852
+- type: vless
+  name: '[free18] 🇮🇳_印度 (2) | 1606ms'
+  server: xray-dmr3b3hy-calm-maple-7.cloady.io
+  port: 443
+  uuid: 06a5afa1-2bbc-a5d1-1770-becd1089c636
+  udp: true
+  tls: true
+  servername: xray-dmr3b3hy-calm-maple-7.cloady.io
+  sni: xray-dmr3b3hy-calm-maple-7.cloady.io
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /0175469f14317d82
+- client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: 204adda7e3da
+  name: '[freeSub] C🟠🇳🇱hos[🤖💬🔮🧩]_dokng.com_0aff9cf2 | 1635ms'
+  network: grpc
+  port: 443
+  reality-opts:
+    public-key: PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU
+    short-id: d3bd772514c87d28
+  server: 196.196.148.63
+  servername: 717252g.nl8.h1clayd.click
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
+  x-toolall-mihomo: true
 - type: vmess
-  name: '[free18] 🇰🇿_哈萨克斯坦 (3) | 1618ms'
-  server: 3h-kazakhstan1.09vpn.com
+  name: '[free18] 🇰🇿_哈萨克斯坦 (4) | 1638ms'
+  server: 38.107.234.57
   port: 80
   uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
   cipher: auto
   alterId: 0
   udp: true
   tls: false
+  servername: 3h-kazakhstan1.09vpn.com
+  sni: 3h-kazakhstan1.09vpn.com
   skip-cert-verify: false
   network: ws
   ws-opts:
     path: /vmess/
-- name: '[freeSub] A🟢🇻🇳res_dokng.com_11eacb89 | 1635ms'
-  password: jHsK2gqs
-  port: 62000
-  server: 103.184.113.190
+    headers:
+      Host: 3h-kazakhstan1.09vpn.com
+- name: '[freeSub] A🟢🇹🇭res_dokng.com_63f8b36e | 1708ms'
+  password: Ks4Iab43
+  port: 42000
+  server: 82.47.152.151
   type: socks5
-  username: qT46DZLv
-- type: vless
-  name: '[free18] 🇰🇿_哈萨克斯坦 | 1936ms'
-  server: 3h-kazakhstan1.09vpn.com
-  port: 8443
-  uuid: 2424febb-43cb-488d-bdd1-401e923c8e48
-  udp: true
-  tls: true
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /vless/
-- cipher: aes-256-gcm
-  name: '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1558... | 2281ms'
-  password: Y6R9pAtvxxzmGC
-  port: 5000
-  server: 51.222.200.165
-  type: ss
-- type: vless
-  name: '[ermaozi] 🇸🇨_SC_塞舌尔->🇳🇱_NL_荷兰_IPV4 | 2494ms'
-  server: 196.196.148.63
+  username: userLjVB
+- name: '[freeSub] A🟢🇹🇭res_dokng.com_3254c865 | 2077ms'
+  password: ao3W5ZML
+  port: 42000
+  server: 168.222.8.66
+  type: socks5
+  username: JPjarpW3
+- name: '[ermaozi] 🇻🇳[www.v2nodes.com] vless-VN-1... | 2692ms'
+  port: 2086
+  server: 150.95.109.109
+  tls: false
+  type: vless
+  uuid: b83faafc-cbb7-4655-99d4-2c4c39a49d1b
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: '[freeSub] C🟠🇪🇸hos[🤖💬🔮🎮]_dokng.com_c851b7e4 | 2957ms'
+  network: tcp
   port: 443
-  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
-  tls: true
-  servername: 717252g.nl8.h1clayd.click
-  sni: 717252g.nl8.h1clayd.click
-  skip-cert-verify: false
-  client-fingerprint: firefox
   reality-opts:
-    public-key: PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU
-    short-id: d3bd772514c87d28
-  network: grpc
-  grpc-opts:
-    grpc-service-name: 204adda7e3da
+    public-key: ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE
+    short-id: 42426c882c5fcd41
+  server: 196.196.149.81
+  servername: 7aa271t.es1.h1clayd.click
+  tls: true
+  type: vless
+  uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
+  x-toolall-mihomo: true
 - type: vless
-  name: '[free18] 🇸🇨_塞舌尔 (5) | 3463ms'
+  name: '[free18] 🇸🇨_塞舌尔 (16) | 3000ms'
   server: 196.199.122.2
   port: 443
   uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
@@ -384,33 +784,36 @@ proxies:
   servername: 7aa271t.es1.h1clayd.click
   sni: 7aa271t.es1.h1clayd.click
   skip-cert-verify: false
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   reality-opts:
     public-key: ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE
     short-id: 42426c882c5fcd41
-- name: '[zhuhaiuk] ES - zhuhai.uk | 3725ms'
-  type: vless
-  server: 196.196.149.80
+- client-fingerprint: firefox
+  name: '[freeSub] A🟢🇳🇱res[🤖💬🔮🎵]_dokng.com_3e91976f | 3017ms'
   port: 443
-  uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
-  flow: xtls-rprx-vision
-  tls: true
-  servername: 7aa271t.es1.h1clayd.click
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE
-    short-id: 42426c882c5fcd41
-- name: '[zhuhaiuk] NL - zhuhai.uk 04 | 3734ms'
-  type: vless
-  server: 196.196.148.85
-  port: 443
-  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
-  tls: true
-  servername: 5d0319t.nl7.h1clayd.click
-  client-fingerprint: chrome
   reality-opts:
     public-key: l-GzBDuNuhnjxoRlZqKvT7jAt_sbVAxhGFsAttO5kXs
     short-id: 361d0dd59c70516f
+  server: 196.196.148.85
+  servername: 5d0319t.nl7.h1clayd.click
+  tls: true
+  type: vless
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
+  x-toolall-mihomo: true
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: '[freeSub] C🟠🇪🇸hos[🤖💬🔮🎮]_dokng.com_3a319faa | 3130ms'
+  port: 443
+  reality-opts:
+    public-key: ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE
+    short-id: 42426c882c5fcd41
+  server: 196.196.149.80
+  servername: 7aa271t.es1.h1clayd.click
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4201786b-d99b-4147-a5f0-20d47acddb81
+  x-toolall-mihomo: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -418,108 +821,196 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[roosterkid] 🇨🇦[openproxylist.com] vless-CA | 58ms'
-  - '[free18] 🇨🇦_加拿大 (9) | 107ms'
-  - '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1538... | 113ms'
-  - '[free18] 🇨🇦_加拿大 (4) | 113ms'
-  - '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1559... | 148ms'
-  - '[ermaozi] 🏳[www.v2nodes.com] ss- #1 | 194ms'
-  - '[ermaozi] 🇨🇦CA_1|1.9MB/s | 198ms'
-  - '[Eternity] 🇨🇦CA-149.22.95.183-0144 | 79.909MB | 215ms'
-  - '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1559... #1 | 233ms'
-  - '[free18] 🇨🇦_加拿大 (7) | 245ms'
-  - '[freeSub] A🟢🇲🇽res_dokng.com_1aa34d5e | 364ms'
-  - '[Eternity] CL-64.176.7.205-0093 | 75.9MB | 418ms'
-  - '[free18] 🇨🇱_智利 | 430ms'
-  - '[freeSub] C🟠🇲🇽hos_dokng.com_12126395 | 432ms'
-  - '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 447ms'
-  - '[freeSub] C🟠🇲🇽hos[🔍]_dokng.com_aff11c5d | 469ms'
-  - '[freeSub] U⚪🏳️ukn_dokng.com_18866abf | 495ms'
-  - '[Eternity] BR-216.238.104.154-0097 | 57.86MB | 681ms'
-  - '[ermaozi] 🇧🇬BG_1|2.2MB/s | 706ms'
-  - '[ermaozi] 🇦🇺[www.v2nodes.com] trojan-AU-... | 806ms'
-  - '[ermaozi] 🔵100@oneclickvpnkeys | 831ms'
-  - '[free18] 🇿🇦_南非 | 832ms'
-  - '[ermaozi] 🏳[www.v2nodes.com] ss- #18 | 862ms'
-  - '[free18] 🇳🇱_荷兰 (54) | 884ms'
-  - '[ermaozi] 🇦🇪[www.v2nodes.com] vless-AE-1... | 899ms'
-  - '[ermaozi] 🇨🇦[www.v2nodes.com] trojan-CA-... #4 | 904ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG | 1018ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1077ms'
-  - '[roosterkid] 🇻🇳[openproxylist.com] vless-VN | 1098ms'
-  - '[roosterkid] 🏳[openproxylist.com] vmess- | 1183ms'
-  - '[free18] 🇨🇦_加拿大 (8) | 1232ms'
-  - '[ermaozi] 🇻🇳VN_1|2.8MB/s | 1399ms'
-  - '[freeSub] D🔴🇵🇭hos_dokng.com_19b515e6 | 1402ms'
-  - '[zhuhaiuk] TH - zhuhai.uk | 1420ms'
-  - '[zhuhaiuk] TH - zhuhai.uk 02 | 1438ms'
-  - '[freeSub] A🟢🇹🇭res_dokng.com_021435aa | 1445ms'
-  - '[freeSub] A🟢🇹🇭res[🤖🔮🎮🐙]_dokng.com_8be67b1a | 1485ms'
-  - '[ermaozi] 🇹🇭TH_1|2.0MB/s | 1501ms'
-  - '[freeSub] A🟢🇹🇭res_dokng.com_441fecdf | 1513ms'
-  - '[freeSub] A🟢🇹🇭res[🔮🎮🐙🔍]_dokng.com_c58cd50f | 1528ms'
-  - '[freeSub] A🟢🇹🇭res[🎮✈️]_dokng.com_bf81894b | 1530ms'
-  - '[free18] 🇰🇿_哈萨克斯坦 (3) | 1618ms'
-  - '[freeSub] A🟢🇻🇳res_dokng.com_11eacb89 | 1635ms'
-  - '[free18] 🇰🇿_哈萨克斯坦 | 1936ms'
-  - '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1558... | 2281ms'
-  - '[ermaozi] 🇸🇨_SC_塞舌尔->🇳🇱_NL_荷兰_IPV4 | 2494ms'
-  - '[free18] 🇸🇨_塞舌尔 (5) | 3463ms'
-  - '[zhuhaiuk] ES - zhuhai.uk | 3725ms'
-  - '[zhuhaiuk] NL - zhuhai.uk 04 | 3734ms'
+  - '[free18] 🇨🇦_加拿大 (15) | 115ms'
+  - '[Eternity] 🇨🇦CA-137.184.174.93-0130 | 39.701MB | 118ms'
+  - '[free18] 🇨🇦_加拿大 (4) | 120ms'
+  - '[free18] 🇨🇦_加拿大 (2) | 124ms'
+  - '[Eternity] 🇨🇦CA-216.152.147.93-0156 | 0.0MB | 128ms'
+  - '[free18] 🇨🇦_加拿大 (7) | 133ms'
+  - '[free18] 🇨🇦_加拿大 (20) | 138ms'
+  - '[free18] 🇨🇦_加拿大 (5) | 150ms'
+  - '[free18] 🇨🇦_加拿大 (13) | 151ms'
+  - '[free18] 🇨🇦_加拿大 (6) | 159ms'
+  - '[free18] 🇨🇦_加拿大 (18) | 168ms'
+  - '[free18] 🇨🇦_加拿大 (12) | 169ms'
+  - '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1545... | 171ms'
+  - '[free18] 🇨🇦_加拿大 (19) | 171ms'
+  - '[free18] 🇨🇦_加拿大 (16) | 172ms'
+  - '[ermaozi] 🏳[www.v2nodes.com] ss- | 173ms'
+  - '[free18] 🇨🇦_加拿大 (3) | 183ms'
+  - '[freeSub] D🔴🇨🇦hos[🤖💬🧩🎭]_dokng.com_2017146a | 190ms'
+  - '[freeSub] D🔴🇨🇦hos[🤖💬🔮🧩]_dokng.com_8a105a38 | 203ms'
+  - '[Eternity] 🇨🇦CA-149.22.95.183-0132 | 10.512MB | 204ms'
+  - '[NoMoreWalls] 🏳[www.v2nodes.com] vless- #10 | 205ms'
+  - '[free18] 🇨🇦_加拿大 (10) | 213ms'
+  - '[freeSub] A🟢🇲🇽res_dokng.com_24835ec5 | 265ms'
+  - '[freeSub] A🟢🇲🇽res[📺🐙🔍]_dokng.com_6938d0ba | 272ms'
+  - '[freeSub] A🟢🇲🇽res[📺]_dokng.com_9b6eb0d6 | 293ms'
+  - '[freeSub] C🟠🇲🇽hos_dokng.com_8d9836d8 | 304ms'
+  - '[freeSub] C🟠🇨🇦hos[🤖💬🔮🎮]_dokng.com_1a96ab61 | 319ms'
+  - '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 379ms'
+  - '[NoMoreWalls] 🇲🇽MX_1|1.3MB/s | 403ms'
+  - '[freeSub] A🟢🇲🇽res[🤖]_dokng.com_bac8156d | 404ms'
+  - '[free18] 🇨🇱_智利 | 525ms'
+  - '[freeSub] C🟠🇲🇽hos_dokng.com_fc2a02cd | 556ms'
+  - '[free18] 🇮🇱_以色列 | 590ms'
+  - '[freeSub] C🟠🇲🇽hos_dokng.com_d123f47b | 621ms'
+  - '[freeSub] D🔴🇪🇨hos[🤖💬📺🎵]_dokng.com_41643452 | 626ms'
+  - '[freeSub] C🟠🇲🇽hos_dokng.com_a749b37b | 685ms'
+  - '[freeSub] D🔴🇷🇸hos[🤖💬🔮🧩]_dokng.com_c7a848d0 | 731ms'
+  - '[NoMoreWalls] 🇧🇬BG_1|1.7MB/s | 741ms'
+  - '[free18] 🇸🇨_塞舌尔 (18) | 743ms'
+  - '[freeSub] C🟠🇧🇬hos[🤖💬🎮🐙]_dokng.com_23f515ea | 744ms'
+  - '[freeSub] D🔴🇷🇸hos[🤖💬🔮🧩]_dokng.com_f625fada | 750ms'
+  - '[freeSub] A🟢🇮🇱res[🤖💬🔮🧩]_dokng.com_fbd6fbce | 779ms'
+  - '[ermaozi] 🇦🇺[www.v2nodes.com] trojan-AU-... | 788ms'
+  - '[freeSub] D🔴🇧🇷hos[🤖💬🎵🎞️]_dokng.com_a2ec98c4 | 798ms'
+  - '[ermaozi] 🔵100@oneclickvpnkeys | 801ms'
+  - '[freeSub] D🔴🇲🇰hos[🤖💬🔮🧩]_dokng.com_ec874314 | 845ms'
+  - '[freeSub] A+🟢🇨🇾mob[🤖📺]_dokng.com_99fcd799 | 861ms'
+  - '[ermaozi] 🏳[www.v2nodes.com] ss- #12 | 893ms'
+  - '[freeSub] A🟢🇧🇷res[📺]_dokng.com_936e7dd6 | 931ms'
+  - '[ermaozi] 🏳[www.v2nodes.com] ss- #13 | 935ms'
+  - '[freeSub] D🔴🇭🇰hos[🎵🎮✈️🐙]_dokng.com_dabbadb6 | 981ms'
+  - '[Eternity] 🇮🇳IN-152.67.8.205-5772 | 0.07MB | 1029ms'
+  - '[freeSub] D🔴🇬🇪hos[🤖💬🔮📺]_dokng.com_7d1fc213 | 1033ms'
+  - '[ermaozi] 🇦🇪[www.v2nodes.com] vless-AE-1... | 1060ms'
+  - '[zhuhaiuk] ID - zhuhai.uk | 1116ms'
+  - '[freeSub] D🔴🇮🇩hos[🤖💬🔮📺]_dokng.com_33704a70 | 1118ms'
+  - '[free18] 🇿🇦_南非 (2) | 1139ms'
+  - '[ermaozi] 🇮🇳[www.v2nodes.com] vless-IN-1... | 1145ms'
+  - '[free18] 🇨🇦_加拿大 (14) | 1200ms'
+  - '[free18] 🇨🇦_加拿大 (17) | 1244ms'
+  - '[freeSub] D🔴🇻🇳hos[🤖💬🔮🎵]_dokng.com_c355101a | 1272ms'
+  - '[freeSub] D🔴🇻🇳hos[🤖💬🔮📺]_dokng.com_99423bae | 1294ms'
+  - '[freeSub] A🟢🇮🇩res_dokng.com_9bb962cb | 1310ms'
+  - '[freeSub] C🟠🇹🇭hos_dokng.com_5acf8d13 | 1338ms'
+  - '[freeSub] A🟢🇹🇭res[💬]_dokng.com_7fc717e7 | 1341ms'
+  - '[freeSub] A🟢🇹🇭res[💬✈️🐙]_dokng.com_72bd5c3a | 1344ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_3740a210 | 1345ms'
+  - '[NoMoreWalls] 🇹🇭TH_3|1.7MB/s | 1381ms'
+  - '[zhuhaiuk] TH - zhuhai.uk 02 | 1382ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_738424ea | 1386ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_a8a9e262 | 1390ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_1225b21e | 1397ms'
+  - '[NoMoreWalls] 🇹🇭TH_1|1.1MB/s | 1398ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_441fecdf | 1399ms'
+  - '[NoMoreWalls] 🇹🇭TH_2|1.6MB/s | 1403ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_c58cd50f | 1410ms'
+  - '[freeSub] A🟢🇹🇭res[💬🔮🎵🐙]_dokng.com_da6cca38 | 1413ms'
+  - '[Eternity] BR-216.238.104.154-0092 | 21.388MB | 1443ms'
+  - '[freeSub] A🟢🇻🇳res[💬📺]_dokng.com_8b68a714 | 1488ms'
+  - '[freeSub] D🔴🇵🇭hos[💬]_dokng.com_19b515e6 | 1511ms'
+  - '[freeSub] A🟢🇻🇳res_dokng.com_c5c61858 | 1525ms'
+  - '[zhuhaiuk] VN - zhuhai.uk | 1528ms'
+  - '[freeSub] A🟢🇮🇩res_dokng.com_5f6d4e46 | 1554ms'
+  - '[free18] 🇮🇳_印度 (2) | 1606ms'
+  - '[freeSub] C🟠🇳🇱hos[🤖💬🔮🧩]_dokng.com_0aff9cf2 | 1635ms'
+  - '[free18] 🇰🇿_哈萨克斯坦 (4) | 1638ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_63f8b36e | 1708ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_3254c865 | 2077ms'
+  - '[ermaozi] 🇻🇳[www.v2nodes.com] vless-VN-1... | 2692ms'
+  - '[freeSub] C🟠🇪🇸hos[🤖💬🔮🎮]_dokng.com_c851b7e4 | 2957ms'
+  - '[free18] 🇸🇨_塞舌尔 (16) | 3000ms'
+  - '[freeSub] A🟢🇳🇱res[🤖💬🔮🎵]_dokng.com_3e91976f | 3017ms'
+  - '[freeSub] C🟠🇪🇸hos[🤖💬🔮🎮]_dokng.com_3a319faa | 3130ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[roosterkid] 🇨🇦[openproxylist.com] vless-CA | 58ms'
-  - '[free18] 🇨🇦_加拿大 (9) | 107ms'
-  - '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1538... | 113ms'
-  - '[free18] 🇨🇦_加拿大 (4) | 113ms'
-  - '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1559... | 148ms'
-  - '[ermaozi] 🏳[www.v2nodes.com] ss- #1 | 194ms'
-  - '[ermaozi] 🇨🇦CA_1|1.9MB/s | 198ms'
-  - '[Eternity] 🇨🇦CA-149.22.95.183-0144 | 79.909MB | 215ms'
-  - '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1559... #1 | 233ms'
-  - '[free18] 🇨🇦_加拿大 (7) | 245ms'
-  - '[freeSub] A🟢🇲🇽res_dokng.com_1aa34d5e | 364ms'
-  - '[Eternity] CL-64.176.7.205-0093 | 75.9MB | 418ms'
-  - '[free18] 🇨🇱_智利 | 430ms'
-  - '[freeSub] C🟠🇲🇽hos_dokng.com_12126395 | 432ms'
-  - '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 447ms'
-  - '[freeSub] C🟠🇲🇽hos[🔍]_dokng.com_aff11c5d | 469ms'
-  - '[freeSub] U⚪🏳️ukn_dokng.com_18866abf | 495ms'
-  - '[Eternity] BR-216.238.104.154-0097 | 57.86MB | 681ms'
-  - '[ermaozi] 🇧🇬BG_1|2.2MB/s | 706ms'
-  - '[ermaozi] 🇦🇺[www.v2nodes.com] trojan-AU-... | 806ms'
-  - '[ermaozi] 🔵100@oneclickvpnkeys | 831ms'
-  - '[free18] 🇿🇦_南非 | 832ms'
-  - '[ermaozi] 🏳[www.v2nodes.com] ss- #18 | 862ms'
-  - '[free18] 🇳🇱_荷兰 (54) | 884ms'
-  - '[ermaozi] 🇦🇪[www.v2nodes.com] vless-AE-1... | 899ms'
-  - '[ermaozi] 🇨🇦[www.v2nodes.com] trojan-CA-... #4 | 904ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG | 1018ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1077ms'
-  - '[roosterkid] 🇻🇳[openproxylist.com] vless-VN | 1098ms'
-  - '[roosterkid] 🏳[openproxylist.com] vmess- | 1183ms'
-  - '[free18] 🇨🇦_加拿大 (8) | 1232ms'
-  - '[ermaozi] 🇻🇳VN_1|2.8MB/s | 1399ms'
-  - '[freeSub] D🔴🇵🇭hos_dokng.com_19b515e6 | 1402ms'
-  - '[zhuhaiuk] TH - zhuhai.uk | 1420ms'
-  - '[zhuhaiuk] TH - zhuhai.uk 02 | 1438ms'
-  - '[freeSub] A🟢🇹🇭res_dokng.com_021435aa | 1445ms'
-  - '[freeSub] A🟢🇹🇭res[🤖🔮🎮🐙]_dokng.com_8be67b1a | 1485ms'
-  - '[ermaozi] 🇹🇭TH_1|2.0MB/s | 1501ms'
-  - '[freeSub] A🟢🇹🇭res_dokng.com_441fecdf | 1513ms'
-  - '[freeSub] A🟢🇹🇭res[🔮🎮🐙🔍]_dokng.com_c58cd50f | 1528ms'
-  - '[freeSub] A🟢🇹🇭res[🎮✈️]_dokng.com_bf81894b | 1530ms'
-  - '[free18] 🇰🇿_哈萨克斯坦 (3) | 1618ms'
-  - '[freeSub] A🟢🇻🇳res_dokng.com_11eacb89 | 1635ms'
-  - '[free18] 🇰🇿_哈萨克斯坦 | 1936ms'
-  - '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1558... | 2281ms'
-  - '[ermaozi] 🇸🇨_SC_塞舌尔->🇳🇱_NL_荷兰_IPV4 | 2494ms'
-  - '[free18] 🇸🇨_塞舌尔 (5) | 3463ms'
-  - '[zhuhaiuk] ES - zhuhai.uk | 3725ms'
-  - '[zhuhaiuk] NL - zhuhai.uk 04 | 3734ms'
+  - '[free18] 🇨🇦_加拿大 (15) | 115ms'
+  - '[Eternity] 🇨🇦CA-137.184.174.93-0130 | 39.701MB | 118ms'
+  - '[free18] 🇨🇦_加拿大 (4) | 120ms'
+  - '[free18] 🇨🇦_加拿大 (2) | 124ms'
+  - '[Eternity] 🇨🇦CA-216.152.147.93-0156 | 0.0MB | 128ms'
+  - '[free18] 🇨🇦_加拿大 (7) | 133ms'
+  - '[free18] 🇨🇦_加拿大 (20) | 138ms'
+  - '[free18] 🇨🇦_加拿大 (5) | 150ms'
+  - '[free18] 🇨🇦_加拿大 (13) | 151ms'
+  - '[free18] 🇨🇦_加拿大 (6) | 159ms'
+  - '[free18] 🇨🇦_加拿大 (18) | 168ms'
+  - '[free18] 🇨🇦_加拿大 (12) | 169ms'
+  - '[ermaozi] 🇨🇦[www.v2nodes.com] ss-CA-1545... | 171ms'
+  - '[free18] 🇨🇦_加拿大 (19) | 171ms'
+  - '[free18] 🇨🇦_加拿大 (16) | 172ms'
+  - '[ermaozi] 🏳[www.v2nodes.com] ss- | 173ms'
+  - '[free18] 🇨🇦_加拿大 (3) | 183ms'
+  - '[freeSub] D🔴🇨🇦hos[🤖💬🧩🎭]_dokng.com_2017146a | 190ms'
+  - '[freeSub] D🔴🇨🇦hos[🤖💬🔮🧩]_dokng.com_8a105a38 | 203ms'
+  - '[Eternity] 🇨🇦CA-149.22.95.183-0132 | 10.512MB | 204ms'
+  - '[NoMoreWalls] 🏳[www.v2nodes.com] vless- #10 | 205ms'
+  - '[free18] 🇨🇦_加拿大 (10) | 213ms'
+  - '[freeSub] A🟢🇲🇽res_dokng.com_24835ec5 | 265ms'
+  - '[freeSub] A🟢🇲🇽res[📺🐙🔍]_dokng.com_6938d0ba | 272ms'
+  - '[freeSub] A🟢🇲🇽res[📺]_dokng.com_9b6eb0d6 | 293ms'
+  - '[freeSub] C🟠🇲🇽hos_dokng.com_8d9836d8 | 304ms'
+  - '[freeSub] C🟠🇨🇦hos[🤖💬🔮🎮]_dokng.com_1a96ab61 | 319ms'
+  - '[ermaozi] @DeltaKroneckerGithub_3021_IPV4 | 379ms'
+  - '[NoMoreWalls] 🇲🇽MX_1|1.3MB/s | 403ms'
+  - '[freeSub] A🟢🇲🇽res[🤖]_dokng.com_bac8156d | 404ms'
+  - '[free18] 🇨🇱_智利 | 525ms'
+  - '[freeSub] C🟠🇲🇽hos_dokng.com_fc2a02cd | 556ms'
+  - '[free18] 🇮🇱_以色列 | 590ms'
+  - '[freeSub] C🟠🇲🇽hos_dokng.com_d123f47b | 621ms'
+  - '[freeSub] D🔴🇪🇨hos[🤖💬📺🎵]_dokng.com_41643452 | 626ms'
+  - '[freeSub] C🟠🇲🇽hos_dokng.com_a749b37b | 685ms'
+  - '[freeSub] D🔴🇷🇸hos[🤖💬🔮🧩]_dokng.com_c7a848d0 | 731ms'
+  - '[NoMoreWalls] 🇧🇬BG_1|1.7MB/s | 741ms'
+  - '[free18] 🇸🇨_塞舌尔 (18) | 743ms'
+  - '[freeSub] C🟠🇧🇬hos[🤖💬🎮🐙]_dokng.com_23f515ea | 744ms'
+  - '[freeSub] D🔴🇷🇸hos[🤖💬🔮🧩]_dokng.com_f625fada | 750ms'
+  - '[freeSub] A🟢🇮🇱res[🤖💬🔮🧩]_dokng.com_fbd6fbce | 779ms'
+  - '[ermaozi] 🇦🇺[www.v2nodes.com] trojan-AU-... | 788ms'
+  - '[freeSub] D🔴🇧🇷hos[🤖💬🎵🎞️]_dokng.com_a2ec98c4 | 798ms'
+  - '[ermaozi] 🔵100@oneclickvpnkeys | 801ms'
+  - '[freeSub] D🔴🇲🇰hos[🤖💬🔮🧩]_dokng.com_ec874314 | 845ms'
+  - '[freeSub] A+🟢🇨🇾mob[🤖📺]_dokng.com_99fcd799 | 861ms'
+  - '[ermaozi] 🏳[www.v2nodes.com] ss- #12 | 893ms'
+  - '[freeSub] A🟢🇧🇷res[📺]_dokng.com_936e7dd6 | 931ms'
+  - '[ermaozi] 🏳[www.v2nodes.com] ss- #13 | 935ms'
+  - '[freeSub] D🔴🇭🇰hos[🎵🎮✈️🐙]_dokng.com_dabbadb6 | 981ms'
+  - '[Eternity] 🇮🇳IN-152.67.8.205-5772 | 0.07MB | 1029ms'
+  - '[freeSub] D🔴🇬🇪hos[🤖💬🔮📺]_dokng.com_7d1fc213 | 1033ms'
+  - '[ermaozi] 🇦🇪[www.v2nodes.com] vless-AE-1... | 1060ms'
+  - '[zhuhaiuk] ID - zhuhai.uk | 1116ms'
+  - '[freeSub] D🔴🇮🇩hos[🤖💬🔮📺]_dokng.com_33704a70 | 1118ms'
+  - '[free18] 🇿🇦_南非 (2) | 1139ms'
+  - '[ermaozi] 🇮🇳[www.v2nodes.com] vless-IN-1... | 1145ms'
+  - '[free18] 🇨🇦_加拿大 (14) | 1200ms'
+  - '[free18] 🇨🇦_加拿大 (17) | 1244ms'
+  - '[freeSub] D🔴🇻🇳hos[🤖💬🔮🎵]_dokng.com_c355101a | 1272ms'
+  - '[freeSub] D🔴🇻🇳hos[🤖💬🔮📺]_dokng.com_99423bae | 1294ms'
+  - '[freeSub] A🟢🇮🇩res_dokng.com_9bb962cb | 1310ms'
+  - '[freeSub] C🟠🇹🇭hos_dokng.com_5acf8d13 | 1338ms'
+  - '[freeSub] A🟢🇹🇭res[💬]_dokng.com_7fc717e7 | 1341ms'
+  - '[freeSub] A🟢🇹🇭res[💬✈️🐙]_dokng.com_72bd5c3a | 1344ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_3740a210 | 1345ms'
+  - '[NoMoreWalls] 🇹🇭TH_3|1.7MB/s | 1381ms'
+  - '[zhuhaiuk] TH - zhuhai.uk 02 | 1382ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_738424ea | 1386ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_a8a9e262 | 1390ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_1225b21e | 1397ms'
+  - '[NoMoreWalls] 🇹🇭TH_1|1.1MB/s | 1398ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_441fecdf | 1399ms'
+  - '[NoMoreWalls] 🇹🇭TH_2|1.6MB/s | 1403ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_c58cd50f | 1410ms'
+  - '[freeSub] A🟢🇹🇭res[💬🔮🎵🐙]_dokng.com_da6cca38 | 1413ms'
+  - '[Eternity] BR-216.238.104.154-0092 | 21.388MB | 1443ms'
+  - '[freeSub] A🟢🇻🇳res[💬📺]_dokng.com_8b68a714 | 1488ms'
+  - '[freeSub] D🔴🇵🇭hos[💬]_dokng.com_19b515e6 | 1511ms'
+  - '[freeSub] A🟢🇻🇳res_dokng.com_c5c61858 | 1525ms'
+  - '[zhuhaiuk] VN - zhuhai.uk | 1528ms'
+  - '[freeSub] A🟢🇮🇩res_dokng.com_5f6d4e46 | 1554ms'
+  - '[free18] 🇮🇳_印度 (2) | 1606ms'
+  - '[freeSub] C🟠🇳🇱hos[🤖💬🔮🧩]_dokng.com_0aff9cf2 | 1635ms'
+  - '[free18] 🇰🇿_哈萨克斯坦 (4) | 1638ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_63f8b36e | 1708ms'
+  - '[freeSub] A🟢🇹🇭res_dokng.com_3254c865 | 2077ms'
+  - '[ermaozi] 🇻🇳[www.v2nodes.com] vless-VN-1... | 2692ms'
+  - '[freeSub] C🟠🇪🇸hos[🤖💬🔮🎮]_dokng.com_c851b7e4 | 2957ms'
+  - '[free18] 🇸🇨_塞舌尔 (16) | 3000ms'
+  - '[freeSub] A🟢🇳🇱res[🤖💬🔮🎵]_dokng.com_3e91976f | 3017ms'
+  - '[freeSub] C🟠🇪🇸hos[🤖💬🔮🎮]_dokng.com_3a319faa | 3130ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
