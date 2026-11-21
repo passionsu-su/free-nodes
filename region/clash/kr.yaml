@@ -5,17 +5,7 @@ log-level: info
 ipv6: false
 proxies:
 - type: vmess
-  name: '[free18] 🇰🇷_韩国 (3) | 532ms'
-  server: 129.154.61.196
-  port: 800
-  uuid: a915b1d6-cf28-4dc8-e4b4-e09c48c37ec0
-  cipher: auto
-  alterId: 0
-  udp: true
-  tls: false
-  skip-cert-verify: false
-- type: vmess
-  name: '[free18] 🇰🇷_韩国 (2) | 547ms'
+  name: '[free18] 🇰🇷_韩国 (2) | 474ms'
   server: 140.238.2.250
   port: 443
   uuid: 41a7089a-040b-4538-8b8d-010902405bde
@@ -24,62 +14,58 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: false
-- name: '[Eternity] 🇰🇷KR-211.178.105.134-0177 | 14.59MB | 572ms'
+- name: '[Eternity] 🇰🇷KR-211.178.105.134-0245 | 9.379MB | 531ms'
   server: 211.178.105.134
   port: 6123
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 585ms'
+- type: vmess
+  name: '[free18] 🇰🇷_韩国 (3) | 591ms'
+  server: 129.154.61.196
+  port: 800
+  uuid: a915b1d6-cf28-4dc8-e4b4-e09c48c37ec0
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 617ms'
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   port: 443
   server: 158.247.253.243
   skip-cert-verify: true
   sni: connectgraduateswithjobopeningsandgrowprofessionally.com
   type: trojan
-- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 636ms'
-  type: vless
-  server: 152.69.226.63
-  port: 25555
-  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
-  encryption: none
+- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 649ms'
   network: ws
+  port: 25555
+  server: 152.69.226.63
+  tls: false
+  type: vless
+  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
   ws-opts:
     path: /
-    headers: {}
-- name: '[ermaozi] 🇰🇷KR_1|1.7MB/s | 710ms'
+- name: '[zhuhaiuk] KR - zhuhai.uk | 829ms'
+  type: http
+  server: 152.69.230.221
+  port: 443
+  tls: true
+  skip-cert-verify: true
+- name: '[ermaozi] 🇰🇷KR_1|1.7MB/s | 1013ms'
   port: 1080
   server: 183.106.215.208
   type: socks5
-- name: '[freeSub] D🔴🇰🇷hos[🤖💬🧩🎵]_dokng.com_f751c493 | 817ms'
-  port: 443
-  server: 152.69.230.221
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: '[Eternity] 🇰🇷KR-218.237.185.234-0180 | 17.517MB | 1227ms'
+- name: '[Eternity] 🇰🇷KR-218.237.185.234-0233 | 4.65MB | 1334ms'
   server: p141.panda001.net
   port: 4652
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: '[Eternity] 🇰🇷KR-43.203.188.27-0186 | 17.37MB | 2286ms'
-  server: dp8yk.xiaoyan.io
-  port: 16616
-  type: vmess
-  uuid: 904f0569-8695-466f-97cf-0de2face1b46
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com
+- name: '[freeSub] U⚪🇰🇷ukn_dokng.com_418b38c8 | 1776ms'
+  port: 1090
+  server: 121.169.46.116
+  type: socks5
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -87,28 +73,28 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[free18] 🇰🇷_韩国 (3) | 532ms'
-  - '[free18] 🇰🇷_韩国 (2) | 547ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0177 | 14.59MB | 572ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 585ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 636ms'
-  - '[ermaozi] 🇰🇷KR_1|1.7MB/s | 710ms'
-  - '[freeSub] D🔴🇰🇷hos[🤖💬🧩🎵]_dokng.com_f751c493 | 817ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0180 | 17.517MB | 1227ms'
-  - '[Eternity] 🇰🇷KR-43.203.188.27-0186 | 17.37MB | 2286ms'
+  - '[free18] 🇰🇷_韩国 (2) | 474ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0245 | 9.379MB | 531ms'
+  - '[free18] 🇰🇷_韩国 (3) | 591ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 617ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 649ms'
+  - '[zhuhaiuk] KR - zhuhai.uk | 829ms'
+  - '[ermaozi] 🇰🇷KR_1|1.7MB/s | 1013ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0233 | 4.65MB | 1334ms'
+  - '[freeSub] U⚪🇰🇷ukn_dokng.com_418b38c8 | 1776ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[free18] 🇰🇷_韩国 (3) | 532ms'
-  - '[free18] 🇰🇷_韩国 (2) | 547ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0177 | 14.59MB | 572ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 585ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 636ms'
-  - '[ermaozi] 🇰🇷KR_1|1.7MB/s | 710ms'
-  - '[freeSub] D🔴🇰🇷hos[🤖💬🧩🎵]_dokng.com_f751c493 | 817ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0180 | 17.517MB | 1227ms'
-  - '[Eternity] 🇰🇷KR-43.203.188.27-0186 | 17.37MB | 2286ms'
+  - '[free18] 🇰🇷_韩国 (2) | 474ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0245 | 9.379MB | 531ms'
+  - '[free18] 🇰🇷_韩国 (3) | 591ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] trojan-KR-... | 617ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 649ms'
+  - '[zhuhaiuk] KR - zhuhai.uk | 829ms'
+  - '[ermaozi] 🇰🇷KR_1|1.7MB/s | 1013ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0233 | 4.65MB | 1334ms'
+  - '[freeSub] U⚪🇰🇷ukn_dokng.com_418b38c8 | 1776ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY

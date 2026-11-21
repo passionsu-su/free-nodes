@@ -5,7 +5,7 @@ log-level: info
 ipv6: false
 proxies:
 - type: vless
-  name: '[free18] 🇹🇼_台湾 (11) | 990ms'
+  name: '[free18] 🇹🇼_台湾 (11) | 900ms'
   server: free.fugui.lol
   port: 51283
   uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
@@ -20,37 +20,7 @@ proxies:
     public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
     short-id: fa514b83
 - type: vless
-  name: '[free18] 🇹🇼_台湾 (6) | 1003ms'
-  server: free.fugui.lol
-  port: 47396
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-- type: vless
-  name: '[free18] 🇹🇼_台湾 (9) | 1536ms'
-  server: free.fugui.lol
-  port: 62015
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: ios
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-- type: vless
-  name: '[free18] 🇹🇼_台湾 (5) | 1880ms'
+  name: '[free18] 🇹🇼_台湾 (5) | 1447ms'
   server: free.fugui.lol
   port: 19482
   uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
@@ -64,6 +34,22 @@ proxies:
   reality-opts:
     public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
     short-id: fa514b83
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: '[freeSub] U⚪🇭🇰ukn[🔮🎮✈️]_dokng.com_899fc4a9 | 2027ms'
+  port: 47396
+  reality-opts:
+    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
+    short-id: fa514b83
+  server: free.fugui.lol
+  servername: swdist.apple.com
+  skip-cert-verify: false
+  sni: swdist.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
+  x-toolall-mihomo: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -71,18 +57,16 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[free18] 🇹🇼_台湾 (11) | 990ms'
-  - '[free18] 🇹🇼_台湾 (6) | 1003ms'
-  - '[free18] 🇹🇼_台湾 (9) | 1536ms'
-  - '[free18] 🇹🇼_台湾 (5) | 1880ms'
+  - '[free18] 🇹🇼_台湾 (11) | 900ms'
+  - '[free18] 🇹🇼_台湾 (5) | 1447ms'
+  - '[freeSub] U⚪🇭🇰ukn[🔮🎮✈️]_dokng.com_899fc4a9 | 2027ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[free18] 🇹🇼_台湾 (11) | 990ms'
-  - '[free18] 🇹🇼_台湾 (6) | 1003ms'
-  - '[free18] 🇹🇼_台湾 (9) | 1536ms'
-  - '[free18] 🇹🇼_台湾 (5) | 1880ms'
+  - '[free18] 🇹🇼_台湾 (11) | 900ms'
+  - '[free18] 🇹🇼_台湾 (5) | 1447ms'
+  - '[freeSub] U⚪🇭🇰ukn[🔮🎮✈️]_dokng.com_899fc4a9 | 2027ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
