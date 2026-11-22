@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
 """Collect public proxy subscriptions, validate them with mihomo, and publish stable feeds."""
-import base64, concurrent.futures, ipaddress, json, os, re, socket, subprocess, time, urllib.parse, urllib.request
+import base64, concurrent.futures, ipaddress, json, os, re, socket, subprocess, sys, time, urllib.parse, urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 import yaml
 
 ROOT=Path(__file__).resolve().parents[1]
+# Windows consoles default to a legacy codepage (e.g. cp936); node names
+# printed to the log contain CJK/emoji, which would raise
+# UnicodeEncodeError and kill the run. Force UTF-8 output (no-op on
+# Linux/macOS, where stdout is already UTF-8).
+for _s in (sys.stdout,sys.stderr):
+    try: _s.reconfigure(encoding="utf-8",errors="replace")
+    except Exception: pass
 BJT=timezone(timedelta(hours=8))
 UA={"User-Agent":"free-nodes-aggregator/1.0"}
 SOURCES=[
@@ -181,11 +188,19 @@ def filter_tested(passed):
         if k not in best: best[k]=(p,d)
     dup=len(kept)-len(best)
     return sorted(best.values(),key=lambda x:x[1]),slow,dup
+def mihomo_binary():
+    """Local mihomo binary. It ships as `mihomo` on Linux/macOS and
+    `mihomo.exe` on Windows; prefer the platform-native name but accept
+    either, so a misplaced binary still works."""
+    names=("mihomo.exe","mihomo") if os.name=="nt" else ("mihomo","mihomo.exe")
+    for name in names:
+        p=ROOT/name
+        if p.exists(): return p
+    raise RuntimeError("mihomo binary missing")
 def _delay_test(nodes, url, timeout_ms):
     cfg={"mixed-port":17890,"allow-lan":False,"mode":"rule","log-level":"info","external-controller":"127.0.0.1:9090","secret":"","proxies":nodes,"proxy-groups":[{"name":"TEST","type":"select","proxies":[p["name"] for p in nodes]}],"rules":["MATCH,TEST"]}
     (ROOT/"mihomo-test.yaml").write_text(yaml.safe_dump(cfg,allow_unicode=True,sort_keys=False),encoding="utf-8")
-    binary=ROOT/"mihomo"
-    if not binary.exists(): raise RuntimeError("mihomo binary missing")
+    binary=mihomo_binary()
     log_path=ROOT/"mihomo-test.log"
     log_file=log_path.open("w",encoding="utf-8")
     proc=subprocess.Popen([str(binary),"-d",str(ROOT/"mihomo-data"),"-f",str(ROOT/"mihomo-test.yaml")],stdout=log_file,stderr=subprocess.STDOUT)
