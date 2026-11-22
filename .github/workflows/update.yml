@@ -81,9 +81,16 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
+      - name: Use cached Python (bypass setup-python)
+        shell: powershell
+        run: |
+          $candidates = @("C:\hostedtoolcache\windows\Python\3.13.9\x64", "C:\hostedtoolcache\windows\Python\3.12.10\x64")
+          $found = $null
+          foreach ($dir in $candidates) { if (Test-Path "$dir\python.exe") { $found = $dir; break } }
+          if (-not $found) { $cmd = Get-Command python -ErrorAction SilentlyContinue; if ($cmd) { $found = Split-Path $cmd.Source } }
+          if (-not $found) { throw "No usable Python found. Install Python 3.12+ on this PC and add it to PATH." }
+          $found | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          python --version
       - name: Install dependencies
         run: python -m pip install --disable-pip-version-check PyYAML
       - name: Download mihomo (Windows)
