@@ -4,23 +4,72 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- type: vless
-  name: '[free18] 🇭🇰_香港 (5) | 908ms'
-  server: 116.213.43.43
-  port: 11103
-  uuid: bb836d81-d0c5-4f01-a584-806cdf65e36a
-  flow: xtls-rprx-vision
+- alpn:
+  - h3
+  auth: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  down: 200
+  name: '[ermaozi] 🇸🇬 新加坡 | SGP | 993ms'
+  obfs: salamander
+  obfs-password: fcfqz5o4znnjqtrp
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  port: 443
+  server: hkzfsg2.mateflora.com
+  skip-cert-verify: true
+  sni: hkzfsg2.mateflora.com
+  type: hysteria2
   udp: true
+  up: 100
+- name: '[zhuhaiuk] HK - zhuhai.uk | 1002ms'
+  type: http
+  server: 119.28.24.235
+  port: 3128
   tls: true
-  servername: www.apple.com
-  sni: www.apple.com
+  skip-cert-verify: true
+- alpn:
+  - h3
+  auth: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  down: 200
+  name: '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1055ms'
+  obfs: salamander
+  obfs-password: o5qgnpl75wayhkn5
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  port: 443
+  server: nb2hk.hikigo.com
+  skip-cert-verify: true
+  sni: nb2hk.hikigo.com
+  type: hysteria2
+  udp: true
+  up: 100
+- name: '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1088ms'
+  password: ''
+  port: 8443
+  server: 38.76.140.254
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- type: ss
+  name: '[free18] 🇭🇰_香港 (2) | 3677ms'
+  server: 43.161.217.165
+  port: 80
+  password: MySecretPass123
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
   skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 5NNdXPMTBLP-xeDKFwcG-j6u-c4DhXIfnlHMqMJZ4n4
-    short-id: 9564e1a7a1cf8b3a
+- type: ss
+  name: '[free18] 🇭🇰_香港 | 3696ms'
+  server: 43.161.217.165
+  port: 8388
+  password: MySecretPass123
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
 - type: vless
-  name: '[free18] 🇭🇰_香港 (4) | 909ms'
+  name: '[free18] 🇭🇰_香港 (4) | 3827ms'
   server: 116.213.43.43
   port: 11107
   uuid: 08a37d1f-7bf1-4b5d-a2ec-5ced6a633d7f
@@ -34,72 +83,25 @@ proxies:
   reality-opts:
     public-key: 6GRzkPbs12fKBdBBFzs5dmtmbSHCXMngUCBKLrXYm3U
     short-id: e2ccd8eedcbee2ce
-- name: '[ermaozi] 🇭🇰HK_2|1.0MB/s | 969ms'
-  port: 8443
-  server: 38.76.140.254
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- alpn:
-  - h3
-  auth: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  down: 200
-  name: '[ermaozi] 🇭🇰HK_1|1.4MB/s | 980ms'
-  obfs: salamander
-  obfs-password: o5qgnpl75wayhkn5
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  port: 443
-  server: nb2hk.hikigo.com
-  skip-cert-verify: true
-  sni: nb2hk.hikigo.com
-  type: hysteria2
-  udp: true
-  up: 100
-- name: '[zhuhaiuk] HK - zhuhai.uk | 1152ms'
-  type: http
-  server: 202.85.53.25
-  port: 443
-  tls: true
-  sni: 202.85.53.25
-  skip-cert-verify: true
-- type: vless
-  name: '[free18] 🇭🇰_香港 (6) | 1429ms'
-  server: 116.213.43.43
-  port: 11101
-  uuid: ca69a29d-60ef-433a-91bc-27537be993c8
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: www.apple.com
-  sni: www.apple.com
+- name: '[Eternity] 🇭🇰HK-156.245.232.239-5748 | 0.009MB | 3834ms'
+  server: 156.245.232.239
+  port: 35043
+  type: vmess
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  alterId: 0
+  cipher: auto
+  tls: false
   skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 2eUT-b2e2lghUKWM3qf8uI3_Dphg9whKrQ08o4S-bzw
-    short-id: 82f99830e7b834e2
-- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 2111ms'
-  server: 116.213.43.43
-  port: 11102
-  type: vless
-  uuid: 530d31fc-2690-49e4-bfc9-3f991e145008
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: oW6HMjniDmBJdjGKwhBAIS2zMS1VvHORubh9vdazqQ0
-    short-id: ed571d022f7bc3bf
-  servername: www.apple.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-- name: '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 2250ms'
-  server: sclass-00.catcat321.com
-  port: 20103
-  type: trojan
+  network: ws
+  ws-opts:
+    path: /
+- name: '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 3926ms'
   password: d9064589-74af-432a-9390-5d8a9da281bf
+  port: 20123
+  server: sclass-00.catcat321.com
+  skip-cert-verify: true
   sni: hk.catxstar.com
-  skip-cert-verify: false
+  type: trojan
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -107,26 +109,28 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[free18] 🇭🇰_香港 (5) | 908ms'
-  - '[free18] 🇭🇰_香港 (4) | 909ms'
-  - '[ermaozi] 🇭🇰HK_2|1.0MB/s | 969ms'
-  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 980ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1152ms'
-  - '[free18] 🇭🇰_香港 (6) | 1429ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 2111ms'
-  - '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 2250ms'
+  - '[ermaozi] 🇸🇬 新加坡 | SGP | 993ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1002ms'
+  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1055ms'
+  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1088ms'
+  - '[free18] 🇭🇰_香港 (2) | 3677ms'
+  - '[free18] 🇭🇰_香港 | 3696ms'
+  - '[free18] 🇭🇰_香港 (4) | 3827ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-5748 | 0.009MB | 3834ms'
+  - '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 3926ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[free18] 🇭🇰_香港 (5) | 908ms'
-  - '[free18] 🇭🇰_香港 (4) | 909ms'
-  - '[ermaozi] 🇭🇰HK_2|1.0MB/s | 969ms'
-  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 980ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1152ms'
-  - '[free18] 🇭🇰_香港 (6) | 1429ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 2111ms'
-  - '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 2250ms'
+  - '[ermaozi] 🇸🇬 新加坡 | SGP | 993ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1002ms'
+  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1055ms'
+  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1088ms'
+  - '[free18] 🇭🇰_香港 (2) | 3677ms'
+  - '[free18] 🇭🇰_香港 | 3696ms'
+  - '[free18] 🇭🇰_香港 (4) | 3827ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-5748 | 0.009MB | 3834ms'
+  - '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 3926ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY

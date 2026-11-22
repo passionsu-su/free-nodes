@@ -3,16 +3,36 @@ allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
-proxies: []
+proxies:
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: '[freeSub] U⚪🇭🇰ukn[🔮🎮✈️]_dokng.com_899fc4a9 | 2366ms'
+  port: 47396
+  reality-opts:
+    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
+    short-id: fa514b83
+  server: free.fugui.lol
+  servername: swdist.apple.com
+  skip-cert-verify: false
+  sni: swdist.apple.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
+  x-toolall-mihomo: true
 proxy-groups:
 - name: AUTO
-  type: select
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
   proxies:
-  - DIRECT
+  - '[freeSub] U⚪🇭🇰ukn[🔮🎮✈️]_dokng.com_899fc4a9 | 2366ms'
 - name: PROXY
   type: select
   proxies:
-  - DIRECT
+  - AUTO
+  - '[freeSub] U⚪🇭🇰ukn[🔮🎮✈️]_dokng.com_899fc4a9 | 2366ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
