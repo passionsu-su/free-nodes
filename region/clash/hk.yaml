@@ -4,27 +4,55 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[ermaozi] 🇭🇰 香港 | HKG | 651ms'
-  server: 8.217.1.203
-  port: 8443
-  type: vless
-  uuid: 8b17beac-b143-447d-aa68-14cbb121a602
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 74P0QFvaK6B13rHsxR_t0lqRlg4YLuORD4VaHr5Jd38
-    short-id: 0bf55f64
-  servername: www.apple.com
-  client-fingerprint: chrome
-  network: tcp
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - openai.com
+    method: GET
+    path:
+    - /QQqun-737805443
+  name: '[ermaozi] 🇭🇰 香港 | HKG #2 | 630ms'
+  network: http
+  port: 52080
+  server: 47.242.81.94
+  skip-cert-verify: true
+  tls: false
+  type: vmess
   udp: true
-- cipher: aes-256-gcm
-  name: '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 809ms'
-  password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
-  port: 8388
-  server: 209.248.57.105
-  type: ss
-- name: '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 821ms'
+  uuid: e47b9f77-60e4-4738-8d53-772b6002e146
+- type: vmess
+  name: '[free18] 🇭🇰_香港 (4) | 641ms'
+  server: dog-hk.kunlun01dns.com
+  port: 21021
+  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: '[ermaozi] 🔵92@oneclickvpnkeys | 956ms'
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  port: 443
+  server: vpn-hk-004.fastervpn.world
+  skip-cert-verify: true
+  sni: vpn-hk-004.fastervpn.world
+  tls: false
+  type: hysteria2
+- name: '[ermaozi] 🔵93@oneclickvpnkeys | 1039ms'
+  obfs: salamander
+  obfs-password: c8827ab99e316c5bd414e21afa915ddf
+  password: 8294f130408299df8cab08c80bf6f819
+  port: 443
+  server: 24.233.8.109
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: false
+  type: hysteria2
+- name: '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1139ms'
   password: ''
   port: 8443
   server: 38.76.140.254
@@ -34,28 +62,26 @@ proxies:
   udp: true
   username: ''
   x-toolall-mihomo: true
-- name: '[ermaozi] 🔵92@oneclickvpnkeys | 950ms'
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  port: 443
-  server: vpn-hk-004.fastervpn.world
+- name: '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 2352ms'
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  port: 20123
+  server: sclass-00.catcat321.com
   skip-cert-verify: true
-  sni: vpn-hk-004.fastervpn.world
+  sni: hk.catxstar.com
+  type: trojan
+- alpn:
+  - h3
+  - h2
+  - http/1.1
+  name: '[NoMoreWalls] @V2rayNPVTConfig #1 | 2688ms'
+  password: ePPsH1bMFD
+  port: 50541
+  server: 23.141.172.229
+  skip-cert-verify: true
+  sni: is1-ssl.mzstatic.com
   tls: false
   type: hysteria2
-- name: '[NoMoreWalls] 🇭🇰[www.v2nodes.com] trojan-HK-... | 1030ms'
-  password: '12012'
-  port: 12012
-  server: 47.242.93.89
-  skip-cert-verify: true
-  sni: ali-hk.b-gfw.cfd
-  type: trojan
-- name: '[zhuhaiuk] HK - zhuhai.uk | 1629ms'
-  type: socks5
-  server: 47.242.19.215
-  port: 8899
-  username: admin
-  password: admin
-- name: '[ermaozi] 🇭🇰 香港 | HKG #4 | 2000ms'
+- name: '[ermaozi] 🇳🇬 尼日利亚 | NGA #1 | 2694ms'
   password: d9064589-74af-432a-9390-5d8a9da281bf
   port: 20103
   server: sclass-00.catcat321.com
@@ -63,44 +89,20 @@ proxies:
   sni: hk.catxstar.com
   type: trojan
   udp: true
-- name: '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 2203ms'
-  obfs: salamander
-  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
-  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
-  port: 5010
-  server: 152.32.254.68
-  skip-cert-verify: false
-  sni: nas.aizhzo.com
-  tls: false
-  type: hysteria2
-- name: '[Eternity] 🇭🇰HK-43.198.81.204-0274 | 0.032MB | 2768ms'
+- name: '[NoMoreWalls] 🇭🇰HK_2|1.1MB/s | 3570ms'
+  port: 5001
+  server: 219.78.223.199
+  skip-cert-verify: true
+  type: socks5
+- name: '[Eternity] 🇭🇰HK-43.198.81.204-0274 | 0.032MB | 3587ms'
   server: sclass-c1.catcat321.com
   port: 20051
   type: trojan
   password: d9064589-74af-432a-9390-5d8a9da281bf
   sni: hk.catxstar.com
   skip-cert-verify: false
-- down: ''
-  fingerprint: ''
-  name: '[NoMoreWalls] 🇭🇰HK_2|2.5MB/s | 3162ms'
-  obfs: salamander
-  obfs-password: 9veAh9pTbrAfDwM1fIYI
-  password: hAUdd15a7YGHUSgiPOUz
-  port: 443
-  server: 43.103.2.53
-  skip-cert-verify: true
-  sni: ''
-  type: hysteria2
-  up: ''
-- name: '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 3371ms'
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  port: 20123
-  server: sclass-00.catcat321.com
-  skip-cert-verify: true
-  sni: hk.catxstar.com
-  type: trojan
 - type: vless
-  name: '[free18] 🇭🇰_香港 (6) | 3730ms'
+  name: '[free18] 🇭🇰_香港 (6) | 3846ms'
   server: 45.192.193.54
   port: 35600
   uuid: 8614bde7-34cf-4413-8360-e96f1b960528
@@ -120,34 +122,32 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] 🇭🇰 香港 | HKG | 651ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 809ms'
-  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 821ms'
-  - '[ermaozi] 🔵92@oneclickvpnkeys | 950ms'
-  - '[NoMoreWalls] 🇭🇰[www.v2nodes.com] trojan-HK-... | 1030ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1629ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #4 | 2000ms'
-  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 2203ms'
-  - '[Eternity] 🇭🇰HK-43.198.81.204-0274 | 0.032MB | 2768ms'
-  - '[NoMoreWalls] 🇭🇰HK_2|2.5MB/s | 3162ms'
-  - '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 3371ms'
-  - '[free18] 🇭🇰_香港 (6) | 3730ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 630ms'
+  - '[free18] 🇭🇰_香港 (4) | 641ms'
+  - '[ermaozi] 🔵92@oneclickvpnkeys | 956ms'
+  - '[ermaozi] 🔵93@oneclickvpnkeys | 1039ms'
+  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1139ms'
+  - '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 2352ms'
+  - '[NoMoreWalls] @V2rayNPVTConfig #1 | 2688ms'
+  - '[ermaozi] 🇳🇬 尼日利亚 | NGA #1 | 2694ms'
+  - '[NoMoreWalls] 🇭🇰HK_2|1.1MB/s | 3570ms'
+  - '[Eternity] 🇭🇰HK-43.198.81.204-0274 | 0.032MB | 3587ms'
+  - '[free18] 🇭🇰_香港 (6) | 3846ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] 🇭🇰 香港 | HKG | 651ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 809ms'
-  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 821ms'
-  - '[ermaozi] 🔵92@oneclickvpnkeys | 950ms'
-  - '[NoMoreWalls] 🇭🇰[www.v2nodes.com] trojan-HK-... | 1030ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1629ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #4 | 2000ms'
-  - '[ermaozi] @Nexus_Panell چنل تلگرام #1 | 2203ms'
-  - '[Eternity] 🇭🇰HK-43.198.81.204-0274 | 0.032MB | 2768ms'
-  - '[NoMoreWalls] 🇭🇰HK_2|2.5MB/s | 3162ms'
-  - '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 3371ms'
-  - '[free18] 🇭🇰_香港 (6) | 3730ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 630ms'
+  - '[free18] 🇭🇰_香港 (4) | 641ms'
+  - '[ermaozi] 🔵92@oneclickvpnkeys | 956ms'
+  - '[ermaozi] 🔵93@oneclickvpnkeys | 1039ms'
+  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1139ms'
+  - '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 2352ms'
+  - '[NoMoreWalls] @V2rayNPVTConfig #1 | 2688ms'
+  - '[ermaozi] 🇳🇬 尼日利亚 | NGA #1 | 2694ms'
+  - '[NoMoreWalls] 🇭🇰HK_2|1.1MB/s | 3570ms'
+  - '[Eternity] 🇭🇰HK-43.198.81.204-0274 | 0.032MB | 3587ms'
+  - '[free18] 🇭🇰_香港 (6) | 3846ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
