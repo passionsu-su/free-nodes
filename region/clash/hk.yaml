@@ -4,17 +4,15 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1099ms'
-  password: ''
+- name: '[ermaozi] 🇭🇰HK_2|1.0MB/s | 925ms'
   port: 8443
   server: 38.76.140.254
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-  username: ''
   x-toolall-mihomo: true
-- name: '[zhuhaiuk] HK - zhuhai.uk | 1262ms'
+- name: '[zhuhaiuk] HK - zhuhai.uk | 1185ms'
   type: http
   server: 119.28.24.235
   port: 3128
@@ -22,18 +20,28 @@ proxies:
   skip-cert-verify: true
 - alpn:
   - h3
-  - h2
-  - http/1.1
-  name: '[ermaozi] @V2rayNPVTConfig #1 | 1795ms'
-  password: ePPsH1bMFD
-  port: 50541
-  server: 23.141.172.229
+  auth: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  down: 200
+  name: '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1616ms'
+  obfs: salamander
+  obfs-password: o5qgnpl75wayhkn5
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  port: 443
+  server: nb2hk.hikigo.com
   skip-cert-verify: true
-  sni: is1-ssl.mzstatic.com
-  tls: false
+  sni: nb2hk.hikigo.com
   type: hysteria2
+  udp: true
+  up: 100
+- name: '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 1962ms'
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  port: 20123
+  server: sclass-00.catcat321.com
+  skip-cert-verify: true
+  sni: hk.catxstar.com
+  type: trojan
 - type: vless
-  name: '[free18] 🇭🇰_香港 (4) | 2012ms'
+  name: '[free18] 🇭🇰_香港 (4) | 2049ms'
   server: 116.213.43.43
   port: 11107
   uuid: 08a37d1f-7bf1-4b5d-a2ec-5ced6a633d7f
@@ -48,7 +56,7 @@ proxies:
     public-key: 6GRzkPbs12fKBdBBFzs5dmtmbSHCXMngUCBKLrXYm3U
     short-id: e2ccd8eedcbee2ce
 - type: vless
-  name: '[free18] 🇭🇰_香港 (5) | 2261ms'
+  name: '[free18] 🇭🇰_香港 (5) | 2430ms'
   server: 116.213.43.43
   port: 11103
   uuid: bb836d81-d0c5-4f01-a584-806cdf65e36a
@@ -62,47 +70,19 @@ proxies:
   reality-opts:
     public-key: 5NNdXPMTBLP-xeDKFwcG-j6u-c4DhXIfnlHMqMJZ4n4
     short-id: 9564e1a7a1cf8b3a
-- name: '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 2373ms'
-  server: sclass-00.catcat321.com
-  port: 20103
-  type: trojan
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  sni: hk.catxstar.com
-  skip-cert-verify: false
-- alpn:
-  - h3
-  auth: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  down: 200
-  name: '[ermaozi] 🇭🇰HK_1|1.4MB/s | 2591ms'
-  obfs: salamander
-  obfs-password: o5qgnpl75wayhkn5
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  port: 443
-  server: nb2hk.hikigo.com
-  skip-cert-verify: true
-  sni: nb2hk.hikigo.com
-  type: hysteria2
-  udp: true
-  up: 100
-- type: ss
-  name: '[free18] 🇭🇰_香港 | 2617ms'
-  server: 43.161.217.165
-  port: 8388
-  password: MySecretPass123
-  cipher: aes-256-gcm
-  udp: true
+- name: '[Eternity] 🇭🇰HK-156.245.232.239-5748 | 0.009MB | 2597ms'
+  server: 156.245.232.239
+  port: 35043
+  type: vmess
+  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+  alterId: 0
+  cipher: auto
   tls: false
   skip-cert-verify: false
-- type: ss
-  name: '[free18] 🇭🇰_香港 (2) | 2875ms'
-  server: 43.161.217.165
-  port: 80
-  password: MySecretPass123
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: false
-- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 3396ms'
+  network: ws
+  ws-opts:
+    path: /
+- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 3376ms'
   server: 116.213.43.43
   port: 11102
   type: vless
@@ -116,23 +96,18 @@ proxies:
   client-fingerprint: chrome
   network: tcp
   udp: true
-- name: '[Eternity] 🇭🇰HK-156.245.232.239-5748 | 0.009MB | 3756ms'
-  server: 156.245.232.239
-  port: 35043
-  type: vmess
-  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-  alterId: 0
-  cipher: auto
-  tls: false
+- name: '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 3623ms'
+  server: sclass-00.catcat321.com
+  port: 20103
+  type: trojan
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  sni: hk.catxstar.com
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
 - alpn:
   - ''
   alterId: 0
   cipher: auto
-  name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 3772ms'
+  name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 3716ms'
   network: ws
   port: 36703
   server: 47.244.120.197
@@ -150,34 +125,30 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1099ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1262ms'
-  - '[ermaozi] @V2rayNPVTConfig #1 | 1795ms'
-  - '[free18] 🇭🇰_香港 (4) | 2012ms'
-  - '[free18] 🇭🇰_香港 (5) | 2261ms'
-  - '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 2373ms'
-  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 2591ms'
-  - '[free18] 🇭🇰_香港 | 2617ms'
-  - '[free18] 🇭🇰_香港 (2) | 2875ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 3396ms'
-  - '[Eternity] 🇭🇰HK-156.245.232.239-5748 | 0.009MB | 3756ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 3772ms'
+  - '[ermaozi] 🇭🇰HK_2|1.0MB/s | 925ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1185ms'
+  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1616ms'
+  - '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 1962ms'
+  - '[free18] 🇭🇰_香港 (4) | 2049ms'
+  - '[free18] 🇭🇰_香港 (5) | 2430ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-5748 | 0.009MB | 2597ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 3376ms'
+  - '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 3623ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 3716ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1099ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1262ms'
-  - '[ermaozi] @V2rayNPVTConfig #1 | 1795ms'
-  - '[free18] 🇭🇰_香港 (4) | 2012ms'
-  - '[free18] 🇭🇰_香港 (5) | 2261ms'
-  - '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 2373ms'
-  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 2591ms'
-  - '[free18] 🇭🇰_香港 | 2617ms'
-  - '[free18] 🇭🇰_香港 (2) | 2875ms'
-  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 3396ms'
-  - '[Eternity] 🇭🇰HK-156.245.232.239-5748 | 0.009MB | 3756ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 3772ms'
+  - '[ermaozi] 🇭🇰HK_2|1.0MB/s | 925ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1185ms'
+  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1616ms'
+  - '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 1962ms'
+  - '[free18] 🇭🇰_香港 (4) | 2049ms'
+  - '[free18] 🇭🇰_香港 (5) | 2430ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-5748 | 0.009MB | 2597ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 3376ms'
+  - '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 3623ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 3716ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
