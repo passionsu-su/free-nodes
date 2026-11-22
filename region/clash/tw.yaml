@@ -3,35 +3,16 @@ allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
-proxies:
-- type: vless
-  name: '[free18] 🇹🇼_台湾 (10) | 3534ms'
-  server: free.fugui.lol
-  port: 19482
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
+proxies: []
 proxy-groups:
 - name: AUTO
-  type: url-test
-  url: https://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
+  type: select
   proxies:
-  - '[free18] 🇹🇼_台湾 (10) | 3534ms'
+  - DIRECT
 - name: PROXY
   type: select
   proxies:
-  - AUTO
-  - '[free18] 🇹🇼_台湾 (10) | 3534ms'
+  - DIRECT
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
