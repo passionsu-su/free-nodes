@@ -4,21 +4,63 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1071ms'
-  password: ''
+- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 875ms'
+  server: 116.213.43.43
+  port: 11102
+  type: vless
+  uuid: 530d31fc-2690-49e4-bfc9-3f991e145008
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: oW6HMjniDmBJdjGKwhBAIS2zMS1VvHORubh9vdazqQ0
+    short-id: ed571d022f7bc3bf
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- type: vless
+  name: '[free18] 🇭🇰_香港 (4) | 881ms'
+  server: 116.213.43.43
+  port: 11107
+  uuid: 08a37d1f-7bf1-4b5d-a2ec-5ced6a633d7f
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.apple.com
+  sni: www.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 6GRzkPbs12fKBdBBFzs5dmtmbSHCXMngUCBKLrXYm3U
+    short-id: e2ccd8eedcbee2ce
+- type: vless
+  name: '[free18] 🇭🇰_香港 (5) | 896ms'
+  server: 116.213.43.43
+  port: 11103
+  uuid: bb836d81-d0c5-4f01-a584-806cdf65e36a
+  flow: xtls-rprx-vision
+  udp: true
+  tls: true
+  servername: www.apple.com
+  sni: www.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 5NNdXPMTBLP-xeDKFwcG-j6u-c4DhXIfnlHMqMJZ4n4
+    short-id: 9564e1a7a1cf8b3a
+- name: '[ermaozi] 🇭🇰HK_2|1.0MB/s | 942ms'
   port: 8443
   server: 38.76.140.254
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
-  username: ''
   x-toolall-mihomo: true
 - alpn:
   - h3
   auth: 57beeeb0-03fc-4fc9-94da-7604488a7134
   down: 200
-  name: '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1074ms'
+  name: '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1013ms'
   obfs: salamander
   obfs-password: o5qgnpl75wayhkn5
   password: 57beeeb0-03fc-4fc9-94da-7604488a7134
@@ -29,34 +71,34 @@ proxies:
   type: hysteria2
   udp: true
   up: 100
-- name: '[zhuhaiuk] HK - zhuhai.uk | 1213ms'
+- name: '[zhuhaiuk] HK - zhuhai.uk | 1131ms'
   type: http
   server: 119.28.24.235
   port: 3128
   tls: true
   skip-cert-verify: true
-- alpn:
-  - ''
-  alterId: 0
-  cipher: auto
-  name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 1615ms'
-  network: ws
-  port: 36703
-  server: 47.244.120.197
-  skip-cert-verify: true
-  tls: false
-  type: vmess
+- type: vless
+  name: '[free18] 🇭🇰_香港 (6) | 1427ms'
+  server: 116.213.43.43
+  port: 11101
+  uuid: ca69a29d-60ef-433a-91bc-27537be993c8
+  flow: xtls-rprx-vision
   udp: true
-  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
-  ws-opts:
-    path: /arki
-- name: '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 2327ms'
-  server: sclass-00.catcat321.com
-  port: 20103
-  type: trojan
-  password: d9064589-74af-432a-9390-5d8a9da281bf
-  sni: hk.catxstar.com
+  tls: true
+  servername: www.apple.com
+  sni: www.apple.com
   skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 2eUT-b2e2lghUKWM3qf8uI3_Dphg9whKrQ08o4S-bzw
+    short-id: 82f99830e7b834e2
+- name: '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 2367ms'
+  password: d9064589-74af-432a-9390-5d8a9da281bf
+  port: 20123
+  server: sclass-00.catcat321.com
+  skip-cert-verify: true
+  sni: hk.catxstar.com
+  type: trojan
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -64,20 +106,26 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1071ms'
-  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1074ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1213ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 1615ms'
-  - '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 2327ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 875ms'
+  - '[free18] 🇭🇰_香港 (4) | 881ms'
+  - '[free18] 🇭🇰_香港 (5) | 896ms'
+  - '[ermaozi] 🇭🇰HK_2|1.0MB/s | 942ms'
+  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1013ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1131ms'
+  - '[free18] 🇭🇰_香港 (6) | 1427ms'
+  - '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 2367ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51 | 1071ms'
-  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1074ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1213ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 1615ms'
-  - '[Eternity] 🇭🇰HK-18.163.61.231-0248 | 0.024MB | 2327ms'
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN 2 | 875ms'
+  - '[free18] 🇭🇰_香港 (4) | 881ms'
+  - '[free18] 🇭🇰_香港 (5) | 896ms'
+  - '[ermaozi] 🇭🇰HK_2|1.0MB/s | 942ms'
+  - '[ermaozi] 🇭🇰HK_1|1.4MB/s | 1013ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1131ms'
+  - '[free18] 🇭🇰_香港 (6) | 1427ms'
+  - '[ermaozi] 🇦🇪[www.v2nodes.com] trojan-AE-... #1 | 2367ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
