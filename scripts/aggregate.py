@@ -62,9 +62,24 @@ GSTASTIC_TEST_URL = "https://www.gstatic.com/generate_204"
 # Override with env CN_TEST_URL; if the target is unreachable the China
 # round is skipped and the run continues with the gstatic results only.
 CN_TEST_URL = os.environ.get("CN_TEST_URL", "https://connectivitycheck.platform.hicloud.com/generate_204")
-def fetch(url):
+# Optional GitHub download proxies (comma separated prefixes), used only when a
+# direct GitHub fetch fails, e.g. on the self-hosted runner in China.
+GH_MIRRORS=[m.strip() for m in os.environ.get("GH_MIRRORS","").split(",") if m.strip()]
+
+def _fetch_once(url,timeout):
     req=urllib.request.Request(url,headers=UA)
-    with urllib.request.urlopen(req,timeout=35) as r: return r.read().decode("utf-8","replace")
+    with urllib.request.urlopen(req,timeout=timeout) as r: return r.read().decode("utf-8","replace")
+
+def fetch(url):
+    try:
+        return _fetch_once(url,35)
+    except Exception as e:
+        if not GH_MIRRORS or "githubusercontent.com" not in url and "github.com" not in url: raise
+        last=e
+        for m in GH_MIRRORS:
+            try: return _fetch_once(m.rstrip("/")+"/"+url,35)
+            except Exception as e2: last=e2
+        raise last
 def b64decode(s):
     s=re.sub(r"\s+","",s); return base64.urlsafe_b64decode(s+"="*(-len(s)%4)).decode("utf-8","replace")
 def parse_uri(line):

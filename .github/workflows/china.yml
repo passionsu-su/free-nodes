@@ -120,7 +120,18 @@ jobs:
           } else {
             if (-not $url) { $url = "https://github.com/MetaCubeX/mihomo/releases/download/v1.19.34/mihomo-windows-amd64-compatible-v1.19.34.zip"; $tag = "v1.19.34" }
             try {
-              Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile mihomo.zip -TimeoutSec 300
+              # github.com release downloads are often cut off from China:
+              # try direct first, then public GitHub download proxies.
+              $sources = @($url, "https://ghfast.top/$url", "https://gh-proxy.com/$url", "https://ghproxy.net/$url")
+              $got = $false
+              foreach ($src in $sources) {
+                if (Test-Path mihomo.zip) { Remove-Item -Force mihomo.zip }
+                Write-Host "Downloading mihomo from $src"
+                & curl.exe -sSfL --retry 2 --connect-timeout 20 --max-time 240 -o mihomo.zip $src
+                if ($LASTEXITCODE -eq 0 -and (Test-Path mihomo.zip) -and ((Get-Item mihomo.zip).Length -gt 1MB)) { $got = $true; break }
+                Write-Warning "Download failed from $src (curl exit $LASTEXITCODE)"
+              }
+              if (-not $got) { throw "mihomo download failed from all sources" }
               if (Test-Path mihomo-x) { Remove-Item -Recurse -Force mihomo-x }
               Expand-Archive -Path mihomo.zip -DestinationPath mihomo-x -Force
               $exe = Get-ChildItem -Path mihomo-x -Filter "mihomo*.exe" -Recurse | Select-Object -First 1
@@ -138,6 +149,7 @@ jobs:
       - name: Collect, deduplicate and real-test nodes
         env:
           PYTHONUTF8: "1"
+          GH_MIRRORS: "https://ghfast.top,https://gh-proxy.com,https://ghproxy.net"
         run: |
           python scripts/aggregate.py
           if ($LASTEXITCODE -ne 0) { throw "aggregate.py failed" }
