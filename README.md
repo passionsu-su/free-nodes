@@ -95,6 +95,18 @@ raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
 节点先经过 mihomo 真连接测试，再对中国大陆境内目标（connectivitycheck.platform.hicloud.com/generate_204）复测并按延迟排序。注意：测试仍发起于海外 Runner，测的是“节点→中国”这一段，不是“你→节点”；人在国内时优先用这个文件，导入后仍建议在 App 里再测一次。
 <!-- /CN-FEED -->
 
+## 🏎️ 高速节点（按实测下载速度筛选）
+
+| 格式 | 链接 |
+| --- | --- |
+| Clash YAML | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/fast.yaml |
+| base64 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/fast.txt |
+
+每次运行对延迟最低的前 240 个节点各做约 8 秒真实下载测速，取 ≥20Mbps 的前 50 个，按速度从快到慢排序，节点名后缀 ⚡xxMbps。
+`clash/meta.yaml` 与 `clash/meta-speed.yaml` 已内置「🏎️ 高速节点」手选组和「🏎️ 高速优选」（按速度顺序故障转移，优先用最快的可用节点）。
+注意：测速出口是 GitHub 海外机房，反映的是节点自身带宽，你本地的实际速度还取决于你到节点的线路。
+
+
 ## 按地区订阅（FlClash / Clash Verge / Clash Meta / Stash / Clash Mi，YAML）
 <!-- REGION-CLASH -->
 | 地区 | 链接 | 节点 |

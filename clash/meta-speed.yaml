@@ -30,11 +30,26 @@ proxy-providers:
       expected-status: 204
     override:
       udp: true
+  fast:
+    type: http
+    url: https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/fast.yaml
+    path: ./proxies/free-nodes-fast.yaml
+    interval: 21600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      lazy: false
+      timeout: 3000
+      expected-status: 204
+    override:
+      udp: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
+  - 🏎️ 高速节点
   - 🔯 故障转移
   - ⚡ 负载均衡
   - 🇭🇰 香港
@@ -44,7 +59,8 @@ proxy-groups:
   - 🇪🇺 欧洲
   - 🌐 其他地区
   - DIRECT
-  include-all-providers: true
+  use:
+  - free
   exclude-filter: (?i)剩余|流量|到期|过期|官网|套餐|重置|expire|traffic|reset
 - name: ♻️ 自动选择
   type: url-test
@@ -53,7 +69,8 @@ proxy-groups:
   tolerance: 20
   lazy: false
   timeout: 2000
-  include-all-providers: true
+  use:
+  - free
   exclude-filter: (?i)剩余|流量|到期|过期|官网|套餐|重置|expire|traffic|reset
   expected-status: 204
 - name: 🔯 故障转移
@@ -79,8 +96,28 @@ proxy-groups:
   timeout: 2000
   lazy: false
   expected-status: 204
-  include-all-providers: true
+  use:
+  - free
   exclude-filter: (?i)剩余|流量|到期|过期|官网|套餐|重置|expire|traffic|reset
+- name: 🏎️ 高速节点
+  type: select
+  proxies:
+  - 🏎️ 高速优选
+  use:
+  - fast
+  exclude-filter: "(?i)剩余|流量|到期|过期|官网|套餐|重置|expire|traffic|reset"
+
+- name: 🏎️ 高速优选
+  type: fallback
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  max-failed-times: 2
+  lazy: false
+  timeout: 3000
+  expected-status: 204
+  use:
+  - fast
+
 - name: 🤖 AI
   type: select
   proxies:
@@ -93,6 +130,7 @@ proxy-groups:
   type: select
   proxies:
   - 🚀 节点选择
+  - 🏎️ 高速节点
   - ♻️ 自动选择
   - ⚡ 负载均衡
   - 🇭🇰 香港
@@ -104,6 +142,7 @@ proxy-groups:
   type: select
   proxies:
   - 🚀 节点选择
+  - 🏎️ 高速节点
   - ♻️ 自动选择
   - ⚡ 负载均衡
   - 🇭🇰 香港
@@ -178,7 +217,8 @@ proxy-groups:
   tolerance: 30
   lazy: false
   timeout: 2000
-  include-all-providers: true
+  use:
+  - free
   filter: (?i)^(🇭🇰|HK(\b|_))|香港|Hong ?Kong
   expected-status: 204
 - name: 🇯🇵 日本
@@ -188,7 +228,8 @@ proxy-groups:
   tolerance: 30
   lazy: false
   timeout: 2000
-  include-all-providers: true
+  use:
+  - free
   filter: (?i)^(🇯🇵|JP(\b|_))|日本|Japan|Tokyo
   expected-status: 204
 - name: 🇸🇬 新加坡
@@ -198,7 +239,8 @@ proxy-groups:
   tolerance: 30
   lazy: false
   timeout: 2000
-  include-all-providers: true
+  use:
+  - free
   filter: (?i)^(🇸🇬|SG(\b|_))|新加坡|Singapore
   expected-status: 204
 - name: 🇺🇸 美国
@@ -208,7 +250,8 @@ proxy-groups:
   tolerance: 30
   lazy: false
   timeout: 2000
-  include-all-providers: true
+  use:
+  - free
   filter: (?i)^(🇺🇸|US(\b|_))|美国|United States
   expected-status: 204
 - name: 🇪🇺 欧洲
@@ -218,7 +261,8 @@ proxy-groups:
   tolerance: 30
   lazy: false
   timeout: 2000
-  include-all-providers: true
+  use:
+  - free
   filter: (?i)^(🇬🇧|🇩🇪|🇫🇷|🇳🇱|🇮🇹|🇪🇸|🇵🇱|🇸🇪|🇫🇮|🇨🇭|🇦🇹|🇨🇿|🇮🇪|🇱🇻|🇱🇺|🇩🇰|🇧🇪|🇳🇴|🇵🇹|🇷🇴|🇭🇺|🇪🇪|🇱🇹|🇧🇬|🇬🇷|(GB|UK|DE|FR|NL|IT|ES|PL|SE|FI|CH|AT|CZ|IE|LV|LU|DK|BE|NO|PT|RO|HU|EE|LT|BG|GR)(\b|_))
   expected-status: 204
 - name: 🌐 其他地区
@@ -228,7 +272,8 @@ proxy-groups:
   tolerance: 30
   lazy: false
   timeout: 2000
-  include-all-providers: true
+  use:
+  - free
   exclude-filter: (?i)^(🇭🇰|🇯🇵|🇸🇬|🇺🇸|🇨🇳|🇬🇧|🇩🇪|🇫🇷|🇳🇱|🇮🇹|🇪🇸|🇵🇱|🇸🇪|🇫🇮|🇨🇭|🇦🇹|🇨🇿|🇮🇪|🇱🇻|🇱🇺|🇩🇰|🇧🇪|🇳🇴|🇵🇹|🇷🇴|🇭🇺|🇪🇪|🇱🇹|🇧🇬|🇬🇷|(HK|JP|SG|US|CN|GB|UK|DE|FR|NL|IT|ES|PL|SE|FI|CH|AT|CZ|IE|LV|LU|DK|BE|NO|PT|RO|HU|EE|LT|BG|GR)(\b|_))|剩余|流量|到期|官网
   expected-status: 204
 rule-providers:

@@ -150,6 +150,7 @@ jobs:
         env:
           PYTHONUTF8: "1"
           GH_MIRRORS: "https://ghfast.top,https://gh-proxy.com,https://ghproxy.net"
+          SKIP_SPEED_TEST: "1"
         run: |
           python scripts/aggregate.py
           if ($LASTEXITCODE -ne 0) { throw "aggregate.py failed" }

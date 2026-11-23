@@ -246,6 +246,65 @@ def _delay_test(nodes, url, timeout_ms):
         try: proc.wait(timeout=8)
         except subprocess.TimeoutExpired: proc.kill()
         log_file.close()
+# ---- Download-speed round -------------------------------------------------
+# Latency alone misses nodes that are a little slower to answer but move bulk
+# data fast. Measure real download throughput for the best candidates and
+# publish the fastest as a separate feed (clash/fast.yaml, v2ray/fast.txt).
+SPEED_TEST_URLS=[u for u in os.environ.get("SPEED_TEST_URLS","https://speed.cloudflare.com/__down?bytes=50000000,https://cachefly.cachefly.net/50mb.test").split(",") if u.strip()]
+SPEED_CANDIDATES=int(os.environ.get("SPEED_CANDIDATES","240"))
+SPEED_SECONDS=float(os.environ.get("SPEED_SECONDS","8"))
+SPEED_WORKERS=int(os.environ.get("SPEED_WORKERS","8"))
+FAST_MIN_MBPS=float(os.environ.get("FAST_MIN_MBPS","20"))
+FAST_MAX=int(os.environ.get("FAST_MAX","50"))
+def _measure(port):
+    opener=urllib.request.build_opener(urllib.request.ProxyHandler({"http":f"http://127.0.0.1:{port}","https":f"http://127.0.0.1:{port}"}))
+    best=0.0
+    for url in SPEED_TEST_URLS:
+        try:
+            with opener.open(urllib.request.Request(url.strip(),headers=UA),timeout=10) as r:
+                t0=time.monotonic(); got=0
+                while True:
+                    chunk=r.read(65536)
+                    if not chunk: break
+                    got+=len(chunk)
+                    if time.monotonic()-t0>=SPEED_SECONDS: break
+                el=max(time.monotonic()-t0,0.001)
+                if got>=512*1024: best=max(best,got*8/el/1e6)
+            if best>0: break
+        except Exception: continue
+    return round(best,1)
+def speed_test(nodes):
+    """Returns [(proxy, mbps)] sorted fastest first. Best-effort: any failure
+    returns [] and the previous fast feed is kept."""
+    cand=nodes[:SPEED_CANDIDATES]
+    if not cand: return []
+    listeners=[{"name":f"spd{i}","type":"http","port":21000+i,"listen":"127.0.0.1","proxy":p["name"]} for i,p in enumerate(cand)]
+    cfg={"allow-lan":False,"mode":"rule","log-level":"warning","ipv6":False,"proxies":cand,"listeners":listeners,"rules":["MATCH,DIRECT"]}
+    cfgp=ROOT/"mihomo-speed.yaml"
+    cfgp.write_text(yaml.safe_dump(cfg,allow_unicode=True,sort_keys=False),encoding="utf-8")
+    log_path=ROOT/"mihomo-speed.log"; log_file=log_path.open("w",encoding="utf-8")
+    proc=subprocess.Popen([str(mihomo_binary()),"-d",str(ROOT/"mihomo-data"),"-f",str(cfgp)],stdout=log_file,stderr=subprocess.STDOUT)
+    try:
+        for _ in range(30):
+            try:
+                with socket.create_connection(("127.0.0.1",21000+len(cand)-1),timeout=1): break
+            except OSError:
+                if proc.poll() is not None: raise RuntimeError("mihomo exited: "+log_path.read_text(encoding="utf-8",errors="replace")[-2000:])
+                time.sleep(1)
+        else: raise RuntimeError("speed listeners did not start")
+        out=[]
+        with concurrent.futures.ThreadPoolExecutor(max_workers=SPEED_WORKERS) as pool:
+            futs={pool.submit(_measure,21000+i):p for i,p in enumerate(cand)}
+            for f in concurrent.futures.as_completed(futs):
+                try: mbps=f.result()
+                except Exception: mbps=0
+                if mbps>0: out.append((futs[f],mbps))
+        return sorted(out,key=lambda x:-x[1])
+    finally:
+        proc.terminate()
+        try: proc.wait(timeout=8)
+        except subprocess.TimeoutExpired: proc.kill()
+        log_file.close()
 def region_for_country(cc):
     cc=(cc or "").upper()
     if cc in ("HK","TW","JP","SG","KR","US"): return cc.lower()
@@ -495,8 +554,26 @@ def main():
     else:
         cn_stats={"alive":0,"v2ray":0,"median_ms":None,"test":CN_TEST_URL,"stale":True}
         print("[china-test] no China results; keeping previous cn feed if present")
+    fast_stats={"alive":0,"stale":True}
+    if os.environ.get("SKIP_SPEED_TEST")!="1":
+        try:
+            sp=speed_test(nodes)
+            fast=[(p,m) for p,m in sp if m>=FAST_MIN_MBPS][:FAST_MAX]
+            if fast:
+                fast_nodes=[]
+                for p,m in fast:
+                    q=dict(p); q["name"]=re.sub(r" \| \d+ms$","",q["name"])+f" | ⚡{m:g}Mbps"; fast_nodes.append(q)
+                write_yaml(ROOT/"clash/fast.yaml",build_yaml(fast_nodes))
+                fl=[x for x in (uri(p) for p in fast_nodes) if x]
+                (ROOT/"v2ray/fast.txt").write_text(base64.b64encode("\n".join(fl).encode()).decode(),encoding="utf-8")
+                fast_stats={"alive":len(fast_nodes),"v2ray":len(fl),"tested":min(len(nodes),SPEED_CANDIDATES),"measured":len(sp),"min_mbps":FAST_MIN_MBPS,"top_mbps":fast[0][1],"median_mbps":fast[len(fast)//2][1]}
+                print(f"[speed] {len(sp)} nodes measured; {len(fast_nodes)} >= {FAST_MIN_MBPS}Mbps (top {fast[0][1]}Mbps, median {fast_stats['median_mbps']}Mbps)")
+            else:
+                print(f"[speed] {len(sp)} measured, none >= {FAST_MIN_MBPS}Mbps; keeping previous fast feed")
+        except Exception as e:
+            print(f"[speed] skipped: {e}")
     now=datetime.now(BJT).strftime("%Y-%m-%d %H:%M")
-    report={"time":now,"sources":stats,"candidates":len(merged),"tested":len(merged),"alive":len(nodes),"v2ray":len(links),"dropped_slow":dropped_slow,"dropped_dup":dropped_dup,"region":region_stats,"geoip":geoip_stats,"cn":cn_stats,"test":"mihomo API / gstatic generate_204"}
+    report={"time":now,"sources":stats,"candidates":len(merged),"tested":len(merged),"alive":len(nodes),"v2ray":len(links),"dropped_slow":dropped_slow,"dropped_dup":dropped_dup,"region":region_stats,"geoip":geoip_stats,"cn":cn_stats,"fast":fast_stats,"test":"mihomo API / gstatic generate_204"}
     (ROOT/"report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     refresh_readme(now, len(merged), len(nodes), len(links), region_stats, txt_counts, cn_stats)
     print(f"PASS: {len(nodes)}/{len(merged)} nodes passed mihomo real connection test")
