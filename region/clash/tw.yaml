@@ -4,7 +4,7 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 784ms'
+- name: '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 985ms'
   password: exaxgqkKkd0TAMrCxeonWg==
   port: 1443
   server: twmoon1-cdn-route.couldflare-cdn.com
@@ -12,7 +12,7 @@ proxies:
   type: http
   udp: true
   username: mrwdfNTD8M79LCukCieldrqZWqs=
-- name: '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 925ms'
+- name: '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 996ms'
   type: vless
   server: 60.248.219.53
   port: 443
@@ -26,6 +26,20 @@ proxies:
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
     headers:
       Host: ty986gfazs.cainiaohub.xyz
+- client-fingerprint: ios
+  flow: xtls-rprx-vision
+  name: '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 2368ms'
+  network: tcp
+  port: 51283
+  reality-opts:
+    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
+    short-id: fa514b83
+  server: free.fugui.lol
+  servername: swdist.apple.com
+  tls: true
+  type: vless
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
+  x-toolall-mihomo: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -33,14 +47,16 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 784ms'
-  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 925ms'
+  - '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 985ms'
+  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 996ms'
+  - '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 2368ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 784ms'
-  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 925ms'
+  - '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 985ms'
+  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 996ms'
+  - '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 2368ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
