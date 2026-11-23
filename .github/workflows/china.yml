@@ -14,10 +14,10 @@ permissions:
   contents: write
 
 concurrency:
-  # Keep at most one pending run: a newer trigger replaces an older one that
-  # is still waiting for the PC to come online.
+  # Never kill a run that is already testing; GitHub keeps at most one
+  # pending run per group, so a backlog still cannot pile up while the PC is off.
   group: free-nodes-china
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   collect-china:
