@@ -1,0 +1,175 @@
+name: China-target feeds (self-hosted)
+
+# Runs on the self-hosted Windows PC in China, separately from the main
+# workflow, so an offline PC never leaves the main run queued or red.
+# It only rewrites clash/cn.yaml and v2ray/cn.txt.
+
+on:
+  workflow_run:
+    workflows: ["Collect and test free nodes"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Keep at most one pending run: a newer trigger replaces an older one that
+  # is still waiting for the PC to come online.
+  group: free-nodes-china
+  cancel-in-progress: true
+
+jobs:
+  collect-china:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: [self-hosted, china]
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Locate or provision Python (no installer needed)
+        run: |
+          $ErrorActionPreference = "Stop"
+          $ProgressPreference = "SilentlyContinue"
+          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+          $toolRoot = if ($env:RUNNER_TOOL_CACHE) { $env:RUNNER_TOOL_CACHE } else { Join-Path $env:RUNNER_WORKSPACE "..\_tool" }
+          $private = Join-Path $toolRoot "python-portable\3.12.10"
+          $candidates = @(
+            $private,
+            "C:\Program Files\Python313", "C:\Program Files\Python312",
+            "$env:LOCALAPPDATA\Programs\Python\Python313", "$env:LOCALAPPDATA\Programs\Python\Python312"
+          )
+          $found = $candidates | Where-Object { $_ -and (Test-Path (Join-Path $_ "python.exe")) } | Select-Object -First 1
+          if (-not $found) {
+            $cmd = Get-Command python -ErrorAction SilentlyContinue
+            # Skip the Microsoft Store stub, which only opens the Store.
+            if ($cmd -and $cmd.Source -notlike "*WindowsApps*") { $found = Split-Path $cmd.Source }
+          }
+          if (-not $found) {
+            Write-Host "No Python on this PC; downloading a portable Python 3.12.10 into $private (one time)."
+            New-Item -ItemType Directory -Force -Path $private | Out-Null
+            $tmp = Join-Path $env:RUNNER_TEMP "py-nuget.zip"
+            $urls = @(
+              "https://www.nuget.org/api/v2/package/python/3.12.10",
+              "https://globalcdn.nuget.org/packages/python.3.12.10.nupkg"
+            )
+            $ok = $false
+            foreach ($u in $urls) {
+              for ($i = 1; $i -le 2 -and -not $ok; $i++) {
+                try { Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $tmp -TimeoutSec 300; $ok = $true } catch { Write-Warning "Download failed from ${u}: $($_.Exception.Message)"; Start-Sleep -Seconds 5 }
+              }
+              if ($ok) { break }
+            }
+            if ($ok) {
+              $x = Join-Path $env:RUNNER_TEMP "py-nuget"
+              if (Test-Path $x) { Remove-Item -Recurse -Force $x }
+              Expand-Archive -Path $tmp -DestinationPath $x -Force
+              Copy-Item -Recurse -Force (Join-Path $x "tools\*") $private
+            } else {
+              # Fallback: python.org installer via a China mirror, per-user, no admin.
+              $exe = Join-Path $env:RUNNER_TEMP "python-3.12.10-amd64.exe"
+              Invoke-WebRequest -UseBasicParsing -Uri "https://registry.npmmirror.com/-/binary/python/3.12.10/python-3.12.10-amd64.exe" -OutFile $exe -TimeoutSec 600
+              $p = Start-Process -FilePath $exe -ArgumentList "/quiet","InstallAllUsers=0","TargetDir=$private","Include_launcher=0","PrependPath=0","Shortcuts=0","Include_test=0" -Wait -PassThru
+              if ($p.ExitCode -ne 0) { throw "Python installer exited with $($p.ExitCode)" }
+            }
+            if (-not (Test-Path (Join-Path $private "python.exe"))) { throw "Portable Python was not provisioned." }
+            $ErrorActionPreference = "Continue"
+            & (Join-Path $private "python.exe") -m ensurepip --upgrade | Out-Host
+            $ErrorActionPreference = "Stop"
+            $found = $private
+          }
+          $found | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          (Join-Path $found "Scripts") | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          & (Join-Path $found "python.exe") --version
+
+      - name: Install dependencies (PyPI, then Tsinghua mirror)
+        run: |
+          python -m pip install --disable-pip-version-check -q PyYAML
+          if ($LASTEXITCODE -ne 0) {
+            python -m pip install --disable-pip-version-check -q -i https://pypi.tuna.tsinghua.edu.cn/simple PyYAML
+            if ($LASTEXITCODE -ne 0) { throw "pip install PyYAML failed" }
+          }
+
+      - name: Get mihomo (cached on the PC)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $ProgressPreference = "SilentlyContinue"
+          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+          $toolRoot = if ($env:RUNNER_TOOL_CACHE) { $env:RUNNER_TOOL_CACHE } else { Join-Path $env:RUNNER_WORKSPACE "..\_tool" }
+          $cache = Join-Path $toolRoot "mihomo"
+          $cached = Join-Path $cache "mihomo.exe"
+          New-Item -ItemType Directory -Force -Path $cache | Out-Null
+          $url = ""
+          try {
+            $rel = Invoke-RestMethod -UseBasicParsing -TimeoutSec 30 -Headers @{ Authorization = "Bearer $env:GH_TOKEN" } -Uri https://api.github.com/repos/MetaCubeX/mihomo/releases/latest
+            $asset = $rel.assets | Where-Object { $_.name -like "*windows-amd64-compatible*" -and $_.name -like "*.zip" } | Select-Object -First 1
+            if ($asset) { $url = $asset.browser_download_url }
+          } catch { Write-Warning "GitHub API unavailable: $($_.Exception.Message)" }
+          $tag = if ($url) { ($url -split "/")[-2] } else { "" }
+          $stamp = Join-Path $cache "version.txt"
+          $have = if (Test-Path $stamp) { (Get-Content $stamp -Raw).Trim() } else { "" }
+          if ((Test-Path $cached) -and (-not $tag -or $tag -eq $have)) {
+            Write-Host "Using cached mihomo $have"
+          } else {
+            if (-not $url) { $url = "https://github.com/MetaCubeX/mihomo/releases/download/v1.19.34/mihomo-windows-amd64-compatible-v1.19.34.zip"; $tag = "v1.19.34" }
+            try {
+              Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile mihomo.zip -TimeoutSec 300
+              if (Test-Path mihomo-x) { Remove-Item -Recurse -Force mihomo-x }
+              Expand-Archive -Path mihomo.zip -DestinationPath mihomo-x -Force
+              $exe = Get-ChildItem -Path mihomo-x -Filter "mihomo*.exe" -Recurse | Select-Object -First 1
+              if (-not $exe) { throw "mihomo exe not found in archive" }
+              Copy-Item -Force $exe.FullName $cached
+              Set-Content -Path $stamp -Value $tag
+            } catch {
+              if (-not (Test-Path $cached)) { throw }
+              Write-Warning "Download failed; falling back to cached mihomo $have"
+            }
+          }
+          Copy-Item -Force $cached .\mihomo.exe
+          .\mihomo.exe -v
+
+      - name: Collect, deduplicate and real-test nodes
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          python scripts/aggregate.py
+          if ($LASTEXITCODE -ne 0) { throw "aggregate.py failed" }
+
+      - name: Convert to client subscription formats
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          python scripts/convert.py
+          if ($LASTEXITCODE -ne 0) { throw "convert.py failed" }
+
+      - name: Commit only China-target feeds
+        run: |
+          $files = @("clash/cn.yaml", "v2ray/cn.txt")
+          $keep = Join-Path $env:RUNNER_TEMP "cn-feeds"
+          New-Item -ItemType Directory -Force -Path $keep | Out-Null
+          foreach ($f in $files) { Copy-Item -Force $f (Join-Path $keep ($f -replace "/", "_")) }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for ($attempt = 1; $attempt -le 3; $attempt++) {
+            # Start from the newest main each time, so a concurrent push from
+            # the ubuntu job can never cause a rebase conflict.
+            git fetch --depth=1 origin main
+            git reset --hard origin/main
+            foreach ($f in $files) { Copy-Item -Force (Join-Path $keep ($f -replace "/", "_")) $f }
+            git add $files
+            git diff --cached --quiet
+            if ($LASTEXITCODE -eq 0) { Write-Host "No changes; keeping current publication."; exit 0 }
+            git commit -m "chore: refresh China-target feeds from self-hosted runner"
+            git push origin HEAD:main
+            if ($LASTEXITCODE -eq 0) { exit 0 }
+            Start-Sleep -Seconds ($attempt * 5)
+          }
+          Write-Error "Push failed after three attempts"
+          exit 1

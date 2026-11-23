@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Install dependencies
@@ -72,97 +72,3 @@ jobs:
           echo "Push failed after three rebase attempts" >&2
           exit 1
 
-  collect-china:
-    # Runs after the ubuntu job (same workflow run) so the two pushes never
-    # race; the top-level concurrency group serializes whole runs. Only
-    # commits the China-target feeds -- the ubuntu job owns all other feeds.
-    needs: collect
-    runs-on: [self-hosted, china]
-    timeout-minutes: 45
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use cached Python (bypass setup-python)
-        shell: powershell
-        run: |
-          $candidates = @(
-            "C:\hostedtoolcache\windows\Python\3.13.9\x64",
-            "C:\hostedtoolcache\windows\Python\3.12.10\x64",
-            "C:\Program Files\Python315",
-            "C:\Program Files\Python314",
-            "C:\Program Files\Python313",
-            "C:\Program Files\Python312",
-            "$env:LOCALAPPDATA\Programs\Python\Python315",
-            "$env:LOCALAPPDATA\Programs\Python\Python314",
-            "$env:LOCALAPPDATA\Programs\Python\Python313",
-            "$env:LOCALAPPDATA\Programs\Python\Python312"
-          )
-          $found = $null
-          foreach ($dir in $candidates) {
-            if ($dir -and (Test-Path "$dir\python.exe")) { $found = $dir; break }
-          }
-          if (-not $found) {
-            $cmd = Get-Command python -ErrorAction SilentlyContinue
-            if ($cmd) { $found = Split-Path $cmd.Source }
-          }
-          if (-not $found) {
-            $py = Get-Command py -ErrorAction SilentlyContinue
-            if ($py) {
-              $exe = (py -c 'import sys; print(sys.executable)' 2>$null) -join ''
-              $exe = $exe.Trim()
-              if ($exe -and (Test-Path $exe)) { $found = Split-Path $exe }
-            }
-          }
-          if (-not $found) { throw "No usable Python found. Install Python 3.12+ on this PC and add it to PATH." }
-          $found | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-          python --version
-      - name: Install dependencies
-        run: python -m pip install --disable-pip-version-check PyYAML
-      - name: Download mihomo (Windows)
-        # Windows PowerShell 5.1 (ships with Windows 10); -UseBasicParsing
-        # avoids the IE engine dependency of Invoke-WebRequest/RestMethod.
-        shell: powershell
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          $url = ""
-          for ($attempt = 1; $attempt -le 3; $attempt++) {
-            try {
-              $rel = Invoke-RestMethod -UseBasicParsing -Headers @{ Authorization = "Bearer $env:GH_TOKEN" } -Uri https://api.github.com/repos/MetaCubeX/mihomo/releases/latest
-              $asset = $rel.assets | Where-Object { $_.name -like "*windows-amd64-compatible*" -and $_.name -like "*.zip" } | Select-Object -First 1
-              if ($asset) { $url = $asset.browser_download_url; break }
-            } catch { }
-            Start-Sleep -Seconds ($attempt * 5)
-          }
-          if (-not $url) {
-            Write-Warning "GitHub API unavailable; falling back to pinned mihomo v1.19.34"
-            $url = "https://github.com/MetaCubeX/mihomo/releases/download/v1.19.34/mihomo-windows-amd64-compatible-v1.19.34.zip"
-          }
-          Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile mihomo.zip
-          Expand-Archive -Path mihomo.zip -DestinationPath . -Force
-          # The zip holds a versioned name (mihomo-windows-amd64-compatible.exe);
-          # normalize it so scripts/aggregate.py finds mihomo.exe.
-          $exe = Get-ChildItem -Filter "mihomo-*.exe" | Select-Object -First 1
-          if (-not $exe) { throw "mihomo exe not found in downloaded archive" }
-          if ($exe.Name -ne "mihomo.exe") { Rename-Item -Path $exe.FullName -NewName "mihomo.exe" }
-          .\mihomo.exe -v
-      - name: Collect, deduplicate and real-test nodes
-        run: python scripts/aggregate.py
-      - name: Convert to client subscription formats
-        run: python scripts/convert.py
-      - name: Commit only China-target feeds
-        shell: powershell
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add clash/cn.yaml v2ray/cn.txt
-          git diff --cached --quiet
-          if ($LASTEXITCODE -eq 0) { Write-Host "No changes; keeping current publication."; exit 0 }
-          git commit -m "chore: refresh China-target feeds from self-hosted runner"
-          for ($attempt = 1; $attempt -le 3; $attempt++) {
-            git pull --rebase origin main
-            git push
-            if ($LASTEXITCODE -eq 0) { exit 0 }
-            Start-Sleep -Seconds ($attempt * 3)
-          }
-          Write-Error "Push failed after three rebase attempts"
-          exit 1
