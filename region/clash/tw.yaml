@@ -3,16 +3,28 @@ allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
-proxies: []
+proxies:
+- name: '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 845ms'
+  password: exaxgqkKkd0TAMrCxeonWg==
+  port: 1443
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  tls: true
+  type: http
+  udp: true
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
 proxy-groups:
 - name: AUTO
-  type: select
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
   proxies:
-  - DIRECT
+  - '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 845ms'
 - name: PROXY
   type: select
   proxies:
-  - DIRECT
+  - AUTO
+  - '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 845ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
