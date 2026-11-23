@@ -4,7 +4,15 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 979ms'
+- name: '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 784ms'
+  password: exaxgqkKkd0TAMrCxeonWg==
+  port: 1443
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  tls: true
+  type: http
+  udp: true
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+- name: '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 925ms'
   type: vless
   server: 60.248.219.53
   port: 443
@@ -18,14 +26,6 @@ proxies:
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
     headers:
       Host: ty986gfazs.cainiaohub.xyz
-- name: '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 1005ms'
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  tls: true
-  type: http
-  udp: true
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -33,14 +33,14 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 979ms'
-  - '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 1005ms'
+  - '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 784ms'
+  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 925ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 979ms'
-  - '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 1005ms'
+  - '[NoMoreWalls] 🇹🇼TW_1|1.2MB/s | 784ms'
+  - '[roosterkid] 🇹🇼[openproxylist.com] vless-TW | 925ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
