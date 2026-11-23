@@ -108,7 +108,7 @@ jobs:
           New-Item -ItemType Directory -Force -Path $cache | Out-Null
           $url = ""
           try {
-            $rel = Invoke-RestMethod -UseBasicParsing -TimeoutSec 30 -Headers @{ Authorization = "Bearer $env:GH_TOKEN" } -Uri https://api.github.com/repos/MetaCubeX/mihomo/releases/latest
+            $rel = Invoke-RestMethod -UseBasicParsing -TimeoutSec 20 -Headers @{ Authorization = "Bearer $env:GH_TOKEN" } -Uri https://api.github.com/repos/MetaCubeX/mihomo/releases/latest
             $asset = $rel.assets | Where-Object { $_.name -like "*windows-amd64-compatible*" -and $_.name -like "*.zip" } | Select-Object -First 1
             if ($asset) { $url = $asset.browser_download_url }
           } catch { Write-Warning "GitHub API unavailable: $($_.Exception.Message)" }
@@ -122,12 +122,12 @@ jobs:
             try {
               # github.com release downloads are often cut off from China:
               # try direct first, then public GitHub download proxies.
-              $sources = @($url, "https://ghfast.top/$url", "https://gh-proxy.com/$url", "https://ghproxy.net/$url")
+              $sources = @("https://ghfast.top/$url", "https://gh-proxy.com/$url", $url, "https://ghproxy.net/$url")
               $got = $false
               foreach ($src in $sources) {
                 if (Test-Path mihomo.zip) { Remove-Item -Force mihomo.zip }
                 Write-Host "Downloading mihomo from $src"
-                & curl.exe -sSfL --retry 2 --connect-timeout 20 --max-time 240 -o mihomo.zip $src
+                & curl.exe -sSfL --connect-timeout 15 --max-time 150 --speed-limit 30000 --speed-time 20 -o mihomo.zip $src
                 if ($LASTEXITCODE -eq 0 -and (Test-Path mihomo.zip) -and ((Get-Item mihomo.zip).Length -gt 1MB)) { $got = $true; break }
                 Write-Warning "Download failed from $src (curl exit $LASTEXITCODE)"
               }
