@@ -5,31 +5,38 @@ log-level: info
 ipv6: false
 proxies:
 - cipher: aes-128-gcm
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-9223... | 479ms'
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-9223... | 463ms'
   password: shadowsocks
   port: 443
   server: 149.22.87.241
   type: ss
 - cipher: aes-128-gcm
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-5141... | 483ms'
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-5141... | 464ms'
   password: shadowsocks
   port: 443
   server: 149.22.87.204
   type: ss
 - cipher: aes-128-gcm
-  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1291... | 483ms'
+  name: '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1291... | 465ms'
   password: shadowsocks
   port: 443
   server: 149.22.87.240
   type: ss
-- name: '[Eternity] 🇯🇵JP-54.249.11.118-0526 | 81.312MB | 659ms'
+- name: '[Eternity] 🇯🇵JP-168.138.205.100-0262 | 0.348MB | 467ms'
+  server: 168.138.205.100
+  port: 53758
+  type: ss
+  cipher: aes-128-gcm
+  password: Bwlqh7GcFB
+- name: '[Pawdroid] 美国+华盛顿州西雅图市亚马逊(Amazon)公司数据中心 | 639ms'
+  type: trojan
   server: win2loxfde0303.gggrelay.org
   port: 34745
-  type: trojan
   password: 57beeeb0-03fc-4fc9-94da-7604488a7134
   sni: nu3rb.supertoolify.com
+  tls: true
   skip-cert-verify: false
-- name: '[ermaozi] 📗96@oneclickvpnkeys | 689ms'
+- name: '[ermaozi] 📗96@oneclickvpnkeys | 659ms'
   password: oracle_hy2_pass_2026
   port: 8443
   server: 129.225.181.46
@@ -37,8 +44,25 @@ proxies:
   sni: bing.com
   tls: false
   type: hysteria2
+- cipher: aes-256-gcm
+  name: '[NoMoreWalls] 🏳[www.v2nodes.com] ss- #4 | 662ms'
+  password: 3eOFeNssde7PYYMv
+  port: 80
+  server: 84.247.155.196
+  type: ss
+- client-fingerprint: edge
+  flow: xtls-rprx-vision
+  name: '[freeSub] C🟠🇯🇵hos[🤖💬🎵🎮]_dokng.com_e7ce069e | 706ms'
+  network: tcp
+  port: 23169
+  server: 155.248.175.201
+  servername: djj.zjlo.top
+  tls: true
+  type: vless
+  uuid: f67b1159-a61f-4ae4-9844-0701b716a290
+  x-toolall-mihomo: true
 - type: trojan
-  name: '[free18] 🇯🇵_日本 (15) | 690ms'
+  name: '[free18] 🇯🇵_日本 (15) | 754ms'
   server: nu3rb.supertoolify.com
   port: 443
   password: 57beeeb0-03fc-4fc9-94da-7604488a7134
@@ -47,32 +71,36 @@ proxies:
   servername: nu3rb.supertoolify.com
   sni: nu3rb.supertoolify.com
   skip-cert-verify: true
-- name: '[Eternity] 🇯🇵JP-168.138.205.100-0247 | 2.211MB | 703ms'
-  server: 168.138.205.100
-  port: 53758
-  type: ss
-  cipher: aes-128-gcm
-  password: Bwlqh7GcFB
-- cipher: aes-256-gcm
-  name: '[NoMoreWalls] 🏳[www.v2nodes.com] ss- #4 | 843ms'
-  password: 3eOFeNssde7PYYMv
-  port: 80
-  server: 84.247.155.196
-  type: ss
-- name: '[freeSub] A🟢🇯🇵res[🤖💬🔮📺]_dokng.com_f0de605f | 851ms'
+- name: '[zhuhaiuk] JP - zhuhai.uk 02 | 808ms'
+  type: http
+  server: 64.176.51.83
+  port: 8443
+  tls: true
+  sni: 64.176.51.83
+  skip-cert-verify: true
+- name: '[zhuhaiuk] JP - zhuhai.uk | 828ms'
+  type: http
+  server: fan.571589.xyz
+  port: 443
+  username: bnVsbDpudWxs
+  tls: true
+  sni: fan.571589.xyz
+  skip-cert-verify: true
+- name: '[freeSub] A🟢🇯🇵res[🤖💬🔮📺]_dokng.com_f0de605f | 856ms'
   password: exaxgqkKkd0TAMrCxeonWg==
   port: 443
   server: jpgmo102-cdn-route.couldflare-cdn.com
   tls: true
   type: http
   username: mrwdfNTD8M79LCukCieldrqZWqs=
-- name: '[Eternity] 🇯🇵JP-168.138.205.100-0252 | 2.461MB | 914ms'
-  server: jpa.123069.xyz
-  port: 53758
-  type: ss
-  cipher: aes-128-gcm
-  password: Bwlqh7GcFB
-- name: '[ermaozi] 🇰🇷 韩国 | KOR 2 | 966ms'
+- name: '[ermaozi] 🇯🇵JP_1|4.5MB/s | 988ms'
+  password: EGJDy5Kg
+  port: 42000
+  server: 103.248.150.50
+  skip-cert-verify: true
+  type: socks5
+  username: paZFN3JA
+- name: '[ermaozi] 🇰🇷 韩国 | KOR 2 | 1020ms'
   server: dddz-4-z.473221.xyz
   port: 43118
   type: vless
@@ -86,27 +114,40 @@ proxies:
   servername: v1-dy.ixigua.com
   client-fingerprint: firefox
   network: tcp
-- name: '[ermaozi] 🇯🇵JP_1|4.5MB/s | 997ms'
-  password: EGJDy5Kg
-  port: 42000
-  server: 103.248.150.50
-  skip-cert-verify: true
-  type: socks5
-  username: paZFN3JA
-- name: '[ermaozi] 🇯🇵JP_2|3.1MB/s | 1033ms'
+- name: '[ermaozi] 🇯🇵JP_2|3.1MB/s | 1026ms'
   password: J5rM2xL9
   port: 42000
   server: 103.248.150.238
   skip-cert-verify: true
   type: socks5
   username: tB4vN7qP
+- name: '[Eternity] 🇯🇵JP-168.138.205.100-0254 | 0.416MB | 1312ms'
+  server: jpa.123069.xyz
+  port: 53758
+  type: ss
+  cipher: aes-128-gcm
+  password: Bwlqh7GcFB
+- name: '[ermaozi] 🇧🇷 巴西 | BRA | 1832ms'
+  server: dddz-4-z.473221.xyz
+  port: 33161
+  type: vless
+  uuid: 5807f1c4-b50e-4ec0-8d01-274045da0da5
+  tls: true
+  packet-encoding: xudp
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: BECARsUsTAoGzHFcGEquyFHKnI_LVL5FL6s1jZbLhVk
+    short-id: 6dbd86dc61ccb46d
+  servername: v1-dy.ixigua.com
+  client-fingerprint: firefox
+  network: tcp
 - client-fingerprint: chrome
   flow: xtls-rprx-vision
   http-opts:
     headers: {}
     path:
     - /
-  name: '[freeSub] U⚪🏳️ukn[🤖🎮🔍📚]_dokng.com_85c0a17a | 1079ms'
+  name: '[freeSub] U⚪🏳️ukn[🤖🎮🔍📚]_dokng.com_85c0a17a | 3449ms'
   network: tcp
   port: 23169
   server: djj.zjlo.top
@@ -117,49 +158,6 @@ proxies:
   uuid: 9da605d3-f5f7-4135-f806-450f036f9351
   x-toolall-mihomo: true
   xudp: true
-- name: '[Eternity] 🇯🇵JP-84.247.155.196-0233 | 0.702MB | 1326ms'
-  server: 84.247.155.196
-  port: 443
-  type: ss
-  cipher: aes-256-gcm
-  password: 3eOFeNssde7PYYMv
-- client-fingerprint: firefox
-  flow: xtls-rprx-vision
-  name: '[freeSub] C🟠🇯🇵hos[💬🎮✈️📚]_dokng.com_bd5beb5b | 1900ms'
-  network: tcp
-  packet-encoding: xudp
-  port: 23169
-  server: 155.248.175.201
-  servername: djj.zjlo.top
-  tls: true
-  type: vless
-  uuid: f67b1159-a61f-4ae4-9844-0701b716a290
-  x-toolall-mihomo: true
-- type: trojan
-  name: '[free18] 🇯🇵_日本 (14) | 2934ms'
-  server: jpk.wentibuxiaobuda.xyz
-  port: 9443
-  password: gfVP588mN_WKDUVTnHq18uO7fCdlDW76Wu0Zbd7vtzs
-  udp: true
-  tls: true
-  servername: jpk.wentibuxiaobuda.xyz
-  sni: jpk.wentibuxiaobuda.xyz
-  skip-cert-verify: true
-- type: vless
-  name: '[free18] 🇯🇵_日本 (13) | 3479ms'
-  server: jpk.wentibuxiaobuda.xyz
-  port: 8443
-  uuid: b2210037-7cf9-443f-9a82-8a5e724ebbcc
-  flow: xtls-rprx-vision
-  udp: true
-  tls: true
-  servername: www.bing.com
-  sni: www.bing.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: w1UfU35jmtVIt1BWhweV0zN8dyBz6CxaIk03h0MJIAY
-    short-id: aa933953ebc5d317
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -167,46 +165,46 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-9223... | 479ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-5141... | 483ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1291... | 483ms'
-  - '[Eternity] 🇯🇵JP-54.249.11.118-0526 | 81.312MB | 659ms'
-  - '[ermaozi] 📗96@oneclickvpnkeys | 689ms'
-  - '[free18] 🇯🇵_日本 (15) | 690ms'
-  - '[Eternity] 🇯🇵JP-168.138.205.100-0247 | 2.211MB | 703ms'
-  - '[NoMoreWalls] 🏳[www.v2nodes.com] ss- #4 | 843ms'
-  - '[freeSub] A🟢🇯🇵res[🤖💬🔮📺]_dokng.com_f0de605f | 851ms'
-  - '[Eternity] 🇯🇵JP-168.138.205.100-0252 | 2.461MB | 914ms'
-  - '[ermaozi] 🇰🇷 韩国 | KOR 2 | 966ms'
-  - '[ermaozi] 🇯🇵JP_1|4.5MB/s | 997ms'
-  - '[ermaozi] 🇯🇵JP_2|3.1MB/s | 1033ms'
-  - '[freeSub] U⚪🏳️ukn[🤖🎮🔍📚]_dokng.com_85c0a17a | 1079ms'
-  - '[Eternity] 🇯🇵JP-84.247.155.196-0233 | 0.702MB | 1326ms'
-  - '[freeSub] C🟠🇯🇵hos[💬🎮✈️📚]_dokng.com_bd5beb5b | 1900ms'
-  - '[free18] 🇯🇵_日本 (14) | 2934ms'
-  - '[free18] 🇯🇵_日本 (13) | 3479ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-9223... | 463ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-5141... | 464ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1291... | 465ms'
+  - '[Eternity] 🇯🇵JP-168.138.205.100-0262 | 0.348MB | 467ms'
+  - '[Pawdroid] 美国+华盛顿州西雅图市亚马逊(Amazon)公司数据中心 | 639ms'
+  - '[ermaozi] 📗96@oneclickvpnkeys | 659ms'
+  - '[NoMoreWalls] 🏳[www.v2nodes.com] ss- #4 | 662ms'
+  - '[freeSub] C🟠🇯🇵hos[🤖💬🎵🎮]_dokng.com_e7ce069e | 706ms'
+  - '[free18] 🇯🇵_日本 (15) | 754ms'
+  - '[zhuhaiuk] JP - zhuhai.uk 02 | 808ms'
+  - '[zhuhaiuk] JP - zhuhai.uk | 828ms'
+  - '[freeSub] A🟢🇯🇵res[🤖💬🔮📺]_dokng.com_f0de605f | 856ms'
+  - '[ermaozi] 🇯🇵JP_1|4.5MB/s | 988ms'
+  - '[ermaozi] 🇰🇷 韩国 | KOR 2 | 1020ms'
+  - '[ermaozi] 🇯🇵JP_2|3.1MB/s | 1026ms'
+  - '[Eternity] 🇯🇵JP-168.138.205.100-0254 | 0.416MB | 1312ms'
+  - '[ermaozi] 🇧🇷 巴西 | BRA | 1832ms'
+  - '[freeSub] U⚪🏳️ukn[🤖🎮🔍📚]_dokng.com_85c0a17a | 3449ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-9223... | 479ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-5141... | 483ms'
-  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1291... | 483ms'
-  - '[Eternity] 🇯🇵JP-54.249.11.118-0526 | 81.312MB | 659ms'
-  - '[ermaozi] 📗96@oneclickvpnkeys | 689ms'
-  - '[free18] 🇯🇵_日本 (15) | 690ms'
-  - '[Eternity] 🇯🇵JP-168.138.205.100-0247 | 2.211MB | 703ms'
-  - '[NoMoreWalls] 🏳[www.v2nodes.com] ss- #4 | 843ms'
-  - '[freeSub] A🟢🇯🇵res[🤖💬🔮📺]_dokng.com_f0de605f | 851ms'
-  - '[Eternity] 🇯🇵JP-168.138.205.100-0252 | 2.461MB | 914ms'
-  - '[ermaozi] 🇰🇷 韩国 | KOR 2 | 966ms'
-  - '[ermaozi] 🇯🇵JP_1|4.5MB/s | 997ms'
-  - '[ermaozi] 🇯🇵JP_2|3.1MB/s | 1033ms'
-  - '[freeSub] U⚪🏳️ukn[🤖🎮🔍📚]_dokng.com_85c0a17a | 1079ms'
-  - '[Eternity] 🇯🇵JP-84.247.155.196-0233 | 0.702MB | 1326ms'
-  - '[freeSub] C🟠🇯🇵hos[💬🎮✈️📚]_dokng.com_bd5beb5b | 1900ms'
-  - '[free18] 🇯🇵_日本 (14) | 2934ms'
-  - '[free18] 🇯🇵_日本 (13) | 3479ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-9223... | 463ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-5141... | 464ms'
+  - '[ermaozi] 🇯🇵[www.v2nodes.com] ss-JP-1291... | 465ms'
+  - '[Eternity] 🇯🇵JP-168.138.205.100-0262 | 0.348MB | 467ms'
+  - '[Pawdroid] 美国+华盛顿州西雅图市亚马逊(Amazon)公司数据中心 | 639ms'
+  - '[ermaozi] 📗96@oneclickvpnkeys | 659ms'
+  - '[NoMoreWalls] 🏳[www.v2nodes.com] ss- #4 | 662ms'
+  - '[freeSub] C🟠🇯🇵hos[🤖💬🎵🎮]_dokng.com_e7ce069e | 706ms'
+  - '[free18] 🇯🇵_日本 (15) | 754ms'
+  - '[zhuhaiuk] JP - zhuhai.uk 02 | 808ms'
+  - '[zhuhaiuk] JP - zhuhai.uk | 828ms'
+  - '[freeSub] A🟢🇯🇵res[🤖💬🔮📺]_dokng.com_f0de605f | 856ms'
+  - '[ermaozi] 🇯🇵JP_1|4.5MB/s | 988ms'
+  - '[ermaozi] 🇰🇷 韩国 | KOR 2 | 1020ms'
+  - '[ermaozi] 🇯🇵JP_2|3.1MB/s | 1026ms'
+  - '[Eternity] 🇯🇵JP-168.138.205.100-0254 | 0.416MB | 1312ms'
+  - '[ermaozi] 🇧🇷 巴西 | BRA | 1832ms'
+  - '[freeSub] U⚪🏳️ukn[🤖🎮🔍📚]_dokng.com_85c0a17a | 3449ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY

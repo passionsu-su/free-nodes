@@ -4,7 +4,18 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 949ms'
+- name: '[Eternity] 🇰🇷KR-218.237.185.234-0267 | 0.029MB | 915ms'
+  server: p141.panda001.net
+  port: 4652
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- name: '[ermaozi] 🇰🇷KR_1|3.8MB/s | 973ms'
+  port: 1080
+  server: 59.11.209.162
+  skip-cert-verify: true
+  type: socks5
+- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 1028ms'
   type: vless
   server: 152.69.226.63
   port: 25555
@@ -14,20 +25,15 @@ proxies:
   ws-opts:
     path: /
     headers: {}
-- name: '[ermaozi] 🇰🇷KR_1|3.8MB/s | 1021ms'
-  port: 1080
-  server: 59.11.209.162
-  skip-cert-verify: true
-  type: socks5
-- name: '[zhuhaiuk] KR - zhuhai.uk 02 | 1137ms'
+- name: '[zhuhaiuk] KR - zhuhai.uk | 1071ms'
   type: http
   server: 152.69.230.221
   port: 443
   tls: true
   skip-cert-verify: true
-- name: '[Eternity] 🇰🇷KR-218.237.185.234-0282 | 2.344MB | 2623ms'
-  server: p141.panda001.net
-  port: 4652
+- name: '[Eternity] 🇰🇷KR-211.178.105.134-0282 | 0.045MB | 3510ms'
+  server: 211.178.105.134
+  port: 6123
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
@@ -38,18 +44,20 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 949ms'
-  - '[ermaozi] 🇰🇷KR_1|3.8MB/s | 1021ms'
-  - '[zhuhaiuk] KR - zhuhai.uk 02 | 1137ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0282 | 2.344MB | 2623ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0267 | 0.029MB | 915ms'
+  - '[ermaozi] 🇰🇷KR_1|3.8MB/s | 973ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 1028ms'
+  - '[zhuhaiuk] KR - zhuhai.uk | 1071ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0282 | 0.045MB | 3510ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 949ms'
-  - '[ermaozi] 🇰🇷KR_1|3.8MB/s | 1021ms'
-  - '[zhuhaiuk] KR - zhuhai.uk 02 | 1137ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0282 | 2.344MB | 2623ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0267 | 0.029MB | 915ms'
+  - '[ermaozi] 🇰🇷KR_1|3.8MB/s | 973ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 1028ms'
+  - '[zhuhaiuk] KR - zhuhai.uk | 1071ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0282 | 0.045MB | 3510ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
