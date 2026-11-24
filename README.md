@@ -168,7 +168,8 @@ clash/meta.yaml 是固定的完整配置：节点通过 proxy-provider 每 6 小
 
 | 订阅 | 大陆直连方式 |
 | --- | --- |
-| clash/all.yaml、cn.yaml、fast.yaml、cfw.yaml、region/clash/*.yaml、stash、clashmi | rule-provider china-direct + GEOIP,CN |
+| clash/all.yaml、cn.yaml、fast.yaml、region/clash/*.yaml、stash、clashmi | rule-provider china-direct + GEOIP,CN |
+| clash/cfw.yaml（旧版 CFW / Premium） | 轻量内置国内域名 + GEOIP,CN（no-resolve），fake-ip + 国内 DoH 防 DNS 泄露；只收测速最快 / 国内延迟最低的前 60 个节点，无去广告、无大规则集，避免卡顿 |
 | clash/meta.yaml、meta-speed.yaml | 原有 geosite/geoip CN 分流 + china-direct |
 | surge/surge.conf | RULE-SET,LAN + DOMAIN-SET china-direct + GEOIP,CN |
 | singbox/singbox.json | rule_set china-direct + geoip-cn，国内域名用 223.5.5.5 解析 |

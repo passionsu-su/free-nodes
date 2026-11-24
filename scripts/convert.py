@@ -120,22 +120,49 @@ def cfw_ok(p):
     if t == 'vmess' and p.get('network') not in (None, 'tcp', 'ws', 'http', 'h2', 'grpc'): return False
     if t == 'trojan' and p.get('network') not in (None, 'tcp', 'ws', 'grpc'): return False
     return True
-full = yaml.safe_load(open(f'{OUT}/clash/all.yaml', encoding='utf-8'))
-cps = [{k: v for k, v in p.items() if k not in CFW_DROP} for p in full.get('proxies', []) if cfw_ok(p)]
+# CFW feed: quality nodes only, light rules, no DNS leak, no big rule sets
+# (Clash Premium on weak hardware stutters with 100k-domain providers).
+# Pick order: download-speed winners (clash/fast.yaml, fastest first), then
+# the China-latency ranking (clash/cn.yaml, lowest first), then all.yaml.
+CFW_MAX = int(os.environ.get('CFW_MAX', '60'))
+def _load(f):
+    try: return yaml.safe_load(open(f'{OUT}/{f}', encoding='utf-8')).get('proxies') or []
+    except Exception: return []
+cps, seen = [], set()
+for src in ('clash/fast.yaml', 'clash/cn.yaml', 'clash/all.yaml'):
+    for p in _load(src):
+        if len(cps) >= CFW_MAX: break
+        if p['name'] in seen or not cfw_ok(p): continue
+        seen.add(p['name']); cps.append({k: v for k, v in p.items() if k not in CFW_DROP})
 if not cps: raise SystemExit('clash/cfw.yaml: no convertible nodes')
-names = {p['name'] for p in cps}
-groups = []
-for g in full.get('proxy-groups', []):
-    g = dict(g); g['proxies'] = [x for x in g.get('proxies', []) if x in names or x in ('AUTO', 'PROXY', 'DIRECT', 'REJECT')]
-    groups.append(g)
-cfw = {k: v for k, v in full.items() if k not in ('proxies', 'proxy-groups')}
-cfw['proxies'] = cps; cfw['proxy-groups'] = groups
-cfw = {k: cfw[k] for k in list(full.keys()) if k in cfw}
+names = [p['name'] for p in cps]
+# A small built-in domestic list keeps common Chinese sites direct without a
+# rule-provider; GEOIP is no-resolve so no domain is ever looked up locally
+# just to match a rule (that lookup is where DNS leaks come from).
+CN_SUFFIX = ['cn', 'baidu.com', 'bdstatic.com', 'qq.com', 'gtimg.com', 'qpic.cn', 'weixin.qq.com', 'wechat.com', 'tencent.com',
+             'taobao.com', 'tmall.com', 'alicdn.com', 'alipay.com', 'aliyun.com', 'jd.com', '360buyimg.com', 'bilibili.com',
+             'hdslb.com', 'biliapi.net', 'douyin.com', 'douyinpic.com', 'bytedance.com', 'snssdk.com', 'pstatp.com',
+             'xiaohongshu.com', 'xhscdn.com', 'zhihu.com', 'zhimg.com', 'weibo.com', 'sinaimg.cn', '163.com', '126.net',
+             'netease.com', 'iqiyi.com', 'youku.com', 'meituan.com', 'pinduoduo.com', 'ctrip.com', 'mi.com', 'huawei.com',
+             'csdn.net', 'cnblogs.com', 'kuaishou.com', 'amap.com', 'dingtalk.com', 'feishu.cn', 'icloud.com.cn']
+cfw = {'mixed-port': 7890, 'allow-lan': False, 'mode': 'rule', 'log-level': 'info', 'ipv6': False,
+       'external-controller': '127.0.0.1:9090',
+       'dns': {'enable': True, 'ipv6': False, 'listen': '0.0.0.0:53', 'enhanced-mode': 'fake-ip', 'fake-ip-range': '198.18.0.1/16',
+               'fake-ip-filter': ['*.lan', '*.local', 'localhost.ptlogin2.qq.com', '+.msftconnecttest.com', '+.msftncsi.com', 'time.windows.com', '+.ntp.org'],
+               'default-nameserver': ['223.5.5.5', '119.29.29.29'],
+               'nameserver': ['https://223.5.5.5/dns-query', 'https://doh.pub/dns-query']},
+       'proxies': cps,
+       'proxy-groups': [{'name': 'PROXY', 'type': 'select', 'proxies': ['AUTO', 'FALLBACK'] + names},
+                        {'name': 'AUTO', 'type': 'url-test', 'url': 'http://www.gstatic.com/generate_204', 'interval': 300, 'tolerance': 50, 'proxies': names},
+                        {'name': 'FALLBACK', 'type': 'fallback', 'url': 'http://www.gstatic.com/generate_204', 'interval': 300, 'proxies': names}],
+       'rules': ['IP-CIDR,127.0.0.0/8,DIRECT,no-resolve', 'IP-CIDR,10.0.0.0/8,DIRECT,no-resolve', 'IP-CIDR,172.16.0.0/12,DIRECT,no-resolve',
+                 'IP-CIDR,192.168.0.0/16,DIRECT,no-resolve', 'IP-CIDR,100.64.0.0/10,DIRECT,no-resolve', 'DOMAIN-SUFFIX,local,DIRECT']
+                + [f'DOMAIN-SUFFIX,{d},DIRECT' for d in CN_SUFFIX] + ['GEOIP,CN,DIRECT,no-resolve', 'MATCH,PROXY']}
 bad = [p['name'] for p in cps if p['type'] not in ('http', 'socks5', 'ss', 'ssr', 'vmess', 'trojan')]
 assert not bad, bad
 for d in ('clash/cfw.yaml', 'clash/cfw-nodes.yaml'):
     yaml.safe_dump(cfw, open(f'{OUT}/{d}', 'w', encoding='utf-8'), allow_unicode=True, sort_keys=False)
-print(f'PASS clash/cfw.yaml: {len(cps)} nodes (Premium-compatible only)')
+print(f'PASS clash/cfw.yaml: {len(cps)} quality nodes (Premium-compatible, fast/cn ranked)')
 for f, n in (('surge/surge.conf', len(surge)), ('quantumultx/qx.txt', len(qx)), ('loon/loon.list', len(loon)), ('singbox/singbox.json', len(ob))):
     if n == 0: raise SystemExit(f'{f}: no convertible nodes')
     print(f'PASS {f}: {n} nodes')
