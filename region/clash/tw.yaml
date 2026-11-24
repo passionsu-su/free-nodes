@@ -4,20 +4,30 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- client-fingerprint: ios
+- name: '[AutoMerge] 🇹🇼TW_4|1.4MB/s | 1028ms'
+  password: exaxgqkKkd0TAMrCxeonWg==
+  port: 1443
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  skip-cert-verify: false
+  sni: twmoon1-cdn-route.couldflare-cdn.com
+  tls: true
+  type: http
+  udp: true
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+- type: vless
+  name: '[ermaozi] 🇹🇼_TW_台湾_IPV4 (2) | 2374ms'
+  server: free.fugui.lol
+  port: 47396
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
   flow: xtls-rprx-vision
-  name: '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 1043ms'
-  network: tcp
-  port: 51283
+  tls: true
+  servername: swdist.apple.com
+  sni: swdist.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
   reality-opts:
     public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
     short-id: fa514b83
-  server: free.fugui.lol
-  servername: swdist.apple.com
-  tls: true
-  type: vless
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  x-toolall-mihomo: true
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -25,12 +35,14 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 1043ms'
+  - '[AutoMerge] 🇹🇼TW_4|1.4MB/s | 1028ms'
+  - '[ermaozi] 🇹🇼_TW_台湾_IPV4 (2) | 2374ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 1043ms'
+  - '[AutoMerge] 🇹🇼TW_4|1.4MB/s | 1028ms'
+  - '[ermaozi] 🇹🇼_TW_台湾_IPV4 (2) | 2374ms'
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,PROXY
