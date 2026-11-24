@@ -329,6 +329,14 @@ proxy-groups:
 # ============================================================
 
 rule-providers:
+  china-direct:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: DIRECT
+    url: https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/clash.yaml
+    path: ./ruleset/china-direct.yaml
 
   # ---------------- 微信广告专项 ----------------
   # 初始候选域名，需结合实际连接日志持续维护
@@ -593,6 +601,8 @@ rules:
   - RULE-SET,sp-apple,🍎 苹果
 
   # ---------------- 国内外分流 ----------------
+
+  - RULE-SET,china-direct,🎯 国内直连
 
   - RULE-SET,sp-gfw,🚀 节点选择
   - RULE-SET,sp-cn,🎯 国内直连

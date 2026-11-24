@@ -16,6 +16,12 @@
         "server": "223.5.5.5"
       }
     ],
+    "rules": [
+      {
+        "rule_set": "china-direct",
+        "server": "local"
+      }
+    ],
     "final": "remote"
   },
   "inbounds": [
@@ -3445,6 +3451,24 @@
     }
   ],
   "route": {
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "china-direct",
+        "format": "source",
+        "download_detour": "direct",
+        "update_interval": "1d",
+        "url": "https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/singbox.json"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "download_detour": "direct",
+        "update_interval": "1d",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs"
+      }
+    ],
     "rules": [
       {
         "action": "sniff"
@@ -3455,6 +3479,13 @@
       },
       {
         "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "china-direct",
+          "geoip-cn"
+        ],
         "outbound": "direct"
       }
     ],

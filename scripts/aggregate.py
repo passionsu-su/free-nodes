@@ -416,6 +416,17 @@ def uri(p):
         return f'trojan://{q(p["password"])}@{host}:{port}?'+urllib.parse.urlencode(params)+f'#{name}'
     if t=="hysteria2": return f'hysteria2://{q(p["password"])}@{host}:{port}?sni={q(p.get("sni") or host)}&insecure=1#{name}'
     return None
+# Mainland China goes direct in every Clash-family feed: LAN/private ranges,
+# then passionsu-su/china-direct-domain (114k+ merged CN domains, '+.' = domain
+# and subdomains), then GeoIP CN for bare IPs. Only fields Clash Premium also
+# understands, so clash/cfw.yaml (copied from all.yaml) keeps loading.
+CHINA_DIRECT_PROVIDER={"type":"http","behavior":"domain",
+    "url":"https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/clash.yaml",
+    "path":"./ruleset/china-direct.yaml","interval":86400}
+CHINA_DIRECT_RULES=["IP-CIDR,127.0.0.0/8,DIRECT,no-resolve","IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
+    "IP-CIDR,172.16.0.0/12,DIRECT,no-resolve","IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
+    "IP-CIDR,100.64.0.0/10,DIRECT,no-resolve","DOMAIN-SUFFIX,local,DIRECT",
+    "RULE-SET,china-direct,DIRECT","GEOIP,CN,DIRECT","MATCH,PROXY"]
 def build_yaml(nodes):
     names=[p["name"] for p in nodes]
     if names:
@@ -424,7 +435,8 @@ def build_yaml(nodes):
         # Empty regional feeds remain valid importable configs instead of
         # creating url-test/select groups with no usable members.
         groups=[{"name":"AUTO","type":"select","proxies":["DIRECT"]},{"name":"PROXY","type":"select","proxies":["DIRECT"]}]
-    return {"mixed-port":7890,"allow-lan":False,"mode":"rule","log-level":"info","ipv6":False,"proxies":nodes,"proxy-groups":groups,"rules":["GEOIP,CN,DIRECT","MATCH,PROXY"]}
+    return {"mixed-port":7890,"allow-lan":False,"mode":"rule","log-level":"info","ipv6":False,"proxies":nodes,"proxy-groups":groups,
+            "rule-providers":{"china-direct":dict(CHINA_DIRECT_PROVIDER)},"rules":list(CHINA_DIRECT_RULES)}
 def write_yaml(path,obj):
     path.parent.mkdir(parents=True,exist_ok=True); path.write_text(yaml.safe_dump(obj,allow_unicode=True,sort_keys=False),encoding="utf-8")
 def sources_block(src_stats):

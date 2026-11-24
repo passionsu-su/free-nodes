@@ -161,3 +161,15 @@ clash/meta.yaml 是固定的完整配置：节点通过 proxy-provider 每 6 小
 <!-- /SOURCES -->
 
 免费公共节点可能被记录流量，勿用于银行、支付等敏感账号。
+
+## 中国大陆直连
+
+所有带规则的订阅都内置「绕过中国大陆」：局域网 / 私有地址 → 国内域名（[china-direct-domain](https://github.com/passionsu-su/china-direct-domain) 合并的 11 万+ 域名，含子域名）→ GeoIP CN，命中即直连，其余走代理。
+
+| 订阅 | 大陆直连方式 |
+| --- | --- |
+| clash/all.yaml、cn.yaml、fast.yaml、cfw.yaml、region/clash/*.yaml、stash、clashmi | rule-provider china-direct + GEOIP,CN |
+| clash/meta.yaml、meta-speed.yaml | 原有 geosite/geoip CN 分流 + china-direct |
+| surge/surge.conf | RULE-SET,LAN + DOMAIN-SET china-direct + GEOIP,CN |
+| singbox/singbox.json | rule_set china-direct + geoip-cn，国内域名用 223.5.5.5 解析 |
+| v2ray/*.txt、region/*.txt、shadowrocket/sub.txt、quantumultx/qx.txt、loon/loon.list、surge/proxies.list | 纯节点列表，格式本身不能带规则，由 App 自己的分流配置决定（小火箭、QX、Loon 默认配置已含 GEOIP,CN,DIRECT） |

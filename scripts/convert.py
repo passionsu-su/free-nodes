@@ -29,7 +29,7 @@ for p in P:
     surge.append((n, l))
 sl = [n for n, _ in surge]
 open(f'{OUT}/surge/surge.conf','w').write('[General]\nloglevel = notify\nskip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, localhost, *.local\ndns-server = system, 223.5.5.5, 119.29.29.29\n\n[Proxy]\n' + '\n'.join(l for _, l in surge) +
-  f"\n\n[Proxy Group]\nPROXY = select, AUTO, {', '.join(sl)}\nAUTO = url-test, {', '.join(sl)}, url=http://www.gstatic.com/generate_204, interval=600\n\n[Rule]\nGEOIP,CN,DIRECT\nFINAL,PROXY,dns-failed\n")
+  f"\n\n[Proxy Group]\nPROXY = select, AUTO, {', '.join(sl)}\nAUTO = url-test, {', '.join(sl)}, url=http://www.gstatic.com/generate_204, interval=600\n\n[Rule]\nRULE-SET,LAN,DIRECT\nDOMAIN-SET,https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/surge-domainset.txt,DIRECT\nGEOIP,CN,DIRECT\nFINAL,PROXY,dns-failed\n")
 open(f'{OUT}/surge/proxies.list','w').write('\n'.join(l for _, l in surge) + '\n')
 # ---- Quantumult X (server_remote resource) ----
 qx = []
@@ -89,12 +89,18 @@ for p in P:
 tags = [o['tag'] for o in ob]
 sb = {'log': {'level': 'warn'},
       'dns': {'servers': [{'type': 'tls', 'tag': 'remote', 'server': '8.8.8.8', 'detour': 'PROXY'}, {'type': 'udp', 'tag': 'local', 'server': '223.5.5.5'}],
+              'rules': [{'rule_set': 'china-direct', 'server': 'local'}],
               'final': 'remote'},
       'inbounds': [{'type': 'tun', 'tag': 'tun-in', 'address': ['172.19.0.1/30'], 'auto_route': True, 'strict_route': True, 'stack': 'mixed'}],
       'outbounds': [{'type': 'selector', 'tag': 'PROXY', 'outbounds': ['AUTO'] + tags},
                     {'type': 'urltest', 'tag': 'AUTO', 'outbounds': tags, 'url': 'https://www.gstatic.com/generate_204', 'interval': '5m'}] + ob +
                    [{'type': 'direct', 'tag': 'direct'}],
-      'route': {'rules': [{'action': 'sniff'}, {'protocol': 'dns', 'action': 'hijack-dns'}, {'ip_is_private': True, 'outbound': 'direct'}],
+      'route': {'rule_set': [{'type': 'remote', 'tag': 'china-direct', 'format': 'source', 'download_detour': 'direct', 'update_interval': '1d',
+                              'url': 'https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/singbox.json'},
+                             {'type': 'remote', 'tag': 'geoip-cn', 'format': 'binary', 'download_detour': 'direct', 'update_interval': '1d',
+                              'url': 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs'}],
+                'rules': [{'action': 'sniff'}, {'protocol': 'dns', 'action': 'hijack-dns'}, {'ip_is_private': True, 'outbound': 'direct'},
+                          {'rule_set': ['china-direct', 'geoip-cn'], 'outbound': 'direct'}],
                 'final': 'PROXY', 'auto_detect_interface': True, 'default_domain_resolver': 'local'}}
 # NOTE (2026-11-19 fix): the sing-box dict was built but never written to disk,
 # so singbox/singbox.json went stale while the log still claimed PASS.
