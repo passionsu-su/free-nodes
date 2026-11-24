@@ -427,7 +427,20 @@ def build_yaml(nodes):
     return {"mixed-port":7890,"allow-lan":False,"mode":"rule","log-level":"info","ipv6":False,"proxies":nodes,"proxy-groups":groups,"rules":["GEOIP,CN,DIRECT","MATCH,PROXY"]}
 def write_yaml(path,obj):
     path.parent.mkdir(parents=True,exist_ok=True); path.write_text(yaml.safe_dump(obj,allow_unicode=True,sort_keys=False),encoding="utf-8")
-def refresh_readme(now, candidates, alive, v2ray_n, region_stats, txt_counts, cn_stats, note=""):
+def sources_block(src_stats):
+    """README table of upstream sources, regenerated from SOURCES + this run's per-source counts."""
+    rows=[]
+    for tag,url,kind in SOURCES:
+        m=re.match(r"https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/",url)
+        proj=f"[{m.group(1)}/{m.group(2)}](https://github.com/{m.group(1)}/{m.group(2)})" if m else tag
+        st=(src_stats or {}).get(tag) or {}
+        state="❌ "+str(st["error"])[:40] if st.get("error") else ("✅" if st.get("parsed") else "—")
+        rows.append(f"| {tag} | {proj} | {'Clash YAML' if kind=='clash' else '分享链接/base64'} | {st.get('parsed','—')} | {st.get('count','—')} | {state} |")
+    return ("<!-- SOURCES -->\n## 上游节点来源\n\n本仓库不自建节点，每次运行从以下公开项目抓取，合并去重后再测试筛选。"
+            "抓取数 = 该源本次解析到的节点；收录数 = 去重后新增的候选（重复节点算在先出现的源）。\n\n"
+            "| 来源 | 项目 | 格式 | 抓取 | 收录 | 状态 |\n| --- | --- | --- | --- | --- | --- |\n"+"\n".join(rows)+
+            "\n\n节点版权与可用性归原项目所有，如需移除请提 Issue。\n<!-- /SOURCES -->")
+def refresh_readme(now, candidates, alive, v2ray_n, region_stats, txt_counts, cn_stats, note="", src_stats=None):
     """Keep README numbers honest: the AUTO-STATUS line, the update time and
     the region tables are regenerated from this run's real outputs every time.
     Marker blocks that do not exist yet are left alone."""
@@ -461,6 +474,10 @@ def refresh_readme(now, candidates, alive, v2ray_n, region_stats, txt_counts, cn
         else:
             body=(f"{m}\n## 国内优选（按到中国大陆目标的实测延迟排序）\n\n本次复测未完成（中国目标不可达或复测失败），沿用上一版 clash/cn.yaml（如有）；下次运行成功后自动恢复。\n<!-- /CN-FEED -->")
         text=re.sub(r"<!-- CN-FEED -->.*?<!-- /CN-FEED -->",body,text,flags=re.S)
+    sb=sources_block(src_stats)
+    if "<!-- SOURCES -->" in text: text=re.sub(r"<!-- SOURCES -->.*?<!-- /SOURCES -->",lambda _:sb,text,flags=re.S)
+    elif "免费公共节点可能被记录流量" in text: text=text.replace("免费公共节点可能被记录流量",sb+"\n\n免费公共节点可能被记录流量",1)
+    else: text=text.rstrip()+"\n\n"+sb+"\n"
     readme.write_text(text,encoding="utf-8")
 def main():
     merged=[]; seen=set(); stats={}
@@ -575,6 +592,6 @@ def main():
     now=datetime.now(BJT).strftime("%Y-%m-%d %H:%M")
     report={"time":now,"sources":stats,"candidates":len(merged),"tested":len(merged),"alive":len(nodes),"v2ray":len(links),"dropped_slow":dropped_slow,"dropped_dup":dropped_dup,"region":region_stats,"geoip":geoip_stats,"cn":cn_stats,"fast":fast_stats,"test":"mihomo API / gstatic generate_204"}
     (ROOT/"report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    refresh_readme(now, len(merged), len(nodes), len(links), region_stats, txt_counts, cn_stats)
+    refresh_readme(now, len(merged), len(nodes), len(links), region_stats, txt_counts, cn_stats, src_stats=stats)
     print(f"PASS: {len(nodes)}/{len(merged)} nodes passed mihomo real connection test")
 if __name__=="__main__": main()

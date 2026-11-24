@@ -140,4 +140,24 @@ raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
 
 clash/meta.yaml 是固定的完整配置：节点通过 proxy-provider 每 6 小时自动拉取 clash/all.yaml，内含地区自动测速分组、AI/YouTube/Netflix/Telegram 等分流、多源去广告、Fake-IP + DoH 防泄漏 DNS、微信/QQ 直连。导入后在 App 里开启订阅自动更新即可。
 
+<!-- SOURCES -->
+## 上游节点来源
+
+本仓库不自建节点，每次运行从以下公开项目抓取，合并去重后再测试筛选。抓取数 = 该源本次解析到的节点；收录数 = 去重后新增的候选（重复节点算在先出现的源）。
+
+| 来源 | 项目 | 格式 | 抓取 | 收录 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| ermaozi | [ermaozi/get_subscribe](https://github.com/ermaozi/get_subscribe) | Clash YAML | 357 | 357 | ✅ |
+| NoMoreWalls | [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) | Clash YAML | 260 | 51 | ✅ |
+| AutoMerge | [chengaopan/AutoMergePublicNodes](https://github.com/chengaopan/AutoMergePublicNodes) | Clash YAML | 276 | 20 | ✅ |
+| freeSub | [Ruk1ng001/freeSub](https://github.com/Ruk1ng001/freeSub) | Clash YAML | 127 | 113 | ✅ |
+| free18 | [free18/v2ray](https://github.com/free18/v2ray) | Clash YAML | 166 | 157 | ✅ |
+| zhuhaiuk | [zhuhaiuk/free-nodes](https://github.com/zhuhaiuk/free-nodes) | Clash YAML | 32 | 32 | ✅ |
+| Eternity | [mahdibland/ShadowsocksAggregator](https://github.com/mahdibland/ShadowsocksAggregator) | Clash YAML | 201 | 140 | ✅ |
+| Pawdroid | [Pawdroid/Free-servers](https://github.com/Pawdroid/Free-servers) | 分享链接/base64 | 9 | 4 | ✅ |
+| roosterkid | [roosterkid/openproxylist](https://github.com/roosterkid/openproxylist) | 分享链接/base64 | 123 | 59 | ✅ |
+
+节点版权与可用性归原项目所有，如需移除请提 Issue。
+<!-- /SOURCES -->
+
 免费公共节点可能被记录流量，勿用于银行、支付等敏感账号。
