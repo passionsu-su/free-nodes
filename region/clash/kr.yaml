@@ -4,13 +4,7 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[Eternity] 🇰🇷KR-211.178.105.134-0282 | 0.045MB | 711ms'
-  server: 211.178.105.134
-  port: 6123
-  type: ss
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 925ms'
+- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 635ms'
   network: ws
   port: 25555
   server: 152.69.226.63
@@ -19,23 +13,30 @@ proxies:
   uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
   ws-opts:
     path: /
-- name: '[zhuhaiuk] KR - zhuhai.uk 02 | 1010ms'
-  type: socks5
-  server: 59.11.209.162
+- name: '[ermaozi] 🇰🇷KR_1|1.2MB/s | 762ms'
   port: 1080
-- name: '[Eternity] 🇰🇷KR-218.237.185.234-0267 | 0.029MB | 1014ms'
+  server: 59.11.209.162
+  skip-cert-verify: true
+  type: socks5
+- name: '[Eternity] 🇰🇷KR-218.237.185.234-0267 | 0.029MB | 770ms'
   server: p141.panda001.net
   port: 4652
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: '[zhuhaiuk] KR - zhuhai.uk | 1089ms'
+- name: '[zhuhaiuk] KR - zhuhai.uk | 793ms'
   type: http
   server: 152.69.230.221
   port: 443
   tls: true
   skip-cert-verify: true
-- name: '[roosterkid] 🇰🇷[openproxylist.com] ss-KR | 2751ms'
+- name: '[Eternity] 🇰🇷KR-211.178.105.134-0282 | 0.045MB | 926ms'
+  server: 211.178.105.134
+  port: 6123
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- name: '[roosterkid] 🇰🇷[openproxylist.com] ss-KR | 990ms'
   type: ss
   server: 43.201.46.216
   port: 8443
@@ -48,22 +49,22 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0282 | 0.045MB | 711ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 925ms'
-  - '[zhuhaiuk] KR - zhuhai.uk 02 | 1010ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0267 | 0.029MB | 1014ms'
-  - '[zhuhaiuk] KR - zhuhai.uk | 1089ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] ss-KR | 2751ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 635ms'
+  - '[ermaozi] 🇰🇷KR_1|1.2MB/s | 762ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0267 | 0.029MB | 770ms'
+  - '[zhuhaiuk] KR - zhuhai.uk | 793ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0282 | 0.045MB | 926ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] ss-KR | 990ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0282 | 0.045MB | 711ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 925ms'
-  - '[zhuhaiuk] KR - zhuhai.uk 02 | 1010ms'
-  - '[Eternity] 🇰🇷KR-218.237.185.234-0267 | 0.029MB | 1014ms'
-  - '[zhuhaiuk] KR - zhuhai.uk | 1089ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] ss-KR | 2751ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 635ms'
+  - '[ermaozi] 🇰🇷KR_1|1.2MB/s | 762ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0267 | 0.029MB | 770ms'
+  - '[zhuhaiuk] KR - zhuhai.uk | 793ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0282 | 0.045MB | 926ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] ss-KR | 990ms'
 rule-providers:
   china-direct:
     type: http

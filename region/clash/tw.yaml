@@ -3,16 +3,50 @@ allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
-proxies: []
+proxies:
+- client-fingerprint: ios
+  flow: xtls-rprx-vision
+  name: '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 1413ms'
+  network: tcp
+  port: 51283
+  reality-opts:
+    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
+    short-id: fa514b83
+  server: free.fugui.lol
+  servername: swdist.apple.com
+  tls: true
+  type: vless
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
+  x-toolall-mihomo: true
+- client-fingerprint: chrome
+  flow: xtls-rprx-vision
+  name: '[freeSub] C🟠🇭🇰hos[🔮🎮✈️🔍]_dokng.com_cc6a668d | 2271ms'
+  network: tcp
+  port: 47396
+  reality-opts:
+    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
+    short-id: fa514b83
+  server: free.fugui.lol
+  servername: swdist.apple.com
+  tls: true
+  type: vless
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
+  x-toolall-mihomo: true
 proxy-groups:
 - name: AUTO
-  type: select
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
   proxies:
-  - DIRECT
+  - '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 1413ms'
+  - '[freeSub] C🟠🇭🇰hos[🔮🎮✈️🔍]_dokng.com_cc6a668d | 2271ms'
 - name: PROXY
   type: select
   proxies:
-  - DIRECT
+  - AUTO
+  - '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 1413ms'
+  - '[freeSub] C🟠🇭🇰hos[🔮🎮✈️🔍]_dokng.com_cc6a668d | 2271ms'
 rule-providers:
   china-direct:
     type: http
