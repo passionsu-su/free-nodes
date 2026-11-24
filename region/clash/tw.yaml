@@ -3,46 +3,16 @@ allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
-proxies:
-- name: '[AutoMerge] 🇹🇼TW_4|1.4MB/s | 1080ms'
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  skip-cert-verify: false
-  sni: twmoon1-cdn-route.couldflare-cdn.com
-  tls: true
-  type: http
-  udp: true
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: '[freeSub] C🟠🇭🇰hos[🔮🎮✈️🔍]_dokng.com_cc6a668d | 2438ms'
-  network: tcp
-  port: 47396
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-  server: free.fugui.lol
-  servername: swdist.apple.com
-  tls: true
-  type: vless
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  x-toolall-mihomo: true
+proxies: []
 proxy-groups:
 - name: AUTO
-  type: url-test
-  url: https://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
+  type: select
   proxies:
-  - '[AutoMerge] 🇹🇼TW_4|1.4MB/s | 1080ms'
-  - '[freeSub] C🟠🇭🇰hos[🔮🎮✈️🔍]_dokng.com_cc6a668d | 2438ms'
+  - DIRECT
 - name: PROXY
   type: select
   proxies:
-  - AUTO
-  - '[AutoMerge] 🇹🇼TW_4|1.4MB/s | 1080ms'
-  - '[freeSub] C🟠🇭🇰hos[🔮🎮✈️🔍]_dokng.com_cc6a668d | 2438ms'
+  - DIRECT
 rule-providers:
   china-direct:
     type: http

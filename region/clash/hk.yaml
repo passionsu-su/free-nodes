@@ -4,18 +4,61 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 1064ms'
-  obfs: salamander
-  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
-  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
-  port: 5010
-  server: 152.32.254.68
-  skip-cert-verify: false
-  sni: nas.aizhzo.com
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  http-opts:
+    headers:
+      Host:
+      - openai.com
+    method: GET
+    path:
+    - /QQqun-737805443
+  name: '[ermaozi] 🇭🇰 香港 | HKG #2 | 626ms'
+  network: http
+  port: 52080
+  server: 47.242.81.94
+  skip-cert-verify: true
   tls: false
-  type: hysteria2
+  type: vmess
+  udp: true
+  uuid: e47b9f77-60e4-4738-8d53-772b6002e146
+- name: '[AutoMerge] 🇭🇰[www.v2nodes.com] trojan-HK-... | 813ms'
+  password: '12012'
+  port: 12012
+  server: 47.242.93.89
+  skip-cert-verify: true
+  sni: ali-hk.b-gfw.cfd
+  type: trojan
+- name: '[roosterkid] 🏳[openproxylist.com] vmess- | 1035ms'
+  type: vmess
+  server: 47.86.90.31
+  port: 443
+  uuid: 234a8041-2b4d-44a3-a8d8-523cbfd58dc4
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: true
+  servername: bywxdhirqkjj8xaz.v.3dns.vip
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: bywxdhirqkjj8xaz.v.3dns.vip
+- name: '[freeSub] C🟠🇭🇰hos_dokng.com_47d8185d | 1671ms'
+  password: '111'
+  port: 11211
+  server: 47.243.173.50
+  type: socks5
+  username: '111'
+- cipher: aes-256-gcm
+  name: '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 1877ms'
+  password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
+  port: 8388
+  server: 209.248.57.105
+  type: ss
 - cipher: 2022-blake3-aes-256-gcm
-  name: '[freeSub] D🔴🇭🇰hos[🔮🧩📺🎭]_dokng.com_5283af7f | 1340ms'
+  name: '[freeSub] D🔴🇭🇰hos[🔮🧩📺🎭]_dokng.com_5283af7f | 1919ms'
   password: j4DddfVh3zON1s3Wfbmdn2WWhLCWAaOJyKqdeKvxh4A=
   port: 8388
   server: 27.124.5.86
@@ -26,7 +69,7 @@ proxies:
   - ''
   alterId: 0
   cipher: auto
-  name: '[NoMoreWalls] 🇭🇰 香港 | HKG #3 | 1503ms'
+  name: '[ermaozi] 🇭🇰 香港 | HKG #3 | 2681ms'
   network: ws
   port: 23026
   server: 47.244.120.197
@@ -40,48 +83,6 @@ proxies:
     headers:
       Host: 47.244.120.197
     path: /arki
-- name: '[ermaozi] 🇭🇰 香港 | HKG 3 | 2044ms'
-  server: 47.86.90.31
-  port: 443
-  type: vmess
-  uuid: 234a8041-2b4d-44a3-a8d8-523cbfd58dc4
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: bywxdhirqkjj8xaz.v.3dns.vip
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: bywxdhirqkjj8xaz.v.3dns.vip
-  udp: true
-- alpn:
-  - ''
-  alterId: 0
-  cipher: auto
-  http-opts:
-    headers:
-      Host:
-      - openai.com
-    method: GET
-    path:
-    - /QQqun-737805443
-  name: '[NoMoreWalls] 🇭🇰 香港 | HKG #2 | 2140ms'
-  network: http
-  port: 52080
-  server: 47.242.81.94
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: e47b9f77-60e4-4738-8d53-772b6002e146
-- name: '[freeSub] C🟠🇭🇰hos_dokng.com_47d8185d | 2552ms'
-  password: '111'
-  port: 11211
-  server: 47.243.173.50
-  type: socks5
-  username: '111'
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -89,22 +90,24 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 1064ms'
-  - '[freeSub] D🔴🇭🇰hos[🔮🧩📺🎭]_dokng.com_5283af7f | 1340ms'
-  - '[NoMoreWalls] 🇭🇰 香港 | HKG #3 | 1503ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG 3 | 2044ms'
-  - '[NoMoreWalls] 🇭🇰 香港 | HKG #2 | 2140ms'
-  - '[freeSub] C🟠🇭🇰hos_dokng.com_47d8185d | 2552ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 626ms'
+  - '[AutoMerge] 🇭🇰[www.v2nodes.com] trojan-HK-... | 813ms'
+  - '[roosterkid] 🏳[openproxylist.com] vmess- | 1035ms'
+  - '[freeSub] C🟠🇭🇰hos_dokng.com_47d8185d | 1671ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 1877ms'
+  - '[freeSub] D🔴🇭🇰hos[🔮🧩📺🎭]_dokng.com_5283af7f | 1919ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #3 | 2681ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 1064ms'
-  - '[freeSub] D🔴🇭🇰hos[🔮🧩📺🎭]_dokng.com_5283af7f | 1340ms'
-  - '[NoMoreWalls] 🇭🇰 香港 | HKG #3 | 1503ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG 3 | 2044ms'
-  - '[NoMoreWalls] 🇭🇰 香港 | HKG #2 | 2140ms'
-  - '[freeSub] C🟠🇭🇰hos_dokng.com_47d8185d | 2552ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 626ms'
+  - '[AutoMerge] 🇭🇰[www.v2nodes.com] trojan-HK-... | 813ms'
+  - '[roosterkid] 🏳[openproxylist.com] vmess- | 1035ms'
+  - '[freeSub] C🟠🇭🇰hos_dokng.com_47d8185d | 1671ms'
+  - '[ermaozi] 🇭🇰[www.v2nodes.com] ss-HK-1621... | 1877ms'
+  - '[freeSub] D🔴🇭🇰hos[🔮🧩📺🎭]_dokng.com_5283af7f | 1919ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #3 | 2681ms'
 rule-providers:
   china-direct:
     type: http
