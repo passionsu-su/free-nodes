@@ -162,27 +162,45 @@ jobs:
           python scripts/convert.py
           if ($LASTEXITCODE -ne 0) { throw "convert.py failed" }
 
+      # github.com:443 from this PC is often unreachable for git push (connect
+      # timeouts), while the runner's own channel to GitHub Actions works. So hand
+      # the two feeds over as an artifact and let a GitHub-hosted job commit them.
+      - name: Hand China-target feeds to the publish job
+        uses: actions/upload-artifact@v4
+        with:
+          name: cn-feeds
+          path: |
+            clash/cn.yaml
+            v2ray/cn.txt
+          retention-days: 1
+          if-no-files-found: error
+
+  publish-china:
+    needs: collect-china
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/download-artifact@v4
+        with:
+          name: cn-feeds
+          path: ${{ runner.temp }}/cn-feeds
       - name: Commit only China-target feeds
         run: |
-          $files = @("clash/cn.yaml", "v2ray/cn.txt")
-          $keep = Join-Path $env:RUNNER_TEMP "cn-feeds"
-          New-Item -ItemType Directory -Force -Path $keep | Out-Null
-          foreach ($f in $files) { Copy-Item -Force $f (Join-Path $keep ($f -replace "/", "_")) }
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for ($attempt = 1; $attempt -le 3; $attempt++) {
-            # Start from the newest main each time, so a concurrent push from
-            # the ubuntu job can never cause a rebase conflict.
+          for attempt in 1 2 3; do
             git fetch --depth=1 origin main
             git reset --hard origin/main
-            foreach ($f in $files) { Copy-Item -Force (Join-Path $keep ($f -replace "/", "_")) $f }
-            git add $files
-            git diff --cached --quiet
-            if ($LASTEXITCODE -eq 0) { Write-Host "No changes; keeping current publication."; exit 0 }
+            cp "$RUNNER_TEMP/cn-feeds/clash/cn.yaml" clash/cn.yaml
+            cp "$RUNNER_TEMP/cn-feeds/v2ray/cn.txt" v2ray/cn.txt
+            git add clash/cn.yaml v2ray/cn.txt
+            if git diff --cached --quiet; then echo "No changes; keeping current publication."; exit 0; fi
             git commit -m "chore: refresh China-target feeds from self-hosted runner"
-            git push origin HEAD:main
-            if ($LASTEXITCODE -eq 0) { exit 0 }
-            Start-Sleep -Seconds ($attempt * 5)
-          }
-          Write-Error "Push failed after three attempts"
-          exit 1
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          echo "Push failed after three attempts"; exit 1
