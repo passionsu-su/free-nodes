@@ -4,37 +4,38 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[Eternity] 🇰🇷KR-211.178.105.134-5850 | 2.126MB | 567ms'
-  server: 211.178.105.134
-  port: 6123
-  type: ss
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 656ms'
-  network: ws
-  port: 25555
-  server: 152.69.226.63
-  tls: false
+- name: '[ermaozi] 🇰🇷KR_2|5.1MB/s | 593ms'
+  port: 80
+  server: 101.79.22.162
+  skip-cert-verify: true
+  type: http
+- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 638ms'
   type: vless
+  server: 152.69.226.63
+  port: 25555
   uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
+  encryption: none
+  network: ws
   ws-opts:
     path: /
-- name: '[ermaozi] 🇰🇷KR_1|5.3MB/s | 777ms'
+    headers: {}
+- name: '[ermaozi] 🇰🇷KR_1|5.3MB/s | 766ms'
   port: 1080
   server: 59.11.209.162
   skip-cert-verify: true
   type: socks5
-- name: '[ermaozi] 🇰🇷KR_3|3.5MB/s | 903ms'
+- name: '[ermaozi] 🇰🇷KR_3|3.5MB/s | 813ms'
   port: 443
   server: 152.69.230.221
   skip-cert-verify: true
   tls: true
   type: http
-- name: '[ermaozi] 🇰🇷KR_2|5.1MB/s | 2591ms'
-  port: 80
-  server: 101.79.22.162
-  skip-cert-verify: true
-  type: http
+- name: '[Eternity] 🇰🇷KR-211.178.105.134-5850 | 2.126MB | 2759ms'
+  server: 211.178.105.134
+  port: 6123
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -42,20 +43,20 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[Eternity] 🇰🇷KR-211.178.105.134-5850 | 2.126MB | 567ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 656ms'
-  - '[ermaozi] 🇰🇷KR_1|5.3MB/s | 777ms'
-  - '[ermaozi] 🇰🇷KR_3|3.5MB/s | 903ms'
-  - '[ermaozi] 🇰🇷KR_2|5.1MB/s | 2591ms'
+  - '[ermaozi] 🇰🇷KR_2|5.1MB/s | 593ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 638ms'
+  - '[ermaozi] 🇰🇷KR_1|5.3MB/s | 766ms'
+  - '[ermaozi] 🇰🇷KR_3|3.5MB/s | 813ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-5850 | 2.126MB | 2759ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[Eternity] 🇰🇷KR-211.178.105.134-5850 | 2.126MB | 567ms'
-  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 656ms'
-  - '[ermaozi] 🇰🇷KR_1|5.3MB/s | 777ms'
-  - '[ermaozi] 🇰🇷KR_3|3.5MB/s | 903ms'
-  - '[ermaozi] 🇰🇷KR_2|5.1MB/s | 2591ms'
+  - '[ermaozi] 🇰🇷KR_2|5.1MB/s | 593ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 638ms'
+  - '[ermaozi] 🇰🇷KR_1|5.3MB/s | 766ms'
+  - '[ermaozi] 🇰🇷KR_3|3.5MB/s | 813ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-5850 | 2.126MB | 2759ms'
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve

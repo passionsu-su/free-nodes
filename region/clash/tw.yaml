@@ -3,77 +3,16 @@ allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
-proxies:
-- client-fingerprint: chrome
-  name: '[ermaozi] 🏳[www.v2nodes.com] vless- #5 | 833ms'
-  network: ws
-  port: 8443
-  server: 154.40.61.186
-  servername: senflarelink-node-wj1gsa.pages.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  uuid: b69cf773-da16-486e-afce-a45b94f998b3
-  ws-opts:
-    headers:
-      Host: senflarelink-node-wj1gsa.pages.dev
-    path: /flow=
-- name: '[AutoMerge] 🇹🇼TW_3|3.5MB/s | 1205ms'
-  password: exaxgqkKkd0TAMrCxeonWg==
-  port: 1443
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  skip-cert-verify: false
-  sni: twmoon1-cdn-route.couldflare-cdn.com
-  tls: true
-  type: http
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-- client-fingerprint: chrome
-  flow: xtls-rprx-vision
-  name: '[freeSub] C🟠🇭🇰hos[🔮🎮✈️🔍]_dokng.com_cc6a668d | 1276ms'
-  network: tcp
-  port: 47396
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-  server: free.fugui.lol
-  servername: swdist.apple.com
-  tls: true
-  type: vless
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  x-toolall-mihomo: true
-- client-fingerprint: ios
-  flow: xtls-rprx-vision
-  name: '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 1432ms'
-  network: tcp
-  port: 51283
-  reality-opts:
-    public-key: IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ
-    short-id: fa514b83
-  server: free.fugui.lol
-  servername: swdist.apple.com
-  tls: true
-  type: vless
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  x-toolall-mihomo: true
+proxies: []
 proxy-groups:
 - name: AUTO
-  type: url-test
-  url: https://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
+  type: select
   proxies:
-  - '[ermaozi] 🏳[www.v2nodes.com] vless- #5 | 833ms'
-  - '[AutoMerge] 🇹🇼TW_3|3.5MB/s | 1205ms'
-  - '[freeSub] C🟠🇭🇰hos[🔮🎮✈️🔍]_dokng.com_cc6a668d | 1276ms'
-  - '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 1432ms'
+  - DIRECT
 - name: PROXY
   type: select
   proxies:
-  - AUTO
-  - '[ermaozi] 🏳[www.v2nodes.com] vless- #5 | 833ms'
-  - '[AutoMerge] 🇹🇼TW_3|3.5MB/s | 1205ms'
-  - '[freeSub] C🟠🇭🇰hos[🔮🎮✈️🔍]_dokng.com_cc6a668d | 1276ms'
-  - '[freeSub] D🔴🇸🇬hos[🎮✈️🐙🔍]_dokng.com_146ca5ea | 1432ms'
+  - DIRECT
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
