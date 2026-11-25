@@ -4,19 +4,36 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[AutoMerge] 🇺🇸US_17|1.3MB/s | 51ms'
-  port: 18080
-  server: 52.128.238.98
+- auth: ePPsH1bMFD
+  name: '[ermaozi] 🇭🇰 香港 | HKG #3 | 1026ms'
+  password: ePPsH1bMFD
+  port: 50541
+  server: 23.141.172.229
   skip-cert-verify: true
+  sni: is1-ssl.mzstatic.com
+  tls: false
+  type: hysteria2
+- name: '[zhuhaiuk] HK - zhuhai.uk | 1119ms'
   type: http
-- name: '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 645ms'
-  password: '12012'
-  port: 12012
-  server: 47.242.93.89
+  server: 119.28.24.235
+  port: 3128
+  tls: true
   skip-cert-verify: true
-  sni: ali-hk.b-gfw.cfd
-  type: trojan
-- name: '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 659ms'
+- name: '[ermaozi] 🇭🇰 香港 | HKG 9 | 1750ms'
+  server: 8.210.92.38
+  port: 443
+  type: vless
+  uuid: 4fc9dc3d-0d57-49e7-9bc0-e323165241bf
+  tls: true
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: vhu6gifBQ8-hRzW1gqKFkEXDlQbf6Ex8kKj1FcxhmzA
+    short-id: d78318845237d9a9
+  servername: www.ebay.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 1820ms'
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -26,13 +43,7 @@ proxies:
   sni: nas.aizhzo.com
   tls: false
   type: hysteria2
-- name: '[zhuhaiuk] HK - zhuhai.uk | 1012ms'
-  type: http
-  server: 119.28.24.235
-  port: 3128
-  tls: true
-  skip-cert-verify: true
-- name: '[Eternity] 🇭🇰HK-156.245.232.239-0308 | 0.011MB | 1874ms'
+- name: '[Eternity] 🇭🇰HK-156.245.232.239-0215 | 0.01MB | 3874ms'
   server: 156.245.232.239
   port: 35043
   type: vmess
@@ -44,34 +55,6 @@ proxies:
   network: ws
   ws-opts:
     path: /
-- name: '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK (2) | 1922ms'
-  type: vmess
-  server: 47.244.120.197
-  port: 44867
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /arki
-    headers:
-      Host: 47.244.120.197
-- alterId: 0
-  cipher: auto
-  name: '[ermaozi] 🇭🇰 香港 | HKG #2 | 2037ms'
-  network: ws
-  port: 443
-  server: 47.86.90.31
-  servername: bywxdhirqkjj8xaz.v.3dns.vip
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 234a8041-2b4d-44a3-a8d8-523cbfd58dc4
-  ws-opts:
-    headers:
-      Host: bywxdhirqkjj8xaz.v.3dns.vip
-    path: /ws-vmess
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -79,24 +62,20 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[AutoMerge] 🇺🇸US_17|1.3MB/s | 51ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 645ms'
-  - '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 659ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1012ms'
-  - '[Eternity] 🇭🇰HK-156.245.232.239-0308 | 0.011MB | 1874ms'
-  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK (2) | 1922ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 2037ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #3 | 1026ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1119ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 9 | 1750ms'
+  - '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 1820ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0215 | 0.01MB | 3874ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[AutoMerge] 🇺🇸US_17|1.3MB/s | 51ms'
-  - '[ermaozi] 🇭🇰[www.v2nodes.com] trojan-HK-... | 645ms'
-  - '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 659ms'
-  - '[zhuhaiuk] HK - zhuhai.uk | 1012ms'
-  - '[Eternity] 🇭🇰HK-156.245.232.239-0308 | 0.011MB | 1874ms'
-  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK (2) | 1922ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 2037ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG #3 | 1026ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 1119ms'
+  - '[ermaozi] 🇭🇰 香港 | HKG 9 | 1750ms'
+  - '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 1820ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0215 | 0.01MB | 3874ms'
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve

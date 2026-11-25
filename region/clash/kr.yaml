@@ -4,12 +4,32 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[ermaozi] 🇰🇷KR_2|5.1MB/s | 593ms'
-  port: 80
-  server: 101.79.22.162
+- alterId: 0
+  cipher: auto
+  name: '[NoMoreWalls] 🇰🇷 韩国 | KOR #3 | 631ms'
+  network: tcp
+  port: 19283
+  server: kr.075661.xyz
+  tls: true
+  type: vmess
+  uuid: 3153def6-eecb-414d-88aa-7e59ea525e5d
+- type: vmess
+  name: '[free18] 🇰🇷_韩国 (2) | 687ms'
+  server: 140.238.2.250
+  port: 443
+  uuid: 41a7089a-040b-4538-8b8d-010902405bde
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
   skip-cert-verify: true
-  type: http
-- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 638ms'
+- name: '[Eternity] 🇰🇷KR-211.178.105.134-0187 | 0.013MB | 698ms'
+  server: 211.178.105.134
+  port: 6123
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 707ms'
   type: vless
   server: 152.69.226.63
   port: 25555
@@ -19,20 +39,38 @@ proxies:
   ws-opts:
     path: /
     headers: {}
-- name: '[ermaozi] 🇰🇷KR_1|5.3MB/s | 766ms'
-  port: 1080
+- name: '[zhuhaiuk] KR - zhuhai.uk 02 | 758ms'
+  type: socks5
   server: 59.11.209.162
+  port: 1080
+- name: '[zhuhaiuk] KR - zhuhai.uk | 884ms'
+  type: http
+  server: 152.69.230.221
+  port: 443
+  tls: true
+  skip-cert-verify: true
+- client-fingerprint: chrome
+  name: '[NoMoreWalls] 🇰🇷 韩国 | KOR #4 | 1154ms'
+  network: tcp
+  port: 443
+  server: ifdmbpb.kdns.fr
+  servername: ifdmbpb.kdns.fr
+  tls: true
+  type: vless
+  udp: true
+  uuid: 9a600801-e889-4705-9adb-bf9aeb366fc7
+  ws-opts:
+    headers:
+      Host: ifdmbpb.kdns.fr
+    path: /
+- name: '[NoMoreWalls] 🇰🇷KR_2|1.7MB/s | 1605ms'
+  port: 1080
+  server: 183.106.215.208
   skip-cert-verify: true
   type: socks5
-- name: '[ermaozi] 🇰🇷KR_3|3.5MB/s | 813ms'
-  port: 443
-  server: 152.69.230.221
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: '[Eternity] 🇰🇷KR-211.178.105.134-5850 | 2.126MB | 2759ms'
-  server: 211.178.105.134
-  port: 6123
+- name: '[Eternity] 🇰🇷KR-218.237.185.234-5309 | 0.36MB | 3899ms'
+  server: p141.panda001.net
+  port: 4652
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
@@ -43,20 +81,28 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[ermaozi] 🇰🇷KR_2|5.1MB/s | 593ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 638ms'
-  - '[ermaozi] 🇰🇷KR_1|5.3MB/s | 766ms'
-  - '[ermaozi] 🇰🇷KR_3|3.5MB/s | 813ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-5850 | 2.126MB | 2759ms'
+  - '[NoMoreWalls] 🇰🇷 韩国 | KOR #3 | 631ms'
+  - '[free18] 🇰🇷_韩国 (2) | 687ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0187 | 0.013MB | 698ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 707ms'
+  - '[zhuhaiuk] KR - zhuhai.uk 02 | 758ms'
+  - '[zhuhaiuk] KR - zhuhai.uk | 884ms'
+  - '[NoMoreWalls] 🇰🇷 韩国 | KOR #4 | 1154ms'
+  - '[NoMoreWalls] 🇰🇷KR_2|1.7MB/s | 1605ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-5309 | 0.36MB | 3899ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[ermaozi] 🇰🇷KR_2|5.1MB/s | 593ms'
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 638ms'
-  - '[ermaozi] 🇰🇷KR_1|5.3MB/s | 766ms'
-  - '[ermaozi] 🇰🇷KR_3|3.5MB/s | 813ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-5850 | 2.126MB | 2759ms'
+  - '[NoMoreWalls] 🇰🇷 韩国 | KOR #3 | 631ms'
+  - '[free18] 🇰🇷_韩国 (2) | 687ms'
+  - '[Eternity] 🇰🇷KR-211.178.105.134-0187 | 0.013MB | 698ms'
+  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR | 707ms'
+  - '[zhuhaiuk] KR - zhuhai.uk 02 | 758ms'
+  - '[zhuhaiuk] KR - zhuhai.uk | 884ms'
+  - '[NoMoreWalls] 🇰🇷 韩国 | KOR #4 | 1154ms'
+  - '[NoMoreWalls] 🇰🇷KR_2|1.7MB/s | 1605ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-5309 | 0.36MB | 3899ms'
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
