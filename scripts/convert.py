@@ -12,6 +12,15 @@ ws = lambda p: p.get('network') == 'ws'
 wo = lambda p: p.get('ws-opts') or {}
 host = lambda p: (wo(p).get('headers') or {}).get('Host') or p.get('servername') or p.get('sni') or ''
 sni = lambda p: p.get('servername') or p.get('sni') or ''
+# A small built-in domestic list keeps common Chinese sites direct without a
+# rule-provider; GEOIP is no-resolve so no domain is ever looked up locally
+# just to match a rule (that lookup is where DNS leaks come from).
+CN_SUFFIX = ['cn', 'baidu.com', 'bdstatic.com', 'qq.com', 'gtimg.com', 'qpic.cn', 'weixin.qq.com', 'wechat.com', 'tencent.com',
+             'taobao.com', 'tmall.com', 'alicdn.com', 'alipay.com', 'aliyun.com', 'jd.com', '360buyimg.com', 'bilibili.com',
+             'hdslb.com', 'biliapi.net', 'douyin.com', 'douyinpic.com', 'bytedance.com', 'snssdk.com', 'pstatp.com',
+             'xiaohongshu.com', 'xhscdn.com', 'zhihu.com', 'zhimg.com', 'weibo.com', 'sinaimg.cn', '163.com', '126.net',
+             'netease.com', 'iqiyi.com', 'youku.com', 'meituan.com', 'pinduoduo.com', 'ctrip.com', 'mi.com', 'huawei.com',
+             'csdn.net', 'cnblogs.com', 'kuaishou.com', 'amap.com', 'dingtalk.com', 'feishu.cn', 'icloud.com.cn']
 # ---- Surge ----
 surge = []
 for p in P:
@@ -29,7 +38,7 @@ for p in P:
     surge.append((n, l))
 sl = [n for n, _ in surge]
 open(f'{OUT}/surge/surge.conf','w').write('[General]\nloglevel = notify\nskip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, localhost, *.local\ndns-server = system, 223.5.5.5, 119.29.29.29\n\n[Proxy]\n' + '\n'.join(l for _, l in surge) +
-  f"\n\n[Proxy Group]\nPROXY = select, AUTO, {', '.join(sl)}\nAUTO = url-test, {', '.join(sl)}, url=http://www.gstatic.com/generate_204, interval=600\n\n[Rule]\nRULE-SET,LAN,DIRECT\nDOMAIN-SET,https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/surge-domainset.txt,DIRECT\nGEOIP,CN,DIRECT\nFINAL,PROXY,dns-failed\n")
+  f"\n\n[Proxy Group]\nPROXY = select, AUTO, {', '.join(sl)}\nAUTO = url-test, {', '.join(sl)}, url=http://www.gstatic.com/generate_204, interval=600\n\n[Rule]\nRULE-SET,LAN,DIRECT\nGEOIP,CN,DIRECT\nFINAL,PROXY,dns-failed\n")
 open(f'{OUT}/surge/proxies.list','w').write('\n'.join(l for _, l in surge) + '\n')
 # ---- Quantumult X (server_remote resource) ----
 qx = []
@@ -76,6 +85,7 @@ for p in P:
         if p.get('tls') or t == 'trojan':
             tl = {'enabled': True, 'server_name': sni(p) or p['server'], 'insecure': True}
             fp = p.get('client-fingerprint')
+            if fp not in ('chrome', 'firefox', 'edge', 'safari', '360', 'qq', 'ios', 'android', 'random', 'randomized'): fp = None
             if p.get('reality-opts'):
                 r = p['reality-opts']; tl['insecure'] = False
                 tl['reality'] = {'enabled': True, 'public_key': r.get('public-key', ''), 'short_id': r.get('short-id', '')}
@@ -89,18 +99,16 @@ for p in P:
 tags = [o['tag'] for o in ob]
 sb = {'log': {'level': 'warn'},
       'dns': {'servers': [{'type': 'tls', 'tag': 'remote', 'server': '8.8.8.8', 'detour': 'PROXY'}, {'type': 'udp', 'tag': 'local', 'server': '223.5.5.5'}],
-              'rules': [{'rule_set': 'china-direct', 'server': 'local'}],
+              'rules': [{'domain_suffix': CN_SUFFIX, 'server': 'local'}],
               'final': 'remote'},
       'inbounds': [{'type': 'tun', 'tag': 'tun-in', 'address': ['172.19.0.1/30'], 'auto_route': True, 'strict_route': True, 'stack': 'mixed'}],
       'outbounds': [{'type': 'selector', 'tag': 'PROXY', 'outbounds': ['AUTO'] + tags},
                     {'type': 'urltest', 'tag': 'AUTO', 'outbounds': tags, 'url': 'https://www.gstatic.com/generate_204', 'interval': '5m'}] + ob +
                    [{'type': 'direct', 'tag': 'direct'}],
-      'route': {'rule_set': [{'type': 'remote', 'tag': 'china-direct', 'format': 'source', 'download_detour': 'direct', 'update_interval': '1d',
-                              'url': 'https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/singbox.json'},
-                             {'type': 'remote', 'tag': 'geoip-cn', 'format': 'binary', 'download_detour': 'direct', 'update_interval': '1d',
+      'route': {'rule_set': [{'type': 'remote', 'tag': 'geoip-cn', 'format': 'binary', 'download_detour': 'direct', 'update_interval': '1d',
                               'url': 'https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs'}],
                 'rules': [{'action': 'sniff'}, {'protocol': 'dns', 'action': 'hijack-dns'}, {'ip_is_private': True, 'outbound': 'direct'},
-                          {'rule_set': ['china-direct', 'geoip-cn'], 'outbound': 'direct'}],
+                          {'domain_suffix': CN_SUFFIX, 'outbound': 'direct'}, {'rule_set': 'geoip-cn', 'outbound': 'direct'}],
                 'final': 'PROXY', 'auto_detect_interface': True, 'default_domain_resolver': 'local'}}
 # NOTE (2026-11-19 fix): the sing-box dict was built but never written to disk,
 # so singbox/singbox.json went stale while the log still claimed PASS.
@@ -136,15 +144,6 @@ for src in ('clash/fast.yaml', 'clash/cn.yaml', 'clash/all.yaml'):
         seen.add(p['name']); cps.append({k: v for k, v in p.items() if k not in CFW_DROP})
 if not cps: raise SystemExit('clash/cfw.yaml: no convertible nodes')
 names = [p['name'] for p in cps]
-# A small built-in domestic list keeps common Chinese sites direct without a
-# rule-provider; GEOIP is no-resolve so no domain is ever looked up locally
-# just to match a rule (that lookup is where DNS leaks come from).
-CN_SUFFIX = ['cn', 'baidu.com', 'bdstatic.com', 'qq.com', 'gtimg.com', 'qpic.cn', 'weixin.qq.com', 'wechat.com', 'tencent.com',
-             'taobao.com', 'tmall.com', 'alicdn.com', 'alipay.com', 'aliyun.com', 'jd.com', '360buyimg.com', 'bilibili.com',
-             'hdslb.com', 'biliapi.net', 'douyin.com', 'douyinpic.com', 'bytedance.com', 'snssdk.com', 'pstatp.com',
-             'xiaohongshu.com', 'xhscdn.com', 'zhihu.com', 'zhimg.com', 'weibo.com', 'sinaimg.cn', '163.com', '126.net',
-             'netease.com', 'iqiyi.com', 'youku.com', 'meituan.com', 'pinduoduo.com', 'ctrip.com', 'mi.com', 'huawei.com',
-             'csdn.net', 'cnblogs.com', 'kuaishou.com', 'amap.com', 'dingtalk.com', 'feishu.cn', 'icloud.com.cn']
 cfw = {'mixed-port': 7890, 'allow-lan': False, 'mode': 'rule', 'log-level': 'info', 'ipv6': False,
        'external-controller': '127.0.0.1:9090',
        'dns': {'enable': True, 'ipv6': False, 'listen': '0.0.0.0:53', 'enhanced-mode': 'fake-ip', 'fake-ip-range': '198.18.0.1/16',

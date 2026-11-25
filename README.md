@@ -127,18 +127,18 @@ raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
 | 客户端 | 链接 | 节点 |
 | --- | --- | --- |
 | Clash Verge / Clash Meta / FlClash | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/all.yaml | 441 |
-| ⭐ Clash Meta 完整配置（分流+去广告+DNS+自动更新节点） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta.yaml | 同 all.yaml |
+| ⭐ Clash Meta 完整配置（分流+DNS+自动更新节点） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta.yaml | 同 all.yaml |
 | ⚡ Clash Meta 提速版（无去广告，IPv6+嗅探+负载均衡） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta-speed.yaml | 同 all.yaml |
 | ⭐ 旧版 Clash for Windows 0.20.x 完整配置（Premium 内核） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/cfw.yaml | 仅 ss/vmess/trojan/http |
 | ⭐ Shadowrocket 完整配置（iOS，导入为配置文件） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/shadowrocket/meta.conf | Shadowrocket |
 | ⭐ Surge 完整配置（iOS/Mac） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/surge/meta.conf | Surge 5 |
-| v2rayNG 自定义路由（去广告+分流，配合 v2ray/all.txt 订阅） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/routing.json | v2rayNG |
+| v2rayNG 自定义路由（分流，配合 v2ray/all.txt 订阅） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/routing.json | v2rayNG |
 | v2rayNG / v2rayN / NekoBox | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/all.txt | 310 |
 | 明文链接 | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/v2ray/all_raw.txt | 139 |
 
 已过滤 fp=unsafe、内网/假节点；全部节点经 mihomo 内核真连接测试，只保留能用的（测试发起于海外服务器，不代表国内一定可连）。
 
-clash/meta.yaml 是固定的完整配置：节点通过 proxy-provider 每 6 小时自动拉取 clash/all.yaml，内含地区自动测速分组、AI/YouTube/Netflix/Telegram 等分流、多源去广告、Fake-IP + DoH 防泄漏 DNS、微信/QQ 直连。导入后在 App 里开启订阅自动更新即可。
+clash/meta.yaml 是固定的完整配置：节点通过 proxy-provider 每 6 小时自动拉取 clash/all.yaml，内含地区自动测速分组、AI/YouTube/Netflix/Telegram 等分流、Fake-IP + DoH 防泄漏 DNS、微信/QQ 直连。导入后在 App 里开启订阅自动更新即可。
 
 <!-- SOURCES -->
 ## 上游节点来源
@@ -164,13 +164,13 @@ clash/meta.yaml 是固定的完整配置：节点通过 proxy-provider 每 6 小
 
 ## 中国大陆直连
 
-所有带规则的订阅都内置「绕过中国大陆」：局域网 / 私有地址 → 国内域名（[china-direct-domain](https://github.com/passionsu-su/china-direct-domain) 合并的 11 万+ 域名，含子域名）→ GeoIP CN，命中即直连，其余走代理。
+所有带规则的订阅都内置「绕过中国大陆」，但只用轻量规则：局域网 / 私有地址 → GeoIP CN 直连，其余走代理。为减轻路由器负担，已去掉全部去广告规则和 china-direct 大域名列表（需要的话可在路由器 DNS 层用 [china-direct-domain](https://github.com/passionsu-su/china-direct-domain) 做 chinadns-ng 的 chnlist）。
 
 | 订阅 | 大陆直连方式 |
 | --- | --- |
-| clash/all.yaml、cn.yaml、fast.yaml、region/clash/*.yaml、stash、clashmi | rule-provider china-direct + GEOIP,CN |
-| clash/cfw.yaml（旧版 CFW / Premium） | 轻量内置国内域名 + GEOIP,CN（no-resolve），fake-ip + 国内 DoH 防 DNS 泄露；只收测速最快 / 国内延迟最低的前 60 个节点，无去广告、无大规则集，避免卡顿 |
-| clash/meta.yaml、meta-speed.yaml | 原有 geosite/geoip CN 分流 + china-direct |
-| surge/surge.conf | RULE-SET,LAN + DOMAIN-SET china-direct + GEOIP,CN |
-| singbox/singbox.json | rule_set china-direct + geoip-cn，国内域名用 223.5.5.5 解析 |
+| clash/all.yaml、cn.yaml、fast.yaml、region/clash/*.yaml、stash、clashmi | 私有地址 + GEOIP,CN，无 rule-provider |
+| clash/cfw.yaml（旧版 CFW / Premium） | 轻量内置国内域名 + GEOIP,CN（no-resolve），fake-ip + 国内 DoH 防 DNS 泄露；只收测速最快 / 国内延迟最低的前 60 个节点 |
+| clash/meta.yaml、meta-speed.yaml | MetaCubeX geosite/geoip CN 分流，无去广告 |
+| surge/surge.conf | RULE-SET,LAN + GEOIP,CN |
+| singbox/singbox.json | 约 50 个内置国内域名 + geoip-cn，国内域名用 223.5.5.5 解析 |
 | v2ray/*.txt、region/*.txt、shadowrocket/sub.txt、quantumultx/qx.txt、loon/loon.list、surge/proxies.list | 纯节点列表，格式本身不能带规则，由 App 自己的分流配置决定（小火箭、QX、Loon 默认配置已含 GEOIP,CN,DIRECT） |

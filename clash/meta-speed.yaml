@@ -277,14 +277,6 @@ proxy-groups:
   exclude-filter: (?i)^(🇭🇰|🇯🇵|🇸🇬|🇺🇸|🇨🇳|🇬🇧|🇩🇪|🇫🇷|🇳🇱|🇮🇹|🇪🇸|🇵🇱|🇸🇪|🇫🇮|🇨🇭|🇦🇹|🇨🇿|🇮🇪|🇱🇻|🇱🇺|🇩🇰|🇧🇪|🇳🇴|🇵🇹|🇷🇴|🇭🇺|🇪🇪|🇱🇹|🇧🇬|🇬🇷|(HK|JP|SG|US|CN|GB|UK|DE|FR|NL|IT|ES|PL|SE|FI|CH|AT|CZ|IE|LV|LU|DK|BE|NO|PT|RO|HU|EE|LT|BG|GR)(\b|_))|剩余|流量|到期|官网
   expected-status: 204
 rule-providers:
-  china-direct:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: DIRECT
-    url: https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/clash.yaml
-    path: ./ruleset/china-direct.yaml
   sp-private:
     type: http
     behavior: domain
@@ -485,7 +477,6 @@ rules:
 - RULE-SET,sp-microsoft,Ⓜ️ 微软
 - RULE-SET,sp-apple-cn,DIRECT
 - RULE-SET,sp-apple,🍎 苹果
-- RULE-SET,china-direct,🎯 国内直连
 - RULE-SET,sp-gfw,🚀 节点选择
 - RULE-SET,sp-cn,🎯 国内直连
 - RULE-SET,sp-notcn,🚀 节点选择

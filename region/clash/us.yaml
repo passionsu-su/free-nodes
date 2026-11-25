@@ -703,13 +703,6 @@ proxy-groups:
   - '[ermaozi] 🇫🇷[www.v2nodes.com] vless-FR-1... | 1060ms'
   - '[freeSub] C🟠🇺🇸hos[🤖💬🎮✈️]_dokng.com_08d7e43e | 1683ms'
   - '[freeSub] C🟠🇺🇸hos[🤖💬🔮🧩]_dokng.com_379449c0 | 2182ms'
-rule-providers:
-  china-direct:
-    type: http
-    behavior: domain
-    url: https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/clash.yaml
-    path: ./ruleset/china-direct.yaml
-    interval: 86400
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
@@ -717,6 +710,5 @@ rules:
 - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
 - DOMAIN-SUFFIX,local,DIRECT
-- RULE-SET,china-direct,DIRECT
 - GEOIP,CN,DIRECT
 - MATCH,PROXY

@@ -18,7 +18,55 @@
     ],
     "rules": [
       {
-        "rule_set": "china-direct",
+        "domain_suffix": [
+          "cn",
+          "baidu.com",
+          "bdstatic.com",
+          "qq.com",
+          "gtimg.com",
+          "qpic.cn",
+          "weixin.qq.com",
+          "wechat.com",
+          "tencent.com",
+          "taobao.com",
+          "tmall.com",
+          "alicdn.com",
+          "alipay.com",
+          "aliyun.com",
+          "jd.com",
+          "360buyimg.com",
+          "bilibili.com",
+          "hdslb.com",
+          "biliapi.net",
+          "douyin.com",
+          "douyinpic.com",
+          "bytedance.com",
+          "snssdk.com",
+          "pstatp.com",
+          "xiaohongshu.com",
+          "xhscdn.com",
+          "zhihu.com",
+          "zhimg.com",
+          "weibo.com",
+          "sinaimg.cn",
+          "163.com",
+          "126.net",
+          "netease.com",
+          "iqiyi.com",
+          "youku.com",
+          "meituan.com",
+          "pinduoduo.com",
+          "ctrip.com",
+          "mi.com",
+          "huawei.com",
+          "csdn.net",
+          "cnblogs.com",
+          "kuaishou.com",
+          "amap.com",
+          "dingtalk.com",
+          "feishu.cn",
+          "icloud.com.cn"
+        ],
         "server": "local"
       }
     ],
@@ -3804,11 +3852,7 @@
       "tls": {
         "enabled": true,
         "server_name": "jp3.yohototo.top",
-        "insecure": true,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "unsafe"
-        }
+        "insecure": true
       },
       "transport": {
         "type": "ws",
@@ -4444,14 +4488,6 @@
     "rule_set": [
       {
         "type": "remote",
-        "tag": "china-direct",
-        "format": "source",
-        "download_detour": "direct",
-        "update_interval": "1d",
-        "url": "https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/singbox.json"
-      },
-      {
-        "type": "remote",
         "tag": "geoip-cn",
         "format": "binary",
         "download_detour": "direct",
@@ -4472,10 +4508,59 @@
         "outbound": "direct"
       },
       {
-        "rule_set": [
-          "china-direct",
-          "geoip-cn"
+        "domain_suffix": [
+          "cn",
+          "baidu.com",
+          "bdstatic.com",
+          "qq.com",
+          "gtimg.com",
+          "qpic.cn",
+          "weixin.qq.com",
+          "wechat.com",
+          "tencent.com",
+          "taobao.com",
+          "tmall.com",
+          "alicdn.com",
+          "alipay.com",
+          "aliyun.com",
+          "jd.com",
+          "360buyimg.com",
+          "bilibili.com",
+          "hdslb.com",
+          "biliapi.net",
+          "douyin.com",
+          "douyinpic.com",
+          "bytedance.com",
+          "snssdk.com",
+          "pstatp.com",
+          "xiaohongshu.com",
+          "xhscdn.com",
+          "zhihu.com",
+          "zhimg.com",
+          "weibo.com",
+          "sinaimg.cn",
+          "163.com",
+          "126.net",
+          "netease.com",
+          "iqiyi.com",
+          "youku.com",
+          "meituan.com",
+          "pinduoduo.com",
+          "ctrip.com",
+          "mi.com",
+          "huawei.com",
+          "csdn.net",
+          "cnblogs.com",
+          "kuaishou.com",
+          "amap.com",
+          "dingtalk.com",
+          "feishu.cn",
+          "icloud.com.cn"
         ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": "geoip-cn",
         "outbound": "direct"
       }
     ],

@@ -7,11 +7,9 @@
 # 1. 免费节点自动更新
 # 2. 地区自动测速、故障转移；🏎️ 高速节点（按实测下载速度筛选）
 # 3. Fake-IP + DoH DNS
-# 4. 严格广告过滤
-# 5. 微信五类广告专项过滤
-# 6. 国内外应用分流
-# 7. 微信及腾讯正常业务直连
-# 8. 关闭 Sniffer，优先保证微信兼容性
+# 4. 国内外应用分流（MetaCubeX 规则集，已去掉去广告与 china-direct 大列表，减轻负担）
+# 5. 微信及腾讯正常业务直连
+# 6. 关闭 Sniffer，优先保证微信兼容性
 #
 # 订阅地址：https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta.yaml
 # ============================================================
@@ -231,12 +229,6 @@ proxy-groups:
       - DIRECT
       - 🚀 节点选择
 
-  - name: 🛑 广告拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-
   - name: 🐟 漏网之鱼
     type: select
     proxies:
@@ -329,100 +321,6 @@ proxy-groups:
 # ============================================================
 
 rule-providers:
-  china-direct:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: DIRECT
-    url: https://fastly.jsdelivr.net/gh/passionsu-su/china-direct-domain@main/rules/clash.yaml
-    path: ./ruleset/china-direct.yaml
-
-  # ---------------- 微信广告专项 ----------------
-  # 初始候选域名，需结合实际连接日志持续维护
-
-  wechat-ads:
-    type: inline
-    behavior: domain
-    format: yaml
-    payload:
-      # 朋友圈广告
-      - wxsnsdy.wxs.qq.com
-      - wxsnsdythumb.wxs.qq.com
-      - wxsnsdyvip.wxs.qq.com
-      - wxsnsdy.tc.qq.com
-
-      # 公众号文章内广告
-      - adsmind.gdtimg.com
-      - adsmind.apdcdn.tc.qq.com
-      - +.pgdt.gtimg.cn
-      - +.pgdt.gtimg.com
-
-      # 公众号底部广告
-      - +.gdt.qq.com
-      - e.qq.com
-      - l.qq.com
-      - adsfile.qq.com
-
-      # 小程序广告
-      - ad.weixin.qq.com
-
-      # 视频号广告
-      - ad.video.qq.com
-      - wa.gtimg.com
-
-  # ---------------- 通用广告 ----------------
-
-  adb-ads:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://testingcf.jsdelivr.net/gh/passionsu-su/v2ray-adblock@geosite/ads.mrs
-    path: ./ruleset/adb-ads.mrs
-    interval: 86400
-    proxy: DIRECT
-
-  adb-awavenue:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://testingcf.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash.mrs
-    path: ./ruleset/adb-awavenue.mrs
-    interval: 86400
-    proxy: DIRECT
-
-  adb-sukka-nodrop:
-    type: http
-    behavior: classical
-    format: text
-    url: https://ruleset.skk.moe/Clash/non_ip/reject-no-drop.txt
-    path: ./ruleset/adb-sukka-nodrop.txt
-    interval: 86400
-
-  adb-sukka-drop:
-    type: http
-    behavior: classical
-    format: text
-    url: https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt
-    path: ./ruleset/adb-sukka-drop.txt
-    interval: 86400
-
-  adb-sukka-nonip:
-    type: http
-    behavior: classical
-    format: text
-    url: https://ruleset.skk.moe/Clash/non_ip/reject.txt
-    path: ./ruleset/adb-sukka-nonip.txt
-    interval: 86400
-
-  adb-sukka-ip:
-    type: http
-    behavior: classical
-    format: text
-    url: https://ruleset.skk.moe/Clash/ip/reject.txt
-    path: ./ruleset/adb-sukka-ip.txt
-    interval: 86400
-
   # ---------------- MetaCubeX 分流规则 ----------------
 
   sp-private: &mrs
@@ -552,24 +450,11 @@ rule-providers:
 
 rules:
 
-  # ---------------- 微信广告专项 ----------------
-
-  - RULE-SET,wechat-ads,🛑 广告拦截
-
-  # ---------------- 通用广告 ----------------
-
-  - RULE-SET,adb-sukka-nodrop,🛑 广告拦截
-  - RULE-SET,adb-sukka-drop,REJECT-DROP
-  - RULE-SET,adb-sukka-nonip,🛑 广告拦截
-  - RULE-SET,adb-awavenue,🛑 广告拦截
-  - RULE-SET,adb-ads,🛑 广告拦截
-
   # ---------------- 私有网络 ----------------
 
   - RULE-SET,sp-private,DIRECT
 
   # ---------------- 微信及腾讯正常业务 ----------------
-  # 放在广告规则之后，防止广告被提前直连
 
   - PROCESS-NAME,com.tencent.mm,DIRECT
   - PROCESS-NAME,com.tencent.mobileqq,DIRECT
@@ -602,15 +487,12 @@ rules:
 
   # ---------------- 国内外分流 ----------------
 
-  - RULE-SET,china-direct,🎯 国内直连
-
   - RULE-SET,sp-gfw,🚀 节点选择
   - RULE-SET,sp-cn,🎯 国内直连
   - RULE-SET,sp-notcn,🚀 节点选择
 
   # ---------------- IP 类规则 ----------------
 
-  - RULE-SET,adb-sukka-ip,🛑 广告拦截,no-resolve
   - RULE-SET,sp-ip-private,DIRECT,no-resolve
   - RULE-SET,sp-ip-telegram,✈️ Telegram,no-resolve
   - RULE-SET,sp-ip-netflix,🎬 Netflix,no-resolve
@@ -633,13 +515,9 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
 
-  # 规则模式：微信广告优先 Fake-IP
   fake-ip-filter-mode: rule
 
   fake-ip-filter:
-
-    # 微信广告优先使用 Fake-IP
-    - RULE-SET,wechat-ads,fake-ip
 
     # 私有域名使用真实 IP
     - RULE-SET,sp-private,real-ip
@@ -660,7 +538,6 @@ dns:
     - DOMAIN,localhost.ptlogin2.qq.com,real-ip
 
     # 腾讯正常业务使用真实 IP
-    # 必须排在微信广告 Fake-IP 之后
     - DOMAIN-SUFFIX,qq.com,real-ip
     - DOMAIN-SUFFIX,wechat.com,real-ip
     - DOMAIN-SUFFIX,weixinbridge.com,real-ip
