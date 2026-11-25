@@ -128,7 +128,7 @@ raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
 | --- | --- | --- |
 | Clash Verge / Clash Meta / FlClash | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/all.yaml | 420 |
 | ⭐ Clash Meta 完整配置（分流+去广告+DNS+自动更新节点） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta.yaml | 同 all.yaml |
-| 🧩 扩展脚本 / 覆写（可套在任意订阅上：去广告+DNS 防泄漏+绕过局域网+国内外分流） | https://passionsu-su.github.io/free-nodes/script/override.js | Clash Verge Rev / Clash Party / FlClash（mihomo 内核） |
+| 🧩 扩展脚本 / 覆写（可套在任意订阅上：去广告+DNS 防泄漏+绕过局域网+精准国内直连省流量） | https://passionsu-su.github.io/free-nodes/script/override.js | Clash Verge Rev / Clash Party / FlClash（mihomo 内核） |
 | ⚡ Clash Meta 提速版（无去广告，IPv6+嗅探+负载均衡） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta-speed.yaml | 同 all.yaml |
 | ⭐ 旧版 Clash for Windows 0.20.x 完整配置（Premium 内核） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/cfw.yaml | 仅 ss/vmess/trojan/http |
 | ⭐ Shadowrocket 完整配置（iOS，导入为配置文件） | https://raw.githubusercontent.com/passionsu-su/free-nodes/main/shadowrocket/meta.conf | Shadowrocket |
@@ -141,7 +141,7 @@ raw.githubusercontent.com 在国内常被墙，导入报错时把链接前缀
 
 **扩展脚本用法**：Clash Verge Rev → 订阅右键「编辑扩展脚本」/ 全局扩展脚本，粘贴 override.js 内容；Clash Party → 覆写 → 添加远程覆写，填上面链接（类型 JavaScript），再在订阅里启用；FlClash → 工具 → 脚本，导入链接。脚本会替换原订阅的分组、规则和 DNS，只保留节点。
 
-clash/meta.yaml 是固定的完整配置：节点通过 proxy-provider 每 6 小时自动拉取 clash/all.yaml，内含地区自动测速分组、AI/YouTube/Netflix/Telegram 等分流、去广告（微信广告专项 + anti-AD + 217heidai adblockfilters，🛑 广告拦截 分组可切 DIRECT 关闭）、Fake-IP + DoH 防泄漏 DNS、微信/QQ 直连。导入后在 App 里开启订阅自动更新即可。
+clash/meta.yaml 是固定的完整配置：节点通过 proxy-provider 每 6 小时自动拉取 clash/all.yaml，内含地区自动测速分组、AI/YouTube/Netflix/Telegram 等分流、去广告（微信广告专项 + anti-AD + 217heidai adblockfilters + Sukka reject，🛑 广告拦截 分组可切 DIRECT 关闭）、Fake-IP + DoH 防泄漏 DNS、微信/QQ 直连。导入后在 App 里开启订阅自动更新即可。
 
 <!-- SOURCES -->
 ## 上游节点来源
@@ -173,7 +173,7 @@ clash/meta.yaml 是固定的完整配置：节点通过 proxy-provider 每 6 小
 | --- | --- |
 | clash/all.yaml、cn.yaml、fast.yaml、region/clash/*.yaml、stash、clashmi | 私有地址 + GEOIP,CN，无 rule-provider |
 | clash/cfw.yaml（旧版 CFW / Premium） | 轻量内置国内域名 + GEOIP,CN（no-resolve），fake-ip + 国内 DoH 防 DNS 泄露；只收测速最快 / 国内延迟最低的前 60 个节点 |
-| clash/meta.yaml | MetaCubeX geosite/geoip CN 分流 + 三套去广告 |
+| clash/meta.yaml | MetaCubeX + Sukka 直连（国内域名 / IP、微软苹果国内 CDN）+ blackmatrix7 ChinaMax，四套去广告 |
 | clash/meta-speed.yaml | MetaCubeX geosite/geoip CN 分流，无去广告 |
 | surge/surge.conf | RULE-SET,LAN + GEOIP,CN |
 | singbox/singbox.json | 约 50 个内置国内域名 + geoip-cn，国内域名用 223.5.5.5 解析 |

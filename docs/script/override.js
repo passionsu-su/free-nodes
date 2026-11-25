@@ -1,12 +1,12 @@
 // ============================================================
-// free-nodes 扩展脚本（覆写）v1.0  2026-11-26
+// free-nodes 扩展脚本（覆写）v1.1  2026-11-26
 // 适用：Clash Verge Rev「扩展脚本」/ Mihomo Party(Clash Party)「覆写 → 远程 JS」/ FlClash「脚本」
 // 订阅：https://passionsu-su.github.io/free-nodes/script/override.js
 //
 // 对任意订阅（机场或 free-nodes 的 clash/all.yaml 等）生效：
-// 1. 去广告：微信广告专项 + anti-AD + 217heidai adblockfilters（🛑 广告拦截 可切 DIRECT 关闭）
+// 1. 去广告：微信广告专项 + anti-AD + 217heidai adblockfilters + Sukka reject（🛑 广告拦截 可切 DIRECT 关闭）
 // 2. DNS 防泄漏：fake-ip；国内域名走阿里/腾讯 DoH，其余走境外 DoH 并经代理发出（respect-rules）
-// 3. 绕过局域网 / 私有地址；国内直连、国外代理；AI、YouTube、Netflix、Telegram、Google、微软、苹果、Steam 分流
+// 3. 绕过局域网 / 私有地址；国内直连（Sukka domestic/china_ip、微软苹果国内 CDN、blackmatrix7 ChinaMax、MetaCubeX cn）、国外代理；AI、YouTube、Netflix、Telegram、Google、微软、苹果、Steam 分流
 // 4. 优化：地区自动测速、故障转移、TCP 并发、统一延迟、嗅探、保存选择、YouTube 屏蔽 QUIC 走 TCP 更稳
 // 只要求 mihomo（Clash Meta）内核，不支持旧版 Clash Premium。
 // ============================================================
@@ -95,6 +95,11 @@ const mrs = (behavior, name, path) => ({
   url: `${GEO}/${behavior === "ipcidr" ? "geoip" : "geosite"}/${path}.mrs`,
   path: `./ruleset/fn-${name}.mrs`,
 });
+const skk = (behavior, path) => ({
+  type: "http", behavior, format: "text", interval: 43200, proxy: "DIRECT",
+  url: `https://ruleset.skk.moe/Clash/${path}.txt`,
+  path: `./ruleset/fn-sukka-${path.replace("/", "-")}.txt`,
+});
 const RULE_PROVIDERS = {
   "wechat-ads": {
     type: "inline", behavior: "domain", format: "yaml",
@@ -114,6 +119,26 @@ const RULE_PROVIDERS = {
     type: "http", behavior: "domain", format: "mrs", interval: 86400, proxy: "DIRECT",
     url: `${CDN}/217heidai/adblockfilters@main/rules/adblockmihomo.mrs`,
     path: "./ruleset/fn-adb-heidai.mrs",
+  },
+  // Sukka（ruleset.skk.moe）reject 三件套
+  "sukka-reject-nonip": skk("classical", "non_ip/reject"),
+  "sukka-reject-domain": skk("domain", "domainset/reject"),
+  "sukka-reject-ip": skk("classical", "ip/reject"),
+  // Sukka 直连：国内域名、国内 IP、微软 / 苹果国内 CDN
+  "sukka-domestic": skk("classical", "non_ip/domestic"),
+  "sukka-china-ip": skk("ipcidr", "ip/china_ip"),
+  "sukka-microsoft-cdn": skk("classical", "non_ip/microsoft_cdn"),
+  "sukka-apple-cdn": skk("domain", "domainset/apple_cdn"),
+  // blackmatrix7 ChinaMax（域名 + IP 分开，避免 classical 混合规则触发多余 DNS 解析）
+  "chinamax-domain": {
+    type: "http", behavior: "domain", format: "text", interval: 86400, proxy: "DIRECT",
+    url: `${CDN}/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Domain_For_Clash.txt`,
+    path: "./ruleset/fn-chinamax-domain.txt",
+  },
+  "chinamax-ip": {
+    type: "http", behavior: "ipcidr", format: "text", interval: 86400, proxy: "DIRECT",
+    url: `${CDN}/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_IP.txt`,
+    path: "./ruleset/fn-chinamax-ip.txt",
   },
   private: mrs("domain", "private", "private"),
   ai: mrs("domain", "ai", "category-ai-!cn"),
@@ -146,6 +171,8 @@ const RULES = [
   `RULE-SET,wechat-ads,${AD}`,
   `RULE-SET,anti-ad,${AD}`,
   `RULE-SET,adb-heidai,${AD}`,
+  `RULE-SET,sukka-reject-nonip,${AD}`,
+  `RULE-SET,sukka-reject-domain,${AD}`,
   // 局域网 / 私有地址
   "RULE-SET,private,DIRECT",
   "RULE-SET,ip-private,DIRECT,no-resolve",
@@ -165,7 +192,9 @@ const RULES = [
   "RULE-SET,telegram,✈️ Telegram",
   "RULE-SET,github,🐱 GitHub",
   "RULE-SET,google,🔍 Google",
-  // 国内可直连的大厂
+  // 国内可直连的大厂（微软 / 苹果国内 CDN 下载最耗流量，优先直连）
+  `RULE-SET,sukka-microsoft-cdn,${CN}`,
+  `RULE-SET,sukka-apple-cdn,${CN}`,
   `RULE-SET,microsoft-cn,${CN}`,
   "RULE-SET,microsoft,Ⓜ️ 微软",
   `RULE-SET,apple-cn,${CN}`,
@@ -174,12 +203,17 @@ const RULES = [
   "RULE-SET,steam,🎮 Steam",
   // 国内外分流
   `RULE-SET,gfw,${P}`,
+  `RULE-SET,sukka-domestic,${CN}`,
+  `RULE-SET,chinamax-domain,${CN}`,
   `RULE-SET,cn,${CN}`,
   `RULE-SET,not-cn,${P}`,
   // IP 规则
+  `RULE-SET,sukka-reject-ip,${AD}`,
   "RULE-SET,ip-telegram,✈️ Telegram,no-resolve",
   "RULE-SET,ip-netflix,🎬 Netflix,no-resolve",
   "RULE-SET,ip-google,🔍 Google,no-resolve",
+  `RULE-SET,sukka-china-ip,${CN}`,
+  `RULE-SET,chinamax-ip,${CN}`,
   `RULE-SET,ip-cn,${CN}`,
   `MATCH,${FINAL}`,
 ];

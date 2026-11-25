@@ -7,8 +7,8 @@
 # 1. 免费节点自动更新
 # 2. 地区自动测速、故障转移；🏎️ 高速节点（按实测下载速度筛选）
 # 3. Fake-IP + DoH DNS
-# 4. 去广告：微信广告专项 + anti-AD + 217heidai adblockfilters（🛑 广告拦截 分组可切 DIRECT 关闭）
-# 5. 国内外应用分流（MetaCubeX 规则集）
+# 4. 去广告：微信广告专项 + anti-AD + 217heidai adblockfilters + Sukka reject（🛑 广告拦截 分组可切 DIRECT 关闭）
+# 5. 国内外应用分流（MetaCubeX + Sukka 直连 + blackmatrix7 ChinaMax）
 # 6. 微信及腾讯正常业务直连
 # 7. 关闭 Sniffer，优先保证微信兼容性
 #
@@ -379,6 +379,91 @@ rule-providers:
     interval: 86400
     proxy: DIRECT
 
+  # ---------------- Sukka reject ----------------
+
+  sukka-reject-nonip:
+    type: http
+    behavior: classical
+    format: text
+    url: https://ruleset.skk.moe/Clash/non_ip/reject.txt
+    path: ./ruleset/sukka-reject-nonip.txt
+    interval: 43200
+    proxy: DIRECT
+
+  sukka-reject-domain:
+    type: http
+    behavior: domain
+    format: text
+    url: https://ruleset.skk.moe/Clash/domainset/reject.txt
+    path: ./ruleset/sukka-reject-domain.txt
+    interval: 43200
+    proxy: DIRECT
+
+  sukka-reject-ip:
+    type: http
+    behavior: classical
+    format: text
+    url: https://ruleset.skk.moe/Clash/ip/reject.txt
+    path: ./ruleset/sukka-reject-ip.txt
+    interval: 43200
+    proxy: DIRECT
+
+  # ---------------- Sukka 直连 / ChinaMax ----------------
+
+  sukka-domestic:
+    type: http
+    behavior: classical
+    format: text
+    url: https://ruleset.skk.moe/Clash/non_ip/domestic.txt
+    path: ./ruleset/sukka-domestic.txt
+    interval: 43200
+    proxy: DIRECT
+
+  sukka-china-ip:
+    type: http
+    behavior: ipcidr
+    format: text
+    url: https://ruleset.skk.moe/Clash/ip/china_ip.txt
+    path: ./ruleset/sukka-china-ip.txt
+    interval: 43200
+    proxy: DIRECT
+
+  sukka-microsoft-cdn:
+    type: http
+    behavior: classical
+    format: text
+    url: https://ruleset.skk.moe/Clash/non_ip/microsoft_cdn.txt
+    path: ./ruleset/sukka-microsoft-cdn.txt
+    interval: 43200
+    proxy: DIRECT
+
+  sukka-apple-cdn:
+    type: http
+    behavior: domain
+    format: text
+    url: https://ruleset.skk.moe/Clash/domainset/apple_cdn.txt
+    path: ./ruleset/sukka-apple-cdn.txt
+    interval: 43200
+    proxy: DIRECT
+
+  chinamax-domain:
+    type: http
+    behavior: domain
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Domain_For_Clash.txt
+    path: ./ruleset/chinamax-domain.txt
+    interval: 86400
+    proxy: DIRECT
+
+  chinamax-ip:
+    type: http
+    behavior: ipcidr
+    format: text
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_IP.txt
+    path: ./ruleset/chinamax-ip.txt
+    interval: 86400
+    proxy: DIRECT
+
   # ---------------- MetaCubeX 分流规则 ----------------
 
   sp-private: &mrs
@@ -513,6 +598,8 @@ rules:
   - RULE-SET,wechat-ads,🛑 广告拦截
   - RULE-SET,anti-ad,🛑 广告拦截
   - RULE-SET,adb-heidai,🛑 广告拦截
+  - RULE-SET,sukka-reject-nonip,🛑 广告拦截
+  - RULE-SET,sukka-reject-domain,🛑 广告拦截
 
   # ---------------- 私有网络 ----------------
 
@@ -544,6 +631,8 @@ rules:
 
   - RULE-SET,sp-steam-cn,DIRECT
   - RULE-SET,sp-steam,🎮 Steam
+  - RULE-SET,sukka-microsoft-cdn,DIRECT
+  - RULE-SET,sukka-apple-cdn,DIRECT
   - RULE-SET,sp-ms-cn,DIRECT
   - RULE-SET,sp-microsoft,Ⓜ️ 微软
   - RULE-SET,sp-apple-cn,DIRECT
@@ -552,15 +641,20 @@ rules:
   # ---------------- 国内外分流 ----------------
 
   - RULE-SET,sp-gfw,🚀 节点选择
+  - RULE-SET,sukka-domestic,🎯 国内直连
+  - RULE-SET,chinamax-domain,🎯 国内直连
   - RULE-SET,sp-cn,🎯 国内直连
   - RULE-SET,sp-notcn,🚀 节点选择
 
   # ---------------- IP 类规则 ----------------
 
+  - RULE-SET,sukka-reject-ip,🛑 广告拦截,no-resolve
   - RULE-SET,sp-ip-private,DIRECT,no-resolve
   - RULE-SET,sp-ip-telegram,✈️ Telegram,no-resolve
   - RULE-SET,sp-ip-netflix,🎬 Netflix,no-resolve
   - RULE-SET,sp-ip-google,🔍 Google,no-resolve
+  - RULE-SET,sukka-china-ip,🎯 国内直连,no-resolve
+  - RULE-SET,chinamax-ip,🎯 国内直连,no-resolve
   - RULE-SET,sp-ip-cn,🎯 国内直连,no-resolve
 
   # ---------------- 最终规则 ----------------
