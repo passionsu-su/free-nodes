@@ -7,9 +7,10 @@
 # 1. 免费节点自动更新
 # 2. 地区自动测速、故障转移；🏎️ 高速节点（按实测下载速度筛选）
 # 3. Fake-IP + DoH DNS
-# 4. 国内外应用分流（MetaCubeX 规则集，已去掉去广告与 china-direct 大列表，减轻负担）
-# 5. 微信及腾讯正常业务直连
-# 6. 关闭 Sniffer，优先保证微信兼容性
+# 4. 去广告：微信广告专项 + anti-AD + 217heidai adblockfilters（🛑 广告拦截 分组可切 DIRECT 关闭）
+# 5. 国内外应用分流（MetaCubeX 规则集）
+# 6. 微信及腾讯正常业务直连
+# 7. 关闭 Sniffer，优先保证微信兼容性
 #
 # 订阅地址：https://raw.githubusercontent.com/passionsu-su/free-nodes/main/clash/meta.yaml
 # ============================================================
@@ -229,6 +230,12 @@ proxy-groups:
       - DIRECT
       - 🚀 节点选择
 
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
   - name: 🐟 漏网之鱼
     type: select
     proxies:
@@ -321,6 +328,57 @@ proxy-groups:
 # ============================================================
 
 rule-providers:
+  # ---------------- 微信广告专项 ----------------
+  # 初始候选域名，需结合实际连接日志持续维护
+
+  wechat-ads:
+    type: inline
+    behavior: domain
+    format: yaml
+    payload:
+      # 朋友圈广告
+      - wxsnsdy.wxs.qq.com
+      - wxsnsdythumb.wxs.qq.com
+      - wxsnsdyvip.wxs.qq.com
+      - wxsnsdy.tc.qq.com
+      # 公众号文章内广告
+      - adsmind.gdtimg.com
+      - adsmind.apdcdn.tc.qq.com
+      - +.pgdt.gtimg.cn
+      - +.pgdt.gtimg.com
+      # 公众号底部广告
+      - +.gdt.qq.com
+      - e.qq.com
+      - l.qq.com
+      - adsfile.qq.com
+      # 小程序广告
+      - ad.weixin.qq.com
+      # 视频号广告
+      - ad.video.qq.com
+      - wa.gtimg.com
+
+  # ---------------- 通用广告 ----------------
+
+  # anti-AD（privacy-protection-tools，约 10 万域名）
+  anti-ad:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://testingcf.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-clash.yaml
+    path: ./ruleset/anti-ad.yaml
+    interval: 86400
+    proxy: DIRECT
+
+  # 217heidai adblockfilters（adblockdns 同源的 mihomo 二进制版）
+  adb-heidai:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://testingcf.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomo.mrs
+    path: ./ruleset/adb-heidai.mrs
+    interval: 86400
+    proxy: DIRECT
+
   # ---------------- MetaCubeX 分流规则 ----------------
 
   sp-private: &mrs
@@ -450,6 +508,12 @@ rule-providers:
 
 rules:
 
+  # ---------------- 去广告 ----------------
+
+  - RULE-SET,wechat-ads,🛑 广告拦截
+  - RULE-SET,anti-ad,🛑 广告拦截
+  - RULE-SET,adb-heidai,🛑 广告拦截
+
   # ---------------- 私有网络 ----------------
 
   - RULE-SET,sp-private,DIRECT
@@ -518,6 +582,9 @@ dns:
   fake-ip-filter-mode: rule
 
   fake-ip-filter:
+
+    # 微信广告优先使用 Fake-IP（必须排在腾讯 real-ip 之前）
+    - RULE-SET,wechat-ads,fake-ip
 
     # 私有域名使用真实 IP
     - RULE-SET,sp-private,real-ip
