@@ -4,78 +4,50 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
-- name: '[roosterkid] 🇰🇷[openproxylist.com] vless-KR (2) | 797ms'
-  type: vless
-  server: 152.69.226.63
+- name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... #1 | 662ms'
+  network: ws
   port: 25555
-  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
-  encryption: none
-  network: ws
-  ws-opts:
-    path: /
-    headers: {}
-- type: vless
-  name: '[free18] 🇰🇷_韩国 | 907ms'
-  server: krd.80782636.xyz
-  port: 443
-  uuid: db906786-8c49-4b17-9182-cea680ef954d
-  udp: true
-  tls: true
-  servername: krd.80782636.xyz
-  sni: krd.80782636.xyz
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /kw7x2mq9
-    headers:
-      Host: krd.80782636.xyz
-- name: '[NoMoreWalls] 🇯🇵JP_2|1.5MB/s | 909ms'
-  port: 1080
-  server: 218.52.200.62
-  skip-cert-verify: true
-  type: socks5
-- client-fingerprint: chrome
-  name: '[ermaozi] 🇰🇷 韩国 | KOR #4 | 922ms'
-  network: tcp
-  port: 443
-  server: ifdmbpb.kdns.fr
-  servername: ifdmbpb.kdns.fr
-  tls: true
+  server: 152.69.226.63
+  tls: false
   type: vless
-  udp: true
-  uuid: 9a600801-e889-4705-9adb-bf9aeb366fc7
+  uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
   ws-opts:
-    headers:
-      Host: ifdmbpb.kdns.fr
     path: /
-- name: '[ermaozi] 🇰🇷KR_1|1.8MB/s | 961ms'
+- name: '[Eternity] 🇰🇷KR-218.237.185.234-0224 | 0.341MB | 674ms'
+  server: p141.panda001.net
+  port: 4652
+  type: ss
+  cipher: aes-256-cfb
+  password: qwerREWQ@@
+- name: '[ermaozi] 🇰🇷KR_1|2.5MB/s | 743ms'
   port: 1080
   server: 59.11.209.162
   skip-cert-verify: true
   type: socks5
-- name: '[zhuhaiuk] KR - zhuhai.uk | 1116ms'
-  type: http
-  server: 152.69.230.221
+- client-fingerprint: chrome
+  name: '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 750ms'
+  network: ws
   port: 443
+  server: krd.80782636.xyz
+  servername: krd.80782636.xyz
   tls: true
-  skip-cert-verify: true
-- name: '[ermaozi] 🇰🇷KR_2|1.7MB/s | 1141ms'
+  type: vless
+  uuid: db906786-8c49-4b17-9182-cea680ef954d
+  ws-opts:
+    headers:
+      Host: krd.80782636.xyz
+    path: /kw7x2mq9
+- name: '[zhuhaiuk] KR - zhuhai.uk 02 | 1541ms'
+  type: socks5
+  server: 121.169.46.116
+  port: 1090
+  username: VDJjbE0wUWxNMFE2Og
+  password: VDJjbE0wUWxNMFE2Og
+- name: '[AutoMerge] 🇰🇷KR_2|1018KB/s | 1761ms'
   port: 1080
   server: 183.106.215.208
   skip-cert-verify: true
   type: socks5
-- name: '[Eternity] 🇰🇷KR-211.178.105.134-0187 | 5.913MB | 1921ms'
-  server: 211.178.105.134
-  port: 6123
-  type: ss
-  cipher: aes-256-cfb
-  password: qwerREWQ@@
-- name: '[zhuhaiuk] KR - zhuhai.uk 02 | 2551ms'
-  type: socks5
-  server: 121.169.46.116
-  port: 1090
-  username: Og%3D%3D
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -83,28 +55,22 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR (2) | 797ms'
-  - '[free18] 🇰🇷_韩国 | 907ms'
-  - '[NoMoreWalls] 🇯🇵JP_2|1.5MB/s | 909ms'
-  - '[ermaozi] 🇰🇷 韩国 | KOR #4 | 922ms'
-  - '[ermaozi] 🇰🇷KR_1|1.8MB/s | 961ms'
-  - '[zhuhaiuk] KR - zhuhai.uk | 1116ms'
-  - '[ermaozi] 🇰🇷KR_2|1.7MB/s | 1141ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0187 | 5.913MB | 1921ms'
-  - '[zhuhaiuk] KR - zhuhai.uk 02 | 2551ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... #1 | 662ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0224 | 0.341MB | 674ms'
+  - '[ermaozi] 🇰🇷KR_1|2.5MB/s | 743ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 750ms'
+  - '[zhuhaiuk] KR - zhuhai.uk 02 | 1541ms'
+  - '[AutoMerge] 🇰🇷KR_2|1018KB/s | 1761ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[roosterkid] 🇰🇷[openproxylist.com] vless-KR (2) | 797ms'
-  - '[free18] 🇰🇷_韩国 | 907ms'
-  - '[NoMoreWalls] 🇯🇵JP_2|1.5MB/s | 909ms'
-  - '[ermaozi] 🇰🇷 韩国 | KOR #4 | 922ms'
-  - '[ermaozi] 🇰🇷KR_1|1.8MB/s | 961ms'
-  - '[zhuhaiuk] KR - zhuhai.uk | 1116ms'
-  - '[ermaozi] 🇰🇷KR_2|1.7MB/s | 1141ms'
-  - '[Eternity] 🇰🇷KR-211.178.105.134-0187 | 5.913MB | 1921ms'
-  - '[zhuhaiuk] KR - zhuhai.uk 02 | 2551ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... #1 | 662ms'
+  - '[Eternity] 🇰🇷KR-218.237.185.234-0224 | 0.341MB | 674ms'
+  - '[ermaozi] 🇰🇷KR_1|2.5MB/s | 743ms'
+  - '[ermaozi] 🇰🇷[www.v2nodes.com] vless-KR-1... | 750ms'
+  - '[zhuhaiuk] KR - zhuhai.uk 02 | 1541ms'
+  - '[AutoMerge] 🇰🇷KR_2|1018KB/s | 1761ms'
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
