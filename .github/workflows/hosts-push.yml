@@ -1,0 +1,73 @@
+name: Weekly GitHub hosts push
+
+# 每周从 GitHub520 抓取最新 hosts，通过 WxPusher 推送给机主
+on:
+  schedule:
+    - cron: '0 1 * * 1' # 每周一 01:00 UTC = 北京时间 09:00
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fetch-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch latest hosts (GitHub520)
+        run: |
+          set -e
+          for url in \
+            "https://raw.hellogithub.com/hosts" \
+            "https://raw.githubusercontent.com/521xueweihan/GitHub520/main/hosts"; do
+            echo "Trying $url"
+            if curl -fsSL --max-time 30 "$url" -o hosts.txt && grep -q "github.com" hosts.txt; then
+              echo "Fetched OK from $url"
+              break
+            fi
+          done
+          test -s hosts.txt
+          grep -q "github.com" hosts.txt
+          echo "---- hosts preview ----"
+          cat hosts.txt
+
+      - name: Push hosts via WxPusher
+        env:
+          WXPUSHER_APP_TOKEN: ${{ secrets.WXPUSHER_APP_TOKEN }}
+          WXPUSHER_UID: ${{ secrets.WXPUSHER_UID }}
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, sys, urllib.request
+          from datetime import datetime, timezone, timedelta
+
+          token = os.environ.get("WXPUSHER_APP_TOKEN", "").strip()
+          uid = os.environ.get("WXPUSHER_UID", "").strip()
+          if not token or not uid:
+              print("::error::Repo secrets WXPUSHER_APP_TOKEN / WXPUSHER_UID are not set. "
+                    "Add them under Settings > Secrets and variables > Actions.")
+              sys.exit(1)
+
+          with open("hosts.txt", encoding="utf-8") as f:
+              hosts = f.read().strip()
+
+          date = datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
+          payload = {
+              "appToken": token,
+              "content": hosts,
+              "summary": f"GitHub hosts 每周更新 {date}",
+              "contentType": 1,
+              "uids": [uid],
+              "url": "https://raw.hellogithub.com/hosts",
+          }
+          req = urllib.request.Request(
+              "https://wxpusher.zjiecode.com/api/send/message",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json"},
+          )
+          with urllib.request.urlopen(req, timeout=30) as resp:
+              result = json.loads(resp.read().decode("utf-8"))
+          print(result)
+          if result.get("code") != 1000:
+              print(f"::error::WxPusher push failed: {result}")
+              sys.exit(1)
+          print("WxPusher push OK")
+          PYEOF
