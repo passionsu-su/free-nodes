@@ -4,31 +4,33 @@ mode: rule
 log-level: info
 ipv6: false
 proxies:
+- name: '[ermaozi] 🇺🇸US_23|2.5MB/s | 159ms'
+  port: 18080
+  server: 52.128.238.98
+  skip-cert-verify: true
+  type: http
+- alpn:
+  - h3
+  name: '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG #2 | 253ms'
+  network: ws
+  port: 443
+  server: 27.50.48.6
+  servername: vless2-8vx.pages.dev
+  tls: true
+  type: vless
+  uuid: c98a16e4-0dc5-42f0-b3db-30f04525c123
+  ws-opts:
+    headers:
+      Host: vless2-8vx.pages.dev
+    path: /fp=chrome
 - cipher: chacha20-ietf-poly1305
-  name: '[NoMoreWalls] 🇭🇰[www.v2nodes.com] ss-HK-1624... | 617ms'
+  name: '[AutoMerge] 🇭🇰HK_1|3.9MB/s | 479ms'
   password: abc62f00-95a8-4c2e-a85d-36a2cdc977da
   port: 28014
   server: waic.pro.main.sys-metric-report.com
   type: ss
-- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 1158ms'
-  type: http
-  server: 119.28.24.235
-  port: 3128
-  tls: true
-  skip-cert-verify: true
-- name: '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK (2) | 1169ms'
-  type: vmess
-  server: 47.244.120.197
-  port: 44867
-  uuid: 845e6b08-2919-4290-ade0-5dc7dcea59ca
-  alterId: 0
-  cipher: auto
-  network: ws
-  ws-opts:
-    path: /arki
-    headers:
-      Host: 47.244.120.197
-- name: '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 1211ms'
+  udp: true
+- name: '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 590ms'
   obfs: salamander
   obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
   password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
@@ -38,55 +40,30 @@ proxies:
   sni: nas.aizhzo.com
   tls: false
   type: hysteria2
-- name: '[ermaozi] ProxyPool | 🇭🇰 香港 | HKG 4 | 2115ms'
-  server: 8.210.92.38
-  port: 443
-  type: vless
-  uuid: 4fc9dc3d-0d57-49e7-9bc0-e323165241bf
+- name: '[zhuhaiuk] HK - zhuhai.uk 02 | 920ms'
+  type: http
+  server: 119.28.24.235
+  port: 3128
   tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: vhu6gifBQ8-hRzW1gqKFkEXDlQbf6Ex8kKj1FcxhmzA
-    short-id: d78318845237d9a9
-  servername: www.ebay.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: '[ermaozi] 🇭🇰 香港 | HKG #2 | 2407ms'
-  network: ws
-  port: 443
-  server: 47.86.90.31
-  servername: bywxdhirqkjj8xaz.v.3dns.vip
   skip-cert-verify: true
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 234a8041-2b4d-44a3-a8d8-523cbfd58dc4
-  ws-opts:
-    headers:
-      Host: bywxdhirqkjj8xaz.v.3dns.vip
-    path: /ws-vmess
-- name: '[ermaozi] 🇭🇰 香港 | HKG #1 | 3098ms'
-  password: '12012'
-  port: 12012
-  server: 47.242.93.89
-  skip-cert-verify: true
-  sni: ali-hk.b-gfw.cfd
-  type: trojan
-  udp: true
-- name: '[roosterkid] 🏳[openproxylist.com] vmess- | 3367ms'
-  type: vmess
+- name: '[zhuhaiuk] HK - zhuhai.uk | 3466ms'
+  type: socks5
+  server: 47.242.19.215
+  port: 8899
+  username: admin
+  password: admin
+- name: '[Eternity] 🇭🇰HK-156.245.232.239-0273 | 0.007MB | 3739ms'
   server: 156.245.232.239
   port: 35043
+  type: vmess
   uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
   alterId: 0
   cipher: auto
+  tls: false
+  skip-cert-verify: false
   network: ws
   ws-opts:
     path: /
-    headers: {}
 proxy-groups:
 - name: AUTO
   type: url-test
@@ -94,26 +71,24 @@ proxy-groups:
   interval: 300
   tolerance: 100
   proxies:
-  - '[NoMoreWalls] 🇭🇰[www.v2nodes.com] ss-HK-1624... | 617ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1158ms'
-  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK (2) | 1169ms'
-  - '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 1211ms'
-  - '[ermaozi] ProxyPool | 🇭🇰 香港 | HKG 4 | 2115ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 2407ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 3098ms'
-  - '[roosterkid] 🏳[openproxylist.com] vmess- | 3367ms'
+  - '[ermaozi] 🇺🇸US_23|2.5MB/s | 159ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG #2 | 253ms'
+  - '[AutoMerge] 🇭🇰HK_1|3.9MB/s | 479ms'
+  - '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 590ms'
+  - '[zhuhaiuk] HK - zhuhai.uk 02 | 920ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 3466ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0273 | 0.007MB | 3739ms'
 - name: PROXY
   type: select
   proxies:
   - AUTO
-  - '[NoMoreWalls] 🇭🇰[www.v2nodes.com] ss-HK-1624... | 617ms'
-  - '[zhuhaiuk] HK - zhuhai.uk 02 | 1158ms'
-  - '[roosterkid] 🇭🇰[openproxylist.com] vmess-HK (2) | 1169ms'
-  - '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 1211ms'
-  - '[ermaozi] ProxyPool | 🇭🇰 香港 | HKG 4 | 2115ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #2 | 2407ms'
-  - '[ermaozi] 🇭🇰 香港 | HKG #1 | 3098ms'
-  - '[roosterkid] 🏳[openproxylist.com] vmess- | 3367ms'
+  - '[ermaozi] 🇺🇸US_23|2.5MB/s | 159ms'
+  - '[ermaozi] 🇸🇬[www.v2nodes.com] vless-SG #2 | 253ms'
+  - '[AutoMerge] 🇭🇰HK_1|3.9MB/s | 479ms'
+  - '[ermaozi] برای اتصال دائمی جوین شو🦠 Tele... | 590ms'
+  - '[zhuhaiuk] HK - zhuhai.uk 02 | 920ms'
+  - '[zhuhaiuk] HK - zhuhai.uk | 3466ms'
+  - '[Eternity] 🇭🇰HK-156.245.232.239-0273 | 0.007MB | 3739ms'
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
