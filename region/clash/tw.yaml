@@ -3,35 +3,16 @@ allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
-proxies:
-- type: vless
-  name: '[free18] 🇹🇼_台湾 | 779ms'
-  server: 154.40.61.186
-  port: 8443
-  uuid: b69cf773-da16-486e-afce-a45b94f998b3
-  udp: true
-  tls: true
-  servername: senflarelink-node-wj1gsa.pages.dev
-  sni: senflarelink-node-wj1gsa.pages.dev
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /flow=fp=chrome
-    headers:
-      Host: senflarelink-node-wj1gsa.pages.dev
+proxies: []
 proxy-groups:
 - name: AUTO
-  type: url-test
-  url: https://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 100
+  type: select
   proxies:
-  - '[free18] 🇹🇼_台湾 | 779ms'
+  - DIRECT
 - name: PROXY
   type: select
   proxies:
-  - AUTO
-  - '[free18] 🇹🇼_台湾 | 779ms'
+  - DIRECT
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
