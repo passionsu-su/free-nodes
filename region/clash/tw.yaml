@@ -3,16 +3,33 @@ allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
-proxies: []
+proxies:
+- name: '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 2376ms'
+  server: 166.0.198.22
+  port: 443
+  type: vless
+  uuid: ed94398f-893f-40c6-b14c-bf02b5f6be16
+  tls: true
+  packet-encoding: xudp
+  reality-opts:
+    public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+    short-id: 2da72ce6
+  servername: navi.bankrate.com
+  client-fingerprint: chrome
+  network: tcp
 proxy-groups:
 - name: AUTO
-  type: select
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 100
   proxies:
-  - DIRECT
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 2376ms'
 - name: PROXY
   type: select
   proxies:
-  - DIRECT
+  - AUTO
+  - '[ermaozi] 🇹🇼 🇨🇳 台湾 | TWN | 2376ms'
 rules:
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
